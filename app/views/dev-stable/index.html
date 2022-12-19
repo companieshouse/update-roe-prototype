@@ -1,0 +1,67 @@
+{% set serviceName = "Dev/Stable" %}
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Dev/Stable – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+   {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-full">
+
+    <h1 class="govuk-heading-xl">
+      Handover for developers
+    </h1>
+
+	</div>
+	<div class="govuk-grid-column-full">
+		<h1 class="govuk-heading-l">Journey maps</h1>
+		<p class="govuk-body"><a href="#" class="govuk-link">Mural board - flow</a><br>
+		Click link twice (glitchy). To access contact Monica Tuffs at mtuffs@companieshouse.gov.uk</p>
+		
+		<p class="govuk-body"><a href="#" class="govuk-link">Service map</a>
+		</p>
+	</div>
+	<div class="govuk-grid-column-one-third">
+		<h2 class="govuk-heading-l">Pages</h2>
+		<div class="govuk-form-group">
+			<ol class="govuk-list govuk-list--number to-do">
+				<li class="done"><a href="/dev-stable/start">Start</li>
+				<li class="done"><a href="/dev-stable/content">Content</a></li>
+				<li class="done"><a href="/dev-stable/what-is-your-name">What is your name?</a></li>
+				<li class="done"><a href="/dev-stable/what-is-your-date-of-birth">What is your date birth?</a></li>
+				<li class="done"><a href="/dev-stable/what-is-your-address">What is your address?</a></li>
+				<li class="done"><a href="/dev-stable/contact-details">Contact details</a></li>
+				<li class="done"><a href="/dev-stable/check-your-answers">Check your answers</a></li>
+				<li class="done"><a href="/dev-stable/confirmation">Confirmation</a></li>
+			</ol>
+		</div>
+	</div>
+	<div class="govuk-grid-column-one-third">
+		<h2 class="govuk-heading-l">Validation</h2>
+		<div class="govuk-form-group">
+			<ol class="govuk-list">
+				<li class="done"><a href="/dev-stable/validation-what-is-your-name">What is your name?</a></li>
+				<li class="done"><a href="/dev-stable/validation-what-is-your-date-of-birth">What is your date of birth?</a></li>
+			</ol>
+		</div>
+	</div>
+	<div class="govuk-grid-column-one-third">
+		<div class="govuk-form-group">
+			<h2 class="govuk-heading-l">Defaults</h2>
+			<ul class="govuk-list to-do">
+				<li class="done"><a href="/dev-stable/page-not-found">Page not found</a> <strong class="govuk-tag govuk-tag--turquoise">Done</strong></li>
+				<li class="done"><a href="/dev-stable/problem-with-the-service">Problem with the service</a> <strong class="govuk-tag govuk-tag--turquoise">Done</strong></li>
+				<li class="done"><a href="/dev-stable/service-unavailable">Service unavailable</a> <strong class="govuk-tag govuk-tag--turquoise">Done</strong></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+
+What is the name of the overseas entity?
+ – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/back-link.html" %}
+<!-- add include "includes/user-bar.html" >-->
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+
+<form action="/register/presenter" method="get">
+
+
+{{ govukInput({
+  label: {
+    text: "What is the Overseas Entity ID?",
+    classes: "govuk-label--xl",
+    isPageHeading: true
+  },
+  id: "overseas-name",
+  name: "overseas-name",
+  value: data["overseas-name"] 
+}) }}
+
+
+
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

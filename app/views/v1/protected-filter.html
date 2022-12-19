@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+
+Has the entity disposed of any property or land in England, Scotland or Wales since 28 February 2022?
+ – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{#
+  {% include "includes/back-link.html" %}
+  {% include "includes/user-bar.html" %}
+#}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+<form class="form" method="post">
+
+{{ govukRadios({
+  classes: "govuk-radios",
+  idPrefix: "soldLand",
+  name: "soldLand",
+  fieldset: {
+    legend: {
+      text: "Do any beneficial owners or managing officers have their personal information protected at Companies House?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--xl"
+    }
+  },
+  hint: {
+  text: "This includes if they are waiting for the results of an application to protect their personal information."
+},
+  items: [
+    {
+      value: "yes",
+      text: "Yes"
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+  ]
+}) }}
+
+{{ govukDetails({
+  summaryText: "What having personal information means",
+  text: "We need to know your nationality so we can work out which elections you're entitled to vote in. If you cannot provide your nationality, you'll have to send copies of identity documents through the post."
+}) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+      </form>
+
+
+
+
+    </div>
+  </div>
+
+{% endblock %}

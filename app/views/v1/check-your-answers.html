@@ -1,0 +1,438 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check your answers – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{# {% include "includes/back-link.html" %}
+{% include "includes/user-bar.html" %} #}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-xl">Check your answers before submitting</h1>
+
+              {{ govukSummaryList({
+                classes: 'govuk-!-margin-bottom-9',
+                rows: [
+                  {
+                    key: {
+                      text: "Do any beneficial owners or managing officers have personal information protected at Companies House?"
+                    },
+                    value: {
+                      text: 'No'
+                    },
+                    actions: {
+                      items: [
+                        {
+                          href: "#",
+                          text: "Change",
+                          visuallyHiddenText: "Does the registration include people that have protection or that have applied for protection?"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }) }}
+
+      <h2 class="govuk-heading-l">Contact details</h2>
+
+        {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-9',
+          rows: [
+            {
+              key: {
+                text: "Full name"
+              },
+              value: {
+                text: data['contact-full-name']
+                },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "Full name - who can we contact about this application"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Email address"
+              },
+              value: {
+                text: data['contact-email']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "Email address - who can we contact about this application"
+                  }
+                ]
+              }
+            }
+          ]
+        }) }}
+
+        <h2 class="govuk-heading-l">Verification checks</h2>
+
+          {{ govukSummaryList({
+            classes: 'govuk-!-margin-bottom-9',
+            rows: [
+            {
+              key: {
+                text: "Who is completing this registration?"
+              },
+              value: {
+                text: "Someone else"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "Who is making the filing?"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Date the verification checks were completed"
+              },
+              value: {
+                text: "20 June 2022"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "Who is making the filing?"
+                  }
+                ]
+              }
+            },
+              {
+                key: {
+                  text: "Name of agent"
+                },
+                value: {
+                  text: data['due-diligence-name']
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "#",
+                      text: "Change",
+                      visuallyHiddenText: "Name of agent"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "Correspondence address"
+                },
+                value: {
+                  html: data['agent-address-line-1'] <br> data['agent-address-city-town'] <br> data['agent-address-state'] <br> data['where-do-you-live']<br> data['agent-address-postcode']
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "#",
+                      text: "Change",
+                      visuallyHiddenText: "Address of agent"
+                    }
+                  ]
+                }
+              },
+
+              {
+                key: {
+                  text: "Email address"
+                },
+                value: {
+                  text: data['due-diligence-email']
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "#",
+                      text: "Change",
+                      visuallyHiddenText: "Email address of agent"
+                    }
+                  ]
+                }
+              },
+
+              {
+                key: {
+                  text: "Name of supervisory body"
+                },
+                value: {
+                  text: data['supervisory-name']
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "#",
+                      text: "Change",
+                      visuallyHiddenText: "Name of the supervisory body"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: " Anti-Money Laundering (AML) registration number"
+                },
+                value: {
+                  text: "87654321"
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "#",
+                      text: "Change",
+                      visuallyHiddenText: "Anti Money Laundering (AML) registration number of the agent"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "Agent assurance code"
+                },
+                value: {
+                  text: data['agent-code']
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "#",
+                      text: "Change",
+                      visuallyHiddenText: "Agent’s authentication code"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "Person responsible for overseeing verification checks"
+                },
+                value: {
+                  text: data['partner-name']
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "#",
+                      text: "Change",
+                      visuallyHiddenText: "Name of partner"
+                    }
+                  ]
+                }
+              }
+            ]
+          }) }}
+
+      <h2 class="govuk-heading-l">Overseas entity details</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name of overseas entity
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Paris Hotel
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/register/entity">
+              Change
+              <span class="govuk-visually-hidden">   Name of overseas entity</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+             Country it was formed in
+          </dt>
+          <dd class="govuk-summary-list__value">
+            France
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/register/entity">
+              Change
+              <span class="govuk-visually-hidden">    Country overseas entity was formed in</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Principal or registered office address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            24 Rue de Commandant Guilbau
+            <br>Paris 75016
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/register/entity">
+              Change
+              <span class="govuk-visually-hidden"> overseas entity principal or registered office address</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Correspondence address
+          </dt>
+          <dd class="govuk-summary-list__value">
+          The correspondence address is the same as the entity's principal or registered office address
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/register/entity">
+              Change
+              <span class="govuk-visually-hidden"> overseas entity correspondence address</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Email address at the overseas entity we should send communications to
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>email@example.com</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/register/entity">
+              Change
+              <span class="govuk-visually-hidden"> overseas entity email</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Legal form
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>Corp.</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/register/entity">
+              Change
+              <span class="govuk-visually-hidden"> overseas entity legal form</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Governing law
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>Here</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/register/entity">
+              Change
+              <span class="govuk-visually-hidden"> overseas entity governing law</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Overseas public register
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>
+              French Registry
+              <!--
+              {# PUBLIC REGISTER NAME #}
+              {% if data['entity-public-register-name'] != null %}
+                {{ data['entity-public-register-name'] }}
+              {% else %}
+                Hong Kong Registrations (HK)
+              {% endif %}
+
+              {# PUBLIC REGISTER JURISTICTION #}
+              {% if data['entity-public-register-jurisdiction'] != null %}
+                / {{ data['entity-public-register-jurisdiction'] }}
+              {% else %}
+                / Hong Kong
+              {% endif %}
+
+              {# PUBLIC REGISTER NUMBER #}
+              {% if data['entity-public-register-number'] != null %}
+                / {{ data['entity-public-register-number'] }}
+              {% else %}
+                / 01234567890
+              {% endif %}
+              -->
+            </p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/register/entity">
+              Change
+              <span class="govuk-visually-hidden"> overseas entity public register</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Jurisdiction
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>
+              France
+            </p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/register/entity">
+              Change
+              <span class="govuk-visually-hidden"> overseas entity public register</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Registration number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>
+              0123456789
+            </p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/register/entity">
+              Change
+              <span class="govuk-visually-hidden"> overseas entity public register</span>
+            </a>
+          </dd>
+        </div>
+
+      </dl>
+
+      <form method="post">
+
+        {{ govukButton({
+          text: "Continue",
+          href: "/register/how-to-pay"
+        }) }}
+
+      </form>
+
+{#
+      <p class="govuk-body govuk-!-font-size-14 govuk-link--no-visited-state"><a href="/register/confirmation">UR shortcut: Jump to confirmation screen</a></p>
+#}
+
+    </div>
+  </div>
+{% endblock %}

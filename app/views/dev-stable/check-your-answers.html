@@ -1,0 +1,130 @@
+{% extends "../layouts/dev-stable-layout.html" %}
+
+{% block pageTitle %}
+  Check your answers
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Check your answers
+      </h1>
+
+      <h2 class="govuk-heading-m">Personal details</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['full-name'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="what-is-your-name">
+              Change<span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date of birth
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['date-of-birth-day'] }} 
+            {% if data['date-of-birth-month'] == '1' or data['date-of-birth-month'] == '01' %}
+              January 
+            {% elif data['date-of-birth-month'] == '2' or data['date-of-birth-month'] == '02' %}
+              February 
+            {% elif data['date-of-birth-month'] == '3' or data['date-of-birth-month'] == '03' %}
+              March 
+            {% elif data['date-of-birth-month'] == '4' or data['date-of-birth-month'] == '04' %}
+              April 
+            {% elif data['date-of-birth-month'] == '5' or data['date-of-birth-month'] == '05' %}
+              May 
+            {% elif data['date-of-birth-month'] == '6' or data['date-of-birth-month'] == '06' %}
+              June 
+            {% elif data['date-of-birth-month'] == '7' or data['date-of-birth-month'] == '07' %}
+              July 
+            {% elif data['date-of-birth-month'] == '8' or data['date-of-birth-month'] == '08' %}
+              August 
+            {% elif data['date-of-birth-month'] == '9' or data['date-of-birth-month'] == '09' %}
+              September 
+            {% elif data['date-of-birth-month'] == '10' or data['date-of-birth-month'] == '10' %}
+              October 
+            {% elif data['date-of-birth-month'] == '11' or data['date-of-birth-month'] == '11' %}
+              November 
+            {% elif data['date-of-birth-month'] == '12' or data['date-of-birth-month'] == '12' %}
+              December 
+            {% else %}
+              January 
+            {% endif %}
+            {{ data['date-of-birth-year'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="what-is-your-date-of-birth">
+              Change<span class="govuk-visually-hidden"> date of birth</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p class="govuk-body">
+              {{ data['address-line-1'] }}<br>
+              {% if data['address-line-2'] != "" %}
+                {{ data['address-line-2'] }}<br>
+              {% endif %}
+              {{ data['address-town'] }}<br>
+              {% if data['address-county'] != "" %}
+                {{ data['address-county'] }}<br>
+              {% endif %}
+              {{ data['address-postcode'] }}
+            </p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="what-is-your-address">
+              Change<span class="govuk-visually-hidden"> address</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Contact details
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p class="govuk-body">{{ data['telephone-number'] }}</p>
+            <p class="govuk-body">{{ data['email'] }}</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="contact-details">
+              Change<span class="govuk-visually-hidden"> contact details</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <form method="post" novalidate>
+        <input type="hidden" name="answers-checked" value="true">
+        <button class="govuk-button" data-module="govuk-button">
+          Confirm and submit
+        </button>
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

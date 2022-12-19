@@ -1,0 +1,29 @@
+{% extends "../layouts/dev-stable-layout.html" %}
+
+{% block pageTitle %}
+  Service unavailable – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+        Sorry, the service is unavailable
+      </h1>
+      <p class="govuk-body">
+        You will be able to use the service from {time} on {date}.
+      </p>
+    </div>
+  </div>
+
+{% endblock %}

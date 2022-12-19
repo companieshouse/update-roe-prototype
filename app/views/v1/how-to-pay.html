@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+
+How do you want to pay for the application?
+ – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{#
+  {% include "includes/back-link.html" %}
+  {% include "includes/user-bar.html" %}
+#}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+<form action="https://products.payments.service.gov.uk/pay/1b0d3c929a7349b19447f0e08be59ffc" method="get">
+
+
+{{ govukRadios({
+  idPrefix: "payOption",
+  name: "payOption",
+  fieldset: {
+    legend: {
+      text: "How do you want to pay for the application?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--xl"
+    }
+  },
+  items: [
+    {
+      value: "card",
+      text: "Credit or debit card"
+    },
+    {
+      value: "account",
+      text: "Companies House payment account"
+    }
+  ]
+}) }}
+
+
+      {{ govukButton({
+        text: "Confirm"
+      }) }}
+      </form>
+
+
+
+
+    </div>
+  </div>
+
+{% endblock %}

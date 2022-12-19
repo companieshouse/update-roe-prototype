@@ -1,0 +1,105 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+
+What is the name of the overseas entity?
+ – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{#
+{% block beforeContent %}
+{% include "includes/back-link.html" %}
+{% include "includes/user-bar.html" %}
+{% endblock %}
+#}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">Confirm this is the correct overseas entity</h1>
+    
+  
+<form>
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+          {
+            key: {
+              text: "Name"
+            },
+            value: {
+              text: "DA INVESTMENTS LIMITED"
+            },
+            actions: {
+              items: [
+                {
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Overseas Entity ID"
+            },
+            value: {
+              text: "OE001485"
+            },
+            actions: {
+              items: [
+                {
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Registered on"
+            },
+            value: {
+              html: "16 August 2022"
+            },
+            actions: {
+              items: [
+                {
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Incorporated in"
+            },
+            value: {
+              text: "VIRGIN ISLANDS, BRITISH"
+            },
+            actions: {
+              items: [
+                {
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+    </form>
+    </div>
+  </div>
+
+  
+
+  {{ govukButton({
+    text: "Continue"
+  }) }}
+          
+  <p><a class="govuk-link" href="#">
+    Choose a different overseas entity
+  </a></p>
+
+          
+    </form>
+    </div>
+  </div>
+
+
+{% endblock %}

@@ -4,19 +4,169 @@
 Home – {{serviceName}} – GOV.UK Prototype Kit
 {% endblock %}
 
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+{% endblock %}
+
+
+
 {% block content %}
-
-<div class="govuk-grid-row">
+  <div class="govuk-width-container">
+  <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-
-    {% include "govuk-prototype-kit/includes/homepage-top.njk" %}
 
     <h1 class="govuk-heading-xl">
       {{ serviceName }}
     </h1>
 
-    {% include "govuk-prototype-kit/includes/homepage-bottom.njk" %}
+{{ govukWarningText({
+      text: "This prototype is being actively worked on - things might break or change very quickly",
+      iconFallbackText: "Warning"
+    }) }}
+
+    <a href="/manage-prototype" class="govuk-link govuk-body">Manage the prototype</a>
+
+
+    <h2 class="govuk-heading-m govuk-!-padding-top-4">
+      Prototypes
+    </h2>
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header" scope="col">Version</th>
+          <th class="govuk-table__header" scope="col">Sprint</th>
+          <th class="govuk-table__header" scope="col">Date</th>
+          <th class="govuk-table__header" scope="col">Status</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a href="v2/_index">V2</a>
+          </td>
+          <td class="govuk-table__cell">
+            { Sprint number }
+          </td>
+          <td class="govuk-table__cell">
+            { Date }
+          </td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--blue">
+              In progress
+            </strong>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a href="v1/index">V1</a>
+          </td>
+          <td class="govuk-table__cell">
+            { Sprint number }
+          </td>
+          <td class="govuk-table__cell">
+            { Date }
+          </td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--grey">
+              Complete
+            </strong>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a href="/dev-stable">Dev / stable</a></li>
+          </td>
+          <td class="govuk-table__cell">
+          </td>
+          <td class="govuk-table__cell">
+          </td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--green">
+              Stable
+            </strong>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    {# ASSESSMENTS #}
+    <h2 class="govuk-heading-m govuk-!-padding-top-4">
+      Assessments
+    </h2>
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header" scope="col">Phase</th>
+          <th class="govuk-table__header" scope="col">Date</th>
+          <th class="govuk-table__header" scope="col">Status</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a href="#/">Alpha</a>
+          </td>
+          <td class="govuk-table__cell">
+            { Date }
+          </td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--green">
+              Passed
+            </strong>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    {# PLAYGROUND #}
+    <h2 class="govuk-heading-m govuk-!-padding-top-4">
+      Playground
+    </h2>
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header" scope="col">Feature</th>
+          <th class="govuk-table__header" scope="col">Date</th>
+          <th class="govuk-table__header" scope="col">Link</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            { Feature name }
+          </td>
+          <td class="govuk-table__cell">
+            { Date }
+          </td>
+          <td class="govuk-table__cell">
+            <a href="#/">View</a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            { Feature name }
+          </td>
+          <td class="govuk-table__cell">
+            { Date }
+          </td>
+          <td class="govuk-table__cell">
+            <a href="#/">View</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+
   </div>
 </div>
+
+
+
+
 
 {% endblock %}

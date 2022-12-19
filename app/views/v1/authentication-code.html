@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+
+Enter the authentication code
+ – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{# {% include "includes/back-link.html" %}
+{% include "includes/user-bar.html" %} #}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+
+    <form action="/form-handler" method="post" novalidate>
+
+
+{{ govukInput({
+  label: {
+    text: "Enter the authentication code",
+    classes: "govuk-label--xl",
+    isPageHeading: true
+  },
+  id: "auth-code",
+  name: "auth-code",
+  value: data["auth-code"] 
+}) }}
+
+
+  <div class="govuk-button-group">
+    <button class="govuk-button" data-module="govuk-button">
+      Continue
+    </button>
+    <a class="govuk-link" href="#">Request an authentication code</a>
+  </div>
+</form>
+
+    </div>
+  </div>
+
+{% endblock %}
