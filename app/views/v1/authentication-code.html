@@ -7,8 +7,7 @@ Enter the authentication code
 {% endblock %}
 
 {% block beforeContent %}
-{# {% include "includes/back-link.html" %}
-{% include "includes/user-bar.html" %} #}
+  {% include "includes/before-content.html" %}
 {% endblock %}
 
 {% block content %}
@@ -32,13 +31,16 @@ Enter the authentication code
 }) }}
 
 
-  <div class="govuk-button-group">
-    <button class="govuk-button" data-module="govuk-button">
-      Continue
-    </button>
-    <a class="govuk-link" href="#">Request an authentication code</a>
-  </div>
-</form>
+  {{ govukButton({
+    text: "Continue"
+  }) }}
+          
+  <p><a class="govuk-link" href="#">
+    Choose a different overseas entity
+  </a></p>
+    
+    
+    </form>
 
     </div>
   </div>
