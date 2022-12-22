@@ -1,11 +1,5 @@
-{{ govukPhaseBanner({
-  tag: {
-    text: "beta"
-  },
-  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
-}) }}
-
-<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link.html" %}
 
 <ul id="navigation" class="mobile-hidden">
   <li class="user" id="signed-in-user">
