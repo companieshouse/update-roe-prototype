@@ -36,7 +36,7 @@
             Country it was formed in
           </dt>
           <dd class="govuk-summary-list__value">
-            France
+            VIRGIN ISLANDS, BRITISH
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="#">
@@ -49,7 +49,7 @@
             Principal or registered office address
           </dt>
           <dd class="govuk-summary-list__value">
-            24 Rue de Commandant Guilbau<br>Paris 75016
+            Mandalt House 4th Floor, PO Box 347, Johnson's Ghut, Tortola, Virgin Islands, British
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="#">
@@ -101,7 +101,7 @@
             Governing law
           </dt>
           <dd class="govuk-summary-list__value">
-            France
+            BVI Business Companies Act
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="#">
@@ -114,7 +114,7 @@
             Overseas public register
           </dt>
           <dd class="govuk-summary-list__value">
-            French Registry
+            Registry of Corporate Affairs – BVI
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="#">
@@ -127,7 +127,7 @@
             Jurisdiction
           </dt>
           <dd class="govuk-summary-list__value">
-            France
+            British Virgin Islands
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="#">
@@ -140,7 +140,7 @@
             Registration number
           </dt>
           <dd class="govuk-summary-list__value">
-            0123456789
+            1849717
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="#">
@@ -151,33 +151,37 @@
       </dl>
 
       <form action="/form-handler" method="post" novalidate>
-        <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-              Have you completed this section?
-            </legend>
-            <div class="govuk-radios" data-module="govuk-radios">
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="have-you-completed-this-section" name="have-you-completed-this-section" type="radio" value="yes">
-                <label class="govuk-label govuk-radios__label" for="have-you-completed-this-section">
-                  Yes, I’ve completed this section
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="have-you-completed-this-section-2" name="have-you-completed-this-section" type="radio" value="no">
-                <label class="govuk-label govuk-radios__label" for="have-you-completed-this-section-2">
-                  No, I’ll come back to it later
-                </label>
-              </div>
-            </div>
-          </fieldset>
-        </div>
-        <button class="govuk-button" data-module="govuk-button">
-          Continue
-        </button>
+
+{{ govukRadios({
+  name: "oe-check-complete",
+  id: "oe-check-complete",
+  fieldset: {
+    legend: {
+      text: "Have you completed this section?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes, I’ve completed this section"
+    },
+    {
+      value: "no",
+      text: "No, I’ll come back to it later"
+    }
+  ]
+}) }}
+
+{{ govukButton({
+  text: "Confirm and continue"
+}) }}
+
       </form>
 
     </div>
   </div>
+
 
 {% endblock %}
