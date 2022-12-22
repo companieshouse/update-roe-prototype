@@ -16,7 +16,7 @@ What is the name of the overseas entity?
 
 
 
-<form action="/register/presenter" method="get">
+<form action="" method="get">
 
 
 {{ govukInput({
@@ -34,7 +34,8 @@ What is the name of the overseas entity?
 
 
       {{ govukButton({
-        text: "Save and continue"
+        text: "Save and continue",
+        href: "/v1/confirm-overseas-entity"
       }) }}
       </form>
 
