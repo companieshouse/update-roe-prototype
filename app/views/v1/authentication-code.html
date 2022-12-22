@@ -18,16 +18,29 @@ Enter the authentication code
 
     <form action="/form-handler" method="post" novalidate>
 
+<h1 class="govuk-heading-xl">Enter the authentication code</h1>
+
+<p class"govuk-body">The authentication code is a 6 digit alphanumeric code issued by us to each overseas entity.</p>
 
 {{ govukInput({
   label: {
     text: "Enter the authentication code",
-    classes: "govuk-label--xl",
+    classes: "govuk-visually-hidden",
     isPageHeading: true
+  },
+  hint: {
+    text: "For example, 908390"
   },
   id: "auth-code",
   name: "auth-code",
   value: data["auth-code"] 
+}) }}
+
+
+{{ govukDetails({
+  summaryText: "What is the authentication code and how do I get it?",
+  text: "This is a code issued to the overseas entity. 
+  It is used to authorise information filed online and acts like a PIN number or password."
 }) }}
 
 
@@ -36,9 +49,7 @@ Enter the authentication code
     href: "filing-date"
   }) }}
           
-  <p><a class="govuk-link" href="#">
-    I need help with an authentication code
-  </a></p>
+
     
     
     </form>
