@@ -14,39 +14,42 @@ Do you want to continue with a saved application? – {{ serviceName }} – GOV.
 
     <form class="form" method="post">
 
+
+
 {{ govukRadios({
   classes: "govuk-radios",
   idPrefix: "startingNew",
   name: "startingNew",
   fieldset: {
     legend: {
-      text: "Do you want to continue with a saved application?",
+      text: "Do you want to continue with a saved filing?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--xl"
     }  
   },
   hint: {
-    text: "If you have saved applications, you can continue with one of these or start a new one."
+    text: "If you have saved filings, you can continue with one of these or start a new one."
   },
-
-
-
   items: [
     {
       value: "yes",
       text: "Yes",
       hint: {
-        text: "Continue with a saved application from Your Filings."
+        text: "You'll be able to choose which filing you want to continue with."
       }
     },
     {
       value: "no",
-      text: "No - start a new application",
-
-      checked: checked("statements", "noneIdentified")
+      text: "No - start a new filing",
+hint: {
+        text: "You'll be able to choose which filing you want to continue with."
+      }
     }
   ]
 }) }}
+
+ <!--- NEEDS ADDING IN ABOVE - "noneIdentified" may need to change
+ checked: checked("statements", "noneIdentified")-->
 
 
 
