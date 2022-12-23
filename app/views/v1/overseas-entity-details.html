@@ -64,6 +64,7 @@
         {% endif %}
 
 
+<!--- COUNTRY-FORMED - make sure dropdown list appears - use HTML from Reg?
 
 {% if errorCountry == true %}
         <div class="govuk-form-group">
@@ -81,6 +82,22 @@
           <div id="country" name="country" class="autocomplete-wrapper"></div>
         </div>
 {% endif %}
+
+Country formed nunjucks below -->
+
+        {{ govukInput({
+          label: {
+            text: "Which country was it formed in?",
+            classes: "govuk-label--m",
+            isPageHeading: false
+          },
+            hint: {
+             text: "Start typing a country, then choose from the list"
+           },
+          id: "country-formed",
+          name: "country-formed",
+          value: countryFormed
+        }) }}
 
 
 
@@ -314,6 +331,26 @@
 
         {% endcall %}
         {% endset -%}
+
+
+{% if errorCountry == true %}
+        <div class="govuk-form-group">
+           <label for="autocomplete-default" class="govuk-label--m">Which country was it formed in?</label>
+          <p class="govuk-hint">Start typing a country, then choose from the list</p>
+          <p id="country-error" class="govuk-error-message">
+  <span class="govuk-visually-hidden">Error:</span> Enter the country the entity was formed in
+</p>
+          <div id="country" name="country" class="autocomplete-wrapper" value="countryFormed"></div>
+        </div>
+{% else %}
+        <div class="govuk-form-group">
+           <label for="autocomplete-default" class="govuk-label--m">Which country was it formed in?</label>
+          <p class="govuk-hint">Start typing a country, then choose from the list</p>
+          <div id="country" name="country" class="autocomplete-wrapper"></div>
+        </div>
+{% endif %}
+
+
 
 {#
 {% if errorSameAddress == true %}
