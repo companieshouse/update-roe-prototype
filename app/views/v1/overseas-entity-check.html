@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Task list template – {{ serviceName }} – GOV.UK Prototype Kit
+  Check the overseas entity details – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -9,6 +9,10 @@
 {% endblock %}
 
 {% block content %}
+
+<!--  INTERACTION DESIGN NOTES 
+Need to add routing and /form-handler to interact with task list tags.
+-->
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -150,34 +154,31 @@
         </div>
       </dl>
 
-      <form action="/form-handler" method="post" novalidate>
 
-{{ govukRadios({
-  name: "oe-check-complete",
-  id: "oe-check-complete",
-  fieldset: {
-    legend: {
-      text: "Have you completed this section?",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--l"
-    }
-  },
-  items: [
-    {
-      value: "yes",
-      text: "Yes, I’ve completed this section"
+<form action="/form-handler" method="post" novalidate>
+  {{ govukRadios({
+    name: "have-you-completed-this-section",
+    fieldset: {
+      legend: {
+        text: "Have you completed this section?",
+        isPageHeading: false,
+        classes: "govuk-fieldset__legend--l"
+      }
     },
-    {
-      value: "no",
-      text: "No, I’ll come back to it later"
-    }
-  ]
-}) }}
-
-{{ govukButton({
-  text: "Confirm and continue"
-  href: "task-list"
-}) }}
+    items: [
+      {
+        value: "yes",
+        text: "Yes, I’ve completed this section"
+      },
+      {
+        value: "no",
+        text: "No, I’ll come back to it later"
+      }
+    ]
+  }) }}
+  {{ govukButton({
+    text: "Continue"
+  }) }}
 
       </form>
 
