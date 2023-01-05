@@ -21,14 +21,22 @@
     <h1 class="govuk-heading-xl">
       {{ serviceName }}
     </h1>
+
+    {{ govukButton({
+      text: "Start now",
+      href: "../v1/1-start"
+    }) }}
   </div>
+
+
 
 
   {# TEMP LIST #}
   <div class="govuk-grid-column-full">
 
-    <ul class="govuk-list">
-      <h2>Initial screens</h2>
+    
+      <h2 class="govuk-heading-m">Initial screens</h2>
+      <ul class="govuk-list govuk-list--bullet">
       <li>
         <a class="govuk-link govuk-link--no-visited-state" href="start">Start</a>
       </li>
@@ -50,8 +58,11 @@
       <li>
         <a class="govuk-link govuk-link--no-visited-state" href="interrupt-card">Interrupt card</a>
       </li>
+  </ul>
 
-      <h2>Initial user input screens</h2>
+
+      <h2 class="govuk-heading-m">Initial user input screens</h2>
+      <ul class="govuk-list govuk-list--bullet">
       <li>
         <a class="govuk-link govuk-link--no-visited-state" href="oe-id">Overseas entity ID</a>
       </li>
@@ -64,13 +75,22 @@
       <li>
         <a class="govuk-link govuk-link--no-visited-state" href="filing-date">What is the date of the filing? (may move to task list)</a>
       </li>
+      </ul>
 
-      <h2>Task list</h2>
+
+      <h2 class="govuk-heading-m">Task list</h2>
+      <ul class="govuk-list govuk-list--bullet">
       <li>
         <a class="govuk-link govuk-link--no-visited-state" href="task-list">Task list</a>
       </li>
+            <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="task-test">Task list - new version from GDS to test (WIP)</a>
+      </li>
+      </ul>
 
-      <h2>TBA Contact and filing details</h2>
+
+      <h2 class="govuk-heading-m">TBA Contact and filing details</h2>
+      <ul class="govuk-list govuk-list--bullet">
       <li>
         <a class="govuk-link govuk-link--no-visited-state" href="presenter">TBA Contact details</a>
       </li>
@@ -83,51 +103,73 @@
       <li>
         <a class="govuk-link govuk-link--no-visited-state" href="#">TBA Verification details - overseas entity</a>
       </li>
+      </ul>
 
-      <h2>Overseas entity</h2>
+
+      <h2 class="govuk-heading-m">Overseas entity</h2>
+      <ul class="govuk-list govuk-list--bullet">
       <li>
-        <a class="govuk-link govuk-link--no-visited-state" href="overseas-entity-check">Check the overseas entity</a>
+        <a class="govuk-link govuk-link--no-visited-state" href="oe-check">Check the overseas entity</a>
       </li>
       <li>
-        <a class="govuk-link govuk-link--no-visited-state" href="overseas-entity-details">Overseas entity details</a>
+        <a class="govuk-link govuk-link--no-visited-state" href="oe-details">Overseas entity details</a>
       </li>
+      </ul>
 
-      <h2>Beneficial owners</h2>
+<br>
+      <h2 class="govuk-heading-m">Beneficial owners</h2>
+      <h2 class="govuk-heading-m">Managing officers</h2>
+      <h2 class="govuk-heading-m">Trusts</h2>
+      <h2 class="govuk-heading-m">Task list</h2>
 
-      <h2>Managing officers</h2>
+<br>
 
-      <h2>Trusts</h2>
-
-      <h2>Submit and pay</h2>
+      <h2 class="govuk-heading-m">Submit and pay</h2>
+      <ul class="govuk-list govuk-list--bullet">
       <li>
-        <a class="govuk-link govuk-link--no-visited-state" href="check-your-answers">Check your answers</a>
+        <a class="govuk-link govuk-link--no-visited-state" href="submit-pay/check-your-answers">Check your answers</a>
       </li>
       <li>
-        <a class="govuk-link govuk-link--no-visited-state" href="confirmation">Confirmation</a>
+        <a class="govuk-link govuk-link--no-visited-state" href="submit-pay/confirmation">Confirmation</a>
       </li>
       <li>
-        <a class="govuk-link govuk-link--no-visited-state" href="how-to-pay">How to pay</a>
+        <a class="govuk-link govuk-link--no-visited-state" href="submit-pay/how-to-pay">How to pay</a>
       </li>
       <li>
         <a class="govuk-link govuk-link--no-visited-state" href="#">TBA Links to GOV.UK pay</a>
       </li>
+      </ul>
 
-      <h2>Emails</h2>
+
+      <h2 class="govuk-heading-m">Emails</h2>
+      <ul class="govuk-list govuk-list--bullet">
       <li>
-        <a class="govuk-link govuk-link--no-visited-state" href="emails/received-oe">23. Application received OE</a>
+        <a class="govuk-link govuk-link--no-visited-state" href="emails/received-oe">Application received OE</a>
       </li>
       <li>
-        <a class="govuk-link govuk-link--no-visited-state" href="emails/received">24. Application received</a>
+        <a class="govuk-link govuk-link--no-visited-state" href="emails/received">Application received</a>
       </li>
       <li>
-        <a class="govuk-link govuk-link--no-visited-state" href="emails/accepted">25. Application accepted email</a>
+        <a class="govuk-link govuk-link--no-visited-state" href="emails/accepted">Application accepted email</a>
       </li>
       <li>
-        <a class="govuk-link govuk-link--no-visited-state" href="emails/rejected">26. Application rejected</a>
+        <a class="govuk-link govuk-link--no-visited-state" href="emails/rejected">Application rejected</a>
       </li> 
     </ul>
     <hr class="govuk-!-margin-top-9">
   </div>
+
+
+
+	<div class="govuk-grid-column-full govuk-!-margin-top-6">
+
+		<h1 class="govuk-heading-l">Journey maps</h1>
+		<p class="govuk-body"><a href="https://app.mural.co/invitation/mural/companieshouse8589/1664197863250?sender=uc287fb0c65a61d3da2202202&key=fa9070c5-992e-4bac-b6b2-ef464166dc46" class="govuk-link">Mural board - flow</a><br>
+
+		<p class="govuk-body"><a href="https://app.mural.co/invitation/mural/companieshouse8589/1671546956523?sender=uc287fb0c65a61d3da2202202&key=43817343-0234-4060-b319-f3c6f1b2035e" class="govuk-link">Service map</a>
+		</p>
+
+	</div>
 
   <div class="govuk-grid-column-full">
     <h2 class="govuk-heading-l govuk-!-margin-top-6">
@@ -186,6 +228,7 @@
           </ul>
         </dd>
       </div>
+<!--
 
 
 
@@ -390,10 +433,7 @@
       </div>
     </dl>
 
-    {{ govukButton({
-      text: "Start now",
-      href: "../v1/1-start"
-    }) }}
+
 
     <h2 class="govuk-heading-l govuk-!-margin-top-8">
       Research
@@ -430,6 +470,6 @@
       </div>
     </dl>
   </div>
-</div>
+</div>-->
 
 {% endblock %}
