@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+
+Who is making the filing?
+ – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+<form action="" method="get">
+
+<!-- INTERACTION DESIGN NOTES - routing needs adding -->
+
+{{ govukRadios({
+  idPrefix: "whoIsFiling",
+  name: "whoIsFiling",
+  fieldset: {
+    legend: {
+      text: "Who is completing this update?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--xl"
+    }
+  },
+  items: [
+  {
+    value: "agent",
+    text: "Someone who works for the UK-regulated agent that carried out verification checks",
+    checked: checked("whoIsFiling", "agent")
+  },
+    {
+      value: "else",
+      text: "Someone else",
+      checked: checked("whoIsFiling", "else")
+    }
+
+  ]
+}) }}
+
+
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
