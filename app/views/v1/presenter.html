@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+
+Who can we contact about this update?
+ – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-3">Who can we contact about this update?</h1>
+    <div class="govuk-hint govuk-!-margin-bottom-5">We'll use this if we need more information about the update. </div>
+      
+
+<form action="" method="post">
+
+
+{{ govukInput({
+  label: {
+    text: "Full name"
+  },
+  classes: "govuk-!-width-full-width",
+  id: "contact-full-name",
+  name: "contact-full-name",
+  type: "contact-full-name",
+  value: contactName,
+  autocomplete: "contact-full-name",
+  spellcheck: false
+}) }}
+
+{{ govukInput({
+  label: {
+    text: "Email address"
+  },
+  classes: "govuk-!-width-full-width",
+  id: "contact-email",
+  name: "contact-email",
+  type: "contact-email",
+  value: contactEmail,
+  autocomplete: "contact-email",
+  spellcheck: false
+}) }}
+
+
+        {{ govukInsetText({
+          html: '<h2 class="govuk-heading-m">What information we’ll show on the public register</h2>
+                <p>We will not show any of the information you provide on this screen on the public Register of Overseas Entities.</p>'
+        }) }}
+
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
