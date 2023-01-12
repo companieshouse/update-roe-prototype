@@ -28,10 +28,16 @@ An email has been sent to the overseas entity
 </p></div>
 
 
+
+  {{ govukButton({
+    text: "Continue",
+    href: "/v1/authentication-code"
+  }) }}
           
  {{ govukDetails({
   summaryText: "Help for the authentication code",
-  text: "If you cannot get access to - expectations "
+  text: "This is a code issued to the overseas entity. 
+  It is used to authorise information filed online and acts like a PIN number or password."
 }) }}
 
     
