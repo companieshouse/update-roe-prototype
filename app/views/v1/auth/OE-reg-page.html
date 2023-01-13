@@ -7,7 +7,8 @@ Request an authentication code for your overseas entity
 {% endblock %}
 
 {% block beforeContent %}
-  {% include "includes/before-content.html" %}
+  {% include "includes/phase-banner.html" %}
+{% include "includes/back-link.html" %}
 {% endblock %}
 
 {% block content %}
@@ -39,9 +40,16 @@ Request an authentication code for your overseas entity
     text: "Request authentication code",
     href: "request"
   }) }}
+
 </div>
 
 <!--
+
+   {{ govukButton({
+    text: "File an update",
+    href: "update"
+  }) }}
+
 <div class"govuk-!-padding-top-9">
 <p class"govuk-body">The authentication code will be sent by email to the email address at the overseas entity.
 </p></div>-->
