@@ -37,11 +37,18 @@ Enter the authentication code
 }) }}
 
 
-{{ govukDetails({
+
+ {{ govukDetails({
   summaryText: "What is the authentication code and how do I get it?",
-  text: "This is a code issued to the overseas entity. 
-  It is used to authorise information filed online and acts like a PIN number or password."
+  html: '<p class"govuk-body">
+    The authentication code is a 6-digit alphanumeric code that we issue to each overseas entity. We ask for it every time someone files online for the overseas entity – it confirms to us that they are authorised to do so.</p>
+  <p>
+    If you need to request an authentication code, you will need to search for the overseas entity on the Companies House register, and then select Request an authentication code.</p>
+  <p>
+    [Need confirmation that this is the process]</p>'
 }) }}
+
+
 
 
   {{ govukButton({
