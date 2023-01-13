@@ -8,7 +8,7 @@ Request an authentication code for your overseas entity
 
 {% block beforeContent %}
   {% include "includes/phase-banner.html" %}
-{% include "includes/back-link.html" %}
+  {% include "includes/back-link.html" %}
 {% endblock %}
 
 {% block content %}
@@ -16,7 +16,7 @@ Request an authentication code for your overseas entity
   <div class="govuk-grid-column-full">
 
 
-    <form action="/form-handler" method="post" novalidate>
+    <form action="" method="post" novalidate>
 
 
 <div class="govuk-form-group search-bar-active" for="full">
@@ -38,7 +38,7 @@ Request an authentication code for your overseas entity
 
     {{ govukButton({
     text: "Request authentication code",
-    href: "request"
+    href: "/v1/sign-in"
   }) }}
 
 </div>

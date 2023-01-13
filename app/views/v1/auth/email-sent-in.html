@@ -2,7 +2,7 @@
 
 {% block pageTitle %}
 
-An email has been sent to the overseas entity
+We have sent an email to the overseas entity
  – {{ serviceName }} – GOV.UK
 {% endblock %}
 
@@ -18,7 +18,7 @@ An email has been sent to the overseas entity
 
     <form action="/authentication-code" method="post" novalidate>
 
-<h1 class="govuk-heading-xl">An email has been sent to the overseas entity</h1>
+<h1 class="govuk-heading-xl">We have sent an email to the overseas entity</h1>
 <div class="govuk-!-padding-bottom-1"></div>
 
 
@@ -35,9 +35,13 @@ An email has been sent to the overseas entity
   }) }}
           
  {{ govukDetails({
-  summaryText: "Help for the authentication code",
-  text: "This is a code issued to the overseas entity. 
-  It is used to authorise information filed online and acts like a PIN number or password."
+  summaryText: "I have not received the email",
+  html: '<p class"govuk-body">
+    First, check your junk or spam folder.</p>
+  <p>
+    If you have still not received the email after 30 minutes, ... ???</p>
+  <p>
+    [Need more info on what the process is if email isnt received]</p>'
 }) }}
 
     
