@@ -6,7 +6,7 @@
     <meta content="telephone=no" name="format-detection">
     <!-- need to add formatting for real phone numbers -->
     <title>
-      Get ready to update - Update an overseas entity - GOV.UK</title>
+      Your authentication code - Update an overseas entity - GOV.UK</title>
 
     <style>
       @media only screen and (min-device-width: 581px) {
@@ -48,7 +48,7 @@
         <td colspan="2" style="padding:10px">
 
           <h1 style="font-family: Helvetica, Arial, sans-serif; font-size: 36px; line-height: 1.2; font-weight: 700;margin 0; mso-line-height-rule:exactly;">
-            Get ready to update - update an overseas entity </h1>
+            Your authentication code to update an overseas entity </h1>
         </td>
       </tr>
 
@@ -72,9 +72,9 @@
       <td colspan="2" style="padding:10px">
         <p style="font-family: Helvetica, Arial, sans-serif; font-size: 19px; line-height: 1.315789474; margin: 15px 0 0 0;">
 
-<strong>Verification checks</strong><br>
-Lorem ipsum verification checks for overseas entity<br>
-Valid for three months.
+
+Your authentication code is<br>
+<strong>836503</strong>
         </p>
       </td>
     </tr>
