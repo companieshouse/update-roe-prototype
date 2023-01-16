@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+
+Enter the authentication code
+ – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+
+    <form action="/form-handler" method="post" novalidate>
+
+<h1 class="govuk-heading-xl">Enter the authentication code</h1>
+
+<p class"govuk-body">This is a 6 character code issued by us to each overseas entity. <br>
+You need the code to file online for ASHSIDE LIMITED.</p>
+
+{{ govukInput({
+  label: {
+    text: "Enter the authentication code",
+    classes: "govuk-visually-hidden",
+    isPageHeading: true
+  },
+  hint: {
+    text: "For example, 908390"
+  },
+  id: "auth-code",
+  name: "auth-code",
+  value: data["auth-code"] 
+}) }}
+
+
+ {{ govukDetails({
+  summaryText: "What is the authentication code and how do I get it?",
+  html: '<p class"govuk-body">
+    The authentication code is a 6-digit alphanumeric code that we issue to each overseas entity. We ask for it every time someone files online for the overseas entity – it confirms to us that they are authorised to do so.
+</p>
+  <p>
+If you do not have the authentication code, you should check with the last person to have filed online for this company. If they have requested one, they may be able to share it with you.
+    </p>
+  <p>
+    If the overseas entity has not yet been sent a code, or you need it to be resent, you can <a href="/v1/auth/request">request an authentication code</a>.
+    </p>'
+}) }}
+
+
+
+
+  {{ govukButton({
+    text: "Continue",
+    href: "filing-date"
+  }) }}
+          
+
+    
+    
+    </form>
+
+    </div>
+  </div>
+
+{% endblock %}
