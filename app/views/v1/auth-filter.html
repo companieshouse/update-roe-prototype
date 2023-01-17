@@ -2,7 +2,7 @@
 
 {% block pageTitle %}
 
-Do you have an authentication code?
+Do you have an authentication code for this overseas entity?
  – {{ serviceName }} – GOV.UK
 {% endblock %}
 
@@ -22,34 +22,40 @@ Do you have an authentication code?
   name: "soldLand",
   fieldset: {
     legend: {
-      text: "Do you have an authentication code?",
+      text: "Do you have an authentication code for this overseas entity?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--xl"
     }
   },
   hint: {
-  text: "This includes if they are waiting for the results of an application to protect their personal information."
+  text: "This is a 6-digit code issued by us to each overseas entity. You need the code to file online for this entity."
 },
   items: [
     {
       value: "yes",
-      text: "Yes – continue to update my filing"
+      text: "Yes"
     },
     {
       value: "no",
-      text: "No, I need a code"
+      text: "No, I need to request an authentication code"
     }
   ]
 }) }}
 
 {{ govukDetails({
   summaryText: "What is an authentication code?",
-  text: "Lorem ipsum."
+  html: '<p class="govuk-body">
+    The authentication code is a 6-digit alphanumeric code that we issue to each overseas entity. 
+    We ask for it every time someone files online for the overseas entity – it confirms to us that they are authorised to do so.
+    </p>
+  <p class="govuk-body">
+    If you do not have the authentication code, you should check with the last person to have filed online for this company. 
+  If they have requested one, they may be able to share it with you.
+  </p>'
 }) }}
 
       {{ govukButton({
-        text: "Continue",
-        href: "/v1/interrupt-card"
+        text: "Continue"
       }) }}
       </form>
 
