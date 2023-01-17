@@ -22,18 +22,29 @@
         {% if serviceName %} {{ serviceName }} {% endif %}
       </h1>
 
-      <p>
-        Use this service to update overseas entity information.
+      <p class="govuk-body-l">
+        Use this service to check and update information about an overseas entity and its beneficial owners. 
       </p>
+
+      <p class="govuk-body">All overseas entities must file an overseas entity update statement at least once each year to confirm that the information on the Companies House register is up to date.</p>
+
+      <h2 class="govuk-heading-m">Completing verification checks</h2>
+
+      <p class="govuk-body">A UK-regulated agent must complete verification checks on all beneficial owners and managing officers of the overseas entity. This must be done no more than 3 months before this statement is filed. The UK-regulated agent must have an <a href=#>agent assurance code</a> issued by Companies House.</p>
+
+      <h2 class="govuk-heading-m">Before you start</h2>
+
 
       <p class="govuk-body">You'll need:</p>
       <ul class="govuk-list govuk-list--bullet">
         <li>to sign in to or create a Companies House account</li>
-        <li>the authentication code</li>
-        <li>to tell us about any updates to the overseas entity and its beneficial owners or managing officers</li>
-        <li>to tell us about the UK-regulated agent that completed verification checks</li>
+        <li>the Overseas Entity ID number</li>
+        <li>the overseas entity's authentication code</li>
+        <li>the agent assurance code, if you're the UK-regulated agent that carried out the verification checks</li>
         <li>a credit or debit card to pay the £XX fee</li>
       </ul>
+
+      <p class="govuk-body">This service could take a while to complete. The service will time out if you do not use it for 60 minutes, and your answers will not be saved.</p>
 
 {{ govukButton({
   text: "Start now",
@@ -42,8 +53,8 @@
 }) }}
 
 {{ govukDetails({
-  summaryText: "Help with the authentication code",
-  text: "Lorem ipsum."
+  summaryText: "What is an authentication code?",
+  text: "The authentication code is a 6-digit code that we issue to each overseas entity. We ask for it every time someone files online for the overseas entity — it confirms to us that they are authorised to do so. //If you need to request an authentication code, you will need to search for the overseas entity on the Companies House register, and then select 'Request an authentication code'."
 }) }}
 
     </div>
