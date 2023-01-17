@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+
+Do you have an authentication code?
+ – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+<form class="form" method="post">
+
+{{ govukRadios({
+  classes: "govuk-radios",
+  idPrefix: "soldLand",
+  name: "soldLand",
+  fieldset: {
+    legend: {
+      text: "Do you have an authentication code?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--xl"
+    }
+  },
+  hint: {
+  text: "This includes if they are waiting for the results of an application to protect their personal information."
+},
+  items: [
+    {
+      value: "yes",
+      text: "Yes – continue to update my filing"
+    },
+    {
+      value: "no",
+      text: "No, I need a code"
+    }
+  ]
+}) }}
+
+{{ govukDetails({
+  summaryText: "What is an authentication code?",
+  text: "Lorem ipsum."
+}) }}
+
+      {{ govukButton({
+        text: "Continue",
+        href: "/v1/interrupt-card"
+      }) }}
+      </form>
+
+
+
+
+    </div>
+  </div>
+
+{% endblock %}
