@@ -2,7 +2,7 @@
 
 {% block pageTitle %}
 
-Enter the authentication code
+Company authentication
  – {{ serviceName }} – GOV.UK
 {% endblock %}
 
@@ -18,18 +18,18 @@ Enter the authentication code
 
     <form action="/form-handler" method="post" novalidate>
 
-<h1 class="govuk-heading-xl">Enter the authentication code</h1>
+<h1 class="govuk-heading-xl">Company authentication</h1>
 
-<p class"govuk-body">The authentication code is a 6 digit alphanumeric code issued by us to each overseas entity.</p>
+<p class"govuk-body">To file company information you will need an authentication code.</p>
+
+
+<p class"govuk-body">Authenticating for</p>
+  <p class="govuk-!-font-size-27 govuk-!-padding-bottom-5"><strong>ASHCROFT LIMITED (OE000063)</strong></p>
+
 
 {{ govukInput({
-  label: {
-    text: "Enter the authentication code",
-    classes: "govuk-visually-hidden",
-    isPageHeading: true
-  },
   hint: {
-    text: "For example, 908390"
+    html: '<p class"govuk-body><strong>Authentication code</strong></p>'
   },
   id: "auth-code",
   name: "auth-code",
@@ -38,6 +38,15 @@ Enter the authentication code
 
 
 
+
+  {{ govukButton({
+    text: "Authenticate",
+    href: "filing-date"
+  }) }}
+          
+
+    
+<!--
  {{ govukDetails({
   summaryText: "What is the authentication code and how do I get it?",
   html: '<p class"govuk-body">
@@ -46,18 +55,8 @@ Enter the authentication code
     If you need to request an authentication code, you will need to search for the overseas entity on the Companies House register, and then select Request an authentication code.</p>
   <p>
     [Need confirmation that this is the process]</p>'
-}) }}
+}) }}-->
 
-
-
-
-  {{ govukButton({
-    text: "Continue",
-    href: "filing-date"
-  }) }}
-          
-
-    
     
     </form>
 
