@@ -12,6 +12,13 @@ router.post('/2-sign-in', function(req, res) {
 router.post('/3-do-you-want-to-continue', function(req, res) {
     res.redirect('4-');
 })
+
+// auth-filter.html
+router.post('/auth-filter', function(req, res) {
+    res.redirect('authentication-code');
+})
+
+
 // Add your routes here - above the module.exports line
 module.exports = router
 

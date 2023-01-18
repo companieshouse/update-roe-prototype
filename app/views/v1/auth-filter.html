@@ -18,8 +18,8 @@ Do you have an authentication code for this overseas entity?
 
 {{ govukRadios({
   classes: "govuk-radios",
-  idPrefix: "soldLand",
-  name: "soldLand",
+  idPrefix: "codeFilter",
+  name: "codeFilter",
   fieldset: {
     legend: {
       text: "Do you have an authentication code for this overseas entity?",
@@ -55,8 +55,7 @@ Do you have an authentication code for this overseas entity?
 }) }}
 
       {{ govukButton({
-        text: "Continue",
-        href: "authentication-code"
+        text: "Continue"
       }) }}
       </form>
 
