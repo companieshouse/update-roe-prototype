@@ -12,7 +12,7 @@ module.exports = {
 // signOutFirstTrigger is specific to the sign-out page to ensure the error messaging can come into play
 "signOutFirstTrigger": [ "yes" ],
   // Overseas entity name
-"overseas-name": [ "DA INVESTMENTS LTD" ],
+"overseas-name": [ "ASHCROFT LIMITED" ],
 // Overseas number
 "overseas-id": [ "OE001485" ]
 }
