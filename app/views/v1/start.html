@@ -52,10 +52,16 @@
   isStartButton: true
 }) }}
 
-{{ govukDetails({
+
+ {{ govukDetails({
   summaryText: "What is an authentication code?",
-  text: "The authentication code is a 6-digit code that we issue to each overseas entity. We ask for it every time someone files online for the overseas entity — it confirms to us that they are authorised to do so. //If you need to request an authentication code, you will need to search for the overseas entity on the Companies House register, and then select 'Request an authentication code'."
+  html: '<p class"govuk-body">
+    The authentication code is a unique 6 character code that every overseas entity needs in order to file online. We will ask for it every time someone files online for the entity — it confirms to us that they are authorised to do so.</p>
+  <p>
+    If you need to request an authentication code, you will need to search for the overseas entity on the <a href="https://find-and-update.company-information.service.gov.uk/">Companies House register</a>, and then select "Request an authentication code".</p>
+  </p>'
 }) }}
+
 
     </div>
 

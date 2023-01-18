@@ -18,26 +18,26 @@ An email has been sent to the overseas entity
 
     <form action="/authentication-code" method="post" novalidate>
 
-<h1 class="govuk-heading-xl">An email has been sent to the overseas entity</h1>
+<h1 class="govuk-heading-xl">Authentication code requested</h1>
 <div class="govuk-!-padding-bottom-1"></div>
 
 
 <div class"govuk-!-padding-top-9">
-<p class"govuk-body">You should receive an email with the authentication code within 30 minutes.
+<p class"govuk-body">We have emailed the authentication code to the email address that we have on record for the overseas entity.
 
 </p></div>
-
 
           
  {{ govukDetails({
   summaryText: "I have not received the email",
   html: '<p class"govuk-body">
-    First, check your junk or spam folder.</p>
+    The email may take a few minutes to arrive. Its subject line is "Your Companies House authentication code".</p>
   <p>
-    If you have still not received the email after 30 minutes, ... ???</p>
-  <p>
-    [Need more info on what the process is if email isnt received]</p>'
+    Check your junk folder. If it still has not arrived after 30 minutes, you can <a href="/v1/auth/request">request the code again</a></p>
+
+  <p>If you need to change the email address that the code is sent to, <a href="#">contact Companies House</a>.</p>'
 }) }}
+
 
     
     
