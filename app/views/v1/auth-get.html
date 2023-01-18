@@ -18,28 +18,17 @@ Enter the authentication code
 
     <form method="post" novalidate>
 
-<h1 class="govuk-heading-xl">Get an the authentication code</h1>
+<h1 class="govuk-heading-xl">You need to request an authentication code</h1>
 
 
 <p class"govuk-body">
-    Filler text.... the authentication code is a 6-digit alphanumeric code that we issue to each overseas entity. We ask for it every time someone files online for the overseas entity – it confirms to us that they are authorised to do so.
+    You cannot file online for this overseas entity unless you have its authentication code. 
 </p>
   <p>
-If you do not have the authentication code, you should check with the last person to have filed online for this company. If they have requested one, they may be able to share it with you.
+    If you need to request an authentication code, search for the overseas entity on the <a href="https://find-and-update.company-information.service.gov.uk/">Companies House register (opens in a new tab)</a>, and then select "Request an authentication code". 
+
+  <p>Once you have received the code, return to this service to continue this filing. 
     </p>
-  <p>
-    If the overseas entity has not yet been sent a code, or you need it to be resent, you can <a href="https://find-and-update.company-information.service.gov.uk" target="_blank">lorem ipsum (opens in a new tab)</a>.
-    </p>
-
-
-
-
- {{ govukDetails({
-  summaryText: "Lorem ipsum",
-  html: '<p class"govuk-body">
-    Lorem ipsum </p>'
-}) }}
-
 
 
 
@@ -48,6 +37,13 @@ If you do not have the authentication code, you should check with the last perso
     href: "authentication-code"
   }) }}
           
+
+
+ {{ govukDetails({
+  summaryText: "What is an authentication code?",
+  html: '<p class"govuk-body">
+    The authentication code is a unique 6 character code that every overseas entity needs in order to file online. We will ask for it every time someone files online for the entity — it confirms to us that they are authorised to do so.</p>'
+}) }}
 
     
     
