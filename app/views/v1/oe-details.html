@@ -314,7 +314,7 @@
         {% endcall %}
         {% endset -%}
 
-
+<!--
 
 {% if errorSameAddress == true %}
         {{ govukRadios({
@@ -361,8 +361,7 @@
   items: [
     {
       value: "yes",
-      text: "Yes",
-      checked: true
+      text: "Yes"
     },
     {
       value: "no",
@@ -401,6 +400,8 @@ html: serviceAddressHtml
   ]
 }) }}
 {% else %}
+{% endif %}
+{% endif %}-->
 {{ govukRadios({
   classes: "govuk-radios",
   idPrefix: "same-address",
@@ -415,7 +416,8 @@ html: serviceAddressHtml
   items: [
     {
       value: "yes",
-      text: "Yes"
+      text: "Yes",
+      checked: true
     },
     {
       value: "no",
@@ -426,8 +428,7 @@ html: serviceAddressHtml
     }
   ]
 }) }}
-{% endif %}
-{% endif %}
+
 
 
 
@@ -447,6 +448,7 @@ html: serviceAddressHtml
                 }
         }) }}
         {% else %}
+          {% endif %}
         {{ govukInput({
           label: {
             text: "Which email address at the overseas entity should we send communications to?",
@@ -457,7 +459,7 @@ html: serviceAddressHtml
           name: "entity-email",
           value: entityEmail
         }) }}
-        {% endif %}
+      
         <details class="govuk-details" data-module="govuk-details">
           <summary class="govuk-details__summary">
             <span class="govuk-details__summary-text">
@@ -475,7 +477,7 @@ html: serviceAddressHtml
           </div>
         </details>
 
-
+<!--
 {% if errorLegalForm == true %}
         {{ govukInput({
           label: {
@@ -493,7 +495,7 @@ html: serviceAddressHtml
                   text: "Enter the legal form"
                 }
         }) }}
-        {% else %}
+        {% else %}-->
         {{ govukInput({
           label: {
             text: "What is its legal form?",
@@ -505,7 +507,7 @@ html: serviceAddressHtml
          },
           id: "entity-legal-form",
           name: "entity-legal-form",
-          value: legalForm
+          value: "Legal form"
         }) }}
         {% endif %}
 
@@ -522,7 +524,7 @@ html: serviceAddressHtml
          },
           id: "entity-governing-law",
           name: "entity-governing-law",
-          value: governingLaw
+          value: "Governing law"
         }) }}
 
 
@@ -546,7 +548,7 @@ html: serviceAddressHtml
 {{ govukInput({
   id: "entity-public-register-name",
   name: "entity-public-register-name",
-  value: publicName,
+  value: "publicName",
   hint: {
    text: "Include the full name. For example, Jersey Financial Services Commission."
  },
@@ -576,7 +578,7 @@ html: serviceAddressHtml
   {{ govukInput({
     id: "entity-public-register-jurisdiction",
     name: "entity-public-register-jurisdiction",
-      value: publicJurisdiction,
+      value: "publicJurisdiction",
     hint: {
     text: "For example, Jersey."
   },
@@ -603,7 +605,7 @@ html: serviceAddressHtml
 {{ govukInput({
   id: "entity-public-register-number",
   name: "entity-public-register-number",
-  value: publicNumber,
+  value: "17530984",
   classes: "govuk-!-width-one-half",
   label: {
     text: "Entity’s registration number"
@@ -710,6 +712,7 @@ html: serviceAddressHtml
     {
       value: "yes",
       text: "Yes",
+      checked: true,
       conditional: {
         html: entityPublicRegisterHtml
       }
@@ -724,7 +727,7 @@ html: serviceAddressHtml
 {% endif %}
 
 
-<!-- NOTE FOR CONTENT - I've added here 'except the email address'-->
+<!-- NOTE FOR CONTENT - here I've added 'except the email address'-->
 
 {{ govukInsetText({
   html: '
@@ -736,7 +739,8 @@ html: serviceAddressHtml
 
 
         {{ govukButton({
-          text: "Continue"
+          text: "Continue",
+          href: "bo-review"
         }) }}
 
       </form>
