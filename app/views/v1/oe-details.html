@@ -23,7 +23,7 @@
           }) }}
       {% endif %}
 
-  <span class="govuk-caption-xl">{{ data['overseas-name'] }} - {{ data['overseas-id'] }}</span>
+  <span class="govuk-caption-l">{{ data['overseas-name'] }} - {{ data['overseas-id'] }}</span>
       <h1 class="govuk-heading-xl">Overseas entity details</h1>
 
       <form class="form" method="post">
@@ -36,7 +36,7 @@
 #}
 
 
-        {% if errorName == true %}
+
         {{ govukInput({
           label: {
             text: "What is the name of the overseas entity?",
@@ -45,45 +45,10 @@
           },
           id: "entity-name",
           name: "entity-name",
-          value: entityName,
-          errorMessage: {
-                  text: "Enter the name of the overseas entity"
-                }
+          value: "Ashcroft Limited"
         }) }}
-        {% else %}
-        {{ govukInput({
-          label: {
-            text: "What is the name of the overseas entity?",
-            classes: "govuk-label--m",
-            isPageHeading: false
-          },
-          id: "entity-name",
-          name: "entity-name",
-          value: entityName
-        }) }}
-        {% endif %}
 
 
-<!--- COUNTRY-FORMED - make sure dropdown list appears - use HTML from Reg?
-
-{% if errorCountry == true %}
-        <div class="govuk-form-group">
-           <label for="autocomplete-default" class="govuk-label--m">Which country was it formed in?</label>
-          <p class="govuk-hint">Start typing a country, then choose from the list</p>
-          <p id="country-error" class="govuk-error-message">
-  <span class="govuk-visually-hidden">Error:</span> Enter the country the entity was formed in
-</p>
-          <div id="country" name="country" class="autocomplete-wrapper" value="countryFormed"></div>
-        </div>
-{% else %}
-        <div class="govuk-form-group">
-           <label for="autocomplete-default" class="govuk-label--m">Which country was it formed in?</label>
-          <p class="govuk-hint">Start typing a country, then choose from the list</p>
-          <div id="country" name="country" class="autocomplete-wrapper"></div>
-        </div>
-{% endif %}
-
-Country formed nunjucks below -->
 
         {{ govukInput({
           label: {
@@ -96,7 +61,7 @@ Country formed nunjucks below -->
            },
           id: "country-formed",
           name: "country-formed",
-          value: countryFormed
+          value: "France"
         }) }}
 
 
@@ -117,7 +82,8 @@ Country formed nunjucks below -->
              text: "For example, 'Saron House', '116' or 'Unit 37a'"
            },
             id: "principal-address-property-name-number",
-            name: "principal-address-property-name-number"
+            name: "principal-address-property-name-number",
+      value: "Saron House"
           }) }}
 
 {% if errorPrincipal == true %}
@@ -143,7 +109,7 @@ Country formed nunjucks below -->
             id: "principal-address-line-1",
             name: "principal-address-line-1",
             autocomplete: "address-line1",
-            value: principalAddressLine1
+            value: "Tortola Lane"
           }) }}
           {% endif %}
 
@@ -178,7 +144,7 @@ Country formed nunjucks below -->
             classes: "govuk-!-width-two-thirds",
             id: "principal-address-city-town",
             name: "principal-address-city-town",
-            value: principalCity
+            value: "Paris"
           }) }}
           {% endif %}
 
@@ -188,25 +154,31 @@ Country formed nunjucks below -->
             },
             classes: "govuk-!-width-two-thirds",
             id: "principal-address-state",
-            name: "principal-address-state"
+            name: "principal-address-state",
+            value: "Paris"
           }) }}
 
 
-          <div class="govuk-form-group">
-             <label for="autocomplete-default" class="govuk-label">Country</label>
-            <p class="govuk-hint">Start typing a country, then choose from the list</p>
-            <div id="country-2" class="autocomplete-wrapper"></div>
-          </div>
 
-        <!--  {{ govukInput({
+
+
+    {{ govukInput({
             label: {
               text: "Country"
             },
-            classes: "govuk-!-width-two-thirds",
+          hint: {
+           text: "Start typing a country, then choose from the list"
+         },
+            classes: "govuk-!-width-full-width",
             id: "principal-address-country",
             name: "principal-address-country",
-            autocomplete: "country-name"
-          }) }}-->
+            autocomplete: "country-name",
+            value: "France"
+          }) }}
+
+
+
+
 
           {{ govukInput({
             label: {
@@ -215,7 +187,8 @@ Country formed nunjucks below -->
             classes: "govuk-input--width-10",
             id: "principal-address-postcode",
             name: "principal-address-postcode",
-            autocomplete: "postal-code"
+            autocomplete: "postal-code",
+            value: "ZZ z"
           }) }}
 
         {% endcall %}
@@ -264,7 +237,7 @@ Country formed nunjucks below -->
           id: "service-address-line-1",
           name: "service-address-line-1",
           autocomplete: "address-line1",
-          value: serviceAddressLine1
+          value: "serviceAddressLine1"
         }) }}
         {% endif %}
 
@@ -299,7 +272,7 @@ Country formed nunjucks below -->
           classes: "govuk-!-width-two-thirds",
           id: "service-address-city-town",
           name: "service-address-city-town",
-          value: serviceCity
+          value: "serviceCity"
         }) }}
         {% endif %}
 
@@ -312,11 +285,20 @@ Country formed nunjucks below -->
           name: "service-address-state"
         }) }}
 
-        <div class="govuk-form-group">
-           <label for="autocomplete-default" class="govuk-label">Country</label>
-          <p class="govuk-hint">Start typing a country, then choose from the list</p>
-          <div id="country-3" class="autocomplete-wrapper"></div>
-        </div>
+    {{ govukInput({
+            label: {
+              text: "Country"
+            },
+          hint: {
+           text: "Start typing a country, then choose from the list"
+         },
+            classes: "govuk-!-width-full-width",
+            id: "principal-address-country",
+            name: "principal-address-country",
+            autocomplete: "country-name",
+            value: "France"
+          }) }}
+
 
         {{ govukInput({
           label: {
@@ -333,26 +315,7 @@ Country formed nunjucks below -->
         {% endset -%}
 
 
-{% if errorCountry == true %}
-        <div class="govuk-form-group">
-           <label for="autocomplete-default" class="govuk-label--m">Which country was it formed in?</label>
-          <p class="govuk-hint">Start typing a country, then choose from the list</p>
-          <p id="country-error" class="govuk-error-message">
-  <span class="govuk-visually-hidden">Error:</span> Enter the country the entity was formed in
-</p>
-          <div id="country" name="country" class="autocomplete-wrapper" value="countryFormed"></div>
-        </div>
-{% else %}
-        <div class="govuk-form-group">
-           <label for="autocomplete-default" class="govuk-label--m">Which country was it formed in?</label>
-          <p class="govuk-hint">Start typing a country, then choose from the list</p>
-          <div id="country" name="country" class="autocomplete-wrapper"></div>
-        </div>
-{% endif %}
 
-
-
-{#
 {% if errorSameAddress == true %}
         {{ govukRadios({
           classes: "govuk-radios",
@@ -465,7 +428,9 @@ html: serviceAddressHtml
 }) }}
 {% endif %}
 {% endif %}
-#}
+
+
+
 
 {% if errorEmail == true %}
         {{ govukInput({
@@ -510,7 +475,7 @@ html: serviceAddressHtml
           </div>
         </details>
 
-{#
+
 {% if errorLegalForm == true %}
         {{ govukInput({
           label: {
@@ -543,26 +508,9 @@ html: serviceAddressHtml
           value: legalForm
         }) }}
         {% endif %}
-#}
 
-{% if errorGoverningLaw == true %}
-        {{ govukInput({
-          label: {
-            text: "What is the governing law?",
-            classes: "govuk-label--m",
-            isPageHeading: false
-          },
-          hint: {
-           text: "This is the law that the entity operates under"
-         },
-          id: "entity-governing-law",
-          name: "entity-governing-law",
-          value: governingLaw,
-          errorMessage: {
-                  text: "Enter the governing law"
-                }
-        }) }}
-        {% else %}
+
+
         {{ govukInput({
           label: {
             text: "What is the governing law?",
@@ -576,9 +524,6 @@ html: serviceAddressHtml
           name: "entity-governing-law",
           value: governingLaw
         }) }}
-        {% endif %}
-
-
 
 
 {% set entityPublicRegisterHtml %}
@@ -778,10 +723,13 @@ html: serviceAddressHtml
 {% endif %}
 {% endif %}
 
+
+<!-- NOTE FOR CONTENT - I've added here 'except the email address'-->
+
 {{ govukInsetText({
   html: '
             <h2 class="govuk-heading-m">Information shown on the public register</h2>
-            <p>All of the information provided in this section will be shown on the public Register of Overseas Entities.</p>
+            <p>All of the information provided in this section will be shown on the public Register of Overseas Entities except the email address.</p>
         '
 }) }}
 
