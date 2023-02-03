@@ -1,5 +1,5 @@
 module.exports = function (router) {
-  router.get( '/v1/oe-details', function ( req, res ) {
+  router.get( '/register/entity', function ( req, res ) {
     var entityName = req.session.data['entity-name']
     var countryFormed = req.session.data['country']
     var principalAddressLine1 = req.session.data['principal-address-line-1']
@@ -15,7 +15,7 @@ module.exports = function (router) {
     var publicJurisdiction = req.session.data['entity-public-register-jurisdiction']
     var publicNumber = req.session.data['entity-public-register-number']
 
-  	res.render( 'v1/oe-details', {
+  	res.render( 'register/entity', {
       entityName: entityName,
       countryFormed: countryFormed,
       principalAddressLine1: principalAddressLine1,
@@ -33,7 +33,7 @@ module.exports = function (router) {
     });
   })
 
-  router.post( '/v1/oe-details', function ( req, res ) {
+  router.post( '/register/entity', function ( req, res ) {
   	var entityName = req.session.data['entity-name']
     var countryFormed = req.session.data['country']
     var principalAddressLine1 = req.session.data['principal-address-line-1']
@@ -163,7 +163,7 @@ module.exports = function (router) {
       })
     }
   	if (nameHasError || countryHasError || principalAddressHasError || cityHasError || serivceAddressHasError || emailHasError || legalFormHasError || governingLawHasError || publicRegisterHasError || registerNameHasError || registerJurisdictionHasError || registerNumberHasError) {
-  		res.render('v1/oe-details', {
+  		res.render('register/entity', {
   			errorName: nameHasError,
         errorCountry: countryHasError,
         errorPrincipal: principalAddressHasError,

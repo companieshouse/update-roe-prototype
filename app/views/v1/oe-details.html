@@ -16,12 +16,19 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
+
+
       {% if errorList.length > 0 %}
         {{ govukErrorSummary({
             titleText: "There is a problem",
             errorList: errorList
           }) }}
       {% endif %}
+
+
+
+
+
 
   <span class="govuk-caption-l">{{ data['overseas-name'] }} - {{ data['overseas-id'] }}</span>
       <h1 class="govuk-heading-xl">Overseas entity details</h1>
@@ -463,6 +470,11 @@ html: serviceAddressHtml
           name: "entity-email",
           value: entityEmail
         }) }}
+
+
+
+
+
       
         <details class="govuk-details" data-module="govuk-details">
           <summary class="govuk-details__summary">
