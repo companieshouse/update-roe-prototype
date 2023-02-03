@@ -45,6 +45,7 @@
           },
           id: "entity-name",
           name: "entity-name",
+          value: entityName,
           value: "Ashcroft Limited"
         }) }}
 
@@ -61,7 +62,7 @@
            },
           id: "country-formed",
           name: "country-formed",
-          value: "France"
+          value: "British Virgin Islands"
         }) }}
 
 
@@ -83,7 +84,8 @@
            },
             id: "principal-address-property-name-number",
             name: "principal-address-property-name-number",
-      value: "Saron House"
+      value: propertyName,
+            value: "Maynard House 3rd Floor"
           }) }}
 
 {% if errorPrincipal == true %}
@@ -109,7 +111,8 @@
             id: "principal-address-line-1",
             name: "principal-address-line-1",
             autocomplete: "address-line1",
-            value: "Tortola Lane"
+            value: principalAddressLine1,
+            value: "PO Box 2486"
           }) }}
           {% endif %}
 
@@ -144,7 +147,8 @@
             classes: "govuk-!-width-two-thirds",
             id: "principal-address-city-town",
             name: "principal-address-city-town",
-            value: "Paris"
+            value: principalCity,
+            value: "Tortola"
           }) }}
           {% endif %}
 
@@ -155,7 +159,7 @@
             classes: "govuk-!-width-two-thirds",
             id: "principal-address-state",
             name: "principal-address-state",
-            value: "Paris"
+            value: "Tortola"
           }) }}
 
 
@@ -173,7 +177,8 @@
             id: "principal-address-country",
             name: "principal-address-country",
             autocomplete: "country-name",
-            value: "France"
+            value: countryName,
+            value: "British Virgin Islands"
           }) }}
 
 
@@ -187,8 +192,7 @@
             classes: "govuk-input--width-10",
             id: "principal-address-postcode",
             name: "principal-address-postcode",
-            autocomplete: "postal-code",
-            value: "ZZ z"
+            autocomplete: "postal-code"
           }) }}
 
         {% endcall %}
@@ -237,7 +241,7 @@
           id: "service-address-line-1",
           name: "service-address-line-1",
           autocomplete: "address-line1",
-          value: "serviceAddressLine1"
+           value: serviceAddressLine1
         }) }}
         {% endif %}
 
@@ -272,7 +276,7 @@
           classes: "govuk-!-width-two-thirds",
           id: "service-address-city-town",
           name: "service-address-city-town",
-          value: "serviceCity"
+          value: serviceCity
         }) }}
         {% endif %}
 
@@ -507,7 +511,8 @@ html: serviceAddressHtml
          },
           id: "entity-legal-form",
           name: "entity-legal-form",
-          value: "Legal form"
+          value: legalForm,
+          value: "Business Company"
         }) }}
         {% endif %}
 
@@ -524,7 +529,8 @@ html: serviceAddressHtml
          },
           id: "entity-governing-law",
           name: "entity-governing-law",
-          value: "Governing law"
+          value: governingLaw,
+          value: "BVI"
         }) }}
 
 
@@ -548,7 +554,8 @@ html: serviceAddressHtml
 {{ govukInput({
   id: "entity-public-register-name",
   name: "entity-public-register-name",
-  value: "publicName",
+  value: publicName,
+  value: "Registry Of Corporate Affairs - BVI",
   hint: {
    text: "Include the full name. For example, Jersey Financial Services Commission."
  },
@@ -578,7 +585,8 @@ html: serviceAddressHtml
   {{ govukInput({
     id: "entity-public-register-jurisdiction",
     name: "entity-public-register-jurisdiction",
-      value: "publicJurisdiction",
+    value: publicJurisdiction,
+    value: "British Virgin Islands",
     hint: {
     text: "For example, Jersey."
   },
@@ -740,7 +748,7 @@ html: serviceAddressHtml
 
         {{ govukButton({
           text: "Continue",
-          href: "bo-review"
+          href: "bo-mo-review"
         }) }}
 
       </form>
