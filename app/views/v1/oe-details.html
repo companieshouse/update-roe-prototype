@@ -31,7 +31,7 @@
 
 
   <span class="govuk-caption-l">{{ data['overseas-name'] }} - {{ data['overseas-id'] }}</span>
-      <h1 class="govuk-heading-xl">Overseas entity details</h1>
+      <h1 class="govuk-heading-xl">Review overseas entity information</h1>
 
       <form class="form" method="post">
 
@@ -42,7 +42,7 @@
         }) }}
 #}
 
-<p class"govuk-body">If you need to update any of the overseas entity information, you can change the answers on this screen.</p>
+<p class"govuk-body">If you need to update any overseas entity information, you can change the answers on this screen.</p>
 
 <div class="govuk-inset-text">
   You'll need to enter an email address for the overseas entity.
@@ -471,6 +471,9 @@ html: serviceAddressHtml
             classes: "govuk-label--m",
             isPageHeading: false
           },
+            hint: {
+           text: "We'll use this to send important information. If you request an authentication code in the future, we'll send it to this email address."
+         },
           id: "entity-email",
           name: "entity-email",
           value: entityEmail
@@ -479,7 +482,7 @@ html: serviceAddressHtml
 
 
 
-
+<!--
       
         <details class="govuk-details" data-module="govuk-details">
           <summary class="govuk-details__summary">
@@ -496,7 +499,7 @@ html: serviceAddressHtml
   </ul>
   <p>We’ll also send the Overseas Entity ID to the email you used to sign in.</p>
           </div>
-        </details>
+        </details>-->
 
 <!--
 {% if errorLegalForm == true %}
@@ -529,7 +532,7 @@ html: serviceAddressHtml
           id: "entity-legal-form",
           name: "entity-legal-form",
           value: legalForm,
-          value: "Business Company"
+          value: "Limited company"
         }) }}
         {% endif %}
 
@@ -558,7 +561,7 @@ html: serviceAddressHtml
   name: "entity-public-register-name",
     value: publicName,
   hint: {
-   text: "Include the full name. For example, Jersey Financial Services Commission."
+   text: "Include the full name. For example, Jersey Financial Services Commission"
  },
   label: {
     text: "Name of register"
@@ -572,9 +575,9 @@ html: serviceAddressHtml
   id: "entity-public-register-name",
   name: "entity-public-register-name",
   value: publicName,
-  value: "Registry Of Corporate Affairs - BVI",
+  value: "Registry of Corporate Affairs - BVI",
   hint: {
-   text: "Include the full name. For example, Jersey Financial Services Commission."
+   text: "Include the full name. For example, Jersey Financial Services Commission"
  },
   label: {
     text: "Name of register"
@@ -589,7 +592,7 @@ html: serviceAddressHtml
     name: "entity-public-register-jurisdiction",
       value: publicJurisdiction,
     hint: {
-    text: "For example, Jersey."
+    text: "For example, Jersey"
   },
     label: {
       text: "Jurisdiction"
@@ -605,7 +608,7 @@ html: serviceAddressHtml
     value: publicJurisdiction,
     value: "British Virgin Islands",
     hint: {
-    text: "For example, Jersey."
+    text: "For example, Jersey"
   },
     label: {
       text: "Jurisdiction"
@@ -756,8 +759,9 @@ html: serviceAddressHtml
 
 {{ govukInsetText({
   html: '
-            <h2 class="govuk-heading-m">Information shown on the public register</h2>
-            <p>All of the information provided in this section will be shown on the public Register of Overseas Entities except the email address.</p>
+            <h2 class="govuk-heading-m">What information we’ll show on the public register</h2>
+            <p>We will not show the email address.</p>
+            <p>We will show all the other information on this screen on the public Register of Overseas Entities.</p>
         '
 }) }}
 
