@@ -17,7 +17,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form action="/beneficial-owner" method="post">
+      <form action="/v2/beneficial-owner/bo-individual" method="post">
 
   <span class="govuk-caption-l">{{ data['overseas-name'] }} - {{ data['overseas-id'] }}</span>
       <h1 class="govuk-heading-xl">
@@ -32,8 +32,10 @@
       <p class="govuk-body">We'll ask you to:</p>
       <ul class="govuk-list govuk-list--bullet">
         <li>check the information is correct and update it if needed</li>
-        <li>enter the overseas entity's email address</li>
+        <li>enter the date of birth and home address for individual beneficial owners and managing officers</li>
       </ul>
+
+
 
 
 {{ govukButton({
