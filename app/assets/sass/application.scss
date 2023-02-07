@@ -66,3 +66,64 @@ ul#navigation {
     background:#dee0e2;
     padding: 0.5em;
   }
+
+// Your filings page styling
+
+  // Links under header
+.js-toggle-nav {
+  text-align: right;
+  font-size: 16px;
+  font-family: 'proxima_nova', Arial, sans-serif;
+  font-weight: 400;
+  text-transform: none;
+  z-index: 60;
+  clear: none;
+  background: transparent;
+  border-bottom: 1px solid #bfc1c3;
+  vertical-align: middle;
+  padding-bottom: 20px;
+}
+
+.js-signout {
+  text-align: right;
+  font-size: 16px;
+  font-family: 'proxima_nova', Arial, sans-serif;
+  font-weight: 400;
+  text-transform: none;
+  z-index: 60;
+  clear: none;
+  background: transparent;
+  border-bottom: 1px solid #bfc1c3;
+  vertical-align: middle;
+  padding-bottom: 20px;
+}
+
+.user {
+  display: inline;
+  font-size: 16px;
+}
+
+.content {
+  display: inline;
+}
+
+.content-email {
+  display: inline;
+  padding-right: 20px;
+}
+
+.nav-spacing {
+  padding-left: 20px;
+}
+
+.text-description {
+  font-size: 16px;
+}
+
+// Card background - your filings
+.one-filing {
+  margin-bottom: 2em;
+  background-color: #f8f8f8;
+  padding: 1em;
+  clear: both;
+}
