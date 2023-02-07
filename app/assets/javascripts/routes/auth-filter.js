@@ -1,17 +1,19 @@
-module.exports = function (router) {
 
+    // AUTH FILTER: Run this code when a form is submitted to 'auth-filter'
+    router.post('/v1/auth-filter', function (req, res) {
 
-
-    
-    // post method for routing, doesn't make use of query strings rather we're identifying by discreet variable as set by 'name' in the component
-    router.post('/v1/auth-filter', function(req, res) {
-        if (req.session.data['codeFilter'] == 'all') {
-            console.log('auth-filter.js ALL'); // print to console to show which radio has been chosen
-            res.redirect('/v1/authentication-code');
+        // Make a variable and give it the value from 'code-filter'
+        var codeFilter = req.session.data['code-filter']
+      
+        // Check whether the variable matches a condition
+        if (codeFilter == "yes"){
+          // Send user to next page
+          res.redirect('/v1/authentication-code')
         } else {
-            console.log('auth-filter.js NO or SOME (ELSE)'); // print to console to show which radio has been chosen
-            res.render('v1/auth-get');
-            }
-        } );
-    }
-    
+          // Send user to ineligible page
+          res.redirect('/v1/auth-get')
+        }
+      
+      })
+
+

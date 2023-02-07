@@ -14,12 +14,13 @@ Do any beneficial owners or managing officers have their personal information pr
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-<form class="form" method="post">
+ 
+<form action="/v2/interrupt-card" method="post">
 
 {{ govukRadios({
   classes: "govuk-radios",
-  idPrefix: "soldLand",
-  name: "soldLand",
+  idPrefix: "secureRegister",
+  name: "secure-register",
   fieldset: {
     legend: {
       text: "Do any beneficial owners or managing officers have their personal information protected at Companies House?",
@@ -48,8 +49,7 @@ Do any beneficial owners or managing officers have their personal information pr
 }) }}
 
       {{ govukButton({
-        text: "Continue",
-        href: "/v2/interrupt-card"
+        text: "Continue"
       }) }}
       </form>
 
