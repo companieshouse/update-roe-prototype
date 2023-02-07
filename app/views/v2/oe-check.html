@@ -1,0 +1,189 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check the overseas entity details – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+{% block content %}
+
+<!--  INTERACTION DESIGN NOTES 
+Need to add routing and /form-handler to interact with task list tags.
+-->
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-xl">{{ data['overseas-name'] }} - {{ data['overseas-id'] }}</span>
+      <h1 class="govuk-heading-xl">
+        Check the overseas entity details
+      </h1>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name of overseas entity
+          </dt>
+          <dd class="govuk-summary-list__value">
+            ASHCROFT LIMITED
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Country it was formed in
+          </dt>
+          <dd class="govuk-summary-list__value">
+            VIRGIN ISLANDS, BRITISH
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Principal or registered office address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Mandalt House 4th Floor, PO Box 347, Johnson's Ghut, Tortola, Virgin Islands, British
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Correspondence address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            The correspondence address is the same as the entity's principal or registered office address
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Email address at the overseas entity we should send communication to
+          </dt>
+          <dd class="govuk-summary-list__value">
+            email@example.com
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Legal form
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Limited company
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Governing law
+          </dt>
+          <dd class="govuk-summary-list__value">
+            BVI Business Companies Act
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> date of birth</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Overseas public register
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Registry of Corporate Affairs – BVI
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> contact details</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Jurisdiction
+          </dt>
+          <dd class="govuk-summary-list__value">
+            British Virgin Islands
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> contact details</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Registration number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            1849717
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> contact details</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+
+<form action="/form-handler" method="post" novalidate>
+  {{ govukRadios({
+    name: "have-you-completed-this-section",
+    fieldset: {
+      legend: {
+        text: "Have you completed this section?",
+        isPageHeading: false,
+        classes: "govuk-fieldset__legend--l"
+      }
+    },
+    items: [
+      {
+        value: "yes",
+        text: "Yes, I’ve completed this section"
+      },
+      {
+        value: "no",
+        text: "No, I’ll come back to it later"
+      }
+    ]
+  }) }}
+  {{ govukButton({
+    text: "Continue"
+  }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+
+{% endblock %}

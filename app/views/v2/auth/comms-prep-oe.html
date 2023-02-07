@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Prepare for an overseas entity update - guidance for overseas entities
+ – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+<!-- THIS PAGE IS FOR THE IN SERVICE FLOW -->
+
+    <form action="/authentication-code" method="post" novalidate>
+
+<h1 class="govuk-heading-xl">Prepare for an overseas entity update - guidance for overseas entities</h1>
+<div class="govuk-!-padding-bottom-1"></div>
+
+
+<div class"govuk-!-padding-top-9">
+<p class"govuk-body">
+The update service will be launched XX 2023. You will need to tell us at least annually about changes to an overseas entity.</p>
+
+<h2 class="govuk-heading-m govuk-!-margin-bottom-2">
+Get your verification checks done</h2>
+<p class"govuk-body">
+  Lorem ipsum <a href="#">verification checks for overseas entity</a></p>
+
+
+<p class"govuk-body">
+<a href="#">Find a UK regulated agent</a></p>
+
+
+<h2 class="govuk-heading-m govuk-!-margin-bottom-2">
+Request an the authentication code</h2>
+<p class"govuk-body">
+Lorem ipsum <a href="#">request an authentication code</a></p>
+<p class"govuk-body">
+This is sent to the overseas entity email address and is only given to the person completing the filing - do not share with anyone else. 
+You can request it through to overseas entity register page.</p>
+
+<h2 class="govuk-heading-m govuk-!-margin-bottom-2">
+Gather your information</h2>
+<p class"govuk-body">
+Lorem ipsum <a href="#">full guidance page</a></p>
+</p></div>
+
+
+          
+ {{ govukDetails({
+  summaryText: "I have not received the email",
+  html: '<p class"govuk-body">
+    First, check your junk or spam folder.</p>
+  <p>
+    If you have still not received the email after 30 minutes, ... ???</p>
+  <p>
+    [Need more info on what the process is if email isnt received]</p>'
+}) }}
+
+    
+    
+    </form>
+
+    </div>
+  </div>
+
+{% endblock %}

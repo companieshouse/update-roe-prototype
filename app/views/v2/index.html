@@ -1,0 +1,509 @@
+{% extends "../layouts/v1-layout.html" %}
+
+{% block pageTitle %}
+  {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+   {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+       {{ govukTag({
+  classes: "govuk-tag--blue govuk-!-margin-bottom-4",
+  text: "version 1"
+  }) }}
+
+  <div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      File an overseas entity update statement
+    </h1>
+
+    {{ govukButton({
+      text: "Start now",
+      href: "../v1/start"
+    }) }}
+  </div>
+
+
+
+
+  {# TEMP LIST #}
+  <div class="govuk-grid-column-full">
+
+<h2 class="govuk-heading-m">Authentication code screens</h2>
+      <ul class="govuk-list govuk-list--bullet">      
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="auth/email-prep">EMAIL: Reminder to update and preparation</a>
+      </li>
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="auth/oe-reg-page">Overseas entity register page</a>
+      </li>
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="auth/request">Request an authentication code</a>
+      </li>
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="auth/sent">Authentication code requested</a>
+        </li>
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="auth/email-auth-code">EMAIL: Authentication code email</a>
+      </li>
+       <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="auth/comms-prep-agent">BLOG IDEA: Update preparation - guidance for agents</a>
+      </li>
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="auth/comms-prep-oe">BLOG IDEA: Update preparation - guidance for overseas entities</a>
+      </li>
+
+  </ul>
+
+    
+      <h2 class="govuk-heading-m">Initial screens</h2>
+      <ul class="govuk-list govuk-list--bullet">
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="start">Start</a>
+      </li>
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="sign-in">Sign in</a>
+      </li>
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="saved-filing">Do you want to continue with a saved filing?</a>
+      </li>
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="#">TBA Your filings</a>
+      </li>
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="protected-filter">Protected information filter</a>
+      </li>
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="use-paper-service">Use paper service</a>
+      </li>
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="interrupt-card">Interrupt card</a>
+      </li>
+  </ul>
+
+
+      <h2 class="govuk-heading-m">Initial user input screens</h2>
+      <ul class="govuk-list govuk-list--bullet">
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="oe-id">What is the Overseas Entity ID?</a>
+      </li>
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="oe-confirm">Confirm this is the correct overseas entity</a>
+      </li>
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="authentication-code">Enter the authentication code</a>
+      </li>
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="filing-date">What is the date of the filing?</a>
+      </li>
+            <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="auth-filter">ARCHIVED Do you have an authentication code for this overseas entity?</a>
+      </li>
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="auth-get">ARCHIVED Get an the authentication code</a>
+      </li>
+            <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="authentication-code-in">ARCHIVED Enter the authentication code (request in service)</a>
+      </li>
+      </ul>
+
+
+      <h2 class="govuk-heading-m">Task list</h2>
+      <ul class="govuk-list govuk-list--bullet">
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="task-list">Task list</a>
+      </li>
+            <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="task-test">Task list - new version from GDS to test (WIP)</a>
+      </li>
+      </ul>
+
+
+      <h2 class="govuk-heading-m">TBA Contact and filing details</h2>
+      <ul class="govuk-list govuk-list--bullet">
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="presenter">TBA Contact details</a>
+      </li>
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="#">TBA Verification - who is completing the update?</a>
+      </li>
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="#">TBA Verification details - agent</a>
+      </li>
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="#">TBA Verification details - overseas entity</a>
+      </li>
+      </ul>
+
+
+      <h2 class="govuk-heading-m">Overseas entity</h2>
+      <ul class="govuk-list govuk-list--bullet">
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="oe-review">You're about to review overseas entity information</a>
+      </li>
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="oe-details">Overseas entity details</a>
+      </li>
+      </ul>
+
+<br>
+      <h2 class="govuk-heading-m">Beneficial owners</h2>
+      <h2 class="govuk-heading-m">Managing officers</h2>
+      <h2 class="govuk-heading-m">Trusts</h2>
+
+<br>
+
+      <h2 class="govuk-heading-m">Submit and pay</h2>
+      <ul class="govuk-list govuk-list--bullet">
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="submit-pay/check-your-answers">Check your answers</a>
+      </li>
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="submit-pay/confirmation">Confirmation</a>
+      </li>
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="submit-pay/how-to-pay">How to pay</a>
+      </li>
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="#">TBA Links to GOV.UK pay</a>
+      </li>
+      </ul>
+
+
+      <h2 class="govuk-heading-m">Emails</h2>
+      <ul class="govuk-list govuk-list--bullet">
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="emails/received-oe">Application received OE</a>
+      </li>
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="emails/received">Application received</a>
+      </li>
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="emails/accepted">Application accepted email</a>
+      </li>
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="emails/rejected">Application rejected</a>
+      </li> 
+    </ul>
+    <hr class="govuk-!-margin-top-9">
+  </div>
+
+
+
+	<div class="govuk-grid-column-full govuk-!-margin-top-6">
+
+		<h1 class="govuk-heading-l">Journey maps</h1>
+		<p class="govuk-body"><a href="https://app.mural.co/invitation/mural/companieshouse8589/1664197863250?sender=uc287fb0c65a61d3da2202202&key=fa9070c5-992e-4bac-b6b2-ef464166dc46" class="govuk-link">Mural board - flow</a><br>
+
+		<p class="govuk-body"><a href="https://app.mural.co/invitation/mural/companieshouse8589/1671546956523?sender=uc287fb0c65a61d3da2202202&key=43817343-0234-4060-b319-f3c6f1b2035e" class="govuk-link">Service map</a>
+		</p>
+
+	</div>
+
+  <div class="govuk-grid-column-full">
+    <h2 class="govuk-heading-l govuk-!-margin-top-6">
+      Version history
+    </h1>
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Screen
+        </dt>
+      </div>
+
+            <!--Tags - copy and paste correct tag(s)
+            <div class="govuk-form-group">
+              <strong class="govuk-tag govuk-tag--green">policy</strong>
+              <strong class="govuk-tag govuk-tag--yellow">user research</strong>
+              <strong class="govuk-tag govuk-tag--blue">tech</strong>
+              <strong class="govuk-tag govuk-tag--red">More research needed</strong>
+            </div>-->
+
+
+            <!--Tags - copy and paste details component where necessary
+            <details class="govuk-details" data-module="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">Tests</span>
+              </summary>
+              <div class="govuk-details__text">  
+                <ul class="govuk-list">
+                  <li>
+                    <p class="govuk-body">Detail as to what was actually conducted as part of this discrete test that makes up this hypothesis within the context of the journey</p>
+                  </li>
+                </ul>
+              </div>
+            </details>-->
+
+
+<div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          <a href="#">Example lorem ipsum</a>
+          <p class="govuk-body">15 Dec</p>
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <ul class="govuk-list govuk-list">
+            <li>
+              <p class="govuk-body">
+               <strong>Change</strong><br>
+                New screen added for legislative reasons.</p>
+                <strong> Why we made it</strong><br>
+              To match the policy updates.</p>
+            </li>
+             <strong class="govuk-tag govuk-tag--green govuk-!-margin-bottom-4">policy</strong>
+          {{ govukDetails({
+          summaryText: "Testing",
+          text: "Detail as to what was actually conducted as part of this discrete test that makes up this hypothesis within the context of the journey."
+            }) }}
+          </ul>
+        </dd>
+      </div>
+<!--
+
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+        <a href="#">Example lorem ipsum</a>
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <ul class="govuk-list govuk-list">
+            <li>
+              <p class="govuk-body">Using more universal terms for the retrieval journey will not be detrimental to understanding the function of the service</p></li>
+              <div class="govuk-form-group">
+                <strong class="govuk-tag govuk-tag--green">Validated</strong>
+              </div>
+              <details class="govuk-details" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    Tests
+                  </span>
+                </summary>
+                <div class="govuk-details__text">
+                  <ul class="govuk-list">
+                    <li>replace "retrieval" with "find"</li>
+                  </ul>
+                </div>
+              </details>
+              <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+              <li>
+                <p class="govuk-body">Creating separate journeys to find an oversized LC plan and AC document will not impare the user's experience</p>
+              </li>
+              <div class="govuk-form-group">
+                <strong class="govuk-tag govuk-tag--green">Validated</strong>
+              </div>
+              <details class="govuk-details" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    Tests
+                  </span>
+                </summary>
+                <div class="govuk-details__text">
+                  <ul class="govuk-list">
+                    <li>Create a new, specific card on the start page to find an oversized LC plan.</li>
+                  </ul>
+                </div>
+              </details>
+            </li>
+          </ul>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Document scanning and indexing
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <ol class="govuk-list govuk-list">
+            <li>
+              <p class="govuk-body">The ability to view the whole page preview will provide additional confidence whilst locating official numbers to key-in</p>
+            </li>
+            <div class="govuk-form-group">
+              <strong class="govuk-tag govuk-tag--green">
+                Validated
+              </strong>
+            </div>
+            <details class="govuk-details" data-module="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Tests
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                <ul class="govuk-list ">
+                  <li>view full preview feature and test with AC3 - Cancellation</li>
+                </ul>
+              </div>
+            </details>
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+            <li>
+              <p class="govuk-body">Providing meaningful system feedback when issues are enountered will help solve problems and provide a better end-to-end experience</p>
+            </li>
+            <div class="govuk-form-group">
+              <strong class="govuk-tag govuk-tag--grey">
+                More research needed
+              </strong>
+            </div>
+
+            <details class="govuk-details" data-module="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Tests
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                <strong>Scenario:</strong> it's your turn on the rota and a large number of ACs have been delivered. There has been reports of network problems, <a href="#/">its going to be one of those days...</a>
+                <ul class="govuk-list--bullet">
+                  <li><a href="#/">no scanners found</a>
+                    <strong class="govuk-tag govuk-tag--green">
+                      Validated
+                    </strong>
+                  </li>
+                  <li><a href="#/">scanner busy</a>
+                    <strong class="govuk-tag govuk-tag--green">
+                      Validated
+                    </strong>
+                  </li>
+                  <li><a href="#/">problem scanning document</a>
+                    <strong class="govuk-tag govuk-tag--grey">
+                      More research needed
+                    </strong> API messages
+                  </li>
+                  <li><a href="#/">official number error</a>
+                    <strong class="govuk-tag govuk-tag--green">
+                      Validated
+                    </strong> Accessibility testing needed
+                  </li>
+                  <li><a href="#/"> 500 - Internal server error</a>
+                    <strong class="govuk-tag govuk-tag--green">
+                      Validated
+                    </strong> Remove clear cache / browser guidance
+                  </li>
+                </ul>
+              </div>
+            </details>
+          </ol>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Find documents
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <ol class="govuk-list govuk-list">  
+            <li><p class="govuk-body">Separate journeys for finding an oversized LC or AC will simplify the retrieval interface and yield more specific results</p>
+              <div class="govuk-form-group">
+                <strong class="govuk-tag govuk-tag--green">
+                  Validated
+                </strong>
+              </div>
+            </li>
+            <details class="govuk-details" data-module="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Tests
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                <ul class="govuk-list--bullet">
+                  <li>find AC - reg#, AC results, simplify label</li>
+                  <li>find LC - reg#, reg date, LC results, simplify label</li>
+                </ul>
+              </div>
+            </details>
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+            <li><p class="govuk-body">Editing existing records (LC and AC) can be sign-posted via the respective search results page</p>
+              <div class="govuk-form-group">
+                <strong class="govuk-tag govuk-tag--green">
+                  Validated
+                </strong>
+              </div>
+            </li>
+            <details class="govuk-details" data-module="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Tests
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                <ul class="govuk-list--bullet">
+                  <li>Rresults page with an edit feature enabling information to be updated and saved</li>
+                  <li>For LC plans, create a new version of the check your answers page to include registration number, date view preview</li>
+                </ul>
+              </div>
+            </details>
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+            <li><p class="govuk-body">Surfacing AC information on a cover sheet will be easier to navigate with assistive tech than embeded metadata within a PDF</p>
+              <div class="govuk-form-group">
+                <strong class="govuk-tag govuk-tag--grey">
+                  More research needed
+                </strong>
+              </div>
+            </li>
+            <details class="govuk-details" data-module="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Tests
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                <ul class="govuk-list">
+                  With DEN, test the end-to-end journey but focus testing with PDF varients:
+                  <ol class="govuk-list--number">
+                    <li>A flat scanned document</li>
+                    <li>Tagged cover sheet content with scanned images</li> 
+                    <li>Scanned images with embedded meta data</li>
+                  </ol>
+                </ul>
+              </div>
+            </details>
+          </ol>
+        </dd>
+      </div>
+    </dl>
+
+
+
+    <h2 class="govuk-heading-l govuk-!-margin-top-8">
+      Research
+    </h2>
+       
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Session dates
+        </dt>
+        <dd class="govuk-summary-list__value">
+          { Date range }
+        </dd>
+      </div>
+      
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Participants
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <ul class="govuk-list">
+            <li>7 x { User persona type one }</li>
+            <li>1 x { User persona type two }</li>
+        </dd>
+      </div>
+      
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Insights
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <a href="#/">Round X research findings</a>
+        </dd>
+      </div>
+    </dl>
+  </div>
+</div>-->
+
+{% endblock %}

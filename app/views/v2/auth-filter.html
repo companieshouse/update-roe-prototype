@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+
+Do you have an authentication code for this overseas entity?
+ – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+<form class="form" method="post">
+
+{{ govukRadios({
+  classes: "govuk-radios",
+  idPrefix: "codeFilter",
+  name: "code-filter",
+  fieldset: {
+    legend: {
+      text: "Do you have an authentication code for this overseas entity?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--xl"
+    }
+  },
+  hint: {
+  text: "This is a 6 character code that you'll need in order to file online for this overseas entity."
+},
+  items: [
+    {
+      value: "yes",
+      text: "Yes"
+    },
+    {
+      value: "no",
+      text: "No, I need to request an authentication code"
+    }
+  ]
+}) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+      </form>
+
+{{ govukDetails({
+  summaryText: "What is an authentication code?",
+  html: '<p class="govuk-body">
+    The authentication code is a unique 6 character code that every overseas entity needs in order to file online. We will ask for it every time someone files online for the entity — it confirms to us that they are authorised to do so.
+    </p>
+  <p class="govuk-body">
+    If you do not have the authentication code, you should check with the last person to have filed online for this company. 
+  If they have requested one, they may be able to share it with you.
+    <p class="govuk-body">
+    If you need to request an authentication code, search for the overseas entity on the <a href="https://find-and-update.company-information.service.gov.uk/">Companies House register</a>, and then select "Request an authentication code".
+  </p>'
+}) }}
+
+
+    </div>
+  </div>
+
+{% endblock %}

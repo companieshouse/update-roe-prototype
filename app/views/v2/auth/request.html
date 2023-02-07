@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+
+Request an authentication code
+ – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+
+    <form action="/form-handler" method="post" novalidate>
+
+<h1 class="govuk-heading-xl">Request an authentication code</h1>
+<div class="govuk-!-padding-bottom-1"></div>
+
+<p class"govuk-body">Request an authentication code for:</p>
+<h2 class="govuk-!-padding-top-0 govuk-heading-m">ASHCROFT LIMITED (OE000063)</h2>
+
+<div class"govuk-!-padding-top-9">
+<p class"govuk-body">The authentication code will be sent to the email address that we have on record for the overseas entity.
+</p></div>
+
+
+
+  {{ govukButton({
+    text: "Request authentication code",
+    href: "sent"
+  }) }}
+        
+
+
+ {{ govukDetails({
+  summaryText: "Help with the authentication code",
+  html: '<p class"govuk-body">
+    The authentication code is a unique 6 character code that every overseas entity needs in order to file online. We will ask for it every time someone files online for the entity — it confirms to us that they are authorised to do so.</p>
+  <p>
+    If you need to change the email address that the code is sent to, <a href=#>contact Companies House</a>.</p>
+  </p>'
+}) }}
+
+    
+    
+    </form>
+
+    </div>
+  </div>
+
+{% endblock %}
