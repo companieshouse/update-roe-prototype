@@ -1,14 +1,12 @@
-module.exports = function (router) {
-
-
-    router.get( '/v2/interrupt-card', function ( req, res ) {
-          var secureRegister = req.query.secureRegister;
-          if ( secureRegister == "yes" ) {
+function postProtectedFilter (router) {
+    router.post( '/v2/interrupt-card', function ( req, res ) {
+          const secureRegister = req.body;    
+          if ( secureRegister["secure-register"] === "yes" ) {      
               res.redirect( "/v2/use-paper-service" );
           } else {
-              res.render( 'v2/interrupt-card' );
+            res.redirect( "/v2/interrupt-card" );
           }
-      } );
-  
+      } );   
   }
-  
+
+  module.exports = {postProtectedFilter}
