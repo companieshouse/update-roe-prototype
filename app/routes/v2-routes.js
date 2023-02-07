@@ -7,7 +7,7 @@ const router = govukPrototypeKit.requests.setupRouter()
 
     
 
-    // Run this code when a form is submitted to 'auth-filter'
+    // AUTH FILTER: Run this code when a form is submitted to 'auth-filter'
 router.post('/v1/auth-filter', function (req, res) {
 
     // Make a variable and give it the value from 'code-filter'
@@ -23,5 +23,22 @@ router.post('/v1/auth-filter', function (req, res) {
     }
   
   })
+
+
+
+// 2-sign-in.html
+router.post('/2-sign-in', function(req, res) {
+  res.redirect('3-do-you-want-to-continue');
+})
+
+// 3-do-you-want-to-continue.html
+router.post('/3-do-you-want-to-continue', function(req, res) {
+  res.redirect('4-');
+})
+
+// auth-filter.html
+router.post('/auth-filter', function(req, res) {
+  res.redirect('authentication-code');
+})
 
 module.exports=router;

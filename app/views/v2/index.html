@@ -1,4 +1,4 @@
-{% extends "../layouts/v1-layout.html" %}
+{% extends "../layouts/layout.html" %}
 
 {% block pageTitle %}
   {{ serviceName }}
@@ -24,7 +24,7 @@
 
     {{ govukButton({
       text: "Start now",
-      href: "../v1/start"
+      href: "../v2/start"
     }) }}
   </div>
 
@@ -36,9 +36,7 @@
 
 <h2 class="govuk-heading-m">Authentication code screens</h2>
       <ul class="govuk-list govuk-list--bullet">      
-      <li>
-        <a class="govuk-link govuk-link--no-visited-state" href="auth/email-prep">EMAIL: Reminder to update and preparation</a>
-      </li>
+
       <li>
         <a class="govuk-link govuk-link--no-visited-state" href="auth/oe-reg-page">Overseas entity register page</a>
       </li>
@@ -48,16 +46,6 @@
       <li>
         <a class="govuk-link govuk-link--no-visited-state" href="auth/sent">Authentication code requested</a>
         </li>
-      <li>
-        <a class="govuk-link govuk-link--no-visited-state" href="auth/email-auth-code">EMAIL: Authentication code email</a>
-      </li>
-       <li>
-        <a class="govuk-link govuk-link--no-visited-state" href="auth/comms-prep-agent">BLOG IDEA: Update preparation - guidance for agents</a>
-      </li>
-      <li>
-        <a class="govuk-link govuk-link--no-visited-state" href="auth/comms-prep-oe">BLOG IDEA: Update preparation - guidance for overseas entities</a>
-      </li>
-
   </ul>
 
     
@@ -178,6 +166,12 @@
       <h2 class="govuk-heading-m">Emails</h2>
       <ul class="govuk-list govuk-list--bullet">
       <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="auth/email-prep">Reminder to update and preparation</a>
+      </li>
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="auth/email-auth-code">Authentication code email</a>
+      </li>
+      <li>
         <a class="govuk-link govuk-link--no-visited-state" href="emails/received-oe">Application received OE</a>
       </li>
       <li>
@@ -190,10 +184,21 @@
         <a class="govuk-link govuk-link--no-visited-state" href="emails/rejected">Application rejected</a>
       </li> 
     </ul>
+
+
+
+      <h2 class="govuk-heading-m">Archived screens</h2>
+      <ul class="govuk-list govuk-list--bullet">
+
+       <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="auth/comms-prep-agent">BLOG IDEA: Update preparation - guidance for agents</a>
+      </li>
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="auth/comms-prep-oe">BLOG IDEA: Update preparation - guidance for overseas entities</a>
+      </li>
+      </ul>
     <hr class="govuk-!-margin-top-9">
   </div>
-
-
 
 	<div class="govuk-grid-column-full govuk-!-margin-top-6">
 

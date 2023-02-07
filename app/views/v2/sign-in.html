@@ -1,4 +1,4 @@
-{% extends "../layouts/v1-layout.html" %}
+{% extends "../layouts/layout.html" %}
 {% set serviceName %}
 {% endset%}
 
@@ -33,7 +33,7 @@
       {{ govukInsetText({
         text: "You must sign in to or create a Companies House account. Your WebFiling details will not work with this service."
       }) }}
-    <form action="/v1/saved-filing" method="post">
+    <form action="/v2/saved-filing" method="post">
       <form class="form" method="post">
         {% if errorEmail == true %}
           {{ govukInput({
@@ -96,7 +96,7 @@
 
   <div class="govuk-!-margin-top-9">
 
-<p class="govuk-body govuk-!-font-size-14"><a href="/v1/auth/request">Auth code request testing</a></p>
+<p class="govuk-body govuk-!-font-size-14"><a href="/v2/auth/request">Auth code request testing</a></p>
 
 
 

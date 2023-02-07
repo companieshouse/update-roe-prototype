@@ -1,4 +1,4 @@
-{% extends "../layouts/v1-layout.html" %}
+{% extends "../layouts/layout.html" %}
 
 {% block pageTitle %}
   Start – {{ serviceName }} – GOV.UK
@@ -48,7 +48,7 @@
 
 {{ govukButton({
   text: "Start now",
-  href: "/v1/sign-in",
+  href: "/v2/sign-in",
   isStartButton: true
 }) }}
 
