@@ -8,27 +8,31 @@ Government or public authority beneficial owner – {{ serviceName }} – GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
-{% include "includes/back-link.html" %}
-{% include "includes/user-bar.html" %}
+  {% include "includes/before-content.html" %}
 {% endblock %}
 
 {% block content %}
-{% if errorList.length > 0 %}
-  {{ govukErrorSummary({
-      titleText: "There is a problem",
-      errorList: errorList
-    }) }}
-{% endif %}
+
+
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-<span class="govuk-caption-xl">Beneficial owner</span>
-      <h1 class="govuk-heading-xl govuk-!-margin-0">Tell us about the government or public authority</h1>
-      <p class="  govuk-!-margin-bottom-5 govuk-!-margin-top-5">You can add more later.</p>
+
+<span class="govuk-caption-l">Bloggs Firm</span>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-5">Review the government or public authority</h1>
+      <!--<p class="govuk-!-margin-bottom-5 govuk-!-margin-top-5">You can add more later.</p>-->
+
+  <p class"govuk-body">If you need to update any beneficial information, you can change the answers on this screen.</p>
+  
+  <!-- NOTES FOR CONTENT I added the below in - badly written -->
+<div class="govuk-inset-text">
+  You'll need to tell us if they are still a beneficial owner.
+</div>
+
+
 
       <form class="form" action="" method="post">
 
-{% if errorCorpName == true %}
         {{ govukInput({
           label: {
             text: "What is its name?",
@@ -37,23 +41,10 @@ Government or public authority beneficial owner – {{ serviceName }} – GOV.UK
           },
           id: "corp-name",
           name: "corp-name",
-          errorMessage: {
-                  text: "Enter the name of the government or public authority"
-                }
-        }) }}
-        {% else %}
-        {{ govukInput({
-          label: {
-            text: "What is its name?",
-            classes: "govuk-label--m",
-            isPageHeading: false
-          },
-          id: "corp-name",
-          name: "corp-name",
-          value: corpName
+          value: corpName,
+          value: "Bloggs Firm"
         }) }}
 
-        {% endif %}
         {% call govukFieldset({
           legend: {
             text: "What is its principal or registered office address?",
@@ -70,10 +61,12 @@ Government or public authority beneficial owner – {{ serviceName }} – GOV.UK
            text: "For example, 'Saron House', '116' or 'Unit 37a'"
          },
           id: "principal-address-property-name-number",
-          name: "principal-address-property-name-number"
+          name: "principal-address-property-name-number",
+          value: govPrincipalAdProperty,
+          value: "Casa de "
         }) }}
 
-{% if errorGovPrincipalAddressLine1 == true %}
+
         {{ govukInput({
           label: {
             text: "Address line 1"
@@ -82,22 +75,9 @@ Government or public authority beneficial owner – {{ serviceName }} – GOV.UK
           id: "principal-address-line-1",
           name: "principal-address-line-1",
           autocomplete: "address-line1",
-          errorMessage: {
-                  text: "Enter an address"
-                }
+          value: govPrincipalAddressLine1,
+          value: "test"
         }) }}
-        {% else %}
-        {{ govukInput({
-          label: {
-            text: "Address line 1"
-          },
-          classes: "govuk-!-width-two-thirds",
-          id: "principal-address-line-1",
-          name: "principal-address-line-1",
-          autocomplete: "address-line1",
-          value: govPrincipalAddressLine1
-        }) }}
-        {% endif %}
 
         {{ govukInput({
           label: {
@@ -109,7 +89,7 @@ Government or public authority beneficial owner – {{ serviceName }} – GOV.UK
           autocomplete: "address-line2"
         }) }}
 
-{% if errorGovPrincipalCity == true %}
+
         {{ govukInput({
           label: {
             text: "City or town"
@@ -117,21 +97,9 @@ Government or public authority beneficial owner – {{ serviceName }} – GOV.UK
           classes: "govuk-!-width-two-thirds",
           id: "principal-address-city-town",
           name: "principal-address-city-town",
-          errorMessage: {
-                  text: "Enter a city or town"
-                }
+          value: govPrincipalCity,
+          value: "Barcelona"
         }) }}
-        {% else %}
-        {{ govukInput({
-          label: {
-            text: "City or town"
-          },
-          classes: "govuk-!-width-two-thirds",
-          id: "principal-address-city-town",
-          name: "principal-address-city-town",
-          value: govPrincipalCity
-        }) }}
-        {% endif %}
 
         {{ govukInput({
           label: {

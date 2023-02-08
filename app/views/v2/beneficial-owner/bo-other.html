@@ -5,17 +5,26 @@
 {% endblock %}
 
 {% block beforeContent %}
-{% include "includes/back-link.html" %}
-{% include "includes/user-bar.html" %}
+  {% include "includes/before-content.html" %}
 {% endblock %}
 
 {% block content %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-<span class="govuk-caption-xl">Beneficial owner</span>
-      <h1 class="govuk-heading-xl govuk-!-margin-0">Tell us about the other legal entity</h1>
-      <p class="govuk-!-margin-bottom-5 govuk-!-margin-top-5">You can add more later.</p>
+
+<span class="govuk-caption-l">ACME Limited</span>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-5">Review the other legal entity</h1>
+      <!--<p class="govuk-!-margin-bottom-5 govuk-!-margin-top-5">You can add more later.</p>-->
+
+  <p class"govuk-body">If you need to update any beneficial information, you can change the answers on this screen.</p>
+
+  
+  
+  <!-- NOTES FOR CONTENT I added the below in - badly written -->
+<div class="govuk-inset-text">
+  You'll need to tell us if they are still a beneficial owner.
+</div>
 
       <form class="form" method="post">
 
@@ -28,7 +37,9 @@
             isPageHeading: false
           },
           id: "bo-corp-name",
-          name: "bo-corp-name"
+          name: "bo-corp-name",
+          value: boCorpName,
+          value: "ACME Limited"
         }) }}
         {% call govukFieldset({
           legend: {
@@ -46,7 +57,9 @@
            text: "For example, 'Saron House', '116' or 'Unit 37a'"
          },
           id: "bo-corp-principal-address-property-name-number",
-          name: "bo-corp-principal-address-property-name-number"
+          name: "bo-corp-principal-address-property-name-number",
+          value: boCorpProperty,
+          value: "Maison Verde"
         }) }}
 
         {{ govukInput({
@@ -56,7 +69,9 @@
           classes: "govuk-!-width-two-thirds",
           id: "bo-corp-principal-address-line-1",
           name: "bo-corp-principal-address-line-1",
-          autocomplete: "address-line1"
+          autocomplete: "address-line1",
+          value: boCorpAd1,
+          value: "Rue de Rouge 5604"
         }) }}
 
         {{ govukInput({
@@ -66,7 +81,8 @@
           classes: "govuk-!-width-two-thirds",
           id: "bo-corp-principal-address-line-2",
           name: "bo-corp-principal-address-line-2",
-          autocomplete: "address-line2"
+          autocomplete: "address-line2",
+          value: boCorpAd2
         }) }}
 
         {{ govukInput({
@@ -75,7 +91,9 @@
           },
           classes: "govuk-!-width-two-thirds",
           id: "bo-corp-principal-address-city-town",
-          name: "bo-corp-principal-address-city-town"
+          name: "bo-corp-principal-address-city-town",
+          value: boCorpCity,
+          value: "Paris"
         }) }}
 
         {{ govukInput({
@@ -87,11 +105,22 @@
           name: "bo-corp-principal-address-state"
         }) }}
 
-        <div class="govuk-form-group">
-           <label for="autocomplete-default" class="govuk-label">Country</label>
-          <p class="govuk-hint">Start typing a country, then choose from the list</p>
-          <div id="country" class="autocomplete-wrapper"></div>
-        </div>
+
+        {{ govukInput({
+          label: {
+            text: "Country"
+          },
+          hint: {
+           text: "Start typing a country, then choose from the list'"
+         },
+          classes: "govuk-!-width-two-thirds",
+          id: "boCorpCountry",
+          name: "boCorpCountry",
+          value: boCorpCountry,
+          value: "France"
+        }) }}
+
+
 
         {{ govukInput({
           label: {
@@ -196,7 +225,8 @@
           items: [
             {
               value: "yes",
-              text: "Yes"
+              text: "Yes",
+              checked: true
             },
             {
               value: "no",
@@ -218,7 +248,9 @@
            text: "For example, limited company"
          },
           id: "bo-corp-legal-form",
-          name: "bo-corp-legal-form"
+          name: "bo-corp-legal-form",
+          value: boCorpLegal,
+          value: "Limited company"
         }) }}
 
 
@@ -232,7 +264,9 @@
                    text: "This is the law that the beneficial owner operates under"
                  },
                   id: "bo-corp-governing-law",
-                  name: "bo-corp-governing-law"
+                  name: "bo-corp-governing-law",
+                  value: boCorpGovLaw,
+                  value: "France"
                 }) }}
 
 
@@ -429,7 +463,8 @@
     },
     {
       value: "no",
-      text: "No"
+      text: "No",
+      checked: true
     }
   ]
 }) }}
@@ -438,21 +473,6 @@
 
 
 
-
-        {{ govukDateInput({
-          id: "bo-corp-startdate",
-          namePrefix: "bo-corp-startdate",
-          fieldset: {
-            legend: {
-              text: "When did it become a beneficial owner for the overseas entity?",
-              isPageHeading: false,
-              classes: "govuk-fieldset__legend--m"
-            }
-          },
-          hint: {
-            text: "For example, 27 3 2007"
-          }
-        }) }}
 
 
 
@@ -536,7 +556,8 @@
               },
               {
                 value: "noc-individual-voting",
-                text: "holds, directly or indirectly, more than 25% of the voting rights in the entity"
+                text: "holds, directly or indirectly, more than 25% of the voting rights in the entity",
+                checked: true
               },
               {
                 value: "noc-individual-board",
@@ -569,7 +590,8 @@
                 },
                 {
                   value: "noc-trusts-voting",
-                  text: "the trustees of that trust (in their capacity as such) hold, directly or indirectly, more than 25% of the voting rights in the entity"
+                  text: "the trustees of that trust (in their capacity as such) hold, directly or indirectly, more than 25% of the voting rights in the entity",
+                checked: true
                 },
                 {
                   value: "noc-trusts-board",
@@ -610,7 +632,8 @@
                   },
                   {
                     value: "noc-firm-influence",
-                    text: "the members of that firm (in their capacity as such) have the right to exercise, or actually exercise, significant influence or control over the company"
+                    text: "the members of that firm (in their capacity as such) have the right to exercise, or actually exercise, significant influence or control over the company",
+                checked: true
                   }
                 ]
               }) }}
@@ -641,10 +664,107 @@
     },
     {
       value: "no",
-      text: "No, it is not on the sanctions list"
+      text: "No, it is not on the sanctions list",
+      checked: true
     }
   ]
   }) }}
+
+
+        {{ govukDateInput({
+          id: "bo-corp-startdate",
+          namePrefix: "bo-corp-startdate",
+          fieldset: {
+            legend: {
+              text: "When did it become a beneficial owner for the overseas entity?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "For example, 27 3 2007"
+          },
+          items: [
+    {
+      classes: "govuk-input--width-2",
+      name: "day",
+      value: startDay,
+      value: "10"
+    },
+    {
+      classes: "govuk-input--width-2",
+      name: "month",
+      value: startMonth,
+      value: "7"
+    },
+    {
+      classes: "govuk-input--width-4",
+      name: "year",
+      value: startYear,
+      value: "2004"
+    }
+  ]
+        }) }}
+
+
+
+  {% set boContHtml %}
+{{ govukRadios({
+  name: "boCont",
+  fieldset: {
+    legend: {
+      text: "Have they been a beneficial owner continuously for the whole period this update is about?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes",
+      conditional: {
+        html: boCont
+      }
+    },
+    {
+      value: "no",
+      text: "No, but there have been gaps",
+      conditional: {
+        html: boCont
+      }
+    }
+  ]
+}) }}
+{% endset -%}
+
+
+{{ govukRadios({
+  name: "contact",
+  fieldset: {
+    legend: {
+      text: "Are they still a beneficial owner for the overseas entity?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: "Select one option."
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes",
+      conditional: {
+        html: boContHtml
+      }
+    },
+    {
+      value: "no",
+      text: "No"
+      
+    }
+  ]
+}) }}
 
   {{ govukInsetText({
     html: '
