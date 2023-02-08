@@ -30,8 +30,11 @@
 
       <p class"govuk-body">If you need to update any beneficial information, you can change the answers on this screen.</p>
 
+  
+  
+  <!-- NOTES FOR CONTENT I added the below in - badly written -->
 <div class="govuk-inset-text">
-  You'll need to enter a date of birth and home address for the beneficial owner.
+  You'll need to enter a date of birth, home address for the beneficial owner and tell us if they are still a beneficial owner.
 </div>
 
       <form class="form" action="" method="post">
@@ -49,7 +52,8 @@
         },
           id: "bo-individual-first-name",
           name: "bo-individual-first-name",
-          value: individualFirstName
+          value: individualFirstName,
+          value: "Daniel"
         }) }}
 
 
@@ -66,7 +70,8 @@
           classes: "govuk-!-width-three-quarters",
           id: "bo-individual-last-name",
           name: "bo-individual-last-name",
-          value: individualLastName
+          value: individualLastName,
+          value: "Ashcroft"
         }) }}
 
 
@@ -115,6 +120,7 @@
            },
           id: "nationality",
           name: "nationality",
+          value: nationality,
           value: "British Virgin Islander"
         }) }}
 
@@ -206,11 +212,21 @@
           name: "service-address-state"
         }) }}
 
-        <div class="govuk-form-group">
-           <label for="autocomplete-default" class="govuk-label">Country</label>
-          <p class="govuk-hint">Start typing a country, then choose from the list</p>
-          <div id="country" class="autocomplete-wrapper"></div>
-        </div>
+
+        {{ govukInput({
+          label: {
+            text: "Country"
+          },
+          hint: {
+           text: "Start typing a country, then choose from the list"
+         },
+          classes: "govuk-!-width-two-thirds",
+          id: "country",
+          name: "country",
+          value: country
+        }) }}
+
+
 
         {{ govukInput({
           label: {
@@ -323,7 +339,8 @@
               hint: {
                 text: "The beneficial owner’s home address would be shown on the public register as the correspondence address."
               },
-              checked: checked("same-address", "yes")
+              checked: checked ("same-address", "yes"),
+              checked: true
             },
             {
               value: "no",
@@ -360,7 +377,8 @@
             items: [
               {
                 value: "noc-individual-shares",
-                text: "holds, directly or indirectly, more than 25% of the shares in the entity"
+                text: "holds, directly or indirectly, more than 25% of the shares in the entity",
+                checked: true
               },
               {
                 value: "noc-individual-voting",
@@ -434,7 +452,8 @@
                   },
                   {
                     value: "noc-firm-voting",
-                    text: "the members of that firm (in their capacity as such) hold, directly or indirectly, more than 25% of the voting rights in the entity"
+                    text: "the members of that firm (in their capacity as such) hold, directly or indirectly, more than 25% of the voting rights in the entity",
+                    checked: true
                   },
                   {
                     value: "noc-firm-board",
@@ -475,7 +494,8 @@
     {
       value: "no",
       text: "No, they are not on the sanctions list",
-      checked: checked("owner-sanctions", "no")
+      checked: checked("owner-sanctions", "no"),
+      checked: true
     }
   ]
 }) }}
@@ -498,17 +518,20 @@
     {
       classes: "govuk-input--width-2",
       name: "day",
-      value: startDay
+      value: startDay,
+      value: "10"
     },
     {
       classes: "govuk-input--width-2",
       name: "month",
-      value: startMonth
+      value: startMonth,
+      value: "7"
     },
     {
       classes: "govuk-input--width-4",
       name: "year",
-      value: startYear
+      value: startYear,
+      value: "2004"
     }
   ]
         }) }}
@@ -516,13 +539,21 @@
 
 
 
+<!-- NOTES FOR CONTENT - I feel wording for below questioncould make users think it's 
+for the entire time they've been a BO, not just the 12 months they're telling us about
+
+Question from workshop:
+Have they been a beneficial owner continuously for the whole period?
+
+Very badly written idea for question:
+Have they been a beneficial owner continuously for the whole period this update is about?-->
 
 {% set boContHtml %}
 {{ govukRadios({
   name: "boCont",
   fieldset: {
     legend: {
-      text: "Have they been a beneficial owner continuously for the whole period?",
+      text: "Have they been a beneficial owner continuously for the whole period this update is about?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m"
     }
@@ -531,7 +562,6 @@
     {
       value: "yes",
       text: "Yes",
-      checked: true,
       conditional: {
         html: boCont
       }
@@ -564,7 +594,6 @@
     {
       value: "yes",
       text: "Yes",
-      checked: true,
       conditional: {
         html: boContHtml
       }
