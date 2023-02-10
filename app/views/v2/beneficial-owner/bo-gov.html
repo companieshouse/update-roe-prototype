@@ -18,7 +18,7 @@ Government or public authority beneficial owner – {{ serviceName }} – GOV.UK
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-<span class="govuk-caption-l">Bloggs Firm</span>
+<span class="govuk-caption-l">AMK Department</span>
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-5">Review the government or public authority</h1>
       <!--<p class="govuk-!-margin-bottom-5 govuk-!-margin-top-5">You can add more later.</p>-->
 
@@ -42,7 +42,7 @@ Government or public authority beneficial owner – {{ serviceName }} – GOV.UK
           id: "corp-name",
           name: "corp-name",
           value: corpName,
-          value: "Bloggs Firm"
+          value: "AMK Department"
         }) }}
 
         {% call govukFieldset({
@@ -63,7 +63,7 @@ Government or public authority beneficial owner – {{ serviceName }} – GOV.UK
           id: "principal-address-property-name-number",
           name: "principal-address-property-name-number",
           value: govPrincipalAdProperty,
-          value: "Casa de "
+          value: "Suite 104-228"
         }) }}
 
 
@@ -76,7 +76,7 @@ Government or public authority beneficial owner – {{ serviceName }} – GOV.UK
           name: "principal-address-line-1",
           autocomplete: "address-line1",
           value: govPrincipalAddressLine1,
-          value: "test"
+          value: "Building 28"
         }) }}
 
         {{ govukInput({
@@ -86,7 +86,9 @@ Government or public authority beneficial owner – {{ serviceName }} – GOV.UK
           classes: "govuk-!-width-two-thirds",
           id: "principal-address-line-2",
           name: "principal-address-line-2",
-          autocomplete: "address-line2"
+          autocomplete: "address-line2",
+          value: govPrinAdLine2,
+          value: "Dubai Investment Park 1"
         }) }}
 
 
@@ -98,7 +100,7 @@ Government or public authority beneficial owner – {{ serviceName }} – GOV.UK
           id: "principal-address-city-town",
           name: "principal-address-city-town",
           value: govPrincipalCity,
-          value: "Barcelona"
+          value: "Dubai"
         }) }}
 
         {{ govukInput({
@@ -110,11 +112,20 @@ Government or public authority beneficial owner – {{ serviceName }} – GOV.UK
           name: "principal-address-state"
         }) }}
 
-        <div class="govuk-form-group">
-           <label for="autocomplete-default" class="govuk-label">Country</label>
-          <p class="govuk-hint">Start typing a country, then choose from the list</p>
-          <div id="country" class="autocomplete-wrapper"></div>
-        </div>
+
+        {{ govukInput({
+          label: {
+            text: "Country"
+          },
+          hint: {
+           text: "Start typing a country, then choose from the list"
+         },
+          classes: "govuk-!-width-two-thirds",
+          id: "principal-country",
+          name: "principal-country",
+          value: PrincipalCountry,
+          value: "United Arab Emirates"
+        }) }}
 
         {{ govukInput({
           label: {
@@ -325,7 +336,8 @@ html: serviceAddressHtml
  },
   id: "bo-gov-legal-form",
   name: "bo-gov-legal-form",
-  value: boGovLegalForm
+  value: boGovLegalForm,
+  value: "Association"
 }) }}
 {% endif %}
 
@@ -357,25 +369,13 @@ html: serviceAddressHtml
                  },
                   id: "bo-gov-governing-law",
                   name: "bo-gov-governing-law",
-                  value: boGovGoverningLaw
+                  value: boGovGoverningLaw,
+                  value: "United Arab Emirates law"
                 }) }}
                 {% endif %}
 
 
-                {{ govukDateInput({
-                  id: "bo-gov-startdate",
-                  namePrefix: "bo-gov-startdate",
-                  fieldset: {
-                    legend: {
-                      text: "When did it become a beneficial owner for the overseas entity?",
-                      isPageHeading: false,
-                      classes: "govuk-fieldset__legend--m"
-                    }
-                  },
-                  hint: {
-                    text: "For example, 27 3 2007"
-                  }
-                }) }}
+               
 
 
 
@@ -432,58 +432,6 @@ html: serviceAddressHtml
 
 
 
-<!--
-        {% set PublicRegisterHtml %}
-        {{ govukInput({
-          id: "bo-gov-public-register-name",
-          name: "bo-gov-public-register-name",
-          hint: {
-           text: "Include its jurisdiction. For example, Hong Kong or State of Delaware."
-         },
-          label: {
-            text: "Name of register"
-          }
-        }) }}
-        {{ govukInput({
-          id: "bo-gov-public-register-number",
-          name: "bo-gov-public-register-number",
-          classes: "govuk-!-width-one-half",
-          label: {
-            text: "Government or public authority's registration number"
-          }
-        }) }}
-        {% endset -%}
-
-        {{ govukRadios({
-          idPrefix: "bo-gov-public-register",
-          name: "bo-gov-public-register",
-          fieldset: {
-            legend: {
-              text: "Is the government or public authority already on a public register in the country it was formed?",
-              isPageHeading: false,
-              classes: "govuk-fieldset__legend--m"
-            }
-          },
-          items: [
-            {
-              value: "yes",
-              text: "Yes",
-              conditional: {
-                html: PublicRegisterHtml
-              }
-            },
-            {
-              value: "no",
-              text: "No",
-              conditional: {
-                html: phoneHtml
-              }
-            }
-          ]
-        }) }}
--->
-
-
 {% call govukFieldset({
   legend: {
     html: 'What is its nature of control?<br><p class="govuk-hint govuk-!-padding-top-1"> Select all that apply</p>',
@@ -515,7 +463,8 @@ html: serviceAddressHtml
       },
       {
         value: "noc-individual-board",
-        text: "holds the right, directly or indirectly, to appoint or remove a majority of the board of directors of the entity"
+        text: "holds the right, directly or indirectly, to appoint or remove a majority of the board of directors of the entity",
+        checked: true
       },
       {
         value: "noc-individual-influence",
@@ -548,7 +497,8 @@ html: serviceAddressHtml
           },
           {
             value: "noc-firm-board",
-            text: "the members of that firm (in their capacity as such) hold the right, directly or indirectly, to appoint or remove a majority of the board of directors of the company"
+            text: "the members of that firm (in their capacity as such) hold the right, directly or indirectly, to appoint or remove a majority of the board of directors of the company",
+        checked: true
           },
           {
             value: "noc-firm-influence",
@@ -581,10 +531,113 @@ html: serviceAddressHtml
                         },
                         {
                           value: "no",
-                          text: "No, it is not on the sanctions list"
+                          text: "No, it is not on the sanctions list",
+          checked: true
                         }
                       ]
                       }) }}
+
+
+
+
+{{ govukDateInput({
+          id: "bo-gov-startdate",
+          namePrefix: "bo-gov-startdate",
+          fieldset: {
+            legend: {
+              text: "When did it become a beneficial owner for the overseas entity?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "For example, 27 3 2007"
+          },
+          items: [
+    {
+      classes: "govuk-input--width-2",
+      name: "day",
+      value: startDay,
+      value: "6"
+    },
+    {
+      classes: "govuk-input--width-2",
+      name: "month",
+      value: startMonth,
+      value: "8"
+    },
+    {
+      classes: "govuk-input--width-4",
+      name: "year",
+      value: startYear,
+      value: "2021"
+    }
+  ]
+        }) }}
+
+
+
+
+<!-- NOTES FOR CONTENT - I feel wording for below questioncould make users think it's 
+for the entire time they've been a BO, not just the 12 months they're telling us about
+
+Question from workshop:
+Have they been a beneficial owner continuously for the whole period?
+
+Very badly written idea for question:
+Have they been a beneficial owner continuously for the whole period this update is about?-->
+
+{% set boGovHtml %}
+{{ govukRadios({
+  name: "boGov",
+  fieldset: {
+    legend: {
+      text: "Has it been a beneficial owner continuously for the whole period this update is about?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes"
+    },
+    {
+      value: "no",
+      text: "No, but there have been gaps"
+    }
+  ]
+}) }}
+{% endset -%}
+
+
+{{ govukRadios({
+  name: "contact",
+  fieldset: {
+    legend: {
+      text: "Is it still a beneficial owner for the overseas entity?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: "Select one option."
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes",
+      conditional: {
+        html: boGovHtml
+      }
+    },
+    {
+      value: "no",
+      text: "No"
+      
+    }
+  ]
+}) }}
 
 
                       {{ govukInsetText({
