@@ -15,10 +15,10 @@
 
       <form class="form" action="./identify" method="get">
 
+  <span class="govuk-caption-l">{{ data['overseas-name'] }} - {{ data['overseas-id'] }}</span>
+<h1 class="govuk-heading-xl">Beneficial owners and managing officers involved in the overseas entity</h1>
+  </div>
 
-
-        <h1 class="govuk-heading-xl">Beneficial owners and managing officers involved in the overseas entity</h1>
-</div>
     <div class="govuk-grid-column-three-quarters">
 
         {{ govukTable({
@@ -217,7 +217,7 @@
         }) }}
 
         {{ govukButton({
-          text: "No more to add",
+              html: 'No more <span class="govuk-visually-hidden">beneficial owners or managing officers</span> to add',
            classes: "govuk-button--secondary",
            href: './identify'
         }) }}
