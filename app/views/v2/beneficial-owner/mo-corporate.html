@@ -12,8 +12,8 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-<span class="govuk-caption-l">Managing officer</span>
-      <h1 class="govuk-heading-xl govuk-!-margin-0">Tell us about the corporate managing officer</h1>
+<span class="govuk-caption-l">Helios Limited</span>
+      <h1 class="govuk-heading-xl govuk-!-margin-0">Review the corporate managing officer</h1>
       <p class="  govuk-!-margin-bottom-5 govuk-!-margin-top-5">You can add more later.</p>
       <form class="form" method="post">
 
@@ -25,7 +25,9 @@
             isPageHeading: false
           },
           id: "corp-mo-name",
-          name: "corp-mo-name"
+          name: "corp-mo-name",
+          value: moIndFirstName,
+          value: "Self-employed"
         }) }}
 
 
@@ -46,7 +48,9 @@
            text: "For example, 'Saron House', '116' or 'Unit 37a'"
          },
           id: "managing-officer-usual-residential-address-property-name-number",
-          name: "managing-officer-usual-residential-address-property-name-number"
+          name: "managing-officer-usual-residential-address-property-name-number",
+          value: moResAd,
+          value: "4976+PXC"
         }) }}
 
         {{ govukInput({
@@ -56,7 +60,9 @@
           classes: "govuk-!-width-two-thirds",
           id: "managing-officer-usual-residential-address-line-1",
           name: "managing-officer-usual-residential-address-line-1",
-          autocomplete: "address-line1"
+          autocomplete: "address-line1",
+          value: moRes1,
+          value: "Helios Court"
         }) }}
 
         {{ govukInput({
@@ -67,6 +73,7 @@
           id: "managing-officer-usual-residential-address-line-2",
           name: "managing-officer-usual-residential-address-line-2",
           autocomplete: "address-line2"
+          
         }) }}
 
         {{ govukInput({
@@ -75,7 +82,9 @@
           },
           classes: "govuk-!-width-two-thirds",
           id: "managing-officer-usual-residential-address-city-town",
-          name: "managing-officer-usual-residential-address-city-town"
+          name: "managing-officer-usual-residential-address-city-town",
+          value: moRes2,
+          value: "Strovolos"
         }) }}
 
         {{ govukInput({
@@ -87,11 +96,22 @@
           name: "managing-officer-usual-residential-address-state"
         }) }}
 
-        <div class="govuk-form-group">
-           <label for="autocomplete-default" class="govuk-label">Country</label>
-          <p class="govuk-hint">Start typing a country, then choose from the list</p>
-          <div id="country" class="autocomplete-wrapper"></div>
-        </div>
+
+                {{ govukInput({
+          label: {
+            html: 'Country'
+          },
+          hint: {
+           text: "Start typing a country, then choose from the list"
+         },
+          classes: "govuk-!-width-two-thirds",
+          id: "country",
+          name: "country",
+          value: country,
+          value: "Cyprus"
+        }) }}
+
+
 
         {{ govukInput({
           label: {
@@ -100,7 +120,9 @@
           classes: "govuk-input--width-10",
           id: "managing-officer-usual-residential-address-postcode",
           name: "managing-officer-usual-residential-address-postcode",
-          autocomplete: "postal-code"
+          autocomplete: "postal-code",
+          value: moPostcode,
+          value: "3092"
         }) }}
 
         {% set serviceAddressHtml %}
@@ -194,7 +216,8 @@
           items: [
             {
               value: "yes",
-              text: "Yes"
+              text: "Yes",
+              checked: true
             },
             {
               value: "no",
@@ -211,60 +234,6 @@
 
 
 
-        {% if (data['soldLand'] === "some") or (data['soldLand'] === "all") %}
-        <!--Only show the 'When did they stop...' question if the user has answered Some or All to /register/sold-land-filter-->
-        <!--Note, current intention is not to route users here is they select All - code added just in case-->
-
-            {% set stopDateHtml %}
-
-                      {{ govukDateInput({
-                        id: "officer-corp-enddate",
-                        namePrefix: "officer-corp-enddate",
-                        fieldset: {
-                          legend: {
-                            text: "When did it stop being a managing officer?",
-                            isPageHeading: false,
-                            classes: "govuk-fieldset__legend--s"
-                          }
-                        },
-                        hint: {
-                          text: "For example, 28 5 2022"
-                        }
-                      }) }}
-                      {% endset -%}
-
-                      {{ govukRadios({
-                        idPrefix: "officer-corp-stop",
-                        name: "officer-corp-stop",
-                        fieldset: {
-                          legend: {
-                            text: "Did it stop being a managing officer after the overseas entity disposed of property or land?",
-                            isPageHeading: false,
-                            classes: "govuk-fieldset__legend--m"
-                          }
-                        },
-                        items: [
-                          {
-                            value: "yes",
-                            text: "Yes",
-                            conditional: {
-                      html: stopDateHtml
-                     }
-                   },
-                   {
-                            value: "no",
-                            text: "No"
-                          }
-                        ]
-                      }) }}
-
-{% endif %}
-
-
-
-
-
-
           {{ govukInput({
             label: {
               text: "What is its legal form?",
@@ -275,7 +244,9 @@
              text: "For example, limited company"
            },
             id: "mo-corp-legal-form",
-            name: "mo-corp-legal-form"
+            name: "mo-corp-legal-form",
+          value: moLegalForm,
+          value: "Limited company"
           }) }}
 
                   {{ govukInput({
@@ -288,7 +259,9 @@
                      text: "This is the law the managing officer operates under"
                    },
                     id: "mo-corp-governing-law",
-                    name: "mo-corp-governing-law"
+                    name: "mo-corp-governing-law",
+                    value: moGovLaw,
+                    value: "Cyprus"
                   }) }}
 
 
@@ -336,6 +309,7 @@
               {
                 value: "no",
                 text: "No",
+                checked: true,
                 conditional: {
                   html: phoneHtml
                 }
@@ -351,7 +325,9 @@
               isPageHeading: false
             },
             id: "officer-responsibilities",
-            name: "officer-responsibilities"
+            name: "officer-responsibilities",
+          value: moResponsibilities,
+          value: "Directs and controls the company's operations and to give strategic guidance and direction to the board."
           }) }}
 
 
@@ -365,7 +341,9 @@
               isPageHeading: false
             },
             id: "mo-corporate-contact-full-name",
-            name: "mo-corporate-contact-full-name"
+            name: "mo-corporate-contact-full-name",
+          value: moContactName,
+          value: "Joe Bloggs"
           }) }}
 
 
@@ -377,7 +355,9 @@
               isPageHeading: false
             },
             id: "mo-corporate-contact-email",
-            name: "mo-corporate-contact-email"
+            name: "mo-corporate-contact-email",
+          value: moResponsibilities,
+          value: "joebloggs@email.com"
           }) }}
 
 
