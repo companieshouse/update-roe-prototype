@@ -12,9 +12,19 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-<span class="govuk-caption-l">Managing officer</span>
-      <h1 class="govuk-heading-xl govuk-!-margin-0">Tell us about the individual person</h1>
-      <p class="  govuk-!-margin-bottom-5 govuk-!-margin-top-5">You can add more later.</p>
+<span class="govuk-caption-l">Jane Doe</span>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-5">Review the individual managing officer</h1>
+
+      <p class"govuk-body">If you need to update any managing officer information, you can change the answers on this screen.</p>
+
+  
+  
+  <!-- NOTES FOR CONTENT I added the below in - badly written -->
+<div class="govuk-inset-text">
+  You'll need to enter a date of birth, home address for the beneficial owner and tell us if they are still a managing officer.
+</div>
+
+
       <form class="form" method="post">
 
 
@@ -28,7 +38,9 @@
           text: "This is also known as their given name. Include any professional or honorary titles, if relevant."
         },
           id: "mo-individual-first-name",
-          name: "mo-individual-first-name"
+          name: "mo-individual-first-name",
+          value: moIndFirstName,
+          value: "Jane"
         }) }}
 
 
@@ -43,7 +55,10 @@
         },
           classes: "govuk-!-width-three-quarters",
           id: "mo-individual-last-name",
-          name: "mo-individual-last-name"
+          name: "mo-individual-last-name",
+          value: moIndLastName,
+          value: "Doe"
+
         }) }}
 
         {% set formerNameHtml %}
@@ -54,7 +69,9 @@
                   isPageHeading: false
                 },
                 id: "mo-individual-former-first-name",
-                name: "mo-individual-former-first-name"
+                name: "mo-individual-former-first-name",
+                value: moIndFormerFirstName,
+                value: "Jane"
               }) }}
 
 
@@ -66,7 +83,9 @@
                 },
                 classes: "govuk-!-width-three-quarters",
                 id: "mo-individual-former-last-name",
-                name: "mo-individual-former-last-name"
+                name: "mo-individual-former-last-name",
+                value: moIndFormerLastName,
+                value: "Bloggs"
               }) }}
             {% endset -%}
 
@@ -84,6 +103,7 @@
                 {
                   value: "yes",
                   text: "Yes",
+                  checked: true,
                   conditional: {
                     html: formerNameHtml
                   }
@@ -110,11 +130,32 @@
           }
         }) }}
 
-        <div class="govuk-form-group">
+
+
+        
+
+              {{ govukInput({
+                label: {
+                  text: "What is their nationality?",
+                  classes: "govuk-label--m",
+                  isPageHeading: false
+                },
+          hint: {
+            text: "Start typing a nationality, then choose from the list"
+          },
+                classes: "govuk-!-width-three-quarters",
+                id: "mo-nationality",
+                name: "mo-nationality",
+                value: moNationality,
+                value: "British"
+              }) }}
+
+
+        {# <div class="govuk-form-group">
            <label for="autocomplete-default" class="govuk-label--m">What is their nationality?</label>
           <p class="govuk-hint">Start typing a nationality, then choose from the list</p>
           <div id="nationality" class="autocomplete-wrapper"></div>
-        </div>
+        </div> #}
 
 
         <p class="govuk-body">
@@ -197,11 +238,21 @@
           name: "managing-officer-usual-residential-address-state"
         }) }}
 
-        <div class="govuk-form-group">
-           <label for="autocomplete-default" class="govuk-label">Country</label>
-          <p class="govuk-hint">Start typing a country, then choose from the list</p>
-          <div id="country" class="autocomplete-wrapper"></div>
-        </div>
+
+
+
+        {{ govukInput({
+          label: {
+            html: 'Country'
+          },
+          hint: {
+           text: "Start typing a country, then choose from the list"
+         },
+          classes: "govuk-!-width-two-thirds",
+          id: "managing-officer-usual-residential-address-property-name-number",
+          name: "managing-officer-usual-residential-address-property-name-number"
+        }) }}
+
 
         {{ govukInput({
           label: {
@@ -231,7 +282,9 @@
            text: "For example, 'Saron House', '116' or 'Apartment 37a'"
          },
           id: "service-address-property-name-number",
-          name: "service-address-property-name-number"
+          name: "service-address-property-name-number",
+          value: serviceAdNo,
+          value: "Building 6"
         }) }}
 
         {{ govukInput({
@@ -241,7 +294,8 @@
           classes: "govuk-!-width-two-thirds",
           id: "service-address-line-1",
           name: "service-address-line-1",
-          autocomplete: "address-line1"
+          value: serviceAd1,
+          value: "10 Giro's Passage"
         }) }}
 
         {{ govukInput({
@@ -260,7 +314,9 @@
           },
           classes: "govuk-!-width-two-thirds",
           id: "service-address-city-town",
-          name: "service-address-city-town"
+          name: "service-address-city-town",
+          value: serviceAdCity,
+          value: "Gibraltar"
         }) }}
 
         {{ govukInput({
@@ -272,11 +328,19 @@
           name: "service-address-state"
         }) }}
 
-        <div class="govuk-form-group">
-           <label for="autocomplete-default" class="govuk-label">Country</label>
-          <p class="govuk-hint">Start typing a country, then choose from the list</p>
-          <div id="country-2" class="autocomplete-wrapper"></div>
-        </div>
+                {{ govukInput({
+          label: {
+            html: 'Country'
+          },
+          hint: {
+           text: "Start typing a country, then choose from the list"
+         },
+          classes: "govuk-!-width-two-thirds",
+          id: "country-2",
+          name: "country-2",
+          value: country2,
+          value: "Gibraltar"
+        }) }}
 
         {{ govukInput({
           label: {
@@ -285,7 +349,9 @@
           classes: "govuk-input--width-10",
           id: "service-address-postcode",
           name: "service-address-postcode",
-          autocomplete: "postal-code"
+          autocomplete: "postal-code",
+          value: serviceAd,
+          value: "GX10 1BP"
         }) }}
 
         {% endcall %}
@@ -313,6 +379,7 @@
             {
               value: "no",
               text: "No",
+              checked: true,
               conditional: {
                 html: serviceAddressHtml
                 }
@@ -378,13 +445,27 @@
 
 
 
-        <div class="govuk-!-padding-bottom-6">
+        {# <div class="govuk-!-padding-bottom-6">
           <h1 class="govuk-label-wrapper"><label for="autocomplete-default" class="govuk-label govuk-label--m">What is their occupation? (If applicable)</label></h1>
           <p class="govuk-hint">Start typing an occupation, then choose from the list. If their occupation is not shown, you can enter it directly into the box. <br> If they do not have an occupation, enter 'None'.</p>
           <div id="occupation" name="occupation" class="autocomplete-wrapper"></div>
-        </div>
+        </div> #}
 
 
+        {{ govukInput({
+          label: {
+            text: "What is their occupation? (If applicable)",
+            classes: "govuk-label--m",
+            isPageHeading: false
+          },
+          hint: {
+          html: 'Start typing an occupation, then choose from the list. If their occupation is not shown, you can enter it directly into the box. <br> If they do not have an occupation, enter 	&#39;None&#39;.'
+        },
+          id: "mo-individual-first-name",
+          name: "mo-individual-first-name",
+          value: moIndFirstName,
+          value: "Self-employed"
+        }) }}
 
 
 
@@ -395,7 +476,9 @@
             isPageHeading: false
           },
           id: "officer-responsibilities",
-          name: "officer-responsibilities"
+          name: "officer-responsibilities",
+          value: officerResponsibilities,
+          value: "They oversee the accounts and manage the staff for the building."
         }) }}
 
 
