@@ -22,7 +22,7 @@
     <div class="govuk-grid-column-three-quarters">
 
         {{ govukTable({
-          caption: 'What <span class="govuk-visually-hidden">beneficial owners or managing officers</span> you have added so far' | safe,
+          caption: 'Those already involved in the overseas entity' | safe,
           captionClasses: "govuk-table__caption--m",
           classes: "govuk-!-margin-bottom-8",
           firstCellIsHeader: true,
@@ -100,22 +100,69 @@
                {
                  html: '<a href="./">Change<span class="govuk-visually-hidden">Sugar Hotel Ltd</span></a>'
                }
-              ],
+              ]
+          ]
+        }) }}
+
+
+
+
+
+         {{ govukTable({
+          caption: 'What <span class="govuk-visually-hidden">beneficial owners or managing officers</span> you have added so far for this update' | safe,
+          captionClasses: "govuk-table__caption--m",
+          classes: "govuk-!-margin-bottom-8",
+          firstCellIsHeader: true,
+          head: [
+          {
+            text: "Name",
+            classes: "govuk-visually-hidden"
+          },
+          {
+            text: "Type",
+            classes: "govuk-visually-hidden"
+          },
+          {
+            text: "Status",
+            classes: "govuk-visually-hidden"
+          },
+            {
+              text: "Change or remove",
+              classes: "govuk-visually-hidden"
+            }
+          ],
+          rows: [
+            [
+              {
+                text: "David Bloggs"
+              },
+              {
+                text: "Individual beneficial owner"
+              },
+              {
+                text: "Active"
+              },
+            {
+              html: '<a href="./bo-individual">Change</a>
+                    <a href="/remove" class="govuk-!-padding-left-5">Remove</a>',
+              visuallyHiddenText: "Individual beneficial owne - David Bloggs"
+            }
+             ],
              [
                {
                  text: "Jane Doe"
                },
                {
-                                 text: "Individual managing officer"
-
+               text: "Individual managing officer"
               },
                {
-                                 text: "Ceased"
-
+                text: "Ceased"
                },
-               {
-                 html: '<a href="./">Change<span class="govuk-visually-hidden">Joe Bloggs</span></a>'
-               }
+            {
+              html: '<a href="./bo-individual">Change</a>
+                    <a href="/remove" class="govuk-!-padding-left-5">Remove</a>',
+              visuallyHiddenText: "Individual managing officer - Jane Doe"
+            }
               ]
           ]
         }) }}
