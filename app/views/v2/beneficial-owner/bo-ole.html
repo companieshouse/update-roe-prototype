@@ -13,7 +13,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-<span class="govuk-caption-l">ACME Limited</span>
+<span class="govuk-caption-l">ACME Trustees Limited</span>
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-5">Review the other legal entity</h1>
       <!--<p class="govuk-!-margin-bottom-5 govuk-!-margin-top-5">You can add more later.</p>-->
 
@@ -59,7 +59,7 @@
           id: "bo-corp-principal-address-property-name-number",
           name: "bo-corp-principal-address-property-name-number",
           value: boCorpProperty,
-          value: "Maison Verde"
+          value: "Suite 8"
         }) }}
 
         {{ govukInput({
@@ -71,7 +71,7 @@
           name: "bo-corp-principal-address-line-1",
           autocomplete: "address-line1",
           value: boCorpAd1,
-          value: "Rue de Rouge 5604"
+          value: "St Luke’s Court"
         }) }}
 
         {{ govukInput({
@@ -82,7 +82,8 @@
           id: "bo-corp-principal-address-line-2",
           name: "bo-corp-principal-address-line-2",
           autocomplete: "address-line2",
-          value: boCorpAd2
+          value: boCorpAd2,
+          value: "28 Devon Street"
         }) }}
 
         {{ govukInput({
@@ -93,7 +94,7 @@
           id: "bo-corp-principal-address-city-town",
           name: "bo-corp-principal-address-city-town",
           value: boCorpCity,
-          value: "Paris"
+          value: "London"
         }) }}
 
         {{ govukInput({
@@ -117,7 +118,7 @@
           id: "boCorpCountry",
           name: "boCorpCountry",
           value: boCorpCountry,
-          value: "France"
+          value: "United Kingdom"
         }) }}
 
 
@@ -129,7 +130,9 @@
           classes: "govuk-input--width-10",
           id: "bo-corp-principal-address-postcode",
           name: "bo-corp-principal-address-postcode",
-          autocomplete: "postal-code"
+          autocomplete: "postal-code",
+          value: postalCode,
+          value: "W1B 6PD"
         }) }}
         {% endcall %}
 
@@ -266,7 +269,7 @@
                   id: "bo-corp-governing-law",
                   name: "bo-corp-governing-law",
                   value: boCorpGovLaw,
-                  value: "France"
+                  value: "BVI"
                 }) }}
 
 
@@ -624,17 +627,18 @@
                   },
                   {
                     value: "noc-firm-voting",
-                    text: "the members of that firm (in their capacity as such) hold, directly or indirectly, more than 25% of the voting rights in the entity"
+                    text: "the members of that firm (in their capacity as such) hold, directly or indirectly, more than 25% of the voting rights in the entity",
+                    checked: true
                   },
                   {
                     value: "noc-firm-board",
                     text: "the members of that firm (in their capacity as such) hold the right, directly or indirectly, to appoint or remove a majority of the board of directors of the company"
+
                   },
                   {
                     value: "noc-firm-influence",
-                    text: "the members of that firm (in their capacity as such) have the right to exercise, or actually exercise, significant influence or control over the company",
-                checked: true
-                  }
+                    text: "the members of that firm (in their capacity as such) have the right to exercise, or actually exercise, significant influence or control over the company"                 
+                     }
                 ]
               }) }}
 
