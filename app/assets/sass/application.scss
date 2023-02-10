@@ -127,3 +127,30 @@ ul#navigation {
   padding: 1em;
   clear: both;
 }
+
+
+
+  //Styles for beneficial owner statement
+
+  .bo-statement {
+    background-color:#f3f2f1; 
+    color: #fff !important;
+    padding: 2em 2em 1em;
+  
+    h1, h2, h3, p, ul, li, a:link {
+      color:#0b0c0c;
+    }
+    a:hover, a:visited  {
+      color:   #f3f2f1		;
+    }
+    a:focus {
+      text-decoration:none;
+      color:  $govuk-focus-text-colour;
+      background-color:  $govuk-focus-colour	;
+    }
+  
+    
+  
+    }
+  
+  

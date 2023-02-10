@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+
+Is this statement correct?
+ – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+ 
+  <form action="" method="post">
+
+
+<h1 class="govuk-heading-xl">Is this statement correct?</h1>
+
+      <div class="bo-statement govuk-!-margin-bottom-6">
+<p class"govuk-body">Some beneficial owners have been identified and I can provide all required information.</p>
+
+</div>
+
+
+<!-- NOTES FOR CONTENT - choice between the above grey box of the inset text
+{{ govukInsetText({
+  text: "Some beneficial owners have been identified and I can provide all required information."
+}) }}-->
+
+
+    {{ govukRadios({
+      classes: "govuk-radios",
+      idPrefix: "boStatement",
+      name: "bo-statement",
+      fieldset: {
+        legend: {
+          text: "Is this statement correct?",
+          isPageHeading: true,
+          classes: "govuk-visually-hidden"
+        }
+      },
+      items: [
+        {
+          value: "yes",
+          text: "Yes"
+
+    },
+        {
+          value: "no",
+          text: "No, I need to amend the information I have provided"
+        }
+      ]
+    }) }}
+  
+
+  
+          {{ govukButton({
+            text: "Continue"
+          }) }}
+  </form>
+
+
+
+
+    </div>
+  </div>
+
+{% endblock %}
