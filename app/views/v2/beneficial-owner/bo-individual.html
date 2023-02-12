@@ -395,6 +395,7 @@
             ]
           }) }}
 
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-margin-bottom-8">
 
 
           {{ govukCheckboxes({
@@ -431,7 +432,24 @@
                 }
               ]
             }) }}
+            
+
+{{ govukDetails({
+  summaryText: "Exemptions from telling us about trusts",
+  html: '<p class="govuk-body"> You do not need to tell us about trusts if:</p>
+  <ul>
+    <li>Pension trusts</li>
+    <li>Foreign government states</li>
+  </ul>'
+}) }}
+
+{{ govukWarningText({
+  text: "If you change the nature of control trust information, you must update the trust information later in the journey",
+  iconFallbackText: "Warning"
+}) }}
+
               
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-margin-top-8">
 
 
             {{ govukCheckboxes({
