@@ -15,6 +15,12 @@
 <span class="govuk-caption-l">Helios Limited</span>
       <h1 class="govuk-heading-xl govuk-!-margin-0">Review the corporate managing officer</h1>
       <p class="  govuk-!-margin-bottom-5 govuk-!-margin-top-5">If you need to update any managing officer information, you can change the answers on this screen.</p>
+
+
+        <div class="govuk-inset-text">
+  You'll need to tell us if it is still a managing officer for the overseas entity.
+</div>
+
       <form class="form" method="post">
 
         {{ govukInput({
@@ -360,6 +366,51 @@
           }) }}
 
 
+
+{% set moCorpCeasedHtml %}
+{{ govukDateInput({
+  id: "mo-corp-ceased",
+  namePrefix: "mo-corp-ceased",
+  fieldset: {
+    legend: {
+      text: "When did it stop being a managing officer?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: "For example, 27 3 2007"
+  }
+}) }}
+{% endset -%}
+
+
+{{ govukRadios({
+  name: "moCorpActive",
+  fieldset: {
+    legend: {
+      text: "Is it still a managing officer for the overseas entity?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: "Select one option."
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes"
+    },
+    {
+      value: "no",
+      text: "No",
+      conditional: {
+        html: moCorpCeasedHtml
+      }
+    }
+  ]
+}) }}
 
 
             {{ govukInsetText({
