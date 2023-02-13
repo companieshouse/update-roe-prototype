@@ -22,11 +22,11 @@ Government or public authority beneficial owner – {{ serviceName }} – GOV.UK
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-5">Review the government or public authority</h1>
       <!--<p class="govuk-!-margin-bottom-5 govuk-!-margin-top-5">You can add more later.</p>-->
 
-  <p class"govuk-body">If you need to update any beneficial owner information, you can change the answers on this screen.</p>
+  <p class"govuk-body">If you need to update this beneficial owner's information, you can change the answers here.</p>
   
   <!-- NOTES FOR CONTENT I added the below in - badly written -->
 <div class="govuk-inset-text">
-  You'll need to tell us if they are still a beneficial owner for the overseas entity.
+  You'll need to tell us if they're still a beneficial owner for the overseas entity.
 </div>
 
 
@@ -337,7 +337,7 @@ html: serviceAddressHtml
   id: "bo-gov-legal-form",
   name: "bo-gov-legal-form",
   value: boGovLegalForm,
-  value: "Association"
+  value: "Embassy"
 }) }}
 {% endif %}
 
@@ -592,9 +592,9 @@ Have they been a beneficial owner continuously for the whole period this update 
   name: "boGov",
   fieldset: {
     legend: {
-      text: "Have they been a beneficial owner continuously throughout this update period?",
+      text: "Has it been a beneficial owner continuously throughout this update period?",
       isPageHeading: true,
-      classes: "govuk-fieldset__legend--m"
+      classes: "govuk-fieldset__legend--s"
     }
   },
   items: [
@@ -620,9 +620,6 @@ Have they been a beneficial owner continuously for the whole period this update 
       classes: "govuk-fieldset__legend--m"
     }
   },
-  hint: {
-    text: "Select one option."
-  },
   items: [
     {
       value: "yes",
@@ -643,7 +640,7 @@ Have they been a beneficial owner continuously for the whole period this update 
                       {{ govukInsetText({
                         html: '
                                   <h2 class="govuk-heading-m">What information we&#39;ll show on the public register</h2>
-                                  <p>We will show all the information you provide on this screen on the public Register of Overseas Entities.</p>
+                                  <p>We will show all the information you provide in this section on the public Register of Overseas Entities.</p>
                                     '
                       }) }}
 

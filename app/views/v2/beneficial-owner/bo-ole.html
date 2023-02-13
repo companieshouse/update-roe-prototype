@@ -17,13 +17,11 @@
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-5">Review the other legal entity</h1>
       <!--<p class="govuk-!-margin-bottom-5 govuk-!-margin-top-5">You can add more later.</p>-->
 
-  <p class"govuk-body">If you need to update any beneficial owner information, you can change the answers on this screen.</p>
+  <p class"govuk-body">If you need to update this beneficial owner's information, you can change the answers here.</p>
 
   
-  
-  <!-- NOTES FOR CONTENT I added the below in - badly written -->
 <div class="govuk-inset-text">
-  You'll need to tell us if they are still a beneficial owner for the overseas entity.
+  You'll need to tell us if they're still a beneficial owner for the overseas entity.
 </div>
 
       <form class="form" action="./ceased-dates" method="post">
@@ -534,7 +532,7 @@
 
         {% call govukFieldset({
           legend: {
-            html: 'What is its nature of control?<br><p class="govuk-hint govuk-!-padding-top-1"> Select all that apply. If the beneficial owner is a trustee of a trust, you&#39ll need to enter trust information later in the service. </p>',
+            html: 'What is its nature of control?<br><p class="govuk-hint govuk-!-padding-top-1"> Select all that apply. If the beneficial owner is a trustee of a trust, you can review and update trust information later in the service. </p>',
 
             classes: "govuk-fieldset__legend--m",
             isPageHeading: false
@@ -573,7 +571,6 @@
             ]
           }) }}
 
-<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-margin-bottom-8">
 
 
           {{ govukCheckboxes({
@@ -608,22 +605,8 @@
               ]
             }) }}
 
-            {{ govukDetails({
-  summaryText: "Exemptions from telling us about trusts",
-  html: '<p class="govuk-body"> You do not need to tell us about trusts if:</p>
-  <ul>
-    <li>Pension trusts</li>
-    <li>Foreign government states</li>
-  </ul>'
-}) }}
 
-{{ govukWarningText({
-  text: "If you change the nature of control trust information, you must update the trust information later in the journey",
-  iconFallbackText: "Warning"
-}) }}
 
-              
-<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-margin-top-8">
 
 
 
@@ -736,7 +719,7 @@
     legend: {
       text: "Have they been a beneficial owner continuously throughout this update period?",
       isPageHeading: true,
-      classes: "govuk-fieldset__legend--m"
+      classes: "govuk-fieldset__legend--s"
     }
   },
   items: [
@@ -749,7 +732,7 @@
     },
     {
       value: "no",
-      text: "No, but there have been gaps",
+      text: "No",
       conditional: {
         html: boCont
       }
@@ -767,9 +750,6 @@
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m"
     }
-  },
-  hint: {
-    text: "Select one option."
   },
   items: [
     {
@@ -790,7 +770,7 @@
   {{ govukInsetText({
     html: '
               <h2 class="govuk-heading-m">What information we&#39;ll show on the public register</h2>
-              <p>We will show all the information you provide on this screen on the public Register of Overseas Entities.</p>
+              <p>We will show all the information you provide in this section on the public Register of Overseas Entities.</p>
                 '
   }) }}
 

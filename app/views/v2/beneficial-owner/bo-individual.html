@@ -28,7 +28,7 @@
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-5">Review the individual beneficial owner</h1>
       <!--<p class="govuk-!-margin-bottom-5 govuk-!-margin-top-5">You can add more later.</p>-->
 
-      <p class"govuk-body">If you need to update any beneficial owner information, you can change the answers here.</p>
+      <p class"govuk-body">If you need to update this beneficial owner's information, you can change the answers here.</p>
 
   
 <div class="govuk-inset-text">
@@ -355,7 +355,7 @@
 
         {% call govukFieldset({
           legend: {
-            html: 'What is their nature of control?<br><p class="govuk-hint govuk-!-padding-top-1"> Select all that apply.</p>',
+            html: 'What is their nature of control?<br><p class="govuk-hint govuk-!-padding-top-1"> Select all that apply. If the beneficial owner is a trustee of a trust, you can review and update trust information later in the service.</p>',
             classes: "govuk-fieldset__legend--m",
             isPageHeading: false
           }
@@ -393,8 +393,6 @@
             ]
           }) }}
 
-<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-margin-bottom-8">
-
 
           {{ govukCheckboxes({
               idPrefix: "bo-noc-trust",
@@ -431,8 +429,6 @@
               ]
             }) }}
 
-              
-<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-margin-top-8">
 
 
             {{ govukCheckboxes({
