@@ -43,10 +43,23 @@ Do any beneficial owners or managing officers have their personal information pr
       ]
     }) }}
   
-    {{ govukDetails({
-      summaryText: "What having personal information protected means",
-      text: "We need to know your nationality so we can work out which elections you're entitled to vote in. If you cannot provide your nationality, you'll have to send copies of identity documents through the post."
-    }) }}
+<details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      What having personal information protected means
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <p class="govuk-body">Some people can <a href="https://www.gov.uk/guidance/applying-to-protect-your-personal-information-on-the-companies-house-register" class="govuk-link">apply to protect personal information from being shown on the Companies House public register</a> if they meet certain criteria. This process includes:</p>
+    <ul class="govuk-list govuk-list--bullet">
+    <li>providing evidence that they are eligible to have their details protected </li>
+    <li>paying a £100 fee</li>
+    </ul>
+
+    <p class="govuk-body">You should only select ‘yes’ if any of the beneficial owners or managing officers have already done this.</p>
+
+  </div>
+</details>
   
           {{ govukButton({
             text: "Continue"
