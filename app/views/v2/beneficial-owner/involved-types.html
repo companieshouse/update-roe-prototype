@@ -17,14 +17,102 @@
 
   <span class="govuk-caption-l">{{ data['overseas-name'] }} - {{ data['overseas-id'] }}</span>
 <h1 class="govuk-heading-xl">Beneficial owners and managing officers involved in the overseas entity</h1>
+
+
   </div>
+
+{# 
+
+  <div class="govuk-grid-column-three-quarters">
+
+
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+{{ govukSummaryList({
+  card: {
+    title: {
+      text: "Person 2"
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Daniel Ashcroft"
+      },
+      value: {
+        html: "Individual beneficial owner"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "Daniel Ashcroft - Individual beneficial owner"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "ACME Trustees Limited"
+      },
+      value: {
+        html: "Other legal entity beneficial owner"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "ACME Trustees Limited - Other legal entity beneficial owner"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "AMK Department"
+      },
+      value: {
+        html: "	Government or public authority beneficial owner"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "AMK Department - Government or public authority beneficial owner"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Helios Limited"
+      },
+      value: {
+        html: "Corporate managing officer"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "Helios Limited - Corporate managing officer"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
+
+</div> #}
 
     <div class="govuk-grid-column-three-quarters existing-bo-mo">
 
         {{ govukTable({
           caption: 'Beneficial owners or managing officers previously added' | safe,
           captionClasses: "govuk-table__caption--m",
-          classes: "govuk-!-margin-bottom-8",
+          classes: "govuk-!-margin-bottom-4",
           firstCellIsHeader: true,
           head: [
           {
@@ -104,11 +192,30 @@
           ]
         }) }}
 
+
+
+
+
 </div>
 
 
 
     <div class="govuk-grid-column-three-quarters govuk-!-margin-top-6">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
