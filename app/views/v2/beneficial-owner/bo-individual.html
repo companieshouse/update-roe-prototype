@@ -32,7 +32,7 @@
 
   
 <div class="govuk-inset-text">
-  You'll need to enter their date of birth and home address, and tell us if they're still a beneficial owner for the overseas entity.
+  You'll need to enter their date of birth and home address.
 </div>
 
       <form class="form" action="./bo-ole" method="post">
@@ -497,7 +497,7 @@
   ]
 }) }}
 
-
+<!--
 {{ govukDateInput({
           id: "owner-startdate",
           namePrefix: "owner-startdate",
@@ -588,13 +588,13 @@
     }
   ]
 }) }}
-
+-->
 
 
 {{ govukInsetText({
   html: '
             <h2 class="govuk-heading-m">What information we&#39;ll show on the public register</h2>
-            <p>We will not show the beneficial owner&#39;s home address unless it is the same as their correspondence address. We&#39;ll only show the month and year of their date of birth.</p>
+            <p>We will not show the beneficial owner&#39;s home address, unless it is the same as their correspondence address. We&#39;ll only show the month and year of their date of birth.</p>
             <p>We will show all the other information you provide in this section on the public Register of Overseas Entities.</p>
         '
 }) }}
