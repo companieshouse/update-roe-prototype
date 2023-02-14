@@ -2,7 +2,7 @@
 
 {% block pageTitle %}
 
-Date details
+What period were they a beneficial owner for?
  – {{ serviceName }} – GOV.UK
 {% endblock %}
 
@@ -16,62 +16,23 @@ Date details
 
 <span class="govuk-caption-l">ACME Trustees Limited</span> 
 <h1 class="govuk-heading-xl">
-  Date details
+  What period were they a beneficial owner for?
 </h1>
 
 <form class="form" action="./involved-types" method="post">
 
-<p class="govuk-body">
-  Review the date they first became a beneficial owner. If they're no longer a beneficial owner, tell us the date they ceased to be one. 
-</p>
+{{ govukInsetText({
+  text: "If there have been gaps in a beneficial owner's involvement with the entity, you must tell us when they were active."
+}) }}
 
-<p class="govuk-body">
-  If relevant, you'll also need to tell us all the dates they've been ceased and reappointed during this update period.
-</p>
-
-{{ govukDateInput({
-          id: "owner-startdate",
-          namePrefix: "owner-startdate",
-          fieldset: {
-            legend: {
-              text: "When did they become a beneficial owner for the overseas entity?",
-              isPageHeading: false,
-              classes: "govuk-fieldset__legend--m"
-            }
-          },
-          hint: {
-            text: "For example, 27 3 2007"
-          },
-          items: [
-    {
-      classes: "govuk-input--width-2",
-      name: "day",
-      value: startDay,
-      value: "10"
-    },
-    {
-      classes: "govuk-input--width-2",
-      name: "month",
-      value: startMonth,
-      value: "7"
-    },
-    {
-      classes: "govuk-input--width-4",
-      name: "year",
-      value: startYear,
-      value: "2004"
-    }
-  ]
-        }) }}
-
-
+<p class="govuk-body-m">Date they became a beneficial owner:<br><strong>6 August 2022</strong></p>
 
 {{ govukDateInput({
   id: "filing-date",
   namePrefix: "filing-date",
   fieldset: {
     legend: {
-      text: "Date ceased (if relevant)",
+      text: "Date ceased",
       classes: "govuk-fieldset__legend--m"
     }
   },
@@ -79,6 +40,7 @@ Date details
     text: "For example, 28 11 2022"
   }
 }) }}
+
 
 
         <p class="govuk-body">
@@ -94,8 +56,8 @@ Date details
   namePrefix: "passport-issued",
   fieldset: {
     legend: {
-      text: "Date reappointed (if relevant)",
-      classes: "govuk-fieldset__legend--m"
+      text: "Date started",
+      classes: "govuk-fieldset__legend--s"
     }
   }
 }) }} 
@@ -107,14 +69,12 @@ Date details
   fieldset: {
     legend: {
       text: "Date ceased (if relevant)",
-      classes: "govuk-fieldset__legend--m"
+      classes: "govuk-fieldset__legend--s"
     }
   }
 }) }}
 
 <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-margin-bottom-3">
-
-
 
 </div>
 </div>
@@ -134,8 +94,8 @@ Date details
   namePrefix: "passport-issued",
   fieldset: {
     legend: {
-      text: "Date reappointed (if relevant)",
-      classes: "govuk-fieldset__legend--m"
+      text: "Date started",
+      classes: "govuk-fieldset__legend--s"
     }
   }
 }) }}
@@ -147,13 +107,10 @@ Date details
   fieldset: {
     legend: {
       text: "Date ceased (if relevant)",
-      classes: "govuk-fieldset__legend--m"
+      classes: "govuk-fieldset__legend--s"
     }
   }
 }) }}
-
-<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-margin-bottom-3">
-
 </div>
 </div>
 
@@ -165,7 +122,7 @@ Date details
 }) }}
 
 
-<!--
+
 
 {% set gapDatesHtml %}
 
@@ -241,5 +198,5 @@ Date details
       </div>
     </form>
     </div>
--->
+
 {% endblock %}
