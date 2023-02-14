@@ -21,93 +21,91 @@
 
   </div>
 
-{# 
-
-  <div class="govuk-grid-column-three-quarters">
 
 
-{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
-{{ govukSummaryList({
-  card: {
-    title: {
-      text: "Person 2"
-    }
-  },
-  rows: [
-    {
-      key: {
-        text: "Daniel Ashcroft"
-      },
-      value: {
-        html: "Individual beneficial owner"
-      },
-      actions: {
-        items: [
-          {
-            href: "#",
-            text: "Change",
-            visuallyHiddenText: "Daniel Ashcroft - Individual beneficial owner"
-          }
-        ]
-      }
-    },
-    {
-      key: {
-        text: "ACME Trustees Limited"
-      },
-      value: {
-        html: "Other legal entity beneficial owner"
-      },
-      actions: {
-        items: [
-          {
-            href: "#",
-            text: "Change",
-            visuallyHiddenText: "ACME Trustees Limited - Other legal entity beneficial owner"
-          }
-        ]
-      }
-    },
-    {
-      key: {
-        text: "AMK Department"
-      },
-      value: {
-        html: "	Government or public authority beneficial owner"
-      },
-      actions: {
-        items: [
-          {
-            href: "#",
-            text: "Change",
-            visuallyHiddenText: "AMK Department - Government or public authority beneficial owner"
-          }
-        ]
-      }
-    },
-    {
-      key: {
-        text: "Helios Limited"
-      },
-      value: {
-        html: "Corporate managing officer"
-      },
-      actions: {
-        items: [
-          {
-            href: "#",
-            text: "Change",
-            visuallyHiddenText: "Helios Limited - Corporate managing officer"
-          }
-        ]
-      }
-    }
-  ]
-}) }}
+  <div class="govuk-grid-column-full">
 
-</div> #}
 
-    <div class="govuk-grid-column-three-quarters existing-bo-mo">
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">Beneficial owners or managing officers previously added</h2>
+  </div>
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Daniel Ashcroft
+        </dt>
+        <dd class="govuk-summary-list__value">
+          	Individual beneficial owner
+        </dd>
+        <dd class="govuk-summary-list__value summary-status" aria-label="Status - active">
+          Active
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> Daniel Ashcroft - Individual beneficial owner</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          ACME Trustees Limited
+        </dt>
+        <dd class="govuk-summary-list__value">
+          	Other legal entity beneficial owner
+        </dd>
+        <dd class="govuk-summary-list__value summary-status" aria-label="Status - ceased">
+          Ceased
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> ACME Trustees Limited - Other legal entity beneficial owner</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          AMK Department
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Government or public authority beneficial owner
+        </dd>
+       <dd class="govuk-summary-list__value summary-status" aria-label="Status - active">
+          Active
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> AMK Department - Government or public authority beneficial owner</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Helios Limited
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Corporate managing officer
+        </dd>
+       <dd class="govuk-summary-list__value summary-status" aria-label="Status - active">
+          Active
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> Helios Limited - Corporate managing officer</span>
+          </a>
+        </dd>
+      </div>
+    </dl>
+  </div>
+</div>
+
+</div> 
+
+
+    {# <div class="govuk-grid-column-full existing-bo-mo">
+
+      Can be deleted if 
 
         {{ govukTable({
           caption: 'Beneficial owners or managing officers previously added' | safe,
@@ -196,27 +194,11 @@
 
 
 
-</div>
+</div> #}
 
 
 
-    <div class="govuk-grid-column-three-quarters govuk-!-margin-top-6">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <div class="govuk-grid-column-full govuk-!-margin-top-6">
 
 
          {{ govukTable({
