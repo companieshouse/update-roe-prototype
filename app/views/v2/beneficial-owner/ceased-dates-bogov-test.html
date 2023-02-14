@@ -14,15 +14,15 @@ Date details
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-<span class="govuk-caption-l">Daniel Ashcroft</span> 
+<span class="govuk-caption-l">Beneficial owner</span> 
 <h1 class="govuk-heading-xl">
   Date details
 </h1>
 
-<form class="form" action="./involved-types" method="post">
+<form class="form" method="post">
 
 <p class="govuk-body">
-  Review the date they first became a beneficial owner. If they're no longer a beneficial owner, tell us the date they ceased to be one. 
+  Tell us the date they first became a beneficial owner. If they're no longer a beneficial owner, tell us the date they ceased to be one. 
 </p>
 
 <p class="govuk-body">
@@ -46,20 +46,17 @@ Date details
     {
       classes: "govuk-input--width-2",
       name: "day",
-      value: startDay,
-      value: "10"
+      value: startDay
     },
     {
       classes: "govuk-input--width-2",
       name: "month",
-      value: startMonth,
-      value: "7"
+      value: startMonth
     },
     {
       classes: "govuk-input--width-4",
       name: "year",
-      value: startYear,
-      value: "2004"
+      value: startYear
     }
   ]
         }) }}
@@ -162,85 +159,8 @@ Date details
 
 {{ govukButton({
   text: "Save and continue",
-  href: "bo-ole"
+  href: "./involved-types-test"
 }) }}
 
 
-<!--
-
-{% set gapDatesHtml %}
-
-<p class="govuk-body-m">The benefical owner had left the entity on 1 December 2022. They decided to return on 31 January 2023.</p>
-
-{{ govukDateInput({
-  id: "gapDates",
-  namePrefix: "gapDates",
-  fieldset: {
-    legend: {
-      text: "Date ceased",
-      classes: "govuk-fieldset__legend--s"
-    }
-  },
-  items: [
-    {
-      name: "day",
-      classes: "govuk-input--width-2",
-      value: "1"
-    },
-    {
-      name: "month",
-      classes: "govuk-input--width-2",
-      value: "12"
-    },
-    {
-      name: "year",
-      classes: "govuk-input--width-4",
-      value: "2022"
-    }
-  ]
-}) }}
-
-{{ govukDateInput({
-  id: "gapDates",
-  namePrefix: "gapDates",
-  fieldset: {
-    legend: {
-      text: "Date started",
-      classes: "govuk-fieldset__legend--s"
-    }
-  },
-  items: [
-    {
-      name: "day",
-      classes: "govuk-input--width-2",
-      value: "31"
-    },
-    {
-      name: "month",
-      classes: "govuk-input--width-2",
-      value: "1"
-    },
-    {
-      name: "year",
-      classes: "govuk-input--width-4",
-      value: "2023"
-    }
-  ]
-}) }}
-
-
-
-{% endset -%}
-
-{{ govukDetails({
-  summaryText: "Example of gaps in an update period",
-  html: gapDatesHtml
-}) }}
-
-
-      </div>
-      </div>
-    </form>
-    </div>
--->
 {% endblock %}
