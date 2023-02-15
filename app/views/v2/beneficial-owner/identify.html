@@ -2,7 +2,7 @@
 
 {% block pageTitle %}
 
-Are there any beneficial owners that you haven't been able to identify?
+Are there any registrable beneficial owners that the overseas entity has not identified?
  – {{ serviceName }} – GOV.UK
 {% endblock %}
 
@@ -23,7 +23,7 @@ Are there any beneficial owners that you haven't been able to identify?
       name: "boIdentify",
       fieldset: {
         legend: {
-          text: "Are there any beneficial owners that you haven't been able to identify?",
+          text: "Are there any registrable beneficial owners that the overseas entity has not identified?",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--xl"
         }
@@ -42,11 +42,11 @@ Are there any beneficial owners that you haven't been able to identify?
         }
       ]
     }) }}
-  
+  <!--
     {{ govukDetails({
       summaryText: "What is a managing officer?",
       text: "A managing officer is a director, manager or company secretary of the overseas entity."
-    }) }}
+    }) }}-->
   
           {{ govukButton({
             text: "Continue",

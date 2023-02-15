@@ -2,7 +2,7 @@
 
 {% block pageTitle %}
 
-Is this statement correct?
+Review the following statement
  – {{ serviceName }} – GOV.UK
 {% endblock %}
 
@@ -18,13 +18,15 @@ Is this statement correct?
   <form action="" method="post">
 
 
-<h1 class="govuk-heading-xl">Is this statement correct?</h1>
+<h1 class="govuk-heading-xl">Review the beneficial owner statement</h1>
+
+<p class"govuk-body">Based on the information you've provided in this update, we'll show this statement on the public Register of Overseas Entities: </p>
 
       <div class="bo-statement govuk-!-margin-bottom-6">
-<p class"govuk-body">Some beneficial owners have been identified and I can provide all required information.</p>
+<p class"govuk-body">All beneficial owners have been identified and all required information can be provided.</p>
 
 </div>
-
+<h1 class="govuk-heading-l">Is this statement correct?</h1>
 
     {{ govukRadios({
       classes: "govuk-radios",
