@@ -4,6 +4,8 @@ const { postProtectedFilter } = require('../assets/javascripts/routes/protected-
 const { postSavedFiling } = require('../assets/javascripts/routes/saved-filing');
 const { postInvolvedFilter } = require('../assets/javascripts/routes/involved-types');
 const { postIdentifyFilter } = require('../assets/javascripts/routes/identify');
+const { postStatementFilter } = require('../assets/javascripts/routes/statement');
+
 const router = govukPrototypeKit.requests.setupRouter()
     
 // auth-filter.html
@@ -15,5 +17,6 @@ postProtectedFilter(router)
 postSavedFiling(router)
 postInvolvedFilter(router)
 postIdentifyFilter(router)
+postStatementFilter(router)
 
 module.exports=router;

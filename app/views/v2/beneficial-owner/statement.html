@@ -15,7 +15,7 @@ Review the following statement
   <div class="govuk-grid-column-two-thirds">
 
  
-  <form action="" method="post">
+  <form action="../submit-pay/check-your-answers" method="post">
 
 
 <h1 class="govuk-heading-xl">Review the beneficial owner statement</h1>
@@ -31,7 +31,7 @@ Review the following statement
     {{ govukRadios({
       classes: "govuk-radios",
       idPrefix: "boStatement",
-      name: "bo-statement",
+      name: "boStatement",
       fieldset: {
         legend: {
           text: "Is this statement correct?",
@@ -55,8 +55,7 @@ Review the following statement
 
   
           {{ govukButton({
-            text: "Continue",
-            href: "../submit-pay/check-your-answers"
+            text: "Continue"
           }) }}
   </form>
 
