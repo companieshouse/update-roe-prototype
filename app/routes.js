@@ -12,6 +12,12 @@ router.use('/', require('./routes/v1-routes.js'))
 router.use('/', require('./routes/v2-routes.js'))
 
 
+// Clear all data in session
+router.post('/clear-data', function (req, res) {
+    req.session.data = {}
+    res.render('prototype-admin/clear-data-success')
+  })
+
 module.exports = router
 
 // const express = require('express')
