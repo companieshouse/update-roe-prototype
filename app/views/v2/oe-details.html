@@ -31,44 +31,6 @@
 
 
 
-      {# {% if errorList.length > 0 %}
-        {{ govukErrorSummary({
-            titleText: "There is a problem",
-            errorList: errorList
-          }) }} #}
-{# 
-{% if errorEmail == true %}
-        {{ govukInput({
-          label: {
-            text: "Which email address at the overseas entity should we send communications to?",
-            classes: "govuk-label--m",
-            isPageHeading: false
-          },
-          id: "entity-email",
-          name: "entity-email",
-          
-          value: entityEmail,
-          errorMessage: {
-                  text: "Enter an email address"
-                }
-        }) }}
-        {% else %}
-          {% endif %}
-        {{ govukInput({
-          label: {
-            text: "Which email address at the overseas entity should we send communications to?",
-            classes: "govuk-label--m",
-            isPageHeading: false
-          },
-            hint: {
-           text: "We'll use this to send important information. If you request an authentication code in the future, we'll send it to this email address."
-         },
-          id: "entity-email",
-          name: "entity-email",
-          value: entityEmail
-        }) }} #}
-
-
 
 
 
@@ -76,7 +38,7 @@
   <span class="govuk-caption-l">{{ data['overseas-name'] }} - {{ data['overseas-id'] }}</span>
       <h1 class="govuk-heading-xl">Review overseas entity information</h1>
 
-      <form class="form" action="/v2/beneficial-owner/bo-mo-review" method="post">
+      <form class="form" action="" method="post">
 
 {#
         {{ govukDetails({
@@ -822,7 +784,8 @@ html: serviceAddressHtml
 
 
         {{ govukButton({
-          text: "Continue"
+          text: "Continue",
+          href: "./oe-details-error"
         }) }}
 
       </form>

@@ -1,10 +1,8 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-{% if errorList.length > 0 %}
-  Error:
-{% endif %}
-  Individual beneficial owner – {{ serviceName }} – GOV.UK
+
+ Error: Individual beneficial owner – {{ serviceName }} – GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -17,12 +15,32 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      {% if errorList.length > 0 %}
-        {{ govukErrorSummary({
-            titleText: "There is a problem",
-            errorList: errorList
-          }) }}
-      {% endif %}
+{{ govukErrorSummary({
+  titleText: "There is a problem",
+  errorList: [
+    {
+      text: "Enter the individual person’s date of birth",
+      href: "#owner-dob"
+    },
+    {
+      text: "Enter a property name or number",
+      href: "#usual-residential-address-property-name-number"
+    },
+    {
+      text: "Enter an address",
+      href: "#usual-residential-address-line-1"
+    },
+    {
+      text: "Enter a city or town",
+      href: "#service-address-state"
+    },
+    {
+      text: "Start typing, then choose a country from the list",
+      href: "#country"
+    }
+  ]
+}) }}
+
 
 <span class="govuk-caption-l">Daniel Ashcroft</span>
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-5">Review the individual beneficial owner</h1>
@@ -73,6 +91,9 @@
         }) }}
 
 
+
+
+
         {{ govukDateInput({
           id: "owner-dob",
           namePrefix: "owner-dob",
@@ -86,6 +107,9 @@
           hint: {
             text: "For example, 27 3 2007"
           },
+            errorMessage: {
+    text: "Enter the individual person’s date of birth"
+  },
           items: [
     {
       classes: "govuk-input--width-2",
@@ -162,7 +186,10 @@
            text: "For example, 'Saron House', '116' or 'Apartment 37a'"
          },
           id: "usual-residential-address-property-name-number",
-          name: "usual-residential-address-property-name-number"
+          name: "usual-residential-address-property-name-number",
+          errorMessage: {
+          text: "Enter a property name or number"
+        }
         }) }}
 
 
@@ -174,7 +201,10 @@
           id: "usual-residential-address-line-1",
           name: "usual-residential-address-line-1",
           autocomplete: "address-line1",
-          value: homeAddressLine1
+          value: homeAddressLine1,
+          errorMessage: {
+          text: "Enter an address"
+        }
         }) }}
 
 
@@ -197,7 +227,10 @@
           classes: "govuk-!-width-two-thirds",
           id: "usual-residential-address-city-town",
           name: "usual-residential-address-city-town",
-          value: homeCity
+          value: homeCity,
+          errorMessage: {
+          text: "Enter a city or town"
+        }
         }) }}
 
 
@@ -210,7 +243,6 @@
           name: "service-address-state"
         }) }}
 
-
         {{ govukInput({
           label: {
             text: "Country"
@@ -221,7 +253,10 @@
           classes: "govuk-!-width-two-thirds",
           id: "country",
           name: "country",
-          value: country
+          value: country,
+          errorMessage: {
+          text: "Start typing, then choose a country from the list"
+        }
         }) }}
 
 
@@ -603,7 +638,7 @@
 
         {{ govukButton({
           text: "Continue",
-          href: "bo-individual-error"
+          href: "ceased-dates"
         }) }}
 
       </form>
