@@ -25,9 +25,11 @@ Government or public authority beneficial owner – {{ serviceName }} – GOV.UK
   <p class"govuk-body">If you need to update this beneficial owner's information, you can change the answers here.</p>
   
   <!-- NOTES FOR CONTENT I added the below in - badly written -->
+
+<!--
 <div class="govuk-inset-text">
   You'll need to tell us if they're still a beneficial owner for the overseas entity.
-</div>
+</div> -->
 
 
 
@@ -538,7 +540,7 @@ html: serviceAddressHtml
                       }) }}
 
 
-
+<!--
 
 {{ govukDateInput({
           id: "bo-gov-startdate",
@@ -575,7 +577,7 @@ html: serviceAddressHtml
   ]
         }) }}
 
-
+-->
 
 
 <!-- NOTES FOR CONTENT - I feel wording for below questioncould make users think it's 
@@ -586,7 +588,7 @@ Have they been a beneficial owner continuously for the whole period?
 
 Very badly written idea for question:
 Have they been a beneficial owner continuously for the whole period this update is about?-->
-
+<!--
 {% set boGovHtml %}
 {{ govukRadios({
   name: "boGov",
@@ -609,8 +611,8 @@ Have they been a beneficial owner continuously for the whole period this update 
   ]
 }) }}
 {% endset -%}
-
-
+-->
+<!--
 {{ govukRadios({
   name: "contact",
   fieldset: {
@@ -635,7 +637,7 @@ Have they been a beneficial owner continuously for the whole period this update 
     }
   ]
 }) }}
-
+-->
 
                       {{ govukInsetText({
                         html: '
