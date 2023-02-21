@@ -1,0 +1,114 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+
+What date is the filing made up until?
+ – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+  <span class="govuk-caption-l">{{ data['overseas-name'] }} - {{ data['overseas-id'] }}</span>
+    <h1 class="govuk-heading-xl">
+      Date of the update statement
+    </h1>
+
+    <form action="./presenter" method="post">
+
+<p class="govuk-body">This tells us that all the information you submit within this update statement is correct as of this date.<br>
+</p>
+
+<p class="govuk-body">This overseas entity’s last update statement was made up to
+<strong>6 August 2022</strong>.</p>
+
+
+{% set dateRegisterHtml %}
+        {{ govukDateInput({
+          id: "date-registered",
+          namePrefix: "date-registered",
+          fieldset: {
+            legend: {
+              text: ""
+            }
+          },
+          hint: {
+            text: "For example, 29 7 2023"
+          },
+          items: [
+            {
+              name: "day",
+              classes: "govuk-input--width-2",
+              value: data['date-registered-day']
+            },
+            {
+              name: "month",
+              classes: "govuk-input--width-2",
+              value: data['date-registered-month']
+            },
+            {
+              name: "year",
+              classes: "govuk-input--width-4",
+              value: data['date-registered-year']
+            }
+          ]
+        }) }}
+        {% endset -%}
+
+        {{ govukRadios({
+          name: "date-entered-own-register",
+          fieldset: {
+            legend: {
+              text: "What date is this statement made up to?",
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+        
+          items: [
+            {
+              value: "yes",
+              text: "6 August 2023"
+            },
+            {
+              value: "no",
+              text: "A different date",
+              conditional: {
+                html: dateRegisterHtml
+              }
+            }
+          ]
+        }) }}
+
+{{ govukButton({
+  text: "Continue"
+}) }}
+
+<details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+  Information about update statement dates
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+  Overseas entities must file at least one update statement each year. You can file more often if you need to.
+  </div>
+    <div class="govuk-details__text">
+    The maximum period of time that an update statement can cover is 12 months. If you need to provide updates for a period of more than 12 months, you will need to file more than one update statement.
+  </div>
+      <div class="govuk-details__text">
+    The date of your update statement cannot be in the future.
+  </div>
+</details>
+
+
+      </div>
+      </div>
+    </form>
+    </div>
+
+{% endblock %}
