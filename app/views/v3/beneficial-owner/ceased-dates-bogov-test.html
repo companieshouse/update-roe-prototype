@@ -1,0 +1,166 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+
+Date details
+ – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+<span class="govuk-caption-l">Beneficial owner</span> 
+<h1 class="govuk-heading-xl">
+  Date details
+</h1>
+
+<form class="form" method="post">
+
+<p class="govuk-body">
+  Tell us the date it first became a beneficial owner. If it's no longer a beneficial owner, tell us the date it ceased to be one. 
+</p>
+
+<p class="govuk-body">
+  If relevant, you'll also need to tell us all the dates it's been ceased and reappointed during this update period.
+</p>
+
+{{ govukDateInput({
+          id: "owner-startdate",
+          namePrefix: "owner-startdate",
+          fieldset: {
+            legend: {
+              text: "When did it become a beneficial owner for the overseas entity?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "For example, 27 3 2007"
+          },
+          items: [
+    {
+      classes: "govuk-input--width-2",
+      name: "day",
+      value: startDay
+    },
+    {
+      classes: "govuk-input--width-2",
+      name: "month",
+      value: startMonth
+    },
+    {
+      classes: "govuk-input--width-4",
+      name: "year",
+      value: startYear
+    }
+  ]
+        }) }}
+
+
+
+{{ govukDateInput({
+  id: "filing-date",
+  namePrefix: "filing-date",
+  fieldset: {
+    legend: {
+      text: "Date ceased (if relevant)",
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: "For example, 28 11 2022"
+  }
+}) }}
+
+
+        <p class="govuk-body">
+          <a href="javascript:void(0)" id="second-nationality-link" class="govuk-link govuk-link--no-visited-state">Add more dates</a>
+        </p>
+        <div id="second-nationality" class="second-nationality" style="display: none">
+          <div class="govuk-form-group">
+            <div id="nationalityTwo" class="autocomplete-wrapper">
+
+<div class="govuk-form-group govuk-!-margin-top-9">
+{{ govukDateInput({
+  id: "passport-issued",
+  namePrefix: "passport-issued",
+  fieldset: {
+    legend: {
+      text: "Date reappointed (if relevant)",
+      classes: "govuk-fieldset__legend--m"
+    }
+  }
+}) }} 
+
+{{ govukDateInput({
+  id: "passport-issued",
+  namePrefix: "passport-issued",
+  classes: "govuk-!-margin-bottom-4",
+  fieldset: {
+    legend: {
+      text: "Date ceased (if relevant)",
+      classes: "govuk-fieldset__legend--m"
+    }
+  }
+}) }}
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-margin-bottom-3">
+
+
+
+</div>
+</div>
+</div>
+
+          
+          <p class="govuk-body">
+            <a href="javascript:void(0)" id="third-nationality-link" class="govuk-link govuk-link--no-visited-state">Add more dates</a>
+          </p>
+        </div>
+        <div id="third-nationality" class="third-nationality govuk-!-margin-bottom-4" style="display: none">
+
+          <div class="govuk-form-group">
+            
+{{ govukDateInput({
+  id: "passport-issued",
+  namePrefix: "passport-issued",
+  fieldset: {
+    legend: {
+      text: "Date reappointed (if relevant)",
+      classes: "govuk-fieldset__legend--m"
+    }
+  }
+}) }}
+
+{{ govukDateInput({
+  id: "passport-issued",
+  namePrefix: "passport-issued",
+  classes: "govuk-!-margin-bottom-4",
+  fieldset: {
+    legend: {
+      text: "Date ceased (if relevant)",
+      classes: "govuk-fieldset__legend--m"
+    }
+  }
+}) }}
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-margin-bottom-3">
+
+</div>
+</div>
+
+
+
+
+{{ govukButton({
+  text: "Continue",
+  href: "./involved-types-test"
+}) }}
+
+
+{% endblock %}

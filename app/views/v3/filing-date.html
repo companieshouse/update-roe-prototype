@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+
+What date is the filing made up until?
+ – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+  <span class="govuk-caption-l">{{ data['overseas-name'] }} - {{ data['overseas-id'] }}</span>
+    <h1 class="govuk-heading-xl">
+      What date is the filing made up until?
+    </h1>
+
+    <form action="./presenter" method="post">
+
+
+<p class="govuk-body">The date can be a maximum of 12 months since the last update.<br>
+<strong>The last update was 6 August 2022</strong>.</p>
+
+{{ govukDateInput({
+  id: "filing-date",
+  namePrefix: "filing-date",
+  fieldset: {
+  },
+  hint: {
+    text: "For example, 28 11 2022"
+  }
+}) }}
+
+
+{{ govukButton({
+  text: "Continue"
+}) }}
+
+{{ govukDetails({
+  summaryText: "Information about filing dates",
+  html: 'You can tell us about a maximum of 12 months of updates. For example, from 1 August 2022 to 31 July 2023.
+        You are only required to file an update annually, but you can file more often if you want to.
+        <br><br>
+        If you need to tell us about more than 12 months of updates, you&#39;ll need to file more than one update statement. 
+        <a href="#">Read more about late filings</a>.'
+}) }}
+
+
+      </div>
+      </div>
+    </form>
+    </div>
+
+{% endblock %}
