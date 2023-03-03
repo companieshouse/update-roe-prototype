@@ -160,9 +160,20 @@ ul#navigation {
     margin-bottom: 1em;
     padding: 1.5em 1em 0em 1em;
     }
-  
 
 
   .govuk-summary-card .summary-status{
     width: 7%;
     }
+
+
+  //Styles for index journey maps
+  // background colour set at 25% tint - original = #f3f2f1
+
+    .journey-maps {
+      background-color:#f6f5f5;  
+      border: 2px solid #bfc1c3;
+      margin-bottom: 1em;
+      padding: 1.5em 0em 0.5em 1em;
+      }
+
