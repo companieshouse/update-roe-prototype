@@ -588,11 +588,11 @@ html: serviceAddressHtml
 
 {% set boCeasedHtml %}
 {{ govukDateInput({
-  id: "bo-ceased",
-  namePrefix: "bo-ceased",
+  id: "bo-gov-ceased",
+  namePrefix: "bo-gov-ceased",
   fieldset: {
     legend: {
-      text: "When did they stop being a beneficial owner?",
+      text: "When did it stop being a beneficial owner?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m"
     }
@@ -605,10 +605,10 @@ html: serviceAddressHtml
 
 
 {{ govukRadios({
-  name: "bo-ceased",
+  name: "bo-gov-ceased",
   fieldset: {
     legend: {
-      text: "Are they still a beneficial owner for the overseas entity?",
+      text: "Is it still a beneficial owner for the overseas entity?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m"
     }
