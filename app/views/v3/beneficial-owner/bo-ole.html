@@ -676,78 +676,36 @@
   }) }}
 
 
-        {# {{ govukDateInput({
-          id: "bo-corp-startdate",
-          namePrefix: "bo-corp-startdate",
-          fieldset: {
-            legend: {
-              text: "When did it become a beneficial owner for the overseas entity?",
-              isPageHeading: false,
-              classes: "govuk-fieldset__legend--m"
-            }
-          },
-          hint: {
-            text: "For example, 27 3 2007"
-          },
-          items: [
-    {
-      classes: "govuk-input--width-2",
-      name: "day",
-      value: startDay,
-      value: "26"
-    },
-    {
-      classes: "govuk-input--width-2",
-      name: "month",
-      value: startMonth,
-      value: "7"
-    },
-    {
-      classes: "govuk-input--width-4",
-      name: "year",
-      value: startYear,
-      value: "2019"
-    }
-  ]
-        }) }}
+ 
+<p class="govuk-body-l govuk-!-font-weight-bold govuk-!-margin-top-7 govuk-!-margin-bottom-1">Date it became a beneficial owner for the overseas entity:</p>
+<p class="govuk-!-font-size-20 govuk-!-margin-bottom-7">26 July 2019</p>
 
 
 
-  {% set boContHtml %}
-{{ govukRadios({
-  name: "boCont",
+
+{% set boCeasedHtml %}
+{{ govukDateInput({
+  id: "bo-ceased",
+  namePrefix: "bo-ceased",
   fieldset: {
     legend: {
-      text: "Have they been a beneficial owner continuously throughout this update period?",
+      text: "When did they stop being a beneficial owner?",
       isPageHeading: true,
-      classes: "govuk-fieldset__legend--s"
+      classes: "govuk-fieldset__legend--m"
     }
   },
-  items: [
-    {
-      value: "yes",
-      text: "Yes",
-      conditional: {
-        html: boCont
-      }
-    },
-    {
-      value: "no",
-      text: "No",
-      conditional: {
-        html: boCont
-      }
-    }
-  ]
+  hint: {
+    text: "For example, 27 3 2007"
+  }
 }) }}
 {% endset -%}
 
 
 {{ govukRadios({
-  name: "contact",
+  name: "bo-ceased",
   fieldset: {
     legend: {
-      text: "Is it still a beneficial owner for the overseas entity?",
+      text: "Are they still a beneficial owner for the overseas entity?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m"
     }
@@ -755,18 +713,21 @@
   items: [
     {
       value: "yes",
-      text: "Yes",
-      conditional: {
-        html: boContHtml
-      }
+      text: "Yes"
     },
     {
       value: "no",
-      text: "No"
+      text: "No",
+            conditional: {
+        html: boCeasedHtml
+      }
       
     }
   ]
-}) }} #}
+}) }}
+
+
+
 
   {{ govukInsetText({
     html: '

@@ -580,23 +580,37 @@ html: serviceAddressHtml
 -->
 
 
-<!-- NOTES FOR CONTENT - I feel wording for below questioncould make users think it's 
-for the entire time they've been a BO, not just the 12 months they're telling us about
+<p class="govuk-body-l govuk-!-font-weight-bold govuk-!-margin-top-7 govuk-!-margin-bottom-1">Date it became a beneficial owner for the overseas entity:</p>
+<p class="govuk-!-font-size-20 govuk-!-margin-bottom-7">6 June 2021</p>
 
-Question from workshop:
-Have they been a beneficial owner continuously for the whole period?
 
-Very badly written idea for question:
-Have they been a beneficial owner continuously for the whole period this update is about?-->
-<!--
-{% set boGovHtml %}
-{{ govukRadios({
-  name: "boGov",
+
+
+{% set boCeasedHtml %}
+{{ govukDateInput({
+  id: "bo-ceased",
+  namePrefix: "bo-ceased",
   fieldset: {
     legend: {
-      text: "Has it been a beneficial owner continuously throughout this update period?",
+      text: "When did they stop being a beneficial owner?",
       isPageHeading: true,
-      classes: "govuk-fieldset__legend--s"
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: "For example, 27 3 2007"
+  }
+}) }}
+{% endset -%}
+
+
+{{ govukRadios({
+  name: "bo-ceased",
+  fieldset: {
+    legend: {
+      text: "Are they still a beneficial owner for the overseas entity?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
     }
   },
   items: [
@@ -606,38 +620,15 @@ Have they been a beneficial owner continuously for the whole period this update 
     },
     {
       value: "no",
-      text: "No, but there have been gaps"
-    }
-  ]
-}) }}
-{% endset -%}
--->
-<!--
-{{ govukRadios({
-  name: "contact",
-  fieldset: {
-    legend: {
-      text: "Is it still a beneficial owner for the overseas entity?",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--m"
-    }
-  },
-  items: [
-    {
-      value: "yes",
-      text: "Yes",
-      conditional: {
-        html: boGovHtml
+      text: "No",
+            conditional: {
+        html: boCeasedHtml
       }
-    },
-    {
-      value: "no",
-      text: "No"
       
     }
   ]
 }) }}
--->
+
 
                       {{ govukInsetText({
                         html: '
