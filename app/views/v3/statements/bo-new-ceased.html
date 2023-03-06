@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Have any beneficial owners become or ceased in the update period? – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" action="../beneficial-owner/bo-mo-review" method="post">
+
+
+
+{{ govukRadios({
+  classes: "govuk-radios",
+  idPrefix: "startingNew",
+  name: "starting-new",
+  fieldset: {
+    legend: {
+      text: "Have any beneficial owners become or ceased in the update period?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--xl"
+    }  
+  },
+  hint: {
+    text: "Lorem ipsum"
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes",
+      hint: {
+        text: "Lorem ipsum"
+      }
+    },
+    {
+      value: "no",
+      text: "No",
+hint: {
+        text: "Lorem ipsum"
+      }
+    }
+  ]
+}) }}
+
+
+
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+      </form>
+
+
+
+
+    </div>
+  </div>
+
+{% endblock %}
