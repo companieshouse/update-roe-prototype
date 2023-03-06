@@ -261,6 +261,9 @@ Government or public authority beneficial owner – {{ serviceName }} – GOV.UK
               classes: "govuk-fieldset__legend--m"
             }
           },
+           hint: {
+    text: "This is also known as a service address."
+  },
           items: [
             {
               value: "yes",
@@ -592,9 +595,9 @@ html: serviceAddressHtml
   namePrefix: "bo-gov-ceased",
   fieldset: {
     legend: {
-      text: "When did it stop being a beneficial owner?",
+      text: "Date it ceased to be a registrable beneficial owner",
       isPageHeading: true,
-      classes: "govuk-fieldset__legend--m"
+      classes: "govuk-fieldset__legend--s"
     }
   },
   hint: {
@@ -608,7 +611,7 @@ html: serviceAddressHtml
   name: "bo-gov-ceased",
   fieldset: {
     legend: {
-      text: "Is it still a beneficial owner for the overseas entity?",
+      text: "Is it still a registrable beneficial owner for the overseas entity?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m"
     }
