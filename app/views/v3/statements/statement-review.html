@@ -1,13 +1,9 @@
-{% extends "../layouts/layout.html" %}
+{% extends "layout.html" %}
 
 {% block pageTitle %}
   You are about to review statements for the overseas entity – {{ serviceName }} – GOV.UK
 {% endblock %}
 
-{% block header %}
-  <!-- Blank header with no service name for the start page -->
-  {{ govukHeader() }}
-{% endblock %}
 
 {% block beforeContent %}
   {% include "includes/before-content.html" %}
@@ -17,7 +13,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form action="./bo-individual" method="post">
+      <form action="bo-identified" method="post">
 
   <span class="govuk-caption-l">{{ data['overseas-name'] }} - {{ data['overseas-id'] }}</span>
       <h1 class="govuk-heading-xl">
