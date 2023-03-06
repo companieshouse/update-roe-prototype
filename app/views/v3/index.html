@@ -105,6 +105,7 @@
       <li>
         <a class="govuk-link govuk-link--no-visited-state" href="interrupt-card">Interrupt card</a>
       </li>
+ <br>     
       <li>
         <a class="govuk-link govuk-link--no-visited-state" href="oe-id">What is the Overseas Entity ID?</a>
       </li>
@@ -172,6 +173,7 @@
       <li>
         <a class="govuk-link govuk-link--no-visited-state" href="beneficial-owner/bo-mo-review">You're about to review beneficial owner and/or managing officer information</a>
       </li>
+<br>
       <li>
      <a class="govuk-link govuk-link--no-visited-state" href="beneficial-owner/bo-individual">Review Individual beneficial owner</a>
       </li>
@@ -187,13 +189,11 @@
       <li>
      <a class="govuk-link govuk-link--no-visited-state" href="beneficial-owner/mo-corporate">Review Corporate managing officer</a>
       </li>
-     <li>
-     <a class="govuk-link govuk-link--no-visited-state" href="beneficial-owner/ceased-dates">Date details</a>
-      </li>
+<br>
       <li>
      <a class="govuk-link govuk-link--no-visited-state" href="beneficial-owner/involved-types">Beneficial owners and managing officers involved in the overseas entity</a>
       </li>
-
+<br>
 
        <li>
      <a class="govuk-link govuk-link--no-visited-state" href="beneficial-owner/new-bo-individual">WIP New Individual beneficial owner</a>
@@ -314,29 +314,19 @@
           summaryText: "Older archived screens",
           html: archivedHtml
             }) }}
-    <hr class="govuk-!-margin-top-9">
+
   </div>
 
 
 
-	<div class="govuk-grid-column-full govuk-!-margin-top-6">
-
-		<h1 class="govuk-heading-l">Journey maps</h1>
-		<p class="govuk-body"><a href="https://app.mural.co/invitation/mural/companieshouse8589/1664197863250?sender=uc287fb0c65a61d3da2202202&key=fa9070c5-992e-4bac-b6b2-ef464166dc46" class="govuk-link">Mural board - flow</a><br>
-
-		<p class="govuk-body"><a href="https://app.mural.co/invitation/mural/companieshouse8589/1671546956523?sender=uc287fb0c65a61d3da2202202&key=43817343-0234-4060-b319-f3c6f1b2035e" class="govuk-link">Service map</a>
-		</p>
-
-	</div>
-
   <div class="govuk-grid-column-full">
-    <h2 class="govuk-heading-l govuk-!-margin-top-6">
+    <h2 class="govuk-heading-m govuk-!-margin-top-6">
       Version history
-    </h1>
+    </h2>
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-         Screen
+         Version 3
         </dt>
       </div>
 
@@ -349,42 +339,33 @@
             </div>-->
 
 
-            <!--Tags - copy and paste details component where necessary
-            <details class="govuk-details" data-module="govuk-details">
-              <summary class="govuk-details__summary">
-                <span class="govuk-details__summary-text">Tests</span>
-              </summary>
-              <div class="govuk-details__text">  
-                <ul class="govuk-list">
-                  <li>
-                    <p class="govuk-body">Detail as to what was actually conducted as part of this discrete test that makes up this hypothesis within the context of the journey</p>
-                  </li>
-                </ul>
-              </div>
-            </details>-->
-
-
 <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          <a href="https://companieshouse.atlassian.net/wiki/spaces/ROE2/pages/4098457623/Iterations+following+Round+3+of+user+testing" target="_blank">Iterations in this version</a>
-          <p class="govuk-body">Confluence</p>
+          <a class="govuk-link govuk-body-l govuk-link--no-visited-state" href="https://companieshouse.atlassian.net/wiki/spaces/ROE2/pages/4098457623/Iterations+following+Round+3+of+user+testing" target="_blank">
+          <strong>Confluence documentation of changes</strong></a>
+          {# <p class="govuk-body">Confluence</p> #}
         </dt>
         <dd class="govuk-summary-list__value">
-          <ul class="govuk-list govuk-list">
-            <li>
               <p class="govuk-body">
-               <strong>Primary changes</strong><br>
-                New screen added for legislative reasons.</p>
-                <strong> Why we made it</strong><br>
-              To match the policy updates.</p>
-            </li>
+               <strong>High level changes made in this version</strong><br>
+               <ul class="govuk-list govuk-list--bullet">
+                  <li>New statement pages added and moved</li>
+                   <strong class="govuk-tag govuk-tag--green govuk-!-margin-bottom-4">policy</strong>
+                   <strong class="govuk-tag govuk-tag--pink">design</strong>
+                  <li>All 'add new' beneficial owner and managing officer pages added</li>
+                  <li>New statement pages added</li>
+                  <li>New statement pages added</li>
+                </ul>
+
              <strong class="govuk-tag govuk-tag--green govuk-!-margin-bottom-4">policy</strong>
               <strong class="govuk-tag govuk-tag--blue">tech</strong>
               <strong class="govuk-tag govuk-tag--red">More research needed</strong>
               <strong class="govuk-tag govuk-tag--yellow">user research</strong>
+              <strong class="govuk-tag govuk-tag--pink">design</strong>
+
           {{ govukDetails({
-          summaryText: "Testing",
-          text: "Detail as to what was actually conducted as part of this discrete test that makes up this hypothesis within the context of the journey."
+          summaryText: "User testing that informed this version",
+          text: "Initial screens, overseas entity screens, beneficial owner and managing officer screens."
             }) }}
           </ul>
         </dd>
