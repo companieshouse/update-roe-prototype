@@ -327,9 +327,13 @@
             legend: {
               text: "Is their correspondence address the same as their home address?",
               isPageHeading: false,
+              
               classes: "govuk-fieldset__legend--m"
             }
           },
+           hint: {
+    text: "This is also known as a service address."
+  },
           items: [
             {
               value: "yes",
@@ -513,9 +517,9 @@
   namePrefix: "bo-ceased",
   fieldset: {
     legend: {
-      text: "When did they stop being a beneficial owner?",
+      text: "Date they ceased to be a registrable beneficial owner",
       isPageHeading: true,
-      classes: "govuk-fieldset__legend--m"
+      classes: "govuk-fieldset__legend--s"
     }
   },
   hint: {
@@ -529,7 +533,7 @@
   name: "bo-ceased",
   fieldset: {
     legend: {
-      text: "Are they still a beneficial owner for the overseas entity?",
+      text: "Are they still a registrable beneficial owner for the overseas entity?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m"
     }
