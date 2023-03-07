@@ -829,6 +829,52 @@
 {% endif %}
 
 
+
+{% set boCeasedHtml %}
+{{ govukDateInput({
+  id: "bo-ceased",
+  namePrefix: "bo-ceased",
+  fieldset: {
+    legend: {
+      text: "When did they stop being a beneficial owner?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: "For example, 27 3 2007"
+  }
+}) }}
+{% endset -%}
+
+
+{{ govukRadios({
+  name: "bo-ceased",
+  fieldset: {
+    legend: {
+      text: "Are they still a beneficial owner for the overseas entity?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes"
+    },
+    {
+      value: "no",
+      text: "No",
+            conditional: {
+        html: boCeasedHtml
+      }
+      
+    }
+  ]
+}) }}
+
+
+
 {{ govukInsetText({
   html: '
             <h2 class="govuk-heading-m">What information we&#39;ll show on the public register</h2>
