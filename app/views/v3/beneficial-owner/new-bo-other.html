@@ -87,11 +87,23 @@
           name: "bo-corp-principal-address-state"
         }) }}
 
-        <div class="govuk-form-group">
+        {# <div class="govuk-form-group">
            <label for="autocomplete-default" class="govuk-label">Country</label>
           <p class="govuk-hint">Start typing a country, then choose from the list</p>
           <div id="country" class="autocomplete-wrapper"></div>
-        </div>
+        </div> #}
+
+                {{ govukInput({
+          label: {
+            html: 'Country'
+          },
+          hint: {
+           text: "Start typing a country, then choose from the list"
+         },
+         classes: "govuk-!-width-two-thirds",
+          id: "country",
+          name: "country"
+        }) }}
 
         {{ govukInput({
           label: {
@@ -441,26 +453,6 @@
 
 
 
-
-        {{ govukDateInput({
-          id: "bo-corp-startdate",
-          namePrefix: "bo-corp-startdate",
-          fieldset: {
-            legend: {
-              text: "When did it become a beneficial owner for the overseas entity?",
-              isPageHeading: false,
-              classes: "govuk-fieldset__legend--m"
-            }
-          },
-          hint: {
-            text: "For example, 27 3 2007"
-          }
-        }) }}
-
-
-
-
-
         {% if (data['soldLand'] === "some") or (data['soldLand'] === "all") %}
         <!--Only show the 'When did they stop...' question if the user has answered Some or All to /register/sold-land-filter-->
         <!--Note, current intention is not to route users here is they select All - code added just in case-->
@@ -649,6 +641,21 @@
   ]
   }) }}
 
+
+        {{ govukDateInput({
+          id: "bo-corp-startdate",
+          namePrefix: "bo-corp-startdate",
+          fieldset: {
+            legend: {
+              text: "When did it become a beneficial owner for the overseas entity?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "For example, 27 3 2007"
+          }
+        }) }}
 
 
 {% set boCeasedHtml %}

@@ -469,7 +469,7 @@
 
 
 
-
+{# 
 {% set moCeasedHtml %}
 {{ govukDateInput({
   id: "mo-ceased",
@@ -485,7 +485,14 @@
     text: "For example, 27 3 2007"
   }
 }) }}
-{% endset -%}
+{% endset -%} 
+
+
+      ,
+      conditional: {
+        html: moCeasedHtml
+      }
+#}
 
 
 {{ govukRadios({
@@ -504,10 +511,7 @@
     },
     {
       value: "no",
-      text: "No",
-      conditional: {
-        html: moCeasedHtml
-      }
+      text: "No"
     }
   ]
 }) }}

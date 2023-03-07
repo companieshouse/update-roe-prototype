@@ -531,6 +531,43 @@ html: serviceAddressHtml
 
 
 
+
+
+
+{{ govukDateInput({
+          id: "bo-gov-startdate",
+          namePrefix: "bo-gov-startdate",
+          fieldset: {
+            legend: {
+              text: "When did it become a beneficial owner for the overseas entity?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "For example, 27 3 2007"
+          },
+          items: [
+    {
+      classes: "govuk-input--width-2",
+      name: "day",
+      value: startDay
+    },
+    {
+      classes: "govuk-input--width-2",
+      name: "month",
+      value: startMonth
+    },
+    {
+      classes: "govuk-input--width-4",
+      name: "year",
+      value: startYear
+    }
+  ]
+        }) }}
+
+
+        
 {% set boCeasedHtml %}
 {{ govukDateInput({
   id: "bo-ceased",
@@ -574,38 +611,7 @@ html: serviceAddressHtml
   ]
 }) }}
 
-{# 
-{{ govukDateInput({
-          id: "bo-gov-startdate",
-          namePrefix: "bo-gov-startdate",
-          fieldset: {
-            legend: {
-              text: "When did it become a beneficial owner for the overseas entity?",
-              isPageHeading: false,
-              classes: "govuk-fieldset__legend--m"
-            }
-          },
-          hint: {
-            text: "For example, 27 3 2007"
-          },
-          items: [
-    {
-      classes: "govuk-input--width-2",
-      name: "day",
-      value: startDay
-    },
-    {
-      classes: "govuk-input--width-2",
-      name: "month",
-      value: startMonth
-    },
-    {
-      classes: "govuk-input--width-4",
-      name: "year",
-      value: startYear
-    }
-  ]
-        }) }} #}
+
 
 
 

@@ -550,37 +550,6 @@
         {% endif %}
 
 
-        {{ govukDateInput({
-          id: "owner-startdate",
-          namePrefix: "owner-startdate",
-          fieldset: {
-            legend: {
-              text: "When did they become a beneficial owner for the overseas entity?",
-              isPageHeading: false,
-              classes: "govuk-fieldset__legend--m"
-            }
-          },
-          hint: {
-            text: "For example, 27 3 2007"
-          },
-          items: [
-    {
-      classes: "govuk-input--width-2",
-      name: "day",
-      value: startDay
-    },
-    {
-      classes: "govuk-input--width-2",
-      name: "month",
-      value: startMonth
-    },
-    {
-      classes: "govuk-input--width-4",
-      name: "year",
-      value: startYear
-    }
-  ]
-        }) }}
 
           {% if (data['soldLand'] === "some") or (data['soldLand'] === "all") %}
           <!--Only show the 'When did they stop...' question if the user has answered Some or All to /register/sold-land-filter-->
@@ -832,6 +801,39 @@
 {% endif %}
 
 
+
+
+        {{ govukDateInput({
+          id: "owner-startdate",
+          namePrefix: "owner-startdate",
+          fieldset: {
+            legend: {
+              text: "When did they become a beneficial owner for the overseas entity?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "For example, 27 3 2007"
+          },
+          items: [
+    {
+      classes: "govuk-input--width-2",
+      name: "day",
+      value: startDay
+    },
+    {
+      classes: "govuk-input--width-2",
+      name: "month",
+      value: startMonth
+    },
+    {
+      classes: "govuk-input--width-4",
+      name: "year",
+      value: startYear
+    }
+  ]
+        }) }}
 
 {% set boCeasedHtml %}
 {{ govukDateInput({
