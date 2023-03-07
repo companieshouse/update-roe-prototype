@@ -111,11 +111,25 @@
           }
         }) }}
 
-        <div class="govuk-form-group">
+        {# <div class="govuk-form-group">
            <label for="autocomplete-default" class="govuk-label--m">What is their nationality?</label>
           <p class="govuk-hint">Start typing a nationality, then choose from the list</p>
           <div id="nationality" class="autocomplete-wrapper"></div>
-        </div>
+        </div> #}
+
+
+                {{ govukInput({
+          label: {
+            text: 'What is their nationality?', 
+            classes: "govuk-fieldset__legend--m"
+          },
+          hint: {
+           text: "Start typing a nationality, then choose from the list"
+         },
+         classes: "govuk-!-width-two-thirds",
+          id: "service-address-property-name-number",
+          name: "service-address-property-name-number"
+        }) }}
 
 
         <p class="govuk-body">
@@ -198,11 +212,24 @@
           name: "managing-officer-usual-residential-address-state"
         }) }}
 
-        <div class="govuk-form-group">
+        {# <div class="govuk-form-group">
            <label for="autocomplete-default" class="govuk-label">Country</label>
           <p class="govuk-hint">Start typing a country, then choose from the list</p>
           <div id="country" class="autocomplete-wrapper"></div>
-        </div>
+        </div> #}
+
+
+                {{ govukInput({
+          label: {
+            html: 'Country'
+          },
+          hint: {
+           text: "Start typing a country, then choose from the list"
+         },
+         classes: "govuk-!-width-two-thirds",
+          id: "service-address-property-name-number",
+          name: "service-address-property-name-number"
+        }) }}
 
         {{ govukInput({
           label: {
