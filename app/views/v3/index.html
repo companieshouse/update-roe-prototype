@@ -320,7 +320,7 @@
 
 
   <div class="govuk-grid-column-full">
-    <h2 class="govuk-heading-m govuk-!-margin-top-6">
+    <h2 class="govuk-heading-l govuk-!-margin-top-8">
       Version history
     </h2>
     <dl class="govuk-summary-list">
@@ -330,18 +330,18 @@
         </dt>
       </div>
 
-            <!--Tags - copy and paste correct tag(s)
-            <div class="govuk-form-group">
-              <strong class="govuk-tag govuk-tag--green">policy</strong>
-              <strong class="govuk-tag govuk-tag--yellow">user research</strong>
-              <strong class="govuk-tag govuk-tag--blue">tech</strong>
-              <strong class="govuk-tag govuk-tag--red">More research needed</strong>
-            </div>-->
+            {# Tags - copy and paste correct tag(s)
+<strong class="govuk-tag govuk-tag--green govuk-!-margin-bottom-4">policy</strong>
+<strong class="govuk-tag govuk-tag--blue">tech</strong>
+<strong class="govuk-tag govuk-tag--red">More research needed</strong>
+<strong class="govuk-tag govuk-tag--yellow">user research</strong>
+ <strong class="govuk-tag govuk-tag--pink">design</strong> 
+            </div> #}
 
 
 <div class="govuk-summary-list__row">
   <dt class="govuk-summary-list__key">
-     <a class="govuk-link govuk-body-l govuk-link--no-visited-state" href="https://companieshouse.atlassian.net/wiki/spaces/ROE2/pages/4098457623/Iterations+following+Round+3+of+user+testing" target="_blank">
+     <a class="govuk-link govuk-body-m govuk-link--no-visited-state" href="https://companieshouse.atlassian.net/wiki/spaces/ROE2/pages/4098457623/Iterations+following+Round+3+of+user+testing" target="_blank">
     <strong>Confluence documentation of changes</strong></a>
           {# <p class="govuk-body">Confluence</p> #}
    </dt>
@@ -369,16 +369,9 @@
         and moved ceased date question to sit on bo/mo screens</li>
       <strong class="govuk-tag govuk-tag--green govuk-!-margin-bottom-4">policy</strong>
 
-      <li>New statement pages added</li>
-
 
     </ul>
 
-<strong class="govuk-tag govuk-tag--green govuk-!-margin-bottom-4">policy</strong>
-<strong class="govuk-tag govuk-tag--blue">tech</strong>
-<strong class="govuk-tag govuk-tag--red">More research needed</strong>
-<strong class="govuk-tag govuk-tag--yellow">user research</strong>
- <strong class="govuk-tag govuk-tag--pink">design</strong>
 
           {{ govukDetails({
           summaryText: "User testing that informed this version",
@@ -390,11 +383,69 @@
 
 
 
-<div class="govuk-grid-column-full">
+   <h2 class="govuk-heading-l govuk-!-margin-top-8">
+      Research
+    </h2>
+      
+      
+            <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Round of testing
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <ul class="govuk-list">
+            <li>Round 3 informed this prototype</li>
+        </dd>
+      </div>
+
+            <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Session dates
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <ul class="govuk-list">
+            <li>16 - 20 Feb</li>
+        </dd>
+      </div>
+      
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Participants
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <ul class="govuk-list">
+            <li>7 x UK Agent / Verifier </li>
+        </dd>
+      </div>
+      
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Insights
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <a href="https://app.mural.co/invitation/mural/companieshouse8589/1676485571637?sender=uc287fb0c65a61d3da2202202&key=7ab90ee6-0683-476e-92e4-47306f643e64"
+          target="_blank">Round 3 research findings</a>
+        </dd>
+      </div>
+
+    
+
+{# 
 <h2 class="govuk-heading-l govuk-!-margin-top-8">
       Research
     </h2>
-       
+
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Round that informed this prototype
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Round 3
+        </dd>
+      </div>
+
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
@@ -426,7 +477,7 @@
       </div>
     </dl>
   </div>
-</div>
+
 
 
 
@@ -629,44 +680,12 @@
           </ol>
         </dd>
       </div>
-    </dl>
+    </dl> #}
 
 
 
-    <h2 class="govuk-heading-l govuk-!-margin-top-8">
-      Research
-    </h2>
-       
-    <dl class="govuk-summary-list">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Session dates
-        </dt>
-        <dd class="govuk-summary-list__value">
-          { Date range }
-        </dd>
-      </div>
-      
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Participants
-        </dt>
-        <dd class="govuk-summary-list__value">
-          <ul class="govuk-list">
-            <li>7 x { User persona type one }</li>
-            <li>1 x { User persona type two }</li>
-        </dd>
-      </div>
-      
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Insights
-        </dt>
-        <dd class="govuk-summary-list__value">
-          <a href="#/">Round X research findings</a>
-        </dd>
-      </div>
-    </dl>
+ 
+
   </div>
 </div>
 
