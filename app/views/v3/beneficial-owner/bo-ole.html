@@ -17,7 +17,7 @@
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-5">Review the other legal entity beneficial owner</h1>
       <!--<p class="govuk-!-margin-bottom-5 govuk-!-margin-top-5">You can add more later.</p>-->
 
-  <p class"govuk-body">If you need to update this beneficial owner's information, you can change the answers here.</p>
+  <p class"govuk-body">If you need to update this beneficial owner's information, you can change the answers here. If it is no longer a registrable beneficial owner, you need to make sure the information is correct as at the ceased date.</p>
 
   <!--
 <div class="govuk-inset-text">
@@ -111,7 +111,7 @@
             text: "Country"
           },
           hint: {
-           text: "Start typing a country, then choose from the list'"
+           text: "Start typing a country, then choose from the list"
          },
           classes: "govuk-!-width-two-thirds",
           id: "boCorpCountry",
@@ -377,9 +377,6 @@
       classes: "govuk-fieldset__legend--m"
     }
   },
-   hint: {
-    text: "If you select 'no', you'll need to tell us about an individual beneficial owner (if you haven't already)"
-  },
   items: [
     {
       value: "yes",
@@ -409,6 +406,7 @@
       classes: "govuk-fieldset__legend--m"
     }
   },
+  
   items: [
     {
       value: "yes",
@@ -435,6 +433,7 @@
       classes: "govuk-fieldset__legend--m"
     }
   },
+  
   items: [
     {
       value: "yes",
@@ -460,6 +459,9 @@
       isPageHeading: false,
       classes: "govuk-fieldset__legend--m"
     }
+  },
+  hint: {
+    text: "If you select 'no', the overseas entity will need an active individual beneficial owner."
   },
   items: [
     {
@@ -701,7 +703,7 @@
     }
   },
   hint: {
-    text: "For example, 27 3 2007"
+    text: "For example, 27 1 2023"
   }
 }) }}
 {% endset -%}
