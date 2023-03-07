@@ -311,15 +311,30 @@
 
 
 
+
+
+
+
+
           {% set PublicRegisterHtml %}
           {{ govukInput({
             id: "mo-corp-public-register-name",
             name: "mo-corp-public-register-name",
             hint: {
-             text: "Include its jurisdiction. For example, Hong Kong or State of Delaware."
+             text: "Include the full name. For example, Jersey Financial Services Commission."
            },
             label: {
               text: "Name of register"
+            }
+          }) }}
+          {{ govukInput({
+            id: "mo-corp-public-register-jurisdiction",
+            name: "mo-corp-public-register-jurisdiction",
+            hint: {
+             text: "For example, Jersey."
+           },
+            label: {
+              text: "Jurisdiction"
             }
           }) }}
           {{ govukInput({
