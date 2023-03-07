@@ -340,28 +340,45 @@
 
 
 <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          <a class="govuk-link govuk-body-l govuk-link--no-visited-state" href="https://companieshouse.atlassian.net/wiki/spaces/ROE2/pages/4098457623/Iterations+following+Round+3+of+user+testing" target="_blank">
-          <strong>Confluence documentation of changes</strong></a>
+  <dt class="govuk-summary-list__key">
+     <a class="govuk-link govuk-body-l govuk-link--no-visited-state" href="https://companieshouse.atlassian.net/wiki/spaces/ROE2/pages/4098457623/Iterations+following+Round+3+of+user+testing" target="_blank">
+    <strong>Confluence documentation of changes</strong></a>
           {# <p class="govuk-body">Confluence</p> #}
-        </dt>
-        <dd class="govuk-summary-list__value">
-              <p class="govuk-body">
-               <strong>High level changes made in this version</strong><br>
-               <ul class="govuk-list govuk-list--bullet">
-                  <li>New statement pages added and moved</li>
-                   <strong class="govuk-tag govuk-tag--green govuk-!-margin-bottom-4">policy</strong>
-                   <strong class="govuk-tag govuk-tag--pink">design</strong>
-                  <li>All 'add new' beneficial owner and managing officer pages added</li>
-                  <li>New statement pages added</li>
-                  <li>New statement pages added</li>
-                </ul>
+   </dt>
+  <dd class="govuk-summary-list__value">
+   <p class="govuk-body">
+    <strong>High level changes made in this version</strong><br>
+     <ul class="govuk-list govuk-list--bullet">
+      <li>New statement pages added and moved</li>
+      <strong class="govuk-tag govuk-tag--green govuk-!-margin-bottom-4">policy</strong>
+      <strong class="govuk-tag govuk-tag--pink">design</strong>
+      <strong class="govuk-tag govuk-tag--red">More research needed</strong>
 
-             <strong class="govuk-tag govuk-tag--green govuk-!-margin-bottom-4">policy</strong>
-              <strong class="govuk-tag govuk-tag--blue">tech</strong>
-              <strong class="govuk-tag govuk-tag--red">More research needed</strong>
-              <strong class="govuk-tag govuk-tag--yellow">user research</strong>
-              <strong class="govuk-tag govuk-tag--pink">design</strong>
+      <li>Deleted existing statement pages and questions</li>
+<strong class="govuk-tag govuk-tag--yellow">user research</strong>
+
+
+       <li>Updated beneficial owner and managing officer screens updated including making fields uneditable, 
+        moving DOB to caption and adding guidance</li>
+        <strong class="govuk-tag govuk-tag--green govuk-!-margin-bottom-4">policy</strong>
+        <strong class="govuk-tag govuk-tag--yellow">user research</strong>
+
+
+      <li>Added 'add new' beneficial owner and managing officer screens</li>
+      <li>Deleted cease dates page with 'add dates' option of join/leave/join fields 
+        and moved ceased date question to sit on bo/mo screens</li>
+      <strong class="govuk-tag govuk-tag--green govuk-!-margin-bottom-4">policy</strong>
+
+      <li>New statement pages added</li>
+
+
+    </ul>
+
+<strong class="govuk-tag govuk-tag--green govuk-!-margin-bottom-4">policy</strong>
+<strong class="govuk-tag govuk-tag--blue">tech</strong>
+<strong class="govuk-tag govuk-tag--red">More research needed</strong>
+<strong class="govuk-tag govuk-tag--yellow">user research</strong>
+ <strong class="govuk-tag govuk-tag--pink">design</strong>
 
           {{ govukDetails({
           summaryText: "User testing that informed this version",
@@ -370,7 +387,46 @@
           </ul>
         </dd>
       </div>
-<!--
+
+
+
+<div class="govuk-grid-column-full">
+<h2 class="govuk-heading-l govuk-!-margin-top-8">
+      Research
+    </h2>
+       
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Session dates
+        </dt>
+        <dd class="govuk-summary-list__value">
+          { Date range }
+        </dd>
+      </div>
+      
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Participants
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <ul class="govuk-list">
+            <li>7 x { User persona type one }</li>
+            <li>1 x { User persona type two }</li>
+        </dd>
+      </div>
+      
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Insights
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <a href="#/">Round X research findings</a>
+        </dd>
+      </div>
+    </dl>
+  </div>
+</div>
 
 
 
@@ -612,6 +668,6 @@
       </div>
     </dl>
   </div>
-</div>-->
+</div>
 
 {% endblock %}
