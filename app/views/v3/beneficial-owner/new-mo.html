@@ -118,18 +118,20 @@
         </div> #}
 
 
-                {{ govukInput({
-          label: {
-            text: 'What is their nationality?', 
-            classes: "govuk-fieldset__legend--m"
-          },
+              {{ govukInput({
+                label: {
+                  text: "What is their nationality?",
+                  classes: "govuk-label--m",
+                  isPageHeading: false
+                },
           hint: {
-           text: "Start typing a nationality, then choose from the list"
-         },
-         classes: "govuk-!-width-two-thirds",
-          id: "service-address-property-name-number",
-          name: "service-address-property-name-number"
-        }) }}
+            text: "Start typing a nationality, then choose from the list"
+          },
+                classes: "govuk-!-width-three-quarters",
+                id: "mo-nationality",
+                name: "mo-nationality",
+                value: moNationality
+              }) }}
 
 
         <p class="govuk-body">
@@ -140,7 +142,18 @@
           <div class="govuk-form-group">
             <label for="autocomplete-default" class="govuk-label">Second nationality (optional)</label>
             <p class="govuk-hint">Dual citizenship (also known as dual nationality) is allowed in some countries. This means they can be a citizen of their own country and another country.</p>
-            <div id="nationalityTwo" class="autocomplete-wrapper"></div>
+            <div id="nationalityTwo" class="autocomplete-wrapper">
+              
+               {{ govukInput({
+                label: {
+                },
+                classes: "govuk-!-width-three-quarters",
+                id: "mo-second-nationality",
+                name: "mo-second-nationality"
+
+              }) }}
+              
+              </div>
           </div>
           <p class="govuk-body">
             <a href="javascript:void(0)" id="third-nationality-link" class="govuk-link govuk-link--no-visited-state">Add a third nationality</a>
@@ -150,7 +163,18 @@
           <div class="govuk-form-group">
             <label for="autocomplete-default" class="govuk-label">Third nationality (optional)</label>
             <p class="govuk-hint">Multiple citizenship (also known as multiple nationality) is allowed in some countries. This means they can be a citizen of their own country and other countries.</p>
-            <div id="nationalityThree" class="autocomplete-wrapper"></div>
+            <div id="nationalityThree" class="autocomplete-wrapper">
+
+
+               {{ govukInput({
+                label: {
+                },
+                classes: "govuk-!-width-three-quarters",
+                id: "mo-third-nationality",
+                name: "mo-third-nationality"
+              }) }}
+
+            </div>
           </div>
         </div>
 
@@ -407,14 +431,25 @@
 
 
 
-
-
-        <div class="govuk-!-padding-bottom-6">
+        {# <div class="govuk-!-padding-bottom-6">
           <h1 class="govuk-label-wrapper"><label for="autocomplete-default" class="govuk-label govuk-label--m">What is their occupation? (If applicable)</label></h1>
           <p class="govuk-hint">Start typing an occupation, then choose from the list. If their occupation is not shown, you can enter it directly into the box. <br> If they do not have an occupation, enter 'None'.</p>
           <div id="occupation" name="occupation" class="autocomplete-wrapper"></div>
-        </div>
+        </div> #}
 
+        {{ govukInput({
+          label: {
+            text: "What is their occupation? (If applicable)",
+            classes: "govuk-label--m",
+            isPageHeading: false
+          },
+          hint: {
+          html: 'Start typing an occupation, then choose from the list. If their occupation is not shown, you can enter it directly into the box. <br> If they do not have an occupation, enter 	&#39;None&#39;.'
+        },
+          id: "mo-individual-first-name",
+          name: "mo-individual-first-name",
+          value: moIndFirstName
+        }) }}
 
 
 
