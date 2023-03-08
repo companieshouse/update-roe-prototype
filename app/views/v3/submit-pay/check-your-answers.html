@@ -12,6 +12,7 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
+  <span class="govuk-caption-l">{{ data['overseas-name'] }} - {{ data['overseas-id'] }}</span>
       <h1 class="govuk-heading-xl">Check your answers before submitting</h1>
 
               {{ govukSummaryList({
@@ -33,11 +34,32 @@
                         }
                       ]
                     }
+                  },
+                   {
+                    key: {
+                      text: "Date of the update statement"
+                    },
+                    value: {
+                      text: '6 August 2023'
+                    },
+                    actions: {
+                      items: [
+                        {
+                          href: "#",
+                          text: "Change",
+                          visuallyHiddenText: "Does the update include people that have protection or that have applied for protection?"
+                        }
+                      ]
+                    }
                   }
                 ]
               }) }}
 
+
+
       <h2 class="govuk-heading-l">Contact details</h2>
+      <h3 class="govuk-heading-m">Who can we contact about this update statement?</h3>
+
 
         {{ govukSummaryList({
           classes: 'govuk-!-margin-bottom-9',
@@ -415,9 +437,85 @@
               <span class="govuk-visually-hidden"> overseas entity public register</span>
             </a>
           </dd>
-        </div>
+        </div>      </dl>
 
-      </dl>
+ 
+
+        <h2 class="govuk-heading-l">Has the overseas entity identified any registrable beneficial owners?</h2>
+
+          {{ govukSummaryList({
+            classes: 'govuk-!-margin-bottom-9',
+            rows: [
+            {
+              key: {
+                text: " Statement"
+              },
+              value: {
+                text: "All beneficial owners have been identified and I can provide all the required information."
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "Has the overseas entity identified any registrable beneficial owners?"
+                  }
+                ]
+              }
+            }
+            ]
+          }) }}
+
+
+
+      <h2 class="govuk-heading-l">Have any beneficial owners become or ceased in the update period?</h2>
+
+          {{ govukSummaryList({
+            classes: 'govuk-!-margin-bottom-9',
+            rows: [
+            {
+              key: {
+                text: " Statement"
+              },
+              value: {
+                text: "
+                The entity has reasonable cause to believe that at least one person has become or ceased to be a registrable beneficial owner during the update period."
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "Have any beneficial owners become or ceased in the update period?"
+                  }
+                ]
+              }
+            }
+            ]
+          }) }}
+
+
+
+
+,
+            {
+              key: {
+                text: "Have any beneficial owners become or ceased in the update period?"
+              },
+              value: {
+                text: "The entity has reasonable cause to believe that at least one person has become or ceased to be a registrable beneficial owner during the update period."
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "Have any beneficial owners become or ceased in the update period?"
+                  }
+                ]
+              }
+            }
+
 
       <form method="post">
 
