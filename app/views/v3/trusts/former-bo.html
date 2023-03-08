@@ -1,0 +1,149 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Historical beneficial owner – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/back-link.html" %}
+{% include "includes/user-bar.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <span class="govuk-caption-l">{{ data['trust-name'] }}</span>
+      <h1 class="govuk-heading-xl govuk-!-margin-0">Tell us about the former beneficial owner</h1>
+      <p class="govuk-!-margin-bottom-5 govuk-!-margin-top-5">You can add more later.</p>
+
+      <form class="form" action="" method="get">
+
+<!--        {{ govukInput({
+            label: {
+              text: "What is the beneficial owner's name?",
+              classes: "govuk-label--m",
+              isPageHeading: false
+            },
+            id: "historical-beneficial-owner-name",
+            name: "historical-beneficial-owner-name"
+          }) }}
+          -->
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% set entityHtml %}
+{{ govukInput({
+  id: "entity-name",
+  name: "entity-name",
+  type: "name",
+  autocomplete: "name",
+  spellcheck: false,
+  classes: "govuk-!-width-two-thirds",
+  label: {
+    text: "Name"
+  }
+}) }}
+{% endset -%}
+{% set individualHtml %}
+{{ govukInput({
+  id: "individual-name",
+  name: "individual-name",
+  type: "first-name",
+  autocomplete: "first-name",
+  classes: "govuk-!-width-two-thirds",
+  label: {
+    text: "First name"
+  }
+}) }}
+
+{{ govukInput({
+  id: "individual-name",
+  name: "individual-name",
+  type: "last-name",
+  autocomplete: "last-name",
+  classes: "govuk-!-width-two-thirds",
+  label: {
+    text: "Last name"
+  }
+}) }}
+
+{% endset -%}
+
+{{ govukRadios({
+  name: "contact",
+  fieldset: {
+    legend: {
+      text: "Is the former beneficial owner an individual or a legal entity?",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "entity",
+      text: "Legal entity",
+      conditional: {
+        html: entityHtml
+      }
+    },
+    {
+      value: "individual",
+      text: "Individual",
+      conditional: {
+        html: individualHtml
+      }
+    }
+  ]
+}) }}
+
+
+          {{ govukDateInput({
+            id: "historical-beneficial-owner-start",
+            namePrefix: "historical-beneficial-owner-start",
+            fieldset: {
+              legend: {
+                text: "When did they become a beneficial owner?",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            hint: {
+              text: "For example, 27 3 2007"
+            }
+          }) }}
+
+          {{ govukDateInput({
+              id: "historical-beneficial-owner-stop",
+              namePrefix: "historical-beneficial-owner-stop",
+              fieldset: {
+                legend: {
+                  text: "When did they stop being a beneficial owner?",
+                  isPageHeading: false,
+                  classes: "govuk-fieldset__legend--m"
+                }
+              },
+              hint: {
+                text: "For example, 28 5 2011"
+              }
+            }) }}
+
+            {{ govukInsetText({
+              html: '
+                        <h2 class="govuk-heading-m">What information we&#39;ll show on the public register</h2>
+                        <p>We will not show any of the information you provide on this screen on the public Register of Overseas Entities. However, we may share it with HMRC.</p>
+                          '
+            }) }}
+
+        {{ govukButton({
+          text: "Save and continue",
+          href: "/register/trusts/trust-involved-alt"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

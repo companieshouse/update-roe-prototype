@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+
+You now need to tell us about trusts
+ – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/back-link.html" %}
+  {% include "includes/user-bar.html" %}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+<h1 class="govuk-heading-xl">You now need to submit trust information</h1>
+
+
+
+<!---{% set html %}
+  <p class="govuk-notification-banner__heading">
+    You have told us that one or more beneficial owners are involved in a trust.</a>
+  </p>
+{% endset %}
+
+{{ govukNotificationBanner({
+  html: html
+}) }}
+
+<!---
+ <p class="govuk-body">
+  You have told us that one or more beneficial owners are involved in a trust and we need to capture that information.
+ </p>
+ ---->
+
+
+
+      <p class="govuk-body">At least one individual or entity you’ve told us about is a beneficial owner of the overseas entity, due to being a trustee of a trust.</p>
+      <p class="govuk-body">In the next section, you’ll need to tell us about the trust. This includes details about people or entities that are: </p>
+      <ul class="govuk-body">
+        <li>beneficiaries</li>
+        <li>settlors</li>
+        <li>grantors</li>
+        <li>interested persons</li>
+      </ul>
+      <p class="govuk-body">It also includes each person who has ever been a beneficial owner in relation to the overseas entity, by being a trustee of the trust.</p>
+      <p>You can add information about multiple trusts if needed. </p>
+
+
+
+
+
+      {{ govukButton({
+        text: "Continue",
+        href: '/register/trusts/trust-details'
+      }) }}
+
+
+    </div>
+  </div>
+
+{% endblock %}

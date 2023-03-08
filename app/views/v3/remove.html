@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+
+Are you sure you want to remove Jane Wright?
+ – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/back-link.html" %}
+  {% include "includes/user-bar.html" %}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+
+   
+   <form action="/register/trusts/trust-involved-alt" method="get">
+
+{{ govukRadios({
+  classes: "govuk-radios",
+  idPrefix: "removeTrustuser",
+  name: "removeTrustuser",
+  fieldset: {
+    legend: {
+      text: "Are you sure you want to remove Jane Wright?
+",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--xl"
+    }
+  },
+  hint: {
+  text: " "
+},
+  items: [
+    {
+      value: "yes",
+      text: "Yes"
+    },
+    {
+      value: "no",
+      text: "No, go back"
+    }
+  ]
+}) }}
+
+
+
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+      </form>
+
+
+
+
+    </div>
+  </div>
+
+{% endblock %}

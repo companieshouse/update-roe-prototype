@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Tell us about the trust – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/back-link.html" %}
+{% include "includes/user-bar.html" %}
+{% endblock %}
+
+{% block content %}
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-xl">
+              You are about to delete trust information
+            </h1>
+
+            {{ govukWarningText({
+              text: "This beneficial owner is a trustee of a trust",
+              iconFallbackText: "Warning"
+            }) }}
+
+            <p>
+              You have told us this beneficial owner is a trustee of a trust and you have added information about that trust. 
+            </p>
+
+            <p>
+              If you delete this beneficial owner, you will also delete any information about the trusts they are a trustee of.  
+            </p>
+
+
+            <div class="govuk-button-group">
+              {{ govukButton({
+          text: "Delete",
+          classes: "govuk-button--warning"
+        }) }}
+
+              {{ govukButton({
+                text: "Keep and go back",
+                classes: "govuk-button--secondary",
+                href: "javascript:window.history.back()"
+              }) }}
+            </div>
+
+            <p>
+            *CONTENT ON THIS PAGE TBC*
+            </p>
+
+
+          </div>
+        </div>
+
+
+{% endblock %}
