@@ -39,8 +39,8 @@
         <dd class="govuk-summary-list__value">
           	Individual beneficial owner
         </dd>
-        <dd class="govuk-summary-list__value summary-status" aria-label="Status - active">
-          Active
+        <dd class="govuk-summary-list__value summary-status" aria-label="Status - ceased">
+          Ceased
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="#">
@@ -50,17 +50,17 @@
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          ACME Trustees Limited
+          Jane Doe
         </dt>
         <dd class="govuk-summary-list__value">
-          	Other legal entity beneficial owner
+          	Individual managing officer
         </dd>
-        <dd class="govuk-summary-list__value summary-status" aria-label="Status - ceased">
-          Ceased
+        <dd class="govuk-summary-list__value summary-status" aria-label="Status - active">
+          Active
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="#">
-            Change<span class="govuk-visually-hidden"> ACME Trustees Limited - Other legal entity beneficial owner</span>
+            Change<span class="govuk-visually-hidden">Jane Doe - Individual managing officer</span>
           </a>
         </dd>
       </div>
@@ -107,11 +107,11 @@
 
 
 
- <div class="govuk-grid-column-full govuk-!-margin-top-6">
+  <div class="govuk-grid-column-full govuk-!-margin-top-6">
 
 
          {{ govukTable({
-          caption: '<span class="govuk-visually-hidden">beneficial owners or managing officers</span> What you have added' | safe,
+          caption: 'What <span class="govuk-visually-hidden">beneficial owners or managing officers</span> you have added in this update' | safe,
           captionClasses: "govuk-table__caption--m",
           classes: "govuk-!-margin-bottom-8",
           firstCellIsHeader: true,
@@ -136,10 +136,10 @@
           rows: [
             [
               {
-                text: "Joe Bloggs"
+                text: "Helios Limited"
               },
               {
-                text: "Government or public authority beneficial owner"
+                text: "Corporate managing officer"
               },
               {
                 text: "Active"
@@ -147,11 +147,13 @@
             {
               html: '<a href="./bo-individual">Change</a>
                     <a href="/remove" class="govuk-!-padding-left-5">Remove</a>',
-              visuallyHiddenText: "Government or public authority beneficial owner - Joe Bloggs"
+              visuallyHiddenText: "Corporate managing officer - Helios Limited"
             }
-             ]
+              ]
           ]
-        }) }} 
+        }) }}
+
+
 
 </div>
     <div class="govuk-grid-column-two-thirds">
