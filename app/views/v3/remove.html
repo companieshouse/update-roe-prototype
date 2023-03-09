@@ -2,15 +2,15 @@
 
 {% block pageTitle %}
 
-Are you sure you want to remove Jane Wright?
+Are you sure you want to remove Helios Limited?
  – {{ serviceName }} – GOV.UK
 {% endblock %}
 
-{% block beforeContent %}
-  {% include "includes/back-link.html" %}
-  {% include "includes/user-bar.html" %}
 
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
 {% endblock %}
+
 
 {% block content %}
 <div class="govuk-grid-row">
@@ -23,11 +23,11 @@ Are you sure you want to remove Jane Wright?
 
 {{ govukRadios({
   classes: "govuk-radios",
-  idPrefix: "removeTrustuser",
-  name: "removeTrustuser",
+  idPrefix: "removeUser",
+  name: "removeUser",
   fieldset: {
     legend: {
-      text: "Are you sure you want to remove Jane Wright?
+      text: "Are you sure you want to remove Helios Limited?
 ",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--xl"
@@ -52,7 +52,9 @@ Are you sure you want to remove Jane Wright?
 
 
       {{ govukButton({
-        text: "Save and continue"
+        text: "Save and continue",
+        href: "./beneficial-owner/involved-types-test"
+      
       }) }}
       </form>
 

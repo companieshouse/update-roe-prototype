@@ -43,7 +43,7 @@
           Ceased
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
+          <a class="govuk-link" href="./bo-individual">
             Change<span class="govuk-visually-hidden"> Daniel Ashcroft - Individual beneficial owner</span>
           </a>
         </dd>
@@ -59,7 +59,7 @@
           Active
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
+          <a class="govuk-link" href="./mo">
             Change<span class="govuk-visually-hidden">Jane Doe - Individual managing officer</span>
           </a>
         </dd>
@@ -145,8 +145,8 @@
                 text: "Active"
               },
             {
-              html: '<a href="./bo-individual">Change</a>
-                    <a href="/remove" class="govuk-!-padding-left-5">Remove</a>',
+              html: '<a href="./new-mo-corporate">Change</a>
+                    <a href="../remove" class="govuk-!-padding-left-5">Remove</a>',
               visuallyHiddenText: "Corporate managing officer - Helios Limited"
             }
               ]
@@ -202,13 +202,13 @@
 
         {{ govukButton({
           text: "Add",
-          href: "./bo-gov-new"
+          href: "./new-mo-corporate"
         }) }}
 
         {{ govukButton({
               html: 'No more <span class="govuk-visually-hidden">beneficial owners or managing officers</span> to add',
            classes: "govuk-button--secondary",
-           href: './identify'
+           href: '../submit-pay/check-your-answers'
         }) }}
 
 
