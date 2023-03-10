@@ -101,7 +101,7 @@
           ]
         }) }}
 
-        <h2 class="govuk-heading-l">Verification checks</h2>
+      <h2 class="govuk-heading-l">Verification checks</h2>
 
           {{ govukSummaryList({
             classes: 'govuk-!-margin-bottom-9',
@@ -262,7 +262,7 @@
                 }
               }
             ]
-          }) }}
+          }) }} 
 
       <h2 class="govuk-heading-l">Overseas entity details</h2>
 
@@ -272,7 +272,7 @@
             Name of overseas entity
           </dt>
           <dd class="govuk-summary-list__value">
-            Paris Hotel
+            Ashcroft updated Limited
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="/register/entity">
@@ -286,7 +286,7 @@
              Country it was formed in
           </dt>
           <dd class="govuk-summary-list__value">
-            France
+            British Virgin Islands
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="/register/entity">
@@ -441,7 +441,10 @@
 
  
 
-        <h2 class="govuk-heading-l">Has the overseas entity identified any registrable beneficial owners?</h2>
+
+      <h2 class="govuk-heading-l">Statement details</h2>
+
+        <h3 class="govuk-heading-m">Has the overseas entity identified any registrable beneficial owners?</h3>
 
           {{ govukSummaryList({
             classes: 'govuk-!-margin-bottom-9',
@@ -451,7 +454,7 @@
                 text: " Statement"
               },
               value: {
-                text: "All beneficial owners have been identified and I can provide all the required information."
+                text: "No beneficial owners have been identified."
               },
               actions: {
                 items: [
@@ -467,8 +470,8 @@
           }) }}
 
 
+        <h3 class="govuk-heading-m">Have any beneficial owners become or ceased in the update period?</h3>
 
-      <h2 class="govuk-heading-l">Have any beneficial owners become or ceased in the update period?</h2>
 
           {{ govukSummaryList({
             classes: 'govuk-!-margin-bottom-9',
@@ -496,7 +499,7 @@
 
 
 
-<h2 class="govuk-heading-l">Existing Beneficial owner details</h2>
+<h2 class="govuk-heading-l">Beneficial owners you have reviewed</h2>
 
       <h3 class="govuk-heading-m">Individual beneficial owner</h3>
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -505,7 +508,7 @@
             First name
           </dt>
           <dd class="govuk-summary-list__value">
-            <p>Dr Lisa</p>
+            <p>Daniel</p>
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="/register/beneficial-owner-individual">
@@ -519,7 +522,7 @@
             Last name
           </dt>
           <dd class="govuk-summary-list__value">
-            <p>Davies</p>
+            <p>Ashcroft</p>
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="/register/beneficial-owner-individual">
@@ -650,8 +653,44 @@
         </dd>
       </div>
 
+    <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Are they still a beneficial owner?
+
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p>No</p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="/register/beneficial-owner-individual">
+            Change
+            <span class="govuk-visually-hidden"> Individual beneficial owner Dr Lisa Davies Are they on the sanctions list?</span>
+          </a>
+        </dd>
+      </div>
+          <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Ceased date
+
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p>3 January 2023</p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="/register/beneficial-owner-individual">
+            Change
+            <span class="govuk-visually-hidden"> Individual beneficial owner Dr Lisa Davies Are they on the sanctions list?</span>
+          </a>
+        </dd>
+      </div>
+
       </dl>
 
+
+
+
+
+{# 
       <h3 class="govuk-heading-m">Other legal entity beneficial owner</h3>
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
@@ -794,9 +833,9 @@
             </a>
           </dd>
         </div>
-        </dl>
+        </dl> #}
 
-        <h3 class="govuk-heading-m">Government or public authority beneficial owner</h3>
+        {# <h3 class="govuk-heading-m">Government or public authority beneficial owner</h3>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -919,9 +958,9 @@
             </dd>
           </div>
 
-          </dl>
+          </dl> #}
 
-      <h2 class="govuk-heading-l">Managing officer details</h2>
+      <h2 class="govuk-heading-l">Managing officers you have reviewed</h2>
 
       <h3 class="govuk-heading-m">Individual managing officer</h3>
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -930,7 +969,7 @@
             First name
           </dt>
           <dd class="govuk-summary-list__value">
-            <p>John </p>
+            <p>Jane</p>
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="/register/managing-officer">
@@ -944,7 +983,7 @@
             Last name
           </dt>
           <dd class="govuk-summary-list__value">
-            <p>Smith </p>
+            <p>Doe</p>
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="/register/managing-officer">
@@ -958,7 +997,7 @@
             Former names
           </dt>
           <dd class="govuk-summary-list__value">
-            <p>Guy Incognito</p>
+            <p>Jane Bloggs</p>
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="/register/managing-officer">
@@ -1054,7 +1093,24 @@
           </a>
         </dd>
       </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Are they still a managing officer?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p>Yes</p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="/register/managing-officer">
+            Change
+            <span class="govuk-visually-hidden"> Individual managing officer John Smith occupation</span>
+          </a>
+        </dd>
+      </div>
       </dl>
+
+     <h2 class="govuk-heading-l">Managing officers you have added</h2>
+
 
       <h3 class="govuk-heading-m">Corporate managing officer</h3>
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -1063,7 +1119,7 @@
             Name
           </dt>
           <dd class="govuk-summary-list__value">
-            <p>ACME Limited </p>
+            <p>Helios Limited</p>
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="/register/managing-officer">
@@ -1078,9 +1134,11 @@
             Principal or registered office address
           </dt>
           <dd class="govuk-summary-list__value">
-            72 Guild Street
-            <br>London
-            <br>SE23 6FH
+            4976+PXC
+            <br>Helios Court
+            <br>Strovolos
+            <br>Cyprus
+            <br>3092
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="/register/beneficial-owner-other">
