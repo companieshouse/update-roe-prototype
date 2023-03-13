@@ -1,0 +1,67 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+
+Are you sure you want to remove Helios Limited?
+ – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+
+   
+   <form action="/register/trusts/trust-involved-alt" method="get">
+
+{{ govukRadios({
+  classes: "govuk-radios",
+  idPrefix: "removeUser",
+  name: "removeUser",
+  fieldset: {
+    legend: {
+      text: "Are you sure you want to remove Helios Limited?
+",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--xl"
+    }
+  },
+  hint: {
+  text: " "
+},
+  items: [
+    {
+      value: "yes",
+      text: "Yes"
+    },
+    {
+      value: "no",
+      text: "No, go back"
+    }
+  ]
+}) }}
+
+
+
+
+      {{ govukButton({
+        text: "Save and continue",
+        href: "./beneficial-owner/involved-types-test"
+      
+      }) }}
+      </form>
+
+
+
+
+    </div>
+  </div>
+
+{% endblock %}

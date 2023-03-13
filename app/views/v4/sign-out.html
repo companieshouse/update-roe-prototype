@@ -1,0 +1,85 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  {% if (data['signOutFirstTrigger'] != "yes") and (data['signOut']|length == 0) %}
+    Error:
+  {% endif %}
+  Are you sure you want to sign out? – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{# Remove back link... not required when dealing with a Yes|No question
+{% block beforeContent %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+#}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {# Check to see if we've visited this page before... #}
+      {% if data['signOutFirstTrigger'] != "yes" %}
+        {# Error summary #}
+        {% if data['signOut']|length == 0 %}
+          {{ govukErrorSummary({
+            titleText: "There is a problem",
+            errorList: [
+            {
+              text: "Select yes if you want to sign out",
+              href: "#signOut"
+            }
+            ]
+          }) }}
+        {% endif %}
+      {% else %}
+        {# Do nothing #}
+      {% endif %}
+
+      <form class="form" method="post">
+
+        {% if (data['signOutFirstTrigger'] != "yes") and (data['signOut']|length == 0) %}
+          <div class="govuk-form-group govuk-form-group--error">
+        {% else %}
+          <div class="govuk-form-group">
+        {% endif %}
+          <fieldset class="govuk-fieldset" aria-describedby="signOut-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                Are you sure you want to sign out?
+              </h1>
+            </legend>
+            <div id="signOut-hint" class="govuk-hint">
+              We will save your filing.
+            </div>
+            {% if (data['signOutFirstTrigger'] != "yes") and (data['signOut']|length == 0) %}
+              <p id="signOut-error" class="govuk-error-message">
+                <span class="govuk-visually-hidden">Error:</span> Select yes if you want to sign out
+              </p>
+            {% endif %}
+            <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="signOut" name="signOut" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="signOut">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="signOut" name="signOut" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="signOut">
+                  No
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
