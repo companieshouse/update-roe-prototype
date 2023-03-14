@@ -15,6 +15,11 @@
   <span class="govuk-caption-l">{{ data['overseas-name'] }} - {{ data['overseas-id'] }}</span>
       <h1 class="govuk-heading-xl">Check your answers before submitting</h1>
 
+
+
+
+<!-- ********** PROTECTED INFORMATION AND DATE OF THE UPDATE  ********** -->
+
               {{ govukSummaryList({
                 classes: 'govuk-!-margin-bottom-9',
                 rows: [
@@ -57,10 +62,12 @@
 
 
 
+
+<!-- ********** CONTACT DETAILS  ********** -->
+
       <h2 class="govuk-heading-l">Contact details</h2>
+
       <h3 class="govuk-heading-m">Who can we contact about this update statement?</h3>
-
-
         {{ govukSummaryList({
           classes: 'govuk-!-margin-bottom-9',
           rows: [
@@ -101,8 +108,12 @@
           ]
         }) }}
 
-      <h2 class="govuk-heading-l">Verification checks</h2>
 
+
+
+<!-- ********** VERIFICATION CHECKS  ********** -->
+
+      <h2 class="govuk-heading-l">Verification checks</h2>
           {{ govukSummaryList({
             classes: 'govuk-!-margin-bottom-9',
             rows: [
@@ -128,7 +139,7 @@
                 text: "Date the verification checks were completed"
               },
               value: {
-                text: "20 June 2022"
+                text: "10 June 2023"
               },
               actions: {
                 items: [
@@ -264,15 +275,19 @@
             ]
           }) }} 
 
-      <h2 class="govuk-heading-l">Overseas entity details</h2>
 
+
+
+ <!-- ********** OVERSEAS ENTITY DETAILS  ********** -->
+
+      <h2 class="govuk-heading-l">Overseas entity details</h2>
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Name of overseas entity
           </dt>
           <dd class="govuk-summary-list__value">
-            Ashcroft updated Limited
+            Ashcroft Limited
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="/register/entity">
@@ -300,8 +315,9 @@
             Principal or registered office address
           </dt>
           <dd class="govuk-summary-list__value">
-            24 Rue de Commandant Guilbau
-            <br>Paris 75016
+            PO Box 2486
+            <br>Tortola
+            <br>British Virgin Islands
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="/register/entity">
@@ -343,7 +359,7 @@
             Legal form
           </dt>
           <dd class="govuk-summary-list__value">
-            <p>Corp.</p>
+            <p>Limited company</p>
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="/register/entity">
@@ -357,7 +373,7 @@
             Governing law
           </dt>
           <dd class="govuk-summary-list__value">
-            <p>Here</p>
+            <p>British Virgin Islands</p>
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="/register/entity">
@@ -372,7 +388,7 @@
           </dt>
           <dd class="govuk-summary-list__value">
             <p>
-              French Registry
+              Registry of Corporate Affairs – BVI
               <!--
               {# PUBLIC REGISTER NAME #}
               {% if data['entity-public-register-name'] != null %}
@@ -411,7 +427,7 @@
           </dt>
           <dd class="govuk-summary-list__value">
             <p>
-              France
+              British Virgin Islands
             </p>
           </dd>
           <dd class="govuk-summary-list__actions">
@@ -428,7 +444,7 @@
           </dt>
           <dd class="govuk-summary-list__value">
             <p>
-              0123456789
+              17530984
             </p>
           </dd>
           <dd class="govuk-summary-list__actions">
@@ -442,10 +458,11 @@
  
 
 
-      <h2 class="govuk-heading-l">Statement details</h2>
+<!-- ********** STATEMENTS  ********** -->
+
+ <h2 class="govuk-heading-l">Statement details</h2>
 
         <h3 class="govuk-heading-m">Has the overseas entity identified any registrable beneficial owners?</h3>
-
           {{ govukSummaryList({
             classes: 'govuk-!-margin-bottom-9',
             rows: [
@@ -469,10 +486,7 @@
             ]
           }) }}
 
-
         <h3 class="govuk-heading-m">Have any beneficial owners become or ceased in the update period?</h3>
-
-
           {{ govukSummaryList({
             classes: 'govuk-!-margin-bottom-9',
             rows: [
@@ -499,6 +513,10 @@
 
 
 
+
+
+<!-- ********** INDIVIDUAL BENEFICIAL OWNER  ********** -->
+
 <h2 class="govuk-heading-l">Beneficial owners you have reviewed</h2>
 
       <h3 class="govuk-heading-m">Individual beneficial owner</h3>
@@ -513,7 +531,7 @@
           <dd class="govuk-summary-list__actions">
             <a href="/register/beneficial-owner-individual">
               Change
-              <span class="govuk-visually-hidden"> Individual beneficial owner Dr Lisa Davies  First name </span>
+              <span class="govuk-visually-hidden"> Individual beneficial owner First name </span>
             </a>
           </dd>
         </div>
@@ -533,16 +551,16 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Date of birth
+            Born
           </dt>
           <dd class="govuk-summary-list__value">
-            <p>3 June 1999</p>
+            <p>August 1972</p>
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="/register/beneficial-owner-individual">
+            {# <a href="/register/beneficial-owner-individual">
               Change
               <span class="govuk-visually-hidden">Individual beneficial owner Dr Lisa Davies date of birth</span>
-            </a>
+            </a> #}
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -610,7 +628,7 @@
           Date they became a beneficial owner
         </dt>
         <dd class="govuk-summary-list__value">
-          <p>27 March 2007</p>
+          <p>10 July 2004</p>
         </dd>
         <dd class="govuk-summary-list__actions">
           <a href="/register/beneficial-owner-individual">
