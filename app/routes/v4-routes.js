@@ -7,7 +7,6 @@ const { postIdentifyFilter } = require('../assets/javascripts/routes/identify');
 const { postStatementFilter } = require('../assets/javascripts/routes/statement');
 const { postSignOut } = require('../assets/javascripts/routes/sign-out');
 
-
 const router = govukPrototypeKit.requests.setupRouter()
     
 // auth-filter.html
@@ -21,7 +20,6 @@ postInvolvedFilter(router)
 postIdentifyFilter(router)
 postStatementFilter(router)
 postSignOut(router)
-
 
 
 // ******* oe-details validation ********************************
@@ -86,6 +84,27 @@ router.post('/v3/beneficial-owner/bo-individual', function (req, res) {
     res.redirect('/v3/beneficial-owner/mo')
   }
 })
+
+
+
+
+// ******* WHO IS FILING FILTER: Run this code when a form is submitted to 'who-is-filing' *******
+router.post('/v4/verification/completing-update', function (req, res) {
+
+      // Make a variable and give it the value from 'who-is-filing'
+      var whoIsFiling = req.session.data['who-is-filing']
+    
+      // Check whether the variable matches a condition
+      if (whoIsFiling == "agent"){
+        // Send user to next page
+        res.redirect('/v4/verification/agent-checks')
+      } else {
+        // Send user to ineligible page
+        res.redirect('/v4/verification/oe-checks')
+      }
+    
+    })
+
 
 
 module.exports=router;
