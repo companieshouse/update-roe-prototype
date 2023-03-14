@@ -1253,6 +1253,18 @@
           href: "#"
         }) }}
 
+                {{ govukButton({
+          text: "Print this page",
+          classes: "govuk-button--secondary",
+          href: "javascript: window.print()"
+        }) }} <!--  to developers, this is a JS-reliant button just for prototyping-->
+        <!-- the production site would need a non-JS solution OR the you could use JS to hide the button, as in people without JS would not see a button, rather than see a broken button -->
+      </div>
+
+    <!-- *** Note to developers, this must show when JS is disabled ***
+      <p class="govuk-body govuk-!-font-size-20">To print this page, select File then Print in your browser.</p>
+    -->
+
       </form>
 
 {#
