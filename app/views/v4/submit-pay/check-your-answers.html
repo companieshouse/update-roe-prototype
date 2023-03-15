@@ -568,7 +568,7 @@
             Nationality
           </dt>
           <dd class="govuk-summary-list__value">
-            <p>British</p>
+            <p>British Virgin Islander</p>
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="/register/beneficial-owner-individual">
@@ -623,21 +623,7 @@
             </a>
           </dd>
         </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Date they became a beneficial owner
-        </dt>
-        <dd class="govuk-summary-list__value">
-          <p>10 July 2004</p>
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a href="/register/beneficial-owner-individual">
-            Change
-            <span class="govuk-visually-hidden"> Individual beneficial owner Dr Lisa Daviesdate they became a beneficial owner</span>
-          </a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
+      {# <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Nature of control
         </dt>
@@ -654,14 +640,32 @@
             <span class="govuk-visually-hidden"> Individual beneficial owner Dr Lisa Daviesnature of control</span>
           </a>
         </dd>
-      </div>
+      </div> #}
+        <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Nature of control
+        </dt>
+        <dd class="govuk-summary-list__value">
+          The beneficial owner is a member of a firm that is not a legal person under its governing law, and:
+
+          <ul class="govuk-list govuk-list--bullet">
+            <li>the members of that firm (in their capacity as such) hold, directly or indirectly, more than 25% of the shares in the entity</li>
+          </ul>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="/register/beneficial-owner-individual">
+            Change
+            <span class="govuk-visually-hidden"> Individual beneficial owner Dr Lisa Daviesnature of control</span>
+          </a>
+        </dd>
+      </div> 
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Are they on the UK sanctions list?
 
         </dt>
         <dd class="govuk-summary-list__value">
-          <p>No</p>
+          <p>No, they are not on the sanctions list</p>
         </dd>
         <dd class="govuk-summary-list__actions">
           <a href="/register/beneficial-owner-individual">
@@ -670,11 +674,23 @@
           </a>
         </dd>
       </div>
-
+ <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date they became a beneficial owner
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p>10 July 2004</p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          {# <a href="/register/beneficial-owner-individual">
+            Change
+            <span class="govuk-visually-hidden"> Individual beneficial owner Dr Lisa Daviesdate they became a beneficial owner</span>
+          </a> #}
+        </dd>
+      </div>
     <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Are they still a beneficial owner?
-
         </dt>
         <dd class="govuk-summary-list__value">
           <p>No</p>
@@ -708,7 +724,9 @@
 
 
 
-{# 
+
+<!-- ********** OTHER LEGAL ENTITY BENEFICIAL OWNER  ********** -->
+
       <h3 class="govuk-heading-m">Other legal entity beneficial owner</h3>
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
@@ -716,7 +734,7 @@
             Name
           </dt>
           <dd class="govuk-summary-list__value">
-            <p>Sugar Holdings</p>
+            <p>ACME Trustees Limited</p>
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="/register/beneficial-owner-other">
@@ -730,9 +748,13 @@
             Principal or registered office address
           </dt>
           <dd class="govuk-summary-list__value">
-            72 Guild Street
-            <br>London
-            <br>SE23 6FH
+            Suite 8
+            <br>St Luke’s Court
+            <br>28 Devon Street
+            <br>London  
+            <br>United Kingdom
+            <br>W1B 6PD
+
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="/register/beneficial-owner-other">
@@ -760,7 +782,7 @@
           Legal form
           </dt>
           <dd class="govuk-summary-list__value">
-            <p>Here</p>
+            <p>Limited company</p>
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="/register/beneficial-owner-other">
@@ -774,7 +796,7 @@
             Governing law
           </dt>
           <dd class="govuk-summary-list__value">
-            <p>Here</p>
+            <p>British Virgin Islands</p>
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="/register/beneficial-owner-other">
@@ -794,20 +816,6 @@
             <a href="/register/beneficial-owner-other">
               Change
               <span class="govuk-visually-hidden">Corporate beneficial owner Sugar Holdings public register</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Date it became a beneficial owner
-          </dt>
-          <dd class="govuk-summary-list__value">
-            <p>27 March 2007</p>
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="/register/beneficial-owner-other">
-              Change
-              <span class="govuk-visually-hidden"> Corporate beneficial owner Sugar Holdings date it became a beneficial owner</span>
             </a>
           </dd>
         </div>
@@ -851,16 +859,49 @@
             </a>
           </dd>
         </div>
-        </dl> #}
 
-        {# <h3 class="govuk-heading-m">Government or public authority beneficial owner</h3>
+                <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date it became a beneficial owner
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>26 July 2019</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            {# <a href="/register/beneficial-owner-other">
+              Change
+              <span class="govuk-visually-hidden"> Corporate beneficial owner Sugar Holdings date it became a beneficial owner</span>
+            </a> #}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Is it still a beneficial owner?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p>Yes</p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="/register/beneficial-owner-individual">
+            Change
+            <span class="govuk-visually-hidden"> Individual beneficial owner ACME Trustees Limited Is it still a beneficial owner?</span>
+          </a>
+        </dd>
+      </div>
+        </dl> 
+
+
+
+<!-- ********** GOV OR PUBLIC AUTHORITY BENEFICIAL OWNER  ********** -->
+
+    <h3 class="govuk-heading-m">Government or public authority beneficial owner</h3>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Name
             </dt>
             <dd class="govuk-summary-list__value">
-              <p>here</p>
+              <p>AMK Department</p>
             </dd>
             <dd class="govuk-summary-list__actions">
               <a href="/register/beneficial-owner-other">
@@ -874,9 +915,11 @@
               Principal or registered office address
             </dt>
             <dd class="govuk-summary-list__value">
-              1 Pigeon Street
-              <br>Bristol
-              <br>BR12 3CD
+              Suite 104-228
+            <br>Building 28
+            <br>Dubai Investment Park 1
+            <br>Dubai
+            <br> United Arab Emirates
             </dd>
             <dd class="govuk-summary-list__actions">
               <a href="/register/beneficial-owner-other">
@@ -904,7 +947,7 @@
             Legal form
             </dt>
             <dd class="govuk-summary-list__value">
-              <p>Here</p>
+              <p>Association</p>
             </dd>
             <dd class="govuk-summary-list__actions">
               <a href="/register/beneficial-owner-other">
@@ -918,27 +961,12 @@
               Governing law
             </dt>
             <dd class="govuk-summary-list__value">
-              <p>Here</p>
+              <p>United Arab Emirates law</p>
             </dd>
             <dd class="govuk-summary-list__actions">
               <a href="/register/beneficial-owner-other">
                 Change
                 <span class="govuk-visually-hidden"> Government or public authority beneficial Example public authority owner governing law</span>
-              </a>
-            </dd>
-          </div>
-
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Date it became a beneficial owner
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <p>27 March 2007</p>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a href="/register/beneficial-owner-other">
-                Change
-                <span class="govuk-visually-hidden">Government or public authority beneficial Example public authority owner date it became a beneficial owner</span>
               </a>
             </dd>
           </div>
@@ -974,9 +1002,42 @@
                 <span class="govuk-visually-hidden">Corporate beneficial owner Sugar Holdings- is it on the sanctions list</span>
               </a>
             </dd>
+                 </div>
+             <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date it became a beneficial owner
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <p>6 August 2021</p>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="/register/beneficial-owner-other">
+                Change
+                <span class="govuk-visually-hidden">Government or public authority beneficial Example public authority owner date it became a beneficial owner</span>
+              </a>
+            </dd>
           </div>
+                  <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Is it still a beneficial owner?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p>Yes</p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="/register/beneficial-owner-individual">
+            Change
+            <span class="govuk-visually-hidden"> Individual beneficial owner AMK Department Is it still a beneficial owner?</span>
+          </a>
+        </dd>
+      </div>
 
-          </dl> #}
+          </dl>
+
+
+
+
+
 
       <h2 class="govuk-heading-l">Managing officers you have reviewed</h2>
 
