@@ -22,15 +22,34 @@ postStatementFilter(router)
 postSignOut(router)
 
 
+
+// ******* WHO IS FILING FILTER *******
+router.post('/v4/verification/completing-update', function (req, res) {
+
+  // Make a variable and give it the value from 'who-is-filing'
+  var whoIsFiling = req.session.data['who-is-filing']
+
+  // Check whether the variable matches a condition
+  if (whoIsFiling == "agent"){
+    // Send user to next page
+    res.redirect('/v4/verification/agent-checks')
+  } else {
+    // Send user to ineligible page
+    res.redirect('/v4/verification/oe-checks')
+  }
+
+})
+
+
 // ******* oe-details validation ********************************
-router.get('/v3/oe-details', function (req, res) {
+router.get('/v4/oe-details', function (req, res) {
   // Set URl
-  res.render('v3/oe-details', {
+  res.render('v4/oe-details', {
     currentUrl: req.originalUrl
   })
 })
 
-router.post('/v3/oe-details', function (req, res) {
+router.post('/v4/oe-details', function (req, res) {
   // Create empty array
   var errors = []
 
@@ -43,26 +62,26 @@ router.post('/v3/oe-details', function (req, res) {
     })
 
     // Re-show page with error value as true so errors will show
-    res.render('v3/oe-details', {
+    res.render('v4/oe-details', {
       errorEmail: true,
       errorList: errors
     })
   } else {
     // User inputted value so move to next page
-    res.redirect('/v3/statements/bo-identified')
+    res.redirect('/v4/statements/bo-identified')
   }
 })
 
 
 // ******* bo-individual validation ********************************
-router.get('/v3/beneficial-owner/bo-individual', function (req, res) {
+router.get('/v4/beneficial-owner/bo-individual', function (req, res) {
   // Set URl
-  res.render('v3/beneficial-owner/bo-individual', {
+  res.render('v4/beneficial-owner/bo-individual', {
     currentUrl: req.originalUrl
   })
 })
 
-router.post('/v3/beneficial-owner/bo-individual', function (req, res) {
+router.post('/v4/beneficial-owner/bo-individual', function (req, res) {
   // Create empty array
   var errors = []
 
@@ -74,36 +93,70 @@ router.post('/v3/beneficial-owner/bo-individual', function (req, res) {
       href: '#bo-ceased'
     })
 
-    // Re-show page with error value as true so errors will show
-    res.render('v3/beneficial-owner/bo-individual', {
+  // Re-show page with error value as true so errors will show
+    res.render('v4/beneficial-owner/bo-individual', {
       errorBoCeased: true,
+      // errorHomeAddressLine1: true,
       errorList: errors
     })
   } else {
     // User inputted value so move to next page
-    res.redirect('/v3/beneficial-owner/mo')
+    res.redirect('/v4/beneficial-owner/mo')
   }
 })
 
 
 
 
-// ******* WHO IS FILING FILTER: Run this code when a form is submitted to 'who-is-filing' *******
-router.post('/v4/verification/completing-update', function (req, res) {
 
-      // Make a variable and give it the value from 'who-is-filing'
-      var whoIsFiling = req.session.data['who-is-filing']
-    
-      // Check whether the variable matches a condition
-      if (whoIsFiling == "agent"){
-        // Send user to next page
-        res.redirect('/v4/verification/agent-checks')
-      } else {
-        // Send user to ineligible page
-        res.redirect('/v4/verification/oe-checks')
-      }
-    
-    })
+// router.post('/v4/beneficial-owner/bo-individual', function (req, res) {
+//   // Create empty array
+//   var errors = []
+
+//   // Check if user has filled out a value
+//   if (typeof req.session.data['usual-residential-address-line-1'] === 'undefined') {
+//     // No value so add error to array
+//     errors.push({
+//       text: 'Enter an address',
+//       href: '#usual-residential-address-line-1'
+//     })
+
+//     // Re-show page with error value as true so errors will show
+//     res.render('v4/beneficial-owner/bo-individual', {
+//       errorHomeAddressLine1: true,
+//       errorList: errors
+//     })
+//   } else {
+//     // User inputted value so move to next page
+//     res.redirect('/v4/beneficial-owner/mo')
+//   }
+// })
+
+
+
+
+// if (req.session.data['usual-residential-address-line-1'] === '') {
+//   homeAddressLine1HasError = true
+//   errors.push({
+//     text: "Enter a home address",
+//     href: '#usual-residential-address-line-1'
+//   })
+// }
+// if (req.session.data['usual-residential-address-city-town'] === '') {
+//   homeCityHasError = true
+//   errors.push({
+//     text: "Enter a city or town",
+//     href: '#usual-residential-address-city-town'
+//   })
+// }
+// if (req.session.data['country'] === '') {
+//   countryHasError = true
+//   errors.push({
+//     text: "Enter the individual person's home country",
+//     href: '#country'
+//   })
+// }
+
 
 
 

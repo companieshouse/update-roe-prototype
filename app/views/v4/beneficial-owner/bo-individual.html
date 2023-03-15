@@ -160,6 +160,7 @@
         }) %}
 
           <!-- property name input -->
+
           {{ govukInput({
             label: {
               html: 'Property name or number'
@@ -173,6 +174,22 @@
 
 
           <!-- address 1 input -->
+
+          {% if errorHomeAddressLine1 == true %}
+        {{ govukInput({
+          label: {
+            text: "Address line 1"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "usual-residential-address-line-1",
+          name: "usual-residential-address-line-1",
+          value: homeAddressLine1,
+          autocomplete: "address-line1",
+          errorMessage: {
+                    text: "Enter an address"
+                  }
+        }) }}
+        {% else %}
           {{ govukInput({
             label: {
               text: "Address line 1"
@@ -183,7 +200,7 @@
             autocomplete: "address-line1",
             value: homeAddressLine1
           }) }}
-
+{% endif %}
 
           <!-- address 2 input -->
           {{ govukInput({
