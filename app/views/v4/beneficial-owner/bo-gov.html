@@ -22,14 +22,16 @@ Government or public authority beneficial owner – {{ serviceName }} – GOV.UK
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-5">Review the government or public authority</h1>
       <!--<p class="govuk-!-margin-bottom-5 govuk-!-margin-top-5">You can add more later.</p>-->
 
-  <p class"govuk-body">If you need to update this beneficial owner's information, you can change the answers here. If it is no longer a registrable beneficial owner, you need to make sure the information is correct as at the ceased date.</p>
+  <p class"govuk-body">If you need to update this beneficial owner's information, you can change the answers here.</p>
   
-  <!-- NOTES FOR CONTENT I added the below in - badly written -->
+        <div class="govuk-inset-text">
+          You'll need to tell us if it's still a registrable beneficial owner.
+        </div>
 
-<!--
-<div class="govuk-inset-text">
-  You'll need to tell us if they're still a beneficial owner for the overseas entity.
-</div> -->
+{{ govukDetails({
+  summaryText: "How to complete this section for a ceased beneficial owner",
+  text: "If it is no longer a registrable beneficial owner, you need to make sure this information is correct as at the ceased date, and update it if needed."
+}) }}
 
 
 
@@ -559,7 +561,7 @@ html: serviceAddressHtml
             }
           },
           hint: {
-            text: "For example, 27 3 2007"
+            text: "For example, 27 1 2023"
           },
           items: [
     {
@@ -604,7 +606,7 @@ html: serviceAddressHtml
     }
   },
   hint: {
-    text: "For example, 27 3 2007"
+    text: "For example, 27 1 2023"
   }
 }) }}
 {% endset -%}

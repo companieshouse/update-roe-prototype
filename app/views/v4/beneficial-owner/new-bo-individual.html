@@ -30,6 +30,10 @@
 
       <form class="form" action="" method="post">
 
+{{ govukDetails({
+  summaryText: "How to complete this section for a ceased beneficial owner",
+  text: "If they have become and then ceased to be a registrable beneficial owner during this update period, you need to enter information that is correct as at the ceased date."
+}) }}
 
 {% if errorIndividualFirstName == true %}
         {{ govukInput({

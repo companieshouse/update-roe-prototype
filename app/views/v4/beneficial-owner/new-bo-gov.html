@@ -24,7 +24,10 @@ Government or public authority beneficial owner – {{ serviceName }} – GOV.UK
 
   <p class"govuk-body">You can add more later.</p>
   
-
+{{ govukDetails({
+  summaryText: "How to complete this section for a ceased beneficial owner",
+  text: "If it has become and then ceased to be a registrable beneficial owner during this update period, you need to enter information that is correct as at the ceased date."
+}) }}
 
       <form class="form" action="" method="post">
 
