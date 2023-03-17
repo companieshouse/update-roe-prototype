@@ -82,21 +82,72 @@ router.get('/v4/beneficial-owner/bo-individual', function (req, res) {
 })
 
 router.post('/v4/beneficial-owner/bo-individual', function (req, res) {
-  // Create empty array
-  var errors = []
+  // Create variables
+  var propertyError = false;
+  var address1Error = false;
+  var cityError = false;
+  var countryError = false;
+  var boCeasedError = false;
+  var errors = [];
+
+  // Check if user has filled out a value
+  if (req.session.data['usual-residential-address-property-name-number'] === '') {
+    // No value so add error to array
+    propertyError = true;
+    errors.push({
+      text: 'Enter the property name or number',
+      href: '#usual-residential-address-property-name-number'
+    })
+  }
+
+  // Check if user has filled out a value
+  if (req.session.data['usual-residential-address-line-1'] === '') {
+    // No value so add error to array
+    address1Error = true;
+    errors.push({
+      text: 'Enter address line 1',
+      href: '#usual-residential-address-line-1'
+    })
+  }
+
+  // Check if user has filled out a value
+  if (req.session.data['usual-residential-address-city-town'] === '') {
+    // No value so add error to array
+    cityError = true;
+    errors.push({
+      text: 'Enter the city or town',
+      href: '#usual-residential-address-city-town'
+    })
+  }
+
+  // Check if user has filled out a value
+  if (req.session.data['country'] === '') {
+    // No value so add error to array
+    countryError = true;
+    errors.push({
+      text: 'Enter the country',
+      href: '#country'
+    })
+  }
 
   // Check if user has filled out a value
   if (typeof req.session.data['bo-ceased'] === 'undefined') {
     // No value so add error to array
+    boCeasedError = true;
     errors.push({
       text: 'Select yes if they are still a registrable beneficial owner',
       href: '#bo-ceased'
     })
-
+  }
+    
+  if (errors.length != 0) {
   // Re-show page with error value as true so errors will show
     res.render('v4/beneficial-owner/bo-individual', {
-      errorBoCeased: true,
-      // errorHomeAddressLine1: true,
+      errorBoCeased: boCeasedError,
+      errorProperty: propertyError,
+      errorAddress1: address1Error,
+      errorCity: cityError,
+      errorCountry: countryError,
       errorList: errors
     })
   } else {

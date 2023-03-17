@@ -20,7 +20,7 @@
       <form action="{{currentUrl}}" method="post">
 
         <!-- Check for errors -->
-        {% if errorBoCeased == true %}
+        {% if errorList %}
         {{ govukErrorSummary({
           titleText: "There is a problem",
           errorList: errorList
@@ -175,7 +175,7 @@
 
           <!-- address 1 input -->
 
-          {% if errorHomeAddressLine1 == true %}
+        {% if errorAddress1 %}
         {{ govukInput({
           label: {
             text: "Address line 1"
@@ -200,7 +200,7 @@
             autocomplete: "address-line1",
             value: homeAddressLine1
           }) }}
-{% endif %}
+        {% endif %}
 
           <!-- address 2 input -->
           {{ govukInput({
