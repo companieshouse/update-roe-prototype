@@ -10,6 +10,15 @@
 
 {% block content %}
 
+
+        <!-- Check for errors -->
+        {% if errorList %}
+        {{ govukErrorSummary({
+          titleText: "There is a problem",
+          errorList: errorList
+        }) }}
+        {% endif %}
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 <span class="govuk-caption-l">Jane Doe - Born January 1981</span>
@@ -24,9 +33,11 @@
         </div>
 
 
-      <form class="form" method="post">
 
 
+      <form class="form" action="involved-types" method="post">
+
+ <!-- First name -->
         {{ govukInput({
           label: {
             text: "What is their first name?",
@@ -43,6 +54,7 @@
         }) }}
 
 
+ <!-- Last name -->
         {{ govukInput({
           label: {
             text: "What is their last name?",
@@ -60,6 +72,7 @@
 
         }) }}
 
+ <!-- Former first name reveal -->
         {% set formerNameHtml %}
               {{ govukInput({
                 label: {
@@ -73,7 +86,7 @@
                 value: "Jane"
               }) }}
 
-
+ <!-- Former Last name reveal -->
               {{ govukInput({
                 label: {
                   text: "What was their last name?",
@@ -88,6 +101,7 @@
               }) }}
             {% endset -%}
 
+ <!-- Former name question -->
             {{ govukRadios({
               idPrefix: "former-name",
               name: "former-name",
@@ -137,7 +151,7 @@
           <div id="nationality" class="autocomplete-wrapper"></div>
         </div> #}
 
-
+ <!-- Nationality -->
         <p class="govuk-body">
           <a href="javascript:void(0)" id="second-nationality-link" class="govuk-link govuk-link--no-visited-state ">Add a second nationality</a>
         </p>
@@ -181,6 +195,7 @@
           </div>
         </div>
 
+ <!-- Home address -->
         {% call govukFieldset({
           legend: {
             html: 'What is their home address?<br><p class="govuk-hint govuk-!-padding-top-1"> If they have more than one home address, use the address where they live most of the time</p>',
@@ -190,6 +205,23 @@
 
         }) %}
 
+
+ <!-- Property name or number -->
+{% if errorProperty %}
+        {{ govukInput({
+          label: {
+            html: 'Property name or number'
+          },
+          hint: {
+           text: "For example, 'Saron House', '116' or 'Apartment 37a'"
+         },
+          id: "managing-officer-usual-residential-address-property-name-number",
+          name: "managing-officer-usual-residential-address-property-name-number",
+          errorMessage: {
+                    text: "Enter the property name or number"
+                  }
+        }) }}
+{% else %}
         {{ govukInput({
           label: {
             html: 'Property name or number'
@@ -200,7 +232,23 @@
           id: "managing-officer-usual-residential-address-property-name-number",
           name: "managing-officer-usual-residential-address-property-name-number"
         }) }}
+{% endif %}
 
+ <!-- Address line 1 -->
+ {% if errorAddress1 %}
+        {{ govukInput({
+          label: {
+            text: "Address line 1"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "managing-officer-usual-residential-address-line-1",
+          name: "managing-officer-usual-residential-address-line-1",
+          autocomplete: "address-line1",
+          errorMessage: {
+                    text: "Enter address line 1"
+                  }
+        }) }}
+{% else %}
         {{ govukInput({
           label: {
             text: "Address line 1"
@@ -210,7 +258,9 @@
           name: "managing-officer-usual-residential-address-line-1",
           autocomplete: "address-line1"
         }) }}
+{% endif %}
 
+ <!-- Address line 2 -->
         {{ govukInput({
           label: {
             text: "Address line 2 (optional)"
@@ -221,6 +271,22 @@
           autocomplete: "address-line2"
         }) }}
 
+
+ <!-- City or town -->
+
+ {% if errorCity %}
+         {{ govukInput({
+          label: {
+            text: "City or town"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "managing-officer-usual-residential-address-city-town",
+          name: "managing-officer-usual-residential-address-city-town",
+          errorMessage: {
+                    text: "Enter the city or town"
+                  }
+        }) }}
+{% else %}
         {{ govukInput({
           label: {
             text: "City or town"
@@ -229,7 +295,10 @@
           id: "managing-officer-usual-residential-address-city-town",
           name: "managing-officer-usual-residential-address-city-town"
         }) }}
+{% endif %}
 
+ <!-- County -->
+ 
         {{ govukInput({
           label: {
             text: "County, state, province or region (optional)"
@@ -240,8 +309,23 @@
         }) }}
 
 
-
-
+ <!-- Country -->
+ {% if errorCountry %}
+         {{ govukInput({
+          label: {
+            html: 'Country'
+          },
+          hint: {
+           text: "Start typing a country, then choose from the list"
+         },
+          classes: "govuk-!-width-two-thirds",
+          id: "country",
+          name: "country",
+          errorMessage: {
+                    text: "Enter the country"
+                  }
+        }) }}
+{% else %}
         {{ govukInput({
           label: {
             html: 'Country'
@@ -250,11 +334,12 @@
            text: "Start typing a country, then choose from the list"
          },
           classes: "govuk-!-width-two-thirds",
-          id: "managing-officer-usual-residential-address-property-name-number",
-          name: "managing-officer-usual-residential-address-property-name-number"
+          id: "country",
+          name: "country"
         }) }}
+{% endif %}
 
-
+ <!-- Postcode -->
         {{ govukInput({
           label: {
             text: "Postcode or ZIP code (if applicable)"
@@ -514,9 +599,13 @@
       }
 #}
 
+{% if cityError %}
+{% else %}
+{% endif %}
 
 {{ govukRadios({
   name: "moActive",
+  id: "mo-ceased",
   fieldset: {
     legend: {
       text: "Are they still a managing officer for the overseas entity?",
@@ -555,8 +644,7 @@
 
 
                 {{ govukButton({
-                  text: "Continue",
-                  href: "involved-types"
+                  text: "Continue"
                 }) }}
 
 

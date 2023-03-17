@@ -77,39 +77,6 @@
         }) }}
 
 
-        <!-- DOB input -->
-        {# {{ govukDateInput({
-          id: "owner-dob",
-          namePrefix: "owner-dob",
-          fieldset: {
-            legend: {
-              text: "What is their date of birth?",
-              isPageHeading: false,
-              classes: "govuk-fieldset__legend--m"
-            }
-          },
-          hint: {
-            text: "For example, 27 3 2007"
-          },
-          items: [
-          {
-            classes: "govuk-input--width-2",
-            name: "day",
-            value: birthDay
-          },
-          {
-            classes: "govuk-input--width-2",
-            name: "month",
-            value: birthMonth
-          },
-          {
-            classes: "govuk-input--width-4",
-            name: "year",
-            value: birthYear
-          }
-          ]
-        }) }} #}
-      
 
         <!-- nationality input -->
         {{ govukInput({
@@ -160,7 +127,21 @@
         }) %}
 
           <!-- property name input -->
-
+{% if errorProperty %}    
+          {{ govukInput({
+            label: {
+              html: 'Property name or number'
+            },
+            hint: {
+            text: "For example, 'Saron House', '116' or 'Apartment 37a'"
+          },
+            id: "usual-residential-address-property-name-number",
+            name: "usual-residential-address-property-name-number",
+          errorMessage: {
+                    text: "Enter the property name or number"
+                  }
+          }) }}
+{% else %}
           {{ govukInput({
             label: {
               html: 'Property name or number'
@@ -171,11 +152,11 @@
             id: "usual-residential-address-property-name-number",
             name: "usual-residential-address-property-name-number"
           }) }}
-
+ {% endif %}
 
           <!-- address 1 input -->
 
-        {% if errorAddress1 %}
+{% if errorAddress1 %}
         {{ govukInput({
           label: {
             text: "Address line 1"
@@ -186,10 +167,10 @@
           value: homeAddressLine1,
           autocomplete: "address-line1",
           errorMessage: {
-                    text: "Enter an address"
+                    text: "Enter address line 1"
                   }
         }) }}
-        {% else %}
+{% else %}
           {{ govukInput({
             label: {
               text: "Address line 1"
@@ -200,7 +181,7 @@
             autocomplete: "address-line1",
             value: homeAddressLine1
           }) }}
-        {% endif %}
+{% endif %}
 
           <!-- address 2 input -->
           {{ govukInput({
@@ -215,6 +196,20 @@
 
 
           <!-- city input -->
+{% if errorCity %}
+          {{ govukInput({
+            label: {
+              text: "City or town"
+            },
+            classes: "govuk-!-width-two-thirds",
+            id: "usual-residential-address-city-town",
+            name: "usual-residential-address-city-town",
+            value: homeCity,
+          errorMessage: {
+                    text: "Enter the city or town"
+                  }
+          }) }}
+{% else %}
           {{ govukInput({
             label: {
               text: "City or town"
@@ -224,7 +219,7 @@
             name: "usual-residential-address-city-town",
             value: homeCity
           }) }}
-
+{% endif %}
 
           <!-- county input -->
           {{ govukInput({
@@ -238,6 +233,24 @@
 
 
           <!-- country input -->
+
+{% if errorCountry %}
+          {{ govukInput({
+            label: {
+              text: "Country"
+            },
+            hint: {
+            text: "Start typing a country, then choose from the list"
+          },
+            classes: "govuk-!-width-two-thirds",
+            id: "country",
+            name: "country",
+            value: country,
+          errorMessage: {
+                    text: "Enter the country"
+                  }
+          }) }}
+{% else %}
           {{ govukInput({
             label: {
               text: "Country"
@@ -250,7 +263,7 @@
             name: "country",
             value: country
           }) }}
-
+{% endif %}
 
           <!-- postcode input -->
           {{ govukInput({
