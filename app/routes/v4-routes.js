@@ -227,7 +227,7 @@ router.post('/v4/beneficial-owner/mo', function (req, res) {
     // No value so add error to array
    moCeasedError = true;
     errors.push({
-      text: 'Select yes if they are still a registrable beneficial owner',
+      text: 'Select yes if they are still a managing officer',
       href: '#mo-ceased'
     })
   }

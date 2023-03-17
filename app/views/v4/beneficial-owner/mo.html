@@ -599,10 +599,32 @@
       }
 #}
 
-{% if cityError %}
+{% if errorMoCeased %}
+{{ govukRadios({
+  name: "moActive",
+  id: "mo-ceased",
+  fieldset: {
+    legend: {
+      text: "Are they still a managing officer for the overseas entity?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+            errorMessage: {
+                    text: "Select yes if they are still a managing officer"
+                  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes"
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+  ]
+}) }}
 {% else %}
-{% endif %}
-
 {{ govukRadios({
   name: "moActive",
   id: "mo-ceased",
@@ -624,7 +646,7 @@
     }
   ]
 }) }}
-
+{% endif %}
 
 
         {{ govukInsetText({
@@ -634,13 +656,6 @@
                     <p>We will show all other information you provide in this section on the public Register of Overseas Entities.</p>
                 '
         }) }}
-
-
-
-
-
-
-
 
 
                 {{ govukButton({
