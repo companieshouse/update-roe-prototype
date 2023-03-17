@@ -161,6 +161,32 @@ router.post('/v4/beneficial-owner/bo-individual', function (req, res) {
 
 
 
+// ******* bo gov validation ********************************
+router.get('/v4/beneficial-owner/bo-gov', function (req, res) {
+  // Set URl
+  res.render('v4/beneficial-owner/bo-gov', {
+    currentUrl: req.originalUrl
+  })
+})
+router.post('/v4/beneficial-owner/bo-gov', function (req, res) {
+  // Create variables
+  var boCeasedError = false;
+
+   // Check if user has filled out a value
+  if (req.session.data['bo-gov-ceased'] === '') {
+    // No value so add error to array
+    boCeasedError = true;
+    errors.push({
+      text: 'Select yes if they are still a registrable beneficial owner',
+      href: '#bo-gov-ceased'
+    })
+  } else {
+    // User inputted value so move to next page
+    res.redirect('/v4/beneficial-owner/mo')
+  }
+})
+
+
 
 
 

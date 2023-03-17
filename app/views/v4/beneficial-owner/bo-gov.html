@@ -13,10 +13,16 @@ Government or public authority beneficial owner – {{ serviceName }} – GOV.UK
 
 {% block content %}
 
-
-
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+
+        <!-- Check for errors -->
+        {% if errorList %}
+        {{ govukErrorSummary({
+          titleText: "There is a problem",
+          errorList: errorList
+        }) }}
+        {% endif %}
 
 <span class="govuk-caption-l">AMK Department</span>
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-5">Review the government or public authority</h1>
@@ -612,6 +618,35 @@ html: serviceAddressHtml
 {% endset -%}
 
 
+{% if boCeasedError %}
+{{ govukRadios({
+  name: "bo-gov-ceased",
+  fieldset: {
+    legend: {
+      text: "Is it still a registrable beneficial owner for the overseas entity?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },        
+   errorMessage: 
+   {
+     text: "Select yes if they are still a registrable beneficial owner"
+ },
+  items: [
+    {
+      value: "yes",
+      text: "Yes"
+    },
+    {
+      value: "no",
+      text: "No",
+            conditional: {
+        html: boCeasedHtml
+      }
+    }
+  ]
+}) }}
+{% else %}
 {{ govukRadios({
   name: "bo-gov-ceased",
   fieldset: {
@@ -636,6 +671,7 @@ html: serviceAddressHtml
     }
   ]
 }) }}
+{% endif %}
 
 
                       {{ govukInsetText({
