@@ -576,30 +576,26 @@
 
 
 
-{# 
+
 {% set moCeasedHtml %}
 {{ govukDateInput({
   id: "mo-ceased",
   namePrefix: "mo-ceased",
   fieldset: {
     legend: {
-      text: "When did they stop being a managing officer?",
+      text: "Date they stopped being a managing officer (optional)",
       isPageHeading: true,
-      classes: "govuk-fieldset__legend--m"
+      classes: "govuk-fieldset__legend--s"
     }
   },
   hint: {
-    text: "For example, 27 3 2007"
+    text: "For example, 27 1 2023"
   }
 }) }}
 {% endset -%} 
 
 
-      ,
-      conditional: {
-        html: moCeasedHtml
-      }
-#}
+
 
 {% if errorMoCeased %}
 {{ govukRadios({
@@ -609,7 +605,7 @@
     legend: {
       text: "Are they still a managing officer for the overseas entity?",
       isPageHeading: true,
-      classes: "govuk-fieldset__legend--m"
+              classes: "govuk-fieldset__legend--s"
     }
   },
             errorMessage: {
@@ -622,7 +618,10 @@
     },
     {
       value: "no",
-      text: "No"
+      text: "No",
+                      conditional: {
+                  html: moCeasedHtml
+                }
     }
   ]
 }) }}
@@ -644,7 +643,10 @@
     },
     {
       value: "no",
-      text: "No"
+      text: "No",
+                      conditional: {
+                  html: moCeasedHtml
+                }
     }
   ]
 }) }}
