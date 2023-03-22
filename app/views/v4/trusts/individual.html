@@ -16,8 +16,13 @@
 
         <span class="govuk-caption-l">{{ data['trust-name'] }}</span>
 
-      <h1 class="govuk-heading-xl govuk-!-margin-0">Tell us about the individual</h1>
-      <p class="govuk-!-margin-bottom-5 govuk-!-margin-top-5">You can add more later.</p>
+      <h1 class="govuk-heading-xl govuk-!-margin-0">Review the individual involved in this trust</h1>
+  
+   <p class="govuk-!-margin-bottom-5 govuk-!-margin-top-5">If you need to update this individual's information, you can change the answers here.</p>
+
+          <div class="govuk-inset-text">
+          You may need to <strong>enter any information that's missing</strong>.
+        </div>
 
       <form class="form" action="{{currentUrl}}" method="post">
 
@@ -361,6 +366,9 @@
               isPageHeading: false,
               classes: "govuk-fieldset__legend--m"
             }
+          },
+           hint: {
+           text: "This is also known as a service address."
           },
           items: [
             {
