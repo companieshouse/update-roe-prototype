@@ -40,6 +40,81 @@ router.post('/v4/verification/completing-update', function (req, res) {
 
 })
 
+// ******* trust-details validation ********************************
+router.get('/v4/trusts/trust-details', function (req, res) {
+  // Set URl
+  res.render('v4/trusts/trust-details', {
+    currentUrl: req.originalUrl
+  })
+})
+
+router.post('/v4/trusts/trust-details', function (req, res) {
+    res.redirect('/v4/trusts/former-bo')
+})
+
+
+// ******* delete-trust-warning validation ********************************
+router.get('/v4/trusts/delete-trust-warning', function (req, res) {
+  // Set URl
+  res.render('v4/trusts/delete-trust-warning', {
+    currentUrl: req.originalUrl
+  })
+})
+
+router.post('/v4/trusts/delete-trust-warning', function (req, res) {
+  // Make a variable and give it the value from 'who-is-filing'
+  var warningAnswer = req.session.data['delet-trust']
+
+  // Check whether the variable matches a condition
+  if (warningAnswer == "yes"){
+    // Send user to next page
+    res.redirect('/v4/trusts/agent-checks')
+  } else {
+    // Send user to ineligible page
+    res.redirect('/v4/trusts/trust-details')
+  }
+
+})
+
+
+// ******* former-bo validation ********************************
+router.get('/v4/trusts/former-bo', function (req, res) {
+  // Set URl
+  res.render('v4/trusts/former-bo', {
+    currentUrl: req.originalUrl
+  })
+})
+
+router.post('/v4/trusts/former-bo', function (req, res) {
+    res.redirect('/v4/trusts/individual')
+})
+
+
+// ******* individual validation ********************************
+router.get('/v4/trusts/individual', function (req, res) {
+  // Set URl
+  res.render('v4/trusts/individual', {
+    currentUrl: req.originalUrl
+  })
+})
+
+router.post('/v4/trusts/individual', function (req, res) {
+    res.redirect('/v4/trusts/legal-entity')
+})
+
+
+// ******* legal-entity validation ********************************
+router.get('/v4/trusts/legal-entity', function (req, res) {
+  // Set URl
+  res.render('v4/trusts/legal-entity', {
+    currentUrl: req.originalUrl
+  })
+})
+
+router.post('/v4/trusts/legal-entity', function (req, res) {
+    res.redirect('/v4/trusts/trust-involved-additions')
+})
+
 
 // ******* oe-details validation ********************************
 router.get('/v4/oe-details', function (req, res) {

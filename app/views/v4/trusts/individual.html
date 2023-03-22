@@ -19,34 +19,25 @@
       <h1 class="govuk-heading-xl govuk-!-margin-0">Tell us about the individual</h1>
       <p class="govuk-!-margin-bottom-5 govuk-!-margin-top-5">You can add more later.</p>
 
-      <form class="form" method="post">
+      <form class="form" action="{{currentUrl}}" method="post">
 
-
-
-                {% set indintDateHtml %}
-                <br>
-                {{ govukDateInput({
-                  id: "individual-interested-date",
-                  namePrefix: "individual-interested-date",
-                  fieldset: {
-                    legend: {
-                      text: "What date did they become an interested person?",
-                      isPageHeading: false,
-                      classes: "govuk-fieldset__legend--s"
-                    }
-                  },
-                  hint: {
-                    text: "For example, 27 3 2007"
-                  }
-                }) }}
-                {% endset -%}
-
-
-
-
-
-
-
+        {% set indintDateHtml %}
+        <br>
+        {{ govukDateInput({
+          id: "individual-interested-date",
+          namePrefix: "individual-interested-date",
+          fieldset: {
+            legend: {
+              text: "What date did they become an interested person?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          hint: {
+            text: "For example, 27 3 2007"
+          }
+        }) }}
+        {% endset -%}
 
 
         {{ govukInput({
@@ -56,10 +47,10 @@
             isPageHeading: false
           },
           hint: {
-          text: "This is also known as their given name."
-        },
-          id: "beneficiary-individual-first-name",
-          name: "beneficiary-individual-first-name"
+          text: "This is also known as their given name."},
+          id: "individual-first-name",
+          name: "individual-first-name",
+          value: "Fred"
         }) }}
 
 
@@ -73,24 +64,49 @@
           text: "This is also known as their family name."
         },
           classes: "govuk-!-width-three-quarters",
-          id: "beneficiary-individual-last-name",
-          name: "beneficiary-individual-last-name"
+          id: "individual-last-name",
+          name: "individual-last-name",
+          value: "Lock"
         }) }}
 
-        {{ govukDateInput({
-          id: "beneficiary-individual-dob",
-          namePrefix: "beneficiary-individual-dob",
-          fieldset: {
-            legend: {
-              text: "What is their date of birth?",
-              isPageHeading: false,
-              classes: "govuk-fieldset__legend--m"
-            }
-          },
-          hint: {
-            text: "For example, 27 3 2007"
-          }
-        }) }}
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" role="group" aria-describedby="beneficiary-individual-dob-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+               What is their date of birth?
+            </legend>
+            <div id="bo-start-hint" class="govuk-hint">
+              For example, 27 3 2007
+            </div>
+            <div class="govuk-date-input" id="beneficiary-individual-dob">
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="beneficiary-individual-dob-day">
+                    Day
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="beneficiary-individual-dob-day" name="beneficiary-individual-dob-day" type="text" inputmode="numeric" value="27">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="beneficiary-individual-dob-month">
+                    Month
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="beneficiary-individual-dob-month" name="beneficiary-individual-dob-month" type="text" inputmode="numeric" value="6">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="beneficiary-individual-dob-year">
+                    Year
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="beneficiary-individual-dob-year" name="beneficiary-individual-dob-year" type="text" inputmode="numeric" value="1983">
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
 
         {{ govukRadios({
           idPrefix: "trust-individual",
@@ -109,7 +125,8 @@
             },
             {
               value: "settlor",
-              text: "Settlor"
+              text: "Settlor",
+              checked: "checked"
             },
             {
               value: "grantor",
@@ -119,21 +136,37 @@
               value: "interested",
               text: "Interested person",
               conditional: {
-        html: indintDateHtml
-      }
+              html: indintDateHtml
+            }
             }
           ]
         }) }}
 
-        <div class="govuk-form-group">
+        <!-- <div class="govuk-form-group">
            <label for="autocomplete-default" class="govuk-label--m">What is their nationality?</label>
           <p class="govuk-hint">Start typing a nationality, then choose from the list</p>
           <div id="nationality" class="autocomplete-wrapper"></div>
-        </div>
+        </div> -->
+
+        {{ govukInput({
+          label: {
+            text: "What is their nationality?",
+            classes: "govuk-label--m",
+            isPageHeading: false
+          },
+            hint: {
+             text: "Start typing a nationality, then choose from the list"
+           },
+          id: "nationality",
+          name: "nationality",
+          value: nationality,
+          value: "British"
+        }) }}
 
         <p class="govuk-body">
           <a href="javascript:void(0)" id="second-nationality-link" class="govuk-link govuk-link--no-visited-state ">Add a second nationality</a>
         </p>
+
         <div id="second-nationality" class="second-nationality" style="display: none">
           <div class="govuk-form-group">
             <label for="autocomplete-default" class="govuk-label">Second nationality (optional)</label>
@@ -144,6 +177,7 @@
             <a href="javascript:void(0)" id="third-nationality-link" class="govuk-link govuk-link--no-visited-state">Add a third nationality</a>
           </p>
         </div>
+
         <div id="third-nationality" class="third-nationality" style="display: none">
           <div class="govuk-form-group">
             <label for="autocomplete-default" class="govuk-label">Third nationality (optional)</label>
@@ -158,7 +192,6 @@
             classes: "govuk-fieldset__legend--m govuk-!-padding-top-3",
             isPageHeading: false
           }
-
         }) %}
 
         {{ govukInput({
@@ -169,7 +202,8 @@
            text: "For example, 'Saron House', '116' or 'Apartment 37a'"
          },
           id: "usual-residential-address-property-name-number",
-          name: "usual-residential-address-property-name-number"
+          name: "usual-residential-address-property-name-number",
+          value: "8"
         }) }}
 
         {{ govukInput({
@@ -179,7 +213,8 @@
           classes: "govuk-!-width-two-thirds",
           id: "usual-residential-address-line-1",
           name: "usual-residential-address-line-1",
-          autocomplete: "address-line1"
+          autocomplete: "address-line1",
+          value: "High street road"
         }) }}
 
         {{ govukInput({
@@ -198,7 +233,8 @@
           },
           classes: "govuk-!-width-two-thirds",
           id: "usual-residential-address-city-town",
-          name: "usual-residential-address-city-town"
+          name: "usual-residential-address-city-town",
+          value: "Plymouth"
         }) }}
 
         {{ govukInput({
@@ -210,11 +246,21 @@
           name: "service-address-state"
         }) }}
 
+        {{ govukInput({
+          label: {
+            text: "Country"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "service-address-country",
+          name: "service-address-country",
+          value: "Britain"
+        }) }}
+<!-- 
         <div class="govuk-form-group">
            <label for="autocomplete-default" class="govuk-label">Country</label>
           <p class="govuk-hint">Start typing a country, then choose from the list</p>
           <div id="country" class="autocomplete-wrapper"></div>
-        </div>
+        </div> -->
 
         {{ govukInput({
           label: {
@@ -223,7 +269,8 @@
           classes: "govuk-input--width-10",
           id: "usual-residential-address-postcode",
           name: "usual-residential-address-postcode",
-          autocomplete: "postal-code"
+          autocomplete: "postal-code",
+          value: "XY1 ZV6"
         }) }}
         {% endcall %}
 
@@ -318,31 +365,28 @@
           items: [
             {
               value: "yes",
-              text: "Yes"
+              text: "Yes",
+              checked: "checked"
             },
             {
               value: "no",
               text: "No",
               conditional: {
-        html: serviceAddressHtml
-        }
+              html: serviceAddressHtml
+            }
             }
           ]
         }) }}
 
         {{ govukInsetText({
           html: '
-                    <h2 class="govuk-heading-m">What information we&#39;ll show on the public register</h2>
-                    <p>We will not show any of the information you provide on this screen on the public Register of Overseas Entities. However, we may share it with HMRC.</p>
-                      '
+            <h2 class="govuk-heading-m">What information we&#39;ll show on the public register</h2>
+            <p>We will not show any of the information you provide on this screen on the public Register of Overseas Entities. However, we may share it with HMRC.</p>
+              '
         }) }}
 
-
-
-
         {{ govukButton({
-          text: "Save and continue",
-        href: './legal-entity'
+          text: "Save and continue"
         }) }}
 
       </form>
