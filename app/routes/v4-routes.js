@@ -49,7 +49,24 @@ router.get('/v4/trusts/trust-details', function (req, res) {
 })
 
 router.post('/v4/trusts/trust-details', function (req, res) {
-    res.redirect('/v4/trusts/former-bo')
+  var trustNameError = false;
+  var errors = [];
+
+  if (req.session.data['trust-name'] === '') {
+    trustNameError = true;
+    errors.push({
+      text: 'Enter the name of the trust',
+      href: '#trust-name'
+    })
+  }
+    
+  if (errors.length != 0) {
+    res.render('v4/trusts/trust-details', {
+      errorTrustName: trustNameError,
+      errorList: errors
+    })
+  } else {
+    res.redirect('/v4/trusts/former-bo')}
 })
 
 
@@ -86,7 +103,7 @@ router.get('/v4/trusts/former-bo', function (req, res) {
 })
 
 router.post('/v4/trusts/former-bo', function (req, res) {
-    res.redirect('/v4/trusts/individual')
+  res.redirect('/v4/trusts/individual')
 })
 
 
@@ -99,7 +116,20 @@ router.get('/v4/trusts/individual', function (req, res) {
 })
 
 router.post('/v4/trusts/individual', function (req, res) {
-    res.redirect('/v4/trusts/legal-entity')
+  res.redirect('/v4/trusts/individual-2')
+})
+
+
+// ******* individual-2 validation ********************************
+router.get('/v4/trusts/individual-2', function (req, res) {
+  // Set URl
+  res.render('v4/trusts/individual-2', {
+    currentUrl: req.originalUrl
+  })
+})
+
+router.post('/v4/trusts/individual-2', function (req, res) {
+  res.redirect('/v4/trusts/legal-entity')
 })
 
 
@@ -112,7 +142,7 @@ router.get('/v4/trusts/legal-entity', function (req, res) {
 })
 
 router.post('/v4/trusts/legal-entity', function (req, res) {
-    res.redirect('/v4/trusts/trust-involved-additions')
+  res.redirect('/v4/trusts/trust-involved-additions')
 })
 
 

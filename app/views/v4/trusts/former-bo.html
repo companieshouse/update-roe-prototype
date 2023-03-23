@@ -14,27 +14,15 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-        <span class="govuk-caption-l">{{ data['trust-name'] }}</span>
+      <span class="govuk-caption-l">{{ data['trust-name'] }}</span>
       <h1 class="govuk-heading-xl govuk-!-margin-0">Review the former beneficial owner</h1>
       <p class="govuk-!-margin-bottom-5 govuk-!-margin-top-5">If you need to update this former beneficial owner's information, you can change the answers here.</p>
 
-          <div class="govuk-inset-text">
-          You may need to <strong>enter any information that's missing</strong>.
-        </div>
+      <div class="govuk-inset-text">
+        You may need to <strong>enter any information that's missing</strong>.
+      </div>
 
-      <form class="form" action="{{currentUrl}}" method="post">
-
-        {{ govukInput({
-            label: {
-              text: "What is the former beneficial owner's name?",
-              classes: "govuk-label--m",
-              isPageHeading: false
-            },
-            id: "former-beneficial-owner-name",
-            name: "former-beneficial-owner-name",
-            value: "Jane Wright"
-        }) }}
-         
+      <form class="form" action="{{currentUrl}}" method="post">  
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
         {% from "govuk/components/input/macro.njk" import govukInput %}
@@ -60,9 +48,8 @@
           type: "first-name",
           autocomplete: "first-name",
           classes: "govuk-!-width-two-thirds",
-          label: {
-            text: "First name"
-          }
+          label: {text: "First name"},
+          value: "Jane"
         }) }}
 
         {{ govukInput({
@@ -71,9 +58,8 @@
           type: "last-name",
           autocomplete: "last-name",
           classes: "govuk-!-width-two-thirds",
-          label: {
-            text: "Last name"
-          }
+          label: {text: "Last name"},
+          value: "Wright"
         }) }}
 
         {% endset -%}
@@ -92,6 +78,7 @@
             {
               value: "individual",
               text: "Individual",
+              checked: "checked",
               conditional: {
                 html: individualHtml
               }

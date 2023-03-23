@@ -28,8 +28,8 @@
         {% set indintDateHtml %}
         <br>
         {{ govukDateInput({
-          id: "individual-interested-date",
-          namePrefix: "individual-interested-date",
+          id: "individual2-interested-date",
+          namePrefix: "individual2-interested-date",
           fieldset: {
             legend: {
               text: "What date did they become an interested person?",
@@ -53,9 +53,9 @@
           hint: {
           text: "This is also known as their given name."},
           classes: "govuk-!-width-three-quarters",
-          id: "individual-first-name",
-          name: "individual-first-name",
-          value: "Fred"
+          id: "individual2-first-name",
+          name: "individual2-first-name",
+          value: "Mary"
         }) }}
 
 
@@ -69,43 +69,43 @@
           text: "This is also known as their family name."
         },
           classes: "govuk-!-width-three-quarters",
-          id: "individual-last-name",
-          name: "individual-last-name",
-          value: "Lock"
+          id: "individual2-last-name",
+          name: "individual2-last-name",
+          value: "Robinson"
         }) }}
 
 
         <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset" role="group" aria-describedby="beneficiary-individual-dob-hint">
+          <fieldset class="govuk-fieldset" role="group" aria-describedby="beneficiary-individual2-dob-hint">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
                What is their date of birth?
             </legend>
             <div id="bo-start-hint" class="govuk-hint">
               For example, 27 3 2007
             </div>
-            <div class="govuk-date-input" id="beneficiary-individual-dob">
+            <div class="govuk-date-input" id="beneficiary-individual2-dob">
               <div class="govuk-date-input__item">
                 <div class="govuk-form-group">
-                  <label class="govuk-label govuk-date-input__label" for="beneficiary-individual-dob-day">
+                  <label class="govuk-label govuk-date-input__label" for="beneficiary-individual2-dob-day">
                     Day
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="beneficiary-individual-dob-day" name="beneficiary-individual-dob-day" type="text" inputmode="numeric" value="27">
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="beneficiary-individual2-dob-day" name="beneficiary-individual2-dob-day" type="text" inputmode="numeric" value="02">
                 </div>
               </div>
               <div class="govuk-date-input__item">
                 <div class="govuk-form-group">
-                  <label class="govuk-label govuk-date-input__label" for="beneficiary-individual-dob-month">
+                  <label class="govuk-label govuk-date-input__label" for="beneficiary-individual2-dob-month">
                     Month
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="beneficiary-individual-dob-month" name="beneficiary-individual-dob-month" type="text" inputmode="numeric" value="6">
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="beneficiary-individual2-dob-month" name="beneficiary-individual2-dob-month" type="text" inputmode="numeric" value="8">
                 </div>
               </div>
               <div class="govuk-date-input__item">
                 <div class="govuk-form-group">
-                  <label class="govuk-label govuk-date-input__label" for="beneficiary-individual-dob-year">
+                  <label class="govuk-label govuk-date-input__label" for="beneficiary-individual2-dob-year">
                     Year
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="beneficiary-individual-dob-year" name="beneficiary-individual-dob-year" type="text" inputmode="numeric" value="1983">
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="beneficiary-individual2-dob-year" name="beneficiary-individual2-dob-year" type="text" inputmode="numeric" value="1967">
                 </div>
               </div>
             </div>
@@ -114,8 +114,8 @@
 
 
         {{ govukRadios({
-          idPrefix: "trust-individual",
-          name: "trust-individual",
+          idPrefix: "trust-individual2",
+          name: "trust-individual2",
           fieldset: {
             legend: {
               text: "What is their role within the trust?",
@@ -126,12 +126,12 @@
           items: [
             {
               value: "beneficiary",
-              text: "Beneficiary"
+              text: "Beneficiary",
+              checked: "checked"
             },
             {
               value: "settlor",
-              text: "Settlor",
-              checked: "checked"
+              text: "Settlor"
             },
             {
               value: "grantor",

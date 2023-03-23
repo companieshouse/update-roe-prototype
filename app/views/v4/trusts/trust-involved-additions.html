@@ -12,180 +12,207 @@
 {% block content %}
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column-full">
 
-<span class="govuk-caption-l">{{ data['trust-name'] }}</span>
-<h1 class="govuk-heading-xl">Individuals or entities involved in the trust</h1>
+      <span class="govuk-caption-l">{{ data['trust-name'] }}</span>
+      <h1 class="govuk-heading-xl">Individuals or entities involved in the trust</h1>
 
-      <form class="form" action="" method="post">
+      <div class="govuk-summary-card govuk-!-margin-bottom-9">
+        <div class="govuk-summary-card__title-wrapper">
+          <h2 class="govuk-summary-card__title">What you have reviewed</h2>
+        </div>
+        <div class="govuk-summary-card__content">
+          <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header govuk-visually-hidden">Name</th>
+                <th scope="col" class="govuk-table__header govuk-visually-hidden">Type</th>
+                <th scope="col" class="govuk-table__header govuk-visually-hidden">Remove from this trust</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              {% if "dan_ashcroft" in data['bo-checklist'] %}
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Beneficial owner</th>
+                <td class="govuk-table__cell">Daniel Ashcroft</td>
+                <td class="govuk-table__cell"><a href="trust-details#bo-checklist">Remove from this trust</a></td>
+              </tr>
+              {% endif %}
+              {% if "name_corp" in data['bo-checklist'] %}
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Beneficial owner</th>
+                <td class="govuk-table__cell">Name Corp</td>
+                <td class="govuk-table__cell"><a href="trust-details#bo-checklist">Remove from this trust</a></td>
+              </tr>
+              {% endif %}
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Former beneficial owner</th>
+                <td class="govuk-table__cell">Jane Wright</td>
+                <td class="govuk-table__cell"><a href="trust-details#former-checklist">Remove from this trust</a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Individual</th>
+                <td class="govuk-table__cell">{{ data['individual-first-name'] }} {{ data['individual-last-name'] }}</td>
+                <td class="govuk-table__cell"><a href="trust-details#individual-checklist">Remove from this trust</a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Individual</th>
+                <td class="govuk-table__cell">{{ data['individual2-first-name'] }} {{ data['individual2-last-name'] }}</td>
+                <td class="govuk-table__cell"><a href="trust-details#individual-checklist">Remove from this trust</a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Legal entity</th>
+                <td class="govuk-table__cell">{{ data['legal-entity-name'] }}</td>
+                <td class="govuk-table__cell"><a href="trust-details#legal-checklist">Remove from this trust</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div> 
+      </div>
 
+      {% if "lisa_smith" in data['bo-checklist'] or "beta_limited" in data['bo-checklist']%}
+      <table class="govuk-table govuk-!-margin-bottom-9">
+        <caption class="govuk-table__caption govuk-table__caption--m">What you have added this update</caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header govuk-visually-hidden">Name</th>
+            <th scope="col" class="govuk-table__header govuk-visually-hidden">Type</th>
+            <th scope="col" class="govuk-table__header govuk-visually-hidden">Remove from this trust</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          {% if "lisa_smith" in data['bo-checklist'] %}
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Beneficial owner</th>
+            <td class="govuk-table__cell">Lisa Smith</td>
+            <td class="govuk-table__cell"><a href="trust-details#bo-checklist">Remove from this trust</a></td>
+          </tr>
+          {% endif %}
+          {% if "beta_limited" in data['bo-checklist'] %}
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Beneficial owner</th>
+            <td class="govuk-table__cell">Beta Limited</td>
+            <td class="govuk-table__cell"><a href="trust-details#bo-checklist">Remove from this trust</a></td>
+          </tr>
+          {% endif %}
+        </tbody>
+      </table>
+      {% endif %}
+      
+
+        {% if not data['former-checklist'] or
+              not data['individual-checklist'] or 
+              not data['legal-checklist'] or 
+              not "name_corp" in data['bo-checklist'] or 
+              not "dan_ashcroft" in data['bo-checklist'] %}
         <table class="govuk-table govuk-!-margin-bottom-9">
-          <caption class="govuk-table__caption govuk-table__caption--m">Individuals or entities currently involved in this trust</caption>
+          <caption class="govuk-table__caption govuk-table__caption--m">What you have removed this update</caption>
           <thead class="govuk-table__head">
             <tr class="govuk-table__row">
               <th scope="col" class="govuk-table__header govuk-visually-hidden">Name</th>
               <th scope="col" class="govuk-table__header govuk-visually-hidden">Type</th>
-              <th scope="col" class="govuk-table__header govuk-visually-hidden">Change</th>
-              <th scope="col" class="govuk-table__header govuk-visually-hidden">Remove</th>
+              <th scope="col" class="govuk-table__header govuk-visually-hidden">Undo</th>
             </tr>
           </thead>
           <tbody class="govuk-table__body">
-            {% if "dan_ashcroft" in data['involved'] %}
+            {% if not "dan_ashcroft" in data['bo-checklist'] %}
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Beneficial owner</th>
               <td class="govuk-table__cell">Daniel Ashcroft</td>
-              <td class="govuk-table__cell"><a href="trust-details#involved">Remove</a></td>
+              <td class="govuk-table__cell"><a href="trust-details#bo-checklist">Undo</a></td>
             </tr>
             {% endif %}
-            {% if "name_corp" in data['involved'] %}
+            {% if not "name_corp" in data['bo-checklist'] %}
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Beneficial owner</th>
               <td class="govuk-table__cell">Name Corp</td>
-              <td class="govuk-table__cell"><a href="/register/trusts/trust-details-edit#involved">Remove</a></td>
+              <td class="govuk-table__cell"><a href="trust-details#bo-checklist">Undo</a></td>
             </tr>
             {% endif %}
+            {% if not data['former-checklist'] %}
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Former beneficial owner</th>
-              <td class="govuk-table__cell">{{ data['former-beneficial-owner-name'] }}</td>
-              <td class="govuk-table__cell"><a href="former-bo">Change</a></td>
-              <td class="govuk-table__cell"><a href="/register/trusts/trust-details-edit#involved">Remove</a></td>
+              <td class="govuk-table__cell">Lisa Wright</td>
+              <td class="govuk-table__cell"><a href="trust-details#former-checklist">Undo</a></td>
             </tr>
+            {% endif %}
+            {% if not data['individual-checklist'] %}
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Individual</th>
-              <td class="govuk-table__cell">{{ data['individual-first-name'] }} {{ data['individual-last-name'] }}</td>
-              <td class="govuk-table__cell"><a href="/register/trusts/trust-historical-beneficial-owner-edit">Change</a></td>
-              <td class="govuk-table__cell"><a href="/register/trusts/trust-details-edit#involved">Remove</a></td>
+              <td class="govuk-table__cell">Fred Lock</td>
+              <td class="govuk-table__cell"><a href="trust-details#individual-checklist">Undo</a></td>
             </tr>
+            {% endif %}
+            {% if not data['legal-checklist'] %}
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Legal entity</th>
-              <td class="govuk-table__cell">{{ data['legal-entity-name'] }}</td>
-              <td class="govuk-table__cell"><a href="/register/trusts/trust-historical-beneficial-owner-edit">Change</a></td>
-              <td class="govuk-table__cell"><a href="/register/trusts/trust-details-edit#involved">Remove</a></td>
-            </tr>
-          </tbody>
-        </table>
-
-        {% if "lisa_smith" in data['involved'] or "beta_limited" in data['involved']%}
-        <table class="govuk-table govuk-!-margin-bottom-9">
-          <caption class="govuk-table__caption govuk-table__caption--m">What individuals or entities you have added so far for this trust</caption>
-          <thead class="govuk-table__head">
-            <tr class="govuk-table__row">
-              <th scope="col" class="govuk-table__header govuk-visually-hidden">Name</th>
-              <th scope="col" class="govuk-table__header govuk-visually-hidden">Type</th>
-              <th scope="col" class="govuk-table__header govuk-visually-hidden">Change</th>
-              <th scope="col" class="govuk-table__header govuk-visually-hidden">Remove</th>
-            </tr>
-          </thead>
-          <tbody class="govuk-table__body">
-            {% if "lisa_smith" in data['involved'] %}
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Beneficial owner</th>
-              <td class="govuk-table__cell">Lisa Smith</td>
-              <td class="govuk-table__cell"><a href="/register/trusts/trust-details-edit#involved">Remove</a></td>
-            </tr>
-            {% endif %}
-            {% if "beta_limited" in data['involved'] %}
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Beneficial owner</th>
-              <td class="govuk-table__cell">Beta Limited</td>
-              <td class="govuk-table__cell"><a href="/register/trusts/trust-details-edit#involved">Remove</a></td>
+              <td class="govuk-table__cell">Salcombe Ltd</td>
+              <td class="govuk-table__cell"><a href="trust-details#legal-checklist">Undo</a></td>
             </tr>
             {% endif %}
           </tbody>
         </table>
-        {% endif %}
+      {% endif %}
 
-        {% if not "dan_ashcroft" in data['involved'] or not "name_corp" in data['involved']%}
-        <table class="govuk-table govuk-!-margin-bottom-9">
-          <caption class="govuk-table__caption govuk-table__caption--m">What individuals or entities you have removed so far for this trust</caption>
-          <thead class="govuk-table__head">
-            <tr class="govuk-table__row">
-              <th scope="col" class="govuk-table__header govuk-visually-hidden">Name</th>
-              <th scope="col" class="govuk-table__header govuk-visually-hidden">Type</th>
-              <th scope="col" class="govuk-table__header govuk-visually-hidden">Change</th>
-              <th scope="col" class="govuk-table__header govuk-visually-hidden">Remove</th>
-            </tr>
-          </thead>
-          <tbody class="govuk-table__body">
-            {% if not "dan_ashcroft" in data['involved'] %}
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Beneficial owner</th>
-              <td class="govuk-table__cell">Daniel Ashcroft</td>
-              <td class="govuk-table__cell"><a href="/register/trusts/trust-details-edit#involved">Remove</a></td>
-            </tr>
-            {% endif %}
-            {% if not "name_corp" in data['involved'] %}
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Beneficial owner</th>
-              <td class="govuk-table__cell">Name Corp</td>
-              <td class="govuk-table__cell"><a href="/register/trusts/trust-details-edit#involved">Remove</a></td>
-            </tr>
-            {% endif %}
-          </tbody>
-        </table>
-        {% endif %}
+    </div>
+  </div>
 
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
 
-        {{ govukRadios({
-            idPrefix: "trustTypes",
-            name: "trustTypes",
-            fieldset: {
-              legend: {
-                text: "Which type of individual or entity do you want to add to this trust?",
-                isPageHeading: true,
-                classes: "govuk-fieldset__legend--m"
-              }
+      <form class="form" action="{{currentUrl}}" method="post">
+
+      {{ govukRadios({
+          idPrefix: "trustTypes",
+          name: "trustTypes",
+          fieldset: {
+            legend: {
+              text: "Which type of individual or entity do you want to add to this trust?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "You can add more later."
+          },
+          items: [
+            {
+              value: "historical",
+              text: "Former beneficial owner",
+              hint: {
+                  text: "This is any individual or legal entity that was previously a registrable beneficial owner of the overseas entity, due to being a trustee of this trust."
+                }
             },
-            hint: {
-              text: "You can add more later."
+            {
+              value: "individual-trusts",
+              text: "Individual",
+              hint: {
+                  text: "This is an individual who is currently a beneficiary, settlor, grantor or interested person for this trust."
+                }
             },
-            items: [
-              {
-                value: "historical",
-                text: "Former beneficial owner",
-                hint: {
-                    text: "This is any individual or legal entity that was previously a registrable beneficial owner of the overseas entity, due to being a trustee of this trust."
-                  }
-              },
-              {
-                value: "individual-trusts",
-                text: "Individual",
-                hint: {
-                    text: "This is an individual who is currently a beneficiary, settlor, grantor or interested person for this trust."
-                  }
-              },
-              {
-                value: "ole-trusts",
-                text: "Legal entity",
-                hint: {
-                  text: "This is a legal entity that is currently a beneficiary, settlor, grantor or interested person for this trust. You do not need to tell us about government or public authorities."
-                  }
-              }
-                ]
+            {
+              value: "ole-trusts",
+              text: "Legal entity",
+              hint: {
+                text: "This is a legal entity that is currently a beneficiary, settlor, grantor or interested person for this trust. You do not need to tell us about government or public authorities."
+                }
+            }
+              ]
+        }) }}
+
+        <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Add"
           }) }}
-
-          <div class="govuk-button-group">
-            {{ govukButton({
-              text: "Add"
-            }) }}
 
             {{ govukButton({
               html: 'No more <span class="govuk-visually-hidden">individuals or entities</span> to add',
               classes: "govuk-button--secondary",
-        href: '../submit-pay/check-your-answers'
+            href: 'add-trust'
             }) }}
-          </div>
-
-
-
-
-
-
-
-
-
-
-          </form>
+        </div>
+      </form>
+      
     </div>
   </div>
 

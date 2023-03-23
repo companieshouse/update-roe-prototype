@@ -14,35 +14,50 @@
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-two-thirds">
             <h1 class="govuk-heading-xl">
-              You are about to delete trust information
+              You need to add a trust for 'Name corp'
             </h1>
 
             {{ govukWarningText({
-              text: "This beneficial owner is a trustee of a trust",
+              text: "This beneficial owner is a trustee of a trust but has not been added to any trust associated with this overseas entity",
               iconFallbackText: "Warning"
             }) }}
 
-            <p>
-              You have told us this beneficial owner is a trustee of a trust and you have added information about that trust. 
-            </p>
 
-            <p>
-              If you delete this beneficial owner, you will also delete any information about the trusts they are a trustee of.  
-            </p>
+            {{ govukRadios({
+              classes: "govuk-radios",
+              idPrefix: "addTrust",
+              name: "addTrust",
+              fieldset: {
+                legend: {
+                  text: "Do you want to add a new trust or change the beneficial owner to not be the trustee of a trust?
+            ",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--m"
+                }
+              },
+              hint: {
+              text: " "
+            },
+              items: [
+                {
+                  value: "new",
+                  text: "Add a new trust"
+                },
+                {
+                  value: "add",
+                  text: "Add the beneficial owner to Island Trust"
+                },
+                {
+                  value: "remove",
+                  text: "The beneficial owner is not the trustee of a trust"
+                }
+              ]
+            }) }}
 
-
-            <div class="govuk-button-group">
-              {{ govukButton({
-          text: "Delete",
-          classes: "govuk-button--warning"
-        }) }}
-
-              {{ govukButton({
-                text: "Keep and go back",
-                classes: "govuk-button--secondary",
-                href: "javascript:window.history.back()"
-              }) }}
-            </div>
+            {{ govukButton({
+              text: "Save and continue",
+              href: '../submit-pay/check-your-answers'
+            }) }}
 
             <p>
             *CONTENT ON THIS PAGE TBC*
@@ -51,6 +66,5 @@
 
           </div>
         </div>
-
 
 {% endblock %}
