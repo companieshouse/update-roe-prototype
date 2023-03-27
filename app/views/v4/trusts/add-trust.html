@@ -15,10 +15,11 @@ Do you want to add another trust?
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">    
     <form action="warning-bo" method="get">
-      <h1 class="govuk-heading-xl">Trusts associated with the overseas entity</h1>
+        <span class="govuk-caption-l">{{ data['overseas-name'] }} - {{ data['overseas-id'] }}</span>
+      <h1 class="govuk-heading-xl">Trusts involved in the overseas entity</h1>
 
       {{ govukTable({
-        caption: "Trusts currently associated with this overseas entity",
+        caption: "Trusts",
         captionClasses: "govuk-table__caption--m",
         firstCellIsHeader: true,
         head: [

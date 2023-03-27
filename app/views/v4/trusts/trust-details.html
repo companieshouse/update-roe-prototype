@@ -21,8 +21,9 @@
       {% endif %}
       <form class="form" action="{{currentUrl}}" method="post">
 
-        <h1 class="govuk-heading-xl">Tell us about the trust</h1>
-        <p class="govuk-!-margin-bottom-5 govuk-!-margin-top-5">You can add more trusts later.</p>
+        <h1 class="govuk-heading-xl">Review the trust</h1>
+        
+        <p class="govuk-!-margin-bottom-5 govuk-!-margin-top-5">If you need to update this information, you can change the answers here.</p>
 
         {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
         {% from "govuk/components/input/macro.njk" import govukInput %}
@@ -137,13 +138,13 @@
           </fieldset>
         </div>
 
-        <p class="govuk-body govuk-!-margin-bottom-7"><a href="/register/beneficial-owner-type-one-added" class="govuk-link govuk-link--no-visited-state">Change a beneficial owner's trust nature of control</a></p>
+        <p class="govuk-body govuk-!-margin-bottom-7"><a href="/register/beneficial-owner-type-one-added" class="govuk-link govuk-link--no-visited-state">Change a beneficial owner's nature of control</a></p>
 
         <div class="govuk-form-group govuk-!-margin-bottom-7">
           <fieldset class="govuk-fieldset" aria-describedby="former-checklist">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
               <h2 class="govuk-fieldset__heading">
-                Which of the following former beneficial owners are trustees of this trust?
+                Which of the following former beneficial owners were trustees of this trust?
               </h2>
             </legend>
             <div id="former-checklist-hint" class="govuk-hint">
@@ -164,7 +165,7 @@
           <fieldset class="govuk-fieldset" aria-describedby="individual-checklist">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
               <h2 class="govuk-fieldset__heading">
-                Which of the following individuals are trustees of this trust?
+                Which of the following individuals are involved in this trust?
               </h2>
             </legend>
             <div id="individual-checklist-hint" class="govuk-hint">
@@ -191,7 +192,7 @@
           <fieldset class="govuk-fieldset" aria-describedby="legal-checklist">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
               <h2 class="govuk-fieldset__heading">
-                Which of the following legal entities are trustees of this trust?
+                Which of the following legal entities are involved in this trust?
               </h2>
             </legend>
             <div id="legal-checklist-hint" class="govuk-hint">

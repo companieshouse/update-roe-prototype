@@ -47,6 +47,8 @@
           name: "individual-name",
           type: "first-name",
           autocomplete: "first-name",
+          hint: {
+          text: "This is also known as their given name."},
           classes: "govuk-!-width-two-thirds",
           label: {text: "First name"},
           value: "Jane"
@@ -57,6 +59,9 @@
           name: "individual-name",
           type: "last-name",
           autocomplete: "last-name",
+          hint: {
+          text: "This is also known as their family name."
+        },
           classes: "govuk-!-width-two-thirds",
           label: {text: "Last name"},
           value: "Wright"
@@ -96,7 +101,7 @@
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset" role="group" aria-describedby="bo-start-hint">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-               When did they start being a beneficial owner?
+               When did they become a beneficial owner?
             </legend>
             <div id="bo-start-hint" class="govuk-hint">
               For example, 27 3 2007
