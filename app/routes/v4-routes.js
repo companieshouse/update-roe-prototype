@@ -80,12 +80,12 @@ router.get('/v4/trusts/delete-trust-warning', function (req, res) {
 
 router.post('/v4/trusts/delete-trust-warning', function (req, res) {
   // Make a variable and give it the value from 'who-is-filing'
-  var warningAnswer = req.session.data['delet-trust']
+  var warningAnswer = req.session.data['delete-trust']
 
   // Check whether the variable matches a condition
   if (warningAnswer == "yes"){
     // Send user to next page
-    res.redirect('/v4/trusts/agent-checks')
+    res.redirect('/v4/trusts/trust-details-empty')
   } else {
     // Send user to ineligible page
     res.redirect('/v4/trusts/trust-details')
@@ -103,7 +103,56 @@ router.get('/v4/trusts/former-bo', function (req, res) {
 })
 
 router.post('/v4/trusts/former-bo', function (req, res) {
-  res.redirect('/v4/trusts/individual')
+  // Create empty array and set error variables to false
+  var errors = []
+  var dayHasError = false
+  var monthHasError = false
+  var yearHasError = false
+
+  // Check if user has filled out a day
+  if (req.session.data['bo-start-day'] === '') {
+    // No value so add error to array
+    dayHasError = true
+    errors.push({
+      text: 'The date must include a day',
+      href: '#bo-start-day'
+    })
+  }
+
+  // Check if user has filled out a month
+  if (req.session.data['bo-start-month'] === '') {
+    // No value so add error to array
+    monthHasError = true
+    errors.push({
+      text: 'The date must include a month',
+      href: '#bo-start-month'
+    })
+  }
+
+  // Check if user has filled out a year
+  if (req.session.data['bo-start-year'] === '') {
+    // No value so add error to array
+    yearHasError = true
+    errors.push({
+      text: 'The date must include a year',
+      href: '#bo-start-year'
+    })
+  }
+
+  // Check if ether filed not filled out
+  if (errors.length != 0) {
+    // Re-show page with error value as true so errors will show
+    res.render('v4/trusts/former-bo', {
+      errorBoStartDay: dayHasError,
+      errorBoStartMonth: monthHasError,
+      errorBoStartYear: yearHasError,
+      errorList: errors
+    })
+  } else {
+    // User inputted value so move to next page
+    res.redirect('/v4/trusts/individual')
+  }
+
 })
 
 

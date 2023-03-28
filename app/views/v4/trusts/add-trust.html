@@ -13,40 +13,36 @@ Do you want to add another trust?
 
 {% block content %}
 <div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <span class="govuk-caption-l">{{ data['overseas-name'] }} - {{ data['overseas-id'] }}</span>
+    <h1 class="govuk-heading-xl">Trusts involved in the overseas entity</h1>
+
+     <div class="govuk-summary-card govuk-!-margin-bottom-9">
+        <div class="govuk-summary-card__title-wrapper">
+          <h2 class="govuk-summary-card__title">What you have reviewed</h2>
+        </div>
+        <div class="govuk-summary-card__content">
+          <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header govuk-visually-hidden">Name</th>
+                <th scope="col" class="govuk-table__header govuk-visually-hidden">Change</th>
+                <th scope="col" class="govuk-table__header govuk-visually-hidden">Remove</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Island Trust</th>
+                <td class="govuk-table__cell"><a href="trust-details">Change</a></td>
+                <td class="govuk-table__cell"><a href="trusts/delete-trust-warning">Remove</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div> 
+      </div>
+  </div>
   <div class="govuk-grid-column-two-thirds">    
     <form action="warning-bo" method="get">
-        <span class="govuk-caption-l">{{ data['overseas-name'] }} - {{ data['overseas-id'] }}</span>
-      <h1 class="govuk-heading-xl">Trusts involved in the overseas entity</h1>
-
-      {{ govukTable({
-        caption: "Trusts",
-        captionClasses: "govuk-table__caption--m",
-        firstCellIsHeader: true,
-        head: [
-        {
-          text: "Type",
-          classes: "govuk-visually-hidden"
-        },
-          {
-            text: "Change or remove",
-            classes: "govuk-visually-hidden"
-          }
-        ],
-        rows: [
-          [
-        
-          {
-            text: "Islands Trust"
-          },
-          {
-            html: '<a href="trust-details">Change</a>
-                <a href="trusts/delete-trust-warning" class="govuk-!-padding-left-5">Remove</a>',
-          visuallyHiddenText: "Trust - Islands Trust"
-          }
-          ]
-        ]
-      }) }}
-
 
       {{ govukRadios({
         classes: "govuk-radios",
