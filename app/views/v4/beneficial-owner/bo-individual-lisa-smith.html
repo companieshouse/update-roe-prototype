@@ -413,6 +413,10 @@
           ]
         }) }}
 
+        <p class="govuk-body-l govuk-!-font-weight-bold govuk-!-margin-top-7 govuk-!-margin-bottom-1">Date they became a beneficial owner for the overseas entity:</p>
+        <p class="govuk-!-font-size-20 govuk-!-margin-bottom-7">23 August 2019</p>
+
+
 
         <!-- nature of control fieldset -->
         {% call govukFieldset({
@@ -556,10 +560,6 @@
           ]
         }) }}
 
-        <p class="govuk-body-l govuk-!-font-weight-bold govuk-!-margin-top-7 govuk-!-margin-bottom-1">Date they became a beneficial owner for the overseas entity:</p>
-        <p class="govuk-!-font-size-20 govuk-!-margin-bottom-7">23 August 2019</p>
-
-
         <!-- html for following radio -->
         {% set boCeasedHtml %}
         {{ govukDateInput({
@@ -621,7 +621,8 @@
             items: [
               {
                 value: "yes",
-                text: "Yes"
+                text: "Yes",
+                checked: true
               },
               {
                 value: "no",

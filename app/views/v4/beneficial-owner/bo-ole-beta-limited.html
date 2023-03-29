@@ -540,7 +540,8 @@
 
 {% endif %}
 
-
+<p class="govuk-body-l govuk-!-font-weight-bold govuk-!-margin-top-7 govuk-!-margin-bottom-1">Date it became a beneficial owner for the overseas entity:</p>
+<p class="govuk-!-font-size-20 govuk-!-margin-bottom-7">20 January 2015</p>
 
         {% call govukFieldset({
           legend: {
@@ -687,13 +688,6 @@
   }) }}
 
 
- 
-<p class="govuk-body-l govuk-!-font-weight-bold govuk-!-margin-top-7 govuk-!-margin-bottom-1">Date it became a beneficial owner for the overseas entity:</p>
-<p class="govuk-!-font-size-20 govuk-!-margin-bottom-7">20 January 2015</p>
-
-
-
-
 {% set boCeasedHtml %}
 {{ govukDateInput({
   id: "bo-ole-ceased",
@@ -724,7 +718,8 @@
   items: [
     {
       value: "yes",
-      text: "Yes"
+      text: "Yes",
+      checked: true
     },
     {
       value: "no",
