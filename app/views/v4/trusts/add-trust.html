@@ -34,7 +34,7 @@ Do you want to add another trust?
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header">Island Trust</th>
                 <td class="govuk-table__cell"><a href="trust-details">Change</a></td>
-                <td class="govuk-table__cell"><a href="trusts/delete-trust-warning">Remove</a></td>
+                <td class="govuk-table__cell"><a href="delete-trust-warning">Remove</a></td>
               </tr>
             </tbody>
           </table>
@@ -42,7 +42,7 @@ Do you want to add another trust?
       </div>
   </div>
   <div class="govuk-grid-column-two-thirds">    
-    <form action="warning-bo" method="get">
+    <form action="" method="get">
 
       {{ govukRadios({
         classes: "govuk-radios",
@@ -73,7 +73,8 @@ Do you want to add another trust?
 
 
       {{ govukButton({
-        text: "Save and continue"
+        text: "Save and continue",
+        href: "../submit-pay/check-your-answers"
       }) }}
     </form>
   </div>

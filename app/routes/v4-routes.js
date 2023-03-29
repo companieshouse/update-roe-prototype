@@ -85,7 +85,7 @@ router.post('/v4/trusts/delete-trust-warning', function (req, res) {
   // Check whether the variable matches a condition
   if (warningAnswer == "yes"){
     // Send user to next page
-    res.redirect('/v4/trusts/trust-details-empty')
+    res.redirect('/v4/trusts/add-trust-deleted')
   } else {
     // Send user to ineligible page
     res.redirect('/v4/trusts/trust-details')
