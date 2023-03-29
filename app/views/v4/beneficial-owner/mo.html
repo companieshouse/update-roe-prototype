@@ -23,7 +23,7 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-<span class="govuk-caption-l">Jane Doe - Born January 1981</span>
+<span class="govuk-caption-l">Jane Doe - born January 1981</span>
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-5">Review the individual managing officer</h1>
 
       <p class"govuk-body">If you need to update any managing officer information, you can change the answers here.</p>
@@ -34,7 +34,10 @@
           You'll need to <strong>enter their home address</strong>, and tell us if they're still a managing officer.
         </div>
 
-
+{{ govukDetails({
+  summaryText: "How to complete this section if they are no longer a managing officer",
+  text: "You need to make sure this information is correct as at the date they stopped being a managing officer, and update it if needed."
+}) }}
 
 
       <form class="form" action="involved-types" method="post">
@@ -655,7 +658,7 @@
 
         {{ govukInsetText({
           html: '
-                    <h2 class="govuk-heading-m">What information we&#39;ll shown on the public register</h2>
+                    <h2 class="govuk-heading-m">What information we&#39;ll show on the public register</h2>
                     <p>We will not show the managing officer’s home address unless it is the same as their correspondence address. </p>
                     <p>We will show all other information you provide in this section on the public Register of Overseas Entities.</p>
                 '

@@ -21,6 +21,11 @@
   You'll need to tell us if it's still a managing officer.
 </div>
 
+{{ govukDetails({
+  summaryText: "How to complete this section if it is no longer a managing officer",
+  text: "You need to make sure this information is correct as at the date it stopped being a managing officer, and update it if needed."
+}) }}
+
       <form class="form" method="post">
 
         {{ govukInput({
@@ -433,7 +438,7 @@
 
             {{ govukInsetText({
               html: '
-                        <h2 class="govuk-heading-m">What information we&#39;ll shown on the public register</h2>
+                        <h2 class="govuk-heading-m">What information we&#39;ll show on the public register</h2>
                         <p>We will show all the information you provide in this section on the public Register of Overseas Entities.</p>
                           '
             }) }}
