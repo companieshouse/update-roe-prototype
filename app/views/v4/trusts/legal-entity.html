@@ -139,7 +139,7 @@
           classes: "govuk-!-width-two-thirds",
           id: "principal-address-city-town",
           name: "principal-address-city-town",
-          value: "Liverpool"
+          value: "Tortola"
         }) }}
 
         {{ govukInput({
@@ -148,7 +148,8 @@
           },
           classes: "govuk-!-width-two-thirds",
           id: "principal-address-state",
-          name: "principal-address-state"
+          name: "principal-address-state",
+          value: "British Virgin Islands"
         }) }}
 
         <div class="govuk-form-group">
@@ -164,8 +165,7 @@
           classes: "govuk-input--width-10",
           id: "principal-address-postcode",
           name: "principal-address-postcode",
-          autocomplete: "postal-code",
-          value: "LP1 3TT"
+          autocomplete: "postal-code"
         }) }}
         {% endcall %}
 
@@ -187,8 +187,7 @@
            text: "For example, 'Saron House', '116' or 'Unit 37a'"
          },
           id: "service-address-property-name-number",
-          name: "service-address-property-name-number",
-          value: "34"
+          name: "service-address-property-name-number"
         }) }}
 
         {{ govukInput({
@@ -198,8 +197,7 @@
           classes: "govuk-!-width-two-thirds",
           id: "service-address-line-1",
           name: "service-address-line-1",
-          autocomplete: "address-line1",
-          value: "19 Wide lane"
+          autocomplete: "address-line1"
         }) }}
 
         {{ govukInput({
@@ -218,8 +216,7 @@
           },
           classes: "govuk-!-width-two-thirds",
           id: "service-address-city-town",
-          name: "service-address-city-town",
-          value: "Plymouth"
+          name: "service-address-city-town"
         }) }}
 
         {{ govukInput({
@@ -244,8 +241,7 @@
           classes: "govuk-input--width-10",
           id: "service-address-postcode",
           name: "service-address-postcode",
-          autocomplete: "postal-code",
-          value: "PL5 6TT"
+          autocomplete: "postal-code"
         }) }}
 
         {% endcall %}
@@ -268,15 +264,12 @@
           items: [
             {
               value: "yes",
-              text: "Yes"
+              text: "Yes",
+              checked: "checked"
             },
             {
               value: "no",
-              text: "No",
-              checked: "checked",
-              conditional: {
-        html: serviceAddressHtml
-        }
+              text: "No"
             }
           ]
         }) }}
@@ -307,7 +300,7 @@
           },
           id: "beneficiary-ole-governing-law",
           name: "beneficiary-ole-governing-law",
-          value: "UK company law"
+          value: "British Virgin Islands"
         }) }}
 
         <!---
@@ -382,7 +375,7 @@
         {{ govukInput({
           id: "beneficiary-ole-public-register-number",
           name: "beneficiary-ole-public-register-number",
-          value: olePublicName,
+          value: "Registry of Corporate Affairs – BVI",
           hint: {
           text: "Include the full name. For example, Jersey Financial Services Commission."
         },
@@ -412,7 +405,7 @@
           {{ govukInput({
             id: "beneficiary-ole-public-register-jurisdiction",
             name: "beneficiary-ole-public-register-jurisdiction",
-              value: olePublicJurisdiction,
+            value: "British Virgin Islands",
             hint: {
             text: "For example, Jersey."
           },
@@ -439,7 +432,7 @@
         {{ govukInput({
           id: "beneficiary-ole-public-register-number",
           name: "beneficiary-ole-public-register-number",
-          value: olePublicNumber,
+          value: "23456781",
           classes: "govuk-!-width-one-half",
           label: {
             text: "Entity’s registration number"
@@ -547,12 +540,12 @@
               text: "Yes",
               conditional: {
                 html: olePublicRegisterHtml
-              }
+              },
+              checked: "checked"
             },
             {
               value: "no",
-              text: "No",
-              checked: "checked"
+              text: "No"
             }
           ]
         }) }}
