@@ -70,7 +70,7 @@
         </div> 
       </div>
 
-      {% if "Lisa Smithh" in data['bo-checklist'] or "Beta Limited" in data['bo-checklist']%}
+      {% if "Lisa Smith" in data['bo-checklist'] or "Beta Limited" in data['bo-checklist']%}
       <table class="govuk-table govuk-!-margin-bottom-9">
         <caption class="govuk-table__caption govuk-table__caption--m">What you have added to this trust</caption>
         <thead class="govuk-table__head">
@@ -116,14 +116,14 @@
             </tr>
           </thead>
           <tbody class="govuk-table__body">
-            {% if not "dan_ashcroft" in data['bo-checklist'] %}
+            {% if not "Daniel Ashcroft" in data['bo-checklist'] %}
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Beneficial owner</th>
               <td class="govuk-table__cell">Daniel Ashcroft</td>
               <td class="govuk-table__cell"><a href="trust-details#bo-checklist">Change</a></td>
             </tr>
             {% endif %}
-            {% if not "name_corp" in data['bo-checklist'] %}
+            {% if not "Name Corp" in data['bo-checklist'] %}
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Beneficial owner</th>
               <td class="govuk-table__cell">Name Corp</td>
