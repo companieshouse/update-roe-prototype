@@ -412,6 +412,87 @@
         }) }}
 
 
+
+        <p class="govuk-body-l govuk-!-font-weight-bold govuk-!-margin-top-7 govuk-!-margin-bottom-1">Date they became a beneficial owner for the overseas entity:</p>
+        <p class="govuk-!-font-size-20 govuk-!-margin-bottom-7">10 July 2004</p>
+
+
+        <!-- html for following radio -->
+        {% set boCeasedHtml %}
+        {{ govukDateInput({
+          id: "bo-ceased",
+          namePrefix: "bo-ceased",
+          fieldset: {
+            legend: {
+              text: "Date they ceased to be a registrable beneficial owner",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          hint: {
+            text: "For example, 27 1 2023"
+          }
+        }) }}
+        {% endset -%}
+
+
+        <!-- still a bo radio -->
+        {% if errorBoCeased %}
+          {{ govukRadios({
+            name: "bo-ceased",
+            fieldset: {
+              legend: {
+                text: "Are they still a registrable beneficial owner for the overseas entity?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            items: [
+              {
+                value: "yes",
+                text: "Yes"
+              },
+              {
+                value: "no",
+                text: "No",
+                      conditional: {
+                  html: boCeasedHtml
+                }
+                
+              }
+            ],
+            errorMessage: {
+              text: "Select yes if they are still a registrable beneficial owner"
+            }
+          }) }}
+        {% else %}
+          {{ govukRadios({
+            name: "bo-ceased",
+            fieldset: {
+              legend: {
+                text: "Are they still a registrable beneficial owner for the overseas entity?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            items: [
+              {
+                value: "yes",
+                text: "Yes"
+              },
+              {
+                value: "no",
+                text: "No",
+                      conditional: {
+                  html: boCeasedHtml
+                }
+                
+              }
+            ]
+          }) }}
+        {% endif %}
+
+
         <!-- nature of control fieldset -->
         {% call govukFieldset({
           legend: {
@@ -557,84 +638,6 @@
           ]
         }) }}
 
-        <p class="govuk-body-l govuk-!-font-weight-bold govuk-!-margin-top-7 govuk-!-margin-bottom-1">Date they became a beneficial owner for the overseas entity:</p>
-        <p class="govuk-!-font-size-20 govuk-!-margin-bottom-7">10 July 2004</p>
-
-
-        <!-- html for following radio -->
-        {% set boCeasedHtml %}
-        {{ govukDateInput({
-          id: "bo-ceased",
-          namePrefix: "bo-ceased",
-          fieldset: {
-            legend: {
-              text: "Date they ceased to be a registrable beneficial owner",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--s"
-            }
-          },
-          hint: {
-            text: "For example, 27 1 2023"
-          }
-        }) }}
-        {% endset -%}
-
-
-        <!-- still a bo radio -->
-        {% if errorBoCeased %}
-          {{ govukRadios({
-            name: "bo-ceased",
-            fieldset: {
-              legend: {
-                text: "Are they still a registrable beneficial owner for the overseas entity?",
-                isPageHeading: true,
-                classes: "govuk-fieldset__legend--m"
-              }
-            },
-            items: [
-              {
-                value: "yes",
-                text: "Yes"
-              },
-              {
-                value: "no",
-                text: "No",
-                      conditional: {
-                  html: boCeasedHtml
-                }
-                
-              }
-            ],
-            errorMessage: {
-              text: "Select yes if they are still a registrable beneficial owner"
-            }
-          }) }}
-        {% else %}
-          {{ govukRadios({
-            name: "bo-ceased",
-            fieldset: {
-              legend: {
-                text: "Are they still a registrable beneficial owner for the overseas entity?",
-                isPageHeading: true,
-                classes: "govuk-fieldset__legend--m"
-              }
-            },
-            items: [
-              {
-                value: "yes",
-                text: "Yes"
-              },
-              {
-                value: "no",
-                text: "No",
-                      conditional: {
-                  html: boCeasedHtml
-                }
-                
-              }
-            ]
-          }) }}
-        {% endif %}
 
 
         {{ govukInsetText({

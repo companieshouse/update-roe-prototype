@@ -356,36 +356,6 @@
           }) }}
 
 
-          <h2 class="govuk-heading-l">Tell us who we can contact about this managing officer</h2>
-
-
-          {{ govukInput({
-            label: {
-              text: "What is their full name?",
-              classes: "govuk-label--m",
-              isPageHeading: false
-            },
-            id: "mo-corporate-contact-full-name",
-            name: "mo-corporate-contact-full-name",
-          value: moContactName,
-          value: "Joe Bloggs"
-          }) }}
-
-
-
-          {{ govukInput({
-            label: {
-              text: "What is their email address?",
-              classes: "govuk-label--m",
-              isPageHeading: false
-            },
-            id: "mo-corporate-contact-email",
-            name: "mo-corporate-contact-email",
-          value: moResponsibilities,
-          value: "joebloggs@email.com"
-          }) }}
-
-
 {# 
 {% set moCorpCeasedHtml %}
 {{ govukDateInput({
@@ -431,6 +401,38 @@
     }
   ]
 }) }}
+
+          <h2 class="govuk-heading-l">Tell us who we can contact about this managing officer</h2>
+
+
+          {{ govukInput({
+            label: {
+              text: "What is their full name?",
+              classes: "govuk-label--m",
+              isPageHeading: false
+            },
+            id: "mo-corporate-contact-full-name",
+            name: "mo-corporate-contact-full-name",
+          value: moContactName,
+          value: "Joe Bloggs"
+          }) }}
+
+
+
+          {{ govukInput({
+            label: {
+              text: "What is their email address?",
+              classes: "govuk-label--m",
+              isPageHeading: false
+            },
+            id: "mo-corporate-contact-email",
+            name: "mo-corporate-contact-email",
+          value: moResponsibilities,
+          value: "joebloggs@email.com"
+          }) }}
+
+
+
 
 
 
