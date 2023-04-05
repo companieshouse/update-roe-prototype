@@ -542,6 +542,57 @@
 
 
 
+
+<p class="govuk-body-l govuk-!-font-weight-bold govuk-!-margin-top-7 govuk-!-margin-bottom-1">Date it became a beneficial owner for the overseas entity:</p>
+<p class="govuk-!-font-size-20 govuk-!-margin-bottom-7">26 July 2019</p>
+
+
+
+
+{% set boCeasedHtml %}
+{{ govukDateInput({
+  id: "bo-ole-ceased",
+  namePrefix: "bo-ole-ceased",
+  fieldset: {
+    legend: {
+      text: "Date it ceased to be a registrable beneficial owner",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  hint: {
+    text: "For example, 27 1 2023"
+  }
+}) }}
+{% endset -%}
+
+
+{{ govukRadios({
+  name: "bo-ole-ceased",
+  fieldset: {
+    legend: {
+      text: "Is it still a registrable beneficial owner for the overseas entity?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes"
+    },
+    {
+      value: "no",
+      text: "No",
+            conditional: {
+        html: boCeasedHtml
+      }
+      
+    }
+  ]
+}) }}
+
+
         {% call govukFieldset({
           legend: {
             html: 'What is its nature of control?<br><p class="govuk-hint govuk-!-padding-top-1"> Select all that apply. If the beneficial owner is a trustee of a trust, you can review and update trust information later in the service. </p>',
@@ -688,54 +739,6 @@
 
 
  
-<p class="govuk-body-l govuk-!-font-weight-bold govuk-!-margin-top-7 govuk-!-margin-bottom-1">Date it became a beneficial owner for the overseas entity:</p>
-<p class="govuk-!-font-size-20 govuk-!-margin-bottom-7">26 July 2019</p>
-
-
-
-
-{% set boCeasedHtml %}
-{{ govukDateInput({
-  id: "bo-ole-ceased",
-  namePrefix: "bo-ole-ceased",
-  fieldset: {
-    legend: {
-      text: "Date it ceased to be a registrable beneficial owner",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--s"
-    }
-  },
-  hint: {
-    text: "For example, 27 1 2023"
-  }
-}) }}
-{% endset -%}
-
-
-{{ govukRadios({
-  name: "bo-ole-ceased",
-  fieldset: {
-    legend: {
-      text: "Is it still a registrable beneficial owner for the overseas entity?",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--m"
-    }
-  },
-  items: [
-    {
-      value: "yes",
-      text: "Yes"
-    },
-    {
-      value: "no",
-      text: "No",
-            conditional: {
-        html: boCeasedHtml
-      }
-      
-    }
-  ]
-}) }}
 
 
 

@@ -426,6 +426,85 @@ html: serviceAddressHtml
 
 
 
+{{ govukDateInput({
+          id: "bo-gov-startdate",
+          namePrefix: "bo-gov-startdate",
+          fieldset: {
+            legend: {
+              text: "When did it become a beneficial owner for the overseas entity?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "For example, 27 3 2007"
+          },
+          items: [
+    {
+      classes: "govuk-input--width-2",
+      name: "day",
+      value: startDay
+    },
+    {
+      classes: "govuk-input--width-2",
+      name: "month",
+      value: startMonth
+    },
+    {
+      classes: "govuk-input--width-4",
+      name: "year",
+      value: startYear
+    }
+  ]
+        }) }}
+
+
+        
+{% set boCeasedHtml %}
+{{ govukDateInput({
+  id: "bo-ceased",
+  namePrefix: "bo-ceased",
+  fieldset: {
+    legend: {
+      text: "Date it ceased to be a registrable beneficial owner",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  hint: {
+    text: "For example, 27 1 2023"
+  }
+}) }}
+{% endset -%}
+
+
+{{ govukRadios({
+  name: "bo-ceased",
+  fieldset: {
+    legend: {
+      text: "Is it still a beneficial owner for the overseas entity?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes"
+    },
+    {
+      value: "no",
+      text: "No",
+            conditional: {
+        html: boCeasedHtml
+      }
+      
+    }
+  ]
+}) }}
+
+
+
 {% call govukFieldset({
   legend: {
     html: 'What is its nature of control?<br><p class="govuk-hint govuk-!-padding-top-1"> Select all that apply.</p>',
@@ -535,84 +614,6 @@ html: serviceAddressHtml
 
 
 
-
-
-{{ govukDateInput({
-          id: "bo-gov-startdate",
-          namePrefix: "bo-gov-startdate",
-          fieldset: {
-            legend: {
-              text: "When did it become a beneficial owner for the overseas entity?",
-              isPageHeading: false,
-              classes: "govuk-fieldset__legend--m"
-            }
-          },
-          hint: {
-            text: "For example, 27 3 2007"
-          },
-          items: [
-    {
-      classes: "govuk-input--width-2",
-      name: "day",
-      value: startDay
-    },
-    {
-      classes: "govuk-input--width-2",
-      name: "month",
-      value: startMonth
-    },
-    {
-      classes: "govuk-input--width-4",
-      name: "year",
-      value: startYear
-    }
-  ]
-        }) }}
-
-
-        
-{% set boCeasedHtml %}
-{{ govukDateInput({
-  id: "bo-ceased",
-  namePrefix: "bo-ceased",
-  fieldset: {
-    legend: {
-      text: "Date it ceased to be a registrable beneficial owner",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--s"
-    }
-  },
-  hint: {
-    text: "For example, 27 1 2023"
-  }
-}) }}
-{% endset -%}
-
-
-{{ govukRadios({
-  name: "bo-ceased",
-  fieldset: {
-    legend: {
-      text: "Is it still a beneficial owner for the overseas entity?",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--m"
-    }
-  },
-  items: [
-    {
-      value: "yes",
-      text: "Yes"
-    },
-    {
-      value: "no",
-      text: "No",
-            conditional: {
-        html: boCeasedHtml
-      }
-      
-    }
-  ]
-}) }}
 
 
 
