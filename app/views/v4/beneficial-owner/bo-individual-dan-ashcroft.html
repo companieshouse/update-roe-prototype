@@ -144,7 +144,7 @@
           },
             id: "usual-residential-address-property-name-number",
             name: "usual-residential-address-property-name-number",
-            value: "23"
+            value: "72"
           }) }}
  {% endif %}
 
@@ -173,7 +173,7 @@
             id: "usual-residential-address-line-1",
             name: "usual-residential-address-line-1",
             autocomplete: "address-line1",
-            value: "Beach road"
+            value: "Guild Street"
           }) }}
 {% endif %}
 
@@ -211,7 +211,7 @@
             classes: "govuk-!-width-two-thirds",
             id: "usual-residential-address-city-town",
             name: "usual-residential-address-city-town",
-            value: "Townville"
+            value: "London"
           }) }}
 {% endif %}
 
@@ -267,7 +267,8 @@
             classes: "govuk-input--width-10",
             id: "usual-residential-address-postcode",
             name: "usual-residential-address-postcode",
-            autocomplete: "postal-code"
+            autocomplete: "postal-code",
+            value: "SE23 6FH"
           }) }}
 
         <!-- end of address fieldset -->  
@@ -396,11 +397,7 @@
             },
             {
               value: "no",
-              text: "No",
-              checked: checked("same-address", "no"),
-              conditional: {
-        html: serviceAddressHtml
-        }
+              text: "No"
             }
           ]
         }) }}

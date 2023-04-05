@@ -453,7 +453,8 @@
               <span class="govuk-visually-hidden"> overseas entity public register</span>
             </a>
           </dd>
-        </div>      </dl>
+        </div>      
+      </dl>
 
  
 
@@ -578,7 +579,7 @@
           </dd>
         </div>
 
-        <div class="govuk-summary-list__row">
+        <!-- <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Second nationality
           </dt>
@@ -591,7 +592,7 @@
               <span class="govuk-visually-hidden"> Individual beneficial owner Dr Lisa Davies second nationality</span>
             </a>
           </dd>
-        </div>
+        </div> -->
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -651,6 +652,14 @@
           <ul class="govuk-list govuk-list--bullet">
             <li>the members of that firm (in their capacity as such) hold, directly or indirectly, more than 25% of the shares in the entity</li>
           </ul>
+          The beneficial owner is a trustee of a trust and:
+          <ul class="govuk-list govuk-list--bullet">
+            <li>the trustees of that trust (in their capacity as such) hold, directly or indirectly, more than 25% of the shares in the entity</li>
+          </ul>
+          The beneficial owner is a member of a firm that is not a legal person under its governing law, and:
+          <ul class="govuk-list govuk-list--bullet">
+            <li>the members of that firm (in their capacity as such) hold, directly or indirectly, more than 25% of the shares in the entity</li>
+          </ul>
         </dd>
         <dd class="govuk-summary-list__actions">
           <a href="/register/beneficial-owner-individual">
@@ -693,22 +702,7 @@
           Are they still a beneficial owner?
         </dt>
         <dd class="govuk-summary-list__value">
-          <p>No</p>
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a href="/register/beneficial-owner-individual">
-            Change
-            <span class="govuk-visually-hidden"> Individual beneficial owner Dr Lisa Davies Are they on the sanctions list?</span>
-          </a>
-        </dd>
-      </div>
-          <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Ceased date
-
-        </dt>
-        <dd class="govuk-summary-list__value">
-          <p>3 January 2023</p>
+          <p>Yes</p>
         </dd>
         <dd class="govuk-summary-list__actions">
           <a href="/register/beneficial-owner-individual">
@@ -734,7 +728,7 @@
             Name
           </dt>
           <dd class="govuk-summary-list__value">
-            <p>ACME Trustees Limited</p>
+            <p>Name Corp</p>
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="/register/beneficial-owner-other">
@@ -894,7 +888,7 @@
 
 <!-- ********** GOV OR PUBLIC AUTHORITY BENEFICIAL OWNER  ********** -->
 
-    <h3 class="govuk-heading-m">Government or public authority beneficial owner</h3>
+    <!-- <h3 class="govuk-heading-m">Government or public authority beneficial owner</h3>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -1036,14 +1030,14 @@
         </dd>
       </div>
 
-          </dl>
+          </dl> -->
 
 
 
 
 <!-- ********** INDIVIDUAL MANAGING OFFICER  ********** -->
 
-      <h2 class="govuk-heading-l">Managing officers you have reviewed</h2>
+      <!-- <h2 class="govuk-heading-l">Managing officers you have reviewed</h2>
 
       <h3 class="govuk-heading-m">Individual managing officer</h3>
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -1198,7 +1192,7 @@
           </a>
         </dd>
       </div>
-      </dl>
+      </dl> -->
 
 
 
@@ -1208,7 +1202,7 @@
 
 
 
-     <h2 class="govuk-heading-l">Managing officers you have added</h2>
+     <!-- <h2 class="govuk-heading-l">Managing officers you have added</h2>
 
 
       <h3 class="govuk-heading-m">Corporate managing officer</h3>
@@ -1362,7 +1356,7 @@
           </dd>
         </div>
 
-      </dl>
+      </dl> -->
 
 
       <!-- ********** TRUSTS  ********** -->
@@ -1403,8 +1397,9 @@
           </dt>
           <dd class="govuk-summary-list__value">
             <ul class="govuk-list govuk-list--bullet">
-              <li>Daniel Ashcroft</li>
-              <li>Name Corp</li>
+              {% for feature in data['bo-checklist'] %}
+              <li>{{ feature }}</li>
+              {% endfor %}
             </ul>
           </dd>
           <dd class="govuk-summary-list__actions">
@@ -1565,11 +1560,7 @@
             Correspondence address
           </dt>
           <dd class="govuk-summary-list__value">
-            8
-            <br>High street road
-            <br>Plymouth
-            <br>Britain
-            <br>XY1 ZV6
+            The correspondence address is the same as the principal or registered office address
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="/trusts/individual">
@@ -1665,7 +1656,7 @@
           <dd class="govuk-summary-list__value">
             25
             <br>Long road
-            <br>manchester
+            <br>Manchester
             <br>Britain
             <br>MV5 6TY
           </dd>
@@ -1682,11 +1673,7 @@
             Correspondence address
           </dt>
           <dd class="govuk-summary-list__value">
-            25
-            <br>Long road
-            <br>manchester
-            <br>Britain
-            <br>MV5 6TY
+            The correspondence address is the same as the principal or registered office address
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="/trusts/individual-2">
@@ -1736,8 +1723,8 @@
           <dd class="govuk-summary-list__value">
             Business unit 3
             <br>27 Main street
-            <br>Liverpool
-            <br>LP1 3TT
+            <br>Tortola
+            <br>British Virgin Islands
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="/trusts/legal-entity">
@@ -1752,10 +1739,7 @@
             Correspondence address
           </dt>
           <dd class="govuk-summary-list__value">
-            34a
-            <br>19 Wide lane
-            <br>19 Wide lane
-            <br>PL5 6TT
+            The correspondence address is the same as the principal or registered office address
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="/trusts/legal-entity">
@@ -1770,29 +1754,79 @@
             Legal form
           </dt>
           <dd class="govuk-summary-list__value">
-            Limited company
+            <p>Limited company</p>
+          </dd>
           <dd class="govuk-summary-list__actions">
             <a href="/trusts/legal-entity">
               Change
-              <span class="govuk-visually-hidden">Legal form</span>
+              <span class="govuk-visually-hidden"> overseas entity legal form</span>
             </a>
           </dd>
         </div>
-
-
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Governing law
           </dt>
           <dd class="govuk-summary-list__value">
-            UK company law
+            <p>British Virgin Islands</p>
+          </dd>
           <dd class="govuk-summary-list__actions">
             <a href="/trusts/legal-entity">
               Change
-              <span class="govuk-visually-hidden">Governing law</span>
+              <span class="govuk-visually-hidden"> overseas entity governing law</span>
             </a>
           </dd>
         </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Overseas public register
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>
+              Registry of Corporate Affairs – BVI
+            </p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/trusts/legal-entity">
+              Change
+              <span class="govuk-visually-hidden"> overseas entity public register</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Jurisdiction
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>
+              British Virgin Islands
+            </p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/trusts/legal-entity">
+              Change
+              <span class="govuk-visually-hidden"> overseas entity public register</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Registration number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>
+              23456781
+            </p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/trusts/legal-entity">
+              Change
+              <span class="govuk-visually-hidden"> overseas entity public register</span>
+            </a>
+          </dd>
+        </div>    
       </dl>
 
 
