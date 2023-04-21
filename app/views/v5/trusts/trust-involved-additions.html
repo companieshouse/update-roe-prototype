@@ -31,20 +31,19 @@
               </tr>
             </thead>
             <tbody class="govuk-table__body">
-              {% if "Daniel Ashcroft" in data['bo-checklist'] %}
+    
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header">Beneficial owner</th>
                 <td class="govuk-table__cell">Daniel Ashcroft</td>
                 <td class="govuk-table__cell"><a href="trust-details#bo-checklist">Remove from this trust</a></td>
               </tr>
-              {% endif %}
-              {% if "Name Corp" in data['bo-checklist'] %}
+
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header">Beneficial owner</th>
                 <td class="govuk-table__cell">Name Corp</td>
                 <td class="govuk-table__cell"><a href="trust-details#bo-checklist">Remove from this trust</a></td>
               </tr>
-              {% endif %}
+
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header">Former beneficial owner</th>
                 <td class="govuk-table__cell">Jane Wright</td>
@@ -70,7 +69,6 @@
         </div> 
       </div>
 
-      {% if "Lisa Smith" in data['bo-checklist'] or "Beta Limited" in data['bo-checklist']%}
       <table class="govuk-table govuk-!-margin-bottom-9">
         <caption class="govuk-table__caption govuk-table__caption--m">What you have added to this trust</caption>
         <thead class="govuk-table__head">
@@ -82,30 +80,25 @@
           </tr>
         </thead>
         <tbody class="govuk-table__body">
-          {% if "Lisa Smith" in data['bo-checklist'] %}
+
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">Beneficial owner</th>
             <td class="govuk-table__cell">Lisa Smith</td>
             <td class="govuk-table__cell"><a href="trust-details#bo-checklist">Remove from this trust</a></td>
           </tr>
-          {% endif %}
-          {% if "Beta Limited" in data['bo-checklist'] %}
+
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">Beneficial owner</th>
             <td class="govuk-table__cell">Beta Limited</td>
             <td class="govuk-table__cell"><a href="trust-details#bo-checklist">Remove from this trust</a></td>
           </tr>
-          {% endif %}
+
         </tbody>
       </table>
-      {% endif %}
+
       
 
-        {% if not data['former-checklist'] or
-              not data['individual-checklist'] or 
-              not data['legal-checklist'] or 
-              not "Name Corp" in data['bo-checklist'] or 
-              not "Daniel Ashcroft" in data['bo-checklist'] %}
+
         <table class="govuk-table govuk-!-margin-bottom-9">
           <caption class="govuk-table__caption govuk-table__caption--m">What you have removed from this trust</caption>
           <thead class="govuk-table__head">
@@ -116,44 +109,39 @@
             </tr>
           </thead>
           <tbody class="govuk-table__body">
-            {% if not "Daniel Ashcroft" in data['bo-checklist'] %}
+
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Beneficial owner</th>
               <td class="govuk-table__cell">Daniel Ashcroft</td>
               <td class="govuk-table__cell"><a href="trust-details#bo-checklist">Change</a></td>
             </tr>
-            {% endif %}
-            {% if not "Name Corp" in data['bo-checklist'] %}
+
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Beneficial owner</th>
               <td class="govuk-table__cell">Name Corp</td>
               <td class="govuk-table__cell"><a href="trust-details#bo-checklist">Change</a></td>
             </tr>
-            {% endif %}
-            {% if not data['former-checklist'] %}
+           
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Former beneficial owner</th>
               <td class="govuk-table__cell">Lisa Wright</td>
               <td class="govuk-table__cell"><a href="trust-details#former-checklist">Change</a></td>
             </tr>
-            {% endif %}
-            {% if not data['individual-checklist'] %}
+            
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Individual</th>
               <td class="govuk-table__cell">Fred Lock</td>
               <td class="govuk-table__cell"><a href="trust-details#individual-checklist">Change</a></td>
             </tr>
-            {% endif %}
-            {% if not data['legal-checklist'] %}
+
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Legal entity</th>
               <td class="govuk-table__cell">Salcombe Ltd</td>
               <td class="govuk-table__cell"><a href="trust-details#legal-checklist">Change</a></td>
             </tr>
-            {% endif %}
+
           </tbody>
-        </table>
-      {% endif %}
+
 
     </div>
   </div>
