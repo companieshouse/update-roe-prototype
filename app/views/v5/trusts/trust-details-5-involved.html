@@ -45,58 +45,53 @@
         }) }}
         {% endset -%}
 
-        <!-- Check for error -->
-        {% if errorTrustName %}
-        <div class="govuk-form-group govuk-form-group--error">
-        {% else %}
-        <div class="govuk-form-group">
-        {% endif %} 
-          <label class="govuk-label govuk-label--m" for="trust-name">
-            What is the name of the trust?
-          </label>
-          <div id="trust-name-hint" class="govuk-hint">
-            If the trust does not have a name, give a description that it can be identified by.
-          </div>
-          <!-- Check for error -->
-          {% if errorTrustName %}
-          <p id="trust-name-error" class="govuk-error-message">
-            <span class="govuk-visually-hidden">Error:</span> Enter the name of the trust
-          </p>
-          {% endif %} 
-          <input class="govuk-input" id="trust-name" name="trust-name" type="text" value="Island Trust">
-        </div>
+     
 
-      <p class="govuk-body-l govuk-!-font-weight-bold govuk-!-margin-top-7 govuk-!-margin-bottom-1">Date the trust was created:</p>
-      <p class="govuk-!-font-size-20 govuk-!-margin-bottom-7">10 July 2020</p>
-
-  <!--
-          {{ govukCheckboxes({
-            idPrefix: "involved",
-            name: "involved",
-            fieldset: {
-              legend: {
-                text: "Which of the overseas entity’s beneficial owners are trustees of this trust?",
-                isPageHeading: true,
-                classes: "govuk-fieldset__legend--m"
-              }
-            },
-            hint: {
-              text: "Select all that apply. You can add more later."
-            },
-            items: [
-              {
-                value: "joe",
-                text: "Joe Bloggs"
-              },
-              {
-                value: "acme",
-                text: "Acme Limited"
-                
-              }
-            ]
-          }) }}
-
-  -->
+  {{ govukSummaryList({
+  card: {
+    title: {
+      text: "Trust details"
+    },
+    actions: {
+      items: [
+        {
+          href: "#",
+          text: "Change",
+          visuallyHiddenText: "of Ashcroft Limited - Islands Trust"
+        }
+        
+      ]
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Name of the trust"
+      },
+      value: {
+        html: "Island Trust"
+      }
+    },
+    {
+      key: {
+        text: "Date the trust was created:"
+      },
+      value: {
+        html: "10 July 2020"
+      }
+    },
+    {
+      key: {
+        text: "Beneficial owners involved in the trust"
+      },
+      value: {
+        html: '<ul class="govuk-list govuk-list--bullet">
+      <li> Daniel Ashcroft</li>
+      <li> Name Corp</li>'
+      }
+    }
+  ]
+}) }}
 
 
         <div class="govuk-form-group govuk-!-margin-bottom-4">

@@ -1,0 +1,339 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Tell us about the trust – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% if errorList %}
+      {{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: errorList
+      }) }}
+      {% endif %}
+      <form class="form" action="{{currentUrl}}" method="post">
+
+        <h1 class="govuk-heading-xl">Review the trust</h1>
+        
+        <p class="govuk-!-margin-bottom-5 govuk-!-margin-top-5">If you need to update this information, you can change the answers here.</p>
+
+        {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+
+        {% set bodateHtml %}
+        {{ govukDateInput({
+          id: "bo-date",
+          namePrefix: "bo-date",
+          fieldset: {
+            legend: {
+              text: "What date did they become involved in the trust?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          hint: {
+            text: "For example, 27 3 2007"
+          }
+        }) }}
+        {% endset -%}
+
+        <!-- Check for error -->
+        {% if errorTrustName %}
+        <div class="govuk-form-group govuk-form-group--error">
+        {% else %}
+        <div class="govuk-form-group">
+        {% endif %} 
+          <label class="govuk-label govuk-label--m" for="trust-name">
+            What is the name of the trust?
+          </label>
+          <div id="trust-name-hint" class="govuk-hint">
+            If the trust does not have a name, give a description that it can be identified by.
+          </div>
+          <!-- Check for error -->
+          {% if errorTrustName %}
+          <p id="trust-name-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> Enter the name of the trust
+          </p>
+          {% endif %} 
+          <input class="govuk-input" id="trust-name" name="trust-name" type="text" value="Island Trust">
+        </div>
+
+      <p class="govuk-body-l govuk-!-font-weight-bold govuk-!-margin-top-7 govuk-!-margin-bottom-1">Date the trust was created:</p>
+      <p class="govuk-!-font-size-20 govuk-!-margin-bottom-7">10 July 2020</p>
+
+
+        {% set indintDateHtml %}
+        <br>
+        {{ govukDateInput({
+          id: "individual-interested-date",
+          namePrefix: "individual-interested-date",
+          fieldset: {
+            legend: {
+              text: "What date did they become an interested person?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          hint: {
+            text: "For example, 27 3 2007"
+          }
+        }) }}
+        {% endset -%}
+
+
+        {% set indintDateHtml %}
+        <br>
+        {{ govukDateInput({
+          id: "individual-interested-date",
+          namePrefix: "individual-interested-date",
+          fieldset: {
+            legend: {
+              text: "What date did they become an interested person?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          hint: {
+            text: "For example, 27 3 2007"
+          }
+        }) }}
+        {% endset -%}
+
+
+
+    {% set trustRole1Html %}
+        {{ govukCheckboxes ({
+          idPrefix: "trust-role",
+          name: "trust-role",
+          fieldset: {
+            legend: {
+              text: "What is their role within the trust?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          items: [
+            {
+              value: "beneficiary",
+              text: "Beneficiary"
+            },
+            {
+              value: "settlor",
+              text: "Settlor"
+            },
+            {
+              value: "grantor",
+              text: "Grantor"
+            },
+            {
+              value: "interested",
+              text: "Interested person",
+              conditional: {
+              html: indintDateHtml
+            }
+            }
+          ]
+        }) }}
+      {% endset -%}
+
+
+          {% set trustRole2Html %}
+        {{ govukCheckboxes ({
+          idPrefix: "trust-role2",
+          name: "trust-role2",
+          fieldset: {
+            legend: {
+              text: "What is their role within the trust?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          items: [
+            {
+              value: "beneficiary",
+              text: "Beneficiary"
+            },
+            {
+              value: "settlor",
+              text: "Settlor"
+            },
+            {
+              value: "grantor",
+              text: "Grantor"
+            },
+            {
+              value: "interested",
+              text: "Interested person",
+              conditional: {
+              html: indintDateHtml
+            }
+            }
+          ]
+        }) }}
+      {% endset -%}
+      
+
+          {% set trustRole3Html %}
+        {{ govukCheckboxes ({
+          idPrefix: "trust-role3",
+          name: "trust-role3",
+          fieldset: {
+            legend: {
+              text: "What is their role within the trust?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          items: [
+            {
+              value: "beneficiary",
+              text: "Beneficiary"
+            },
+            {
+              value: "settlor",
+              text: "Settlor"
+            },
+            {
+              value: "grantor",
+              text: "Grantor"
+            },
+            {
+              value: "interested",
+              text: "Interested person",
+              conditional: {
+              html: indintDateHtml
+            }
+            }
+          ]
+        }) }}
+      {% endset -%}
+
+
+         {% set trustRole4Html %}
+        {{ govukCheckboxes ({
+          idPrefix: "trust-role4",
+          name: "trust-role4",
+          fieldset: {
+            legend: {
+              text: "What is their role within the trust?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          items: [
+            {
+              value: "beneficiary",
+              text: "Beneficiary"
+            },
+            {
+              value: "settlor",
+              text: "Settlor"
+            },
+            {
+              value: "grantor",
+              text: "Grantor"
+            },
+            {
+              value: "interested",
+              text: "Interested person",
+              conditional: {
+              html: indintDateHtml
+            }
+            }
+          ]
+        }) }}
+      {% endset -%}
+
+
+
+
+
+
+        {{ govukCheckboxes ({
+          idPrefix: "trust-individual",
+          name: "trust-individual",
+          fieldset: {
+            legend: {
+              text: "Which of the overseas entity’s beneficial owners are trustees of this trust?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+  hint: {
+    text: "Select all that apply."
+  },
+          items: [
+            {
+              value: "beneficiary",
+              text: "Daniel Ashcroft",
+              conditional: {
+              html: trustRole1Html
+            }
+            },
+            {
+              value: "settlor",
+              text: "Name Corp",
+              checked: "checked",
+              conditional: {
+              html: trustRole2Html
+            }
+            },
+            {
+              value: "grantor",
+              text: "Lisa Smith",
+              conditional: {
+              html: trustRole3Html
+            }
+            },
+            {
+              value: "interested",
+              text: "Beta Limited",
+              conditional: {
+              html: trustRole4Html
+            }
+            }
+          ]
+        }) }}
+
+      
+
+        <p class="govuk-body govuk-!-margin-bottom-7"><a href="../beneficial-owner/involved-types-test" class="govuk-link govuk-link--no-visited-state">Change a beneficial owner's nature of control</a></p>
+
+       
+
+        {{ govukInsetText({
+          html: '
+            <h2 class="govuk-heading-m">What information we&#39;ll show on the public register</h2>
+            <p>We will not show any of the information you provide in this section on the public Register of Overseas Entities. 
+              However, we may share it with HMRC.</p>
+                      '
+        }) }}
+
+        <div class="govuk-button-group">
+          
+            {{ govukButton({
+              formaction: "trust-details",
+              text: "Save and continue"
+            }) }}
+          
+{# 
+            {{ govukButton({
+              text: "Delete trust",
+              href: "delete-trust-warning",
+              classes: "govuk-button--warning"
+            }) }} #}
+
+        </div>
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
