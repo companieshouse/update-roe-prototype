@@ -27,7 +27,7 @@
         <p class="govuk-!-margin-bottom-5 govuk-!-margin-top-5">If you need to update this information, you can change the answers here.</p>
 
 {{ govukDetails({
-  summaryText: "I have duplicated information on this page",
+  summaryText: "There is duplicated or missing information on this page",
   text: "We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post."
 }) }}
 
@@ -56,13 +56,13 @@
   {{ govukSummaryList({
   card: {
     title: {
-      text: "Trust details"
+      text: "Former beneficial owner"
     },
     actions: {
       items: [
         {
           href: "#",
-          text: "Change",
+          text: "",
           visuallyHiddenText: "of Ashcroft Limited - Islands Trust"
         }
         
@@ -72,75 +72,286 @@
   rows: [
     {
       key: {
-        text: "Name of the trust"
+        text: "Is the former beneficial owner an individual or a legal entity?
+"
       },
       value: {
-        html: "Island Trust"
+        html: "Individual"
       }
     },
     {
       key: {
-        text: "Date the trust was created:"
+        text: "Name"
       },
       value: {
-        html: "10 July 2020"
+        html: "Jane Wright"
       }
     },
     {
       key: {
-        text: "Beneficial owners involved in the trust"
+        text: "When did they become a beneficial owner?"
       },
       value: {
-        html: '<ul class="govuk-list govuk-list--bullet">
-      <li> Daniel Ashcroft</li>
-      <li> Name Corp</li>'
+        html: "4 October 2015"
+      }
+    },
+    {
+      key: {
+        text: "When did they cease to be a beneficial owner?"
+      },
+      value: {
+        html: "10 August 2021"
       }
     }
   ]
 }) }}
 
 
-        <div class="govuk-form-group govuk-!-margin-bottom-4">
-          <fieldset class="govuk-fieldset" aria-describedby="bo-checklist">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-              <h2 class="govuk-fieldset__heading">
-                Which of the overseas entity’s beneficial owners are trustees of this trust?
-              </h2>
-            </legend>
-            <div id="bo-checklist-hint" class="govuk-hint">
-              Select all that apply.
-            </div>
-            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="bo-checklist" name="bo-checklist" type="checkbox" value="Daniel Ashcroft" checked>
-                <label class="govuk-label govuk-checkboxes__label" for="bo-checklist">
-                  Daniel Ashcroft
-                </label>
-              </div>
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="bo-checklist-2" name="bo-checklist" type="checkbox" value="Name Corp" checked>
-                <label class="govuk-label govuk-checkboxes__label" for="bo-checklist-2">
-                  Name Corp
-                </label>
-              </div>
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="bo-checklist-3" name="bo-checklist" type="checkbox" value="Lisa Smith">
-                <label class="govuk-label govuk-checkboxes__label" for="bo-checklist-3">
-                  Lisa Smith
-                </label>
-              </div>
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="bo-checklist-4" name="bo-checklist" type="checkbox" value="Beta Limited">
-                <label class="govuk-label govuk-checkboxes__label" for="bo-checklist-4">
-                  Beta Limited
-                </label>
-              </div>
-            </div>
-          </fieldset>
-        </div>
+        <p class="govuk-body govuk-!-margin-bottom-7"><a href="../beneficial-owner/involved-types-test" class="govuk-link govuk-link--no-visited-state">Add a former beneficial owner</a></p>
 
-        <p class="govuk-body govuk-!-margin-bottom-7"><a href="../beneficial-owner/involved-types-test" class="govuk-link govuk-link--no-visited-state">Change a beneficial owner's nature of control</a></p>
 
+
+{{ govukSummaryList({
+  card: {
+    title: {
+      text: "Individual"
+    },
+    actions: {
+      items: [
+        {
+          href: "#",
+          text: "Change",
+          visuallyHiddenText: "of Ashcroft Limited - Islands Trust"
+        },
+                {
+          href: "#",
+          text: "Remove",
+          visuallyHiddenText: "of Ashcroft Limited - Islands Trust"
+        }
+        
+      ]
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        html: "Fred Lock"
+      }
+    },
+    {
+      key: {
+        text: "Date of birth:"
+      },
+      value: {
+        html: "27 June 1983"
+      }
+    },
+    {
+      key: {
+        text: "What is their role within the trust?"
+      },
+      value: {
+        html: '<ul class="govuk-list govuk-list--bullet">
+      <li> Settlor</li>'
+      }
+    },
+    {
+      key: {
+        text: "Date of birth:"
+      },
+      value: {
+        html: "27 June 1983"
+      }
+    },
+    {
+      key: {
+        text: "What is their nationality?"
+      },
+      value: {
+        html: " "
+      }
+    },
+    {
+      key: {
+        text: "What is their home address?"
+      },
+      value: {
+        html: " "
+      }
+    },
+    {
+      key: {
+        text: "Is their correspondence address the same as their home address?"
+      },
+      value: {
+        html: " "
+      }
+    }
+  ]
+}) }}
+
+
+
+{{ govukSummaryList({
+  card: {
+    title: {
+      text: "Individual"
+    },
+    actions: {
+      items: [
+        {
+          href: "#",
+          text: "Change",
+          visuallyHiddenText: "of Ashcroft Limited - Islands Trust"
+        },
+                {
+          href: "#",
+          text: "Remove",
+          visuallyHiddenText: "of Ashcroft Limited - Islands Trust"
+        }
+        
+      ]
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        html: "Fred Lock"
+      }
+    },
+    {
+      key: {
+        text: "Date of birth:"
+      },
+      value: {
+        html: "27 June 1983"
+      }
+    },
+    {
+      key: {
+        text: "What is their role within the trust?"
+      },
+      value: {
+        html: '<ul class="govuk-list govuk-list--bullet">
+      <li> Grantor</li>'
+      }
+    },
+    {
+      key: {
+        text: "Date of birth:"
+      },
+      value: {
+        html: "27 June 1983"
+      }
+    },
+    {
+      key: {
+        text: "What is their nationality?"
+      },
+      value: {
+        html: " "
+      }
+    },
+    {
+      key: {
+        text: "What is their home address?"
+      },
+      value: {
+        html: " "
+      }
+    },
+    {
+      key: {
+        text: "Is their correspondence address the same as their home address?"
+      },
+      value: {
+        html: " "
+      }
+    }
+  ]
+}) }}
+
+
+        <p class="govuk-body govuk-!-margin-bottom-7"><a href="../beneficial-owner/involved-types-test" class="govuk-link govuk-link--no-visited-state">Add an individual</a></p>
+
+
+
+{{ govukSummaryList({
+  card: {
+    title: {
+      text: "Legal entity"
+    },
+    actions: {
+      items: [
+        {
+          href: "#",
+          text: "Change",
+          visuallyHiddenText: "of Ashcroft Limited - Islands Trust"
+        },
+                {
+          href: "#",
+          text: "Remove",
+          visuallyHiddenText: "of Ashcroft Limited - Islands Trust"
+        }
+        
+      ]
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        html: "Salcombe Ltd"
+      }
+    },
+
+    {
+      key: {
+        text: "What is their role within the trust?"
+      },
+      value: {
+        html: '<ul class="govuk-list govuk-list--bullet">
+      <li> Grantor</li>'
+      }
+    },
+    {
+      key: {
+        text: "Date of birth:"
+      },
+      value: {
+        html: "27 June 1983"
+      }
+    },
+
+    {
+      key: {
+        text: "What is its principal or registered office address?"
+      },
+      value: {
+        html: 'Business unit 3<br>
+        27 Main street<br>'
+      }
+    },
+    {
+      key: {
+        text: "Is their correspondence address the same as their home address?"
+      },
+      value: {
+        html: " "
+      }
+    }
+  ]
+}) }}
+
+     
         <div class="govuk-form-group govuk-!-margin-bottom-7">
           <fieldset class="govuk-fieldset" aria-describedby="former-checklist">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
