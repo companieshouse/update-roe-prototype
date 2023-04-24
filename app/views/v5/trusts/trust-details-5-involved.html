@@ -27,8 +27,22 @@
         <p class="govuk-!-margin-bottom-5 govuk-!-margin-top-5">If you need to update this information, you can change the answers here.</p>
 
 {{ govukDetails({
-  summaryText: "There is duplicated or missing information on this page",
-  text: "We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post."
+  summaryText: "There is duplicated information on this page",
+  html: 'These duplications have come from the Trust Excel document uploaded on registration. <br><br>
+  Please remove one of the duplications and review the remaining individual or entity to make sure the information is up to date.'
+}) }}
+
+
+{{ govukDetails({
+  summaryText: "There is missing information on this page",
+  html: 'This missing information has come from incomplete fields in the Trust Excel document uplodaded on registration. <br><br>
+  You will need to add any missing information.'
+}) }}
+
+
+{{ govukDetails({
+  summaryText: "An individual or entity has become a former beneficial owner",
+  html: 'You will need to select &#39;Remove from this trust	&#39; and add themm as a former beneficial owner'
 }) }}
 
         {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
@@ -125,7 +139,7 @@
         },
                 {
           href: "#",
-          text: "Remove",
+          text: "Remove from this trust",
           visuallyHiddenText: "of Ashcroft Limited - Islands Trust"
         }
         
@@ -209,7 +223,7 @@
         },
                 {
           href: "#",
-          text: "Remove",
+          text: "Remove from this trust",
           visuallyHiddenText: "of Ashcroft Limited - Islands Trust"
         }
         
@@ -296,7 +310,7 @@
         },
                 {
           href: "#",
-          text: "Remove",
+          text: "Remove from this trust",
           visuallyHiddenText: "of Ashcroft Limited - Islands Trust"
         }
         
@@ -337,7 +351,9 @@
       },
       value: {
         html: 'Business unit 3<br>
-        27 Main street<br>'
+        27 Main street<br>
+        Tortola<br>
+        British Virgin Islands'
       }
     },
     {
@@ -345,81 +361,66 @@
         text: "Is their correspondence address the same as their home address?"
       },
       value: {
-        html: " "
+        html: "Yes"
+      }
+    },
+    {
+      key: {
+        text: "What is its legal form?"
+      },
+      value: {
+        html: "Limited company"
+      }
+    },
+    {
+      key: {
+        text: "What is the governing law?"
+      },
+      value: {
+        html: "British Virgin Islands"
+      }
+    },
+    {
+      key: {
+        text: "Is it already on a public register in the country it was formed in?"
+      },
+      value: {
+        html: "Yes"
+      }
+    },
+    {
+      key: {
+        text: "Name of register"
+      },
+      value: {
+        html: "Registry of Corporate Affairs – BVI"
+      }
+    },
+    {
+      key: {
+        text: "Jurisdiction"
+      },
+      value: {
+        html: "British Virgin Islands"
+      }
+    },
+    {
+      key: {
+        text: "Entity’s registration number"
+      },
+      value: {
+        html: "23456781"
       }
     }
   ]
 }) }}
 
+        <p class="govuk-body govuk-!-margin-bottom-7"><a href="../beneficial-owner/involved-types-test" class="govuk-link govuk-link--no-visited-state">Add a legal entity</a></p>
+
+
+
+
      
-        <div class="govuk-form-group govuk-!-margin-bottom-7">
-          <fieldset class="govuk-fieldset" aria-describedby="former-checklist">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-              <h2 class="govuk-fieldset__heading">
-                Which of the following former beneficial owners were trustees of this trust?
-              </h2>
-            </legend>
-            <div id="former-checklist-hint" class="govuk-hint">
-              Select all that apply. You can add more later.
-            </div>
-            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="former-checklist" name="former-checklist" type="checkbox" value="jane_wright" checked>
-                <label class="govuk-label govuk-checkboxes__label" for="former-checklist">
-                  Jane Wright
-                </label>
-              </div>
-            </div>
-          </fieldset>
-        </div>
-
-        <div class="govuk-form-group govuk-!-margin-bottom-7">
-          <fieldset class="govuk-fieldset" aria-describedby="individual-checklist">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-              <h2 class="govuk-fieldset__heading">
-                Which of the following individuals are involved in this trust?
-              </h2>
-            </legend>
-            <div id="individual-checklist-hint" class="govuk-hint">
-              Select all that apply. You can add more later.
-            </div>
-            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="individual-checklist" name="individual-checklist" type="checkbox" value="fred_lock" checked>
-                <label class="govuk-label govuk-checkboxes__label" for="individual-checklist">
-                  Fred Lock
-                </label>
-              </div>
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="individual-checklist-2" name="individual-checklist" type="checkbox" value="mary_robinson" checked>
-                <label class="govuk-label govuk-checkboxes__label" for="individual-checklist-2">
-                  Mary Robinson
-                </label>
-              </div>
-            </div>
-          </fieldset>
-        </div>
-
-        <div class="govuk-form-group govuk-!-margin-bottom-7">
-          <fieldset class="govuk-fieldset" aria-describedby="legal-checklist">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-              <h2 class="govuk-fieldset__heading">
-                Which of the following legal entities are involved in this trust?
-              </h2>
-            </legend>
-            <div id="legal-checklist-hint" class="govuk-hint">
-              Select all that apply. You can add more later.
-            </div>
-            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="legal-checklist" name="legal-checklist" type="checkbox" value="salcombe_ltd" checked>
-                <label class="govuk-label govuk-checkboxes__label" for="legal-checklist">
-                  Salcombe Ltd
-                </label>
-              </div>
-            </div>
-          </fieldset>
-        </div>
 
         {{ govukInsetText({
           html: '
@@ -429,13 +430,18 @@
                       '
         }) }}
 
+
+
+
+
+
         <div class="govuk-button-group">
           
             {{ govukButton({
               formaction: "trust-details",
               text: "Save and continue"
             }) }}
-          
+        
 
             {{ govukButton({
               text: "Delete trust",

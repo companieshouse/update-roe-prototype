@@ -21,6 +21,8 @@
       {% endif %}
       <form class="form" action="{{currentUrl}}" method="post">
 
+
+      <span class="govuk-caption-l">{{ data['trust-name'] }}</span>
         <h1 class="govuk-heading-xl">Review the trust</h1>
         
         <p class="govuk-!-margin-bottom-5 govuk-!-margin-top-5">If you need to update this information, you can change the answers here.</p>
@@ -309,6 +311,28 @@
 
        
 
+
+        {{ govukRadios({
+  name: "entity-required-info",
+  fieldset: {
+    legend: {
+      text: "To the best of their knowledge, does the entity have all the required information about the trust?",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes"
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+  ]
+}) }}
+
         {{ govukInsetText({
           html: '
             <h2 class="govuk-heading-m">What information we&#39;ll show on the public register</h2>
@@ -324,12 +348,12 @@
               text: "Save and continue"
             }) }}
           
-{# 
+
             {{ govukButton({
               text: "Delete trust",
               href: "delete-trust-warning",
               classes: "govuk-button--warning"
-            }) }} #}
+            }) }} 
 
         </div>
       </form>
