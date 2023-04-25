@@ -1,0 +1,80 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+
+Do any beneficial owners or managing officers have their personal information protected at Companies House?
+ – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+ 
+  <form action="./interrupt-card" method="post">
+
+    {{ govukRadios({
+      classes: "govuk-radios",
+      idPrefix: "trustInvolved",
+      name: "trustInvolved",
+      fieldset: {
+        legend: {
+          text: "Is there a trust associated with a beneficial owner?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--xl"
+        }
+      },
+      hint: {
+      text: "Lorem ipsum"
+    },
+      items: [
+        {
+          value: "yes",
+          text: "Yes"
+        },
+        {
+          value: "no",
+          text: "No"
+        }
+      ]
+    }) }}
+  
+{# <details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      What having personal information protected means
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <p class="govuk-body">Some people can <a href="https://www.gov.uk/guidance/applying-to-protect-your-personal-information-on-the-companies-house-register" class="govuk-link">apply to protect personal information from being shown on the Companies House public register</a> if they meet certain criteria. This process includes:</p>
+    <ul class="govuk-list govuk-list--bullet">
+    <li>providing evidence that they are eligible to have their details protected </li>
+    <li>paying a £100 fee</li>
+    </ul>
+
+    <p class="govuk-body">You should only select ‘yes’ if any of the beneficial owners or managing officers have already done this.</p> #}
+
+  </div>
+</details>
+  
+  {{ govukInsetText({
+          html: '<h2 class="govuk-heading-m">What information we’ll show on the public register</h2>
+                <p>We will not show any of the information you provide in this section on the public Register of Overseas Entities.</p>'
+        }) }}
+
+          {{ govukButton({
+            text: "Continue"
+          }) }}
+  </form>
+
+
+
+
+    </div>
+  </div>
+
+{% endblock %}
