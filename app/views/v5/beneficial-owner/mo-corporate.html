@@ -356,33 +356,65 @@
           }) }}
 
 
-{# 
-{% set moCorpCeasedHtml %}
+
+
+<!-- STILL A MANAGING OFFICER? -->
+
+
+{% set moCeasedHtml %}
 {{ govukDateInput({
-  id: "mo-corp-ceased",
-  namePrefix: "mo-corp-ceased",
+  id: "mo-ceased",
+  namePrefix: "mo-ceased",
   fieldset: {
     legend: {
-      text: "When did it stop being a managing officer?",
+      text: "Date it stopped being a managing officer",
       isPageHeading: true,
-      classes: "govuk-fieldset__legend--m"
+      classes: "govuk-fieldset__legend--s"
     }
   },
   hint: {
-    text: "For example, 27 3 2007"
+    text: "For example, 27 1 2023"
   }
 }) }}
 {% endset -%} 
 
-,
+
+
+
+{% if errorMoCeased %}
+{{ govukRadios({
+  name: "moCorpActive",
+  id: "mo-corp-ceased",
+  fieldset: {
+    legend: {
+      text: "Is it still a managing officer for the overseas entity?",
+      isPageHeading: true,
+              classes: "govuk-fieldset__legend--s"
+    }
+  },
+            errorMessage: {
+                    text: "Select yes if they are still a managing officer"
+                  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes"
+    },
+    {
+      value: "no",
+      text: "No",
       conditional: {
-        html: moCorpCeasedHtml
-      }
-      #}
+      html: moCeasedHtml
+    }
+    }
+  ]
+}) }}
+{% else %}
 
 
 {{ govukRadios({
   name: "moCorpActive",
+  id: "mo-corp-ceased",
   fieldset: {
     legend: {
       text: "Is it still a managing officer for the overseas entity?",
@@ -397,10 +429,14 @@
     },
     {
       value: "no",
-      text: "No"
+      text: "No",
+                      conditional: {
+                  html: moCeasedHtml
+                }
     }
   ]
 }) }}
+{% endif %}
 
           <h2 class="govuk-heading-l">Tell us who we can contact about this managing officer</h2>
 

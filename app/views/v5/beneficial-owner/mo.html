@@ -485,60 +485,6 @@
 
 
 
-        {% if (data['soldLand'] === "some") or (data['soldLand'] === "all") %}
-        <!--Only show the 'When did they stop...' question if the user has answered Some or All to /register/sold-land-filter-->
-        <!--Note, current intention is not to route users here is they select All - code added just in case-->
-
-            {% set stopDateHtml %}
-
-                      {{ govukDateInput({
-                        id: "officer-enddate",
-                        namePrefix: "officer-enddate",
-                        fieldset: {
-                          legend: {
-                            text: "When did they stop being a managing officer?",
-                            isPageHeading: false,
-                            classes: "govuk-fieldset__legend--s"
-                          }
-                        },
-                        hint: {
-                          text: "For example, 28 5 2022"
-                        }
-                      }) }}
-                      {% endset -%}
-
-                      {{ govukRadios({
-                        idPrefix: "officer-stop",
-                        name: "officer-stop",
-                        fieldset: {
-                          legend: {
-                            text: "Did they stop being a managing officer after the overseas entity disposed of property or land?",
-                            isPageHeading: false,
-                            classes: "govuk-fieldset__legend--m"
-                          }
-                        },
-                        items: [
-                          {
-                            value: "yes",
-                            text: "Yes",
-                            conditional: {
-                      html: stopDateHtml
-                     }
-                   },
-                   {
-                            value: "no",
-                            text: "No"
-                          }
-                        ]
-                      }) }}
-
-{% endif %}
-
-
-
-
-
-
         {# <div class="govuk-!-padding-bottom-6">
           <h1 class="govuk-label-wrapper"><label for="autocomplete-default" class="govuk-label govuk-label--m">What is their occupation? (If applicable)</label></h1>
           <p class="govuk-hint">Start typing an occupation, then choose from the list. If their occupation is not shown, you can enter it directly into the box. <br> If they do not have an occupation, enter 'None'.</p>
@@ -578,6 +524,7 @@
 
 
 
+<!-- STILL A MANAGING OFFICER? -->
 
 
 {% set moCeasedHtml %}
@@ -586,7 +533,7 @@
   namePrefix: "mo-ceased",
   fieldset: {
     legend: {
-      text: "Date they stopped being a managing officer (optional)",
+      text: "Date they stopped being a managing officer",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--s"
     }
