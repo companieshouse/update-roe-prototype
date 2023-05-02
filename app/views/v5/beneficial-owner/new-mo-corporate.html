@@ -18,6 +18,10 @@
       <p class="  govuk-!-margin-bottom-5 govuk-!-margin-top-5">You can add more later.</p>
       <form class="form" method="post">
 
+{{ govukDetails({
+  summaryText: "How to complete this section if it is no longer a managing officer",
+  text: "If it has become and then stopped being a managing officer during this update period, you need to enter information that is correct as at the date it stopped being one."
+}) }}
 
         {{ govukInput({
           label: {
