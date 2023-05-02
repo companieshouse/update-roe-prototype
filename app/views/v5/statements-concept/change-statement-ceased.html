@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  You need to change information to declare the correct statement – {{ serviceName }} – GOV.UK
+  The statement you've chosen does not match the information provided in this update – {{ serviceName }} – GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -16,10 +16,10 @@
       <form class="form" action="" method="post">
         
   <span class="govuk-caption-l">{{ data['overseas-name'] }} - {{ data['overseas-id'] }}</span>
-        <h1 class="govuk-heading-xl">You need to change information to declare the correct statement</h1>
+        <h1 class="govuk-heading-xl">The statement you've chosen does not match the information provided in this update</h1>
 
   <div> 
-    <p> Based on the information you've provided in this update, we think this statement applies to you:</p>
+    <p> Based on the information you've provided in this update, we think this statement applies to the overseas entity:</p>
   </div>
 
 {# {{ govukInsetText({
@@ -48,11 +48,11 @@
           items: [
             {
               value: "allIdentifiedAllSupplied",
-              text: "I need to change information I have provided to declare the correct statement "
+              text: "I need to change the information I have provided in this update"
             },
             {
               value: "someIdentifiedAllSupplied",
-              text: "I need to declare a different statement"
+              text: "I need to change my statement"
 
     }
           ]
