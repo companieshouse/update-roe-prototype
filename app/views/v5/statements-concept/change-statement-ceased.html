@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Beneficial owner statements – {{ serviceName }} – GOV.UK
+  You need to change information to declare the correct statement – {{ serviceName }} – GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -16,7 +16,7 @@
       <form class="form" action="" method="post">
         
   <span class="govuk-caption-l">{{ data['overseas-name'] }} - {{ data['overseas-id'] }}</span>
-        <h1 class="govuk-heading-xl">Beneficial owner statement</h1>
+        <h1 class="govuk-heading-xl">You need to change information to declare the correct statement</h1>
 
   <div> 
     <p> Based on the information you've provided in this update, we think this statement applies to you:</p>
@@ -28,20 +28,11 @@
   
 
   <div class="bo-statement govuk-!-margin-bottom-6">
-<p class"govuk-body">All beneficial owners have been identified and all required information has been provided.</p>
+<p class"govuk-body">The entity has <strong>no reasonable cause </strong>to believe that <strong>anyone</strong> has become or ceased to be a registrable beneficial owner during the update period.</p>
 
 </div>
 
 
-{# {% if errorStatements == true %}
-ecked: checked("statements", "noneIdentified")
-            }
-          ],
-          errorMessage: {
-                  text: "Select if any beneficial owners have been identified"
-                }
-        }) }}
-{% else %} #}
 
 
         {{ govukRadios({
@@ -49,7 +40,7 @@ ecked: checked("statements", "noneIdentified")
           name: "statements",
           fieldset: {
             legend: {
-              text: "Has the overseas entity identified any registrable beneficial owners?",
+              text: "How would you like to proceed?",
               isPageHeading: false,
               classes: "govuk-fieldset__legend--l"
             }
@@ -57,34 +48,45 @@ ecked: checked("statements", "noneIdentified")
           items: [
             {
               value: "allIdentifiedAllSupplied",
-              text: "All beneficial owners have been identified and I have provided all the required information",
-              checked: checked("statements", "allIdentifiedAllSupplied")
+              text: "I need to change information I have provided to declare the correct statement "
             },
             {
               value: "someIdentifiedAllSupplied",
-              text: "Some beneficial owners have been identified and I have provided all required information",
-              hint: {
-                text: "You have also provided information about each managing officer."
-              },
-              checked: checked("statements", "someIdentifiedAllSupplied")
-            },
-            {
-              value: "noneIdentified",
-              text: "No beneficial owners have been identified",
-              hint: {
-                text: "You have provided information about each managing officer."
-              },
-              checked: checked("statements", "noneIdentified")
-            },
-    {
-      divider: "or"
-    },
-    {
-      value: "boChange",
-      text: "I need to change information I have provided to declare the correct statement"
+              text: "I need to declare a different statement"
+
     }
           ]
         }) }}
+
+{# 
+                {{ govukRadios({
+          idPrefix: "statements",
+          name: "statements",
+          fieldset: {
+            legend: {
+              text: "How would you like to proceed?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "allIdentifiedAllSupplied",
+              text: "I need to declare a different statement",
+              hint: {
+                text: "This will take you back to the statements page."
+              }
+            },
+            {
+              value: "someIdentifiedAllSupplied",
+              text: "I need to change information I have provided to declare the correct statement",
+              hint: {
+                text: "This will take you back to the summary page."
+              }
+
+    }
+          ]
+        }) }} #}
 
    
 
@@ -106,12 +108,6 @@ A managing officer is a director, manager or company secretary of the overseas e
           </details> #}
 
 
-
-
-        {{ govukInsetText({
-          html: '<h2 class="govuk-heading-m">What information we’ll show on the public register</h2>
-                <p>We will show the statement you provide in this section on the public Register of Overseas Entities.</p>'
-        }) }}
 
           {{ govukButton({
             text: "Save and continue",
