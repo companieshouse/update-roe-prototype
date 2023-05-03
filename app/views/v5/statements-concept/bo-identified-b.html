@@ -15,18 +15,25 @@
 
       <form class="form" action="" method="post">
         
-  <span class="govuk-caption-l">{{ data['overseas-name'] }} - {{ data['overseas-id'] }}</span>
-        <h1 class="govuk-heading-xl">Has the overseas entity identified any registrable beneficial owners?</h1>
 
-{# {% if errorStatements == true %}
-ecked: checked("statements", "noneIdentified")
-            }
-          ],
-          errorMessage: {
-                  text: "Select if any beneficial owners have been identified"
-                }
-        }) }}
-{% else %} #}
+  <span class="govuk-caption-l">{{ data['overseas-name'] }} - {{ data['overseas-id'] }}</span>
+        <h1 class="govuk-heading-xl">Beneficial owner statement</h1>
+
+<div> 
+    <p> Based on the information you've provided in this update, we think this statement applies to the overseas entity:</p>
+  </div>
+
+
+  <div class="bo-statement govuk-!-margin-bottom-6">
+<p class"govuk-body">All beneficial owners have been identified and all required information has been provided.</p>
+</div>
+
+<div> 
+    <p>You can choose a different statement, but this means you will need to change some of the information provided in this update.</p>
+  </div>
+
+
+        <h1 class="govuk-heading-l">Has the overseas entity identified any registrable beneficial owners?</h1>
 
 
         {{ govukRadios({
@@ -34,7 +41,7 @@ ecked: checked("statements", "noneIdentified")
           name: "statements",
           fieldset: {
             legend: {
-              text: "Have you identified any beneficial owners?",
+              text: "Has the overseas entity identified any registrable beneficial owners?",
               isPageHeading: false,
               classes: "govuk-visually-hidden"
             }
