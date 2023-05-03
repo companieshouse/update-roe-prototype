@@ -1,0 +1,181 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Check your answers – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <span class="govuk-caption-l">{{ data['trust-name'] }}</span>
+      <h1 class="govuk-heading-xl">Legal entities</h1>
+
+
+
+
+
+
+<!-- ********** LEGAL ENTITY  ********** -->
+
+      <h3 class="govuk-heading-m">Jones LTD</h3>
+ 
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+   <div class="govuk-summary-list__row">
+     <dt class="govuk-summary-list__key">
+       Name
+     <dd class="govuk-summary-list__value">
+       Jones LTD
+     </dd>
+     <dd class="govuk-summary-list__actions">
+       <a href="/register/trusts/trust-ole">
+         Change
+         <span class="govuk-visually-hidden">Name of the legal entity</span>
+       </a>
+     </dd>
+   </div>
+
+   <div class="govuk-summary-list__row">
+     <dt class="govuk-summary-list__key">
+       Role within the trust
+     </dt>
+       <dd class="govuk-summary-list__value">
+         Beneficiary
+       </dd>
+
+     </dd>
+     <dd class="govuk-summary-list__actions">
+       <a href="/register/trusts/trust-ole">
+         Change
+         <span class="govuk-visually-hidden">Role within the trust</span></span>
+       </a>
+     </dd>
+   </div>
+
+   <div class="govuk-summary-list__row">
+     <dt class="govuk-summary-list__key">
+       Principal or registered office address
+     </dt>
+     <dd class="govuk-summary-list__value">
+<ul class="govuk-list">
+<li><span class="govuk-visually-hidden">Oliver's Mount</span>Oliver's Mount<!-- screen reader friendly text needed on these --></li>
+<li><span class="govuk-visually-hidden">Braddan</span>Braddan</li>
+<li><span class="govuk-visually-hidden">IM4 4HW</span>IM4 4HW</li>
+<li><span class="govuk-visually-hidden">Isle of Man</span>Isle of Man</li>
+</ul>
+</dd>
+     <dd class="govuk-summary-list__actions">
+       <a href="/register/trusts/trust-ole">
+         Change
+         <span class="govuk-visually-hidden">Principal or registered office address</span>
+       </a>
+     </dd>
+   </div>
+
+   <div class="govuk-summary-list__row">
+     <dt class="govuk-summary-list__key">
+       Correspondence address
+     </dt>
+     <dd class="govuk-summary-list__value">
+       Correspondence address is the same as the principal or registered office address
+     </dd>
+     <dd class="govuk-summary-list__actions">
+       <a href="/register/trusts/trust-ole">
+         Change
+         <span class="govuk-visually-hidden">Is its correspondence address the same as its principal or registered office address?</span>
+       </a>
+     </dd>
+   </div>
+
+   
+
+   <div class="govuk-summary-list__row">
+     <dt class="govuk-summary-list__key">
+       Legal form
+     </dt>
+     <dd class="govuk-summary-list__value">
+       Limited company
+     </dd>
+     <dd class="govuk-summary-list__actions">
+       <a href="/register/trusts/trust-ole">
+         Change
+         <span class="govuk-visually-hidden">What is its legal form?</span>
+       </a>
+     </dd>
+   </div>
+
+   <div class="govuk-summary-list__row">
+     <dt class="govuk-summary-list__key">
+       Governing law
+     </dt>
+     <dd class="govuk-summary-list__value">
+       Isle of Man
+     </dd>
+     <dd class="govuk-summary-list__actions">
+       <a href="/register/trusts/trust-ole">
+         Change
+         <span class="govuk-visually-hidden">What is the governing law?</span>
+       </a>
+     </dd>
+   </div>
+
+   <div class="govuk-summary-list__row">
+     <dt class="govuk-summary-list__key">
+       Overseas public register
+     </dt>
+     <dd class="govuk-summary-list__value">
+       ICAEW / 45608318
+     </dd>
+     <dd class="govuk-summary-list__actions">
+       <a href="/register/trusts/trust-ole">
+         Change
+         <span class="govuk-visually-hidden">Is it already on a public register in the country it was formed in?</span>
+       </a>
+     </dd>
+   </div>
+
+</dl>
+
+
+                {{ govukButton({
+          text: "Add a legal enttity",
+          classes: "govuk-button--secondary"
+        }) }} 
+
+
+        {{ govukInsetText({
+          html: '
+            <h2 class="govuk-heading-m">What information we&#39;ll show on the public register</h2>
+            <p>We will not show any of the information you provide in this section on the public Register of Overseas Entities. 
+              However, we may share it with HMRC.</p>
+                      '
+        }) }}
+
+      <form method="post">
+
+        {{ govukButton({
+          text: "Save and continue",
+          href: "#"
+        }) }}
+        &nbsp; &nbsp;
+
+      </div>
+
+    <!-- *** Note to developers, this must show when JS is disabled ***
+      <p class="govuk-body govuk-!-font-size-20">To print this page, select File then Print in your browser.</p>
+    -->
+
+      </form>
+
+{#
+      <p class="govuk-body govuk-!-font-size-14 govuk-link--no-visited-state"><a href="/register/confirmation">UR shortcut: Jump to confirmation screen</a></p>
+#}
+
+    </div>
+  </div>
+{% endblock %}
