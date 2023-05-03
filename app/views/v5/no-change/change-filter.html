@@ -1,0 +1,107 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Have you made any changes to the overseas entity? – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="" method="post">
+        
+  <span class="govuk-caption-l">{{ data['overseas-name'] }} - {{ data['overseas-id'] }}</span>
+        <h1 class="govuk-heading-xl">Have you made any changes to the overseas entity?</h1>
+
+
+
+        {{ govukRadios({
+          idPrefix: "statements",
+          name: "statements",
+          fieldset: {
+            legend: {
+              text: "Have you made any changes to the overseas entity?",
+              isPageHeading: false,
+              classes: "govuk-visually-hidden"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes. I have made changes and verification checks have been completed to validate them.",
+      hint: {
+        text: "Select this option if any information is different from the last filing."
+      }
+            },
+            {
+              value: "no",
+              text: "No. I have made no changes.",
+      hint: {
+        text: "Select this option if all information is the same as the last filing."
+      }
+            }
+          ]
+        }) }}
+
+        {{ govukCheckboxes({
+  name: "waste",
+  fieldset: {
+    legend: {
+      text: "Declaration for changes",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "change-declaration",
+      text: "I understand that this filing may be rejected and have to pay the £X filing fee again if I have provided information that contradicts the above statement."
+    }
+  ]
+}) }}
+
+
+{# ,
+          errorMessage: {
+                  text: "Select if any beneficial owners have been identified"
+                }
+                 #}
+
+
+
+
+          {{ govukButton({
+            text: "Save and continue",
+            href: "bo-new-ceased"
+          }) }}
+
+
+
+          <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+              What is a change and do I need to get verification checks done?
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+            A beneficial owner is any legal body that has significant influence or control over the overseas entity. It can be an individual person, other legal entity, government or public authority.
+            </div>
+            <div class="govuk-details__text">
+            A beneficial owner is registrable if they meet one or more of the conditions known as the natures of control.   </div>
+            <div class="govuk-details__text">
+A managing officer is a director, manager or company secretary of the overseas entity.
+
+            </div>
+          </details>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
