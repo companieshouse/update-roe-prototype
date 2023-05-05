@@ -72,42 +72,9 @@
       <p class="govuk-!-font-size-20 govuk-!-margin-bottom-7">10 July 2020</p>
 
 
-        {% set indintDateHtml %}
-        <br>
-        {{ govukDateInput({
-          id: "individual-interested-date",
-          namePrefix: "individual-interested-date",
-          fieldset: {
-            legend: {
-              text: "What date did they become an interested person?",
-              isPageHeading: false,
-              classes: "govuk-fieldset__legend--s"
-            }
-          },
-          hint: {
-            text: "For example, 27 3 2007"
-          }
-        }) }}
-        {% endset -%}
+       
 
 
-        {% set indintDateHtml %}
-        <br>
-        {{ govukDateInput({
-          id: "individual-interested-date",
-          namePrefix: "individual-interested-date",
-          fieldset: {
-            legend: {
-              text: "What date did they become an interested person?",
-              isPageHeading: false,
-              classes: "govuk-fieldset__legend--s"
-            }
-          },
-          hint: {
-            text: "For example, 27 3 2007"
-          }
-        }) }}
-        {% endset -%}
 
 
 
@@ -137,10 +104,7 @@
             },
             {
               value: "interested",
-              text: "Interested person",
-              conditional: {
-              html: indintDateHtml
-            }
+              text: "Interested person"
             }
           ]
         }) }}
@@ -173,10 +137,7 @@
             },
             {
               value: "interested",
-              text: "Interested person",
-              conditional: {
-              html: indintDateHtml
-            }
+              text: "Interested person"
             }
           ]
         }) }}
