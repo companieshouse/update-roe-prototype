@@ -13,7 +13,7 @@ Will you be making any changes to the overseas entity? – {{ serviceName }} –
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="" method="post">
+      <form class="form" action="../verification/completing-update" method="post">
         
   <span class="govuk-caption-l">{{ data['overseas-name'] }} - {{ data['overseas-id'] }}</span>
         <h1 class="govuk-heading-xl">Will you be making any changes to the overseas entity?</h1>
@@ -21,8 +21,8 @@ Will you be making any changes to the overseas entity? – {{ serviceName }} –
 
 
         {{ govukRadios({
-          idPrefix: "statements",
-          name: "statements",
+          idPrefix: "no-change",
+          name: "no-change",
           fieldset: {
             legend: {
               text: "Have you made any changes to the overseas entity?",
@@ -76,8 +76,7 @@ Will you be making any changes to the overseas entity? – {{ serviceName }} –
 
 
           {{ govukButton({
-            text: "Save and continue",
-            href: "bo-new-ceased"
+            text: "Save and continue"
           }) }}
 
 
