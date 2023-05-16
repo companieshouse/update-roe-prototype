@@ -13,16 +13,6 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-{% set html %}
-  <p class="govuk-notification-banner__heading">
-    You need to change information to match the beneficial owner statement.<br><br>
-    The overseas entity has at least one active registrable beneficial owner.
-  </p>
-{% endset %}
-
-{{ govukNotificationBanner({
-  html: html
-}) }}
 
       <form class="form" action="./identify" method="get">
 

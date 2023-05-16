@@ -440,17 +440,41 @@ router.post('/v4/beneficial-owner/mo', function (req, res) {
 
 // no change routes
 
-router.get('/v5/verification/completing-update', function (req, res) {
+router.get('/v5/verification/completing-update', function(req, res) {
   if (req.session.data['no-change'] === 'no') {
+    res.render('v5/no-change/04-review-details')
+  } else {
+    res.render('v5/verification/completing-update')
+  }
+})
+
+router.get('/v5/no-change/02-bo-identified', function(req, res) {
+  if (req.session.data['need-to-change'] === 'yes') {
+    res.render('v5/no-change/05-verify-check')
+  } else {
     res.render('v5/no-change/02-bo-identified')
+  }
+})
+
+router.get('/v5/no-change/xx-completing-update', function(req, res) {
+  if (req.session.data['verify-check'] === 'no') {
+    res.render('v5/no-change/06-not-verified-instructions')
+  } else {
+    res.render('v5/no-change/xx-completing-update')
+  }
+})
+
+/*router.get('/v5/verification/completing-update', function (req, res) {
+  if (req.session.data['no-change'] === 'no') {
+    res.render('v5/no-change/04-review-details')
   } else {
     res.render('v5/verification/completing-update')
   }
 })
 
 router.get('/v5/submit-pay/how-to-pay', function(req, res) {
-  if (req.session.data['need-to-change'] === 'yes') {
-    res.render('v5/no-change/05-verify-check')
+  if (req.session.data['need-to-change'] === 'no') {
+    res.render('v5/no-change/02-bo-identified')
   } else {
     res.render('v5/submit-pay/how-to-pay')
   }
@@ -462,7 +486,7 @@ router.get('/v5/no-change/xx-completing-update', function(req, res) {
   } else {
     res.render('v5/no-change/xx-completing-update')
   }
-})
+})*/
 
 // new statements routes
 
