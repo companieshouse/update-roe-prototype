@@ -448,13 +448,14 @@ router.get('/v5/verification/completing-update', function(req, res) {
   }
 })
 
-router.get('/v5/no-change/02-bo-identified', function(req, res) {
+router.get('/v5/no-change/05-verify-check', function(req, res) {
   if (req.session.data['need-to-change'] === 'yes') {
-    res.render('v5/no-change/05-verify-check')
-  } else {
     res.render('v5/no-change/02-bo-identified')
+  } else {
+    res.render('v5/no-change/05-verify-check')
   }
 })
+
 
 router.get('/v5/no-change/xx-completing-update', function(req, res) {
   if (req.session.data['verify-check'] === 'no') {
