@@ -16,12 +16,12 @@
       <form class="form" action="bo-identified" method="post">
         
   <span class="govuk-caption-l">{{ data['overseas-name'] }} - {{ data['overseas-id'] }}</span>
-        <h1 class="govuk-heading-xl">The statement you've chosen does not match the information provided in this update</h1>
+        <h1 class="govuk-heading-xl">The statements you've chosen do not match the information provided in this update</h1>
 
   <div> 
     {% set html %}
     <p class="govuk-notification-banner__heading">
-      You need to change information to match the beneficial owner statement.<br><br>
+      You need to change information to match the beneficial owner statements.<br><br>
       The overseas entity has at least one active registrable beneficial owner.
     </p>
   {% endset %}
@@ -47,9 +47,9 @@
           items: [
             {
                             value: "change-statement",
-              text: "I need to change my statement",
+              text: "I need to change my statements",
           hint: {
-           text: "Select this option to tell us the correct statement."
+           text: "Select this option to tell us the correct statements."
              
          }
             },

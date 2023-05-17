@@ -493,11 +493,13 @@ router.get('/v5/no-change/xx-completing-update', function(req, res) {
 
 router.get('/v5/statements-concept/bo-identified', function(req, res) {
   if (req.session.data['statementConceptBo'] === 'change-info') {
-    res.render('v5/statements-concept/involved-types')
+    res.render('v5/no-change/04-review-details')
   } else {
     res.render('v5/statements-concept/bo-identified')
   }
 })
+
+
 
 router.get('/v5/statements-concept/bo-new-ceased', function(req, res) {
   if (req.session.data['statementsCeased'] === 'change-info') {
