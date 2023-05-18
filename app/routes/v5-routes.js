@@ -457,11 +457,11 @@ router.get('/v5/no-change/05-verify-check', function(req, res) {
 })
 
 
-router.get('/v5/no-change/xx-completing-update', function(req, res) {
+router.get('/v5/no-change/01-change-filter-start', function(req, res) {
   if (req.session.data['verify-check'] === 'no') {
     res.render('v5/no-change/06-not-verified-instructions')
   } else {
-    res.render('v5/no-change/xx-completing-update')
+    res.render('v5/no-change/01-change-filter-start')
   }
 })
 
