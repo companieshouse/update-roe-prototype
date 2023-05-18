@@ -1,0 +1,100 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  The statement you've chosen does not match the information provided in this update – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="bo-identified" method="post">
+        
+  <span class="govuk-caption-l">{{ data['overseas-name'] }} - {{ data['overseas-id'] }}</span>
+        <h1 class="govuk-heading-xl">The statements you've chosen do not match the information provided in this update</h1>
+
+  <div> 
+    {% set html %}
+    <p class="govuk-notification-banner__heading">
+      You have added or ceased a beneficial owner as part of this update statement.<br><br>
+      There are currently no registered beneficial owners.
+    </p>
+  {% endset %}
+  
+  {{ govukNotificationBanner({
+    html: html
+  }) }}
+
+
+  <div> 
+    <p>The statements that you have selected are:</p>
+  </div>
+  <div class="bo-statement govuk-!-margin-bottom-6">
+<p class"govuk-body">All beneficial owners have been identified and all required information has been provided.</p>
+
+</div>
+
+
+  {# <div> 
+    <p>However, you have selected:</p>
+  </div> #}
+
+  <div class="bo-statement govuk-!-margin-bottom-6">
+<p class"govuk-body">No beneficial owners have been identified.</p>
+
+</div>
+
+
+
+
+
+        {{ govukRadios({
+          idPrefix: "statementConceptBo",
+          name: "statementConceptBo",
+          fieldset: {
+            legend: {
+              text: "What do you want to do?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+                            value: "change-statement",
+              text: "I need to change my statements"
+            },
+            {
+ value: "change-info",
+              text: "I need to change the information I have provided in this update"
+
+    }
+          ]
+        }) }}
+
+
+
+          {{ govukButton({
+            text: "Continue"
+          }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
+
+          {# hint: {
+           text: "Select this option to tell us the correct statements."
+             
+         }
+
+
+          hint: {
+           text: "Select this option to tell us the correct details about those involved in the overseas entity."
+         } #}
