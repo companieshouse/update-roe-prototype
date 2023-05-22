@@ -1,0 +1,40 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Confirmation – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{#{% include "includes/no-back-link.html" %}
+{% include "includes/user-bar-confirmation.html" %}#}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">Update statement submitted</h1>
+        <div class="govuk-panel__body">
+          Your application reference number: <br><strong>392433-950223-102918</strong>
+              {% if (data['whoIsFiling'] === "else") %}
+              <!--register/who-is-making-filing.html -->
+              <a href="javascript:void(0)" class="application-copy govuk-button govuk-button--secondary govuk-!-padding-bottom-1 govuk-!-padding-top-1" onclick="CopyToClipboard('application-reference');return false;">Copy <span class="govuk-visually-hidden">pplication reference number</a>
+                {% endif %}
+        </div>
+      </div>
+
+      <p>
+        We have sent a confirmation email to <strong>email@example.com</strong> which contains your reference number.
+      </p>
+
+      <h2 class="govuk-heading-m">What happens next</h2>
+      <p>We'll email you to let you know if the update statement has been accepted or rejected. We'll process the application as soon as possible. However, because this is a new service, we're not yet able to tell you exactly how long this will take.</p>
+
+      <p><a href="https://www.gov.uk/service-manual/user-centred-design/resources/patterns/feedback-pages.html">What did you think of this service?</a> (takes 30 seconds)</p>
+
+    </div>
+  </div>
+
+{% endblock %}

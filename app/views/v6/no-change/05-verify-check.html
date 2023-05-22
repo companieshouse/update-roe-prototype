@@ -1,0 +1,50 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Before you start – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="../no-change/01-change-filter-start" method="post">
+        <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="verify-check-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                  Have the updates been verified by a UK-regulated agent?
+                </h1>
+              </legend>
+              <div id="verify-check-hint" class="govuk-hint">
+                The information must have been verified no more than 3 months before the date of this update statement.
+              </div>
+              <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="verify-check" name="verify-check" type="radio" value="yes">
+                  <label class="govuk-label govuk-radios__label" for="verify-check">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="verify-check-2" name="verify-check" type="radio" value="no">
+                  <label class="govuk-label govuk-radios__label" for="verify-check-2">
+                    No
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

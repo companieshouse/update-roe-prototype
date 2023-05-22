@@ -1,0 +1,103 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+
+Confirm this is the correct overseas entity
+ – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">Confirm this is the correct overseas entity</h1>
+    
+  
+<form>
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+          {
+            key: {
+              text: "Name"
+            },
+            value: {
+              text: "ASHCROFT LIMITED"
+            },
+            actions: {
+              items: [
+                {
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Overseas Entity ID"
+            },
+            value: {
+              text: "OE001485"
+            },
+            actions: {
+              items: [
+                {
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Formed in"
+            },
+            value: {
+              text: "VIRGIN ISLANDS, BRITISH"
+            },
+            actions: {
+              items: [
+                {
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Date registered on the Register of Overseas Entities"
+            },
+            value: {
+              html: "16 August 2022"
+            },
+            actions: {
+              items: [
+                {
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+    </form>
+    </div>
+  </div>
+
+  
+
+  {{ govukButton({
+    text: "Confirm and continue",
+    href: "authentication-code"
+  }) }}
+          
+  <p><a class="govuk-link" href="oe-id">
+    Choose a different overseas entity
+  </a></p>
+
+          
+    </form>
+    </div>
+  </div>
+
+
+{% endblock %}
