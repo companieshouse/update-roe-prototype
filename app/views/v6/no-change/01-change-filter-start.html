@@ -16,9 +16,9 @@ Will you be making any changes to the overseas entity? – {{ serviceName }} –
       <form class="form" action="../verification/completing-update" method="post">
         
   <span class="govuk-caption-l">{{ data['overseas-name'] }} - {{ data['overseas-id'] }}</span>
-        <h1 class="govuk-heading-xl">Do you need to make any updates to this overseas entity?</h1>
+        <h1 class="govuk-heading-xl">Do you need to make any changes to this overseas entity?</h1>
 
-      <p class="govuk-!-margin-bottom-5 govuk-!-margin-top-5">This includes any updates to information about the overseas entity, its beneficial owners or managing officers.</p>
+      <p class="govuk-!-margin-bottom-5 govuk-!-margin-top-5">This includes any changes to information about the overseas entity, its beneficial owners or managing officers.</p>
 
 
         {{ govukRadios({
@@ -34,14 +34,14 @@ Will you be making any changes to the overseas entity? – {{ serviceName }} –
           items: [
             {
               value: "yes",
-              text: "Yes, I need to make updates",
+              text: "Yes, I need to make changes",
       hint: {
-        text: "All updates must have been verified by a UK-regulated agent no more than 3 months before the date of this update statement."
+        text: "All changes must have been verified by a UK-regulated agent no more than 3 months before the date of this update statement."
       }
             },
             {
               value: "no",
-              text: "No, I do not need to make updates",
+              text: "No, I do not need to make changes",
       hint: {
         text: ""
       }
