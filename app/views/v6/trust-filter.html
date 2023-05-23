@@ -2,7 +2,7 @@
 
 {% block pageTitle %}
 
-Do any beneficial owners or managing officers have their personal information protected at Companies House?
+Are there any trusts involved in this overseas entity?
  – {{ serviceName }} – GOV.UK
 {% endblock %}
 
@@ -30,7 +30,7 @@ Do any beneficial owners or managing officers have their personal information pr
         }
       },
       hint: {
-      text: "Select 'yes' if there are any individuals or entities that are registrable beneficial owners due to being a trustee of a trust."
+      text: "This includes trusts that you've already told us about, and trusts that you need to tell us about as part of this update statement."
     },
       items: [
         {
@@ -43,6 +43,17 @@ Do any beneficial owners or managing officers have their personal information pr
         }
       ]
     }) }}
+
+    <details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      When you need to tell us about trusts
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    If there are any individuals or entities that are registrable beneficial owners of the overseas entity due to being a trustee of a trust, you need to give us information about that trust. 
+  </div>
+</details>
   
 {# <details class="govuk-details" data-module="govuk-details">
   <summary class="govuk-details__summary">
