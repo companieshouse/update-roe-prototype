@@ -1,10 +1,10 @@
 function postWhoIsFilingFilter (router) {
-    router.post( '/v4/oe-checks', function ( req, res ) {
+    router.post( '/v64/oe-checks', function ( req, res ) {
           const whoIsFiling = req.body;    
           if ( whoIsFiling["who-is-filing"] === "agent" ) {      
-              res.redirect( "/v4/agent-checks" );
+              res.redirect( "/v6/agent-checks" );
           } else {
-            res.redirect( "v4/oe-checks" );
+            res.redirect( "v6/oe-checks" );
           }
       } );   
   }

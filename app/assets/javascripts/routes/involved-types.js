@@ -1,24 +1,24 @@
 function postInvolvedFilter (router) {
-    router.post( '/v2/beneficial-owner/involved-types', function ( req, res ) {
+    router.post( '/v6/beneficial-owner/involved-types', function ( req, res ) {
       var boType = req.session.data['boType']
-      res.render( 'v2/beneficial-owner/involved-types', {
+      res.render( 'v6/beneficial-owner/involved-types', {
         boType: boType
       })
   })
-  router.post('/v2/beneficial-owner/involved-types', function (req, res) {
+  router.post('/v6/beneficial-owner/involved-types', function (req, res) {
     var boType = req.session.data['boTypes']
   
     switch (boType) {
         case "beneficialTypesIndividual":
-          res.redirect('/v2/beneficial-owner/bo-individual');
+          res.redirect('/v6/beneficial-owner/bo-individual');
           console.log('beneficialTypesIndividual');
           break;
         case 'beneficialTypesOther':
-          res.redirect('/v2/beneficial-owner/bo-ole');
+          res.redirect('/v6/beneficial-owner/bo-ole');
           console.log('beneficialTypesOther');
           break;
         case 'beneficialTypesGov':
-          res.redirect('/v2/beneficial-owner/bo-ole');
+          res.redirect('/v6/beneficial-owner/bo-ole');
           console.log('beneficialTypesGov');
           break;
     }

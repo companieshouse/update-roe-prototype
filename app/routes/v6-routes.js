@@ -28,7 +28,7 @@ postTrustFilter(router)
 
 
 // ******* WHO IS FILING FILTER *******
-router.post('/v4/verification/completing-update', function (req, res) {
+router.post('/v6/verification/completing-update', function (req, res) {
 
   // Make a variable and give it the value from 'who-is-filing'
   var whoIsFiling = req.session.data['who-is-filing']
@@ -36,10 +36,10 @@ router.post('/v4/verification/completing-update', function (req, res) {
   // Check whether the variable matches a condition
   if (whoIsFiling == "agent"){
     // Send user to next page
-    res.redirect('/v4/verification/agent-checks')
+    res.redirect('/v6/verification/agent-checks')
   } else {
     // Send user to ineligible page
-    res.redirect('/v4/verification/oe-checks')
+    res.redirect('/v6/verification/oe-checks')
   }
 
 })
@@ -51,14 +51,14 @@ router.post('/v4/verification/completing-update', function (req, res) {
 
 
 // ******* trust-details validation ********************************
-router.get('/v4/trusts/trust-details', function (req, res) {
+router.get('/v6/trusts/trust-details', function (req, res) {
   // Set URl
-  res.render('v4/trusts/trust-details', {
+  res.render('v6/trusts/trust-details', {
     currentUrl: req.originalUrl
   })
 })
 
-router.post('/v4/trusts/trust-details', function (req, res) {
+router.post('/v6/trusts/trust-details', function (req, res) {
   var trustNameError = false;
   var errors = [];
 
@@ -71,48 +71,48 @@ router.post('/v4/trusts/trust-details', function (req, res) {
   }
     
   if (errors.length != 0) {
-    res.render('v4/trusts/trust-details', {
+    res.render('v6/trusts/trust-details', {
       errorTrustName: trustNameError,
       errorList: errors
     })
   } else {
-    res.redirect('/v4/trusts/former-bo')}
+    res.redirect('/v6/trusts/former-bo')}
 })
 
 
 // ******* delete-trust-warning validation ********************************
-router.get('/v4/trusts/delete-trust-warning', function (req, res) {
+router.get('/v6/trusts/delete-trust-warning', function (req, res) {
   // Set URl
-  res.render('v4/trusts/delete-trust-warning', {
+  res.render('v6/trusts/delete-trust-warning', {
     currentUrl: req.originalUrl
   })
 })
 
-router.post('/v4/trusts/delete-trust-warning', function (req, res) {
+router.post('/v6/trusts/delete-trust-warning', function (req, res) {
   // Make a variable and give it the value from 'who-is-filing'
   var warningAnswer = req.session.data['delete-trust']
 
   // Check whether the variable matches a condition
   if (warningAnswer == "yes"){
     // Send user to next page
-    res.redirect('/v4/trusts/add-trust-deleted')
+    res.redirect('/v6/trusts/add-trust-deleted')
   } else {
     // Send user to ineligible page
-    res.redirect('/v4/trusts/trust-details')
+    res.redirect('/v6/trusts/trust-details')
   }
 
 })
 
 
 // ******* former-bo validation ********************************
-router.get('/v4/trusts/former-bo', function (req, res) {
+router.get('/v6/trusts/former-bo', function (req, res) {
   // Set URl
-  res.render('v4/trusts/former-bo', {
+  res.render('v6/trusts/former-bo', {
     currentUrl: req.originalUrl
   })
 })
 
-router.post('/v4/trusts/former-bo', function (req, res) {
+router.post('/v6/trusts/former-bo', function (req, res) {
   // Create empty array and set error variables to false
   var errors = []
   var dayHasError = false
@@ -152,7 +152,7 @@ router.post('/v4/trusts/former-bo', function (req, res) {
   // Check if ether filed not filled out
   if (errors.length != 0) {
     // Re-show page with error value as true so errors will show
-    res.render('v4/trusts/former-bo', {
+    res.render('v6/trusts/former-bo', {
       errorBoStartDay: dayHasError,
       errorBoStartMonth: monthHasError,
       errorBoStartYear: yearHasError,
@@ -160,60 +160,60 @@ router.post('/v4/trusts/former-bo', function (req, res) {
     })
   } else {
     // User inputted value so move to next page
-    res.redirect('/v4/trusts/individual')
+    res.redirect('/v6/trusts/individual')
   }
 
 })
 
 
 // ******* individual validation ********************************
-router.get('/v4/trusts/individual', function (req, res) {
+router.get('/v6/trusts/individual', function (req, res) {
   // Set URl
-  res.render('v4/trusts/individual', {
+  res.render('v6/trusts/individual', {
     currentUrl: req.originalUrl
   })
 })
 
-router.post('/v4/trusts/individual', function (req, res) {
-  res.redirect('/v4/trusts/individual-2')
+router.post('/v6/trusts/individual', function (req, res) {
+  res.redirect('/v6/trusts/individual-2')
 })
 
 
 // ******* individual-2 validation ********************************
-router.get('/v4/trusts/individual-2', function (req, res) {
+router.get('/v6/trusts/individual-2', function (req, res) {
   // Set URl
-  res.render('v4/trusts/individual-2', {
+  res.render('v6/trusts/individual-2', {
     currentUrl: req.originalUrl
   })
 })
 
-router.post('/v4/trusts/individual-2', function (req, res) {
-  res.redirect('/v4/trusts/legal-entity')
+router.post('/v6/trusts/individual-2', function (req, res) {
+  res.redirect('/v6/trusts/legal-entity')
 })
 
 
 // ******* legal-entity validation ********************************
-router.get('/v4/trusts/legal-entity', function (req, res) {
+router.get('/v6/trusts/legal-entity', function (req, res) {
   // Set URl
-  res.render('v4/trusts/legal-entity', {
+  res.render('v6/trusts/legal-entity', {
     currentUrl: req.originalUrl
   })
 })
 
-router.post('/v4/trusts/legal-entity', function (req, res) {
-  res.redirect('/v4/trusts/trust-involved-additions')
+router.post('/v6/trusts/legal-entity', function (req, res) {
+  res.redirect('/v6/trusts/trust-involved-additions')
 })
 
 
 // ******* oe-details validation ********************************
-router.get('/v4/oe-details', function (req, res) {
+router.get('/v6/oe-details', function (req, res) {
   // Set URl
-  res.render('v4/oe-details', {
+  res.render('v6/oe-details', {
     currentUrl: req.originalUrl
   })
 })
 
-router.post('/v4/oe-details', function (req, res) {
+router.post('/v6/oe-details', function (req, res) {
   // Create empty array
   var errors = []
 
@@ -226,26 +226,26 @@ router.post('/v4/oe-details', function (req, res) {
     })
 
     // Re-show page with error value as true so errors will show
-    res.render('v4/oe-details', {
+    res.render('v6/oe-details', {
       errorEmail: true,
       errorList: errors
     })
   } else {
     // User inputted value so move to next page
-    res.redirect('/v4/statements/bo-identified')
+    res.redirect('/v6/statements/bo-identified')
   }
 })
 
 
 // ******* bo-individual validation ********************************
-router.get('/v4/beneficial-owner/bo-individual', function (req, res) {
+router.get('/v6/beneficial-owner/bo-individual', function (req, res) {
   // Set URl
-  res.render('v4/beneficial-owner/bo-individual', {
+  res.render('v6/beneficial-owner/bo-individual', {
     currentUrl: req.originalUrl
   })
 })
 
-router.post('/v4/beneficial-owner/bo-individual', function (req, res) {
+router.post('/v6/beneficial-owner/bo-individual', function (req, res) {
   // Create variables
   var propertyError = false;
   var address1Error = false;
@@ -306,7 +306,7 @@ router.post('/v4/beneficial-owner/bo-individual', function (req, res) {
     
   if (errors.length != 0) {
   // Re-show page with error value as true so errors will show
-    res.render('v4/beneficial-owner/bo-individual', {
+    res.render('v6/beneficial-owner/bo-individual', {
       errorBoCeased: boCeasedError,
       errorProperty: propertyError,
       errorAddress1: address1Error,
@@ -316,7 +316,7 @@ router.post('/v4/beneficial-owner/bo-individual', function (req, res) {
     })
   } else {
     // User inputted value so move to next page
-    res.redirect('/v4/beneficial-owner/mo')
+    res.redirect('/v6/beneficial-owner/mo')
   }
 })
 
@@ -326,13 +326,13 @@ router.post('/v4/beneficial-owner/bo-individual', function (req, res) {
 
 
 // ******* bo gov validation ********************************
-router.get('/v4/beneficial-owner/bo-gov', function (req, res) {
+router.get('/v6/beneficial-owner/bo-gov', function (req, res) {
   // Set URl
-  res.render('v4/beneficial-owner/bo-gov', {
+  res.render('v6/beneficial-owner/bo-gov', {
     currentUrl: req.originalUrl
   })
 })
-router.post('/v4/beneficial-owner/bo-gov', function (req, res) {
+router.post('/v6/beneficial-owner/bo-gov', function (req, res) {
   // Create variables
   var boCeasedError = false;
 
@@ -346,7 +346,7 @@ router.post('/v4/beneficial-owner/bo-gov', function (req, res) {
     })
   } else {
     // User inputted value so move to next page
-    res.redirect('/v4/beneficial-owner/mo')
+    res.redirect('/v6/beneficial-owner/mo')
   }
 })
 
@@ -356,14 +356,14 @@ router.post('/v4/beneficial-owner/bo-gov', function (req, res) {
 
 
 // ******* mo-individual validation ********************************
-router.get('/v4/beneficial-owner/mo', function (req, res) {
+router.get('/v6/beneficial-owner/mo', function (req, res) {
   // Set URl
-  res.render('v4/beneficial-owner/mo', {
+  res.render('v6/beneficial-owner/mo', {
     currentUrl: req.originalUrl
   })
 })
 
-router.post('/v4/beneficial-owner/mo', function (req, res) {
+router.post('/v6/beneficial-owner/mo', function (req, res) {
   // Create variables
   var propertyError = false;
   var address1Error = false;
@@ -424,7 +424,7 @@ router.post('/v4/beneficial-owner/mo', function (req, res) {
     
   if (errors.length != 0) {
   // Re-show page with error value as true so errors will show
-    res.render('v4/beneficial-owner/mo', {
+    res.render('v6/beneficial-owner/mo', {
       errorMoCeased: moCeasedError,
       errorProperty: propertyError,
       errorAddress1: address1Error,
@@ -434,7 +434,7 @@ router.post('/v4/beneficial-owner/mo', function (req, res) {
     })
   } else {
     // User inputted value so move to next page
-    res.redirect('/v4/beneficial-owner/involved-types')
+    res.redirect('/v6/beneficial-owner/involved-types')
   }
 })
 
@@ -558,7 +558,7 @@ router.get('/v6/verification/agent-checks', function(req, res) {
 
 
 
-// router.post('/v4/beneficial-owner/bo-individual', function (req, res) {
+// router.post('/v6/beneficial-owner/bo-individual', function (req, res) {
 //   // Create empty array
 //   var errors = []
 
@@ -571,13 +571,13 @@ router.get('/v6/verification/agent-checks', function(req, res) {
 //     })
 
 //     // Re-show page with error value as true so errors will show
-//     res.render('v4/beneficial-owner/bo-individual', {
+//     res.render('v6/beneficial-owner/bo-individual', {
 //       errorHomeAddressLine1: true,
 //       errorList: errors
 //     })
 //   } else {
 //     // User inputted value so move to next page
-//     res.redirect('/v4/beneficial-owner/mo')
+//     res.redirect('/v6/beneficial-owner/mo')
 //   }
 // })
 

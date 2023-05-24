@@ -1,10 +1,10 @@
 function postStatementFilter (router) {
-    router.post( '/v2/check-your-answers', function ( req, res ) {
+    router.post( '/v6/check-your-answers', function ( req, res ) {
           const boStatement = req.body;    
           if ( boStatement ["boStatement"] === "no" ) {      
-              res.redirect( "/v2/beneficial-owner/involved-types-test" );
+              res.redirect( "/v6/beneficial-owner/involved-types-test" );
           } else {
-            res.redirect( "/v2/check-your-answers" );
+            res.redirect( "/v6/check-your-answers" );
           }
       } );   
   }
