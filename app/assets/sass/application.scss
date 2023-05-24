@@ -25,6 +25,28 @@ ul#navigation {
     }
   }
 
+
+  
+  // Styling email notification box to mirror GOV Whitehall styles
+
+.email-notification {
+  border: 1px solid #b1b4b6;
+  padding: 0.8em 1em 0.8em 1.8em;
+  display: inline-block;
+  background-image: url("/public/images/bell-icon.ico");
+  background-repeat: no-repeat;
+  background-size: 8%;
+  background-position: 3% 50%;
+}
+
+.print-notification {
+  background-image: url("/public/images/print-icon.png");
+  background-size: 12%;
+  background-position: 5% 50%;
+
+}
+
+
   //Styles for interrupt card
 
 .interrupt-card {
