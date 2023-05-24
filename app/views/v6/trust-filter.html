@@ -45,15 +45,15 @@ Are there any trusts involved in this overseas entity?
     }) }}
 
     <details class="govuk-details" data-module="govuk-details">
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-      When you need to tell us about trusts
-    </span>
-  </summary>
-  <div class="govuk-details__text">
-    If there are any individuals or entities that are registrable beneficial owners of the overseas entity due to being a trustee of a trust, you need to give us information about that trust. 
-  </div>
-</details>
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          When you need to tell us about trusts
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        If there are any individuals or entities that are registrable beneficial owners of the overseas entity due to being a trustee of a trust, you need to give us information about that trust. 
+      </div>
+    </details>
   
 {# <details class="govuk-details" data-module="govuk-details">
   <summary class="govuk-details__summary">
@@ -68,15 +68,15 @@ Are there any trusts involved in this overseas entity?
     <li>paying a £100 fee</li>
     </ul>
 
-    <p class="govuk-body">You should only select ‘yes’ if any of the beneficial owners or managing officers have already done this.</p> #}
+    <p class="govuk-body">You should only select ‘yes’ if any of the beneficial owners or managing officers have already done this.</p> 
 
   </div>
-</details>
+</details> #}
+{{ govukInsetText({
+  html: '<h2 class="govuk-heading-m">What information we’ll show on the public register</h2>
+        <p>We will not show any of the information you provide in this section on the public Register of Overseas Entities.</p>'
+}) }}
   
-  {{ govukInsetText({
-          html: '<h2 class="govuk-heading-m">What information we’ll show on the public register</h2>
-                <p>We will not show any of the information you provide in this section on the public Register of Overseas Entities.</p>'
-        }) }}
 
           {{ govukButton({
             text: "Continue"
