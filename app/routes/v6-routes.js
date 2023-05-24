@@ -1,12 +1,15 @@
 
 const govukPrototypeKit = require('govuk-prototype-kit');
 const { postProtectedFilter } = require('../assets/javascripts/routes/protected-filter');
-const { postSavedFiling } = require('../assets/javascripts/routes/saved-filing');
+
 const { postInvolvedFilter } = require('../assets/javascripts/routes/involved-types');
 const { postIdentifyFilter } = require('../assets/javascripts/routes/identify');
 const { postStatementFilter } = require('../assets/javascripts/routes/statement');
 const { postSignOut } = require('../assets/javascripts/routes/sign-out');
 const { postTrustFilter } = require('../assets/javascripts/routes/trust-filter');
+
+
+// const { postSavedFiling } = require('../assets/javascripts/routes/saved-filing');
 
 
 
@@ -18,12 +21,30 @@ router.post('/auth-filter', function(req, res) {
 })
 
 postProtectedFilter(router)
-postSavedFiling(router)
+
 postInvolvedFilter(router)
 postIdentifyFilter(router)
 postStatementFilter(router)
 postSignOut(router)
 postTrustFilter(router)
+
+
+// postSavedFiling(router)
+
+
+
+
+
+
+// ******* SAVED FILING FILTER *******
+router.get('/v6/protected-filter', function(req, res) {
+  if (req.session.data['verify-check'] === 'no') {
+    res.render('v6/no-change/06-not-verified-instructions')
+  } else {
+    res.render('v6/protected-filter')
+  }
+})
+
 
 
 
@@ -437,6 +458,10 @@ router.post('/v6/beneficial-owner/mo', function (req, res) {
     res.redirect('/v6/beneficial-owner/involved-types')
   }
 })
+
+
+
+
 
 // no change routes
 
