@@ -1,7 +1,6 @@
 
 const govukPrototypeKit = require('govuk-prototype-kit');
 const { postProtectedFilter } = require('../assets/javascripts/routes/protected-filter');
-
 const { postInvolvedFilter } = require('../assets/javascripts/routes/involved-types');
 const { postIdentifyFilter } = require('../assets/javascripts/routes/identify');
 const { postStatementFilter } = require('../assets/javascripts/routes/statement');
@@ -21,7 +20,6 @@ router.post('/auth-filter', function(req, res) {
 })
 
 postProtectedFilter(router)
-
 postInvolvedFilter(router)
 postIdentifyFilter(router)
 postStatementFilter(router)
@@ -39,7 +37,7 @@ postTrustFilter(router)
 // ******* SAVED FILING FILTER *******
 router.get('/v6/protected-filter', function(req, res) {
   if (req.session.data['verify-check'] === 'no') {
-    res.render('v6/no-change/06-not-verified-instructions')
+    res.render('v6/06-not-verified-instructions')
   } else {
     res.render('v6/protected-filter')
   }
@@ -48,22 +46,36 @@ router.get('/v6/protected-filter', function(req, res) {
 
 
 
-// ******* WHO IS FILING FILTER *******
-router.post('/v6/verification/completing-update', function (req, res) {
+// // ******* WHO IS FILING FILTER *******
+// router.post('/v6/completing-update', function (req, res) {
 
-  // Make a variable and give it the value from 'who-is-filing'
-  var whoIsFiling = req.session.data['who-is-filing']
+//   // Make a variable and give it the value from 'who-is-filing'
+//   var whoIsFiling = req.session.data['who-is-filing']
 
-  // Check whether the variable matches a condition
-  if (whoIsFiling == "agent"){
-    // Send user to next page
-    res.redirect('/v6/verification/agent-checks')
+//   // Check whether the variable matches a condition
+//   if (whoIsFiling == "agent"){
+//     // Send user to next page
+//     res.redirect('/v6/agent-checks')
+//   } else {
+//     // Send user to ineligible page
+//     res.redirect('/v6/oe-checks')
+//   }
+
+// })
+
+
+
+// Who is completing this update?
+
+router.get('/v6/oe-checks', function(req, res) {
+  if (req.session.data['who-is-filing'] === 'agent') {
+    res.render('v6/agent-checks')
   } else {
-    // Send user to ineligible page
-    res.redirect('/v6/verification/oe-checks')
+    res.render('v6/oe-checks')
   }
-
 })
+
+
 
 
 
@@ -110,7 +122,7 @@ router.get('/v6/trusts/delete-trust-warning', function (req, res) {
 })
 
 router.post('/v6/trusts/delete-trust-warning', function (req, res) {
-  // Make a variable and give it the value from 'who-is-filing'
+  // Make a variable and give it the value from 'x'
   var warningAnswer = req.session.data['delete-trust']
 
   // Check whether the variable matches a condition
@@ -463,65 +475,68 @@ router.post('/v6/beneficial-owner/mo', function (req, res) {
 
 
 
+
+
+
+
+
+
+
+
+
 // no change routes
 
-router.get('/v6/verification/completing-update', function(req, res) {
-  if (req.session.data['no-change'] === 'no') {
-    res.render('v6/no-change/04-review-details')
+router.get('/v6/completing-update', function(req, res) {
+  if (req.session.data['make-changes'] === 'no') {
+    res.render('v6/04-review-details')
   } else {
-    res.render('v6/verification/completing-update')
+    res.render('v6/completing-update')
   }
 })
 
-router.get('/v6/no-change/05-verify-check', function(req, res) {
+router.get('/v6/05-verify-check', function(req, res) {
   if (req.session.data['need-to-change'] === 'yes') {
-    res.render('v6/no-change/02-bo-identified')
+    res.render('v6/02-bo-identified')
   } else {
-    res.render('v6/no-change/05-verify-check')
+    res.render('v6/05-verify-check')
   }
 })
 
 
-router.get('/v6/no-change/01-change-filter-start', function(req, res) {
+router.get('/v6/01-change-filter-start', function(req, res) {
   if (req.session.data['verify-check'] === 'no') {
-    res.render('v6/no-change/06-not-verified-instructions')
+    res.render('v6/06-not-verified-instructions')
   } else {
-    res.render('v6/no-change/01-change-filter-start')
+    res.render('v6/01-change-filter-start')
   }
 })
 
-/*router.get('/v6/verification/completing-update', function (req, res) {
-  if (req.session.data['no-change'] === 'no') {
-    res.render('v6/no-change/04-review-details')
-  } else {
-    res.render('v6/verification/completing-update')
-  }
-})
+/*
 
 router.get('/v6/submit-pay/how-to-pay', function(req, res) {
   if (req.session.data['need-to-change'] === 'no') {
-    res.render('v6/no-change/02-bo-identified')
+    res.render('v6/02-bo-identified')
   } else {
     res.render('v6/submit-pay/how-to-pay')
   }
 })
 
-router.get('/v6/no-change/xx-completing-update', function(req, res) {
+router.get('/v6/xx-completing-update', function(req, res) {
   if (req.session.data['verify-check'] === 'no') {
-    res.render('v6/no-change/06-not-verified-instructions')
+    res.render('v6/06-not-verified-instructions')
   } else {
-    res.render('v6/no-change/xx-completing-update')
+    res.render('v6/xx-completing-update')
   }
 })*/
 
 
 // verification route
 
-router.get('/v6/verification/agent-checks', function(req, res) {
+router.get('/v6/agent-checks', function(req, res) {
   if (req.session.data['whoIsFiling'] === 'else') {
-    res.render('v6/verification/oe-checks')
+    res.render('v6/oe-checks')
   } else {
-    res.render('v6/verification/agent-checks')
+    res.render('v6/agent-checks')
   }
 })
 
@@ -530,7 +545,7 @@ router.get('/v6/verification/agent-checks', function(req, res) {
 
 router.get('/v6/statements-concept/bo-identified', function(req, res) {
   if (req.session.data['statementConceptBo'] === 'change-info') {
-    res.render('v6/no-change/04-review-details')
+    res.render('v6/04-review-details')
   } else {
     res.render('v6/statements-concept/bo-identified')
   }
@@ -551,7 +566,7 @@ router.get('/v6/statements-concept/bo-new-ceased', function(req, res) {
 
 router.get('/v6/statements-concept/ur-bo-identified', function(req, res) {
   if (req.session.data['statementConceptBoUr'] === 'change-info') {
-    res.render('v6/no-change/04-review-details')
+    res.render('v6/04-review-details')
   } else {
     res.render('v6/statements-concept/ur-bo-identified')
   }
@@ -562,7 +577,7 @@ router.get('/v6/statements-concept/ur-bo-identified', function(req, res) {
 
 router.get('/v6/statements-concept/ur-bo-identified', function(req, res) {
   if (req.session.data['statementConceptBoUr'] === 'change-info') {
-    res.render('v6/no-change/04-review-details')
+    res.render('v6/04-review-details')
   } else {
     res.render('v6/statements-concept/ur-bo-identified')
   }
@@ -570,11 +585,11 @@ router.get('/v6/statements-concept/ur-bo-identified', function(req, res) {
 
 // test verification route
 
-router.get('/v6/verification/agent-checks', function(req, res) {
+router.get('/v6/agent-checks', function(req, res) {
   if (req.session.data['whoIsFilingUr'] === 'else') {
-    res.render('v6/verification/oe-checks')
+    res.render('v6/oe-checks')
   } else {
-    res.render('v6/verification/agent-checks')
+    res.render('v6/agent-checks')
   }
 })
 

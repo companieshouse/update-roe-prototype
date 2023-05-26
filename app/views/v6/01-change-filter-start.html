@@ -13,7 +13,7 @@ Will you be making any changes to the overseas entity? – {{ serviceName }} –
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="../verification/completing-update" method="post">
+      <form class="form" action="completing-update" method="post">
         
   <span class="govuk-caption-l">{{ data['overseas-name'] }} - {{ data['overseas-id'] }}</span>
         <h1 class="govuk-heading-xl">Do you need to make any changes to this overseas entity?</h1>
@@ -22,8 +22,8 @@ Will you be making any changes to the overseas entity? – {{ serviceName }} –
 
 
         {{ govukRadios({
-          idPrefix: "no-change",
-          name: "no-change",
+          idPrefix: "make-changes",
+          name: "make-changes",
           fieldset: {
             legend: {
               text: "Have you made any changes to the overseas entity?",
@@ -49,31 +49,6 @@ Will you be making any changes to the overseas entity? – {{ serviceName }} –
 
           ]
         }) }}
-{# 
-        {{ govukCheckboxes({
-  name: "waste",
-  fieldset: {
-    legend: {
-      text: "Declaration for changes",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--m"
-    }
-  },
-  items: [
-    {
-      value: "change-declaration",
-      text: "I understand that this filing may be rejected and have to pay the £X filing fee again if I provide information that contradicts the above statement."
-    }
-  ]
-}) }} #}
-
-
-{# ,
-          errorMessage: {
-                  text: "Select if any beneficial owners have been identified"
-                }
-                 #}
-
 
 
 
