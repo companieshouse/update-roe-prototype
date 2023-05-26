@@ -6,9 +6,7 @@ const { postIdentifyFilter } = require('../assets/javascripts/routes/identify');
 const { postStatementFilter } = require('../assets/javascripts/routes/statement');
 const { postSignOut } = require('../assets/javascripts/routes/sign-out');
 const { postTrustFilter } = require('../assets/javascripts/routes/trust-filter');
-
-
-// const { postSavedFiling } = require('../assets/javascripts/routes/saved-filing');
+const { postSavedFiling } = require('../assets/javascripts/routes/saved-filing');
 
 
 
@@ -25,23 +23,21 @@ postIdentifyFilter(router)
 postStatementFilter(router)
 postSignOut(router)
 postTrustFilter(router)
-
-
-// postSavedFiling(router)
+postSavedFiling(router)
 
 
 
 
 
 
-// ******* SAVED FILING FILTER *******
-router.get('/v6/protected-filter', function(req, res) {
-  if (req.session.data['verify-check'] === 'no') {
-    res.render('v6/06-not-verified-instructions')
-  } else {
-    res.render('v6/protected-filter')
-  }
-})
+// // ******* SAVED FILING FILTER *******
+// router.get('/v6/protected-filter', function(req, res) {
+//   if (req.session.data['verify-check'] === 'no') {
+//     res.render('v6/06-not-verified-instructions')
+//   } else {
+//     res.render('v6/protected-filter')
+//   }
+// })
 
 
 
@@ -488,7 +484,7 @@ router.post('/v6/beneficial-owner/mo', function (req, res) {
 
 router.get('/v6/completing-update', function(req, res) {
   if (req.session.data['make-changes'] === 'no') {
-    res.render('v6/04-review-details')
+    res.render('v6/02-bo-identified')
   } else {
     res.render('v6/completing-update')
   }
