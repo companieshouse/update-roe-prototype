@@ -473,7 +473,15 @@ router.post('/v6/beneficial-owner/mo', function (req, res) {
 
 
 
+// ceased filter
 
+router.get('/v6/submit-pay/check-your-answers', function(req, res) {
+  if (req.session.data['bo-update-ceased'] === 'yes') {
+    res.render('v6/statements-concept/xx-change-statements-generic')
+  } else {
+    res.render('v6/submit-pay/check-your-answers')
+  }
+})
 
 
 
@@ -560,24 +568,24 @@ router.get('/v6/statements-concept/bo-new-ceased', function(req, res) {
 
 // test statements routes
 
-router.get('/v6/statements-concept/ur-bo-identified', function(req, res) {
+router.get('/v6/02-bo-identified', function(req, res) {
   if (req.session.data['statementConceptBoUr'] === 'change-info') {
-    res.render('v6/04-review-details')
+    res.render('v6/01-change-filter-start')
   } else {
-    res.render('v6/statements-concept/ur-bo-identified')
+    res.render('v6/02-bo-identified')
   }
 })
 
 
-// test statements routes
+// // test statements routes
 
-router.get('/v6/statements-concept/ur-bo-identified', function(req, res) {
-  if (req.session.data['statementConceptBoUr'] === 'change-info') {
-    res.render('v6/04-review-details')
-  } else {
-    res.render('v6/statements-concept/ur-bo-identified')
-  }
-})
+// router.get('/v6/statements-concept/ur-bo-identified', function(req, res) {
+//   if (req.session.data['statementConceptBoUr'] === 'change-info') {
+//     res.render('v6/04-review-details')
+//   } else {
+//     res.render('v6/statements-concept/ur-bo-identified')
+//   }
+// })
 
 // test verification route
 
