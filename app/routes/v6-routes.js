@@ -484,7 +484,7 @@ router.post('/v6/beneficial-owner/mo', function (req, res) {
 
 router.get('/v6/completing-update', function(req, res) {
   if (req.session.data['make-changes'] === 'no') {
-    res.render('v6/04-review-details')
+    res.render('v6/02b-bo-identified-nochange')
   } else {
     res.render('v6/completing-update')
   }
@@ -492,7 +492,7 @@ router.get('/v6/completing-update', function(req, res) {
 
 router.get('/v6/05-verify-check', function(req, res) {
   if (req.session.data['need-to-change'] === 'yes') {
-    res.render('v6/02-bo-identified')
+    res.render('v6/submit-pay/test-payment')
   } else {
     res.render('v6/05-verify-check')
   }
