@@ -247,7 +247,7 @@ router.post('/v6/oe-details', function (req, res) {
   var errors = []
 
   // Check if user has filled out a value
-  if (req.session.data['entity-email'] === '') {
+  if (req.session.data['entity-email'] == '') {
     // No value so add error to array
     errors.push({
       text: 'Enter an email address',
@@ -256,12 +256,12 @@ router.post('/v6/oe-details', function (req, res) {
 
     // Re-show page with error value as true so errors will show
     res.render('v6/oe-details', {
-      errorEmail: true,
+      errorEmail: true, 
       errorList: errors
     })
   } else {
     // User inputted value so move to next page
-    res.redirect('/v6/statements/bo-identified')
+    res.redirect('/v6/beneficial-owner/bo-mo-review')
   }
 })
 
@@ -547,13 +547,13 @@ router.get('/v6/agent-checks', function(req, res) {
 
 // new statements routes
 
-router.get('/v6/statements-concept/bo-identified', function(req, res) {
-  if (req.session.data['statementConceptBo'] === 'change-info') {
-    res.render('v6/04-review-details')
-  } else {
-    res.render('v6/statements-concept/bo-identified')
-  }
-})
+// router.get('/v6/statements-concept/bo-identified', function(req, res) {
+//   if (req.session.data['statementConceptBo'] === 'change-info') {
+//     res.render('v6/04-review-details')
+//   } else {
+//     res.render('v6/statements-concept/bo-identified')
+//   }
+// })
 
 
 
@@ -570,22 +570,13 @@ router.get('/v6/statements-concept/bo-new-ceased', function(req, res) {
 
 router.get('/v6/02-bo-identified', function(req, res) {
   if (req.session.data['statementConceptBoUr'] === 'change-info') {
-    res.render('v6/01-change-filter-start')
+    res.render('v6/beneficial-owner/involved-types')
   } else {
     res.render('v6/02-bo-identified')
   }
 })
 
 
-// // test statements routes
-
-// router.get('/v6/statements-concept/ur-bo-identified', function(req, res) {
-//   if (req.session.data['statementConceptBoUr'] === 'change-info') {
-//     res.render('v6/04-review-details')
-//   } else {
-//     res.render('v6/statements-concept/ur-bo-identified')
-//   }
-// })
 
 // test verification route
 

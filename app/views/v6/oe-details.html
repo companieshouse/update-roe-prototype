@@ -15,7 +15,7 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="{{currentUrl}}" method="post">
+      <form action="beneficial-owner/bo-mo-review" method="post">
 
         <!-- Check for errors -->
         {% if errorEmail == true %}
@@ -470,7 +470,6 @@
           },
           id: "entity-email",
           name: "entity-email",
-          value: entityEmail,
           errorMessage: {
                   text: "Enter an email address"
                 }
@@ -486,8 +485,7 @@
            text: "We'll use this to send important information. If you request an authentication code in the future, we'll send it to this email address."
          },
           id: "entity-email",
-          name: "entity-email",
-          value: entityEmail
+          name: "entity-email"
         }) }}
         {% endif %}
 
@@ -783,8 +781,7 @@
         }) }}
 
         {{ govukButton({
-          text: "Save and continue",
-          href: "../v6/beneficial-owner/bo-mo-review"
+          text: "Save and continue"
         }) }}
 
       </form>
