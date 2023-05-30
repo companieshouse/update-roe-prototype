@@ -27,7 +27,7 @@
         }) }}
         {% endif %}
 
-        <span class="govuk-caption-l">Dzaniel Ashcroft - born August 1972</span>
+        <span class="govuk-caption-l">Daniel Ashcroft - born August 1972</span>
         <h1 class="govuk-heading-xl govuk-!-margin-bottom-5">Review the individual beneficial owner</h1>
         <!--<p class="govuk-!-margin-bottom-5 govuk-!-margin-top-5">You can add more later.</p>-->
 
@@ -55,7 +55,7 @@
           id: "bo-individual-first-name",
           name: "bo-individual-first-name",
           value: individualFirstName,
-          value: "Dzaniel"
+          value: "Daniel"
         }) }}
 
 
@@ -280,6 +280,9 @@
         {% endcall %}
 
 
+
+
+
         <!-- html for 'no' answer to following radio -->
         {% set serviceAddressHtml %}
           <br>
@@ -302,7 +305,8 @@
               text: "For example, 'Saron House', '116' or 'Apartment 37a'"
             },
               id: "service-address-property-name-number",
-              name: "service-address-property-name-number"
+              name: "service-address-property-name-number",
+              value: "1st Floor Lockside House"
             }) }}
 
 
@@ -314,7 +318,8 @@
               classes: "govuk-!-width-two-thirds",
               id: "service-address-line-1",
               name: "service-address-line-1",
-              autocomplete: "address-line1"
+              autocomplete: "address-line1",
+              value: "Castle Street"
             }) }}
     
 
@@ -337,7 +342,8 @@
               },
               classes: "govuk-!-width-two-thirds",
               id: "service-address-city-town",
-              name: "service-address-city-town"
+              name: "service-address-city-town",
+              value: "Tortola"
             }) }}
 
 
@@ -351,13 +357,29 @@
               name: "service-address-state"
             }) }}
 
-
+{# 
             <!-- country fieldset -->
             <div class="govuk-form-group">
               <label for="autocomplete-default" class="govuk-label">Country</label>
               <p class="govuk-hint">Start typing a country, then choose from the list</p>
               <div id="country-2" class="autocomplete-wrapper"></div>
-            </div>
+            </div> #}
+
+
+            <!-- country fieldset -->
+            {{ govukInput({
+              label: {
+                text: "Country"
+              },
+              hint: {
+              text: "Start typing a country, then choose from the list"
+            },
+              classes: "govuk-!-width-two-thirds",
+              id: "service-address-state",
+              name: "service-address-state",
+              value: "British Virgin Islands"
+            }) }}
+
 
 
             <!-- postcode fieldset -->
@@ -397,13 +419,13 @@
               hint: {
                 text: "The beneficial owner’s home address would be shown on the public register as the correspondence address."
               },
-              checked: checked ("same-address", "yes"),
-              checked: true
+              checked: checked ("same-address", "yes")
             },
             {
               value: "no",
               text: "No",
               checked: checked("same-address", "no"),
+              checked: true,
               conditional: {
         html: serviceAddressHtml
         }

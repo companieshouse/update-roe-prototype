@@ -385,7 +385,7 @@
             First name
           </dt>
           <dd class="govuk-summary-list__value">
-            <p>Dzaniel</p>
+            <p>Daniel</p>
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -1411,6 +1411,9 @@
                 <label class="govuk-label govuk-radios__label" for="need-to-change">
                   Yes, the information is correct
                 </label>
+                <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+          Select this to confirm and go to payment.
+        </div>
               </div>
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="need-to-change-2" name="need-to-change" type="radio" value="no">
@@ -1421,10 +1424,22 @@
             </div>
           </fieldset>
         </div>
+
+
         <button class="govuk-button" data-module="govuk-button">
-            Continue
+            Save and continue
           </button>
-      </form>
+            &nbsp; &nbsp;
+
+
+                {{ govukButton({
+          text: "Print this page",
+          classes: "govuk-button--secondary",
+          href: "javascript: window.print()"
+        }) }} <!--  to developers, this is a JS-reliant button just for prototyping-->
+        <!-- the production site would need a non-JS solution OR the you could use JS to hide the button, as in people without JS would not see a button, rather than see a broken button -->
+      </div>
+  </form>
 
 {#
       <p class="govuk-body govuk-!-font-size-14 govuk-link--no-visited-state"><a href="/register/confirmation">UR shortcut: Jump to confirmation screen</a></p>
