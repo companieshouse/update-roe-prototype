@@ -1,0 +1,46 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  You are about to review statements for the overseas entity – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="bo-identified" method="post">
+
+  <span class="govuk-caption-l">{{ data['overseas-name'] }} - {{ data['overseas-id'] }}</span>
+      <h1 class="govuk-heading-xl">
+        You are about to review statements for the overseas entity
+      </h1>
+
+
+    <p class="govuk-body">
+      We'll show you the information we currently hold about the overseas entity's beneficial owners and managing officers.
+    </p>
+
+      <p class="govuk-body">You'll need to:</p>
+      <ol class="govuk-list govuk-list--bullet">
+        <li>Lorem ipsum</li>
+        <li>Lorem ipsum</li>
+      </ol>
+
+
+
+{{ govukButton({
+  text: "Save and continue",
+  classes: "govuk-!-margin-top-4"
+}) }}
+</form>
+
+          
+    </div>
+  </div>
+
+{% endblock %}

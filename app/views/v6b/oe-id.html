@@ -1,0 +1,67 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+
+What is the Overseas Entity ID?
+ – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+
+<form action="" method="get">
+
+
+{{ govukInput({
+  id: "overseas-id",
+  name: "cost",
+  label: {
+    text: "What is the Overseas Entity ID?",
+    classes: "govuk-label--xl",
+    isPageHeading: true
+  },
+
+  hint: {
+    text: "An Overseas Entity ID starts with OE and is followed by 6 numbers."
+  },
+  classes: "govuk-input govuk-!-width-two-thirds",
+  spellcheck: false,
+  id: "overseas-id",
+  name: "overseas-id"
+}) }}
+
+
+<!-- unsure if needed for above component?
+  ,
+  value: data["overseas-id"] -->
+
+{{ govukDetails({
+  summaryText: "How do I find the Overseas Entity ID?",
+  html: 'This is given to an overseas entity when it registers with Companies House.
+
+  You can find it:
+  <ul>
+    <li>by searching for the entity on the <a href="#">Companies House register (opens in a new tab)</a></li>
+    <li>in the Notice of Registration email that was sent to the overseas entity</li>
+    <li>in the acceptance email that was sent to the person who registered the overseas entity</li>
+  </ul>'
+}) }}
+
+
+      {{ govukButton({
+        text: "Continue",
+        href: "./oe-confirm"
+      }) }}
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Other legal entity – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+<span class="govuk-caption-xl">Beneficial owner</span>
+      <h1 class="govuk-heading-xl">Update missing private data</h1>
+
+      <form action="04-review-details_updated" method="post">
+        <div class="govuk-form-group">
+            <h1 class="govuk-label-wrapper">
+              <label class="govuk-label govuk-label--m" for="bo-legal-entity-email">
+                Email address
+              </label>
+            </h1>
+            <input class="govuk-input" id="bo-legal-entity-email" name="bo-legal-entity-email" type="text">
+          </div>
+          <button class="govuk-button" data-module="govuk-button">
+            Save and continue
+          </button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
