@@ -516,13 +516,7 @@ router.get('/v6/01-change-filter-start', function(req, res) {
 
 /*
 
-router.get('/v6/submit-pay/how-to-pay', function(req, res) {
-  if (req.session.data['need-to-change'] === 'no') {
-    res.render('v6/02-bo-identified')
-  } else {
-    res.render('v6/submit-pay/how-to-pay')
-  }
-})
+
 
 router.get('/v6/xx-completing-update', function(req, res) {
   if (req.session.data['verify-check'] === 'no') {
