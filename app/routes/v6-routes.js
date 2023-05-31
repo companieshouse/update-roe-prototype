@@ -499,7 +499,7 @@ router.get('/v6/completing-update', function(req, res) {
 
 router.get('/v6/05-verify-check', function(req, res) {
   if (req.session.data['need-to-change'] === 'yes') {
-    res.render('v6/submit-pay/test-payment')
+    res.render('v6/test-payment') 
   } else {
     res.render('v6/05-verify-check')
   }
