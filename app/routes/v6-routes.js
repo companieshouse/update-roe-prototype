@@ -78,7 +78,6 @@ router.get('/v6/oe-checks', function(req, res) {
 
 
 
-
 // ******* trust-details validation ********************************
 router.get('/v6/trusts/trust-details', function (req, res) {
   // Set URl
