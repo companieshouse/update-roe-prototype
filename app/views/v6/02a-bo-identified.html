@@ -19,19 +19,10 @@
         <h1 class="govuk-heading-xl">Has the overseas entity identified any registrable beneficial owners?</h1>
 
 
-        {% if (data['soldLand'] === "some") or (data['soldLand'] === "all") %}
-        <!--Only show the inset text if the user has answered Some or All to /register/sold-land-filter-->
-        <!--Note, current intention is not to route users here is they select All - code added just in case-->
-
-        <div class="govuk-inset-text">
-<h3 class="govuk-heading-s">Disposals of property or land</h3>
-          If an overseas entity has made a disposal, you must also tell us about any individuals or entities that were registrable beneficial owners <strong>immediately before</strong> the disposal.
-          This also includes managing officers, if relevant.
-        </div>
 
 
 
-{% endif %}
+
 
 {% if errorStatements == true %}
         {{ govukRadios({
@@ -79,14 +70,14 @@
           items: [
             {
               value: "allIdentifiedAllSupplied",
-              text: "All beneficial owners have been identified and I can provide all the required information",
+              text: "All beneficial owners have been identified and I have provided all the required information",
               checked: checked("statements", "allIdentifiedAllSupplied")
             },
             {
               value: "someIdentifiedAllSupplied",
               text: "Some beneficial owners have been identified and I have provided all required information",
               hint: {
-                text: "You'll also need to provide information about each managing officer."
+                text: "You have also provided information about each managing officer."
               },
               checked: checked("statements", "someIdentifiedAllSupplied")
             },
@@ -94,7 +85,7 @@
               value: "noneIdentified",
               text: "No beneficial owners have been identified",
               hint: {
-                text: "You'll need to provide information about each managing officer."
+                text: "You have provided information about each managing officer."
               },
               checked: checked("statements", "noneIdentified")
             }
