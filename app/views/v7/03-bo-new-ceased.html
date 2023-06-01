@@ -1,0 +1,72 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Have any beneficial owners become or ceased in the update period? – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" action="../v6/submit-pay/check-your-answers" method="post">
+
+
+  <span class="govuk-caption-l">{{ data['overseas-name'] }} - {{ data['overseas-id'] }}</span>
+
+{{ govukRadios({
+  classes: "govuk-radios",
+  idPrefix: "boUpdateCeased",
+  name: "bo-update-ceased",
+  fieldset: {
+    legend: {
+      text: "Has anyone become or ceased to be a registrable beneficial owner during the update period?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--xl"
+    }  
+  },
+  hint: {
+    text: ""
+  },
+  items: [
+    {
+      value: "yes",
+      html: "The entity has <strong>no reasonable cause</strong> to believe that <strong>anyone</strong> has become or ceased to be 
+      a registrable beneficial owner during the update period.",
+      hint: {
+        text: ""
+      }
+    },
+    {
+      value: "no",
+      html: "The entity <strong>has reasonable cause</strong> to believe that <strong>at least one person</strong> has become or ceased to be 
+      a registrable beneficial owner during the update period.",
+hint: {
+        text: ""
+      }
+    }
+  ]
+}) }}
+{{ govukInsetText({
+    html: '<h2 class="govuk-heading-m">What information we’ll show on the public register</h2>
+          <p>We will show the information you provide in this section on the public Register of Overseas Entities.</p>'
+  }) }}
+
+
+
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+      </form>
+
+
+
+
+    </div>
+  </div>
+
+{% endblock %}

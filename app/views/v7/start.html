@@ -1,0 +1,264 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Start – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "https://www.gov.uk/"
+    },
+    {
+      text: "Business auditing, accounting and reporting",
+      href: "https://www.gov.uk/topic/business-enterprise/business-auditing-accounting-reporting"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+
+
+    {% include "../includes/govuk-content-header.html" %}
+
+    <div class="govuk-grid-column-one-third">
+
+      <aside class="app-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Related links
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <a href="javascript:void(0)">
+                Search the Register of Overseas Entities
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)">
+                Guidance
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)" class="govuk-!-font-weight-bold">
+                More <span class="govuk-visually-hidden">in Subsection</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+    </div>
+
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+
+
+
+<!-- ******* What an overseas entity update statement is *******  -->
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-margin-top-0">
+      <h3 id="oe-update" class="govuk-heading-m">What an overseas entity update statement is</h3>
+      <p class="govuk-body">An update statement must be filed every year by all overseas entities on the Register of Overseas Entities. 
+      <p class="govuk-body">It requires you to check and confirm that all the information about the overseas entity on the register is still correct, and update anything that has changed. You must file an update statement even if nothing has changed. </p>
+
+
+
+
+
+<!-- ******* When you need to file *******  -->
+      <h3 id="when-to-file" class="govuk-heading-m">When you need to file </h3>
+      <p class="govuk-body">All overseas entities must file an update statement every year. You can file more often if you want to. </p>
+      <p class="govuk-body">The date of your first update statement is one year from the date that the overseas entity was registered. If you file earlier, your next statement date will be one year after this. </p>
+      <p class="govuk-body">You have 14 days from the statement date to file. After this, your filing will be considered late and you must file it as soon as possible. </p>
+      <p class="govuk-body">An update statement can only cover 12 months. If you need to cover more than 12 months, you’ll need to file another update statement.   </p>
+      <p class="govuk-body">You can find the update statement date by searching for the entity on the  
+      <a href="https://find-and-update.company-information.service.gov.uk" class="govuk-link">Companies House register</a>.</p>
+
+
+<!-- If nothing has changed  -->
+     <p class="govuk-body"><strong>If nothing has changed </strong>
+
+      <p class="govuk-body">You must file an update statement even if there have not been any changes to the overseas entity and its beneficial owners during the update period. 
+        This confirms that the information on the register is correct. </p>
+
+
+<!--  What happens if you file your update statement late  -->
+     <p class="govuk-body"><strong>What happens if you file your update statement late  </strong>
+
+      <p class="govuk-body">If you do not file your update statement on time:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>you’ll be committing a criminal offence and you could get a fine</li>
+          <li>your registration on the Register of Overseas Entities will no longer be valid and you will not be able to buy, sell, transfer, lease or charge your property or land in the UK</li>
+          <li>we’ll add a note to your public record that says you have not filed your update statement and that your registration is no longer valid</li>
+          </ul>
+
+
+
+
+<!-- ******* Who can use this service  *******  -->
+      <h3 id="use-service" class="govuk-heading-m">Who can use this service </h3>
+      <p class="govuk-body">You can use this service if you work at, or work on behalf of, the overseas entity. </p>
+      <p class="govuk-body">You currently cannot use this service if:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>there are any <a href="#">trusts</a> involved in the overseas entity – this includes trusts that the entity has already told us about, and trusts that it needs to tell us about as part of this update statement</li>
+        <li>any beneficial owners or managing officers have their personal information protected at Companies House (or are waiting for the results of an application).</li> 
+        </ul>
+      <p class="govuk-body">Contact <a href="mailto:enquiries@companieshouse.gov.uk" class="govuk-link">enquiries@companieshouse.gov.uk</a> for further guidance. </p>
+
+
+
+
+
+<!-- ******* What information you need to review and update  *******  -->
+      <h3 id="what-information" class="govuk-heading-m">What information you need to review and update  </h3>
+      <p class="govuk-body">When submitting an update statement using this online service, you will be asked to review all the information we show on the register about the overseas entity and its beneficial owners or managing officers. You must update any information that has changed. 
+
+<!-- When you review -->
+      <p class="govuk-body">You may be asked to re-enter:
+    <ul class="govuk-list govuk-list--bullet">
+            <li>the overseas entity email address </li>
+            <li>home addresses for individual beneficial owners and managing officers </li>
+    </ul>
+
+    <p class="govuk-body">All the information must be correct as at the date of the update statement.</p>
+
+    <p class="govuk-body">Any changes you make must have been <a href="#">verified by a UK-regulated agent</a> no more than 3 months before the date of the update statement.</p>
+
+
+<!-- If someone has become a registrable beneficial owner or managing officer -->
+   <p class="govuk-body"><strong>If someone has become a registrable beneficial owner or managing officer</strong>
+
+       <p class="govuk-body">If you are adding new beneficial owners or managing officers, you’ll need to provide information about them.</p>
+    <p class="govuk-body"> <a href="#" class="govuk-link">
+     Find out what information you need to provide about new beneficial owners and managing officers</a>.</p>
+
+
+   
+<!-- If someone is no longer a registrable beneficial owner or managing officer -->
+   <p class="govuk-body"><strong>If someone is no longer a registrable beneficial owner or managing officer</strong>
+   <p class="govuk-body">You will need to tell us the date they stopped being a beneficial owner or managing officer, and make sure their information is correct as at that date. 
+   <p class="govuk-body">You also need to tell us about anyone that became and ceased to be a beneficial owner during the update period. The information you provide about them must be correct as at the date they stopped being one. </p>
+   <p class="govuk-body">If there are no active beneficial owners, you will need to tell us about each managing officer.</p>
+
+
+
+
+
+<!-- ******* What to do if there are trusts involved in the overseas entity  *******  -->
+      <h3 id="trusts" class="govuk-heading-m">What to do if there are trusts involved in the overseas entity </h3>     
+
+  <p class="govuk-body">You currently cannot use this service if there are any trusts involved in the overseas entity. This includes trusts that the entity has already told us about, and trusts that you need to tell us about as part of this update statement. 
+    
+  <p>You'll need to file the overseas entity update statement on paper, even if you do not need to make any changes to trust information. Contact <a href="mailto:enquiries@companieshouse.gov.uk" class="govuk-link">enquiries@companieshouse.gov.uk</a> for further guidance.</p> 
+
+<!--
+  <p class="govuk-body">If you are adding an individual or entity that is a registrable beneficial owner due to being a trustee of a trust, you will need to provide information about that trust.</p>
+      
+      <p class="govuk-body"> <a href="#" class="govuk-link">
+     Find out what information you need to provide about trusts</a>.</p>
+-->
+    
+
+<!-- ******* How to get an authentication code   *******  -->
+      <h3 id="authentication-code" class="govuk-heading-m">How to get an authentication code</h3>
+
+      <p class="govuk-body">An authentication code is a unique 6 character code that every overseas entity needs in order to file online. 
+        We'll ask for it every time someone files online for the entity — it confirms to us that they're authorised to do so.  </p>
+
+      <p class="govuk-body">To request an authentication code, search for the overseas entity on the
+      <a href="/register/start-merged-with-guidance#what-identity-checks-are-needed" class="govuk-link">Companies House register</a>, and then select 'Request an authentication code'.   </p>
+
+      <p class="govuk-body">We’ll send the code to the email address we have on record for the overseas entity.</p>
+
+
+
+
+
+<!-- ******* What verification checks need to be completed   *******  -->
+      <h3 id="verfication-checks" class="govuk-heading-m">What verification checks need to be completed </h3>
+
+    <p class="govuk-body">Verification checks must be completed on any information that you are changing, and on any new beneficial owners and managing officers that you are adding. </p>
+
+    {{ govukInsetText({
+      text: "Verification checks must be carried out no more than 3 months before the date of the update statement."
+    }) }}
+
+      <p class="govuk-body">If you are not changing any information, you will not need to complete any verification checks. </p>
+      
+      <p class="govuk-body">Verification checks can only be carried out by a UK-regulated agent.  
+      They must be based in the UK and supervised under the Money Laundering, Terrorist Financing and Transfer of Funds Regulations 2017. They can be an individual or a corporate entity, such as a financial institution or legal professional. </p>
+      
+      <p class="govuk-body"><a href="#" class="govuk-link">Find a UK-regulated agent to verify information for an overseas entity</a>.</p>
+      
+      <p class="govuk-body">Read the <a href="#" class="govuk-link">Register of Overseas Entities: guidance on registration and verification</a>.</p>
+
+<!-- Agent assurance code --> 
+   <p class="govuk-body"><strong>Agent assurance code </strong>
+ <p class="govuk-body">The UK-regulated agent carrying out verification checks must have an <a href="#" class="govuk-link">agent assurance code</a>. </p>
+
+ <p class="govuk-body">If they are also filing the update statement for the overseas entity, they  will be asked to provide the code as part of this service. 
+    Otherwise, they will need to provide the code after the update statement has been filed by submitting an 
+    <a href="#" class="govuk-link">Overseas entity verification checks statement</a>.</p>
+
+
+
+<!-- ******* File an overseas entity update statement   *******  -->
+      <h3 id="file-an-oe-update" class="govuk-heading-m">File an overseas entity update statement</h3>
+
+      <p class="govuk-body"><strong>You'll need: </strong>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>to sign in to or create a Companies House account</li>
+      <li>the Overseas Entity ID </li>
+      <li>the overseas entity's <a href="#" class="govuk-link">authentication code</a></li>
+      <li>the name and email address of someone we can contact about the update </li>
+      <li>to tell us about the UK-regulated agent that completed <a href="#" class="govuk-link">verification checks</a>, if relevant</li>
+      <li>a credit or debit card to pay the £120 fee - for now, you cannot pay with a Companies House payment account </li>
+    </ul>
+
+
+    <p class="govuk-body">You'll also need to provide an <a href="#" class="govuk-link">agent assurance code</a> if you're the UK-regulated agent who carried out the verification checks.</p>
+
+
+    <p class="govuk-body">This service could take a while to complete. You'll be able to save your answers and come back later. </p>
+
+
+    <div class="govuk-inset-text">
+    If you have applications in progress, you can choose to start a new application or return to a saved one.   
+    </div>
+
+      {{ govukButton({
+        text: "Start now",
+        href: "./sign-in",
+        isStartButton: true
+      }) }}
+
+{# 
+      <h3 id="what-happens-after-an-overseas-entity-is-registered" class="govuk-heading-m">What happens after an overseas entity is registered</h3>
+
+      <p class="govuk-body">If the application is accepted, the overseas entity and its beneficial owners and managing officers will be added to the Register of Overseas Entities. </p>
+       <p class="govuk-body">We'll also email the notice of registration to the overseas entity. This will include the Overseas Entity ID, which must be given to the Land Registry whenever the entity buys, sells or transfers land or property in the UK. </p>
+
+        <p>If the application is rejected, we'll email you to let you know what to do next and refund the £100 registration fee.</p>
+
+      <h3 class="govuk-heading-s">Updating information on the register</h3>
+
+      <p class="govuk-body">The overseas entity must file an annual update one year after it was registered, and every year after that. This will be used to tell us about any changes, or confirm that the information we hold is still correct. The update must be filed no later than 14 days after the due date. The entity can file earlier if it needs to update any information.</p>
+
+      <h3 class="govuk-heading-s">Removing an overseas entity</h3>
+
+      <p class="govuk-body">An overseas entity can apply to be removed from the Register of Overseas Entities if it does not own land or property in the UK.</p>
+
+      <p class="govuk-body">The sections of The Economic Crime (Transparency and Enforcement) Act 2022 relating to updates and removal have not yet come into force. This means that updates and removal applications can only be made once this happens.</p> #}
+
+{% endblock %}

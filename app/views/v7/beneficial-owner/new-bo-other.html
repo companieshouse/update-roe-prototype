@@ -1,0 +1,739 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Other legal entity – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+<span class="govuk-caption-xl">Beneficial owner</span>
+      <h1 class="govuk-heading-xl govuk-!-margin-0">Tell us about the other legal entity</h1>
+      <p class="govuk-!-margin-bottom-5 govuk-!-margin-top-5">You can add more later.</p>
+
+      <form class="form" method="post">
+
+{{ govukDetails({
+  summaryText: "How to complete this section for a ceased beneficial owner",
+  text: "If it has become and then ceased to be a registrable beneficial owner during this update period, you need to enter information that is correct as at the ceased date."
+}) }}
+
+        {{ govukInput({
+          label: {
+            text: "What is its name?",
+            classes: "govuk-label--m",
+            isPageHeading: false
+          },
+          id: "bo-corp-name",
+          name: "bo-corp-name"
+        }) }}
+        {% call govukFieldset({
+          legend: {
+            text: "What is its principal or registered office address?",
+            classes: "govuk-fieldset__legend--m",
+            isPageHeading: false
+          }
+        }) %}
+
+        {{ govukInput({
+          label: {
+            html: 'Property name or number'
+          },
+          hint: {
+           text: "For example, 'Saron House', '116' or 'Unit 37a'"
+         },
+          id: "bo-corp-principal-address-property-name-number",
+          name: "bo-corp-principal-address-property-name-number"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Address line 1"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "bo-corp-principal-address-line-1",
+          name: "bo-corp-principal-address-line-1",
+          autocomplete: "address-line1"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Address line 2 (optional)"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "bo-corp-principal-address-line-2",
+          name: "bo-corp-principal-address-line-2",
+          autocomplete: "address-line2"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "City or town"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "bo-corp-principal-address-city-town",
+          name: "bo-corp-principal-address-city-town"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "County, state, province or region (optional)"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "bo-corp-principal-address-state",
+          name: "bo-corp-principal-address-state"
+        }) }}
+
+        {# <div class="govuk-form-group">
+           <label for="autocomplete-default" class="govuk-label">Country</label>
+          <p class="govuk-hint">Start typing a country, then choose from the list</p>
+          <div id="country" class="autocomplete-wrapper"></div>
+        </div> #}
+
+                {{ govukInput({
+          label: {
+            html: 'Country'
+          },
+          hint: {
+           text: "Start typing a country, then choose from the list"
+         },
+         classes: "govuk-!-width-two-thirds",
+          id: "country",
+          name: "country"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Postcode or ZIP code (if applicable)"
+          },
+          classes: "govuk-input--width-10",
+          id: "bo-corp-principal-address-postcode",
+          name: "bo-corp-principal-address-postcode",
+          autocomplete: "postal-code"
+        }) }}
+        {% endcall %}
+
+        {% set serviceAddressHtml %}
+        <br>
+        {% call govukFieldset({
+          legend: {
+            text: "What is its correspondence address?",
+            classes: "govuk-fieldset__legend--m",
+            isPageHeading: false
+          }
+        }) %}
+
+        {{ govukInput({
+          label: {
+            html: 'Property name or number'
+          },
+          hint: {
+           text: "For example, 'Saron House', '116' or 'Unit 37a'"
+         },
+          id: "bo-corp-service-address-property-name-number",
+          name: "bo-corp-service-address-property-name-number"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Address line 1"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "bo-corp-service-address-line-1",
+          name: "bo-corp-service-address-line-1",
+          autocomplete: "address-line1"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Address line 2 (optional)"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "bo-corp-service-address-line-2",
+          name: "bo-corp-service-address-line-2",
+          autocomplete: "address-line2"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "City or town"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "bo-corp-service-address-city-town",
+          name: "bo-corp-service-address-city-town"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "County, state, province or region (optional)"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "bo-corp-service-address-state",
+          name: "bo-corp-service-address-state"
+        }) }}
+
+        <div class="govuk-form-group">
+           <label for="autocomplete-default" class="govuk-label">Country</label>
+          <p class="govuk-hint">Start typing a country, then choose from the list</p>
+          <div id="country-2" class="autocomplete-wrapper"></div>
+        </div>
+
+        {{ govukInput({
+          label: {
+            text: "Postcode or ZIP code (if applicable)"
+          },
+          classes: "govuk-input--width-10",
+          id: "bo-corp-service-address-postcode",
+          name: "bo-corp-service-address-postcode",
+          autocomplete: "postal-code"
+        }) }}
+
+        {% endcall %}
+        {% endset -%}
+
+        {{ govukRadios({
+          classes: "govuk-radios",
+          idPrefix: "bo-corp-same-address",
+          name: "bo-corp-same-address",
+          fieldset: {
+            legend: {
+              text: "Is its correspondence address the same as its principal or registered office address?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+           hint: {
+    text: "This is also known as a service address."
+  },
+          items: [
+            {
+              value: "yes",
+              text: "Yes"
+            },
+            {
+              value: "no",
+              text: "No",
+              conditional: {
+        html: serviceAddressHtml
+        }
+            }
+          ]
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "What is its legal form?",
+            classes: "govuk-label--m",
+            isPageHeading: false
+          },
+          hint: {
+           text: "For example, limited company"
+         },
+          id: "bo-corp-legal-form",
+          name: "bo-corp-legal-form"
+        }) }}
+
+
+                {{ govukInput({
+                  label: {
+                    text: "What is the governing law?",
+                    classes: "govuk-label--m",
+                    isPageHeading: false
+                  },
+                  hint: {
+                   text: "This is the law that the beneficial owner operates under"
+                 },
+                  id: "bo-corp-governing-law",
+                  name: "bo-corp-governing-law"
+                }) }}
+
+
+
+
+
+{% set boCorpPublicRegisterHtml %}
+{% if errorboCorpRegisterName == true %}
+{{ govukInput({
+  id: "bo-corp-public-register-name",
+  name: "bo-corp-public-register-name",
+    value: boCorpPublicName,
+  hint: {
+   text: "Include the full name. For example, Jersey Financial Services Commission."
+ },
+  label: {
+    text: "Name of register"
+  },
+  errorMessage: {
+          text: "Enter the name of the register"
+        }
+}) }}
+{% else %}
+{{ govukInput({
+  id: "bo-corp-public-register-name",
+  name: "bo-corp-public-register-name",
+  value: boCorpPublicName,
+  hint: {
+   text: "Include the full name. For example, Jersey Financial Services Commission."
+ },
+  label: {
+    text: "Name of register"
+  }
+}) }}
+{% endif %}
+
+{# Jurisdiction #}
+{% if errorboCorpRegisterJurisdiction == true %}
+  {{ govukInput({
+    id: "bo-corp-public-register-jurisdiction",
+    name: "bo-corp-public-register-jurisdiction",
+      value: boCorpPublicJurisdiction,
+    hint: {
+    text: "For example, Jersey."
+  },
+    label: {
+      text: "Jurisdiction"
+    },
+    errorMessage: {
+            text: "Enter the jurisdiction"
+          }
+  }) }}
+{% else %}
+  {{ govukInput({
+    id: "bo-corp-public-register-jurisdiction",
+    name: "bo-corp-public-register-jurisdiction",
+      value: boCorpPublicJurisdiction,
+    hint: {
+    text: "For example, Jersey."
+  },
+    label: {
+      text: "Jurisdiction"
+    }
+  }) }}
+{% endif %}
+
+{% if errorboCorpRegisterNumber == true %}
+{{ govukInput({
+  id: "bo-corp-public-register-number",
+  name: "bo-corpe-public-register-number",
+  value: boCorpPublicNumber,
+  classes: "govuk-!-width-one-half",
+  label: {
+    text: "Entity's registration number"
+  },
+  errorMessage: {
+          text: "Enter the entity's registration number"
+        }
+}) }}
+{% else %}
+{{ govukInput({
+  id: "bo-corp-public-register-number",
+  name: "bo-corp-public-register-number",
+  value: boCorpPublicNumber,
+  classes: "govuk-!-width-one-half",
+  label: {
+    text: "Entity’s registration number"
+  }
+}) }}
+{% endif %}
+{% endset -%}
+
+
+
+{% if errorboCorpPublicRegister == true %}
+{{ govukRadios({
+  idPrefix: "bo-corp-public-register",
+  name: "bo-corp-public-register",
+  fieldset: {
+    legend: {
+      text: "Is the other legal entity already on a public register in the country it was formed in?",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes",
+      conditional: {
+        html: boCorpPublicRegisterHtml
+      }
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+  ],
+  errorMessage: {
+          text: "Select yes if the entity is already on a public register in the country it was formed in"
+        }
+}) }}
+{% else %}
+{% if boCorpPublicRegister === 'yes' %}
+{{ govukRadios({
+  idPrefix: "bo-corp-public-register",
+  name: "bo-corp-public-register",
+  fieldset: {
+    legend: {
+      text: "Is the other legal entity already on a public register in the country it was formed in?",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes",
+      checked: true,
+      conditional: {
+        html: boCorpPublicRegisterHtml
+      }
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+  ]
+}) }}
+{% elseif boCorpPublicRegister === 'no' %}
+{{ govukRadios({
+  idPrefix: "bo-corp-public-register",
+  name: "bo-corp-public-register",
+  fieldset: {
+    legend: {
+      text: "Is the other legal entity already on a public register in the country it was formed in?",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes",
+      conditional: {
+        html: boCorpPublicRegisterHtml
+      }
+    },
+    {
+      value: "no",
+      text: "No",
+      checked: true
+    }
+  ]
+}) }}
+{% else %}
+{{ govukRadios({
+  idPrefix: "bo-corp-public-register",
+  name: "bo-corp-public-register",
+  fieldset: {
+    legend: {
+      text: "Is the other legal entity already on a public register in the country it was formed in?",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+    hint: {
+    text: "If you select 'no', the overseas entity will need an active individual beneficial owner."
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes",
+      conditional: {
+        html: boCorpPublicRegisterHtml
+      }
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+  ]
+}) }}
+{% endif %}
+{% endif %}
+
+
+
+        {% if (data['soldLand'] === "some") or (data['soldLand'] === "all") %}
+        <!--Only show the 'When did they stop...' question if the user has answered Some or All to /register/sold-land-filter-->
+        <!--Note, current intention is not to route users here is they select All - code added just in case-->
+
+            {% set stopDateHtml %}
+
+                      {{ govukDateInput({
+                        id: "owner-other-enddate",
+                        namePrefix: "owner-other-enddate",
+                        fieldset: {
+                          legend: {
+                            text: "When did it stop being a beneficial owner?",
+                            isPageHeading: false,
+                            classes: "govuk-fieldset__legend--s"
+                          }
+                        },
+                        hint: {
+                          text: "For example, 28 5 2022"
+                        }
+                      }) }}
+                      {% endset -%}
+
+                      {{ govukRadios({
+                        idPrefix: "owner-other-stop",
+                        name: "owner-other-stop",
+                        fieldset: {
+                          legend: {
+                            text: "Did it stop being a beneficial owner after the overseas entity disposed of property or land?",
+                            isPageHeading: false,
+                            classes: "govuk-fieldset__legend--m"
+                          }
+                        },
+                        items: [
+                          {
+                            value: "yes",
+                            text: "Yes",
+                            conditional: {
+                      html: stopDateHtml
+                     }
+                   },
+                   {
+                            value: "no",
+                            text: "No"
+                          }
+                        ]
+                      }) }}
+
+{% endif %}
+
+
+
+        {{ govukDateInput({
+          id: "bo-corp-startdate",
+          namePrefix: "bo-corp-startdate",
+          fieldset: {
+            legend: {
+              text: "When did it become a beneficial owner for the overseas entity?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "For example, 27 3 2007"
+          }
+        }) }}
+
+
+{% set boCeasedHtml %}
+{{ govukDateInput({
+  id: "bo-ceased",
+  namePrefix: "bo-ceased",
+  fieldset: {
+    legend: {
+      text: "Date it ceased to be a registrable beneficial owner",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  hint: {
+    text: "For example, 27 1 2023"
+  }
+}) }}
+{% endset -%}
+
+
+{{ govukRadios({
+  name: "bo-ceased",
+  fieldset: {
+    legend: {
+      text: "Is it still a beneficial owner for the overseas entity?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes"
+    },
+    {
+      value: "no",
+      text: "No",
+            conditional: {
+        html: boCeasedHtml
+      }
+      
+    }
+  ]
+}) }}
+
+{# 
+          ******* To be added back in after trust web screens. ******* 
+          If the beneficial owner is a trustee of a trust, you can review and update trust information later in the service. #}
+
+        {% call govukFieldset({
+          legend: {
+            html: 'What is its nature of control?<br><p class="govuk-hint govuk-!-padding-top-1"> Select all that apply.</p>',
+
+            classes: "govuk-fieldset__legend--m",
+            isPageHeading: false
+          }
+        }) %}
+
+        {{ govukCheckboxes({
+            idPrefix: "bo-noc-individual",
+            name: "bo-noc-individual",
+            fieldset: {
+              legend: {
+                text: "The beneficial owner:",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--s"
+              }
+            },
+
+            items: [
+              {
+                value: "noc-individual-shares",
+                text: "holds, directly or indirectly, more than 25% of the shares in the entity"
+              },
+              {
+                value: "noc-individual-voting",
+                text: "holds, directly or indirectly, more than 25% of the voting rights in the entity"
+              },
+              {
+                value: "noc-individual-board",
+                text: "holds the right, directly or indirectly, to appoint or remove a majority of the board of directors of the entity"
+              },
+              {
+                value: "noc-individual-influence",
+                text: "has the right to exercise, or actually exercises, significant influence or control over the entity"
+              }
+            ]
+          }) }}
+
+
+
+          {# {{ govukCheckboxes({
+              idPrefix: "bo-noc-trust",
+              name: "bo-noc-trust",
+              fieldset: {
+                legend: {
+                  text: "The beneficial owner is a trustee of a trust and:",
+                  isPageHeading: false,
+                  classes: "govuk-fieldset__legend--s"
+                }
+              },
+
+              items: [
+                {
+                  value: "noc-trusts-shares",
+                  text: "the trustees of that trust (in their capacity as such) hold, directly or indirectly, more than 25% of the shares in the entity"
+                },
+                {
+                  value: "noc-trusts-voting",
+                  text: "the trustees of that trust (in their capacity as such) hold, directly or indirectly, more than 25% of the voting rights in the entity"
+                },
+                {
+                  value: "noc-trusts-board",
+                  text: "the trustees of that trust (in their capacity as such) hold the right, directly or indirectly, to appoint or remove a majority of the board of directors of the company"
+                },
+                {
+                  value: "noc-trusts-influence",
+                  text: "the trustees of that trust (in their capacity as such) have the right to exercise, or actually exercise, significant influence or control over the company"
+                }
+              ]
+            }) }} #}
+
+
+
+            {{ govukCheckboxes({
+                idPrefix: "bo-noc-firms",
+                name: "bo-noc-firms",
+                fieldset: {
+                  legend: {
+                    text: "The beneficial owner is a member of a firm that is not a legal person under its governing law, and:",
+                    isPageHeading: false,
+                    classes: "govuk-fieldset__legend--s"
+                  }
+                },
+
+                items: [
+                  {
+                    value: "noc-firm-shares",
+                    text: "the members of that firm (in their capacity as such) hold, directly or indirectly, more than 25% of the shares in the entity"
+                  },
+                  {
+                    value: "noc-firm-voting",
+                    text: "the members of that firm (in their capacity as such) hold, directly or indirectly, more than 25% of the voting rights in the entity"
+                  },
+                  {
+                    value: "noc-firm-board",
+                    text: "the members of that firm (in their capacity as such) hold the right, directly or indirectly, to appoint or remove a majority of the board of directors of the company"
+                  },
+                  {
+                    value: "noc-firm-influence",
+                    text: "the members of that firm (in their capacity as such) have the right to exercise, or actually exercise, significant influence or control over the company"
+                  }
+                ]
+              }) }}
+
+
+              {% endcall %}
+
+
+
+  {{ govukRadios({
+  classes: "govuk-radios",
+  idPrefix: "owner-sanctions",
+  name: "owner-sanctions",
+  fieldset: {
+    legend: {
+      text: "Is it on the UK sanctions list?",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: "This means that it is subject to sanctions under the Sanctions and Anti-Money Laundering Act 2018."
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes, it is on the sanctions list"
+    },
+    {
+      value: "no",
+      text: "No, it is not on the sanctions list"
+    }
+  ]
+  }) }}
+
+
+
+
+  {{ govukInsetText({
+    html: '
+              <h2 class="govuk-heading-m">What information we&#39;ll show on the public register</h2>
+              <p>We will show all the information you provide in this section on the public Register of Overseas Entities.</p>
+                '
+  }) }}
+
+
+
+
+        {{ govukButton({
+          text: "Save and continue",
+          href: "/register/beneficial-owner-type-one-added"
+        }) }}
+
+
+
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
