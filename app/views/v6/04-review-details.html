@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Check your answers – {{ serviceName }} – GOV.UK
+  Review the information in this update statement – {{ serviceName }} – GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -93,7 +93,7 @@
                 text: "Full name"
               },
               value: {
-                text: data['contact-full-name']
+                text: "Joe Bloggs"
                 },
                 actions: {
                   items: [
@@ -110,7 +110,7 @@
                 text: "Email address"
               },
               value: {
-                text: data['contact-email']
+                text: "email@email.com"
               },
               actions: {
                 items: [
@@ -487,10 +487,10 @@
           <ul class="govuk-list govuk-list--bullet">
             <li>the members of that firm (in their capacity as such) hold, directly or indirectly, more than 25% of the shares in the entity</li>
           </ul>
-          The beneficial owner is a trustee of a trust and:
+          {# The beneficial owner is a trustee of a trust and:
           <ul class="govuk-list govuk-list--bullet">
             <li>the trustees of that trust (in their capacity as such) hold, directly or indirectly, more than 25% of the shares in the entity</li>
-          </ul>
+          </ul> #}
           The beneficial owner is a member of a firm that is not a legal person under its governing law, and:
           <ul class="govuk-list govuk-list--bullet">
             <li>the members of that firm (in their capacity as such) hold, directly or indirectly, more than 25% of the shares in the entity</li>
@@ -597,10 +597,10 @@
             <ul class="govuk-list govuk-list--bullet">
               <li>holds, directly or indirectly, more than 25% of the shares in the entity</li>
               </ul>
-            The beneficial owner is a trustee of a trust and:
+            {# The beneficial owner is a trustee of a trust and:
             <ul class="govuk-list govuk-list--bullet">
               <li>the trustees of that trust (in their capacity as such) hold, directly or indirectly, more than 25% of the shares in the entity</li>
-            </ul>
+            </ul> #}
             The beneficial owner is a member of a firm that is not a legal person under its governing law, and:
             <ul class="govuk-list govuk-list--bullet">
               <li>the members of that firm (in their capacity as such) have the right to exercise, or actually exercise, significant influence or control over the company</li>
@@ -630,7 +630,15 @@
           Is it still a beneficial owner?
         </dt>
         <dd class="govuk-summary-list__value">
-          <p>Yes</p>
+          <p>No</p>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date it ceased to be a registrable beneficial owner
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p>14 March 2023</p>
         </dd>
       </div>
         </dl>  
