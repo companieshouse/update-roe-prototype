@@ -76,7 +76,7 @@
                 text: "Full name"
               },
               value: {
-                text: data['contact-full-name']
+                text: "Joe Bloggs"
                 },
               actions: {
                 items: [
@@ -93,7 +93,7 @@
                 text: "Email address"
               },
               value: {
-                text: data['contact-email']
+                text: "email@email.com"
               },
               actions: {
                 items: [
@@ -122,7 +122,7 @@
                 text: "Who is completing this update?"
               },
               value: {
-                text: "Someone else"
+                text: "Someone who works for the UK-regulated agent that carried out verification checks"
               },
               actions: {
                 items: [
@@ -156,7 +156,7 @@
                   text: "Name of agent"
                 },
                 value: {
-                  text: data['due-diligence-name']
+                  text: "David Mayhew"
                 },
                 actions: {
                   items: [
@@ -243,7 +243,7 @@
                   text: "Agent assurance code"
                 },
                 value: {
-                  text: data['agent-code']
+                  text: "035873"
                 },
                 actions: {
                   items: [
@@ -652,10 +652,10 @@
           <ul class="govuk-list govuk-list--bullet">
             <li>the members of that firm (in their capacity as such) hold, directly or indirectly, more than 25% of the shares in the entity</li>
           </ul>
-          The beneficial owner is a trustee of a trust and:
+          {# The beneficial owner is a trustee of a trust and:
           <ul class="govuk-list govuk-list--bullet">
             <li>the trustees of that trust (in their capacity as such) hold, directly or indirectly, more than 25% of the shares in the entity</li>
-          </ul>
+          </ul> #}
           The beneficial owner is a member of a firm that is not a legal person under its governing law, and:
           <ul class="govuk-list govuk-list--bullet">
             <li>the members of that firm (in their capacity as such) hold, directly or indirectly, more than 25% of the shares in the entity</li>
@@ -728,7 +728,7 @@
             Name
           </dt>
           <dd class="govuk-summary-list__value">
-            <p>Name Corp</p>
+            <p>ACME Trustees Ltd</p>
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="/register/beneficial-owner-other">
@@ -822,10 +822,10 @@
             <ul class="govuk-list govuk-list--bullet">
               <li>holds, directly or indirectly, more than 25% of the shares in the entity</li>
               </ul>
-            The beneficial owner is a trustee of a trust and:
+            {# The beneficial owner is a trustee of a trust and:
             <ul class="govuk-list govuk-list--bullet">
               <li>the trustees of that trust (in their capacity as such) hold, directly or indirectly, more than 25% of the shares in the entity</li>
-            </ul>
+            </ul> #}
             The beneficial owner is a member of a firm that is not a legal person under its governing law, and:
             <ul class="govuk-list govuk-list--bullet">
               <li>the members of that firm (in their capacity as such) have the right to exercise, or actually exercise, significant influence or control over the company</li>
@@ -861,28 +861,46 @@
           <dd class="govuk-summary-list__value">
             <p>26 July 2019</p>
           </dd>
+          
           <dd class="govuk-summary-list__actions">
-            {# <a href="/register/beneficial-owner-other">
+            <a href="/register/beneficial-owner-other">
               Change
               <span class="govuk-visually-hidden"> Corporate beneficial owner Sugar Holdings date it became a beneficial owner</span>
-            </a> #}
+            </a>
           </dd>
         </div>
         <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Is it still a beneficial owner?
         </dt>
+      
         <dd class="govuk-summary-list__value">
-          <p>Yes</p>
+          <p>No</p>
         </dd>
-        <dd class="govuk-summary-list__actions">
-          <a href="/register/beneficial-owner-individual">
-            Change
-            <span class="govuk-visually-hidden"> Individual beneficial owner ACME Trustees Limited Is it still a beneficial owner?</span>
-          </a>
-        </dd>
+                  <dd class="govuk-summary-list__actions">
+            <a href="/register/beneficial-owner-other">
+              Change
+              <span class="govuk-visually-hidden">Corporate beneficial owner Sugar Holdings- is it on the sanctions list</span>
+            </a>
+          </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date it ceased to be a registrable beneficial owner
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p>14 March 2023</p>
+        </dd>          <dd class="govuk-summary-list__actions">
+            <a href="/register/beneficial-owner-other">
+              Change
+              <span class="govuk-visually-hidden">Corporate beneficial owner Sugar Holdings- is it on the sanctions list</span>
+            </a>
+          </dd>
       </div>
         </dl> 
+
+
+        </dl>  
 
 
 
