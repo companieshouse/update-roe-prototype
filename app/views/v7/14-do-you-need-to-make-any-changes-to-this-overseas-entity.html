@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-Have you made any changes to the overseas entity? – {{ serviceName }} – GOV.UK
+Will you be making any changes to the overseas entity? – {{ serviceName }} – GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -13,16 +13,17 @@ Have you made any changes to the overseas entity? – {{ serviceName }} – GOV.
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="" method="post">
+      <form class="form" action="completing-update" method="post"> 
         
   <span class="govuk-caption-l">{{ data['overseas-name'] }} - {{ data['overseas-id'] }}</span>
-        <h1 class="govuk-heading-xl">Have you made any changes to the overseas entity?</h1>
+        <h1 class="govuk-heading-xl">Do you need to make any changes to this overseas entity?</h1>
 
+      <p class="govuk-!-margin-bottom-5 govuk-!-margin-top-5">This includes any changes to information about the overseas entity, its beneficial owners or managing officers.</p>
 
 
         {{ govukRadios({
-          idPrefix: "statements",
-          name: "statements",
+          idPrefix: "make-changes",
+          name: "make-changes",
           fieldset: {
             legend: {
               text: "Have you made any changes to the overseas entity?",
@@ -33,71 +34,44 @@ Have you made any changes to the overseas entity? – {{ serviceName }} – GOV.
           items: [
             {
               value: "yes",
-              text: "Yes, I have made changes and verification checks have been completed to validate them.",
+              text: "Yes, I need to make changes",
       hint: {
-        text: "Select this option if any information is different from the last filing."
+        text: "All changes must have been verified by a UK-regulated agent no more than 3 months before the date of this update statement."
       }
             },
             {
               value: "no",
-              text: "No, I have not made any changes.",
+              text: "No, I do not need to make changes",
       hint: {
-        text: "Select this option if all information is the same as the last filing."
+        text: ""
       }
             }
+
           ]
         }) }}
-
-        {{ govukCheckboxes({
-  name: "waste",
-  fieldset: {
-    legend: {
-      text: "Declaration for changes",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--m"
-    }
-  },
-  items: [
-    {
-      value: "change-declaration",
-      text: "I understand that this filing may be rejected and have to pay the £X filing fee again if I have provided information that contradicts the above statement."
-    }
-  ]
-}) }}
-
-
-{# ,
-          errorMessage: {
-                  text: "Select if any beneficial owners have been identified"
-                }
-                 #}
-
 
 
 
           {{ govukButton({
-            text: "Save and continue",
-            href: "bo-new-ceased"
+            text: "Save and continue"
           }) }}
 
 
-
+        {#
           <details class="govuk-details" data-module="govuk-details">
             <summary class="govuk-details__summary">
               <span class="govuk-details__summary-text">
-              What is a change and do I need to get verification checks done?
+              What verification checks are needed?
               </span>
             </summary>
             <div class="govuk-details__text">
-            A beneficial owner is any legal body that has significant influence or control over the overseas entity. It can be an individual person, other legal entity, government or public authority.
+            Verification checks are needed on any changes made to information about the overseas entity, its beneficial owners or managing officers. 
             </div>
             <div class="govuk-details__text">
-            A beneficial owner is registrable if they meet one or more of the conditions known as the natures of control.   </div>
-            <div class="govuk-details__text">
-A managing officer is a director, manager or company secretary of the overseas entity.
-
-            </div>
+            Verification checks can only be carried out by a UK-regulated agent, and must have been completed no more than 3 months before the date of this update statement.   </div>
+              </div>
           </details>
+          #}
 
       </form>
 

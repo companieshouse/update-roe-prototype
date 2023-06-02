@@ -14,6 +14,7 @@ const router = govukPrototypeKit.requests.setupRouter()
 // router.use('/', require('./routes/v4-routes.js'))
 // router.use('/', require('./routes/v5-routes.js'))
 router.use('/', require('./routes/v6-routes.js'))
+router.use('/', require('./routes/v7-routes.js'))
 
 
 // Clear all data in session
