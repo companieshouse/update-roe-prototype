@@ -6,7 +6,7 @@ const { postIdentifyFilter } = require('../assets/javascripts/routes/identify');
 const { postStatementFilter } = require('../assets/javascripts/routes/statement');
 const { postSignOut } = require('../assets/javascripts/routes/sign-out');
 const { postTrustFilter } = require('../assets/javascripts/routes/trust-filter');
-const { postSavedFiling } = require('../assets/javascripts/routes/saved-filing');
+
 
 
 
@@ -23,41 +23,45 @@ postIdentifyFilter(router)
 postStatementFilter(router)
 postSignOut(router)
 postTrustFilter(router)
-postSavedFiling(router)
 
 
 
 
 
 
-// // ******* SAVED FILING FILTER *******
-// router.get('/v7/protected-filter', function(req, res) {
-//   if (req.session.data['verify-check'] === 'no') {
-//     res.render('v7/06-not-verified-instructions')
-//   } else {
-//     res.render('v7/protected-filter')
-//   }
-// })
+
+// 02 ******* SAVED FILING FILTER *******
+router.get('/v7/04-do-any-beneficial-owners-or-managing-officers-have-their-personal-information-protected-at-companies-house', function(req, res) {
+  if (req.session.data['saved-filing'] === 'yes') {
+    res.render('v7/03-your-filings')
+  } else {
+    res.render('v7/04-do-any-beneficial-owners-or-managing-officers-have-their-personal-information-protected-at-companies-house')
+  }
+})
 
 
 
+// 04 ******* PROTECTED FILTER *******
+router.get('/v7/06-are-there-any-trusts-involved-in-this-overseas-entity', function(req, res) {
+  if (req.session.data['secure-register'] === 'yes') {
+    res.render('v7/05-youll-need-to-file-an-update-statement-using-the-paper-form')
+  } else {
+    res.render('v7/06-are-there-any-trusts-involved-in-this-overseas-entity')
+  }
+})
 
-// // ******* WHO IS FILING FILTER *******
-// router.post('/v7/completing-update', function (req, res) {
 
-//   // Make a variable and give it the value from 'who-is-filing'
-//   var whoIsFiling = req.session.data['who-is-filing']
+// 06 ******* TRUSTS INVOLVED FILTER *******
+router.get('/v7/08-before-you-start', function(req, res) {
+  if (req.session.data['trust-involved'] === 'yes') {
+    res.render('v7/07-youll-need-to-file-an-update-statement-using-the-paper-form')
+  } else {
+    res.render('v7/08-before-you-start')
+  }
+})
 
-//   // Check whether the variable matches a condition
-//   if (whoIsFiling == "agent"){
-//     // Send user to next page
-//     res.redirect('/v7/agent-checks')
-//   } else {
-//     // Send user to ineligible page
-//     res.redirect('/v7/oe-checks')
-//   }
 
-// })
+
 
 
 
