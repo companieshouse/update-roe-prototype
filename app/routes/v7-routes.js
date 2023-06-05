@@ -73,33 +73,25 @@ router.get('/v7/19-who-is-completing-this-update', function(req, res) {
 })
 
 
+// 18 ******* NO CHANGE: REVIEW THE INFORMATION FILTER *******
 
-router.get('/v7/05-verify-check', function(req, res) {
+router.get('/v7/14-do-you-need-to-make-any-changes-to-this-overseas-entity', function(req, res) {
   if (req.session.data['need-to-change'] === 'yes') {
-    res.render('v7/test-payment') 
+    res.render('v7/xx-payment') 
   } else {
-    res.render('v7/05-verify-check')
-  }
-})
-
-
-router.get('/v7/01-change-filter-start', function(req, res) {
-  if (req.session.data['verify-check'] === 'no') {
-    res.render('v7/06-not-verified-instructions')
-  } else {
-    res.render('v7/01-change-filter-start')
+    res.render('v7/14-do-you-need-to-make-any-changes-to-this-overseas-entity')
   }
 })
 
 
 
-// Who is completing this update?
+// 19 ******* WHO IS COMPLETING THIS UPDATE? FILTER *******
 
-router.get('/v7/oe-checks', function(req, res) {
+router.get('/v7/21-tell-us-about-the-uk-regulated-agent-that-carried-out-verification-checks', function(req, res) {
   if (req.session.data['who-is-filing'] === 'agent') {
-    res.render('v7/agent-checks')
+    res.render('v7/20-complete-this-statement-to-confirm-that-verification-checks-have-been-completed')
   } else {
-    res.render('v7/oe-checks')
+    res.render('v7/21-tell-us-about-the-uk-regulated-agent-that-carried-out-verification-checks')
   }
 })
 
