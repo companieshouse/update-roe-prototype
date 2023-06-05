@@ -62,6 +62,34 @@ router.get('/v7/08-before-you-start', function(req, res) {
 
 
 
+// 14 ******* MAKE ANY CHANGES? FILTER *******
+
+router.get('/v7/19-who-is-completing-this-update', function(req, res) {
+  if (req.session.data['make-changes'] === 'no') {
+    res.render('v7/15-has-the-overseas-entity-identified-any-registrable-beneficial-owners')
+  } else {
+    res.render('v7/19-who-is-completing-this-update')
+  }
+})
+
+
+
+router.get('/v7/05-verify-check', function(req, res) {
+  if (req.session.data['need-to-change'] === 'yes') {
+    res.render('v7/test-payment') 
+  } else {
+    res.render('v7/05-verify-check')
+  }
+})
+
+
+router.get('/v7/01-change-filter-start', function(req, res) {
+  if (req.session.data['verify-check'] === 'no') {
+    res.render('v7/06-not-verified-instructions')
+  } else {
+    res.render('v7/01-change-filter-start')
+  }
+})
 
 
 
@@ -491,32 +519,6 @@ router.get('/v7/submit-pay/check-your-answers', function(req, res) {
 
 
 
-// no change routes
-
-router.get('/v7/completing-update', function(req, res) {
-  if (req.session.data['make-changes'] === 'no') {
-    res.render('v7/02b-bo-identified-nochange')
-  } else {
-    res.render('v7/completing-update')
-  }
-})
-
-router.get('/v7/05-verify-check', function(req, res) {
-  if (req.session.data['need-to-change'] === 'yes') {
-    res.render('v7/test-payment') 
-  } else {
-    res.render('v7/05-verify-check')
-  }
-})
-
-
-router.get('/v7/01-change-filter-start', function(req, res) {
-  if (req.session.data['verify-check'] === 'no') {
-    res.render('v7/06-not-verified-instructions')
-  } else {
-    res.render('v7/01-change-filter-start')
-  }
-})
 
 /*
 
