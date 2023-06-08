@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Review the information in this update statement – {{ serviceName }} – GOV.UK
+  Review the information before submitting this update statement – {{ serviceName }} – GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -129,7 +129,7 @@
 
 <!-- ********** STATEMENTS  ********** -->
 
- <h2 class="govuk-heading-l">Statement details</h2>
+ <h2 class="govuk-heading-l">Beneficial owner statements</h2>
 
         <h3 class="govuk-heading-m">Has the overseas entity identified any registrable beneficial owners?</h3>
           {{ govukSummaryList({
@@ -155,7 +155,7 @@
             ]
           }) }}
 
-        <h3 class="govuk-heading-m">Have any beneficial owners become or ceased in the update period?</h3>
+        <h3 class="govuk-heading-m">Has anyone become or ceased to be a registrable beneficial owner during the update period?</h3>
           {{ govukSummaryList({
             classes: 'govuk-!-margin-bottom-9',
             rows: [
