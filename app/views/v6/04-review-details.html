@@ -13,7 +13,7 @@
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
   <span class="govuk-caption-l">{{ data['overseas-name'] }} - {{ data['overseas-id'] }}</span>
-      <h1 class="govuk-heading-xl">Review the information in this update statement</h1>
+      <h1 class="govuk-heading-xl">Review the information before submitting this update statement</h1>
 
 
 
@@ -59,10 +59,10 @@
                   },
                   {
                   key: {
-                      text: "Changes made to this update"
+                      text: "Do you need to make any changes to this overseas entity?"
                   },
                   value: {
-                      text: "No, I don't need to make any changes"
+                      text: "No, I do not need to make changes"
                   },
                   actions: {
                       items: [
@@ -659,10 +659,7 @@
   items: [
     {
       value: "yes",
-      text: "Yes, the information is correct",
-      hint: {
-        text: "Select this to confirm and go to payment."
-      }
+      text: "Yes, the information is correct"
     },
     {
       value: "no",
