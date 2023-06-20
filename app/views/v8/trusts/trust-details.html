@@ -1,0 +1,239 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Tell us about the trust – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% if errorList %}
+      {{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: errorList
+      }) }}
+      {% endif %}
+      <form class="form" action="{{currentUrl}}" method="post">
+
+        <h1 class="govuk-heading-xl">Review the trust</h1>
+        
+        <p class="govuk-!-margin-bottom-5 govuk-!-margin-top-5">If you need to update this information, you can change the answers here.</p>
+
+        {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+
+        {% set bodateHtml %}
+        {{ govukDateInput({
+          id: "bo-date",
+          namePrefix: "bo-date",
+          fieldset: {
+            legend: {
+              text: "What date did they become involved in the trust?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          hint: {
+            text: "For example, 27 3 2007"
+          }
+        }) }}
+        {% endset -%}
+
+        <!-- Check for error -->
+        {% if errorTrustName %}
+        <div class="govuk-form-group govuk-form-group--error">
+        {% else %}
+        <div class="govuk-form-group">
+        {% endif %} 
+          <label class="govuk-label govuk-label--m" for="trust-name">
+            What is the name of the trust?
+          </label>
+          <div id="trust-name-hint" class="govuk-hint">
+            If the trust does not have a name, give a description that it can be identified by.
+          </div>
+          <!-- Check for error -->
+          {% if errorTrustName %}
+          <p id="trust-name-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> Enter the name of the trust
+          </p>
+          {% endif %} 
+          <input class="govuk-input" id="trust-name" name="trust-name" type="text" value="Island Trust">
+        </div>
+
+      <p class="govuk-body-l govuk-!-font-weight-bold govuk-!-margin-top-7 govuk-!-margin-bottom-1">Date the trust was created:</p>
+      <p class="govuk-!-font-size-20 govuk-!-margin-bottom-7">10 July 2020</p>
+
+  <!--
+          {{ govukCheckboxes({
+            idPrefix: "involved",
+            name: "involved",
+            fieldset: {
+              legend: {
+                text: "Which of the overseas entity’s beneficial owners are trustees of this trust?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            hint: {
+              text: "Select all that apply. You can add more later."
+            },
+            items: [
+              {
+                value: "joe",
+                text: "Joe Bloggs"
+              },
+              {
+                value: "acme",
+                text: "Acme Limited"
+                
+              }
+            ]
+          }) }}
+
+  -->
+
+
+        <div class="govuk-form-group govuk-!-margin-bottom-4">
+          <fieldset class="govuk-fieldset" aria-describedby="bo-checklist">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h2 class="govuk-fieldset__heading">
+                Which of the overseas entity’s beneficial owners are trustees of this trust?
+              </h2>
+            </legend>
+            <div id="bo-checklist-hint" class="govuk-hint">
+              Select all that apply.
+            </div>
+            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="bo-checklist" name="bo-checklist" type="checkbox" value="Daniel Ashcroft" checked>
+                <label class="govuk-label govuk-checkboxes__label" for="bo-checklist">
+                  Daniel Ashcroft
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="bo-checklist-2" name="bo-checklist" type="checkbox" value="Name Corp" checked>
+                <label class="govuk-label govuk-checkboxes__label" for="bo-checklist-2">
+                  Name Corp
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="bo-checklist-3" name="bo-checklist" type="checkbox" value="Lisa Smith">
+                <label class="govuk-label govuk-checkboxes__label" for="bo-checklist-3">
+                  Lisa Smith
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="bo-checklist-4" name="bo-checklist" type="checkbox" value="Beta Limited">
+                <label class="govuk-label govuk-checkboxes__label" for="bo-checklist-4">
+                  Beta Limited
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <p class="govuk-body govuk-!-margin-bottom-7"><a href="../beneficial-owner/involved-types-test" class="govuk-link govuk-link--no-visited-state">Change a beneficial owner's nature of control</a></p>
+
+        <div class="govuk-form-group govuk-!-margin-bottom-7">
+          <fieldset class="govuk-fieldset" aria-describedby="former-checklist">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h2 class="govuk-fieldset__heading">
+                Which of the following former beneficial owners were trustees of this trust?
+              </h2>
+            </legend>
+            <div id="former-checklist-hint" class="govuk-hint">
+              Select all that apply. You can add more later.
+            </div>
+            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="former-checklist" name="former-checklist" type="checkbox" value="jane_wright" checked>
+                <label class="govuk-label govuk-checkboxes__label" for="former-checklist">
+                  Jane Wright
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="govuk-form-group govuk-!-margin-bottom-7">
+          <fieldset class="govuk-fieldset" aria-describedby="individual-checklist">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h2 class="govuk-fieldset__heading">
+                Which of the following individuals are involved in this trust?
+              </h2>
+            </legend>
+            <div id="individual-checklist-hint" class="govuk-hint">
+              Select all that apply. You can add more later.
+            </div>
+            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="individual-checklist" name="individual-checklist" type="checkbox" value="fred_lock" checked>
+                <label class="govuk-label govuk-checkboxes__label" for="individual-checklist">
+                  Fred Lock
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="individual-checklist-2" name="individual-checklist" type="checkbox" value="mary_robinson" checked>
+                <label class="govuk-label govuk-checkboxes__label" for="individual-checklist-2">
+                  Mary Robinson
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="govuk-form-group govuk-!-margin-bottom-7">
+          <fieldset class="govuk-fieldset" aria-describedby="legal-checklist">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h2 class="govuk-fieldset__heading">
+                Which of the following legal entities are involved in this trust?
+              </h2>
+            </legend>
+            <div id="legal-checklist-hint" class="govuk-hint">
+              Select all that apply. You can add more later.
+            </div>
+            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="legal-checklist" name="legal-checklist" type="checkbox" value="salcombe_ltd" checked>
+                <label class="govuk-label govuk-checkboxes__label" for="legal-checklist">
+                  Salcombe Ltd
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        {{ govukInsetText({
+          html: '
+            <h2 class="govuk-heading-m">What information we&#39;ll show on the public register</h2>
+            <p>We will not show any of the information you provide in this section on the public Register of Overseas Entities. 
+              However, we may share it with HMRC.</p>
+                      '
+        }) }}
+
+        <div class="govuk-button-group">
+          
+            {{ govukButton({
+              formaction: "trust-details",
+              text: "Save and continue"
+            }) }}
+          
+
+            {{ govukButton({
+              text: "Delete trust",
+              href: "delete-trust-warning",
+              classes: "govuk-button--warning"
+            }) }}
+
+        </div>
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

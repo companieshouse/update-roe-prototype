@@ -1,0 +1,61 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+
+Who is completing this update?
+ – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+ <form class="form" action="21-tell-us-about-the-uk-regulated-agent-that-carried-out-verification-checks" method="post">
+
+
+{{ govukRadios({
+  idPrefix: "whoIsFiling",
+  name: "who-is-filing",
+  fieldset: {
+    legend: {
+      text: "Who is completing this update?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--xl"
+    }
+  },
+  items: [
+  {
+    value: "agent",
+    text: "Someone who works for the UK-regulated agent that carried out verification checks",
+    checked: checked("whoIsFiling", "agent")
+  },
+    {
+      value: "else",
+      text: "Someone else",
+      checked: checked("whoIsFiling", "else")
+    }
+
+  ]
+}) }}
+
+
+
+
+
+
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+      </form>
+
+
+    </div>
+  </div>
+
+{% endblock %}
