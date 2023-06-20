@@ -1,0 +1,193 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Tell us about the trust – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Tell us about the trust</h1>
+          <p class="govuk-!-margin-bottom-5 govuk-!-margin-top-5">You can add more trusts later.</p>
+
+
+
+
+
+        {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+
+        {% set bodateHtml %}
+        {{ govukDateInput({
+          id: "bo-date",
+          namePrefix: "bo-date",
+          fieldset: {
+            legend: {
+              text: "What date did they become involved in the trust?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          hint: {
+            text: "For example, 27 3 2007"
+          }
+        }) }}
+        {% endset -%}
+
+
+
+
+
+
+
+
+
+        {{ govukInput({
+
+
+          label: {
+            text: "What is the name of the trust?",
+            classes: "govuk-label--m",
+            isPageHeading: false
+          },
+          id: "trust-name",
+          name: "trust-name",
+          hint: {
+            text: "If the trust does not have a name, give a description that it can be identified by."
+          }
+        }) }}
+
+
+
+        {{ govukDateInput({
+          id: "trust-created",
+          namePrefix: "trust-created",
+          fieldset: {
+            legend: {
+              text: "When was the trust created?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "For example, 27 3 2007"
+          }
+        }) }}
+
+<!--
+        {{ govukCheckboxes({
+          idPrefix: "involved",
+          name: "involved",
+          fieldset: {
+            legend: {
+              text: "Which of the overseas entity’s beneficial owners are trustees of this trust?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "Select all that apply. You can add more later."
+          },
+          items: [
+            {
+              value: "joe",
+              text: "Joe Bloggs"
+            },
+            {
+              value: "acme",
+              text: "Acme Limited"
+              
+            }
+          ]
+        }) }}
+
+-->
+
+
+<div class="govuk-form-group govuk-!-margin-bottom-4">
+  <fieldset class="govuk-fieldset" aria-describedby="involved">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      <h2 class="govuk-fieldset__heading">
+        Which of the overseas entity’s beneficial owners are trustees of this trust?
+      </h2>
+    </legend>
+    <div id="involved-hint" class="govuk-hint">
+      Select all that apply. You can add more later.
+    </div>
+    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="involved" name="involved" type="checkbox" value="joebloggs">
+        <label class="govuk-label govuk-checkboxes__label" for="involved">
+          Joe Bloggs
+        </label>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="involved-2" name="involved" type="checkbox" value="acmelimited">
+        <label class="govuk-label govuk-checkboxes__label" for="involved-2">
+          Acme Limited
+        </label>
+
+    </div>
+  </fieldset>
+</div>
+
+
+
+      <p class="govuk-body govuk-!-margin-bottom-7"><a href="/register/beneficial-owner-type-one-added" class="govuk-link govuk-link--no-visited-state">Change a beneficial owner's trust nature of control</a></p>
+
+
+
+
+        {{ govukRadios({
+  name: "entity-required-info",
+  fieldset: {
+    legend: {
+      text: "To the best of their knowledge, does the entity have all the required information about the trust?",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes"
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+  ]
+}) }}
+
+
+
+
+        <form class="form" action="/url/of/next/page" method="post">
+
+
+
+
+          {{ govukInsetText({
+            html: '
+                      <h2 class="govuk-heading-m">What information we&#39;ll show on the public register</h2>
+                      <p>We will not show any of the information you provide on this screen on the public Register of Overseas Entities. However, we may share it with HMRC.</p>
+                        '
+          }) }}
+        {{ govukButton({
+          text: "Save and continue",
+          href: "43-individuals-or-entities-involved-in-the-trust"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
