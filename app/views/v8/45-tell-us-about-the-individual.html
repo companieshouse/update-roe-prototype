@@ -126,9 +126,38 @@
 
         <div class="govuk-form-group">
            <label for="autocomplete-default" class="govuk-label--m">What is their nationality?</label>
-          <p class="govuk-hint">Start typing a nationality, then choose from the list</p>
-          <div id="nationality" class="autocomplete-wrapper"></div>
+
+
         </div>
+
+
+{{ govukSelect({
+  id: "trust-ind-nationality",
+  name: "trustIndNationali",
+  label: {
+    text: "Sort by",
+    classes: "govuk-visually-hidden"
+  },
+  items: [
+    {
+      value: "afghan",
+      text: "Afghan"
+    },
+    {
+      value: "albanian",
+      text: "Albanian",
+      selected: true
+    },
+    {
+      value: "algerian",
+      text: "Algerian"
+    },
+    {
+      value: "american",
+      text: "American"
+    }
+  ]
+}) }}
 
         <p class="govuk-body">
           <a href="javascript:void(0)" id="second-nationality-link" class="govuk-link govuk-link--no-visited-state ">Add a second nationality</a>
@@ -137,8 +166,38 @@
           <div class="govuk-form-group">
             <label for="autocomplete-default" class="govuk-label">Second nationality (optional)</label>
             <p class="govuk-hint">Dual citizenship (also known as dual nationality) is allowed in some countries. This means they can be a citizen of their own country and another country.</p>
-            <div id="nationalityTwo" class="autocomplete-wrapper"></div>
+            <div id="nationalityTwo" class="autocomplete-wrapper">
+
+{{ govukSelect({
+  id: "trust-ind-nationality",
+  name: "trustIndNationality",
+  label: {
+    text: "Sort by",
+    classes: "govuk-visually-hidden"
+  },
+  items: [
+    {
+      value: "afghan",
+      text: "Afghan"
+    },
+    {
+      value: "albanian",
+      text: "Albanian",
+      selected: true
+    },
+    {
+      value: "algerian",
+      text: "Algerian"
+    },
+    {
+      value: "american",
+      text: "American"
+    }
+  ]
+}) }}
+            </div>
           </div>
+           </div> 
           {# <p class="govuk-body">
             <a href="javascript:void(0)" id="third-nationality-link" class="govuk-link govuk-link--no-visited-state">Add a third nationality</a>
           </p>
@@ -150,7 +209,7 @@
             <div id="nationalityThree" class="autocomplete-wrapper"></div>
           </div>#}
           
-        </div> 
+
 
         {% call govukFieldset({
           legend: {
@@ -210,11 +269,34 @@
           name: "service-address-state"
         }) }}
 
-        <div class="govuk-form-group">
-           <label for="autocomplete-default" class="govuk-label">Country</label>
-          <p class="govuk-hint">Start typing a country, then choose from the list</p>
-          <div id="country" class="autocomplete-wrapper"></div>
-        </div>
+          
+{{ govukSelect({
+  id: "country",
+  name: "country",
+  label: {
+    text: "Country"
+  },
+  items: [
+    {
+      value: "afghanistan",
+      text: "Afghanistan"
+    },
+    {
+      value: "albania",
+      text: "Albania",
+      selected: true
+    },
+    {
+      value: "algeria",
+      text: "Algeria"
+    },
+    {
+      value: "america",
+      text: "America"
+    }
+  ]
+}) }}
+        
 
         {{ govukInput({
           label: {
@@ -285,11 +367,34 @@
           name: "service-address-state"
         }) }}
 
-        <div class="govuk-form-group">
-           <label for="autocomplete-default" class="govuk-label">Country</label>
-          <p class="govuk-hint">Start typing a country, then choose from the list</p>
-          <div id="country-2" class="autocomplete-wrapper"></div>
-        </div>
+          
+{{ govukSelect({
+  id: "country",
+  name: "country",
+  label: {
+    text: "Country"
+  },
+  items: [
+    {
+      value: "afghanistan",
+      text: "Afghanistan"
+    },
+    {
+      value: "albania",
+      text: "Albania",
+      selected: true
+    },
+    {
+      value: "algeria",
+      text: "Algeria"
+    },
+    {
+      value: "america",
+      text: "America"
+    }
+  ]
+}) }}
+        
 
         {{ govukInput({
           label: {

@@ -147,8 +147,39 @@
 
         <div class="govuk-form-group">
            <label for="autocomplete-default" class="govuk-label">Country</label>
-          <p class="govuk-hint">Start typing a country, then choose from the list</p>
-          <div id="country" class="autocomplete-wrapper"></div>
+          {# <p class="govuk-hint">Start typing a country, then choose from the list</p> #}
+
+          
+          
+{{ govukSelect({
+  id: "country",
+  name: "country",
+  label: {
+    text: "Sort by",
+    classes: "govuk-visually-hidden"
+  },
+  items: [
+    {
+      value: "afghanistan",
+      text: "Afghanistan"
+    },
+    {
+      value: "albania",
+      text: "Albania",
+      selected: true
+    },
+    {
+      value: "algeria",
+      text: "Algeria"
+    },
+    {
+      value: "america",
+      text: "America"
+    }
+  ]
+}) }}
+          
+ 
         </div>
 
         {{ govukInput({
@@ -221,11 +252,34 @@
           name: "service-address-state"
         }) }}
 
-        <div class="govuk-form-group">
-           <label for="autocomplete-default" class="govuk-label">Country</label>
-          <p class="govuk-hint">Start typing a country, then choose from the list</p>
-          <div id="country-2" class="autocomplete-wrapper"></div>
-        </div>
+          
+{{ govukSelect({
+  id: "country",
+  name: "country",
+  label: {
+    text: "Country"
+  },
+  items: [
+    {
+      value: "afghanistan",
+      text: "Afghanistan"
+    },
+    {
+      value: "albania",
+      text: "Albania",
+      selected: true
+    },
+    {
+      value: "algeria",
+      text: "Algeria"
+    },
+    {
+      value: "america",
+      text: "America"
+    }
+  ]
+}) }}
+          
 
         {{ govukInput({
           label: {
