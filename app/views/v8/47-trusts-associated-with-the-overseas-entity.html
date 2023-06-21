@@ -17,7 +17,7 @@ Do you want to add another trust?
 
 
    
-   <form action="/register/check-answers" method="get">
+   <form action="39-check-your-answers-before-submitting" method="get">
 
 <h1 class="govuk-heading-xl">Trusts associated with the overseas entity</h1>
 
@@ -27,11 +27,11 @@ Do you want to add another trust?
             firstCellIsHeader: true,
             head: [
             {
-              text: "Type",
+              text: "Trust",
               classes: "govuk-visually-hidden"
             },
               {
-                text: "Change or remove",
+                text: "Change",
                 classes: "govuk-visually-hidden"
               }
             ],
@@ -42,8 +42,7 @@ Do you want to add another trust?
                 text: "Islands Trust"
               },
               {
-                html: '<a href="/register/trusts/trust-details-edit">Change</a>
-                    <a href="/register/trusts/delete-trust-warning" class="govuk-!-padding-left-5">Remove</a>',
+                html: '<a href="/register/trusts/trust-details-edit">Change</a>',
               visuallyHiddenText: "Trust - Islands Trust"
               }
              ],
@@ -53,8 +52,7 @@ Do you want to add another trust?
                 text: "Cayman Trust"
               },
               {
-                html: '<a href="/register/trusts/trust-details-edit">Change</a>
-                    <a href="/register/trusts/delete-trust-warning" class="govuk-!-padding-left-5">Remove</a>',
+                html: '<a href="/register/trusts/trust-details-edit">Change</a>',
               visuallyHiddenText: "Trust - Cayman Trust"
               }
              ]
