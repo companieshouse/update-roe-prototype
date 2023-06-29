@@ -22,32 +22,32 @@ postTrustFilter(router)
 
 
 // 02 ******* SAVED FILING FILTER *******
-router.get('/v7/04-do-any-beneficial-owners-or-managing-officers-have-their-personal-information-protected-at-companies-house', function(req, res) {
+router.get('/v8/04-do-any-beneficial-owners-or-managing-officers-have-their-personal-information-protected-at-companies-house', function(req, res) {
   if (req.session.data['saved-filing'] === 'yes') {
-    res.render('v7/03-your-filings')
+    res.render('v8/03-your-filings')
   } else {
-    res.render('v7/04-do-any-beneficial-owners-or-managing-officers-have-their-personal-information-protected-at-companies-house')
+    res.render('v8/04-do-any-beneficial-owners-or-managing-officers-have-their-personal-information-protected-at-companies-house')
   }
 })
 
 
 
 // 04 ******* PROTECTED FILTER *******
-router.get('/v7/06-are-there-any-trusts-involved-in-this-overseas-entity', function(req, res) {
+router.get('/v8/06-are-there-any-trusts-involved-in-this-overseas-entity', function(req, res) {
   if (req.session.data['secure-register'] === 'yes') {
-    res.render('v7/05-youll-need-to-file-an-update-statement-using-the-paper-form')
+    res.render('v8/05-youll-need-to-file-an-update-statement-using-the-paper-form')
   } else {
-    res.render('v7/06-are-there-any-trusts-involved-in-this-overseas-entity')
+    res.render('v8/06-are-there-any-trusts-involved-in-this-overseas-entity')
   }
 })
 
 
 // 06 ******* TRUSTS INVOLVED FILTER *******
-router.get('/v7/08-before-you-start', function(req, res) {
+router.get('/v8/08-before-you-start', function(req, res) {
   if (req.session.data['trust-involved'] === 'yes') {
-    res.render('v7/07-youll-need-to-file-an-update-statement-using-the-paper-form')
+    res.render('v8/07-youll-need-to-file-an-update-statement-using-the-paper-form')
   } else {
-    res.render('v7/08-before-you-start')
+    res.render('v8/08-before-you-start')
   }
 })
 
@@ -55,22 +55,22 @@ router.get('/v7/08-before-you-start', function(req, res) {
 
 // 14 ******* MAKE ANY CHANGES? FILTER *******
 
-router.get('/v7/19-who-is-completing-this-update', function(req, res) {
+router.get('/v8/19-who-is-completing-this-update', function(req, res) {
   if (req.session.data['make-changes'] === 'no') {
-    res.render('v7/15-has-the-overseas-entity-identified-any-registrable-beneficial-owners')
+    res.render('v8/15-has-the-overseas-entity-identified-any-registrable-beneficial-owners')
   } else {
-    res.render('v7/19-who-is-completing-this-update')
+    res.render('v8/19-who-is-completing-this-update')
   }
 })
 
 
 // 18 ******* NO CHANGE: REVIEW THE INFORMATION FILTER *******
 
-router.get('/v7/14-do-you-need-to-make-any-changes-to-this-overseas-entity', function(req, res) {
+router.get('/v8/14-do-you-need-to-make-any-changes-to-this-overseas-entity', function(req, res) {
   if (req.session.data['need-to-change'] === 'yes') {
-    res.render('v7/xx-payment') 
+    res.render('v8/xx-payment') 
   } else {
-    res.render('v7/14-do-you-need-to-make-any-changes-to-this-overseas-entity')
+    res.render('v8/14-do-you-need-to-make-any-changes-to-this-overseas-entity')
   }
 })
 
@@ -78,11 +78,11 @@ router.get('/v7/14-do-you-need-to-make-any-changes-to-this-overseas-entity', fun
 
 // 19 ******* WHO IS COMPLETING THIS UPDATE? FILTER *******
 
-router.get('/v7/21-tell-us-about-the-uk-regulated-agent-that-carried-out-verification-checks', function(req, res) {
+router.get('/v8/21-tell-us-about-the-uk-regulated-agent-that-carried-out-verification-checks', function(req, res) {
   if (req.session.data['who-is-filing'] === 'agent') {
-    res.render('v7/20-complete-this-statement-to-confirm-that-verification-checks-have-been-completed')
+    res.render('v8/20-complete-this-statement-to-confirm-that-verification-checks-have-been-completed')
   } else {
-    res.render('v7/21-tell-us-about-the-uk-regulated-agent-that-carried-out-verification-checks')
+    res.render('v8/21-tell-us-about-the-uk-regulated-agent-that-carried-out-verification-checks')
   }
 })
 
@@ -91,11 +91,11 @@ router.get('/v7/21-tell-us-about-the-uk-regulated-agent-that-carried-out-verific
 
 // ceased filter - NEEDS UPDATING
 
-router.get('/v7/submit-pay/check-your-answers', function(req, res) {
+router.get('/v8/submit-pay/check-your-answers', function(req, res) {
   if (req.session.data['bo-update-ceased'] === 'yes') {
-    res.render('v7/statements-concept/xx-change-statements-generic')
+    res.render('v8/statements-concept/xx-change-statements-generic')
   } else {
-    res.render('v7/submit-pay/check-your-answers')
+    res.render('v8/submit-pay/check-your-answers')
   }
 })
 
@@ -156,14 +156,14 @@ router.get( '/44-tell-us-about-the-former-beneficial-owner', function ( req, res
 
 
 // ******* 23 OE DETAILS VALIDATION ************
-router.get('/v7/oe-details', function (req, res) {
+router.get('/v8/oe-details', function (req, res) {
   // Set URl
-  res.render('v7/oe-details', {
+  res.render('v8/oe-details', {
     currentUrl: req.originalUrl
   })
 })
 
-router.post('/v7/oe-details', function (req, res) {
+router.post('/v8/oe-details', function (req, res) {
   // Create empty array
   var errors = []
 
@@ -176,13 +176,13 @@ router.post('/v7/oe-details', function (req, res) {
     })
 
     // Re-show page with error value as true so errors will show
-    res.render('v7/oe-details', {
+    res.render('v8/oe-details', {
       errorEmail: true, 
       errorList: errors
     })
   } else {
     // User inputted value so move to next page
-    res.redirect('/v7/beneficial-owner/bo-mo-review')
+    res.redirect('/v8/beneficial-owner/bo-mo-review')
   }
 })
 
@@ -190,55 +190,55 @@ router.post('/v7/oe-details', function (req, res) {
 
 
 // ******* BENEFICIAL OWNER individual validation *********************
-router.get('/v7/trusts/individual', function (req, res) {
+router.get('/v8/trusts/individual', function (req, res) {
   // Set URl
-  res.render('v7/trusts/individual', {
+  res.render('v8/trusts/individual', {
     currentUrl: req.originalUrl
   })
 })
 
-router.post('/v7/trusts/individual', function (req, res) {
-  res.redirect('/v7/trusts/individual-2')
+router.post('/v8/trusts/individual', function (req, res) {
+  res.redirect('/v8/trusts/individual-2')
 })
 
 
 // ******* individual-2 validation ********************************
-router.get('/v7/trusts/individual-2', function (req, res) {
+router.get('/v8/trusts/individual-2', function (req, res) {
   // Set URl
-  res.render('v7/trusts/individual-2', {
+  res.render('v8/trusts/individual-2', {
     currentUrl: req.originalUrl
   })
 })
 
-router.post('/v7/trusts/individual-2', function (req, res) {
-  res.redirect('/v7/trusts/legal-entity')
+router.post('/v8/trusts/individual-2', function (req, res) {
+  res.redirect('/v8/trusts/legal-entity')
 })
 
 
 // ******* legal-entity validation ********************************
-router.get('/v7/trusts/legal-entity', function (req, res) {
+router.get('/v8/trusts/legal-entity', function (req, res) {
   // Set URl
-  res.render('v7/trusts/legal-entity', {
+  res.render('v8/trusts/legal-entity', {
     currentUrl: req.originalUrl
   })
 })
 
-router.post('/v7/trusts/legal-entity', function (req, res) {
-  res.redirect('/v7/trusts/trust-involved-additions')
+router.post('/v8/trusts/legal-entity', function (req, res) {
+  res.redirect('/v8/trusts/trust-involved-additions')
 })
 
 
 
 
 // ******* bo-individual validation ********************************
-router.get('/v7/beneficial-owner/bo-individual', function (req, res) {
+router.get('/v8/beneficial-owner/bo-individual', function (req, res) {
   // Set URl
-  res.render('v7/beneficial-owner/bo-individual', {
+  res.render('v8/beneficial-owner/bo-individual', {
     currentUrl: req.originalUrl
   })
 })
 
-router.post('/v7/beneficial-owner/bo-individual', function (req, res) {
+router.post('/v8/beneficial-owner/bo-individual', function (req, res) {
   // Create variables
   var propertyError = false;
   var address1Error = false;
@@ -299,7 +299,7 @@ router.post('/v7/beneficial-owner/bo-individual', function (req, res) {
     
   if (errors.length != 0) {
   // Re-show page with error value as true so errors will show
-    res.render('v7/beneficial-owner/bo-individual', {
+    res.render('v8/beneficial-owner/bo-individual', {
       errorBoCeased: boCeasedError,
       errorProperty: propertyError,
       errorAddress1: address1Error,
@@ -309,7 +309,7 @@ router.post('/v7/beneficial-owner/bo-individual', function (req, res) {
     })
   } else {
     // User inputted value so move to next page
-    res.redirect('/v7/beneficial-owner/mo')
+    res.redirect('/v8/beneficial-owner/mo')
   }
 })
 
@@ -319,13 +319,13 @@ router.post('/v7/beneficial-owner/bo-individual', function (req, res) {
 
 
 // ******* bo gov validation ********************************
-router.get('/v7/beneficial-owner/bo-gov', function (req, res) {
+router.get('/v8/beneficial-owner/bo-gov', function (req, res) {
   // Set URl
-  res.render('v7/beneficial-owner/bo-gov', {
+  res.render('v8/beneficial-owner/bo-gov', {
     currentUrl: req.originalUrl
   })
 })
-router.post('/v7/beneficial-owner/bo-gov', function (req, res) {
+router.post('/v8/beneficial-owner/bo-gov', function (req, res) {
   // Create variables
   var boCeasedError = false;
 
@@ -339,7 +339,7 @@ router.post('/v7/beneficial-owner/bo-gov', function (req, res) {
     })
   } else {
     // User inputted value so move to next page
-    res.redirect('/v7/beneficial-owner/mo')
+    res.redirect('/v8/beneficial-owner/mo')
   }
 })
 
@@ -349,14 +349,14 @@ router.post('/v7/beneficial-owner/bo-gov', function (req, res) {
 
 
 // ******* mo-individual validation ********************************
-router.get('/v7/beneficial-owner/mo', function (req, res) {
+router.get('/v8/beneficial-owner/mo', function (req, res) {
   // Set URl
-  res.render('v7/beneficial-owner/mo', {
+  res.render('v8/beneficial-owner/mo', {
     currentUrl: req.originalUrl
   })
 })
 
-router.post('/v7/beneficial-owner/mo', function (req, res) {
+router.post('/v8/beneficial-owner/mo', function (req, res) {
   // Create variables
   var propertyError = false;
   var address1Error = false;
@@ -417,7 +417,7 @@ router.post('/v7/beneficial-owner/mo', function (req, res) {
     
   if (errors.length != 0) {
   // Re-show page with error value as true so errors will show
-    res.render('v7/beneficial-owner/mo', {
+    res.render('v8/beneficial-owner/mo', {
       errorMoCeased: moCeasedError,
       errorProperty: propertyError,
       errorAddress1: address1Error,
@@ -427,7 +427,7 @@ router.post('/v7/beneficial-owner/mo', function (req, res) {
     })
   } else {
     // User inputted value so move to next page
-    res.redirect('/v7/beneficial-owner/involved-types')
+    res.redirect('/v8/beneficial-owner/involved-types')
   }
 })
 
@@ -437,14 +437,14 @@ router.post('/v7/beneficial-owner/mo', function (req, res) {
 
 
 // ******* trust-details validation ********************************
-router.get('/v7/trusts/trust-details', function (req, res) {
+router.get('/v8/trusts/trust-details', function (req, res) {
   // Set URl
-  res.render('v7/trusts/trust-details', {
+  res.render('v8/trusts/trust-details', {
     currentUrl: req.originalUrl
   })
 })
 
-router.post('/v7/trusts/trust-details', function (req, res) {
+router.post('/v8/trusts/trust-details', function (req, res) {
   var trustNameError = false;
   var errors = [];
 
@@ -457,48 +457,48 @@ router.post('/v7/trusts/trust-details', function (req, res) {
   }
     
   if (errors.length != 0) {
-    res.render('v7/trusts/trust-details', {
+    res.render('v8/trusts/trust-details', {
       errorTrustName: trustNameError,
       errorList: errors
     })
   } else {
-    res.redirect('/v7/trusts/former-bo')}
+    res.redirect('/v8/trusts/former-bo')}
 })
 
 
 // ******* delete-trust-warning validation ********************************
-router.get('/v7/trusts/delete-trust-warning', function (req, res) {
+router.get('/v8/trusts/delete-trust-warning', function (req, res) {
   // Set URl
-  res.render('v7/trusts/delete-trust-warning', {
+  res.render('v8/trusts/delete-trust-warning', {
     currentUrl: req.originalUrl
   })
 })
 
-router.post('/v7/trusts/delete-trust-warning', function (req, res) {
+router.post('/v8/trusts/delete-trust-warning', function (req, res) {
   // Make a variable and give it the value from 'x'
   var warningAnswer = req.session.data['delete-trust']
 
   // Check whether the variable matches a condition
   if (warningAnswer == "yes"){
     // Send user to next page
-    res.redirect('/v7/trusts/add-trust-deleted')
+    res.redirect('/v8/trusts/add-trust-deleted')
   } else {
     // Send user to ineligible page
-    res.redirect('/v7/trusts/trust-details')
+    res.redirect('/v8/trusts/trust-details')
   }
 
 })
 
 
 // ******* former-bo validation ********************************
-router.get('/v7/trusts/former-bo', function (req, res) {
+router.get('/v8/trusts/former-bo', function (req, res) {
   // Set URl
-  res.render('v7/trusts/former-bo', {
+  res.render('v8/trusts/former-bo', {
     currentUrl: req.originalUrl
   })
 })
 
-router.post('/v7/trusts/former-bo', function (req, res) {
+router.post('/v8/trusts/former-bo', function (req, res) {
   // Create empty array and set error variables to false
   var errors = []
   var dayHasError = false
@@ -538,7 +538,7 @@ router.post('/v7/trusts/former-bo', function (req, res) {
   // Check if ether filed not filled out
   if (errors.length != 0) {
     // Re-show page with error value as true so errors will show
-    res.render('v7/trusts/former-bo', {
+    res.render('v8/trusts/former-bo', {
       errorBoStartDay: dayHasError,
       errorBoStartMonth: monthHasError,
       errorBoStartYear: yearHasError,
@@ -546,7 +546,7 @@ router.post('/v7/trusts/former-bo', function (req, res) {
     })
   } else {
     // User inputted value so move to next page
-    res.redirect('/v7/trusts/individual')
+    res.redirect('/v8/trusts/individual')
   }
 
 })
