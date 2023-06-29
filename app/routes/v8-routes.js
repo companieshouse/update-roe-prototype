@@ -57,7 +57,7 @@ router.get('/v8/08-before-you-start', function(req, res) {
 
 router.get('/v8/19-who-is-completing-this-update', function(req, res) {
   if (req.session.data['make-changes'] === 'no') {
-    res.render('v8/15-has-the-overseas-entity-identified-any-registrable-beneficial-owners')
+    res.render('v8/15b-has-the-overseas-entity-identified-any-registrable-beneficial-owners')
   } else {
     res.render('v8/19-who-is-completing-this-update')
   }
