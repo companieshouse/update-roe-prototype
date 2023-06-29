@@ -27,22 +27,17 @@ An email has been sent to the overseas entity
 
 </p></div>
 
-
-
-  {{ govukButton({
-    text: "Continue",
-    href: "/v2/authentication-code"
-  }) }}
           
  {{ govukDetails({
   summaryText: "I have not received the email",
   html: '<p class"govuk-body">
-    The email may take a few minutes to arrive. Its subject line is &#39;Your Companies House authentication code&#39;.</p>
+    The email may take a few minutes to arrive. Its subject line is "Your Companies House authentication code".</p>
   <p>
-    Check your junk folder. If it still has not arrived after 30 minutes, you can <a href="/v2/auth/request">request the code again</a>.</p>
+    Check your junk folder. If it still has not arrived after 30 minutes, you can <a href="request-an-authentication-code">request the code again</a></p>
 
   <p>If you need to change the email address that the code is sent to, <a href="#">contact Companies House</a>.</p>'
 }) }}
+
 
     
     
