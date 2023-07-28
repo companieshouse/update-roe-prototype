@@ -1,0 +1,60 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+
+Do any beneficial owners or managing officers have their personal information protected at Companies House?
+ – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+ 
+  <form action="06-are-there-any-trusts-involved-in-this-overseas-entity" method="post">
+
+
+{{ govukRadios({
+  name: "roe-prototype-scenario",
+  fieldset: {
+    legend: {
+      text: "Choose a scenario - internal use only",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      value: "update",
+      text: "Update"
+    },
+    {
+      value: "remove",
+      text: "Remove"
+    }
+  ]
+}) }}
+  
+
+  
+  {{ govukInsetText({
+          html: '<h2 class="govuk-heading-m">What information we’ll show on the public register</h2>
+                <p>We will not show any of the information you provide in this section on the public Register of Overseas Entities.</p>'
+        }) }}
+
+          {{ govukButton({
+            text: "Continue"
+          }) }}
+  </form>
+
+
+
+
+    </div>
+  </div>
+
+{% endblock %}

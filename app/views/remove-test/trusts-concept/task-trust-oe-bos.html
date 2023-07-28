@@ -1,0 +1,96 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Which of the overseas entity’s beneficial owners are trustees of this trust? – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% if errorList %}
+      {{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: errorList
+      }) }}
+      {% endif %}
+      <form class="form" action="{{currentUrl}}" method="post">
+
+
+   
+        {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+
+
+          <span class="govuk-caption-l">{{ data['trust-name'] }}</span>
+          
+        <div class="govuk-form-group govuk-!-margin-bottom-4">
+          <fieldset class="govuk-fieldset" aria-describedby="bo-checklist">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h1 class="govuk-heading-xl">
+                Which of the overseas entity’s beneficial owners are trustees of this trust?
+              </h1>
+            </legend>
+            <div id="bo-checklist-hint" class="govuk-hint">
+              Select all that apply.
+            </div>
+            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="bo-checklist" name="bo-checklist" type="checkbox" value="Daniel Ashcroft" checked>
+                <label class="govuk-label govuk-checkboxes__label" for="bo-checklist">
+                  Daniel Ashcroft
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="bo-checklist-2" name="bo-checklist" type="checkbox" value="Name Corp" checked>
+                <label class="govuk-label govuk-checkboxes__label" for="bo-checklist-2">
+                  Name Corp
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="bo-checklist-3" name="bo-checklist" type="checkbox" value="Lisa Smith">
+                <label class="govuk-label govuk-checkboxes__label" for="bo-checklist-3">
+                  Lisa Smith
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="bo-checklist-4" name="bo-checklist" type="checkbox" value="Beta Limited">
+                <label class="govuk-label govuk-checkboxes__label" for="bo-checklist-4">
+                  Beta Limited
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <p class="govuk-body govuk-!-margin-bottom-7"><a href="../beneficial-owner/involved-types-test" class="govuk-link govuk-link--no-visited-state">Change a beneficial owner's nature of control</a></p>
+
+       
+
+
+        {{ govukInsetText({
+          html: '
+            <h2 class="govuk-heading-m">What information we&#39;ll show on the public register</h2>
+            <p>We will not show any of the information you provide in this section on the public Register of Overseas Entities. 
+              However, we may share it with HMRC.</p>
+                      '
+        }) }}
+
+        <div class="govuk-button-group">
+          
+            {{ govukButton({
+              formaction: "trust-details",
+              text: "Save and continue"
+            }) }}
+
+        </div>
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

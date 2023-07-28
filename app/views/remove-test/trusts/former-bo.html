@@ -1,0 +1,191 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Historical beneficial owner – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">{{ data['trust-name'] }}</span>
+      <h1 class="govuk-heading-xl govuk-!-margin-0">Review the former beneficial owner</h1>
+      <p class="govuk-!-margin-bottom-5 govuk-!-margin-top-5">If you need to update this former beneficial owner's information, you can change the answers here.</p>
+
+      <div class="govuk-inset-text">
+        You may need to <strong>enter any information that's missing</strong>.
+      </div>
+
+      <form class="form" action="{{currentUrl}}" method="post">  
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+
+        {% set entityHtml %}
+        {{ govukInput({
+          id: "entity-name",
+          name: "entity-name",
+          type: "name",
+          autocomplete: "name",
+          spellcheck: false,
+          classes: "govuk-!-width-two-thirds",
+          label: {
+            text: "Name"
+          }
+        }) }}
+        {% endset -%}
+
+        {% set individualHtml %}
+        {{ govukInput({
+          id: "individual-name",
+          name: "individual-name",
+          type: "first-name",
+          autocomplete: "first-name",
+          hint: {
+          text: "This is also known as their given name."},
+          classes: "govuk-!-width-two-thirds",
+          label: {text: "First name"},
+          value: "Jane"
+        }) }}
+
+        {{ govukInput({
+          id: "individual-name",
+          name: "individual-name",
+          type: "last-name",
+          autocomplete: "last-name",
+          hint: {
+          text: "This is also known as their family name."
+        },
+          classes: "govuk-!-width-two-thirds",
+          label: {text: "Last name"},
+          value: "Wright"
+        }) }}
+
+        {% endset -%}
+
+        {{ govukRadios({
+          name: "contact",
+          fieldset: {
+            legend: {
+              text: "Is the former beneficial owner an individual or a legal entity?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            
+            {
+              value: "individual",
+              text: "Individual",
+              checked: "checked",
+              conditional: {
+                html: individualHtml
+              }
+            },
+            {
+              value: "entity",
+              text: "Legal entity",
+              conditional: {
+                html: entityHtml
+              }
+            }
+          ]
+        }) }}
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" role="group" aria-describedby="bo-start-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+               When did they become a beneficial owner?
+            </legend>
+            <div id="bo-start-hint" class="govuk-hint">
+              For example, 27 3 2007
+            </div>
+            <div class="govuk-date-input" id="bo-start">
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="bo-start-day">
+                    Day
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="bo-start-day" name="bo-start-day" type="text" inputmode="numeric" value="4">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="bo-start-month">
+                    Month
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="bo-start-month" name="bo-start-month" type="text" inputmode="numeric" value="10">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="bo-start-year">
+                    Year
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="bo-start-year" name="bo-start-year" type="text" inputmode="numeric" value="2015">
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" role="group" aria-describedby="bo-stop-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+               When did they cease to be a beneficial owner?
+            </legend>
+            <div id="bo-stop-hint" class="govuk-hint">
+              For example, 28 5 2011
+            </div>
+            <div class="govuk-date-input" id="bo-stop">
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="bo-stop-day">
+                    Day
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="bo-stop-day" name="bo-start-day" type="text" inputmode="numeric" value="10">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="bo-stop-month">
+                    Month
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="bo-stop-month" name="bo-start-month" type="text" inputmode="numeric" value="08">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="bo-stop-year">
+                    Year
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="bo-stop-year" name="bo-start-year" type="text" inputmode="numeric" value="2021">
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        {{ govukInsetText({
+          html: '
+            <h2 class="govuk-heading-m">What information we&#39;ll show on the public register</h2>
+            <p>We will not show any of the information you provide in this section on the public Register of Overseas Entities. However, we may share it with HMRC.</p>
+              '
+        }) }}
+
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

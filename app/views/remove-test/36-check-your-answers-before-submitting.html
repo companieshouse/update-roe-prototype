@@ -1,0 +1,1861 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Check your answers – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+  <span class="govuk-caption-l">{{ data['overseas-name'] }} - OE001485</span>
+      <h1 class="govuk-heading-xl">Check your answers before submitting</h1>
+
+
+
+
+<!-- ********** PROTECTED INFORMATION AND DATE OF THE UPDATE  ********** -->
+
+              {{ govukSummaryList({
+                classes: 'govuk-!-margin-bottom-9',
+                rows: [
+                  {
+                    key: {
+                      text: "Do any beneficial owners or managing officers have personal information protected at Companies House?"
+                    },
+                    value: {
+                      text: 'No'
+                    },
+                    actions: {
+                      items: [
+                        {
+                          href: "#",
+                          text: "Change",
+                          visuallyHiddenText: "Does the update include people that have protection or that have applied for protection?"
+                        }
+                      ]
+                    }
+                  },
+                   {
+                    key: {
+                      text: "Date of the update statement"
+                    },
+                    value: {
+                      text: '10 August 2023'
+                    },
+                    actions: {
+                      items: [
+                        {
+                          href: "#",
+                          text: "Change",
+                          visuallyHiddenText: "Does the update include people that have protection or that have applied for protection?"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }) }}
+
+
+
+
+<!-- ********** CONTACT DETAILS  ********** -->
+
+      <h2 class="govuk-heading-l">Contact details</h2>
+
+      <h3 class="govuk-heading-m">Who can we contact about this update statement?</h3>
+        {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-9',
+          rows: [
+            {
+              key: {
+                text: "Full name"
+              },
+              value: {
+                text: data['contact-full-name']
+                },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "Full name - who can we contact about this application"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Email address"
+              },
+              value: {
+                text: data['contact-email']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "Email address - who can we contact about this application"
+                  }
+                ]
+              }
+            }
+          ]
+        }) }}
+
+
+
+
+<!-- ********** VERIFICATION CHECKS  ********** -->
+
+      <h2 class="govuk-heading-l">Verification checks</h2>
+          {{ govukSummaryList({
+            classes: 'govuk-!-margin-bottom-9',
+            rows: [
+            {
+              key: {
+                text: "Who is completing this update?"
+              },
+              value: {
+                text: "Someone else"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "Who is making the filing?"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Date the verification checks were completed"
+              },
+              value: {
+                text: "10 June 2023"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "Who is making the filing?"
+                  }
+                ]
+              }
+            },
+              {
+                key: {
+                  text: "Name of agent"
+                },
+                value: {
+                  text: data['due-diligence-name']
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "#",
+                      text: "Change",
+                      visuallyHiddenText: "Name of agent"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "Correspondence address"
+                },
+                value: {
+                  html: data['agent-address-line-1'] <br> data['agent-address-city-town'] <br> data['agent-address-state'] <br> data['where-do-you-live']<br> data['agent-address-postcode']
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "#",
+                      text: "Change",
+                      visuallyHiddenText: "Address of agent"
+                    }
+                  ]
+                }
+              },
+
+              {
+                key: {
+                  text: "Email address"
+                },
+                value: {
+                  text: data['due-diligence-email']
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "#",
+                      text: "Change",
+                      visuallyHiddenText: "Email address of agent"
+                    }
+                  ]
+                }
+              },
+
+              {
+                key: {
+                  text: "Name of supervisory body"
+                },
+                value: {
+                  text: data['supervisory-name']
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "#",
+                      text: "Change",
+                      visuallyHiddenText: "Name of the supervisory body"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: " Anti-Money Laundering (AML) registration number"
+                },
+                value: {
+                  text: "87654321"
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "#",
+                      text: "Change",
+                      visuallyHiddenText: "Anti Money Laundering (AML) registration number of the agent"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "Agent assurance code"
+                },
+                value: {
+                  text: data['agent-code']
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "#",
+                      text: "Change",
+                      visuallyHiddenText: "Agent’s authentication code"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "Person responsible for overseeing verification checks"
+                },
+                value: {
+                  text: data['partner-name']
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "#",
+                      text: "Change",
+                      visuallyHiddenText: "Name of partner"
+                    }
+                  ]
+                }
+              }
+            ]
+          }) }} 
+
+
+
+
+ <!-- ********** OVERSEAS ENTITY DETAILS  ********** -->
+
+      <h2 class="govuk-heading-l">Overseas entity details</h2>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name of overseas entity
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Ashcroft Limited
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/register/entity">
+              Change
+              <span class="govuk-visually-hidden">   Name of overseas entity</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+             Country it was formed in
+          </dt>
+          <dd class="govuk-summary-list__value">
+            British Virgin Islands
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/register/entity">
+              Change
+              <span class="govuk-visually-hidden">    Country overseas entity was formed in</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Principal or registered office address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            PO Box 2486
+            <br>Tortola
+            <br>British Virgin Islands
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/register/entity">
+              Change
+              <span class="govuk-visually-hidden"> overseas entity principal or registered office address</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Correspondence address
+          </dt>
+          <dd class="govuk-summary-list__value">
+          The correspondence address is the same as the entity's principal or registered office address
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/register/entity">
+              Change
+              <span class="govuk-visually-hidden"> overseas entity correspondence address</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Email address at the overseas entity we should send communications to
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>email@example.com</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/register/entity">
+              Change
+              <span class="govuk-visually-hidden"> overseas entity email</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Legal form
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>Limited company</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/register/entity">
+              Change
+              <span class="govuk-visually-hidden"> overseas entity legal form</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Governing law
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>British Virgin Islands</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/register/entity">
+              Change
+              <span class="govuk-visually-hidden"> overseas entity governing law</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Overseas public register
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>
+              Registry of Corporate Affairs – BVI
+              <!--
+              {# PUBLIC REGISTER NAME #}
+              {% if data['entity-public-register-name'] != null %}
+                {{ data['entity-public-register-name'] }}
+              {% else %}
+                Hong Kong Registrations (HK)
+              {% endif %}
+
+              {# PUBLIC REGISTER JURISTICTION #}
+              {% if data['entity-public-register-jurisdiction'] != null %}
+                / {{ data['entity-public-register-jurisdiction'] }}
+              {% else %}
+                / Hong Kong
+              {% endif %}
+
+              {# PUBLIC REGISTER NUMBER #}
+              {% if data['entity-public-register-number'] != null %}
+                / {{ data['entity-public-register-number'] }}
+              {% else %}
+                / 01234567890
+              {% endif %}
+              -->
+            </p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/register/entity">
+              Change
+              <span class="govuk-visually-hidden"> overseas entity public register</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Jurisdiction
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>
+              British Virgin Islands
+            </p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/register/entity">
+              Change
+              <span class="govuk-visually-hidden"> overseas entity public register</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Registration number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>
+              17530984
+            </p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/register/entity">
+              Change
+              <span class="govuk-visually-hidden"> overseas entity public register</span>
+            </a>
+          </dd>
+        </div>      
+      </dl>
+
+ 
+
+
+<!-- ********** STATEMENTS  ********** -->
+
+ <h2 class="govuk-heading-l">Statement details</h2>
+
+        <h3 class="govuk-heading-m">Has the overseas entity identified any registrable beneficial owners?</h3>
+          {{ govukSummaryList({
+            classes: 'govuk-!-margin-bottom-9',
+            rows: [
+            {
+              key: {
+                text: " Statement"
+              },
+              value: {
+                text: "All beneficial owners have been identified and all required information has been provided."
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "Has the overseas entity identified any registrable beneficial owners?"
+                  }
+                ]
+              }
+            }
+            ]
+          }) }}
+
+        <h3 class="govuk-heading-m">Have any beneficial owners become or ceased in the update period?</h3>
+          {{ govukSummaryList({
+            classes: 'govuk-!-margin-bottom-9',
+            rows: [
+            {
+              key: {
+                text: " Statement"
+              },
+              value: {
+                text: "
+                The entity has reasonable cause to believe that at least one person has become or ceased to be a registrable beneficial owner during the update period."
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "Have any beneficial owners become or ceased in the update period?"
+                  }
+                ]
+              }
+            }
+            ]
+          }) }}
+
+
+
+
+
+<!-- ********** INDIVIDUAL BENEFICIAL OWNER  ********** -->
+
+<h2 class="govuk-heading-l">Beneficial owners you have reviewed</h2>
+
+      <h3 class="govuk-heading-m">Individual beneficial owner</h3>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            First name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>Daniel</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/register/beneficial-owner-individual">
+              Change
+              <span class="govuk-visually-hidden"> Individual beneficial owner First name </span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Last name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>Ashcroft</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/register/beneficial-owner-individual">
+              Change
+              <span class="govuk-visually-hidden">  Individual beneficial owner Dr Lisa Davies Davies</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Born
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>August 1972</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            {# <a href="/register/beneficial-owner-individual">
+              Change
+              <span class="govuk-visually-hidden">Individual beneficial owner Dr Lisa Davies date of birth</span>
+            </a> #}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Nationality
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>British Virgin Islander</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/register/beneficial-owner-individual">
+              Change
+              <span class="govuk-visually-hidden"> Individual beneficial owner Dr Lisa Davies nationality</span>
+            </a>
+          </dd>
+        </div>
+
+        <!-- <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Second nationality
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>French</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/register/beneficial-owner-individual">
+              Change
+              <span class="govuk-visually-hidden"> Individual beneficial owner Dr Lisa Davies second nationality</span>
+            </a>
+          </dd>
+        </div> -->
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Home address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            72 Guild Street
+            <br>London
+            <br>SE23 6FH
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/register/beneficial-owner-individual">
+              Change
+              <span class="govuk-visually-hidden">Individual beneficial owner Dr Lisa Davies home address</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Correspondence address
+          </dt>
+          <dd class="govuk-summary-list__value">
+          The correspondence address is the same as the home address
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/register/beneficial-owner-individual">
+              Change
+              <span class="govuk-visually-hidden"> Individual beneficial owner Dr Lisa Davies correspondence address</span>
+            </a>
+          </dd>
+        </div>
+      {# <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Nature of control
+        </dt>
+        <dd class="govuk-summary-list__value">
+          The beneficial owner is a trustee of a trust and:
+
+          <ul class="govuk-list govuk-list--bullet">
+            <li>the trustees of that trust (in their capacity as such) hold the right, directly or indirectly, to appoint or remove a majority of the board of directors of the company</li>
+          </ul>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="/register/beneficial-owner-individual">
+            Change
+            <span class="govuk-visually-hidden"> Individual beneficial owner Dr Lisa Daviesnature of control</span>
+          </a>
+        </dd>
+      </div> #}
+        <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Nature of control
+        </dt>
+        <dd class="govuk-summary-list__value">
+          The beneficial owner is a member of a firm that is not a legal person under its governing law, and:
+
+          <ul class="govuk-list govuk-list--bullet">
+            <li>the members of that firm (in their capacity as such) hold, directly or indirectly, more than 25% of the shares in the entity</li>
+          </ul>
+          The beneficial owner is a trustee of a trust and:
+          <ul class="govuk-list govuk-list--bullet">
+            <li>the trustees of that trust (in their capacity as such) hold, directly or indirectly, more than 25% of the shares in the entity</li>
+          </ul>
+          The beneficial owner is a member of a firm that is not a legal person under its governing law, and:
+          <ul class="govuk-list govuk-list--bullet">
+            <li>the members of that firm (in their capacity as such) hold, directly or indirectly, more than 25% of the shares in the entity</li>
+          </ul>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="/register/beneficial-owner-individual">
+            Change
+            <span class="govuk-visually-hidden"> Individual beneficial owner Dr Lisa Daviesnature of control</span>
+          </a>
+        </dd>
+      </div> 
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Are they on the UK sanctions list?
+
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p>No, they are not on the sanctions list</p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="/register/beneficial-owner-individual">
+            Change
+            <span class="govuk-visually-hidden"> Individual beneficial owner Dr Lisa Davies Are they on the sanctions list?</span>
+          </a>
+        </dd>
+      </div>
+ <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date they became a beneficial owner
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p>10 July 2004</p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          {# <a href="/register/beneficial-owner-individual">
+            Change
+            <span class="govuk-visually-hidden"> Individual beneficial owner Dr Lisa Daviesdate they became a beneficial owner</span>
+          </a> #}
+        </dd>
+      </div>
+    <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Are they still a beneficial owner?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p>Yes</p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="/register/beneficial-owner-individual">
+            Change
+            <span class="govuk-visually-hidden"> Individual beneficial owner Dr Lisa Davies Are they on the sanctions list?</span>
+          </a>
+        </dd>
+      </div>
+
+      </dl>
+
+
+
+
+
+
+<!-- ********** OTHER LEGAL ENTITY BENEFICIAL OWNER  ********** -->
+
+      <h3 class="govuk-heading-m">Other legal entity beneficial owner</h3>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>Name Corp</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/register/beneficial-owner-other">
+              Change
+              <span class="govuk-visually-hidden"> Corporate beneficial owner Sugar Holdings name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Principal or registered office address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Suite 8
+            <br>St Luke’s Court
+            <br>28 Devon Street
+            <br>London  
+            <br>United Kingdom
+            <br>W1B 6PD
+
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/register/beneficial-owner-other">
+              Change
+              <span class="govuk-visually-hidden"> Corporate beneficial owner Sugar Holdings principal or registered office address</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Correspondence address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            The correspondence address is the same as the principal or registered office address
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/register/beneficial-owner-other">
+              Change
+              <span class="govuk-visually-hidden">Corporate beneficial owner Sugar Holdings correspondence address</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+          Legal form
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>Limited company</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/register/beneficial-owner-other">
+              Change
+              <span class="govuk-visually-hidden">Corporate beneficial owner Sugar Holdings   Legal form</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Governing law
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>British Virgin Islands</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/register/beneficial-owner-other">
+              Change
+              <span class="govuk-visually-hidden"> Corporate beneficial owner Sugar Holdings governing law</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Is it on a public register in the country it was formed in?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>No</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/register/beneficial-owner-other">
+              Change
+              <span class="govuk-visually-hidden">Corporate beneficial owner Sugar Holdings public register</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Nature of control
+          </dt>
+          <dd class="govuk-summary-list__value">
+            The beneficial owner:
+            <ul class="govuk-list govuk-list--bullet">
+              <li>holds, directly or indirectly, more than 25% of the shares in the entity</li>
+              </ul>
+            The beneficial owner is a trustee of a trust and:
+            <ul class="govuk-list govuk-list--bullet">
+              <li>the trustees of that trust (in their capacity as such) hold, directly or indirectly, more than 25% of the shares in the entity</li>
+            </ul>
+            The beneficial owner is a member of a firm that is not a legal person under its governing law, and:
+            <ul class="govuk-list govuk-list--bullet">
+              <li>the members of that firm (in their capacity as such) have the right to exercise, or actually exercise, significant influence or control over the company</li>
+            </ul>
+                    </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/register/beneficial-owner-other">
+              Change
+              <span class="govuk-visually-hidden"> Corporate beneficial owner Sugar Holdingsnature of control</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Is it on the UK sanctions list?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>No</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/register/beneficial-owner-other">
+              Change
+              <span class="govuk-visually-hidden">Corporate beneficial owner Sugar Holdings- is it on the sanctions list</span>
+            </a>
+          </dd>
+        </div>
+
+                <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date it became a beneficial owner
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>26 July 2019</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            {# <a href="/register/beneficial-owner-other">
+              Change
+              <span class="govuk-visually-hidden"> Corporate beneficial owner Sugar Holdings date it became a beneficial owner</span>
+            </a> #}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Is it still a beneficial owner?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p>Yes</p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="/register/beneficial-owner-individual">
+            Change
+            <span class="govuk-visually-hidden"> Individual beneficial owner ACME Trustees Limited Is it still a beneficial owner?</span>
+          </a>
+        </dd>
+      </div>
+        </dl> 
+
+
+
+<!-- ********** GOV OR PUBLIC AUTHORITY BENEFICIAL OWNER  ********** -->
+
+    <!-- <h3 class="govuk-heading-m">Government or public authority beneficial owner</h3>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <p>AMK Department</p>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="/register/beneficial-owner-other">
+                Change
+                <span class="govuk-visually-hidden">Government or public authority beneficial Example public authority owner name</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Principal or registered office address
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Suite 104-228
+            <br>Building 28
+            <br>Dubai Investment Park 1
+            <br>Dubai
+            <br> United Arab Emirates
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="/register/beneficial-owner-other">
+                Change
+                <span class="govuk-visually-hidden"> Government or public authority beneficial Example public authority owner principal or registered office address</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Correspondence address
+            </dt>
+            <dd class="govuk-summary-list__value">
+              The correspondence address is the same as the principal or registered office address
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="/register/beneficial-owner-other">
+                Change
+                <span class="govuk-visually-hidden">Government or public authority beneficial Example public authority owner correspondence address</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+            Legal form
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <p>Association</p>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="/register/beneficial-owner-other">
+                Change
+                <span class="govuk-visually-hidden"> Government or public authority beneficial Example public authority owner  Legal form</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Governing law
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <p>United Arab Emirates law</p>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="/register/beneficial-owner-other">
+                Change
+                <span class="govuk-visually-hidden"> Government or public authority beneficial Example public authority owner governing law</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Nature of control
+            </dt>
+            <dd class="govuk-summary-list__value">
+              The beneficial owner:
+
+              <ul class="govuk-list govuk-list--bullet">
+                <li>holds, directly or indirectly, more than 25% of the shares in the entity</li>
+              </ul>
+              The beneficial owner is a member of a firm that is not a legal person under its governing law, and:
+
+              <ul class="govuk-list govuk-list--bullet">
+                <li>the members of that firm (in their capacity as such) hold the right, directly or indirectly, to appoint or remove a majority of the board of directors of the company</li>
+              </ul>
+                      </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="/register/beneficial-owner-other">
+                Change
+                <span class="govuk-visually-hidden"> Government or public authority beneficial Example public authority owner nature of control</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Is it on the UK sanctions list?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <p>No</p>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="/register/beneficial-owner-other">
+                Change
+                <span class="govuk-visually-hidden">Corporate beneficial owner Sugar Holdings- is it on the sanctions list</span>
+              </a>
+            </dd>
+                 </div>
+             <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date it became a beneficial owner
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <p>6 August 2021</p>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="/register/beneficial-owner-other">
+                Change
+                <span class="govuk-visually-hidden">Government or public authority beneficial Example public authority owner date it became a beneficial owner</span>
+              </a>
+            </dd>
+          </div>
+                  <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Is it still a beneficial owner?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p>Yes</p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="/register/beneficial-owner-individual">
+            Change
+            <span class="govuk-visually-hidden"> Individual beneficial owner AMK Department Is it still a beneficial owner?</span>
+          </a>
+        </dd>
+      </div>
+
+          </dl> -->
+
+
+
+
+<!-- ********** INDIVIDUAL MANAGING OFFICER  ********** -->
+
+      <!-- <h2 class="govuk-heading-l">Managing officers you have reviewed</h2>
+
+      <h3 class="govuk-heading-m">Individual managing officer</h3>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            First name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>Jane</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/register/managing-officer">
+              Change
+              <span class="govuk-visually-hidden"> Individual managing officer John Smith first name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Last name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>Doe</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/register/managing-officer">
+              Change
+              <span class="govuk-visually-hidden"> Individual managing officer John Smith last name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Former names
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>Jane Bloggs</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/register/managing-officer">
+              Change
+              <span class="govuk-visually-hidden">  Individual managing officer John Smith former names</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Born
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>January 1981</p>
+          </dd>
+          {# <dd class="govuk-summary-list__actions">
+            <a href="/register/managing-officer">
+              Change
+              <span class="govuk-visually-hidden">  Individual managing officer John Smith date of birth</span>
+            </a>
+          </dd> #}
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Nationality
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>British</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/register/managing-officer">
+              Change
+              <span class="govuk-visually-hidden">  Individual managing officer John Smith nationality</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Home address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <br>4976+PXC
+            <br>Λεωφόρος
+            <br>Παγκυπρίων
+            <br>Strovolos
+            <br>Cyprus
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/register/managing-officer">
+              Change
+              <span class="govuk-visually-hidden"> Individual managing officer John Smith home address</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Correspondence address
+          </dt>
+          <dd class="govuk-summary-list__value">
+             Building 6
+          <br>10 Giro's Passage
+          <br>Gibraltar
+          <br>Gibraltar
+          <br>GX10 1BP
+          </dd>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/register/beneficial-owner-other">
+              Change
+              <span class="govuk-visually-hidden"> Individual managing officer John Smith correspondence address</span>
+            </a>
+          </dd>
+        </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Occupation
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p>Self-employed</p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="/register/managing-officer">
+            Change
+            <span class="govuk-visually-hidden"> Individual managing officer John Smith occupation</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Role and responsibilities
+        </dt>
+        <dd class="govuk-summary-list__value">
+         <p> They oversee the accounts and manage the staff for the building.</p>
+          {# <p>Strategic management of the company and the issuing of necessary directives</p>
+        </dd> #}
+        <dd class="govuk-summary-list__actions">
+          <a href="/register/managing-officer">
+            Change
+            <span class="govuk-visually-hidden"> Individual managing officer John Smith role and responsibilities</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Are they still a managing officer?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p>Yes</p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="/register/managing-officer">
+            Change
+            <span class="govuk-visually-hidden"> Individual managing officer John Smith occupation</span>
+          </a>
+        </dd>
+      </div>
+      </dl> -->
+
+
+
+
+
+<!-- ********** CORPORATE MANAGING OFFICER  ********** -->
+
+
+
+     <!-- <h2 class="govuk-heading-l">Managing officers you have added</h2>
+
+
+      <h3 class="govuk-heading-m">Corporate managing officer</h3>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>Helios Limited</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/register/managing-officer">
+              Change
+              <span class="govuk-visually-hidden">  Corporate managing officer Acme Limited name</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Principal or registered office address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            4976+PXC
+            <br>Helios Court
+            <br>Strovolos
+            <br>Cyprus
+            <br>3092
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/register/beneficial-owner-other">
+              Change
+              <span class="govuk-visually-hidden"> Corporate managing officer Acme Limited principal or registered office address</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Correspondence address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            The correspondence address is the same as the principal or registered office address
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/register/beneficial-owner-other">
+              Change
+              <span class="govuk-visually-hidden"> Corporate managing officer Acme Limited correspondence address</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+          Legal form
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>Limited company</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/register/beneficial-owner-other">
+              Change
+              <span class="govuk-visually-hidden"> Corporate managing officer Acme Limited  Legal form</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Governing law
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>Cyprus</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/register/beneficial-owner-other">
+              Change
+              <span class="govuk-visually-hidden"> Corporate managing officer Acme Limited governing law</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Is it on a public register in the country it was formed in?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>No</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/register/beneficial-owner-other">
+              Change
+              <span class="govuk-visually-hidden"> Corporate managing officer Acme Limited public register</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Role and responsibilities
+          </dt>
+          <dd class="govuk-summary-list__value">
+           <p>Directs and controls the company's operations and to give strategic guidance and direction to the board.</p>
+            {# <p>Strategic management of the company and the issuing of necessary directives</p> #}
+          </dd>
+                  <dd class="govuk-summary-list__actions">
+          <a href="/register/managing-officer">
+            Change
+            <span class="govuk-visually-hidden"> Individual managing officer John Smith occupation</span>
+          </a>
+        </dd>
+        </div>
+                      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Is it still a managing officer?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p>Yes</p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="/register/managing-officer">
+            Change
+            <span class="govuk-visually-hidden"> Individual managing officer John Smith occupation</span>
+          </a>
+        </dd>
+      </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+          Contact full name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>Joe Bloggs</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/register/beneficial-owner-other">
+              Change
+              <span class="govuk-visually-hidden"> Corporate managing officer Acme Limited Contact full name</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+          Contact email address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>joebloggs@email.com</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/register/beneficial-owner-other">
+              Change
+              <span class="govuk-visually-hidden"> Corporate managing officer Acme Limited Contact email address</span>
+            </a>
+          </dd>
+        </div>
+
+      </dl> -->
+
+
+      <!-- ********** TRUSTS  ********** -->
+
+{# 
+      <h2 class="govuk-heading-l">Trusts</h2>
+
+
+      <h3 class="govuk-heading-m">Trust details</h3>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Trust name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>{{ data['trust-name'] }}</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/trusts/trust-details">
+              Change
+              <span class="govuk-visually-hidden">trust name</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date the trust was created
+          </dt>
+          <dd class="govuk-summary-list__value">
+            10 July 2020
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Beneficial owners involved in the trust
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <ul class="govuk-list govuk-list--bullet">
+              {% for feature in data['bo-checklist'] %}
+              <li>{{ feature }}</li>
+              {% endfor %}
+            </ul>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/trusts/trust-details">
+              Change
+              <span class="govuk-visually-hidden">trust name</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <h3 class="govuk-heading-m">Former beneficial owner for Islands Trust</h3>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Former beneficial owner's name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>Jane Wright</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/trusts/former-bo">
+              Change
+              <span class="govuk-visually-hidden">former-bo</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date they become a beneficial owner
+          </dt>
+          <dd class="govuk-summary-list__value">
+            04 October 2015
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/trusts/former-bo">
+              Change
+              <span class="govuk-visually-hidden">former-bo</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date they stopped being a beneficial owner
+          </dt>
+          <dd class="govuk-summary-list__value">
+            10 August 2021
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/trusts/former-bo">
+              Change
+              <span class="govuk-visually-hidden">former-bo</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <h3 class="govuk-heading-m">Individual for Islands Trust</h3>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            First name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>Fred</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/trusts/individual">
+              Change
+              <span class="govuk-visually-hidden">individual</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Last name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>Lock</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/trusts/individual">
+              Change
+              <span class="govuk-visually-hidden">individual</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date of birth
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>	27 June 1983</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/trusts/individual">
+              Change
+              <span class="govuk-visually-hidden">Date of birth</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Role within the trust
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>Settlor</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/trusts/individual">
+              Change
+              <span class="govuk-visually-hidden">Role within the trust</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Nationality
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>British</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/trusts/individual">
+              Change
+              <span class="govuk-visually-hidden">Nationality</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Home address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            8
+            <br>High street road
+            <br>Plymouth
+            <br>Britain
+            <br>XY1 ZV6
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/trusts/individual">
+              Change
+              <span class="govuk-visually-hidden">Home address</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Correspondence address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            The correspondence address is the same as the principal or registered office address
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/trusts/individual">
+              Change
+              <span class="govuk-visually-hidden">Correspondence address</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+
+      <h3 class="govuk-heading-m">Individual for Islands Trust</h3>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            First name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>Mary</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/trusts/individual-2">
+              Change
+              <span class="govuk-visually-hidden">individual</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Last name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>Robinson</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/trusts/individual-2">
+              Change
+              <span class="govuk-visually-hidden">individual</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date of birth
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>	02 August 1967</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/trusts/individual-2">
+              Change
+              <span class="govuk-visually-hidden">Date of birth</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Role within the trust
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>Beneficiary</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/trusts/individual-2">
+              Change
+              <span class="govuk-visually-hidden">Role within the trust</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Nationality
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>British</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/trusts/individual-2">
+              Change
+              <span class="govuk-visually-hidden">Nationality</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Home address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            25
+            <br>Long road
+            <br>Manchester
+            <br>Britain
+            <br>MV5 6TY
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/trusts/individual-2">
+              Change
+              <span class="govuk-visually-hidden">Home address</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Correspondence address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            The correspondence address is the same as the principal or registered office address
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/trusts/individual-2">
+              Change
+              <span class="govuk-visually-hidden">Correspondence address</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <h3 class="govuk-heading-m">Legal entity for Islands Trust</h3>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>Salcombe Ltd</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/trusts/legal-entity">
+              Change
+              <span class="govuk-visually-hidden">Name</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Role within the trust
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>Grantor</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/trusts/legal-entity">
+              Change
+              <span class="govuk-visually-hidden">Role within the trust</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Principal or registered office address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Business unit 3
+            <br>27 Main street
+            <br>Tortola
+            <br>British Virgin Islands
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/trusts/legal-entity">
+              Change
+              <span class="govuk-visually-hidden">Principal or registered office address</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Correspondence address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            The correspondence address is the same as the principal or registered office address
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/trusts/legal-entity">
+              Change
+              <span class="govuk-visually-hidden">Correspondence address</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Legal form
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>Limited company</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/trusts/legal-entity">
+              Change
+              <span class="govuk-visually-hidden"> overseas entity legal form</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Governing law
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>British Virgin Islands</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/trusts/legal-entity">
+              Change
+              <span class="govuk-visually-hidden"> overseas entity governing law</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Overseas public register
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>
+              Registry of Corporate Affairs – BVI
+            </p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/trusts/legal-entity">
+              Change
+              <span class="govuk-visually-hidden"> overseas entity public register</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Jurisdiction
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>
+              British Virgin Islands
+            </p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/trusts/legal-entity">
+              Change
+              <span class="govuk-visually-hidden"> overseas entity public register</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Registration number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>
+              23456781
+            </p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/trusts/legal-entity">
+              Change
+              <span class="govuk-visually-hidden"> overseas entity public register</span>
+            </a>
+          </dd>
+        </div>    
+      </dl> #}
+
+
+      <form method="post">
+
+        {{ govukButton({
+          text: "Continue to payment",
+          href: "xx-payment"
+        }) }}
+        &nbsp; &nbsp;
+
+                {{ govukButton({
+          text: "Print this page",
+          classes: "govuk-button--secondary",
+          href: "javascript: window.print()"
+        }) }} <!--  to developers, this is a JS-reliant button just for prototyping-->
+        <!-- the production site would need a non-JS solution OR the you could use JS to hide the button, as in people without JS would not see a button, rather than see a broken button -->
+      </div>
+
+    <!-- *** Note to developers, this must show when JS is disabled ***
+      <p class="govuk-body govuk-!-font-size-20">To print this page, select File then Print in your browser.</p>
+    -->
+
+      </form>
+
+{#
+      <p class="govuk-body govuk-!-font-size-14 govuk-link--no-visited-state"><a href="/register/confirmation">UR shortcut: Jump to confirmation screen</a></p>
+#}
+
+    </div>
+  </div>
+{% endblock %}
