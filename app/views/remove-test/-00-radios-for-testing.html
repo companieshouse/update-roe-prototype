@@ -15,8 +15,7 @@ Do any beneficial owners or managing officers have their personal information pr
   <div class="govuk-grid-column-two-thirds">
 
  
-  <form action="06-are-there-any-trusts-involved-in-this-overseas-entity" method="post">
-
+<form action="00-file-an-overseas-entity-update-statement" method="post">
 
 {{ govukRadios({
   name: "roe-prototype-scenario",
@@ -40,11 +39,7 @@ Do any beneficial owners or managing officers have their personal information pr
 }) }}
   
 
-  
-  {{ govukInsetText({
-          html: '<h2 class="govuk-heading-m">What information we’ll show on the public register</h2>
-                <p>We will not show any of the information you provide in this section on the public Register of Overseas Entities.</p>'
-        }) }}
+
 
           {{ govukButton({
             text: "Continue"
