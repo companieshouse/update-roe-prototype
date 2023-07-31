@@ -64,19 +64,20 @@ router.post('/remove-test/06-are-there-any-trusts-involved-in-this-overseas-enti
   var trustInvolved = request.session.data['trust-involved']
   var roePrototypeScenario = request.session.data['roe-prototype-scenario']
 if (trustInvolved === "yes"){
-  response.redirect("v8/07-youll-need-to-file-an-update-statement-using-the-paper-form")
+  response.redirect("/v8/07-youll-need-to-file-an-update-statement-using-the-paper-form")
 } else if (roePrototypeScenario === "remove"){
-  response.redirect('remove-test/sold-land')
+  response.redirect('/remove-test/sold-land')
 } else {
-  response.redirect('v8/08-before-you-start')
+  response.redirect('/v8/08-before-you-start')
 }
 })
 
 
+// // || means 'or' - this is how you would check multiple items e.g. checkboxes (or both)
+// } else if (roePrototypeScenario === "value-one" || roePrototypeScenario === "value-two"){
 
-
-
-
+// // && means 'and' - this would only work if both checkboxes were ticked
+// } else if (roePrototypeScenario === "value-one" && roePrototypeScenario === "value-two"){
 
 
 
