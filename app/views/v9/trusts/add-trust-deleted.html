@@ -1,0 +1,76 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+
+Do you want to add another trust?
+ – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <span class="govuk-caption-l">{{ data['overseas-name'] }} - {{ data['overseas-id'] }}</span>
+    <h1 class="govuk-heading-xl">Trusts involved in the overseas entity</h1>
+
+    <table class="govuk-table govuk-!-margin-bottom-9">
+      <caption class="govuk-table__caption govuk-table__caption--m">What you have removed update</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header govuk-visually-hidden">Name</th>
+          <th scope="col" class="govuk-table__header govuk-visually-hidden">Undo</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Island Trust</th>
+          <td class="govuk-table__cell"><a href="#">Undo</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+
+  </div>
+  <div class="govuk-grid-column-two-thirds">    
+    <form action="" method="get">
+
+      {{ govukRadios({
+        classes: "govuk-radios",
+        idPrefix: "addTrust",
+        name: "addTrust",
+        fieldset: {
+          legend: {
+            text: "Do you need to add another trust?
+      ",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+        text: " "
+      },
+        items: [
+          {
+            value: "yes",
+            text: "Yes"
+          },
+          {
+            value: "no",
+            text: "No"
+          }
+        ]
+      }) }}
+
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+    </form>
+  </div>
+</div>
+
+{% endblock %}
