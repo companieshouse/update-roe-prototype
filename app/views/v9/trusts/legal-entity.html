@@ -1,0 +1,573 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Tell us about an other legal entity (Trusts) – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">{{ data['trust-name'] }}</span>
+      <h1 class="govuk-heading-xl govuk-!-margin-0">Review the legal entity involved in this trust</h1>
+    
+      <p class="govuk-!-margin-bottom-5 govuk-!-margin-top-5">If you need to update this legal entity's information, you can change the answers here.</p>
+
+          <div class="govuk-inset-text">
+          You may need to <strong>enter any information that's missing</strong>.
+        </div>
+
+      <form class="form" action="{{currentUrl}}" method="post">
+
+        {% set entityDateHtml %}
+        <br>
+        {{ govukDateInput({
+          id: "entity-interested-date",
+          namePrefix: "entity-interested-date",
+          fieldset: {
+            legend: {
+              text: "What date did it become an interested person?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          hint: {
+            text: "For example, 27 3 2007"
+          }
+        }) }}
+        {% endset -%}
+
+
+        {{ govukInput({
+          label: {
+            text: "What is its name?",
+            classes: "govuk-label--m",
+            isPageHeading: false
+          },
+          id: "legal-entity-name",
+          name: "legal-entity-name",
+          value: "Salcombe Ltd"
+        }) }}
+
+
+        {{ govukRadios({
+          idPrefix: "trust-entity-role",
+          name: "trust-entity-role",
+          fieldset: {
+            legend: {
+              text: "What is its role within the trust?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "beneficiary",
+              text: "Beneficiary"
+            },
+            {
+              value: "settlor",
+              text: "Settlor"
+            },
+            {
+              value: "grantor",
+              text: "Grantor",
+              checked: "checked"
+            },
+            {
+              value: "interested",
+              text: "Interested person",
+              conditional: {
+        html: entityDateHtml
+      }
+            }
+          ]
+        }) }}
+
+
+        {% call govukFieldset({
+          legend: {
+            text: "What is its principal or registered office address?",
+            classes: "govuk-fieldset__legend--m",
+            isPageHeading: false
+          }
+        }) %}
+
+        {{ govukInput({
+          label: {
+            html: 'Property name or number'
+          },
+          hint: {
+           text: "For example, 'Saron House', '116' or 'Unit 37a'"
+         },
+          id: "principal-address-property-name-number",
+          name: "principal-address-property-name-number",
+          value: "Business unit 3"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Address line 1"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "principal-address-line-1",
+          name: "principal-address-line-1",
+          autocomplete: "address-line1",
+          value: "27 Main street"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Address line 2 (optional)"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "principal-address-line-2",
+          name: "principal-address-line-2",
+          autocomplete: "address-line2"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "City or town"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "principal-address-city-town",
+          name: "principal-address-city-town",
+          value: "Tortola"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "County, state, province or region (optional)"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "principal-address-state",
+          name: "principal-address-state",
+          value: "British Virgin Islands"
+        }) }}
+
+        <div class="govuk-form-group">
+           <label for="autocomplete-default" class="govuk-label">Country</label>
+          <p class="govuk-hint">Start typing a country, then choose from the list</p>
+          <div id="country" class="autocomplete-wrapper"></div>
+        </div>
+
+        {{ govukInput({
+          label: {
+            text: "Postcode or ZIP code (if applicable)"
+          },
+          classes: "govuk-input--width-10",
+          id: "principal-address-postcode",
+          name: "principal-address-postcode",
+          autocomplete: "postal-code"
+        }) }}
+        {% endcall %}
+
+        {% set serviceAddressHtml %}
+        <br>
+        {% call govukFieldset({
+          legend: {
+            text: "What is its correspondence address?",
+            classes: "govuk-fieldset__legend--m",
+            isPageHeading: false
+          }
+        }) %}
+
+        {{ govukInput({
+          label: {
+            html: 'Property name or number'
+          },
+          hint: {
+           text: "For example, 'Saron House', '116' or 'Unit 37a'"
+         },
+          id: "service-address-property-name-number",
+          name: "service-address-property-name-number"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Address line 1"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "service-address-line-1",
+          name: "service-address-line-1",
+          autocomplete: "address-line1"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Address line 2 (optional)"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "service-address-line-2",
+          name: "service-address-line-2",
+          autocomplete: "address-line2"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "City or town"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "service-address-city-town",
+          name: "service-address-city-town"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "County, state, province or region (optional)"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "service-address-state",
+          name: "service-address-state"
+        }) }}
+
+        <div class="govuk-form-group">
+           <label for="autocomplete-default" class="govuk-label">Country</label>
+          <p class="govuk-hint">Start typing a country, then choose from the list</p>
+          <div id="country-2" class="autocomplete-wrapper"></div>
+        </div>
+
+        {{ govukInput({
+          label: {
+            text: "Postcode or ZIP code (if applicable)"
+          },
+          classes: "govuk-input--width-10",
+          id: "service-address-postcode",
+          name: "service-address-postcode",
+          autocomplete: "postal-code"
+        }) }}
+
+        {% endcall %}
+        {% endset -%}
+
+        {{ govukRadios({
+          classes: "govuk-radios",
+          idPrefix: "same-address",
+          name: "same-address",
+          fieldset: {
+            legend: {
+              text: "Is its correspondence address the same as its principal or registered office address?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+            hint: {
+           text: "This is also known as a service address."
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes",
+              checked: "checked"
+            },
+            {
+              value: "no",
+              text: "No"
+            }
+          ]
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "What is its legal form?",
+            classes: "govuk-label--m",
+            isPageHeading: false
+          },
+          hint: {
+            text: "For example, limited company"
+          },
+          id: "beneficiary-ole-legal-form",
+          name: "beneficiary-ole-legal-form",
+          value: "Limited company"
+        }) }}
+
+
+        {{ govukInput({
+          label: {
+            text: "What is the governing law?",
+            classes: "govuk-label--m",
+            isPageHeading: false
+          },
+          hint: {
+            text: "This is the law that the entity operates under."
+          },
+          id: "beneficiary-ole-governing-law",
+          name: "beneficiary-ole-governing-law",
+          value: "British Virgin Islands"
+        }) }}
+
+        <!---
+        {% set PublicRegisterHtml %}
+        {{ govukInput({
+          id: "beneficiary-ole-public-register-name",
+          name: "beneficiary-ole-public-register-name",
+          hint: {
+            text: "Include its jurisdiction. For example, Hong Kong or State of Delaware."
+          },
+          label: {
+            text: "Name of register"
+          }
+        }) }}
+        {{ govukInput({
+          id: "beneficiary-ole-public-register-number",
+          name: "beneficiary-ole-public-register-number",
+          classes: "govuk-!-width-one-half",
+          label: {
+            text: "Entity’s registration number"
+          }
+        }) }}
+        {% endset -%}
+
+        {{ govukRadios({
+          idPrefix: "beneficiary-ole-public-register",
+          name: "beneficiary-ole-public-register",
+          fieldset: {
+            legend: {
+              text: "Is it already on a public register in the country it was formed in?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes",
+              conditional: {
+                html: PublicRegisterHtml
+              }
+            },
+            {
+              value: "no",
+              text: "No",
+              conditional: {
+                html: phoneHtml
+              }
+            }
+          ]
+        }) }}
+        -->
+
+        {% set olePublicRegisterHtml %}
+        
+        {% if erroroleRegisterName == true %}
+        {{ govukInput({
+          id: "beneficiary-ole-public-register-number",
+          name: "beneficiary-ole-public-register-number",
+            value: olePublicName,
+          hint: {
+          text: "Include the full name. For example, Jersey Financial Services Commission."
+        },
+          label: {
+            text: "Name of register"
+          },
+          errorMessage: {
+                  text: "Enter the name of the register"
+                }
+        }) }}
+        {% else %}
+        {{ govukInput({
+          id: "beneficiary-ole-public-register-number",
+          name: "beneficiary-ole-public-register-number",
+          value: "Registry of Corporate Affairs – BVI",
+          hint: {
+          text: "Include the full name. For example, Jersey Financial Services Commission."
+        },
+          label: {
+            text: "Name of register"
+          }
+        }) }}
+        {% endif %}
+
+        {# Jurisdiction #}
+        {% if erroroleRegisterJurisdiction == true %}
+          {{ govukInput({
+            id: "beneficiary-ole-public-register-jurisdiction",
+            name: "beneficiary-ole-public-register-jurisdiction",
+              value: olePublicJurisdiction,
+            hint: {
+            text: "For example, Jersey."
+          },
+            label: {
+              text: "Jurisdiction"
+            },
+            errorMessage: {
+                    text: "Enter the jurisdiction"
+                  }
+          }) }}
+        {% else %}
+          {{ govukInput({
+            id: "beneficiary-ole-public-register-jurisdiction",
+            name: "beneficiary-ole-public-register-jurisdiction",
+            value: "British Virgin Islands",
+            hint: {
+            text: "For example, Jersey."
+          },
+            label: {
+              text: "Jurisdiction"
+            }
+          }) }}
+        {% endif %}
+
+        {% if erroroleRegisterNumber == true %}
+        {{ govukInput({
+          id: "beneficiary-ole-public-register-number",
+          name: "beneficiary-ole-public-register-number",
+          value: olePublicNumber,
+          classes: "govuk-!-width-one-half",
+          label: {
+            text: "Entity's registration number"
+          },
+          errorMessage: {
+                  text: "Enter the entity's registration number"
+                }
+        }) }}
+        {% else %}
+        {{ govukInput({
+          id: "beneficiary-ole-public-register-number",
+          name: "beneficiary-ole-public-register-number",
+          value: "23456781",
+          classes: "govuk-!-width-one-half",
+          label: {
+            text: "Entity’s registration number"
+          }
+        }) }}
+        {% endif %}
+        {% endset -%}
+
+
+        {% if errorolePublicRegister == true %}
+        {{ govukRadios({
+          idPrefix: "beneficiary-ole-public-register",
+          name: "beneficiary-ole-public-register",
+          fieldset: {
+            legend: {
+              text: "Is it already on a public register in the country it was formed in?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes",
+              conditional: {
+                html: olePublicRegisterHtml
+              }
+            },
+            {
+              value: "no",
+              text: "No"
+            }
+          ],
+          errorMessage: {
+                  text: "Select yes if the entity is already on a public register in the country it was formed in"
+                }
+        }) }}
+        {% else %}
+        {% if olePublicRegister === 'yes' %}
+        {{ govukRadios({
+          idPrefix: "beneficiary-ole-public-register",
+          name: "beneficiary-ole-public-register",
+          fieldset: {
+            legend: {
+              text: "Is it already on a public register in the country it was formed in?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes",
+              checked: true,
+              conditional: {
+                html: olePublicRegisterHtml
+              }
+            },
+            {
+              value: "no",
+              text: "No"
+            }
+          ]
+        }) }}
+        {% elseif olePublicRegister === 'no' %}
+        {{ govukRadios({
+          idPrefix: "beneficiary-ole-public-register",
+          name: "beneficiary-ole-public-register",
+          fieldset: {
+            legend: {
+              text: "Is it already on a public register in the country it was formed in?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes",
+              conditional: {
+                html: olePublicRegisterHtml
+              }
+            },
+            {
+              value: "no",
+              text: "No",
+              checked: true
+            }
+          ]
+        }) }}
+        {% else %}
+        {{ govukRadios({
+          idPrefix: "beneficiary-ole-public-register",
+          name: "beneficiary-ole-public-register",
+          fieldset: {
+            legend: {
+              text: "Is it already on a public register in the country it was formed in?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes",
+              conditional: {
+                html: olePublicRegisterHtml
+              },
+              checked: "checked"
+            },
+            {
+              value: "no",
+              text: "No"
+            }
+          ]
+        }) }}
+        {% endif %}
+        {% endif %}
+
+
+        {{ govukInsetText({
+          html: '
+            <h2 class="govuk-heading-m">What information we&#39;ll show on the public register</h2>
+            <p>We will not show any of the information you provide in this section on the public Register of Overseas Entities. However, we may share it with HMRC.</p>
+              '
+        }) }}
+
+
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

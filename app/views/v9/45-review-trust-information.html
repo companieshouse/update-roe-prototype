@@ -1,0 +1,44 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+
+You're about to review trusts information – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+<h1 class="govuk-heading-xl">You're about to review trust information</h1>
+
+
+      <p class="govuk-body">At least one individual or entity you've told us about is a beneficial owner of the overseas entity, due to being a trustee of a trust.</p>
+      <p class="govuk-body">If we already hold trust information for this entity, you can review it in this section, and update it if needed.</p>
+      <div class="govuk-inset-text">
+        We can only show information that has been previously provided. You may need to <span class="govuk-!-font-weight-bold">enter any information that's missing</span>.
+      </div>
+      <p class="govuk-body">You can also:</p>
+      <ul class="govuk-body">
+        <li>add any new trusts and tell us about their former beneficial owners, beneficiaries, settlors, grantors or interested persons</li>
+        <li>remove any trusts that are no longer involved in the overseas entity</li>
+      </ul>
+
+
+
+
+
+      {{ govukButton({
+        text: "Save and continue",
+        href: '46-review-trust'
+      }) }}
+
+
+    </div>
+  </div>
+
+{% endblock %}
