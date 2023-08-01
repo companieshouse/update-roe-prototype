@@ -16,15 +16,15 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
   <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-l">
+    {# <h1 class="govuk-heading-l">
      File an overseas entity update statement prototype<br><br>
      Remove an overseas entity prototype
-    </h1>
+    </h1> #}
 
-{{ govukWarningText({
+{# {{ govukWarningText({
       text: "This prototype is being actively worked on - things might break or change very quickly",
       iconFallbackText: "Warning"
-    }) }}
+    }) }} #}
 
 
 <form action="index" method="post">
@@ -41,11 +41,13 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
   items: [
     {
       value: "update",
-      text: "Update"
+      text: "File an overseas entity update statement prototype
+"
     },
     {
       value: "remove",
-      text: "Remove"
+      text: "File an overseas entity update statement prototype
+"
     }
   ]
 }) }}
