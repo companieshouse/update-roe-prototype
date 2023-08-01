@@ -21,17 +21,18 @@ postTrustFilter(router)
 
 
 
-// -00 ******* REMOVE JOURNEY FILTER *******
+// INDEX ******* REMOVE JOURNEY FILTER *******
 
-router.post('/remove-test/00-file-an-overseas-entity-update-statement', function(request, response) {
+router.post('/index', function(request, response) {
 
   var roePrototypeScenario = request.session.data['roe-prototype-scenario']
   if (roePrototypeScenario == "update"){
-      response.redirect("/v8/00-file-an-overseas-entity-update-statement")
+      response.redirect("/index-update")
   } else {
-      response.redirect("/remove-test/00-file-an-overseas-entity-update-statement")
+      response.redirect("/index-remove")
   }
 })
+
 
 
 // 02 ******* SAVED FILING FILTER *******

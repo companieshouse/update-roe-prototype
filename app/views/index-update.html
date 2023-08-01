@@ -17,7 +17,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
   <div class="govuk-grid-column-two-thirds">
 
     <h1 class="govuk-heading-xl">
-     Remove an overseas entity
+      {{ serviceName }}
     </h1>
 
 {{ govukWarningText({
@@ -26,6 +26,39 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     }) }}
 
 
+dfdfd
+
+
+<form action="index" method="post">
+
+{{ govukRadios({
+  name: "roe-prototype-scenario",
+  fieldset: {
+    legend: {
+      text: "Choose asdsds scenario - internal use only",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      value: "update",
+      text: "Update"
+    },
+    {
+      value: "remove",
+      text: "Remove"
+    }
+  ]
+}) }}
+  
+
+
+
+          {{ govukButton({
+            text: "Continue"
+          }) }}
+  </form>
 
     <h2 class="govuk-heading-m govuk-!-padding-top-4">
       Prototypes
@@ -43,13 +76,47 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
        
 
 
+        <tr class="govuk-table__row">
+           <td class="govuk-table__cell">
+             <a href="v9/index">V9</a>
+           </td>
+           <td class="govuk-table__cell">
+             12
+           </td>
+           <td class="govuk-table__cell">
+             31 July 2023
+           </td>
+           <td class="govuk-table__cell">
+             <strong class="govuk-tag govuk-tag--blue">
+               In progress
+             </strong>
+           </td>
+         </tr>
+       
 
+
+       <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a href="v8/index">V8</a>
+          </td>
+          <td class="govuk-table__cell">
+            12
+          </td>
+          <td class="govuk-table__cell">
+            20 June 2023
+          </td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--green">
+              Not tested
+            </strong>
+          </td>
+        </tr>
 
 
 
        <tr class="govuk-table__row">
           <td class="govuk-table__cell">
-            <a href="remove-test/index">Remove V1</a>
+            <a href="remove-test/index">Remove Test</a>
           </td>
           <td class="govuk-table__cell">
             11
@@ -65,6 +132,149 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         </tr>
 
 
+
+
+       <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a href="v7/index">V7</a>
+          </td>
+          <td class="govuk-table__cell">
+            11
+          </td>
+          <td class="govuk-table__cell">
+            6 June 2023
+          </td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--green">
+              Not Tested
+            </strong>
+          </td>
+        </tr>
+
+
+
+       <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a href="v6/index">V6</a>
+          </td>
+          <td class="govuk-table__cell">
+            10
+          </td>
+          <td class="govuk-table__cell">
+            22 May 2023
+          </td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag">
+              MVP
+            </strong>
+          </td>
+        </tr>
+
+
+<tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a href="v5/index">V5</a>
+          </td>
+          <td class="govuk-table__cell">
+            10
+          </td>
+          <td class="govuk-table__cell">
+            18 April 2023
+          </td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--green">
+              Tested
+            </strong>
+          </td>
+        </tr>
+
+
+<tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a href="v4/index">V4</a>
+          </td>
+          <td class="govuk-table__cell">
+            7
+          </td>
+          <td class="govuk-table__cell">
+            13 March 2023
+          </td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--green">
+              Tested
+            </strong>
+          </td>
+        </tr>
+
+      <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a href="v3/index">V3</a>
+          </td>
+          <td class="govuk-table__cell">
+            6
+          </td>
+          <td class="govuk-table__cell">
+            24 February 2023
+          </td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--green">
+              Tested
+            </strong>
+          </td>
+        </tr>
+
+                <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a href="v2/index">V2</a>
+          </td>
+          <td class="govuk-table__cell">
+            5
+          </td>
+          <td class="govuk-table__cell">
+            7 February 2023
+          </td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--green">
+              Tested
+            </strong>
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a href="v1/index">V1</a>
+          </td>
+          <td class="govuk-table__cell">
+            4
+          </td>
+          <td class="govuk-table__cell">
+            December 2022
+          </td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--green">
+              Tested
+            </strong>
+          </td>
+        </tr>
+
+
+
+
+        <!--
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a href="/dev-stable">Dev / stable</a></li>
+          </td>
+          <td class="govuk-table__cell">
+          </td>
+          <td class="govuk-table__cell">
+          </td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--green">
+              Stable
+            </strong>
+          </td>
+        </tr>-->
       </tbody>
     </table>
 
@@ -85,12 +295,12 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">
-            <a href="#">Dev ready pages TBA</a>
+            <a href="dev-stable">Dev ready pages</a>
           </td>
         
           <td class="govuk-table__cell">
             <strong class="govuk-tag govuk-tag">
-              TBA
+              MVP
             </strong>
           </td>
         </tr>
