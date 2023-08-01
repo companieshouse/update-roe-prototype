@@ -16,8 +16,9 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
   <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-xl">
-      {{ serviceName }}
+    <h1 class="govuk-heading-l">
+     File an overseas entity update statement prototype<br><br>
+     Remove an overseas entity prototype
     </h1>
 
 {{ govukWarningText({
@@ -26,366 +27,38 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     }) }}
 
 
-    <h2 class="govuk-heading-m govuk-!-padding-top-4">
-      Prototypes
-    </h2>
-    <table class="govuk-table">
-      <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-          <th class="govuk-table__header" scope="col">Version</th>
-          <th class="govuk-table__header" scope="col">Sprint</th>
-          <th class="govuk-table__header" scope="col">Date</th>
-          <th class="govuk-table__header" scope="col">Status</th>
-        </tr>
-      </thead>
-      <tbody class="govuk-table__body">
-       
+<form action="00-file-an-overseas-entity-update-statement" method="post">
+
+{{ govukRadios({
+  name: "roe-prototype-scenario",
+  fieldset: {
+    legend: {
+      html: "Choose a scenario <br>(for internal use only)",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      value: "update",
+      text: "Update"
+    },
+    {
+      value: "remove",
+      text: "Remove"
+    }
+  ]
+}) }}
 
 
-        <tr class="govuk-table__row">
-           <td class="govuk-table__cell">
-             <a href="v9/index">V9</a>
-           </td>
-           <td class="govuk-table__cell">
-             12
-           </td>
-           <td class="govuk-table__cell">
-             31 July 2023
-           </td>
-           <td class="govuk-table__cell">
-             <strong class="govuk-tag govuk-tag--blue">
-               In progress
-             </strong>
-           </td>
-         </tr>
-       
+          {{ govukButton({
+            text: "Go to Index"
+          }) }}
+  </form>
 
-
-       <tr class="govuk-table__row">
-          <td class="govuk-table__cell">
-            <a href="v8/index">V8</a>
-          </td>
-          <td class="govuk-table__cell">
-            12
-          </td>
-          <td class="govuk-table__cell">
-            20 June 2023
-          </td>
-          <td class="govuk-table__cell">
-            <strong class="govuk-tag govuk-tag--green">
-              Not tested
-            </strong>
-          </td>
-        </tr>
-
-
-
-       <tr class="govuk-table__row">
-          <td class="govuk-table__cell">
-            <a href="remove-test/index">Remove Test</a>
-          </td>
-          <td class="govuk-table__cell">
-            11
-          </td>
-          <td class="govuk-table__cell">
-            6 June 2023
-          </td>
-          <td class="govuk-table__cell">
-            <strong class="govuk-tag govuk-tag--green">
-              Not Tested
-            </strong>
-          </td>
-        </tr>
-
-
-
-
-       <tr class="govuk-table__row">
-          <td class="govuk-table__cell">
-            <a href="v7/index">V7</a>
-          </td>
-          <td class="govuk-table__cell">
-            11
-          </td>
-          <td class="govuk-table__cell">
-            6 June 2023
-          </td>
-          <td class="govuk-table__cell">
-            <strong class="govuk-tag govuk-tag--green">
-              Not Tested
-            </strong>
-          </td>
-        </tr>
-
-
-
-       <tr class="govuk-table__row">
-          <td class="govuk-table__cell">
-            <a href="v6/index">V6</a>
-          </td>
-          <td class="govuk-table__cell">
-            10
-          </td>
-          <td class="govuk-table__cell">
-            22 May 2023
-          </td>
-          <td class="govuk-table__cell">
-            <strong class="govuk-tag govuk-tag">
-              MVP
-            </strong>
-          </td>
-        </tr>
-
-
-<tr class="govuk-table__row">
-          <td class="govuk-table__cell">
-            <a href="v5/index">V5</a>
-          </td>
-          <td class="govuk-table__cell">
-            10
-          </td>
-          <td class="govuk-table__cell">
-            18 April 2023
-          </td>
-          <td class="govuk-table__cell">
-            <strong class="govuk-tag govuk-tag--green">
-              Tested
-            </strong>
-          </td>
-        </tr>
-
-
-<tr class="govuk-table__row">
-          <td class="govuk-table__cell">
-            <a href="v4/index">V4</a>
-          </td>
-          <td class="govuk-table__cell">
-            7
-          </td>
-          <td class="govuk-table__cell">
-            13 March 2023
-          </td>
-          <td class="govuk-table__cell">
-            <strong class="govuk-tag govuk-tag--green">
-              Tested
-            </strong>
-          </td>
-        </tr>
-
-      <tr class="govuk-table__row">
-          <td class="govuk-table__cell">
-            <a href="v3/index">V3</a>
-          </td>
-          <td class="govuk-table__cell">
-            6
-          </td>
-          <td class="govuk-table__cell">
-            24 February 2023
-          </td>
-          <td class="govuk-table__cell">
-            <strong class="govuk-tag govuk-tag--green">
-              Tested
-            </strong>
-          </td>
-        </tr>
-
-                <tr class="govuk-table__row">
-          <td class="govuk-table__cell">
-            <a href="v2/index">V2</a>
-          </td>
-          <td class="govuk-table__cell">
-            5
-          </td>
-          <td class="govuk-table__cell">
-            7 February 2023
-          </td>
-          <td class="govuk-table__cell">
-            <strong class="govuk-tag govuk-tag--green">
-              Tested
-            </strong>
-          </td>
-        </tr>
-
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">
-            <a href="v1/index">V1</a>
-          </td>
-          <td class="govuk-table__cell">
-            4
-          </td>
-          <td class="govuk-table__cell">
-            December 2022
-          </td>
-          <td class="govuk-table__cell">
-            <strong class="govuk-tag govuk-tag--green">
-              Tested
-            </strong>
-          </td>
-        </tr>
-
-
-
-
-        <!--
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">
-            <a href="/dev-stable">Dev / stable</a></li>
-          </td>
-          <td class="govuk-table__cell">
-          </td>
-          <td class="govuk-table__cell">
-          </td>
-          <td class="govuk-table__cell">
-            <strong class="govuk-tag govuk-tag--green">
-              Stable
-            </strong>
-          </td>
-        </tr>-->
-      </tbody>
-    </table>
-
-
-
-    {# OTHER ROE SERVICES #}
-    <h2 class="govuk-heading-m govuk-!-padding-top-4">
-      Dev/Stable
-    </h2>
-    <table class="govuk-table">
-      <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-          <th class="govuk-table__header" scope="col">Links</th>
-
-          <th class="govuk-table__header" scope="col">Status</th>
-        </tr>
-      </thead>
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">
-            <a href="dev-stable">Dev ready pages</a>
-          </td>
-        
-          <td class="govuk-table__cell">
-            <strong class="govuk-tag govuk-tag">
-              MVP
-            </strong>
-          </td>
-        </tr>
-
-       
-      </tbody>
-    </table>
-
-
-    {# OTHER ROE SERVICES #}
-    <h2 class="govuk-heading-m govuk-!-padding-top-4">
-      ROE services
-    </h2>
-    <table class="govuk-table">
-      <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-          <th class="govuk-table__header" scope="col">Links</th>
-
-          <th class="govuk-table__header" scope="col">Status</th>
-        </tr>
-      </thead>
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">
-            <a href="https://roe-v13.herokuapp.com">Register an overseas entity</a>
-          </td>
-        
-          <td class="govuk-table__cell">
-            <strong class="govuk-tag govuk-tag--blue">
-              PROTOTYPE
-            </strong>
-          </td>
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">
-            <a href="https://www.gov.uk/guidance/register-an-overseas-entity">Register an overseas entity</a>
-          </td>
-        
-          <td class="govuk-table__cell">
-            <strong class="govuk-tag govuk-tag--green">
-              LIVE
-            </strong>
-          </td>
-        </tr>
-      </tbody>
-    </table>
 
 
     <a href="/manage-prototype" class="govuk-link govuk-body">Manage the prototype</a>
-
-
-
-<!--
-    {# ASSESSMENTS #}
-    <h2 class="govuk-heading-m govuk-!-padding-top-4">
-      Assessments
-    </h2>
-    <table class="govuk-table">
-      <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-          <th class="govuk-table__header" scope="col">Phase</th>
-          <th class="govuk-table__header" scope="col">Date</th>
-          <th class="govuk-table__header" scope="col">Status</th>
-        </tr>
-      </thead>
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">
-            <a href="#/">Alpha</a>
-          </td>
-          <td class="govuk-table__cell">
-            { Date }
-          </td>
-          <td class="govuk-table__cell">
-            <strong class="govuk-tag govuk-tag--green">
-              TBA
-            </strong>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-
-    {# PLAYGROUND #}
-    <h2 class="govuk-heading-m govuk-!-padding-top-4">
-      Playground
-    </h2>
-    <table class="govuk-table">
-      <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-          <th class="govuk-table__header" scope="col">Feature</th>
-          <th class="govuk-table__header" scope="col">Date</th>
-          <th class="govuk-table__header" scope="col">Link</th>
-        </tr>
-      </thead>
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">
-            { Feature name }
-          </td>
-          <td class="govuk-table__cell">
-            { Date }
-          </td>
-          <td class="govuk-table__cell">
-            <a href="#/">View</a>
-          </td>
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">
-            { Feature name }
-          </td>
-          <td class="govuk-table__cell">
-            { Date }
-          </td>
-          <td class="govuk-table__cell">
-            <a href="#/">View</a>
-          </td>
-        </tr>
-      </tbody>
-    </table>-->
 
 
   </div>
