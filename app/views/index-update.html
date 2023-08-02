@@ -26,39 +26,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     }) }}
 
 
-dfdfd
-
-
-<form action="index" method="post">
-
-{{ govukRadios({
-  name: "roe-prototype-scenario",
-  fieldset: {
-    legend: {
-      text: "Choose asdsds scenario - internal use only",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--l"
-    }
-  },
-  items: [
-    {
-      value: "update",
-      text: "Update"
-    },
-    {
-      value: "remove",
-      text: "Remove"
-    }
-  ]
-}) }}
-  
-
-
-
-          {{ govukButton({
-            text: "Continue"
-          }) }}
-  </form>
 
     <h2 class="govuk-heading-m govuk-!-padding-top-4">
       Prototypes
@@ -108,25 +75,6 @@ dfdfd
           <td class="govuk-table__cell">
             <strong class="govuk-tag govuk-tag--green">
               Not tested
-            </strong>
-          </td>
-        </tr>
-
-
-
-       <tr class="govuk-table__row">
-          <td class="govuk-table__cell">
-            <a href="remove-test/index">Remove Test</a>
-          </td>
-          <td class="govuk-table__cell">
-            11
-          </td>
-          <td class="govuk-table__cell">
-            6 June 2023
-          </td>
-          <td class="govuk-table__cell">
-            <strong class="govuk-tag govuk-tag--green">
-              Not Tested
             </strong>
           </td>
         </tr>
@@ -280,7 +228,7 @@ dfdfd
 
 
 
-    {# OTHER ROE SERVICES #}
+    {# DEV/STABLE SERVICES #}
     <h2 class="govuk-heading-m govuk-!-padding-top-4">
       Dev/Stable
     </h2>
@@ -318,27 +266,51 @@ dfdfd
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
           <th class="govuk-table__header" scope="col">Links</th>
-
           <th class="govuk-table__header" scope="col">Status</th>
         </tr>
       </thead>
+
+<tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a href="https://update-roe-prototype.herokuapp.com">Remove an overseas entity</a>
+          </td>
+          <td class="govuk-table__cell">
+          <strong class="govuk-tag govuk-tag--blue">
+              PROTOTYPE
+            </strong>
+          </td>
+        </tr>
+
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a href="https://www.gov.uk/guidance/file-an-overseas-entity-update-statement">Update an overseas entity</a>
+          </td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--green">
+              LIVE
+            </strong>
+          </td>
+        </tr>
+
+
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">
             <a href="https://roe-v13.herokuapp.com">Register an overseas entity</a>
           </td>
-        
           <td class="govuk-table__cell">
             <strong class="govuk-tag govuk-tag--blue">
               PROTOTYPE
             </strong>
           </td>
         </tr>
+
+
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">
             <a href="https://www.gov.uk/guidance/register-an-overseas-entity">Register an overseas entity</a>
-          </td>
-        
+          </td>        
           <td class="govuk-table__cell">
             <strong class="govuk-tag govuk-tag--green">
               LIVE
@@ -349,43 +321,9 @@ dfdfd
     </table>
 
 
-    <a href="/manage-prototype" class="govuk-link govuk-body">Manage the prototype</a>
 
-
-
-<!--
-    {# ASSESSMENTS #}
     <h2 class="govuk-heading-m govuk-!-padding-top-4">
-      Assessments
-    </h2>
-    <table class="govuk-table">
-      <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-          <th class="govuk-table__header" scope="col">Phase</th>
-          <th class="govuk-table__header" scope="col">Date</th>
-          <th class="govuk-table__header" scope="col">Status</th>
-        </tr>
-      </thead>
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">
-            <a href="#/">Alpha</a>
-          </td>
-          <td class="govuk-table__cell">
-            { Date }
-          </td>
-          <td class="govuk-table__cell">
-            <strong class="govuk-tag govuk-tag--green">
-              TBA
-            </strong>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-
-    {# PLAYGROUND #}
-    <h2 class="govuk-heading-m govuk-!-padding-top-4">
-      Playground
+      Playground for user testing
     </h2>
     <table class="govuk-table">
       <thead class="govuk-table__head">
@@ -398,28 +336,20 @@ dfdfd
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">
-            { Feature name }
+           name
           </td>
           <td class="govuk-table__cell">
-            { Date }
-          </td>
-          <td class="govuk-table__cell">
-            <a href="#/">View</a>
-          </td>
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">
-            { Feature name }
-          </td>
-          <td class="govuk-table__cell">
-            { Date }
+            date
           </td>
           <td class="govuk-table__cell">
             <a href="#/">View</a>
           </td>
         </tr>
-      </tbody>
-    </table>-->
+</table>
+
+
+
+
 
 
   </div>
