@@ -1,8 +1,5 @@
 {% extends "layout.html" %}
-{% set serviceName %}
-{{data['roe-prototype-scenario']}} an overseas entity
-{% endset%}
-
+{% include "includes/service-name.html" %}
 
 {% block pageTitle %}
   Start – {{ serviceName }} – GOV.UK
