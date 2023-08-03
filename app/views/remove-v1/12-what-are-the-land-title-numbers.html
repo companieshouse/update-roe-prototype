@@ -16,35 +16,71 @@ Company authentication
 
 
 
-    <form action="12-date-of-the-update-statement" method="post" novalidate>
-
-<h1 class="govuk-heading-xl">Company authentication</h1>
-
-<p class"govuk-body">To file company information you will need an authentication code.</p>
+    <form method="post">
 
 
-<p class"govuk-body">Authenticating for</p>
-  <p class="govuk-!-font-size-27 govuk-!-padding-bottom-5"><strong>ASHCROFT LIMITED (OE001485)</strong></p>
+<h1 class="govuk-heading-xl">
+  What are the title numbers for the property or land that the overseas entity has disposed of?</h1>
+
+<p class"govuk-body">
+You can find this on the title register or title summary for the property or land.</p>
 
 
-{{ govukInput({
+
+
+{# {{ govukInput({
   hint: {
     html: '<p class"govuk-body><strong>Authentication code</strong></p>'
   },
   id: "auth-code",
   name: "auth-code",
   value: data["auth-code"] 
-}) }}
+}) }} #}
 
 
 
+{% call govukFieldset({
+
+}) %}
+
+  {{ govukInput({
+
+    classes: "govuk-input--width-10",
+    id: "title-no",
+    name: "title-no"
+  }) }}
+
+  {{ govukInput({
+
+    classes: "govuk-input--width-10",
+    id: "title-no",
+    name: "title-no"
+  }) }}
+
+  {{ govukInput({
+
+    classes: "govuk-input--width-10",
+    id: "title-no",
+    name: "title-no"
+  }) }}
+
+  {{ govukInput({
+
+    classes: "govuk-input--width-10",
+    id: "title-no",
+    name: "title-no"
+  }) }}
+
+{% endcall %}
+
+<p class="govuk-body"><a href="auth/request-an-authentication-code" class="govuk-link">
+Add more title numbers</a></p>
 
   {{ govukButton({
-    text: "Authenticate"
+    text: "Authenticate",
+    href: "/12-what-are-the-land-title-numbers"
   }) }}
-          
 
-<p class="govuk-body"><a href="auth/request-an-authentication-code" target="_blank" class="govuk-link">Request an authentication code (opens in a new tab)</a></p>
 
     
 <!--
