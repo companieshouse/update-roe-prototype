@@ -15,22 +15,22 @@ Are there any trusts involved in this overseas entity?
   <div class="govuk-grid-column-two-thirds">
 
  
-  <form action="06-are-there-any-trusts-involved-in-this-overseas-entity" method="post">
+  <form action="06b-is-the-overseas-entity-registered-as-the-owner" method="post">
 
 
     {{ govukRadios({
       classes: "govuk-radios",
-      idPrefix: "trustInvolved",
-      name: "trust-involved",
+      idPrefix: "ownerDisposed",
+      name: "owner-disposed",
       fieldset: {
         legend: {
-          text: "Are there any trusts involved in this overseas entity?",
+          text: "Is the overseas entity registered as the owner of any property or land in the UK?",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--xl"
         }
       },
       hint: {
-      text: "This includes trusts that you've already told us about, and trusts that you need to tell us about as part of this update statement."
+      text: "We will check this against the information held by the Land Registries."
     },
       items: [
         {
@@ -44,16 +44,7 @@ Are there any trusts involved in this overseas entity?
       ]
     }) }}
 
-    <details class="govuk-details" data-module="govuk-details">
-      <summary class="govuk-details__summary">
-        <span class="govuk-details__summary-text">
-          When you need to tell us about trusts
-        </span>
-      </summary>
-      <div class="govuk-details__text">
-        If there are any individuals or entities that are registrable beneficial owners of the overseas entity due to being a trustee of a trust, you need to give us information about that trust. 
-      </div>
-    </details>
+
   
 {# <details class="govuk-details" data-module="govuk-details">
   <summary class="govuk-details__summary">
@@ -72,6 +63,8 @@ Are there any trusts involved in this overseas entity?
 
   </div>
 </details> #}
+
+
 {{ govukInsetText({
   html: '<h2 class="govuk-heading-m">What information we’ll show on the public register</h2>
         <p>We will not show any of the information you provide in this section on the public Register of Overseas Entities.</p>'

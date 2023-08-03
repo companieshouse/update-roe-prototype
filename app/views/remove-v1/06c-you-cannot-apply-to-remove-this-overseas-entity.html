@@ -1,0 +1,31 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+{% if errorList.length > 0 %}
+  Error:
+{% endif %}
+You cannot apply to remove this overseas entity – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">You cannot apply to remove this overseas entity</h1>
+       <p class="govuk-body">
+        An overseas entity cannot apply to be removed if it is still the registered owner of any property or land in the UK. 
+       </p>
+       <p class="govuk-body">
+You can check this by searching the Land Registries... [add links?]
+</p>
+             <p class="govuk-body">Contact us at <a href="javascript:void(0)" class="govuk-link">enquiries@companieshouse.gov.uk</a> if you need us to send you a paper form. </p>
+
+    </div>
+  </div>
+
+
+{% endblock %}

@@ -61,13 +61,13 @@ router.get('/v8/06-are-there-any-trusts-involved-in-this-overseas-entity', funct
 
 
 // 06 ******* TRUSTS INVOLVED FILTER *******
-router.post('/remove-test/06-are-there-any-trusts-involved-in-this-overseas-entity', function(request, response) {
+router.post('/remove-v1/06-are-there-any-trusts-involved-in-this-overseas-entity', function(request, response) {
   var trustInvolved = request.session.data['trust-involved']
   var roePrototypeScenario = request.session.data['roe-prototype-scenario']
 if (trustInvolved === "yes"){
   response.redirect("/v8/07-youll-need-to-file-an-update-statement-using-the-paper-form")
 } else if (roePrototypeScenario === "remove"){
-  response.redirect('/remove-test/sold-land')
+  response.redirect('/remove-v1/06b-is-the-overseas-entity-registered-as-the-owner')
 } else {
   response.redirect('/v8/08-before-you-start')
 }
@@ -79,6 +79,27 @@ if (trustInvolved === "yes"){
 
 // // && means 'and' - this would only work if both checkboxes were ticked
 // } else if (roePrototypeScenario === "value-one" && roePrototypeScenario === "value-two"){
+
+
+
+
+
+
+
+// 06B ******* ENTITY DISPOSED OF LAND FILTER *******
+router.post('/remove-v1/06b-is-the-overseas-entity-registered-as-the-owner', function(request, response) {
+
+  var ownerDisposed = request.session.data['owner-disposed']
+  if (ownerDisposed == "no"){
+      response.redirect("/remove-v1/06c-you-cannot-apply-to-remove-this-overseas-entity")
+  } else {
+      response.redirect("/remove-v1/08b-before-you-start")
+  }
+})
+
+
+
+
 
 
 
