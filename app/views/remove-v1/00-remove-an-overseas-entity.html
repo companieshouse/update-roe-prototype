@@ -34,7 +34,7 @@
   <div class="govuk-grid-row">
 
 
-    {% include "../includes/govuk-content-header.html" %}
+    {% include "../includes/govuk-content-header-remove.html" %}
 
     <div class="govuk-grid-column-one-third">
 
@@ -70,16 +70,16 @@
 
 
 
-<!-- ******* What an overseas entity update statement is *******  -->
+<!-- ******* Completing verification checks *******  -->
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-margin-top-0">
-      <h3 id="oe-update" class="govuk-heading-m">What an overseas entity update statement is</h3>
-      <p class="govuk-body">An update statement must be filed every year by all overseas entities on the Register of Overseas Entities. 
-      <p class="govuk-body">It requires you to check and confirm that all the information about the overseas entity on the register is still correct, and update anything that has changed. You must file an update statement even if nothing has changed. </p>
+      <h3 id="oe-update" class="govuk-heading-m">Completing verification checks </h3>
+      <p class="govuk-body">All information about the overseas entity must be updated before the entity can be removed from the register. This includes information about any beneficial owners, managing officers and trusts.  
+      <p class="govuk-body">Verification checks must be completed on any information that is being updated. They must be carried out by a UK-regulated agent no more than 3 months before the date of the removal application. </p>
+      <p class="govuk-body">The UK-regulated agent must have an <a href="#" class="govuk-link">agent assurance code</a> issued by Companies House.  
+      <p class="govuk-body">If nothing has changed and you’re not updating any information, you do not need to complete any verification checks before applying to remove the overseas entity.  </p>
 
 
-
-
-
+{# 
 <!-- ******* When you need to file *******  -->
       <h3 id="when-to-file" class="govuk-heading-m">When you need to file </h3>
       <p class="govuk-body">All overseas entities must file an update statement every year. You can file more often if you want to. </p>
@@ -216,32 +216,31 @@
  <p class="govuk-body">If the same agent is also filing the update statement for the overseas entity, they  will be asked to provide their agent assurance code as part of this service. 
     Otherwise, they will need to submit an 
     <a href="#" class="govuk-link">Overseas entity verification checks statement</a>.</p>
-
+ #}
 
 
 <!-- ******* File an overseas entity update statement   *******  -->
-      <h3 id="file-an-oe-update" class="govuk-heading-m">File an overseas entity update statement</h3>
+      <h3 id="file-an-oe-update" class="govuk-heading-m">Before you start </h3>
 
       <p class="govuk-body"><strong>You'll need: </strong>
     <ul class="govuk-list govuk-list--bullet">
       <li>to sign in to or create a Companies House account</li>
-      <li>the Overseas Entity ID </li>
+      <li>the Overseas Entity ID number </li>
       <li>the overseas entity's <a href="#" class="govuk-link">authentication code</a></li>
-      <li>the name and email address of someone we can contact about the update </li>
-      <li>to tell us about the UK-regulated agent that completed <a href="#" class="govuk-link">verification checks</a>, if relevant</li>
-      <li>a credit or debit card to pay the £120 fee - for now, you cannot pay with a Companies House payment account </li>
+      <li>the agent assurance code, if you're the UK-regulated agent that carried out the verification checks  </li>
+      {# <li>to tell us about the UK-regulated agent that completed <a href="#" class="govuk-link">verification checks</a>, if relevant</li> #}
+      <li>a credit or debit card to pay the £XX fee  </li>
     </ul>
 
 
     <p class="govuk-body">You'll also need to provide an <a href="#" class="govuk-link">agent assurance code</a> if you're the UK-regulated agent who carried out the verification checks.</p>
 
 
-    <p class="govuk-body">This service could take a while to complete. You'll be able to save your answers and come back later. </p>
+    <p class="govuk-body">This service could take a while to complete. It will time out if you do not use it for 60 minutes. 
+      You can save your answers and resume your application later. </p>
 
 
-    <div class="govuk-inset-text">
-    If you have applications in progress, you can choose to start a new application or return to a saved one.   
-    </div>
+
 
       {{ govukButton({
         text: "Start now",
