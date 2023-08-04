@@ -94,7 +94,7 @@ if (trustInvolved === "yes"){
 router.post('/remove-v1/06b-is-the-overseas-entity-registered-as-the-owner', function(request, response) {
 
   var ownerDisposed = request.session.data['owner-disposed']
-  if (ownerDisposed == "no"){
+  if (ownerDisposed == "yes"){
       response.redirect("/remove-v1/06c-you-cannot-apply-to-remove-this-overseas-entity")
   } else {
       response.redirect("/remove-v1/08b-before-you-start")
