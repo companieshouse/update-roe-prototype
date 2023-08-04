@@ -12,15 +12,15 @@ Have any beneficial owners become or ceased in the update period? – {{ service
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form class="form" action="18-review-the-information-in-this-update-statement" method="post">
+    <form class="form" action="16c-removal-from-the-register-statement" method="post">
 
 
   <span class="govuk-caption-l">{{ data['overseas-name'] }} - OE001485</span>
 
 {{ govukRadios({
   classes: "govuk-radios",
-  idPrefix: "startingNew",
-  name: "starting-new",
+  idPrefix: "oeCeased",
+  name: "oe-ceased",
   fieldset: {
     legend: {
       text: "Has anyone become or ceased to be a registrable beneficial owner during the update period?",
