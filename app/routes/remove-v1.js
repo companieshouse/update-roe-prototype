@@ -111,13 +111,15 @@ router.post('/remove-v1/06b-is-the-overseas-entity-registered-as-the-owner', fun
 
 // 14 ******* MAKE ANY CHANGES? FILTER *******
 
-router.get('/remove-v1/19-who-is-completing-this-update', function(req, res) {
-  if (req.session.data['make-changes'] === 'no') {
-    res.render('remove-v1/15b-has-the-overseas-entity-identified-any-registrable-beneficial-owners')
-  } else {
-    res.render('remove-v1/19-who-is-completing-this-update')
-  }
-})
+// router.get('/remove-v1/19-who-is-completing-this-update', function(req, res) {
+//   if (req.session.data['make-changes'] === 'no') {
+//     res.render('remove-v1/15b-has-the-overseas-entity-identified-any-registrable-beneficial-owners')
+//   } else {
+//     res.render('remove-v1/19-who-is-completing-this-update')
+//   }
+// })
+
+
 
 
 // 18 ******* NO CHANGE: REVIEW THE INFORMATION FILTER *******
