@@ -32,7 +32,7 @@
       {{ govukInsetText({
         text: "You must sign in to or create a Companies House account. Your WebFiling details will not work with this service."
       }) }}
-    <form action="02-do-you-want-to-continue-with-a-saved-filing" method="post">
+
       <form class="form" method="post">
         {% if errorEmail == true %}
           {{ govukInput({
@@ -83,7 +83,8 @@
 
         
         {{ govukButton({
-        text: "Sign in"
+        text: "Sign in",
+        href: "02-do-you-want-to-continue-with-a-saved-filing"
         }) }}
         <p>
           <a href="#" class="govuk-link govuk-link--no-visited-state">Create an account</a>
