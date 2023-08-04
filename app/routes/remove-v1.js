@@ -113,9 +113,9 @@ router.post('/remove-v1/06b-is-the-overseas-entity-registered-as-the-owner', fun
 
 router.get('/remove-v1/19-who-is-completing-this-update', function(req, res) {
   if (req.session.data['make-changes'] === 'no') {
-    res.render('v8/15b-has-the-overseas-entity-identified-any-registrable-beneficial-owners')
+    res.render('remove-v1/15b-has-the-overseas-entity-identified-any-registrable-beneficial-owners')
   } else {
-    res.render('v8/19-who-is-completing-this-update')
+    res.render('remove-v1/19-who-is-completing-this-update')
   }
 })
 
