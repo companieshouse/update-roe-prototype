@@ -1,19 +1,19 @@
 const govukPrototypeKit = require('govuk-prototype-kit');
-const { postProtectedFilter } = require('../assets/javascripts/routes/protected-filter');
-const { postInvolvedFilter } = require('../assets/javascripts/routes/involved-types');
-const { postIdentifyFilter } = require('../assets/javascripts/routes/identify');
-const { postStatementFilter } = require('../assets/javascripts/routes/statement');
-const { postSignOut } = require('../assets/javascripts/routes/sign-out');
-const { postTrustFilter } = require('../assets/javascripts/routes/trust-filter');
+// const { postProtectedFilter } = require('../assets/javascripts/routes/protected-filter');
+// const { postInvolvedFilter } = require('../assets/javascripts/routes/involved-types');
+// const { postIdentifyFilter } = require('../assets/javascripts/routes/identify');
+// const { postStatementFilter } = require('../assets/javascripts/routes/statement');
+// const { postSignOut } = require('../assets/javascripts/routes/sign-out');
+// const { postTrustFilter } = require('../assets/javascripts/routes/trust-filter');
 
 const router = govukPrototypeKit.requests.setupRouter()
 
-postProtectedFilter(router)
-postInvolvedFilter(router)
-postIdentifyFilter(router)
-postStatementFilter(router)
-postSignOut(router)
-postTrustFilter(router)
+// postProtectedFilter(router)
+// postInvolvedFilter(router)
+// postIdentifyFilter(router)
+// postStatementFilter(router)
+// postSignOut(router)
+// postTrustFilter(router)
 
 
 
@@ -36,22 +36,26 @@ router.post('/index', function(request, response) {
 
 
 // 02 ******* SAVED FILING FILTER *******
-router.get('/v8/04-do-any-beneficial-owners-or-managing-officers-have-their-personal-information-protected-at-companies-house', function(req, res) {
-  if (req.session.data['saved-filing'] === 'yes') {
-    res.render('v8/03-your-filings')
+router.post('/remove-v1/02-do-you-want-to-continue-with-a-saved-filing', function(request, response) {
+
+  var savedFiling = request.session.data['saved-filing']
+  if (savedFiling == "yes"){
+      response.redirect("/remove-v1/03-your-filings")
   } else {
-    res.render('v8/04-do-any-beneficial-owners-or-managing-officers-have-their-personal-information-protected-at-companies-house')
+      response.redirect("/remove-v1/04-do-any-beneficial-owners-or-managing-officers-have-their-personal-information-protected-at-companies-house")
   }
 })
 
 
 
 // 04 ******* PROTECTED FILTER *******
-router.get('/v8/06-are-there-any-trusts-involved-in-this-overseas-entity', function(req, res) {
-  if (req.session.data['secure-register'] === 'yes') {
-    res.render('v8/05-youll-need-to-file-an-update-statement-using-the-paper-form')
+router.post('/remove-v1/04-do-any-beneficial-owners-or-managing-officers-have-their-personal-information-protected-at-companies-house', function(request, response) {
+
+  var secureRegister = request.session.data['secure-register']
+  if (secureRegister == "yes"){
+      response.redirect("/remove-v1/05-youll-need-to-file-an-update-statement-using-the-paper-form")
   } else {
-    res.render('v8/06-are-there-any-trusts-involved-in-this-overseas-entity')
+      response.redirect("/remove-v1/06-are-there-any-trusts-involved-in-this-overseas-entity")
   }
 })
 
