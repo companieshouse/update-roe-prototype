@@ -1,13 +1,14 @@
 {% extends "layouts/main.html" %}
+{% include "includes/govuk-content-header.html" %}
 
 {% block pageTitle %}
 Home – {{serviceName}} – GOV.UK Prototype Kit
 {% endblock %}
 
 
-{% set serviceName %}
+{# {% set serviceName %}
 {{data['roe-prototype-scenario']}} an overseas entity
-{% endset%}
+{% endset%} #}
 
 {% block beforeContent %}
   {% include "includes/phase-banner.html" %}
@@ -22,7 +23,8 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
   <div class="govuk-grid-column-two-thirds">
 
     <h1 class="govuk-heading-xl">
-     Remove an overseas entity
+         Apply to remove an overseas entity from the Register of Overseas Entities prototype
+
     </h1>
 
 {{ govukWarningText({
