@@ -35,17 +35,34 @@
                         {
                           href: "#",
                           text: "Change",
-                          visuallyHiddenText: "Does the update include people that have protection or that have applied for protection?"
+                          visuallyHiddenText: "Do any beneficial owners or managing officers have personal information protected at Companies House?"
                         }
                       ]
                     }
                   },
                    {
                     key: {
-                      text: "Date of the update statement"
+                      text: "Are there any trusts involved in the overseas entity?"
                     },
                     value: {
-                      text: '10 August 2023'
+                      text: 'No'
+                    },
+                    actions: {
+                      items: [
+                        {
+                          href: "#",
+                          text: "Change",
+                          visuallyHiddenText: "Are there any trusts involved in the overseas entity?"
+                        }
+                      ]
+                    }
+                  },
+                   {
+                    key: {
+                      text: "Is the overseas entity registered as the owner of any property or land in the UK?"
+                    },
+                    value: {
+                      text: 'No'
                     },
                     actions: {
                       items: [
@@ -63,6 +80,41 @@
 
 
 
+<!-- ********** TITLE NUMBERS  ********** -->
+
+<h2 class="govuk-heading-l">Land title numbers</h2>
+
+              {{ govukSummaryList({
+                classes: 'govuk-!-margin-bottom-9',
+                rows: [
+                  {
+                    key: {
+                      text: "What are the title numbers for the property or land that the overseas entity has disposed of?"
+                    },
+                    value: {
+                      html: "
+                      ACY123456 <br>
+                      TKZ976542 <br>
+                      RTL234568 <br>
+                      PRZ987632 <br>
+                      "
+                    },
+                    actions: {
+                      items: [
+                        {
+                          href: "#",
+                          text: "Change",
+                          visuallyHiddenText: "Do any beneficial owners or managing officers have personal information protected at Companies House?"
+                        }
+                      ]
+                    }
+                  }
+                  
+                ]
+              }) }}
+
+
+
 <!-- ********** CONTACT DETAILS  ********** -->
 
       <h2 class="govuk-heading-l">Contact details</h2>
@@ -76,7 +128,7 @@
                 text: "Full name"
               },
               value: {
-                text: data['contact-full-name']
+                text: "Joe Bloggs"
                 },
               actions: {
                 items: [
@@ -93,7 +145,7 @@
                 text: "Email address"
               },
               value: {
-                text: data['contact-email']
+                text: "user@testcompany.co.uk"
               },
               actions: {
                 items: [
@@ -107,6 +159,8 @@
             }
           ]
         }) }}
+
+        {# data['contact-email'] #}
 
 
 
@@ -156,7 +210,7 @@
                   text: "Name of agent"
                 },
                 value: {
-                  text: data['due-diligence-name']
+                  text: "Simon Holden"
                 },
                 actions: {
                   items: [
@@ -173,7 +227,7 @@
                   text: "Correspondence address"
                 },
                 value: {
-                  html: data['agent-address-line-1'] <br> data['agent-address-city-town'] <br> data['agent-address-state'] <br> data['where-do-you-live']<br> data['agent-address-postcode']
+                  html: "Office 123 <br> King Street <br> YO12 9JE"
                 },
                 actions: {
                   items: [
@@ -191,7 +245,7 @@
                   text: "Email address"
                 },
                 value: {
-                  text: data['due-diligence-email']
+                  text: "s.holden@email.com"
                 },
                 actions: {
                   items: [
@@ -209,7 +263,7 @@
                   text: "Name of supervisory body"
                 },
                 value: {
-                  text: data['supervisory-name']
+                  text: "Supervisory body"
                 },
                 actions: {
                   items: [
@@ -243,7 +297,7 @@
                   text: "Agent assurance code"
                 },
                 value: {
-                  text: data['agent-code']
+                  text: "123456"
                 },
                 actions: {
                   items: [
@@ -260,7 +314,7 @@
                   text: "Person responsible for overseeing verification checks"
                 },
                 value: {
-                  text: data['partner-name']
+                  text: "John Smith"
                 },
                 actions: {
                   items: [
@@ -459,58 +513,7 @@
  
 
 
-<!-- ********** STATEMENTS  ********** -->
 
- <h2 class="govuk-heading-l">Statement details</h2>
-
-        <h3 class="govuk-heading-m">Has the overseas entity identified any registrable beneficial owners?</h3>
-          {{ govukSummaryList({
-            classes: 'govuk-!-margin-bottom-9',
-            rows: [
-            {
-              key: {
-                text: " Statement"
-              },
-              value: {
-                text: "All beneficial owners have been identified and all required information has been provided."
-              },
-              actions: {
-                items: [
-                  {
-                    href: "#",
-                    text: "Change",
-                    visuallyHiddenText: "Has the overseas entity identified any registrable beneficial owners?"
-                  }
-                ]
-              }
-            }
-            ]
-          }) }}
-
-        <h3 class="govuk-heading-m">Have any beneficial owners become or ceased in the update period?</h3>
-          {{ govukSummaryList({
-            classes: 'govuk-!-margin-bottom-9',
-            rows: [
-            {
-              key: {
-                text: " Statement"
-              },
-              value: {
-                text: "
-                The entity has reasonable cause to believe that at least one person has become or ceased to be a registrable beneficial owner during the update period."
-              },
-              actions: {
-                items: [
-                  {
-                    href: "#",
-                    text: "Change",
-                    visuallyHiddenText: "Have any beneficial owners become or ceased in the update period?"
-                  }
-                ]
-              }
-            }
-            ]
-          }) }}
 
 
 
@@ -1828,6 +1831,85 @@
           </dd>
         </div>    
       </dl> #}
+
+
+<!-- ********** STATEMENTS  ********** -->
+
+ <h2 class="govuk-heading-l">Statement details</h2>
+
+        <h3 class="govuk-heading-m">Has the overseas entity identified any registrable beneficial owners?</h3>
+          {{ govukSummaryList({
+            classes: 'govuk-!-margin-bottom-9',
+            rows: [
+            {
+              key: {
+                text: " Statement"
+              },
+              value: {
+                text: "All beneficial owners have been identified and all required information has been provided."
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "Has the overseas entity identified any registrable beneficial owners?"
+                  }
+                ]
+              }
+            }
+            ]
+          }) }}
+
+        <h3 class="govuk-heading-m">Have any beneficial owners become or ceased in the update period?</h3>
+          {{ govukSummaryList({
+            classes: 'govuk-!-margin-bottom-9',
+            rows: [
+            {
+              key: {
+                text: " Statement"
+              },
+              value: {
+                text: "
+                The entity has reasonable cause to believe that at least one person has become or ceased to be a registrable beneficial owner during the update period."
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "Have any beneficial owners become or ceased in the update period?"
+                  }
+                ]
+              }
+            }
+            ]
+          }) }}
+
+ <h3 class="govuk-heading-m">Removal from the register statement</h3>
+          {{ govukSummaryList({
+            classes: 'govuk-!-margin-bottom-9',
+            rows: [
+            {
+              key: {
+                text: " Statement"
+              },
+              value: {
+                text: "
+                I confirm that the overseas entity is not registered as the proprietor of a relevant interest in land."
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "Have any beneficial owners become or ceased in the update period?"
+                  }
+                ]
+              }
+            }
+            ]
+          }) }}
 
 
       <form method="post">
