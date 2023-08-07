@@ -1,5 +1,11 @@
 {% extends "layouts/main.html" %}
-{% include "includes/service-name.html" %}
+{% set serviceName %}
+{% if data['roe-prototype-scenario'] == 'update' %}
+    File an overseas entity update statement
+  {% else %}
+    Apply to remove an overseas entity from the Register of Overseas Entities 
+  {% endif %}
+  {% endset%}
 
 
 {% block pageTitle %}
