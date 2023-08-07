@@ -6,21 +6,18 @@
 window.GOVUKPrototypeKit.documentReady(() => {
   // Add JavaScript here
 
-
-  $(document).ready(function () {
-    window.GOVUKFrontend.initAll()
-    // Code snippet for the nationality page
-    $('#second-nationality-link').click(function() {
-      $('#second-nationality').show();
-      $('#second-nationality-link').hide();
-      return false;
-    });
-    $('#third-nationality-link').click(function() {
-      $('#third-nationality').show();
-      $('#third-nationality-link').hide();
-      return false;
-    });
-  })
+}
+)
 
 
-})
+
+
+function show_hide() {
+  // get div to hide / reveal
+  var title_Fields = document.getElementById('revealTitleNumbers');
+  if (title_Fields.classList.contains('govuk-visually-hidden')) {
+    title_Fields.classList.remove('govuk-visually-hidden');
+  } else {
+    title_Fields.classList.add('govuk-visually-hidden');
+  }
+}
