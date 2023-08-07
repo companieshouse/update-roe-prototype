@@ -1,11 +1,18 @@
 {% extends "layouts/main.html" %}
+{% set serviceName %}
+{% if data['roe-prototype-scenario'] == 'update' %}
+    File an overseas entity update statement
+  {% else %}
+    Apply to de-register an overseas entity
+  {% endif %}
+  {% endset%}
 
-{% block pageTitle %}
+{# {% block pageTitle %}
 {% if errorList.length > 0 %}
   Error:
 {% endif %}
 You'll need to file an update statement using the paper form – {{ serviceName }} – GOV.UK
-{% endblock %}
+{% endblock %} #}
 
 {% block beforeContent %}
   {% include "includes/before-content.html" %}

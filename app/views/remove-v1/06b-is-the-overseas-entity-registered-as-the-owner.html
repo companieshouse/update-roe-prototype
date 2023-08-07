@@ -1,10 +1,15 @@
 {% extends "layouts/main.html" %}
-
-{% block pageTitle %}
-
-Are there any trusts involved in this overseas entity?
+{% set serviceName %}
+{% if data['roe-prototype-scenario'] == 'update' %}
+    File an overseas entity update statement
+  {% else %}
+    Apply to de-register an overseas entity
+  {% endif %}
+  {% endset%}
+  
+Is the overseas entity registered as the owner of any property or land in the UK?
  – {{ serviceName }} – GOV.UK
-{% endblock %}
+
 
 {% block beforeContent %}
   {% include "includes/before-content.html" %}
