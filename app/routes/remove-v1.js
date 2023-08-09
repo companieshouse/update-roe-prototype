@@ -1,24 +1,8 @@
 const govukPrototypeKit = require('govuk-prototype-kit');
-// const { postProtectedFilter } = require('../assets/javascripts/routes/protected-filter');
-// const { postInvolvedFilter } = require('../assets/javascripts/routes/involved-types');
-// const { postIdentifyFilter } = require('../assets/javascripts/routes/identify');
-// const { postStatementFilter } = require('../assets/javascripts/routes/statement');
-// const { postSignOut } = require('../assets/javascripts/routes/sign-out');
-// const { postTrustFilter } = require('../assets/javascripts/routes/trust-filter');
-
 const router = govukPrototypeKit.requests.setupRouter()
-
-// postProtectedFilter(router)
-// postInvolvedFilter(router)
-// postIdentifyFilter(router)
-// postStatementFilter(router)
-// postSignOut(router)
-// postTrustFilter(router)
-
 
 
 // ****** FILTERS *****
-
 
 
 // INDEX ******* REMOVE JOURNEY FILTER *******
