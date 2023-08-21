@@ -1,8 +1,16 @@
-{% extends "layouts/main.html" %}
 
+{% extends "layouts/main.html" %}
+{% set serviceName %}
+{% if data['roe-prototype-scenario'] == 'update' %}
+    File an overseas entity update statement
+  {% else %}
+    Apply to de-register an overseas entity
+  {% endif %}
+  {% endset%}
 {% block pageTitle %}
-  Review the information before submitting – {{ serviceName }} – GOV.UK
+Review the information before submitting – {{ serviceName }} – GOV.UK
 {% endblock %}
+
 
 {% block beforeContent %}
   {% include "includes/before-content.html" %}
@@ -245,7 +253,7 @@
 
 
 
- <h3 class="govuk-heading-m">Removal statement</h3>
+ <h3 class="govuk-heading-m">Confirm the de-registration statement</h3>
           {{ govukSummaryList({
             classes: 'govuk-!-margin-bottom-9',
             rows: [
