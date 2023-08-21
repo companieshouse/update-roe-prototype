@@ -22,7 +22,7 @@
       <form class="form" action="16-has-anyone-become-or-ceased-to-be-a-registrable-beneficial-owner-during-the-update-period" method="post">
         
   <span class="govuk-caption-l">{{ data['overseas-name'] }} - OE001485</span>
-        <h1 class="govuk-heading-xl">Has the overseas entity identified any registrable beneficial owners?</h1>
+        <h1 class="govuk-heading-xl">Has the overseas entity identified all its registrable beneficial owners?</h1>
 
 {# {% if errorStatements == true %}
 ecked: checked("statements", "noneIdentified")
@@ -34,7 +34,7 @@ ecked: checked("statements", "noneIdentified")
         }) }}
 {% else %} #}
 
-       <p class="govuk-body">Lorem ipsum.</p>
+       <p class="govuk-body">We’ll ask you to provide this statement every time you file for this overseas entity.</p>
 
         {{ govukRadios({
           idPrefix: "statements",

@@ -7,7 +7,7 @@
   {% endif %}
   {% endset%}
 {% block pageTitle %}
-Have any beneficial owners become or ceased in the update period? – {{ serviceName }} – GOV.UK
+Has anyone become or ceased to be a registrable beneficial owner during the update period? – {{ serviceName }} – GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -22,7 +22,7 @@ Have any beneficial owners become or ceased in the update period? – {{ service
 
   <span class="govuk-caption-l">{{ data['overseas-name'] }} - OE001485</span>
 
-          <h1 class="govuk-heading-xl">Has anyone become or ceased to be a registrable beneficial owner during the update period</h1>
+          <h1 class="govuk-heading-xl">Has anyone become or ceased to be a registrable beneficial owner during the update period?</h1>
 
 {# {% if errorStatements == true %}
 ecked: checked("statements", "noneIdentified")
@@ -34,10 +34,12 @@ ecked: checked("statements", "noneIdentified")
         }) }}
 {% else %} #}
 
+<!--
        <p class="govuk-body">
-       The review period starts from the date of the entity's registration or last update statement (whichever was most recent), and ends on the date of this filing.
+       The update period starts from the date of the entity's registration or latest update statement (whichever was most recent), and ends on the date of this application.
 
        </p>
+-->
 
 
 {{ govukRadios({
