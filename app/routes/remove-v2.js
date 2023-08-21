@@ -100,6 +100,17 @@ if (trustInvolved === "yes"){
 
 // 14 ******* MAKE ANY CHANGES? FILTER *******
 
+// router.post('/remove-v2/14-do-you-need-to-make-any-changes-to-this-overseas-entity', function(request, response) {
+
+//   var makeChanges = request.session.data['make-changes']
+//   if (makeChanges == "yes"){
+//       response.redirect("/remove-v2/ADD HERE")
+//   } else {
+//       response.redirect("/remove-v2/15-has-the-overseas-entity-identified-any-registrable-beneficial-owners")
+//   }
+// })
+
+
 // router.get('/remove-v2/19-who-is-completing-this-update', function(req, res) {
 //   if (req.session.data['make-changes'] === 'no') {
 //     res.render('remove-v2/15b-has-the-overseas-entity-identified-any-registrable-beneficial-owners')
@@ -110,7 +121,6 @@ if (trustInvolved === "yes"){
 
 
 
-
 // 18 ******* NO CHANGE: REVIEW THE INFORMATION FILTER *******
 
 router.get('/v8/14-do-you-need-to-make-any-changes-to-this-overseas-entity', function(req, res) {
@@ -118,6 +128,17 @@ router.get('/v8/14-do-you-need-to-make-any-changes-to-this-overseas-entity', fun
     res.render('v8/xx-payment') 
   } else {
     res.render('v8/14-do-you-need-to-make-any-changes-to-this-overseas-entity')
+  }
+})
+
+
+router.post('/remove-v2/18-review-the-information-in-this-update-statement', function(request, response) {
+
+  var nochangeChange = request.session.data['need-to-change']
+  if (nochangeChange == "yes"){
+      response.redirect("/remove-v2/xx-payment")
+  } else {
+      response.redirect("/remove-v2/14-do-you-need-to-make-any-changes-to-this-overseas-entity")
   }
 })
 
