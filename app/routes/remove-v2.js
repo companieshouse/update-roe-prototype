@@ -38,7 +38,7 @@ router.post('/remove-v2/02-do-you-want-to-continue-with-a-saved-filing', functio
 router.post('/remove-v2/06b-is-the-overseas-entity-registered-as-the-owner', function(request, response) {
 
   var ownerDisposed = request.session.data['owner-disposed']
-  if (ownerDisposed == "yes"){
+  if (ownerDisposed == "no"){
       response.redirect("/remove-v2/06c-you-cannot-apply-to-remove-this-overseas-entity")
   } else {
       response.redirect("/remove-v2/04-do-any-beneficial-owners-or-managing-officers-have-their-personal-information-protected-at-companies-house")
