@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Review the information before submitting this update statement – {{ serviceName }} – GOV.UK
+  Review the information before submitting – {{ serviceName }} – GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -13,12 +13,12 @@
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
   <span class="govuk-caption-l">{{ data['overseas-name'] }} - OE001485</span>
-      <h1 class="govuk-heading-xl">Review the information before submitting this update statement</h1>
+      <h1 class="govuk-heading-xl">Review the information before submitting</h1>
 
 
 
 
-<!-- ********** PROTECTED INFORMATION AND DATE OF THE UPDATE  ********** -->
+<!-- ********** FILTER QUESTIONS  ********** -->
 
               {{ govukSummaryList({
                 classes: 'govuk-!-margin-bottom-9',
@@ -35,28 +35,91 @@
                         {
                           href: "#",
                           text: "Change",
-                          visuallyHiddenText: "Does the update include people that have protection or that have applied for protection?"
+                          visuallyHiddenText: "Do any beneficial owners or managing officers have personal information protected at Companies House?"
                         }
                       ]
                     }
                   },
-                    {
+                   {
                     key: {
-                        text: "Date of the update statement"
+                      text: "Are there any trusts involved in the overseas entity?"
                     },
                     value: {
-                        text: '6 August 2023'
+                      text: 'No'
                     },
                     actions: {
-                        items: [
+                      items: [
                         {
-                            href: "#",
-                            text: "Change",
-                            visuallyHiddenText: "Date of the update statement"
+                          href: "#",
+                          text: "Change",
+                          visuallyHiddenText: "Are there any trusts involved in the overseas entity?"
                         }
-                        ]
+                      ]
                     }
                   },
+                   {
+                    key: {
+                      text: "Is the overseas entity registered as the owner of any property or land in the UK?"
+                    },
+                    value: {
+                      text: 'No'
+                    },
+                    actions: {
+                      items: [
+                        {
+                          href: "#",
+                          text: "Change",
+                          visuallyHiddenText: "Does the update include people that have protection or that have applied for protection?"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }) }}
+
+
+
+
+<!-- ********** TITLE NUMBERS  ********** -->
+
+<h2 class="govuk-heading-l">Land title numbers</h2>
+
+              {{ govukSummaryList({
+                classes: 'govuk-!-margin-bottom-9',
+                rows: [
+                  {
+                    key: {
+                      text: "What are the title numbers for the property or land that the overseas entity has disposed of?"
+                    },
+                    value: {
+                      html: "
+                      ACY123456,TKZ976542,RTL234568,PRZ987632
+                      "
+                    },
+                    actions: {
+                      items: [
+                        {
+                          href: "#",
+                          text: "Change",
+                          visuallyHiddenText: "Do any beneficial owners or managing officers have personal information protected at Companies House?"
+                        }
+                      ]
+                    }
+                  }
+                  
+                ]
+              }) }}
+
+
+
+<!-- ********** CHANGES - CAN BE MERGED WTIH FILTER QUESTIONS IF TITLE NUMBERS ARE REMOVED  ********** -->
+<h2 class="govuk-heading-l">Changes to the overseas entity</h2>
+
+
+              {{ govukSummaryList({
+                classes: 'govuk-!-margin-bottom-9',
+                rows: [
+                  
                   {
                   key: {
                       text: "Do you need to make any changes to this overseas entity?"
