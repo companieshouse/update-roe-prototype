@@ -23,6 +23,23 @@
               {{ govukSummaryList({
                 classes: 'govuk-!-margin-bottom-9',
                 rows: [
+                 {
+                    key: {
+                      text: "Has the overseas entity been removed from the Land Registries as the owner of any property or land in the UK?"
+                    },
+                    value: {
+                      text: 'Yes'
+                    },
+                    actions: {
+                      items: [
+                        {
+                          href: "#",
+                          text: "Change",
+                          visuallyHiddenText: "Does the update include people that have protection or that have applied for protection?"
+                        }
+                      ]
+                    }
+                  },
                   {
                     key: {
                       text: "Do any beneficial owners or managing officers have personal information protected at Companies House?"
@@ -53,23 +70,6 @@
                           href: "#",
                           text: "Change",
                           visuallyHiddenText: "Are there any trusts involved in the overseas entity?"
-                        }
-                      ]
-                    }
-                  },
-                   {
-                    key: {
-                      text: "Is the overseas entity registered as the owner of any property or land in the UK?"
-                    },
-                    value: {
-                      text: 'No'
-                    },
-                    actions: {
-                      items: [
-                        {
-                          href: "#",
-                          text: "Change",
-                          visuallyHiddenText: "Does the update include people that have protection or that have applied for protection?"
                         }
                       ]
                     }
@@ -122,7 +122,7 @@
                   
                   {
                   key: {
-                      text: "Do you need to make any changes to this overseas entity?"
+                      text: "Do you need to make any changes to this overseas entity before it is de-registered?"
                   },
                   value: {
                       text: "No, I do not need to make changes"
@@ -147,7 +147,7 @@
 
       <h2 class="govuk-heading-l">Contact details</h2>
 
-      <h3 class="govuk-heading-m">Who can we contact about this update statement?</h3>
+      <h3 class="govuk-heading-m">Who can we contact about this application?</h3>
         {{ govukSummaryList({
           classes: 'govuk-!-margin-bottom-9',
           rows: [
@@ -156,31 +156,31 @@
                 text: "Full name"
               },
               value: {
-                text: data['contact-full-name']
+                text: "Joe Bloggs"
                 },
-                actions: {
-                  items: [
-                    {
-                      href: "#",
-                      text: "Change",
-                      visuallyHiddenText: "Who can we contact about this update statement?"
-                    }
-                  ]
-                }
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "Full name - who can we contact about this application"
+                  }
+                ]
+              }
             },
             {
               key: {
                 text: "Email address"
               },
               value: {
-                text: data['contact-email']
+                text: "user@testcompany.co.uk"
               },
               actions: {
                 items: [
                   {
                     href: "#",
                     text: "Change",
-                    visuallyHiddenText: "Email address"
+                    visuallyHiddenText: "Email address - who can we contact about this application"
                   }
                 ]
               }
@@ -188,13 +188,14 @@
           ]
         }) }}
 
+        {# data['contact-email'] #}
 
 
 <!-- ********** STATEMENTS  ********** -->
 
  <h2 class="govuk-heading-l">Beneficial owner statements</h2>
 
-        <h3 class="govuk-heading-m">Has the overseas entity identified any registrable beneficial owners?</h3>
+        <h3 class="govuk-heading-m">Has the overseas entity identified all its registrable beneficial owners?</h3>
           {{ govukSummaryList({
             classes: 'govuk-!-margin-bottom-9',
             rows: [
@@ -218,7 +219,7 @@
             ]
           }) }}
 
-        <h3 class="govuk-heading-m">Has anyone become or ceased to be a registrable beneficial owner during the update period?</h3>
+        <h3 class="govuk-heading-m">Has anyone become or ceased to be a registrable beneficial owner?</h3>
           {{ govukSummaryList({
             classes: 'govuk-!-margin-bottom-9',
             rows: [
@@ -244,6 +245,30 @@
 
 
 
+ <h3 class="govuk-heading-m">Removal statement</h3>
+          {{ govukSummaryList({
+            classes: 'govuk-!-margin-bottom-9',
+            rows: [
+            {
+              key: {
+                text: " Statement"
+              },
+              value: {
+                text: "
+                I confirm that the overseas entity is not registered as the proprietor of a relevant interest in land, as outlined in Section 9 of the Economic Crime (Transparency and Enforcement) Act 2022."
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "Have any beneficial owners become or ceased in the update period?"
+                  }
+                ]
+              }
+            }
+            ]
+          }) }}
 
 
 <!-- ********** VERIFICATION CHECKS  ********** -->
@@ -550,10 +575,10 @@
           <ul class="govuk-list govuk-list--bullet">
             <li>the members of that firm (in their capacity as such) hold, directly or indirectly, more than 25% of the shares in the entity</li>
           </ul>
-          The beneficial owner is a trustee of a trust and:
+          {# The beneficial owner is a trustee of a trust and:
           <ul class="govuk-list govuk-list--bullet">
             <li>the trustees of that trust (in their capacity as such) hold, directly or indirectly, more than 25% of the shares in the entity</li>
-          </ul>
+          </ul> #}
           The beneficial owner is a member of a firm that is not a legal person under its governing law, and:
           <ul class="govuk-list govuk-list--bullet">
             <li>the members of that firm (in their capacity as such) hold, directly or indirectly, more than 25% of the shares in the entity</li>
@@ -660,10 +685,10 @@
             <ul class="govuk-list govuk-list--bullet">
               <li>holds, directly or indirectly, more than 25% of the shares in the entity</li>
               </ul>
-            The beneficial owner is a trustee of a trust and:
+            {# The beneficial owner is a trustee of a trust and:
             <ul class="govuk-list govuk-list--bullet">
               <li>the trustees of that trust (in their capacity as such) hold, directly or indirectly, more than 25% of the shares in the entity</li>
-            </ul>
+            </ul> #}
             The beneficial owner is a member of a firm that is not a legal person under its governing law, and:
             <ul class="govuk-list govuk-list--bullet">
               <li>the members of that firm (in their capacity as such) have the right to exercise, or actually exercise, significant influence or control over the company</li>
