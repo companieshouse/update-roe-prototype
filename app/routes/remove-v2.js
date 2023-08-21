@@ -26,9 +26,25 @@ router.post('/remove-v2/02-do-you-want-to-continue-with-a-saved-filing', functio
   if (savedFiling == "yes"){
       response.redirect("/remove-v2/03-your-filings")
   } else {
+      response.redirect("/remove-v2/06b-is-the-overseas-entity-registered-as-the-owner")
+  }
+})
+
+
+
+
+
+// 06B ******* ENTITY DISPOSED OF LAND FILTER *******
+router.post('/remove-v2/06b-is-the-overseas-entity-registered-as-the-owner', function(request, response) {
+
+  var ownerDisposed = request.session.data['owner-disposed']
+  if (ownerDisposed == "yes"){
+      response.redirect("/remove-v2/06c-you-cannot-apply-to-remove-this-overseas-entity")
+  } else {
       response.redirect("/remove-v2/04-do-any-beneficial-owners-or-managing-officers-have-their-personal-information-protected-at-companies-house")
   }
 })
+
 
 
 
@@ -55,7 +71,7 @@ router.post('/remove-v2/06-are-there-any-trusts-involved-in-this-overseas-entity
 if (trustInvolved === "yes"){
   response.redirect("/v8/07-youll-need-to-file-an-update-statement-using-the-paper-form")
 } else if (roePrototypeScenario === "remove"){
-  response.redirect('/remove-v2/06b-is-the-overseas-entity-registered-as-the-owner')
+  response.redirect('/remove-v2/08b-before-you-start')
 } else {
   response.redirect('/v8/08-before-you-start')
 }
@@ -73,17 +89,6 @@ if (trustInvolved === "yes"){
 
 
 
-
-// 06B ******* ENTITY DISPOSED OF LAND FILTER *******
-router.post('/remove-v2/06b-is-the-overseas-entity-registered-as-the-owner', function(request, response) {
-
-  var ownerDisposed = request.session.data['owner-disposed']
-  if (ownerDisposed == "yes"){
-      response.redirect("/remove-v2/06c-you-cannot-apply-to-remove-this-overseas-entity")
-  } else {
-      response.redirect("/remove-v2/08b-before-you-start")
-  }
-})
 
 
 
