@@ -1,0 +1,127 @@
+{% extends "layouts/main.html" %}
+{% set serviceName %}
+{% if data['roe-prototype-scenario'] == 'update' %}
+    File an overseas entity update statement
+  {% else %}
+    Apply to de-register an overseas entity
+  {% endif %}
+  {% endset%}
+{% block pageTitle %}
+
+Company authentication
+ – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+
+<form action="" method="post">
+
+
+<h1 class="govuk-heading-xl">
+  What are the title numbers for the property or land that the overseas entity has disposed of?</h1>
+
+<p class"govuk-body">
+You can find this on the title register or title summary for the property or land.</p>
+
+
+{% call govukFieldset({
+
+}) %}
+
+  {{ govukInput({
+
+    classes: "govuk-input--width-10",
+    id: "title-no",
+    name: "title-no"
+  }) }}
+
+  {{ govukInput({
+
+    classes: "govuk-input--width-10",
+    id: "title-no",
+    name: "title-no"
+  }) }}
+
+  {{ govukInput({
+
+    classes: "govuk-input--width-10",
+    id: "title-no",
+    name: "title-no"
+  }) }}
+
+  {{ govukInput({
+
+    classes: "govuk-input--width-10",
+    id: "title-no",
+    name: "title-no"
+  }) }}
+
+{% endcall %}
+
+
+
+<!-- Reveal more fields code -->
+
+<div id="revealTitleNumbers" class="govuk-visually-hidden">
+{% call govukFieldset({
+
+}) %}
+
+  {{ govukInput({
+
+    classes: "govuk-input--width-10",
+    id: "title-no",
+    name: "title-no"
+  }) }}
+
+  {{ govukInput({
+
+    classes: "govuk-input--width-10",
+    id: "title-no",
+    name: "title-no"
+  }) }}
+
+  {{ govukInput({
+
+    classes: "govuk-input--width-10",
+    id: "title-no",
+    name: "title-no"
+  }) }}
+
+  {{ govukInput({
+
+    classes: "govuk-input--width-10",
+    id: "title-no",
+    name: "title-no"
+  }) }}
+
+{% endcall %}
+  </div>
+
+<p><a class="govuk-body govuk-link" style="color: #1d70b8;" onclick="show_hide()">
+Add more title numbers</a></p>
+
+
+
+  {{ govukButton({
+    text: "Save and continue",
+    href: "13-who-can-we-contact-about-this-update-statement"
+  }) }}
+
+
+
+    
+    </form>
+
+    </div>
+  </div>
+
+{% endblock %}
