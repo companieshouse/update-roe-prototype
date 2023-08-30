@@ -1,0 +1,66 @@
+{% extends "layouts/main.html" %}
+{% set serviceName %}
+{% if data['roe-prototype-scenario'] == 'update' %}
+    File an overseas entity update statement
+  {% else %}
+    Apply to de-register an overseas entity
+  {% endif %}
+  {% endset%}
+
+
+{% block pageTitle %}
+Confirm the de-registration statement – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+
+
+  <span class="govuk-caption-l">{{ data['overseas-name'] }} - OE001485</span>
+
+{{ govukCheckboxes({
+  name: "waste",
+  fieldset: {
+    legend: {
+      text: "Confirm the de-registration statement",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--xl"
+    }
+  },
+
+  items: [
+    {
+      value: "removal-declaration",
+      text: "
+I confirm that the overseas entity is not registered as the proprietor of a relevant interest in land, as outlined in Section 9 of the Economic Crime (Transparency and Enforcement) Act 2022.      "
+    }
+  ]
+}) }}
+
+        {# {{ govukInsetText({
+
+          html: '<h2 class="govuk-heading-m">What information we’ll show on the public register</h2>
+                <p>We will show the information you provide in this section on the public Register of Overseas Entities.</p>'
+        }) }} #}
+
+
+      {{ govukButton({
+        text: "Save and continue",
+        href: "18-review-the-information-in-this-update-statement"
+      }) }}
+      </form>
+
+
+
+
+    </div>
+  </div>
+
+{% endblock %}

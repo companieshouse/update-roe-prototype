@@ -1,0 +1,53 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  You are about to delete trust information – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+
+{% block content %}
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-xl">
+              You are about to delete trust information
+            </h1>
+
+            {{ govukWarningText({
+              text: "This will remove the entire trust",
+              iconFallbackText: "Warning"
+            }) }}
+
+            <p>
+              If you delete this trust, you will also delete the trust information you told us about those involved. 
+            </p>
+
+            <p>
+              You will be given the option to add another trust. 
+            </p>
+
+
+            <div class="govuk-button-group">
+              {{ govukButton({
+          text: "Delete",
+          classes: "govuk-button--warning",
+          href: "add-trust-additions"
+        }) }}
+
+              {{ govukButton({
+                text: "Keep and go back",
+                classes: "govuk-button--secondary",
+                href: "javascript:window.history.back()"
+              }) }}
+            </div>
+
+
+          </div>
+        </div>
+
+
+{% endblock %}

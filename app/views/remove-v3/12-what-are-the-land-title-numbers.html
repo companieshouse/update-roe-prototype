@@ -1,0 +1,78 @@
+{% extends "layouts/main.html" %}
+{% set serviceName %}
+{% if data['roe-prototype-scenario'] == 'update' %}
+    File an overseas entity update statement
+  {% else %}
+    Apply to de-register an overseas entity
+  {% endif %}
+  {% endset%}
+{% block pageTitle %}
+
+What are the title numbers for the property or land that the overseas entity has disposed of?
+ – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+
+<form action="" method="post">
+
+
+<h1 class="govuk-heading-xl">
+  What are the title numbers for the property or land that the overseas entity has disposed of?</h1>
+
+<p class"govuk-body">
+You can find this on the title register or title summary for the property or land.</p>
+
+
+          <p class="govuk-hint">
+            Separate each title number with a comma. For example: ABC123456, DEF654321
+          </p>
+
+          {{ govukTextarea({
+            id: "title-numbers",
+            name: "title-numbers"
+          }) }}
+
+
+
+
+  {{ govukButton({
+    text: "Save and continue",
+    href: "13-who-can-we-contact-about-this-update-statement"
+  }) }}
+
+
+
+<details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      What title numbers do I need to provide?
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <p>You only need to provide title numbers of property or land that was disposed of after 28 February 2022.</p>
+    
+    <p>You do not need to tell us about property or land that was purchased before:</p>
+  <ul>
+    <li>1 January 1999 in England and Wales</li>
+    <li>8 December 2014 in Scotland</li>
+  </ul>
+  </div>
+  </details>
+    
+
+
+
+    </form>
+    </div>
+  </div>
+
+{% endblock %}
