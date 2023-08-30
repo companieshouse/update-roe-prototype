@@ -32,15 +32,84 @@ What are the title numbers for the property or land that the overseas entity has
 You can find this on the title register or title summary for the property or land.</p>
 
 
-          <p class="govuk-hint">
-            Separate each title number with a comma. For example: ABC123456, DEF654321
-          </p>
 
-          {{ govukTextarea({
-            id: "title-numbers",
-            name: "title-numbers"
-          }) }}
 
+{% call govukFieldset({
+
+}) %}
+
+  {{ govukInput({
+
+    classes: "govuk-input--width-10",
+    id: "title-no",
+    name: "title-no"
+  }) }}
+
+  {{ govukInput({
+
+    classes: "govuk-input--width-10",
+    id: "title-no",
+    name: "title-no"
+  }) }}
+
+  {{ govukInput({
+
+    classes: "govuk-input--width-10",
+    id: "title-no",
+    name: "title-no"
+  }) }}
+
+  {{ govukInput({
+
+    classes: "govuk-input--width-10",
+    id: "title-no",
+    name: "title-no"
+  }) }}
+
+{% endcall %}
+
+
+
+<!-- Reveal more fields code -->
+
+<div id="revealTitleNumbers" class="govuk-visually-hidden">
+{% call govukFieldset({
+
+}) %}
+
+  {{ govukInput({
+
+    classes: "govuk-input--width-10",
+    id: "title-no",
+    name: "title-no"
+  }) }}
+
+  {{ govukInput({
+
+    classes: "govuk-input--width-10",
+    id: "title-no",
+    name: "title-no"
+  }) }}
+
+  {{ govukInput({
+
+    classes: "govuk-input--width-10",
+    id: "title-no",
+    name: "title-no"
+  }) }}
+
+  {{ govukInput({
+
+    classes: "govuk-input--width-10",
+    id: "title-no",
+    name: "title-no"
+  }) }}
+
+{% endcall %}
+  </div>
+
+<p><a class="govuk-body govuk-link" style="color: #1d70b8;" onclick="show_hide()">
+Add more title numbers</a></p>
 
 
 
