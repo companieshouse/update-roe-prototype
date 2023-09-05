@@ -26,7 +26,7 @@ router.post('/remove-v3/02-do-you-want-to-continue-with-a-saved-filing', functio
   if (savedFiling == "yes"){
       response.redirect("/remove-v3/03-your-filings")
   } else {
-      response.redirect("/remove-v3/06b-is-the-overseas-entity-registered-as-the-owner")
+      response.redirect("/remove-v3/06a-entity-sold-all-land")
   }
 })
 
