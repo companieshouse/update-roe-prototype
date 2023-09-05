@@ -32,9 +32,20 @@ router.post('/remove-v3/02-do-you-want-to-continue-with-a-saved-filing', functio
 
 
 
+// 06A ******* SOLD LAND FILTER *******
+router.post('/remove-v3/06a-entity-sold-all-land', function(request, response) {
+
+  var entitySoldLand = request.session.data['entity-sold-land']
+  if (entitySoldLand == "yes"){
+      response.redirect("/remove-v3/06b-is-the-overseas-entity-registered-as-the-owner")
+  } else {
+      response.redirect("/remove-v3/06c-you-cannot-apply-to-remove-this-overseas-entity")
+  }
+})
 
 
-// 06B ******* ENTITY DISPOSED OF LAND FILTER *******
+
+// 06B ******* REMOVED FROM LAND REG D FILTER *******
 router.post('/remove-v3/06b-is-the-overseas-entity-registered-as-the-owner', function(request, response) {
 
   var ownerDisposed = request.session.data['owner-disposed']
