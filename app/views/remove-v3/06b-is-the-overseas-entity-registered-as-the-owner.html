@@ -29,13 +29,13 @@ Has the overseas entity been removed from the Land Registries as the owner of an
       name: "owner-disposed",
       fieldset: {
         legend: {
-          text: "Has the overseas entity been removed from the Land Registry as the owner of the disposed property or land?",
+          text: "Has the overseas entity been removed from the land registry records as the owner of UK property or land?",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--xl"
         }
       },
       hint: {
-      text: "If our checks show that the entity is still listed as the registered owner of UK property or land, your application will be rejected and the fee will not be refunded."
+      text: "This includes titles held at HM Land Registry (for England and Wales), the Land Register of Scotland, and the Land Registry for Northern Ireland."
     },
       items: [
         {
@@ -49,14 +49,20 @@ Has the overseas entity been removed from the Land Registries as the owner of an
       ]
     }) }}
 
+{% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
+
+{{ govukWarningText({
+  text: "If our checks show the entity is still listed as the registered owner of UK property or land, this application will be rejected and the fee will not be refunded.",
+  iconFallbackText: "Warning"
+}) }}
 
 {% from "govuk/components/details/macro.njk" import govukDetails %}
 
 {{ govukDetails({
-  summaryText: "What does it mean to be removed from the Land Registry?",
-  html: '<p>This means that the overseas entity no longer appears on the Land Registry as the registered owner of property or land it has disposed of.</p> 
+  summaryText: "What does it mean to be removed from the land registry records?",
+  html: '<p>This means that the overseas entity is no longer shown on any land registry as the registered owner (proprietor) of UK property or land.</p> 
 
-  <p>Even if you have registered the disposal with the relevant UK land registry, you need to wait until it has been processed. You should only submit this application if you can see that the entity has been removed as the registered owner.</p>'
+  <p>Even if you’ve registered a disposal with the relevant UK land registry, you need to wait until it has been processed. You should only submit this application if you can see that the entity has been removed from the land registry records.</p>'
 }) }}
   
 
