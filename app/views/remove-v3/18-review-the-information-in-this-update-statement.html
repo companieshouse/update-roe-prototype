@@ -25,7 +25,6 @@ Review the information before submitting – {{ serviceName }} – GOV.UK
 
 
 
-
 <!-- ********** FILTER QUESTIONS  ********** -->
 
               {{ govukSummaryList({
@@ -33,7 +32,24 @@ Review the information before submitting – {{ serviceName }} – GOV.UK
                 rows: [
                  {
                     key: {
-                      text: "Has the overseas entity been removed from the Land Registries as the owner of any property or land in the UK?"
+                      text: "Has the overseas entity disposed of all its property or land in the UK?"
+                    },
+                    value: {
+                      text: 'Yes'
+                    },
+                    actions: {
+                      items: [
+                        {
+                          href: "#",
+                          text: "Change",
+                          visuallyHiddenText: "Does the update include people that have protection or that have applied for protection?"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    key: {
+                      text: "Has the overseas entity been removed from the land registry records as the owner of UK property or land?"
                     },
                     value: {
                       text: 'Yes'
@@ -87,7 +103,7 @@ Review the information before submitting – {{ serviceName }} – GOV.UK
 
 
 
-
+{# 
 <!-- ********** TITLE NUMBERS  ********** -->
 
 <h2 class="govuk-heading-l">Title numbers</h2>
@@ -116,7 +132,7 @@ Review the information before submitting – {{ serviceName }} – GOV.UK
                   }
                   
                 ]
-              }) }}
+              }) }} #}
 
 
 
