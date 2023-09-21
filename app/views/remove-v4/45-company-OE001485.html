@@ -1,0 +1,196 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+
+ASHCROFT LIMITED overview - Find and update company information
+ – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+
+    <form action="" method="post" novalidate>
+
+
+<div class="govuk-form-group search-bar-active" for="full">
+  <input class="govuk-input" id="event-name" name="event-name" type="text" value="Search for a company or officer">
+</div>
+
+
+<a class="govuk-body" href="#">Advanced company search</a>
+
+<h1 class="govuk-heading-xl govuk-!-margin-bottom-3 govuk-!-margin-top-7">ASHCROFT LIMITED</h1>
+<p class"govuk-body">Company number <strong>OE001485</strong></p>
+
+<div class="govuk-button-group">
+  {{ govukButton({
+    text: "Follow this company",
+    href: "#"
+  }) }}
+
+    {{ govukButton({
+    text: "Request an authentication code",
+    href: "../01-sign-in-to-companies-house"
+  }) }}
+
+</div>
+
+<!--
+
+   {{ govukButton({
+    text: "File an update",
+    href: "update"
+  }) }}
+
+<div class"govuk-!-padding-top-9">
+<p class"govuk-body">The authentication code will be sent by email to the email address at the overseas entity.
+</p></div>-->
+
+{% from "govuk/components/tabs/macro.njk" import govukTabs %}
+{% from "govuk/components/table/macro.njk" import govukTable %}
+{% set pastDayHtml %}
+<p class"govuk-body">Correspondence address<br>
+<strong>C/O Moore Chartered Accountants 2nd Floor, Southern House, 76-80 College Road, Harrow, Middlesex, United Kingdom, HA1 4BW 
+</strong>
+</p>
+
+<div class="govuk-grid-row govuk-!-margin-top-7">
+  <div class="govuk-grid-column-full">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-half">
+        <p class"govuk-body">Company status<br>
+    <strong>De-registered</strong>
+      </p>
+      </div>
+      <div class="govuk-grid-column-one-half">
+        <p class"govuk-body">Removed on<br>
+      <strong>12 January 2024</strong>
+      </p>
+      </div>   
+    </div>
+  </div>
+</div>
+
+<div class="govuk-grid-row govuk-!-margin-top-7">
+  <div class="govuk-grid-column-full">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-half">
+        <p class"govuk-body">Company type<br>
+    <strong>Overseas entity </strong>
+      </p>
+      </div>
+      <div class="govuk-grid-column-one-half">
+        <p class"govuk-body">Registered on<br>
+      <strong>16 August 2022 </strong>
+      </p>
+      </div>   
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<h2 class="govuk-heading-m govuk-!-margin-bottom-0 govuk-!-margin-top-7">Annual statement</h2><br>
+<p class"govuk-body">First statement date <strong>15 August 2023</strong><br>
+due by <strong>29 August 2023</strong>
+</p>
+<h2 class="govuk-heading-m govuk-!-margin-bottom-0 govuk-!-margin-top-7">Company details in the country of incorporation</h2><br>
+<p class"govuk-body">Overseas entity address<br>
+<strong>Maynard House 3rd Floor, P O Box 2486, Johnson's Ghut, Tortola, Tortola, Virgin Islands, British
+</strong>
+</p>
+
+<div class="govuk-grid-row ">
+  <div class="govuk-grid-column-full">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-third">
+        <p class"govuk-body">Incorporated in<br>
+      <strong>VIRGIN ISLANDS, BRITISH</strong>
+      </div>
+      <div class="govuk-grid-column-one-third">
+        <p class"govuk-body">Registration number<br>
+      <strong>1789717</strong>
+      </div>
+            <div class="govuk-grid-column-one-third">
+        <p class"govuk-body">Legal form<br>
+      <strong>Business Company</strong>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<p class"govuk-body">Parent registry<br>
+<strong>Registry Of Corporate Affairs - British Virgin Islands
+</strong>
+<p class"govuk-body">Governing law<br>
+<strong>British Virgin Islands
+</strong>
+
+
+
+{% endset -%}
+{% set pastWeekHtml %}
+<h2 class="govuk-heading-l">Lorem ipsum</h2>
+{% endset -%}
+{% set pastMonthHtml %}
+<h2 class="govuk-heading-l">Lorem ipsum</h2>
+{% endset -%}
+{% set pastYearHtml %}
+<h2 class="govuk-heading-l">Lorem ipsum</h2>
+
+{% endset -%}
+{{ govukTabs({
+  items: [
+    {
+      label: "Overview",
+      id: "past-day",
+      panel: {
+        html: pastDayHtml
+      }
+    },
+    {
+      label: "Filing history",
+      id: "past-week",
+      panel: {
+        html: pastWeekHtml
+      }
+    },
+    {
+      label: "People",
+      id: "past-month",
+      panel: {
+        html: pastMonthHtml
+      }
+    },
+    {
+      label: "More",
+      id: "past-year",
+      panel: {
+        html: pastYearHtml
+      }
+    }
+  ]
+}) }}
+
+    
+    
+    </form>
+
+    </div>
+  </div>
+
+{% endblock %}
