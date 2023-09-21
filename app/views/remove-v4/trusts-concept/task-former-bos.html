@@ -1,0 +1,160 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Check your answers – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <span class="govuk-caption-l">{{ data['trust-name'] }}</span>
+      <h1 class="govuk-heading-xl">Former beneficial owners</h1>
+
+<!-- ********** FORMER BO  ********** -->
+
+ <h3 class="govuk-heading-m">Jane Wright</h3>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Former beneficial owner's name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>Jane Wright</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/trusts/former-bo">
+             
+              <span class="govuk-visually-hidden">former-bo</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date they become a beneficial owner
+          </dt>
+          <dd class="govuk-summary-list__value">
+            04 October 2015
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/trusts/former-bo">
+              
+              <span class="govuk-visually-hidden">former-bo</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date they stopped being a beneficial owner
+          </dt>
+          <dd class="govuk-summary-list__value">
+            10 August 2021
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/trusts/former-bo">
+              
+              <span class="govuk-visually-hidden">former-bo</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+
+<!-- ********** FORMER BO  ********** -->
+
+
+     
+ <h3 class="govuk-heading-m">Fred Lock</h3>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Former beneficial owner's name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>Fred Lock</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/trusts/former-bo">
+              Change
+              <span class="govuk-visually-hidden">former-bo</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date they become a beneficial owner
+          </dt>
+          <dd class="govuk-summary-list__value">
+            10 December 2015
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/trusts/former-bo">
+              Change
+              <span class="govuk-visually-hidden">former-bo</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date they stopped being a beneficial owner
+          </dt>
+          <dd class="govuk-summary-list__value">
+            12 July 2022
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/trusts/former-bo">
+              Change
+              <span class="govuk-visually-hidden">former-bo</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+
+                {{ govukButton({
+          text: "Add a former beneficial owner",
+          classes: "govuk-button--secondary"
+        }) }} 
+
+
+        {{ govukInsetText({
+          html: '
+            <h2 class="govuk-heading-m">What information we&#39;ll show on the public register</h2>
+            <p>We will not show any of the information you provide in this section on the public Register of Overseas Entities. 
+              However, we may share it with HMRC.</p>
+                      '
+        }) }}
+
+      <form method="post">
+
+        {{ govukButton({
+          text: "Save and continue",
+          href: "#"
+        }) }}
+        &nbsp; &nbsp;
+
+      </div>
+
+    <!-- *** Note to developers, this must show when JS is disabled ***
+      <p class="govuk-body govuk-!-font-size-20">To print this page, select File then Print in your browser.</p>
+    -->
+
+      </form>
+
+{#
+      <p class="govuk-body govuk-!-font-size-14 govuk-link--no-visited-state"><a href="/register/confirmation">UR shortcut: Jump to confirmation screen</a></p>
+#}
+
+    </div>
+  </div>
+{% endblock %}

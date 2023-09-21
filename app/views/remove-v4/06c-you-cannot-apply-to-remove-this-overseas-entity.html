@@ -1,0 +1,60 @@
+{% extends "layouts/main.html" %}
+{% set serviceName %}
+{% if data['roe-prototype-scenario'] == 'update' %}
+    File an overseas entity update statement
+  {% else %}
+    Apply to de-register an overseas entity
+  {% endif %}
+  {% endset%}
+  
+{% block pageTitle %}
+{% if errorList.length > 0 %}
+  Error:
+{% endif %}
+You cannot apply to de-register this overseas entity – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">You cannot apply to de-register this overseas entity</h1>
+       <p class="govuk-body">
+An overseas entity cannot apply to be de-registered if it: 
+
+<ul class="govuk-list govuk-list--bullet">
+<li>owns any property or land in the UK</li>
+<li>still appears on any UK Land Registry as the registered owner of property or land that it has disposed of</li>
+</ul>
+
+</p>
+
+       <p class="govuk-body">
+You can check this by searching the UK Land Registries online:
+</p>
+
+<ul class="govuk-list govuk-list--bullet">
+       <li>
+<a href="https://www.gov.uk/government/organisations/land-registry">HM Land Registry</a> (for England and Wales)
+</li>
+       <li>
+<a href="https://www.nidirect.gov.uk/articles/searching-land-registry">Land Registry for Northern Ireland</a></li>
+       <li>
+<a href="https://www.ros.gov.uk/our-registers/land-register-of-scotland">Land Register of Scotland</a></li>
+</ul>
+
+       <p class="govuk-body">
+You may also need to <a href="#">file your overseas entity update statement</a> if it is due.
+</p>
+
+             <p class="govuk-body"><a href="javascript:void(0)" class="govuk-link">Contact Companies House</a>  if you need to speak to someone. </p>
+
+    </div>
+  </div>
+
+
+{% endblock %}

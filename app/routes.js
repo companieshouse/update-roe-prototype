@@ -19,8 +19,7 @@ router.use('/', require('./routes/v8-routes.js'))
 router.use('/', require('./routes/remove-v1.js'))
 router.use('/', require('./routes/remove-v2.js'))
 router.use('/', require('./routes/remove-v3.js'))
-
-
+router.use('/', require('./routes/remove-v4.js'))
 
 
 
