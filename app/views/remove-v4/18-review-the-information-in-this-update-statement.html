@@ -866,15 +866,36 @@ Review the information before submitting – {{ serviceName }} – GOV.UK
 }) }}
 
 
-<p>All information submitted must be correct on the date of application.</p>
+
+
+
+
+<!-- ********** CORRECT AS OF DATE  ********** -->
+
+  <p>All information submitted must be correct on <strong id="dateDisplay"></strong>.</p>
+
+    <script>
+        function formatDate(date) {
+            const options = { day: 'numeric', month: 'long', year: 'numeric' };
+            return date.toLocaleDateString('en-UK', options);
+        }
+
+        const today = new Date();
+        const formattedDate = formatDate(today);
+
+        // Display the formatted date in the HTML element with the id "dateDisplay"
+        document.getElementById('dateDisplay').textContent = formattedDate;
+    </script>
+
+  
+
+
 
 
         <button class="govuk-button" data-module="govuk-button">
             Continue to payment
           </button>
             &nbsp; &nbsp;
-
-
 
                 {{ govukButton({
           text: "Print this page",
