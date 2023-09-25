@@ -11,9 +11,16 @@
   Check your answers – {{ serviceName }} – GOV.UK
 {% endblock %}
 
+
+{% block pageScripts %}
+  <script src="/public/javascripts/date.js"></script>
+{% endblock %}
+
 {% block beforeContent %}
   {% include "includes/before-content.html" %}
 {% endblock %}
+
+
 
 {% block content %}
 <div class="govuk-grid-row">
@@ -1932,7 +1939,7 @@
 
   <p>All information submitted must be correct on <strong id="dateDisplay"></strong>.</p>
 
-    <script>
+    {# <script>
         function formatDate(date) {
             const options = { day: 'numeric', month: 'long', year: 'numeric' };
             return date.toLocaleDateString('en-UK', options);
@@ -1943,7 +1950,7 @@
 
         // Display the formatted date in the HTML element with the id "dateDisplay"
         document.getElementById('dateDisplay').textContent = formattedDate;
-    </script>
+    </script> #}
 
 
         {{ govukButton({
