@@ -9,7 +9,7 @@
 
 
 {% block pageTitle %}
-Confirm the de-registration statement – {{ serviceName }} – GOV.UK
+Confirm the removal statement – {{ serviceName }} – GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -29,7 +29,7 @@ Confirm the de-registration statement – {{ serviceName }} – GOV.UK
   name: "waste",
   fieldset: {
     legend: {
-      text: "Confirm the de-registration statement",
+      text: "Confirm the removal statement",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--xl"
     }
@@ -39,16 +39,16 @@ Confirm the de-registration statement – {{ serviceName }} – GOV.UK
     {
       value: "removal-declaration",
       text: "
-I confirm that the overseas entity is not registered as the proprietor of a relevant interest in land, as outlined in Section 9 of the Economic Crime (Transparency and Enforcement) Act 2022.      "
+I confirm that the overseas entity is not registered as the proprietor of a relevant interest in land. "
     }
   ]
 }) }}
 
-        {# {{ govukInsetText({
+        {{ govukInsetText({
 
           html: '<h2 class="govuk-heading-m">What information we’ll show on the public register</h2>
-                <p>We will show the information you provide in this section on the public Register of Overseas Entities.</p>'
-        }) }} #}
+                <p>We will show this statement on the public Register of Overseas Entities.</p>'
+        }) }}
 
 
       {{ govukButton({
