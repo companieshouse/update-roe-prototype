@@ -49,7 +49,7 @@ router.post('/remove-v4/06a-entity-sold-all-land', function(request, response) {
 router.post('/remove-v4/06b-is-the-overseas-entity-registered-as-the-owner', function(request, response) {
 
   var ownerDisposed = request.session.data['owner-disposed']
-  if (ownerDisposed == "yes"){
+  if (ownerDisposed == "no"){
       response.redirect("/remove-v4/04-do-any-beneficial-owners-or-managing-officers-have-their-personal-information-protected-at-companies-house")
   } else {
       response.redirect("/remove-v4/06c-you-cannot-apply-to-remove-this-overseas-entity")
