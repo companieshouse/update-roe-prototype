@@ -24,35 +24,35 @@ router.post('/remove-v4/02-do-you-want-to-continue-with-a-saved-filing', functio
 
   var savedFiling = request.session.data['saved-filing']
   if (savedFiling == "yes"){
-      response.redirect("/remove-v3/03-your-filings")
+      response.redirect("/remove-v4/03-your-filings")
   } else {
-      response.redirect("/remove-v3/06a-entity-sold-all-land")
+      response.redirect("/remove-v4/06a-entity-sold-all-land")
   }
 })
 
 
 
 // 06A ******* SOLD LAND FILTER *******
-router.post('/remove-v3/06a-entity-sold-all-land', function(request, response) {
+router.post('/remove-v4/06a-entity-sold-all-land', function(request, response) {
 
   var entitySoldLand = request.session.data['entity-sold-land']
   if (entitySoldLand == "yes"){
-      response.redirect("/remove-v3/06b-is-the-overseas-entity-registered-as-the-owner")
+      response.redirect("/remove-v4/06b-is-the-overseas-entity-registered-as-the-owner")
   } else {
-      response.redirect("/remove-v3/06c-you-cannot-apply-to-remove-this-overseas-entity")
+      response.redirect("/remove-v4/06c-you-cannot-apply-to-remove-this-overseas-entity")
   }
 })
 
 
 
 // 06B ******* REMOVED FROM LAND REG D FILTER *******
-router.post('/remove-v3/06b-is-the-overseas-entity-registered-as-the-owner', function(request, response) {
+router.post('/remove-v4/06b-is-the-overseas-entity-registered-as-the-owner', function(request, response) {
 
   var ownerDisposed = request.session.data['owner-disposed']
   if (ownerDisposed == "yes"){
-      response.redirect("/remove-v3/04-do-any-beneficial-owners-or-managing-officers-have-their-personal-information-protected-at-companies-house")
+      response.redirect("/remove-v4/04-do-any-beneficial-owners-or-managing-officers-have-their-personal-information-protected-at-companies-house")
   } else {
-      response.redirect("/remove-v3/06c-you-cannot-apply-to-remove-this-overseas-entity")
+      response.redirect("/remove-v4/06c-you-cannot-apply-to-remove-this-overseas-entity")
   }
 })
 
@@ -60,13 +60,13 @@ router.post('/remove-v3/06b-is-the-overseas-entity-registered-as-the-owner', fun
 
 
 // 04 ******* PROTECTED FILTER *******
-router.post('/remove-v3/04-do-any-beneficial-owners-or-managing-officers-have-their-personal-information-protected-at-companies-house', function(request, response) {
+router.post('/remove-v4/04-do-any-beneficial-owners-or-managing-officers-have-their-personal-information-protected-at-companies-house', function(request, response) {
 
   var secureRegister = request.session.data['secure-register']
   if (secureRegister == "yes"){
-      response.redirect("/remove-v3/05-youll-need-to-file-an-update-statement-using-the-paper-form")
+      response.redirect("/remove-v4/05-youll-need-to-file-an-update-statement-using-the-paper-form")
   } else {
-      response.redirect("/remove-v3/06-are-there-any-trusts-involved-in-this-overseas-entity")
+      response.redirect("/remove-v4/06-are-there-any-trusts-involved-in-this-overseas-entity")
   }
 })
 
@@ -76,13 +76,13 @@ router.post('/remove-v3/04-do-any-beneficial-owners-or-managing-officers-have-th
 
 
 // 06 ******* TRUSTS INVOLVED FILTER *******
-router.post('/remove-v3/06-are-there-any-trusts-involved-in-this-overseas-entity', function(request, response) {
+router.post('/remove-v4/06-are-there-any-trusts-involved-in-this-overseas-entity', function(request, response) {
   var trustInvolved = request.session.data['trust-involved']
   var roePrototypeScenario = request.session.data['roe-prototype-scenario']
 if (trustInvolved === "yes"){
   response.redirect("/v8/07-youll-need-to-file-an-update-statement-using-the-paper-form")
 } else if (roePrototypeScenario === "remove"){
-  response.redirect('/remove-v3/08b-before-you-start')
+  response.redirect('/remove-v4/08b-before-you-start')
 } else {
   response.redirect('/v8/08-before-you-start')
 }
@@ -111,22 +111,22 @@ if (trustInvolved === "yes"){
 
 // 14 ******* MAKE ANY CHANGES? FILTER *******
 
-// router.post('/remove-v3/14-do-you-need-to-make-any-changes-to-this-overseas-entity', function(request, response) {
+// router.post('/remove-v4/14-do-you-need-to-make-any-changes-to-this-overseas-entity', function(request, response) {
 
 //   var makeChanges = request.session.data['make-changes']
 //   if (makeChanges == "yes"){
-//       response.redirect("/remove-v3/ADD HERE")
+//       response.redirect("/remove-v4/ADD HERE")
 //   } else {
-//       response.redirect("/remove-v3/15-has-the-overseas-entity-identified-any-registrable-beneficial-owners")
+//       response.redirect("/remove-v4/15-has-the-overseas-entity-identified-any-registrable-beneficial-owners")
 //   }
 // })
 
 
-// router.get('/remove-v3/19-who-is-completing-this-update', function(req, res) {
+// router.get('/remove-v4/19-who-is-completing-this-update', function(req, res) {
 //   if (req.session.data['make-changes'] === 'no') {
-//     res.render('remove-v3/15b-has-the-overseas-entity-identified-any-registrable-beneficial-owners')
+//     res.render('remove-v4/15b-has-the-overseas-entity-identified-any-registrable-beneficial-owners')
 //   } else {
-//     res.render('remove-v3/19-who-is-completing-this-update')
+//     res.render('remove-v4/19-who-is-completing-this-update')
 //   }
 // })
 
@@ -143,13 +143,13 @@ router.get('/v8/14-do-you-need-to-make-any-changes-to-this-overseas-entity', fun
 })
 
 
-router.post('/remove-v3/18-review-the-information-in-this-update-statement', function(request, response) {
+router.post('/remove-v4/18-review-the-information-in-this-update-statement', function(request, response) {
 
   var nochangeChange = request.session.data['need-to-change']
   if (nochangeChange == "yes"){
-      response.redirect("/remove-v3/xx-payment")
+      response.redirect("/remove-v4/xx-payment")
   } else {
-      response.redirect("/remove-v3/14-do-you-need-to-make-any-changes-to-this-overseas-entity")
+      response.redirect("/remove-v4/14-do-you-need-to-make-any-changes-to-this-overseas-entity")
   }
 })
 
