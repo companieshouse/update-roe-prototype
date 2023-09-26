@@ -1,9 +1,16 @@
 {% extends "layouts/main.html" %}
+{% set serviceName %}
+{% if data['roe-prototype-scenario'] == 'update' %}
+    File an overseas entity update statement
+  {% else %}
+    Apply to de-register an overseas entity
+  {% endif %}
+  {% endset%}
 
 {% block pageTitle %}
 
 Who is completing this update?
- – {{ serviceName }} – GOV.UK
+ - {{ serviceName }} – GOV.UK
 {% endblock %}
 
 {% block beforeContent %}

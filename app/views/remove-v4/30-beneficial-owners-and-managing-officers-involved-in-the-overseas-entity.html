@@ -1,4 +1,11 @@
 {% extends "layouts/main.html" %}
+{% set serviceName %}
+{% if data['roe-prototype-scenario'] == 'update' %}
+    File an overseas entity update statement
+  {% else %}
+    Apply to de-register an overseas entity
+  {% endif %}
+  {% endset%}
 
 {% block pageTitle %}
   Beneficial owners or managing officers involved in the overseas entity – {{ serviceName }} – GOV.UK
@@ -32,7 +39,7 @@
   </div>
   <div class="govuk-summary-card__content">
     <dl class="govuk-summary-list">
-      {# <div class="govuk-summary-list__row">
+      <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Daniel Ashcroft
         </dt>
@@ -40,14 +47,14 @@
           	Individual beneficial owner
         </dd>
         <dd class="govuk-summary-list__value summary-status" aria-label="Status - ceased">
-          Active
+          Ceased
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="25-review-the-individual-beneficial-owner">
             Change<span class="govuk-visually-hidden"> Daniel Ashcroft - Individual beneficial owner</span>
           </a>
         </dd>
-      </div> #}
+      </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           ACME Trustees Limited
@@ -72,7 +79,7 @@
           Government or public authority beneficial owner
         </dd>
        <dd class="govuk-summary-list__value summary-status" aria-label="Status - active">
-          Active
+          Ceased
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="#">
