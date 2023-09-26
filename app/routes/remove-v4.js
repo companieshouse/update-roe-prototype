@@ -111,15 +111,16 @@ if (trustInvolved === "yes"){
 
 // 14 ******* MAKE ANY CHANGES? FILTER *******
 
-// router.post('/remove-v4/14-do-you-need-to-make-any-changes-to-this-overseas-entity', function(request, response) {
+router.post('/remove-v4/14-do-you-need-to-make-any-changes-to-this-overseas-entity', function(request, response) {
 
-//   var makeChanges = request.session.data['make-changes']
-//   if (makeChanges == "yes"){
-//       response.redirect("/remove-v4/ADD HERE")
-//   } else {
-//       response.redirect("/remove-v4/15-has-the-overseas-entity-identified-any-registrable-beneficial-owners")
-//   }
-// })
+  var makeChanges = request.session.data['make-changes']
+  if (makeChanges == "yes"){
+      response.redirect("/remove-v4/19-who-is-completing-this-update")
+  } else {
+      response.redirect("/remove-v4/15-has-the-overseas-entity-identified-any-registrable-beneficial-owners")
+  }
+})
+
 
 
 // router.get('/remove-v4/19-who-is-completing-this-update', function(req, res) {
