@@ -1,0 +1,70 @@
+{% extends "layouts/main.html" %}
+{% set serviceName %}
+{% if data['roe-prototype-scenario'] == 'update' %}
+    File an overseas entity update statement
+  {% else %}
+    Apply to remove an overseas entity from the register
+  {% endif %}
+  {% endset%}
+  
+Has the overseas entity been removed from the Land Registries as the owner of any property or land in the UK?
+ – {{ serviceName }} – GOV.UK
+
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+ 
+  <form action="06a-entity-sold-all-land" method="post">
+
+
+    {{ govukRadios({
+      classes: "govuk-radios",
+      idPrefix: "entitySoldLand",
+      name: "entity-sold-land",
+      fieldset: {
+        legend: {
+          text: "Has the overseas entity disposed of all its property or land in the UK?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--xl"
+        }
+      },
+      hint: {
+      text: "Select 'yes' if the entity has disposed of all its UK property or land, or if it has never owned any."
+    },
+      items: [
+        {
+          value: "yes",
+          text: "Yes"
+        },
+        {
+          value: "no",
+          text: "No"
+        }
+      ]
+    }) }}
+
+
+  <!--
+  {{ govukInsetText({
+  html: '<h2 class="govuk-heading-m">What information we’ll show on the public register</h2>
+        <p>We will not show any of the information you provide in this section on the public Register of Overseas Entities.</p>'
+}) }}
+-->
+
+          {{ govukButton({
+            text: "Continue"
+          }) }}
+  </form>
+
+
+
+    </div>
+  </div>
+
+{% endblock %}

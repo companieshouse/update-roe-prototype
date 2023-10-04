@@ -1,0 +1,65 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+
+You're about to review trust information
+ – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+  <span class="govuk-caption-l">{{ data['overseas-name'] }} - {{ data['overseas-id'] }}</span>
+<h1 class="govuk-heading-xl">You're about to review trust information</h1>
+
+
+
+<!---{% set html %}
+  <p class="govuk-notification-banner__heading">
+    You have told us that one or more beneficial owners are involved in a trust.</a>
+  </p>
+{% endset %}
+
+{{ govukNotificationBanner({
+  html: html
+}) }}
+
+<!---
+ <p class="govuk-body">
+  You have told us that one or more beneficial owners are involved in a trust and we need to capture that information.
+ </p>
+ ---->
+
+<p class="govuk-body">
+      At least one individual or entity you’ve told us about is a beneficial owner of the overseas entity, due to being a trustee of a trust.
+    </p>
+
+    <p class="govuk-body">If we already hold trust information for this entity, you can review it in this section, and update it if needed.  </p>
+
+    <div class="govuk-inset-text">
+  We can only show information that has been previously provided. You may need to <strong>enter any information that's missing</strong>.
+</div>
+
+      <p class="govuk-body">You can also:</p>
+      <ol class="govuk-list govuk-list--bullet">
+        <li>add any new trusts and tell us about their former beneficial owners, beneficiaries, settlors, grantors or interested persons
+        <li>remove any trusts that are no longer involved in the overseas entity
+        </li>
+      </ol>
+<br>
+      {{ govukButton({
+        text: "Save and continue",
+        href: './trust-details'
+      }) }}
+
+
+    </div>
+  </div>
+
+{% endblock %}

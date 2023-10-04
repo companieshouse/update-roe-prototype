@@ -1,0 +1,75 @@
+{% extends "layouts/main.html" %}
+{% set serviceName %}
+{% if data['roe-prototype-scenario'] == 'update' %}
+    File an overseas entity update statement
+  {% else %}
+    Apply to remove an overseas entity from the register
+  {% endif %}
+  {% endset%}
+{% block pageTitle %}
+
+Who can we contact about this update?
+ – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+  <span class="govuk-caption-l">{{ data['overseas-name'] }} - OE001485</span>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-3">Who can we contact about this application?</h1>
+    <div class="govuk-hint govuk-!-margin-bottom-5">We'll use this if we need more information. </div>
+      
+
+<form action="14-do-you-need-to-make-any-changes-to-this-overseas-entity" method="post">
+
+
+{{ govukInput({
+  label: {
+    text: "Full name"
+  },
+  classes: "govuk-!-width-full-width",
+  id: "contact-full-name",
+  name: "contact-full-name",
+  type: "contact-full-name",
+  value: contactName,
+  autocomplete: "contact-full-name",
+  spellcheck: false
+}) }}
+
+{{ govukInput({
+  label: {
+    text: "Email address"
+  },
+  classes: "govuk-!-width-full-width",
+  id: "contact-email",
+  name: "contact-email",
+  type: "contact-email",
+  value: contactEmail,
+  autocomplete: "contact-email",
+  spellcheck: false
+}) }}
+
+
+        {{ govukInsetText({
+          html: '<h2 class="govuk-heading-m">What information we’ll show on the public register</h2>
+                <p>We will not show any of the information you provide in this section on the public Register of Overseas Entities.</p>'
+        }) }}
+
+        {{ govukButton({
+          text: "Save and continue",
+          href: "14-do-you-need-to-make-any-changes-to-this-overseas-entity"
+        }) }}
+
+
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

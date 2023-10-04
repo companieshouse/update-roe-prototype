@@ -1,0 +1,246 @@
+{% extends "layout.html" %}
+{% include "includes/service-name.html" %}
+
+{% block pageTitle %}
+  Start - Apply to remove an overseas entity from the register – GOV.UK
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "https://www.gov.uk/"
+    },
+    {
+      text: "Business auditing, accounting and reporting",
+      href: "https://www.gov.uk/topic/business-enterprise/business-auditing-accounting-reporting"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+
+
+    {# Notes for content - links live in includes file #}
+    {% include "../includes/govuk-content-header-remove.html" %}
+
+    <div class="govuk-grid-column-one-third">
+
+      <aside class="app-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Related links 
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <a href="javascript:void(0)">
+                Search the Register of Overseas Entities
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)">
+                Guidance
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)" class="govuk-!-font-weight-bold">
+                More <span class="govuk-visually-hidden">in Subsection</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+    </div>
+
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+
+<!-- ******* What removing an overseas entity means *******  -->
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-margin-top-0">
+      <h3 id="what-de-register-means" class="govuk-heading-m">What removing an overseas entity means</h3>
+
+      <p class="govuk-body">If an overseas entity is not, or is no longer, a registered owner (proprietor) of land or property in the UK, it can apply to be removed from the Register of Overseas Entities.</p> 
+
+      <p class="govuk-body">Once an overseas entity has been removed, its Overseas Entity ID will no longer be valid. This means it will not be able to buy, sell, transfer, lease or charge its property or land in the UK.</p>
+
+      <p class="govuk-body">As part of the removal application, you must check and confirm that all the information we hold about the overseas entity is correct as at the date of the application. You will need to update anything that has changed.</p>
+
+{{ govukInsetText({
+  text: "Information about the overseas entity and its beneficial owners will still be available to view on the public register."
+}) }}
+
+
+
+<!-- ******* When to apply *******  -->
+
+      <h3 id="when-to-apply" class="govuk-heading-m">When to apply</h3>
+
+      <p class="govuk-body">Once the overseas entity has disposed of all its UK property or land, you need to wait until the change of ownership has been updated on the relevant land registry records before you apply to Companies House for removal.</p> 
+
+      <p class="govuk-body">You should only apply if the overseas entity is no longer listed on any land registry records as the registered owner (proprietor) of property or land in the UK. We will carry out checks with all UK land registries for every application we receive. </p>
+
+{{ govukInsetText({
+  text: "If our checks show that the entity is still listed as the registered owner of UK property or land, your application will be rejected and the fee will not be refunded."
+}) }}
+
+      <p class="govuk-body"> Before applying, we recommend you carry out your own searches online with the UK land registries: </p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li><a href="#">HM Land Registry (for England and Wales)</a> </li>
+      <li><a href="#">Land Registry for Northern Ireland</a></li>
+      <li><a href="#">Land Register of Scotland</a></li>
+    </ul>
+
+
+
+<!-- ******* Who can use this service *******  -->
+      <h3 id="who-can-use" class="govuk-heading-m">Who can use this service </h3>
+
+      <p class="govuk-body">You can use this service if you work at, or work on behalf of, the overseas entity.</p>
+      <p class="govuk-body">You currently cannot use this service if:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>there are any <a href="#">trusts</a> involved in the overseas entity – this includes trusts that the entity has already told us about, and trusts that it needs to tell us about as part of the removal application </li>
+      <li>any beneficial owners or managing officers have their personal information protected at Companies House (or are waiting for the results of an application) </li>
+    </ul>
+
+      <p class="govuk-body">Contact <a href="#">enquiries@companieshouse.gov.uk</a> for further guidance on how to apply.</p>
+
+
+
+
+<!-- ******* What information you'll need to provide *******  -->
+      <hr class="govuk-section-break govuk-section-break--m govuk-!-margin-top-0">
+      <h3 id="information" class="govuk-heading-m">What information you'll need to provide</h3>
+
+<!-- ******* Up to date information about the overseas entity *******  -->
+      <h4 id="oe-update" class="govuk-heading-s">Up to date information about the overseas entity</h4>
+      <p class="govuk-body">All information about the overseas entity, its beneficial owners and managing officers must be correct as at the date of the removal application. </p>
+      <p class="govuk-body">As part of this application, we'll ask you to check the information we hold and update anything that has changed. </p>
+
+      <p class="govuk-body">Any changes you make must have been <a href="#">verified by a UK-regulated agent</a> no more than 3 months before the date of the removal application.</p>
+
+
+{{ govukInsetText({
+  text: "We need to know about all current beneficial owners, and all individuals and entities that have been a registrable beneficial owner since the entity's information was last updated."
+}) }}
+
+<!-- ******* If someone has become a registrable beneficial owner or managing officer *******  -->
+      <h4 id="oe-update" class="govuk-heading-s">If someone has become a registrable beneficial owner or managing officer</h4>
+      <p class="govuk-body">If you are adding new beneficial owners or managing officers, you'll need to provide information about them.</p>
+      <p class="govuk-body">Read the guidance on registering an overseas entity to find out <a href="#">what information you need to provide about new beneficial owners and managing officers (opens in a new tab)</a>.</p>
+
+<!-- ******* If someone has become a registrable beneficial owner or managing officer *******  -->
+      <h4 id="oe-update" class="govuk-heading-s">If someone is no longer a registrable beneficial owner or managing officer</h4>
+      <p class="govuk-body">You'll need to tell us the date they stopped being a beneficial owner or managing officer, and make sure their information is correct as at that date.</p>
+      <p class="govuk-body">You also need to tell us about anyone that both became and ceased to be a registrable beneficial owner during the review period. The information you provide about them must be correct as at the date they stopped being one. </p>
+      <p class="govuk-body">If there are no active beneficial owners on the date of the application, you must tell us about each managing officer.</p>
+
+
+
+<!-- ******* What to do if there are trusts involved in the overseas entity *******  -->
+      <h3 id="trusts" class="govuk-heading-m">What to do if there are trusts involved in the overseas entity</h3>
+        <p class="govuk-body">You currently cannot use this service if there are any trusts involved in the overseas entity. This includes trusts that the entity has already told us about, and trusts that you need to tell us about as part of the removal application.</p>
+        <p class="govuk-body">You'll need to submit the application on paper, even if you do not need to make any changes to trust information. </p>
+        <p class="govuk-body">Contact <a href="#">enquiries@companieshouse.gov.uk</a> for further guidance.</p>
+
+
+
+<!-- ******* How to get an authentication code *******  -->
+      <h3 id="authentication" class="govuk-heading-m">How to get an authentication code</h3>
+        <p class="govuk-body">An authentication code is a unique 6 character code that every overseas entity needs in order to file online. We'll ask for it every time someone files online for the entity — it confirms to us that they're authorised to do so.</p>
+        <p class="govuk-body">To request an authentication code, search for the overseas entity on the Companies House register, and then select 'Request an authentication code'.</p>
+        <p class="govuk-body">We'll send the code to the email address we have on record for the overseas entity.</p>
+
+
+
+
+<!-- ******* What verification checks need to be completed *******  -->
+      <h3 id="verification" class="govuk-heading-m">What verification checks need to be completed</h3>
+
+      <p class="govuk-body">Verification checks must be completed for information that you are changing, and on any new beneficial owners or managing officers that you are adding.</p>
+      <p class="govuk-body">They must be carried out by a UK-regulated agent no more than 3 months before the date of the removal application. </p>
+      <p class="govuk-body">If nothing has changed and you're not updating any information, you do not need to complete any verification checks before applying to remove the overseas entity. </p>
+
+<!-- ******* Agent assurance code *******  -->
+      <h4 id="agent" class="govuk-heading-s">Agent assurance code</h4>
+<p class="govuk-body">The UK-regulated agent carrying out verification checks must have an <a href="#">agent assurance code</a>.</p>
+<p class="govuk-body">If they are also filing the removal application for the overseas entity, they will be asked to provide the code as part of this service. Otherwise, they will need to provide the code after the application has been filed by submitting an <a href="#">Overseas entity verification checks statement</a>. </p>
+
+
+
+<!-- ******* File an overseas entity update statement   *******  -->
+      <h3 id="apply-to-de-register" class="govuk-heading-m">Apply to remove an overseas entity from the register </h3>
+
+      <p class="govuk-body">To use this service, you'll need:
+    <ul class="govuk-list govuk-list--bullet">
+      <li>to sign in to or create a Companies House account</li>
+      <li>the Overseas Entity ID number </li>
+      <li>the overseas entity's <a href="#" class="govuk-link">authentication code</a></li>
+      <li>the name and email address of someone we can contact about the application</li>
+      <li>to tell us about the UK-regulated agent that completed <a href="#" class="govuk-link">verification checks</a>, if relevant</li>
+      <li>a credit or debit card – for now, you cannot pay with a Companies House payment account </li>
+    </ul>
+
+    <p class="govuk-body">If you're the UK-regulated agent who carried out any verification checks, you'll also need to provide an <a href="#" class="govuk-link">agent assurance code</a>.</p>
+
+
+        <h4 id="apply-fee" class="govuk-heading-s">Fees </h3>
+
+        <p class="govuk-body">It costs £400 to apply to remove an overseas entity. This fee covers the charges we pay to the land registries for the checks they carry out on the entity.</p>
+
+        <p class="govuk-body">The fee will not be refunded if your application is rejected. <a href="#">Check when to apply</a>, to minimise the chances of your application being rejected. 
+
+
+      <!--
+      <p class="govuk-body">To minimise the chances of your application being rejected, make sure:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>the overseas entity is no longer shown on any UK land registry records as the registered owner of UK property or land</li>
+      <li>verification checks have been completed on any information that has changed</li>
+    </ul>
+
+    -->
+
+    <p class="govuk-body">This service could take a while to complete. It will time out if you do not use it for 60 minutes. 
+      You can save your answers and resume your application later. </p>
+
+
+
+
+
+      {{ govukButton({
+        text: "Start now",
+        href: "01-sign-in-to-companies-house",
+        isStartButton: true
+      }) }}
+
+{# 
+      <h3 id="what-happens-after-an-overseas-entity-is-registered" class="govuk-heading-m">What happens after an overseas entity is registered</h3>
+
+      <p class="govuk-body">If the application is accepted, the overseas entity and its beneficial owners and managing officers will be added to the Register of Overseas Entities. </p>
+       <p class="govuk-body">We'll also email the notice of registration to the overseas entity. This will include the Overseas Entity ID, which must be given to the Land Registry whenever the entity buys, sells or transfers land or property in the UK. </p>
+
+        <p>If the application is rejected, we'll email you to let you know what to do next and refund the £100 registration fee.</p>
+
+      <h3 class="govuk-heading-s">Updating information on the register</h3>
+
+      <p class="govuk-body">The overseas entity must file an annual update one year after it was registered, and every year after that. This will be used to tell us about any changes, or confirm that the information we hold is still correct. The update must be filed no later than 14 days after the due date. The entity can file earlier if it needs to update any information.</p>
+
+      <h3 class="govuk-heading-s">Removing an overseas entity</h3>
+
+      <p class="govuk-body">An overseas entity can apply to be removed from the Register of Overseas Entities if it does not own land or property in the UK.</p>
+
+      <p class="govuk-body">The sections of The Economic Crime (Transparency and Enforcement) Act 2022 relating to updates and removal have not yet come into force. This means that updates and removal applications can only be made once this happens.</p> #}
+
+{% endblock %}
