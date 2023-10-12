@@ -7,7 +7,7 @@
   {% endif %}
   {% endset%}
 {% block pageTitle %}
-Has anyone become or ceased to be a registrable beneficial owner during the update period? – {{ serviceName }} – GOV.UK
+Has anyone become or ceased to be a registrable beneficial owner since the overseas entity's last filing? – {{ serviceName }} – GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -22,7 +22,7 @@ Has anyone become or ceased to be a registrable beneficial owner during the upda
 
   <span class="govuk-caption-l">{{ data['overseas-name'] }} - OE001485</span>
 
-          <h1 class="govuk-heading-xl">Has anyone become or ceased to be a registrable beneficial owner during the update period?</h1>
+          <h1 class="govuk-heading-xl">Has anyone become or ceased to be a registrable beneficial owner since the overseas entity's last filing?</h1>
 
 {# {% if errorStatements == true %}
 ecked: checked("statements", "noneIdentified")
@@ -50,7 +50,7 @@ ecked: checked("statements", "noneIdentified")
   name: "oe-ceased",
   fieldset: {
     legend: {
-      text: "Has anyone become or ceased to be a registrable beneficial owner during the update period?",
+      text: "Has anyone become or ceased to be a registrable beneficial owner since the overseas entity's last filing?",
       isPageHeading: true,
       classes: "govuk-visually-hidden"
     }  
@@ -59,7 +59,7 @@ ecked: checked("statements", "noneIdentified")
     {
       value: "yes",
       html: "The entity has <strong>no reasonable cause</strong> to believe that <strong>anyone</strong> has become or ceased to be 
-      a registrable beneficial owner during the update period.",
+      a registrable beneficial owner since the overseas entity's last filing.",
       hint: {
         text: ""
       }
@@ -67,7 +67,7 @@ ecked: checked("statements", "noneIdentified")
     {
       value: "no",
       html: "The entity <strong>has reasonable cause</strong> to believe that <strong>at least one person</strong> has become or ceased to be 
-      a registrable beneficial owner during the update period.",
+      a registrable beneficial owner since the overseas entity's last filing.",
 hint: {
         text: ""
       }
