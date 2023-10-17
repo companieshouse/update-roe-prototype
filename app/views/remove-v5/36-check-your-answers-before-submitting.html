@@ -32,11 +32,45 @@
 
 
 
-<!-- ********** PROTECTED INFORMATION AND DATE OF THE UPDATE  ********** -->
+<!-- ********** FILTER QUESTIONS  ********** -->
 
               {{ govukSummaryList({
                 classes: 'govuk-!-margin-bottom-9',
                 rows: [
+                 {
+                    key: {
+                      text: "Has the overseas entity disposed of all its property or land in the UK?"
+                    },
+                    value: {
+                      text: 'Yes'
+                    },
+                    actions: {
+                      items: [
+                        {
+                          href: "#",
+                          text: "Change",
+                          visuallyHiddenText: "Does the update include people that have protection or that have applied for protection?"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    key: {
+                      text: "Is the overseas entity currently listed on any land registry records as the registered owner of property or land in the UK?"
+                    },
+                    value: {
+                      text: 'No'
+                    },
+                    actions: {
+                      items: [
+                        {
+                          href: "#",
+                          text: "Change",
+                          visuallyHiddenText: "Does the update include people that have protection or that have applied for protection?"
+                        }
+                      ]
+                    }
+                  },
                   {
                     key: {
                       text: "Do any beneficial owners or managing officers have personal information protected at Companies House?"
@@ -70,62 +104,12 @@
                         }
                       ]
                     }
-                  },
-                   {
-                    key: {
-                      text: "Is the overseas entity registered as the owner of any property or land in the UK?"
-                    },
-                    value: {
-                      text: 'No'
-                    },
-                    actions: {
-                      items: [
-                        {
-                          href: "#",
-                          text: "Change",
-                          visuallyHiddenText: "Does the update include people that have protection or that have applied for protection?"
-                        }
-                      ]
-                    }
                   }
                 ]
               }) }}
 
 
 
-
-<!-- ********** TITLE NUMBERS  ********** -->
-
-<h2 class="govuk-heading-l">Land title numbers</h2>
-
-              {{ govukSummaryList({
-                classes: 'govuk-!-margin-bottom-9',
-                rows: [
-                  {
-                    key: {
-                      text: "What are the title numbers for the property or land that the overseas entity has disposed of?"
-                    },
-                    value: {
-                      html: "
-                      ACY123456 <br>
-                      TKZ976542 <br>
-                      RTL234568 <br>
-                      PRZ987632 <br>
-                      "
-                    },
-                    actions: {
-                      items: [
-                        {
-                          href: "#",
-                          text: "Change",
-                          visuallyHiddenText: "Do any beneficial owners or managing officers have personal information protected at Companies House?"
-                        }
-                      ]
-                    }
-                  }
-                  
-                ]
-              }) }}
 
 
 
@@ -616,9 +600,9 @@
             Home address
           </dt>
           <dd class="govuk-summary-list__value">
-            72 Guild Street
-            <br>London
-            <br>SE23 6FH
+            10 updated address
+            <br>Tortola
+            <br>British Virgin Islands
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="/register/beneficial-owner-individual">
