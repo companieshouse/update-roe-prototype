@@ -1,0 +1,458 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Tell us about an individual (Trusts) – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <span class="govuk-caption-l">{{ data['trust-name'] }}</span>
+
+      <h1 class="govuk-heading-xl govuk-!-margin-0">Tell us about the individual</h1>
+      <p class="govuk-!-margin-bottom-5 govuk-!-margin-top-5">You can add more later.</p>
+
+      <form class="form" method="post">
+
+
+
+                {% set indintDateHtml %}
+                <br>
+                {{ govukDateInput({
+                  id: "individual-interested-date",
+                  namePrefix: "individual-interested-date",
+                  fieldset: {
+                    legend: {
+                      text: "What date did they become an interested person?",
+                      isPageHeading: false,
+                      classes: "govuk-fieldset__legend--s"
+                    }
+                  },
+                  hint: {
+                    text: "For example, 27 3 2007"
+                  }
+                }) }}
+                {% endset -%}
+
+
+
+
+
+
+
+
+
+        {{ govukInput({
+          label: {
+            text: "What is their first name?",
+            classes: "govuk-label--m",
+            isPageHeading: false
+          },
+          hint: {
+          text: "This is also known as their given name."
+        },
+          id: "beneficiary-individual-first-name",
+          name: "beneficiary-individual-first-name"
+        }) }}
+
+
+        {{ govukInput({
+          label: {
+            text: "What is their last name?",
+            classes: "govuk-label--m",
+            isPageHeading: false
+          },
+          hint: {
+          text: "This is also known as their family name."
+        },
+          classes: "govuk-!-width-three-quarters",
+          id: "beneficiary-individual-last-name",
+          name: "beneficiary-individual-last-name"
+        }) }}
+
+        {{ govukDateInput({
+          id: "beneficiary-individual-dob",
+          namePrefix: "beneficiary-individual-dob",
+          fieldset: {
+            legend: {
+              text: "What is their date of birth?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "For example, 27 3 2007"
+          }
+        }) }}
+
+        {{ govukRadios({
+          idPrefix: "trust-individual",
+          name: "trust-individual",
+          fieldset: {
+            legend: {
+              text: "What is their role within the trust?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "beneficiary",
+              text: "Beneficiary"
+            },
+            {
+              value: "settlor",
+              text: "Settlor"
+            },
+            {
+              value: "grantor",
+              text: "Grantor"
+            },
+            {
+              value: "interested",
+              text: "Interested person",
+              conditional: {
+        html: indintDateHtml
+      }
+            }
+          ]
+        }) }}
+
+        <div class="govuk-form-group">
+           <label for="autocomplete-default" class="govuk-label--m">What is their nationality?</label>
+
+
+        </div>
+
+
+{{ govukSelect({
+  id: "trust-ind-nationality",
+  name: "trustIndNationali",
+  label: {
+    text: "Sort by",
+    classes: "govuk-visually-hidden"
+  },
+  items: [
+    {
+      value: "afghan",
+      text: "Afghan"
+    },
+    {
+      value: "albanian",
+      text: "Albanian",
+      selected: true
+    },
+    {
+      value: "algerian",
+      text: "Algerian"
+    },
+    {
+      value: "american",
+      text: "American"
+    }
+  ]
+}) }}
+
+        <p class="govuk-body">
+          <a href="javascript:void(0)" id="second-nationality-link" class="govuk-link govuk-link--no-visited-state ">Add a second nationality</a>
+        </p>
+        <div id="second-nationality" class="second-nationality" style="display: none">
+          <div class="govuk-form-group">
+            <label for="autocomplete-default" class="govuk-label">Second nationality (optional)</label>
+            <p class="govuk-hint">Dual citizenship (also known as dual nationality) is allowed in some countries. This means they can be a citizen of their own country and another country.</p>
+            <div id="nationalityTwo" class="autocomplete-wrapper">
+
+{{ govukSelect({
+  id: "trust-ind-nationality",
+  name: "trustIndNationality",
+  label: {
+    text: "Sort by",
+    classes: "govuk-visually-hidden"
+  },
+  items: [
+    {
+      value: "afghan",
+      text: "Afghan"
+    },
+    {
+      value: "albanian",
+      text: "Albanian",
+      selected: true
+    },
+    {
+      value: "algerian",
+      text: "Algerian"
+    },
+    {
+      value: "american",
+      text: "American"
+    }
+  ]
+}) }}
+            </div>
+          </div>
+           </div> 
+          {# <p class="govuk-body">
+            <a href="javascript:void(0)" id="third-nationality-link" class="govuk-link govuk-link--no-visited-state">Add a third nationality</a>
+          </p>
+        </div> #}
+        {# <div id="third-nationality" class="third-nationality" style="display: none">
+          <div class="govuk-form-group">
+            <label for="autocomplete-default" class="govuk-label">Third nationality (optional)</label>
+            <p class="govuk-hint">Multiple citizenship (also known as multiple nationality) is allowed in some countries. This means they can be a citizen of their own country and another country.</p>
+            <div id="nationalityThree" class="autocomplete-wrapper"></div>
+          </div>#}
+          
+
+
+        {% call govukFieldset({
+          legend: {
+            html: 'What is their home address?<br><p class="govuk-hint govuk-!-padding-top-1"> If they have more than one home address, use the address where they live most of the time.</p>',
+            classes: "govuk-fieldset__legend--m govuk-!-padding-top-3",
+            isPageHeading: false
+          }
+
+        }) %}
+
+        {{ govukInput({
+          label: {
+            html: 'Property name or number'
+          },
+          hint: {
+           text: "For example, 'Saron House', '116' or 'Apartment 37a'"
+         },
+          id: "usual-residential-address-property-name-number",
+          name: "usual-residential-address-property-name-number"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Address line 1"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "usual-residential-address-line-1",
+          name: "usual-residential-address-line-1",
+          autocomplete: "address-line1"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Address line 2 (optional)"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "usual-residential-address-line-2",
+          name: "usual-residential-address-line-2",
+          autocomplete: "address-line2"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "City or town"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "usual-residential-address-city-town",
+          name: "usual-residential-address-city-town"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "County, state, province or region (optional)"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "service-address-state",
+          name: "service-address-state"
+        }) }}
+
+          
+{{ govukSelect({
+  id: "country",
+  name: "country",
+  label: {
+    text: "Country"
+  },
+  items: [
+    {
+      value: "afghanistan",
+      text: "Afghanistan"
+    },
+    {
+      value: "albania",
+      text: "Albania",
+      selected: true
+    },
+    {
+      value: "algeria",
+      text: "Algeria"
+    },
+    {
+      value: "america",
+      text: "America"
+    }
+  ]
+}) }}
+        
+
+        {{ govukInput({
+          label: {
+            text: "Postcode or ZIP code (if applicable)"
+          },
+          classes: "govuk-input--width-10",
+          id: "usual-residential-address-postcode",
+          name: "usual-residential-address-postcode",
+          autocomplete: "postal-code"
+        }) }}
+        {% endcall %}
+
+        {% set serviceAddressHtml %}
+        <br>
+        {% call govukFieldset({
+          legend: {
+            text: "What is their correspondence address?",
+            classes: "govuk-fieldset__legend--m",
+            isPageHeading: false
+          }
+        }) %}
+        {{ govukInput({
+          label: {
+            html: 'Property name or number'
+          },
+          hint: {
+           text: "For example, 'Saron House', '116' or 'Apartment 37a'"
+         },
+          id: "service-address-property-name-number",
+          name: "service-address-property-name-number"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Address line 1"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "service-address-line-1",
+          name: "service-address-line-1",
+          autocomplete: "address-line1"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Address line 2 (optional)"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "service-address-line-2",
+          name: "service-address-line-2",
+          autocomplete: "address-line2"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "City or town"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "service-address-city-town",
+          name: "service-address-city-town"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "County, state, province or region (optional)"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "service-address-state",
+          name: "service-address-state"
+        }) }}
+
+          
+{{ govukSelect({
+  id: "country",
+  name: "country",
+  label: {
+    text: "Country"
+  },
+  items: [
+    {
+      value: "afghanistan",
+      text: "Afghanistan"
+    },
+    {
+      value: "albania",
+      text: "Albania",
+      selected: true
+    },
+    {
+      value: "algeria",
+      text: "Algeria"
+    },
+    {
+      value: "america",
+      text: "America"
+    }
+  ]
+}) }}
+        
+
+        {{ govukInput({
+          label: {
+            text: "Postcode or ZIP code (if applicable) "
+          },
+          classes: "govuk-input--width-10",
+          id: "service-address-postcode",
+          name: "service-address-postcode",
+          autocomplete: "postal-code"
+        }) }}
+
+        {% endcall %}
+        {% endset -%}
+
+        {{ govukRadios({
+          classes: "govuk-radios",
+          idPrefix: "same-address",
+          name: "same-address",
+          fieldset: {
+            legend: {
+              text: "Is their correspondence address the same as their home address?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes"
+            },
+            {
+              value: "no",
+              text: "No",
+              conditional: {
+        html: serviceAddressHtml
+        }
+            }
+          ]
+        }) }}
+
+        {{ govukInsetText({
+          html: '
+                    <h2 class="govuk-heading-m">What information we&#39;ll show on the public register</h2>
+                    <p>We will not show any of the information you provide on this screen on the public Register of Overseas Entities. However, we may share it with HMRC.</p>
+                      '
+        }) }}
+
+
+
+
+        {{ govukButton({
+          text: "Save and continue",
+          href: "47-trusts-associated-with-the-overseas-entity"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

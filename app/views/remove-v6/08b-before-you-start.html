@@ -1,0 +1,60 @@
+{% extends "layouts/main.html" %}
+{% set serviceName %}
+{% if data['roe-prototype-scenario'] == 'update' %}
+    File an overseas entity update statement
+  {% else %}
+    Apply to remove an overseas entity from the register
+  {% endif %}
+  {% endset%}
+  
+{% block pageTitle %}
+  Before you start – {{ serviceName }} – GOV.UK
+{% endblock %}
+{# 
+{{data['trust-involved']}}  #}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="interrupt-card">
+        <h1 class="govuk-heading-l">Before you start</h3>
+
+  <p class="govuk-body">
+    Once an overseas entity is removed, its Overseas Entity ID will no longer be valid. 
+    It will no longer be able to buy, sell, transfer, lease or charge property or land in the UK, unless it re-registers. 
+  </p>
+          <h2 class="govuk-heading-m">Authentication code</h2>
+
+  <p class="govuk-body">
+You will need the overseas entity's authentication code to file this application. 
+Find out <a>how to get the authentication code</a> if you don't already have it.      
+</p>
+
+
+          <h2 class="govuk-heading-m">Check if any information needs to be updated</h2>
+
+  <p class="govuk-body">
+    All information about the overseas entity, its beneficial owners and managing officers must be correct on the date of this application.</p>
+    
+  <p class="govuk-body">
+    If you need to update any information, you can do that as part of this service. Any changes must have been <a>verified by a UK-regulated agent</a> no more than 3 months before this application is submitted.
+  </p>
+  
+
+  {{ govukButton({
+    text: "Continue",
+        href: "09-what-is-the-overseas-entity-id"
+  }) }}
+
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
