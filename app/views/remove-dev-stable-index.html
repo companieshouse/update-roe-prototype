@@ -1,0 +1,735 @@
+{% extends "layouts/main.html" %}
+{% set serviceName %}
+{% if data['roe-prototype-scenario'] == 'update' %}
+    File an overseas entity update statement prototype
+  {% else %}
+    Apply to remove an overseas entity from the register prototype
+  {% endif %}
+  {% endset%}
+{% block pageTitle %}
+  {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+   {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+       {{ govukTag({
+  classes: "govuk-tag--blue govuk-!-margin-bottom-4",
+  text: "REMOVE BUILD"
+  }) }}
+
+  <div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      Apply to remove an overseas entity from the register
+
+    </h1>
+
+    {{ govukButton({
+      text: "Start now",
+      href: "00-remove-an-overseas-entity"
+    }) }}
+
+</div>
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible govuk-!-margin-bottom-6">
+
+
+<h2 class="govuk-heading-s">Contents</h2>
+ <ul class="govuk-list">
+        <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
+          <a class="govuk-link govuk-body-s govuk-link--no-underline" href="#authScreens">Authentication code screens</a>
+        </li>
+        <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
+          <a class="govuk-link govuk-body-s govuk-link--no-underline" href="#initial">Initial screens</a>
+        </li>
+        <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
+          <a class="govuk-link govuk-body-s govuk-link--no-underline" href="#no-change">No change</a>
+        </li>
+        <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
+          <a class="govuk-link govuk-body-s govuk-link--no-underline" href="#verification">Verification details</a>
+        </li>
+        <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
+          <a class="govuk-link govuk-body-s govuk-link--no-underline" href="#oe">Overseas entity</a>
+        </li>
+        <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
+          <a class="govuk-link govuk-body-s govuk-link--no-underline" href="#bomo">Beneficial owners and managing officers</a>
+        </li>
+        <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
+          <a class="govuk-link govuk-body-s govuk-link--no-underline" href="#trusts">Add trusts</a>
+        </li>
+         <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
+          <a class="govuk-link govuk-body-s govuk-link--no-underline" href="#statements">Statements</a>
+        </li>
+        <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
+          <a class="govuk-link govuk-body-s govuk-link--no-underline" href="#submitPay">Submit and pay</a>
+        </li>
+        <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
+          <a class="govuk-link govuk-body-s govuk-link--no-underline" href="#emails">Emails</a>
+        </li>
+        <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
+          <a class="govuk-link govuk-body-s govuk-link--no-underline" href="#other">Other screens</a>
+        </li>
+        <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
+          <a class="govuk-link govuk-body-s govuk-link--no-underline" href="#history">Version history</a>
+        </li>
+        
+        </ul>
+
+  </div>
+
+     
+      <div class="govuk-grid-column-one-third">
+
+  {# MURALS AND FLOWS LIST #}
+  
+  <div>
+<div>
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+<h2 class="govuk-heading-s">Journey maps and flows</h2>
+  <ul class="govuk-list govuk-body-s">   
+
+    <li>
+      <a class="govuk-link govuk-link--no-visited-state" href="https://app.mural.co/t/companieshouse8589/m/companieshouse8589/1697451977876/8ad268c1499d01a77351a406c4d77fb470cee69d?sender=uc287fb0c65a61d3da2202202" target="_blank">
+      Remove and update screen flow</a>
+    </li>
+
+    <li>
+      <a class="govuk-link govuk-link--no-visited-state" href="https://app.mural.co/t/companieshouse8589/m/companieshouse8589/1689329022100/2284d9d3f2f642076df8dbbad455cdb457b3946a?sender=uc287fb0c65a61d3da2202202" target="_blank">
+      Remove design sprint plan</a>
+    </li>
+
+    <li>
+      <a class="govuk-link govuk-link--no-visited-state" href="https://www.figma.com/file/XvQkF0Z11UE5uS5u5jNEww/ROE-Remove-ideas?type=design&node-id=0-1&mode=design&t=zEFyRci01zwUbxUg-0" target="_blank">
+      Figma</a>
+    </li>
+    
+
+    <li>
+      <a class="govuk-link govuk-link--no-visited-state" href="https://app.mural.co/invitation/mural/companieshouse8589/1675954963582?sender=uc287fb0c65a61d3da2202202&key=2a8eefcb-86f8-49fb-bafd-0e1fccaec470" target="_blank">
+      Authentication code flow</a>
+    </li>
+
+  </ul>
+
+        </div>
+    </div>
+  </main>
+</div>
+
+
+
+  {# CONTENT LINKS LIST #}
+
+<div class="govuk-grid-column-full">
+
+
+
+<h2 class="govuk-heading-l">Remove only pages</h2>
+
+<h2 class="govuk-heading-m">Initial screens</h2>
+
+      <ul class="govuk-list govuk-list--bullet">      
+     <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="00-remove-an-overseas-entity">
+         Guidance page: Apply to remove an overseas entity from the register
+     </li>
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="06a-entity-sold-all-land">
+          Filter: Has the overseas entity disposed of all its property or land in the UK?
+        </a>
+     </li>
+     <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="06b-is-the-overseas-entity-registered-as-the-owner">
+          Filter: Is the overseas entity currently listed on any land registry records as the registered owner of property or land in the UK?
+        </a>
+     </li>
+          <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="06c-you-cannot-apply-to-remove-this-overseas-entity">
+         Stop screen: You cannot apply to remove this overseas entity
+        </a>
+     </li>
+          <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="08b-before-you-start">
+          Before you start
+        </a>
+     </li>
+       <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="14-do-you-need-to-make-any-changes-to-this-overseas-entity">
+          Do you need to make any changes to this overseas entity before it is removed?
+        </a>
+    </ul>
+<br>
+<h2 class="govuk-heading-m">No change</h2>
+<ul class="govuk-list govuk-list--bullet">    
+
+     </li>
+
+     </li>
+        <li><a href="18-review-the-information-in-this-update-statement">
+          Review the information before submitting
+          </a></li>
+     </li>
+</ul>
+     <h2 class="govuk-heading-m">Statements</h2>
+<ul class="govuk-list govuk-list--bullet">    
+               <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="16c-removal-from-the-register-statement">
+          Confirm the removal statement
+        </a>
+        </ul>
+
+           <h2 class="govuk-heading-m">Submit and pay</h2>
+<ul class="govuk-list govuk-list--bullet">    
+               <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="36-check-your-answers-before-submitting">
+          Check your answers before submitting
+        </a>
+     </li>
+            <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="37-update-statement-submitted">
+          Application submitted - agent
+        </a>
+     </li>
+            <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="38-entity-statement-submitted">
+          Application submitted - overseas entity
+        </a>
+     </li>
+</ul>
+<br>
+
+
+<h2 class="govuk-heading-m">After submission</h2>
+<ul class="govuk-list govuk-list--bullet">    
+
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="emails/notice-of-removal">
+          Email - notification of removal
+        </a>
+     </li>
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="45-company-OE001485">
+          Reference: Company overview page overseas entity page
+        </a>
+     </li>
+</ul>
+
+
+
+<hr class="govuk-!-margin-top-9 govuk-!-margin-bottom-9"></hr>
+
+<h2 class="govuk-heading-l">Update pages</h2>
+
+
+<h2 class="govuk-heading-m" id="authScreens">Authentication code screens</h2>
+      <ul class="govuk-list govuk-list--bullet">      
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="auth/ASHCROFT-LIMITED-overview">Overseas entity register page</a> &nbsp;<strong class="govuk-tag govuk-tag--yellow">Existing design</strong>
+      </li>
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="auth/request-an-authentication-code">Request an authentication code</a> &nbsp;<strong class="govuk-tag govuk-tag--yellow">Existing design</strong>
+      </li>
+       <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="auth/authentication-code-requested">Authentication code requested - button</a> &nbsp;<strong class="govuk-tag govuk-tag--green">Dev ready</strong>
+      </li>
+  </ul>
+
+    
+      <h2 class="govuk-heading-m" id="initial">Initial screens</h2>
+      <ul class="govuk-list govuk-list--bullet">
+<!--remove-->
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="00-remove-an-overseas-entity">Start</a>
+      </li>
+<!-- -->
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="01-sign-in-to-companies-house">Sign in</a> &nbsp;<strong class="govuk-tag govuk-tag--yellow">Existing design</strong>
+      </li>
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="02-do-you-want-to-continue-with-a-saved-filing">Do you want to continue with a saved filing?</a> &nbsp;<strong class="govuk-tag govuk-tag--green">Dev ready</strong>
+      </li>
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="03-your-filings">Your filings</a> &nbsp;<strong class="govuk-tag govuk-tag--yellow">Existing design</strong>
+      </li>
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="04-do-any-beneficial-owners-or-managing-officers-have-their-personal-information-protected-at-companies-house">Protected information filter</a> &nbsp;<strong class="govuk-tag govuk-tag--green">Dev ready</strong>
+      </li>
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="05-youll-need-to-file-an-update-statement-using-the-paper-form">Use paper service</a> &nbsp;<strong class="govuk-tag govuk-tag--green">Dev ready</strong>
+      </li>
+      <li>
+       <a class="govuk-link govuk-link--no-visited-state" href="06-are-there-any-trusts-involved-in-this-overseas-entity">MVP: Is there a trust involved in this overseas entity?</a>
+      </li>
+        <li>
+       <a class="govuk-link govuk-link--no-visited-state" href="07-youll-need-to-file-an-update-statement-using-the-paper-form">MVP: Use paper service - trusts</a>
+      </li>
+
+<!--remove-->
+      <li>
+       <a class="govuk-link govuk-link--no-visited-state" href="06b-is-the-overseas-entity-registered-as-the-owner">Is the overseas entity registered as the owner of any property or land in the UK?</a>
+      </li>
+            <li>
+       <a class="govuk-link govuk-link--no-visited-state" href="06c-you-cannot-apply-to-remove-this-overseas-entity">You cannot apply to remove this overseas entity</a>
+      </li>
+
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="08b-before-you-start">Before you start - interrupt card</a>
+      </li>
+<!-- -->
+
+
+ <br>     
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="09-what-is-the-overseas-entity-id">What is the Overseas Entity ID?</a> &nbsp; <strong class="govuk-tag govuk-tag--green">Dev ready</strong>
+      </li>
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="10-confirm-this-is-the-correct-overseas-entity">Confirm this is the correct overseas entity</a>
+      </li>
+
+
+<!--remove-->
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="12-what-are-the-land-title-numbers">What are the title numbers for the property or land that the overseas entity has disposed of?</a>
+      </li>
+<!-- -->
+
+
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="11-company-authentication">Enter the authentication code</a> &nbsp;<strong class="govuk-tag govuk-tag--yellow">Existing design</strong>
+      </li>
+            <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="12-date-of-the-update-statement">MVP: Date of the update statement</a>
+      </li>
+            <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="13-who-can-we-contact-about-this-update-statement">Who can we contact about this update?</a> &nbsp;<strong class="govuk-tag govuk-tag--green">Dev ready</strong>  
+      </li>
+           <li>
+      <a href="14-do-you-need-to-make-any-changes-to-this-overseas-entity">Do you need to make any changes to this overseas entity?</a></li>
+
+      </ul>
+
+
+
+      <h2 class="govuk-heading-m" id="no-change">No change</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="18-review-the-information-in-this-update-statement">Review the information in this update statement</a></li>
+      </ul>
+
+
+
+      <h2 class="govuk-heading-m" id="verification">Verification details</h2>
+      <ul class="govuk-list govuk-list--bullet">
+
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="19-who-is-completing-this-update">Who is completing the update?</a>
+      </li>
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="20-complete-this-statement-to-confirm-that-verification-checks-have-been-completed">Verification details - agent</a>
+      </li>
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="21-tell-us-about-the-uk-regulated-agent-that-carried-out-verification-checks">Verification details - overseas entity</a>
+      </li>
+      </ul>
+
+
+      <h2 class="govuk-heading-m" id="oe">Overseas entity</h2>
+      <ul class="govuk-list govuk-list--bullet">
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="22-youre-about-to-review-overseas-entity-information">You're about to review overseas entity information</a> &nbsp;<strong class="govuk-tag govuk-tag--green">Dev ready</strong>
+      </li>
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="23-review-overseas-entity-information">Overseas entity details</a> &nbsp;<strong class="govuk-tag govuk-tag--green">Dev ready</strong>
+      </li>
+      </ul>
+
+
+
+
+
+      <h2 class="govuk-heading-m" id="bomo">Beneficial owners and managing officers</h2>
+      <ul class="govuk-list govuk-list--bullet">
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="24-youre-about-to-review-beneficial-owner-and-managing-officer-information">You're about to review beneficial owner and/or managing officer information</a> &nbsp;<strong class="govuk-tag govuk-tag--green">Dev ready</strong>
+      </li>
+<br>
+      <li>
+     <a class="govuk-link govuk-link--no-visited-state" href="25-review-the-individual-beneficial-owner">Review Individual beneficial owner</a></a> &nbsp;<strong class="govuk-tag govuk-tag--green">Dev ready</strong>
+      </li>
+     <li>
+     <a class="govuk-link govuk-link--no-visited-state" href="26-review-the-other-legal-entity-beneficial-owner">Review Other legal entity beneficial owner</a></a> &nbsp;<strong class="govuk-tag govuk-tag--green">Dev ready</strong>
+      </li>
+      <li>
+     <a class="govuk-link govuk-link--no-visited-state" href="27-review-the-government-or-public-authority">Review Government or public authority beneficial owner</a></a> &nbsp;<strong class="govuk-tag govuk-tag--green">Dev ready</strong>
+      </li>
+      <li>
+     <a class="govuk-link govuk-link--no-visited-state" href="28-review-the-individual-managing-officer">Review Individual managing officer</a> &nbsp;<strong class="govuk-tag govuk-tag--green">Dev ready</strong>
+      </li>
+      <li>
+     <a class="govuk-link govuk-link--no-visited-state" href="29-review-the-corporate-managing-officer">Review Corporate managing officer</a> &nbsp;<strong class="govuk-tag govuk-tag--green">Dev ready</strong>
+      </li>
+<br>
+      <li>
+     <a class="govuk-link govuk-link--no-visited-state" href="30-beneficial-owners-and-managing-officers-involved-in-the-overseas-entity">Beneficial owners and managing officers involved in the overseas entity</a> &nbsp;<strong class="govuk-tag govuk-tag--green">Dev ready</strong>
+      </li>
+<br>
+
+       <li>
+     <a class="govuk-link govuk-link--no-visited-state" href="31-tell-us-about-the-individual-person">New Individual beneficial owner</a></a> &nbsp;<strong class="govuk-tag govuk-tag--green">Dev ready</strong>
+      </li>
+       <li>
+     <a class="govuk-link govuk-link--no-visited-state" href="32-tell-us-about-the-other-legal-entity">New Other legal entity beneficial owner</a></a> &nbsp;<strong class="govuk-tag govuk-tag--green">Dev ready</strong>
+      </li>
+     <li>
+     <a class="govuk-link govuk-link--no-visited-state" href="33-tell-us-about-the-government-or-public-authority">New Government or public authority beneficial owner</a></a> &nbsp;<strong class="govuk-tag govuk-tag--green">Dev ready</strong>
+      </li>
+      <li>
+     <a class="govuk-link govuk-link--no-visited-state" href="34-tell-us-about-the-individual-person">New Individual managing officer</a> &nbsp;<strong class="govuk-tag govuk-tag--green">Dev ready</strong>
+      </li>
+      <li>
+     <a class="govuk-link govuk-link--no-visited-state" href="35-tell-us-about-the-corporate-managing-officer">New Corporate managing officer</a> &nbsp;<strong class="govuk-tag govuk-tag--green">Dev ready</strong>
+      </li>
+        </ul>
+
+
+
+
+  <h2 class="govuk-heading-m" id="trusts">Add trusts</h2>
+       {# <p class="govuk-body"> See the trust flow in the prototype mural</p> #}
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>
+       <a class="govuk-link govuk-link--no-visited-state" href="38-you-now-need-to-submit-trust-information">You now need to submit trust information</a>
+      </li>
+      <li>
+       <a class="govuk-link govuk-link--no-visited-state" href="39-tell-us-about-the-trust">Tell us about the trust</a>
+      </li>
+      <br>
+      <li>
+       <a class="govuk-link govuk-link--no-visited-state" href="40-individuals-or-entities-involved-in-the-trust">Individuals or entities involved in the trust</a>
+      </li>
+       <li>
+       <a class="govuk-link govuk-link--no-visited-state" href="41-tell-us-about-the-former-beneficial-owner">Tell us about the former beneficial owner</a>
+      </li>
+      <li>
+       <a class="govuk-link govuk-link--no-visited-state" href="42-tell-us-about-the-individual">Tell us about the individual</a>
+      </li>
+      <li>
+       <a class="govuk-link govuk-link--no-visited-state" href="43-tell-us-about-the-legal-entity">Tell us about the legal entity</a>
+      </li>
+<br>
+      <li>
+       <a class="govuk-link govuk-link--no-visited-state" href="44-trusts-associated-with-the-overseas-entity">Do you need to add another trust?</a>
+      </li>
+
+</ul>
+<br>
+
+
+           <h2 class="govuk-heading-m" id="statements">Statements</h2>
+      <ul class="govuk-list govuk-list--bullet">
+
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="15-has-the-overseas-entity-identified-any-registrable-beneficial-owners">Has the overseas entity identified any registrable beneficial owners?</a>
+          </li>
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="16-has-anyone-become-or-ceased-to-be-a-registrable-beneficial-owner-during-the-update-period">Has anyone become or ceased to be a registrable beneficial owner during the update period?</a>
+          </li>
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="17-the-statements-you've-chosen-do-not-match-the-information-provided-in-this-update">MVP: The statements you've chosen do not match the information provided in this update</a>
+      </li>
+      </ul>
+<br>
+
+      <h2 class="govuk-heading-m" id="submitPay">Submit and pay</h2>
+      <ul class="govuk-list govuk-list--bullet">
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="36-check-your-answers-before-submitting">Check your answers</a>
+      </li>
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="37-update-statement-submitted">Confirmation (for agents and for 'no change' statements)</a>
+      </li>
+            <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="submit-pay/confirmation-oe">Confirmation (if VF01 is needed)</a>
+      </li>
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="submit-pay/how-to-pay">How to pay</a> &nbsp;<strong class="govuk-tag govuk-tag--red">Out of scope</strong>
+      </li>
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="https://card.payments.service.gov.uk/card_details/cqtajg6gv0thgs6vhkd1dn3tk9">Enter card details</a>
+      </li>
+      </ul>
+
+
+      <h2 class="govuk-heading-m" id="emails">Emails</h2>
+      <ul class="govuk-list govuk-list--bullet">
+
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="emails/notice-of-removal">Notice of removal</a>
+      </li>
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="emails/update-statement-email-reminder">UR TEST: File your overseas entity update statement by XX Date</a>
+      </li>
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="emails/update-statement-email-submitted">UR TEST: Submission confirmation</a>
+      </li>
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="emails/email-prep">Reminder to update and preparation</a>
+      </li>
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="emails/email-auth-code">Authentication code email</a>
+      </li>
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="emails/received-oe">Application received OE</a>
+      </li>
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="emails/received">Application received</a>
+      </li>
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="emails/accepted">Application accepted email</a>
+      </li>
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="emails/rejected">Application rejected</a>
+      </li> 
+    </ul>
+
+
+
+      <h2 class="govuk-heading-m" id="other">Other screens</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="remove">Are you sure you want to remove NAME?</a>
+        </li>
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="remove-warning">Are you sure you want to remove this information? - generic warning</a>
+        </li>
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="sign-out">Are you sure you want to sign out?</a> &nbsp;<strong class="govuk-tag govuk-tag--green">Dev ready</strong>
+        </li>
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="signed-out">Signed out</a> &nbsp;<strong class="govuk-tag govuk-tag--red">Out of scope</strong>
+        </li>
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="signed-out-from-confirmation">Signed out (from 'Confirmation' screen)</a> &nbsp;<strong class="govuk-tag govuk-tag--red">Out of scope</strong>
+        </li>
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="service-unavailable">Service unavailable</a>
+        </li>
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="service-timeout">Service timeout</a>
+        </li>
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="page-not-found">Page not found</a>
+        </li>
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="warning">Generic warning page</a>
+        </li> 
+      </ul>
+
+
+{# 
+      <h2 class="govuk-heading-m">Post MVP screens</h2>
+      <ul class="govuk-list govuk-list--bullet">
+       <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="oe-summary">Summary page - overseas entity </a>
+      </li>
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="filing-date">Date of the update statement</a>
+      </li>
+      </ul>
+
+      <h2 class="govuk-heading-m">Archived screens</h2>
+      <ul class="govuk-list govuk-list--bullet">
+
+    <li>
+     <a class="govuk-link govuk-link--no-visited-state" href="../v2/beneficial-owner/ceased-dates.html">Ceased dates</a>
+    </li>
+        <li>
+     <a class="govuk-link govuk-link--no-visited-state" href="../v2/beneficial-owner/ceased-dates-archived">Ceased dates - archived</a>
+    </li>
+    <li>
+     <a class="govuk-link govuk-link--no-visited-state" href="../v2/beneficial-owner/identify">Are there any beneficial owners that you haven't been able to identify?</a>
+    </li>
+    <li>
+     <a class="govuk-link govuk-link--no-visited-state" href="../v2/beneficial-owner/statement">Is this statement correct?</a>
+    </li>
+       </ul>
+ 
+
+{% set archivedHtml %}
+<ul class="govuk-list govuk-list--bullet">
+<li>
+        <a class="govuk-link govuk-link--no-visited-state" href="auth/comms-prep-agent">BLOG IDEA: Update preparation - guidance for agents</a>
+      </li>
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="auth/comms-prep-oe">BLOG IDEA: Update preparation - guidance for overseas entities</a>
+      </li>
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="task-list">Task list</a>
+      </li>
+     <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="task-test">Task list - new version from GDS to test (WIP)</a>
+      </li>
+       <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="auth-filter">ARCHIVED Do you have an authentication code for this overseas entity?</a>
+      </li>
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="auth-get">ARCHIVED Get an the authentication code</a>
+      </li>
+            <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="authentication-code-in">ARCHIVED Enter the authentication code (request in service)</a>
+      </li>
+      </ul>
+{% endset -%}
+
+          {{ govukDetails({
+          summaryText: "Older archived screens",
+          html: archivedHtml
+            }) }} #}
+
+  </div>
+
+
+
+ {# <div class="govuk-grid-column-full">
+    <h2 class="govuk-heading-l govuk-!-margin-top-8" id="history">
+      Version history
+    </h2>
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Version 6 - MVP
+        </dt>
+      </div>
+
+       
+       
+             Tags - copy and paste correct tag(s)
+<strong class="govuk-tag govuk-tag--green govuk-!-margin-bottom-4">policy</strong>
+<strong class="govuk-tag govuk-tag--blue">tech</strong>
+<strong class="govuk-tag govuk-tag--red">More research needed</strong>
+<strong class="govuk-tag govuk-tag--yellow">user research</strong>
+ <strong class="govuk-tag govuk-tag--pink">design</strong> 
+            </div> #}
+
+
+{# <div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+     <a class="govuk-link govuk-body-m govuk-link--no-visited-state" 
+     href="
+https://companieshouse.atlassian.net/wiki/spaces/ROE2/pages/4296310807/Iterations+following+Round+3+of+Remove+user+testing" target="_blank">
+    <strong>Confluence documentation of changes</strong></a>
+           <p class="govuk-body">Confluence</p>
+   </dt>
+  <dd class="govuk-summary-list__value">
+   <p class="govuk-body">
+    <strong>High level changes made in this version</strong><br>
+     <ul class="govuk-list govuk-list--bullet">
+        <li>Name of service</li>
+
+      <li>Screen: TBA</li>
+     <strong class="govuk-tag govuk-tag--green govuk-!-margin-bottom-4">policy</strong>
+    <strong class="govuk-tag govuk-tag--blue">tech</strong> 
+     <strong class="govuk-tag govuk-tag--red">More research needed</strong> 
+
+      <li>Screen: TBA</li>
+    <strong class="govuk-tag govuk-tag--yellow">user research</strong>
+    <strong class="govuk-tag govuk-tag--blue">tech</strong> 
+
+       <li>Statement screens - users unsure why being asked</li>
+<strong class="govuk-tag govuk-tag--yellow">user research</strong>
+
+        <li>TBA </li>
+
+      <li>Lorem ipsum</li>
+      <strong class="govuk-tag govuk-tag--green govuk-!-margin-bottom-4">policy</strong>
+      
+     <li>Lorem ipsum</li> 
+
+
+
+    </ul>
+   </dd>
+  </div> #}
+
+
+
+   {# <h2 class="govuk-heading-l govuk-!-margin-top-8">
+      Research
+    </h2>
+      
+      
+            <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Round of testing
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <ul class="govuk-list">
+            <li>Round 3 informed this prototype</li>
+        </dd>
+      </div>
+
+            <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Session dates
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <ul class="govuk-list">
+            <li>12-14 September</li>
+        </dd>
+      </div>
+      
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Participants
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <ul class="govuk-list">
+            <li>3</li>
+        </dd>
+      </div>
+
+       <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Testing focus
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <ul class="govuk-list">
+            <li>Guidance page</li>
+            <li>Rejection and refund information</li>
+            <li>Two filter screens for disposals</li>
+        </dd>
+      </div>
+      
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Insights
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <a href="https://app.mural.co/t/companieshouse8589/m/companieshouse8589/1694166936615/6a80c90c88cd077c6a95cf94cd9cd9fd8410ee53?sender=uc287fb0c65a61d3da2202202"
+          target="_blank">Round 3 research findings Mural</a> <br>
+          <a href="#"
+          target="_blank">Round 3 user download - TBA</a>
+        </dd>
+      </div> #}
+
+    
+
+
+
+
+ 
+
+  </div>
+</div>
+
+{% endblock %}
