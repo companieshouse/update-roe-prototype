@@ -139,7 +139,7 @@
         <a class="govuk-link govuk-link--no-visited-state" href="/remove-v6/00-remove-an-overseas-entity">
          Guidance page: Apply to remove an overseas entity from the register
      </li>
-      <li>
+      {# <li>
         <a class="govuk-link govuk-link--no-visited-state" href="06a-entity-sold-all-land">
           Filter: Has the overseas entity disposed of all its property or land in the UK?
         </a>
@@ -153,7 +153,7 @@
         <a class="govuk-link govuk-link--no-visited-state" href="06c-you-cannot-apply-to-remove-this-overseas-entity">
          Stop screen: You cannot apply to remove this overseas entity
         </a>
-     </li>
+     </li> #}
           <li>
         <a class="govuk-link govuk-link--no-visited-state" href="08b-before-you-start">
           Before you start
@@ -230,13 +230,13 @@
 <h2 class="govuk-heading-m" id="authScreens">Authentication code screens</h2>
       <ul class="govuk-list govuk-list--bullet">      
       <li>
-        <a class="govuk-link govuk-link--no-visited-state" href="auth/ASHCROFT-LIMITED-overview">Overseas entity register page</a> &nbsp;<strong class="govuk-tag govuk-tag--yellow">Existing design</strong>
+        <a class="govuk-link govuk-link--no-visited-state" href="v9/auth/ASHCROFT-LIMITED-overview">Overseas entity register page</a>
       </li>
       <li>
-        <a class="govuk-link govuk-link--no-visited-state" href="auth/request-an-authentication-code">Request an authentication code</a> &nbsp;<strong class="govuk-tag govuk-tag--yellow">Existing design</strong>
+        <a class="govuk-link govuk-link--no-visited-state" href="v9/auth/request-an-authentication-code">Request an authentication code</a>
       </li>
        <li>
-        <a class="govuk-link govuk-link--no-visited-state" href="auth/authentication-code-requested">Authentication code requested - button</a> &nbsp;<strong class="govuk-tag govuk-tag--green">Dev ready</strong>
+        <a class="govuk-link govuk-link--no-visited-state" href="v9/auth/authentication-code-requested">Authentication code requested - button</a>
       </li>
   </ul>
 
@@ -245,69 +245,60 @@
       <ul class="govuk-list govuk-list--bullet">
 <!--remove-->
       <li>
-        <a class="govuk-link govuk-link--no-visited-state" href="00-remove-an-overseas-entity">Start</a>
+        <a class="govuk-link govuk-link--no-visited-state" href="remove-v6/00-remove-an-overseas-entity">Start</a>
+        &nbsp;<strong class="govuk-tag govuk-tag--red">remove only</strong>
       </li>
 <!-- -->
       <li>
-        <a class="govuk-link govuk-link--no-visited-state" href="01-sign-in-to-companies-house">Sign in</a> &nbsp;<strong class="govuk-tag govuk-tag--yellow">Existing design</strong>
+        <a class="govuk-link govuk-link--no-visited-state" href="v9/01-sign-in-to-companies-house">Sign in</a>
       </li>
       <li>
-        <a class="govuk-link govuk-link--no-visited-state" href="02-do-you-want-to-continue-with-a-saved-filing">Do you want to continue with a saved filing?</a> &nbsp;<strong class="govuk-tag govuk-tag--green">Dev ready</strong>
+        <a class="govuk-link govuk-link--no-visited-state" href="v9/02-do-you-want-to-continue-with-a-saved-filing">Do you want to continue with a saved filing?</a> 
       </li>
       <li>
-        <a class="govuk-link govuk-link--no-visited-state" href="03-your-filings">Your filings</a> &nbsp;<strong class="govuk-tag govuk-tag--yellow">Existing design</strong>
+        <a class="govuk-link govuk-link--no-visited-state" href="v9/03-your-filings">Your filings</a>
       </li>
       <li>
-        <a class="govuk-link govuk-link--no-visited-state" href="04-do-any-beneficial-owners-or-managing-officers-have-their-personal-information-protected-at-companies-house">Protected information filter</a> &nbsp;<strong class="govuk-tag govuk-tag--green">Dev ready</strong>
+        <a class="govuk-link govuk-link--no-visited-state" href="v9/04-do-any-beneficial-owners-or-managing-officers-have-their-personal-information-protected-at-companies-house">Protected information filter</a> 
       </li>
+           <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="remove-v6/06a-entity-sold-all-land">
+          Filter: Has the overseas entity disposed of all its property or land in the UK? 
+        </a>&nbsp;<strong class="govuk-tag govuk-tag--red">remove only</strong>
+     </li>
+     <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="remove-v6/06b-is-the-overseas-entity-registered-as-the-owner">
+          Filter: Is the overseas entity currently listed on any land registry records as the registered owner of property or land in the UK?
+        </a>&nbsp;<strong class="govuk-tag govuk-tag--red">remove only</strong>
+     </li>
+          <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="remove-v6/06c-you-cannot-apply-to-remove-this-overseas-entity">
+         Stop screen: You cannot apply to remove this overseas entity
+        </a>&nbsp;<strong class="govuk-tag govuk-tag--red">remove only</strong>
+     </li>
       <li>
-        <a class="govuk-link govuk-link--no-visited-state" href="05-youll-need-to-file-an-update-statement-using-the-paper-form">Use paper service</a> &nbsp;<strong class="govuk-tag govuk-tag--green">Dev ready</strong>
-      </li>
-      <li>
-       <a class="govuk-link govuk-link--no-visited-state" href="06-are-there-any-trusts-involved-in-this-overseas-entity">MVP: Is there a trust involved in this overseas entity?</a>
-      </li>
-        <li>
-       <a class="govuk-link govuk-link--no-visited-state" href="07-youll-need-to-file-an-update-statement-using-the-paper-form">MVP: Use paper service - trusts</a>
+        <a class="govuk-link govuk-link--no-visited-state" href="remove-v6/08b-before-you-start">
+          Before you start - interrupt card</a>&nbsp;<strong class="govuk-tag govuk-tag--red">remove only</strong>
       </li>
 
-<!--remove-->
-      <li>
-       <a class="govuk-link govuk-link--no-visited-state" href="06b-is-the-overseas-entity-registered-as-the-owner">Is the overseas entity registered as the owner of any property or land in the UK?</a>
-      </li>
-            <li>
-       <a class="govuk-link govuk-link--no-visited-state" href="06c-you-cannot-apply-to-remove-this-overseas-entity">You cannot apply to remove this overseas entity</a>
-      </li>
-
-      <li>
-        <a class="govuk-link govuk-link--no-visited-state" href="08b-before-you-start">Before you start - interrupt card</a>
-      </li>
-<!-- -->
 
 
  <br>     
       <li>
-        <a class="govuk-link govuk-link--no-visited-state" href="09-what-is-the-overseas-entity-id">What is the Overseas Entity ID?</a> &nbsp; <strong class="govuk-tag govuk-tag--green">Dev ready</strong>
+        <a class="govuk-link govuk-link--no-visited-state" href="v9/09-what-is-the-overseas-entity-id">What is the Overseas Entity ID?</a> 
       </li>
       <li>
-        <a class="govuk-link govuk-link--no-visited-state" href="10-confirm-this-is-the-correct-overseas-entity">Confirm this is the correct overseas entity</a>
+        <a class="govuk-link govuk-link--no-visited-state" href="v9/10-confirm-this-is-the-correct-overseas-entity">Confirm this is the correct overseas entity</a>
       </li>
 
-
-<!--remove-->
       <li>
-        <a class="govuk-link govuk-link--no-visited-state" href="12-what-are-the-land-title-numbers">What are the title numbers for the property or land that the overseas entity has disposed of?</a>
-      </li>
-<!-- -->
-
-
-      <li>
-        <a class="govuk-link govuk-link--no-visited-state" href="11-company-authentication">Enter the authentication code</a> &nbsp;<strong class="govuk-tag govuk-tag--yellow">Existing design</strong>
+        <a class="govuk-link govuk-link--no-visited-state" href="v9/11-company-authentication">Enter the authentication code</a> &nbsp;<strong class="govuk-tag govuk-tag--yellow">Existing design</strong>
       </li>
             <li>
-        <a class="govuk-link govuk-link--no-visited-state" href="12-date-of-the-update-statement">MVP: Date of the update statement</a>
+        <a class="govuk-link govuk-link--no-visited-state" href="v9/12-date-of-the-update-statement">MVP: Date of the update statement</a>
       </li>
             <li>
-        <a class="govuk-link govuk-link--no-visited-state" href="13-who-can-we-contact-about-this-update-statement">Who can we contact about this update?</a> &nbsp;<strong class="govuk-tag govuk-tag--green">Dev ready</strong>  
+        <a class="govuk-link govuk-link--no-visited-state" href="remove-v6/13-who-can-we-contact-about-this-update-statement">Who can we contact about this update?</a> &nbsp;<strong class="govuk-tag govuk-tag--green">Dev ready</strong>  
       </li>
            <li>
       <a href="14-do-you-need-to-make-any-changes-to-this-overseas-entity">Do you need to make any changes to this overseas entity?</a></li>
