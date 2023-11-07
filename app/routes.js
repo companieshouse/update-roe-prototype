@@ -21,6 +21,7 @@ router.use('/', require('./routes/remove-v2.js'))
 router.use('/', require('./routes/remove-v3.js'))
 router.use('/', require('./routes/remove-v4.js'))
 router.use('/', require('./routes/remove-v5.js'))
+router.use('/', require('./routes/remove-v6.js'))
 
 
 // Clear all data in session
