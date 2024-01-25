@@ -29,13 +29,13 @@ Has the overseas entity disposed of all its property or land in the UK?
       name: "entity-sold-land",
       fieldset: {
         legend: {
-          text: "Has the overseas entity disposed of all its property or land in the UK?",
+          text: "Has the overseas entity disposed of all relevant property or land in the UK?",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--xl"
         }
       },
       hint: {
-      text: "Select 'yes' if the entity has disposed of all its UK property or land, or if it has never owned any."
+      text: "Select 'yes' if the entity has disposed of all relevant UK property or land, or if it has never owned any."
     },
       items: [
         {
@@ -48,6 +48,25 @@ Has the overseas entity disposed of all its property or land in the UK?
         }
       ]
     }) }}
+
+  <details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      What does 'relevant property or land' mean?
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    
+    <p>This means property or land in the UK that was bought on or after: 
+
+      <ul class="govuk-list govuk-list--bullet">
+      <li>1 January 1999 in England and Wales</li>
+      <li>8 December 2014 in Scotland</li>
+      <li>1 August 2022 in Northern Ireland</li>
+  </ul>
+  </p>
+  </div>
+</details>
 
 
   <!--
