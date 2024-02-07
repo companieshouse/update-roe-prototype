@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  What types of individuals and organisations are involved in the trust? – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">{{ data['trust-name'] }}</span>
+      <h1 class="govuk-heading-xl">Review legal entities involved in the trust</h1>
+
+      <table class="govuk-table">
+        <caption class="govuk-table__caption govuk-table__caption--m">Legal entities associated with this trust</caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Name</th>
+            <th scope="col" class="govuk-table__header">Role</th>
+            <th scope="col" class="govuk-table__header">Change</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Salcombe Ltd.</th>
+            <td class="govuk-table__cell">Settlor</td>
+            <td class="govuk-table__cell"><a href="#">Change</a></td>
+          </tr>
+        </tbody>
+      </table>
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Add a legal entity",
+          href: "43-tell-us-about-the-legal-entity"
+        }) }}
+      
+        {{ govukButton({
+          text: "No more to add",
+          classes: "govuk-button--secondary",
+          href: "44-trusts-associated-with-the-overseas-entity"
+        }) }}
+      </div>
+
+    </div>
+  </div>
+
+{% endblock %}

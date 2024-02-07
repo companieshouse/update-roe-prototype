@@ -1,0 +1,73 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  What date did Name Corp become an interested person? – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% if errorList %}
+      {{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: errorList
+      }) }}
+      {% endif %}
+      <form class="form" action="{{currentUrl}}" method="post">
+
+
+      <span class="govuk-caption-l">{{ data['trust-name'] }}</span>
+       <h1 class="govuk-heading-xl">What date did Name Corp become an interested person?</h1>
+        
+        {# <p class="govuk-!-margin-bottom-5 govuk-!-margin-top-5">If you need to update this information, you can change the answers here.</p> #}
+
+        {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+        {% from "govuk/components/input/macro.njk" import govukInput %} 
+
+
+     {{ govukDateInput({
+  id: "passport-issued",
+  namePrefix: "passport-issued",
+  fieldset: {
+    legend: {
+      text: "When was your passport issued?",
+      isPageHeading: true,
+      classes: "govuk-visually-hidden"
+    }
+  },
+  hint: {
+    text: "For example, 27 3 2007"
+  }
+}) }}
+
+
+
+
+
+        {{ govukInsetText({
+          html: '
+            <h2 class="govuk-heading-m">What information we&#39;ll show on the public register</h2>
+            <p>We will not show any of the information you provide in this section on the public Register of Overseas Entities. 
+              However, we may share it with HMRC.</p>
+                      '
+        }) }}
+
+        <div class="govuk-button-group">
+          
+            {{ govukButton({
+              formaction: "trust-details",
+              text: "Save and continue"
+            }) }}
+
+        </div>
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

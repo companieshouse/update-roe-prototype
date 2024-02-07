@@ -1,0 +1,78 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  What types of individuals and organisations are involved in the trust? – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+
+
+      <form class="form" action="" method="post">
+
+
+
+
+
+        {{ govukRadios({
+            idPrefix: "trustTypes",
+            name: "trustTypes",
+            fieldset: {
+              legend: {
+                text: "Who is involved in the trust?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--xl"
+              }
+            },
+            hint: {
+              text: "You can add more later."
+            },
+            items: [
+              {
+                value: "historical",
+                text: "Beneficial owners",
+                hint: {
+                    text: "This includes every individual or legal entity that has ever been a registrable beneficial owner of the overseas entity, due to being a trustee of this trust."
+                  }
+              },
+              {
+                value: "individual-trusts",
+                text: "Individuals",
+                hint: {
+                    text: "These could be beneficiaries, settlors, grantors, or interested persons."
+                  }
+              },
+              {
+                value: "ole-trusts",
+                text: "Legal entities",
+                hint: {
+                  text: "These could be beneficiaries, settlors, grantors, or interested persons. You do not need to tell us about government or public authorities."
+                  }
+              }
+                ]
+          }) }}
+
+
+
+
+
+          {{ govukButton({
+            text: "Save and continue",
+        href: './former-bo'
+          }) }}
+
+          </form>
+
+    </div>
+  </div>
+
+{% endblock %}
