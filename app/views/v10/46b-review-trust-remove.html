@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Review the turst – {{ serviceName }} – GOV.UK
+  Review the trust – {{ serviceName }} -margin-bottom-7 GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -17,8 +17,8 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-
-
+      {# NOTIFICATION BANNER
+      
       <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
   <div class="govuk-notification-banner__header">
     <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
@@ -32,19 +32,25 @@
     <a class="govuk-notification-banner__link" href="30-beneficial-owners-and-managing-officers-involved-in-the-overseas-entity">beneficial owner</a>.
     </p>
   </div>
-</div>
+</div> #}
 
 
       <span class="govuk-caption-l">{{ data['trust-name'] }}</span>
       <h1 class="govuk-heading-xl">Review the trust</h1>
+
+
+<!-- NEW TRUST INFO -->
+<div class="govuk-inset-text">
+    <p>This trust is no longer associated with a beneficial owner and will be removed. The information must still be updated up until the ceased date.</p>
+    <p>If it still needs to be involved, connect it to a
+    <a class="govuk-notification-banner__link" href="30-beneficial-owners-and-managing-officers-involved-in-the-overseas-entity">beneficial owner</a>.</p>
+
+</div>
+
       <p class="govuk-!-margin-bottom-5 govuk-!-margin-top-5">If you need to update this information, you can change the answers here.</p>
 
 
 
-
-
-        {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
-        {% from "govuk/components/input/macro.njk" import govukInput %}
 
         {% set bodateHtml %}
         {{ govukDateInput({
