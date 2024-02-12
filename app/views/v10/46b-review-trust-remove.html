@@ -38,16 +38,17 @@
       <span class="govuk-caption-l">{{ data['trust-name'] }}</span>
       <h1 class="govuk-heading-xl">Review the trust</h1>
 
+      <p class="govuk-!-margin-bottom-5 govuk-!-margin-top-5">If you need to update this information, you can change the answers here.</p>
+
 
 <!-- NEW TRUST INFO -->
 <div class="govuk-inset-text">
-    <p>This trust is no longer associated with a beneficial owner and will be removed. The information must still be updated up until the ceased date.</p>
-    <p>If it still needs to be involved, connect it to a
-    <a class="govuk-notification-banner__link" href="30-beneficial-owners-and-managing-officers-involved-in-the-overseas-entity">beneficial owner</a>.</p>
+    <p>This trust is no longer linked to a beneficial owner and will be removed.</p>
+    <p>Review the trust information and make sure it is correct as at the date the trust stopped being associated with the overseas entity.</p>
+    <p>If you don't want to remove this trust, you need to change the nature of control for the appropriate <a class="govuk-notification-banner__link" href="30-beneficial-owners-and-managing-officers-involved-in-the-overseas-entity">beneficial owner</a>.</p>
 
 </div>
 
-      <p class="govuk-!-margin-bottom-5 govuk-!-margin-top-5">If you need to update this information, you can change the answers here.</p>
 
 
 
@@ -95,13 +96,13 @@
       namePrefix: "trust-end",
       fieldset: {
         legend: {
-          text: "When date did the beneficial owner stop being associated with this trust?",
+          text: "When did this trust stop being associated with the overseas entity?",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--m"
         }
       },
       hint: {
-        text: "For example, 27 3 2007"
+        text: "For example, 27 3 2023. This trust's information must be correct to this date."
       }
     }) }}
 

@@ -69,6 +69,70 @@ Do you want to add another trust?
             ]
           }) }}
 
+{{ govukTable({
+            caption: "What you have added in this update",
+            captionClasses: "govuk-table__caption--m",
+            firstCellIsHeader: true,
+            head: [
+            {
+              text: "Trust",
+              classes: "govuk-visually-hidden"
+            },
+              {
+                text: "Change",
+                classes: "govuk-visually-hidden"
+              },
+              {
+                text: "Change",
+                classes: "govuk-visually-hidden"
+              },
+              {
+                text: "Remove",
+                classes: "govuk-visually-hidden"
+              },
+              {
+                text: "Remove",
+                classes: "govuk-visually-hidden"
+              }
+            ],
+            rows: [
+              [
+            
+              {
+                text: "A New Trust"
+              },
+              {
+                text: "Active"
+              },
+              {
+                html: '<a href="/register/trusts/trust-details-edit">Change</a>',
+              visuallyHiddenText: "Trust - A New Trust"
+              },
+              {
+                html: '<a href="/register/trusts/trust-details-edit">Remove</a>',
+              visuallyHiddenText: "Trust - A New Trust"
+              }
+             ],
+             [
+
+              {
+                text: "And Another One"
+              },
+              {
+                text: "Active"
+              },
+              {
+                html: '<a href="/register/trusts/trust-details-edit">Change</a>',
+              visuallyHiddenText: "Trust - And Another One"
+              },
+              {
+                html: '<a href="/register/trusts/trust-details-edit">Remove</a>',
+              visuallyHiddenText: "Trust - A New Trust"
+              }
+             ]
+            ]
+          }) }}         
+
 
 {{ govukRadios({
   classes: "govuk-radios",
