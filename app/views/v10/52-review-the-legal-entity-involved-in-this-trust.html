@@ -19,9 +19,9 @@
     
       <p class="govuk-!-margin-bottom-5 govuk-!-margin-top-5">If you need to update this legal entity's information, you can change the answers here.</p>
 
-          <div class="govuk-inset-text">
+          {# <div class="govuk-inset-text">
           You may need to <strong>enter any information that's missing</strong>.
-        </div>
+        </div> #}
 
       <form class="form" action="{{currentUrl}}" method="post">
 
@@ -551,6 +551,63 @@
         }) }}
         {% endif %}
         {% endif %}
+
+
+
+
+
+
+
+<!-- Still involved -->
+        <!-- html for following radio -->
+        {% set trusteeCeasedHtml %}
+        {{ govukDateInput({
+          id: "trustee-ceased",
+          namePrefix: "trustee-ceased",
+          fieldset: {
+            legend: {
+              text: "Date they ceased to be involved in the trust",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          hint: {
+            text: "For example, 27 1 2023"
+          }
+        }) }}
+        {% endset -%}
+
+
+        <!-- still involved radio -->
+      
+          {{ govukRadios({
+            name: "bo-ceased",
+            fieldset: {
+              legend: {
+                text: "Are they still involved in the trust?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            items: [
+              {
+                value: "yes",
+                text: "Yes"
+              },
+              {
+                value: "no",
+                text: "No",
+                      conditional: {
+                  html: trusteeCeasedHtml
+                }
+                
+              }
+            ]
+          }) }}
+
+
+
+
 
 
         {{ govukInsetText({
