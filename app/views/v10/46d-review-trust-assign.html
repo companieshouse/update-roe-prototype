@@ -34,24 +34,6 @@
       <p class="govuk-!-margin-bottom-5 govuk-!-margin-top-5">If you need to update this information, you can change the answers here.</p>
 
 
-{# 
-
-        {% set bodateHtml %}
-        {{ govukDateInput({
-          id: "bo-date",
-          namePrefix: "bo-date",
-          fieldset: {
-            legend: {
-              text: "What date did they become involved in the trust?",
-              isPageHeading: false,
-              classes: "govuk-fieldset__legend--s"
-            }
-          },
-          hint: {
-            text: "For example, 27 3 2007"
-          }
-        }) }}
-        {% endset -%} #}
 
 
         {{ govukInput({
@@ -120,7 +102,41 @@
 {% endset -%} #}
 
 
-<!-- remove trust -->
+<!-- Which of the overseas entity's beneficial owners are trustees of this trust? -->
+{% set roleHtml %}
+{{ govukCheckboxes({
+  name: "role",
+  fieldset: {
+    legend: {
+      text: "What is their role within the trust?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: "Select all that apply."
+  },
+  items: [
+      {
+      value: "beneficiary",
+      text: "Beneficiary"
+    },
+    {
+      value: "settlor",
+      text: "Settlor"
+    },
+    {
+      value: "grantor",
+      text: "Grantor"
+    },
+    {
+      value: "interested",
+      text: "Interested person"
+    }
+  ]
+}) }}
+{% endset -%}
+
 {% set removeTrustHtml %}
     {{ govukDateInput({
       id: "trust-end",
@@ -158,14 +174,14 @@
       value: "joe",
       text: "Joe Bloggs",
       conditional: {
-        html: removeTrustHtml
+        html: roleHtml
       }
     },
     {
       value: "portugal",
       text: "Acme Limited",
       conditional: {
-        html: textHtml
+        html: roleHtml
       }
     },
     {
