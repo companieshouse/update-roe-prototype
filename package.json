@@ -5,8 +5,8 @@
     "start": "govuk-prototype-kit start"
   },
   "dependencies": {
-    "govuk-frontend": "^4.5.0",
-    "govuk-prototype-kit": "^13.2.4",
+    "govuk-frontend": "5.2.0",
+    "govuk-prototype-kit": "13.16.1",
     "task-list-component": "github:x-govuk/task-list-component#v0.0.3"
   }
 }
