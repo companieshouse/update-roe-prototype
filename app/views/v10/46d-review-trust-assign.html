@@ -57,51 +57,6 @@
 
 
 
-{# <div class="govuk-form-group govuk-!-margin-bottom-4">
-  <fieldset class="govuk-fieldset" aria-describedby="involved">
-    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-      <h2 class="govuk-fieldset__heading">
-        Which of the overseas entity's beneficial owners are trustees of this trust?
-      </h2>
-    </legend>
-    <div id="involved-hint" class="govuk-hint">
-      Select all that apply. You can add more later.
-    </div>
-    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-      <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="involved" name="involved" type="checkbox" value="joebloggs">
-        <label class="govuk-label govuk-checkboxes__label" for="involved">
-          Joe Bloggs
-        </label>
-      </div>
-      <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="involved-2" name="involved" type="checkbox" value="acmelimited">
-        <label class="govuk-label govuk-checkboxes__label" for="involved-2">
-          Acme Limited
-        </label>
-
-    </div>
-  </fieldset>
-</div> #}
-
-
-
-<!-- updated trust question -->
-{# {% set emailHtml %}
-{{ govukInput({
-  id: "contact-by-email",
-  name: "contactByEmail",
-  type: "email",
-  autocomplete: "email",
-  spellcheck: false,
-  classes: "govuk-!-width-one-third",
-  label: {
-    text: "Email address"
-  }
-}) }}
-{% endset -%} #}
-
-
 <!-- Which of the overseas entity's beneficial owners are trustees of this trust? -->
 {% set roleHtml %}
 {{ govukCheckboxes({
@@ -110,7 +65,7 @@
     legend: {
       text: "What is their role within the trust?",
       isPageHeading: false,
-      classes: "govuk-fieldset__legend--m"
+      classes: "govuk-fieldset__legend--s"
     }
   },
   hint: {
