@@ -1,0 +1,457 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Tell us about the trust – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% if errorList %}
+      {{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: errorList
+      }) }}
+      {% endif %}
+      <form class="form" action="{{currentUrl}}" method="post">
+
+      <span class="govuk-caption-l">{{ data['trust-name'] }}</span>
+        <h1 class="govuk-heading-xl">Review individuals or entities involved in the trust</h1>
+        
+        <p class="govuk-!-margin-bottom-5 govuk-!-margin-top-5">If you need to update this information, you can change the answers here.</p>
+
+{{ govukDetails({
+  summaryText: "There is duplicated information on this page",
+  html: 'These duplications have come from the Trust Excel document uploaded on registration. <br><br>
+  Please remove one of the duplications and review the remaining individual or entity to make sure the information is up to date.'
+}) }}
+
+
+{{ govukDetails({
+  summaryText: "There is missing information on this page",
+  html: 'This missing information has come from incomplete fields in the Trust Excel document uplodaded on registration. <br><br>
+  You will need to add any missing information.'
+}) }}
+
+
+{{ govukDetails({
+  summaryText: "An individual or entity has become a former beneficial owner",
+  html: 'You will need to select &#39;Remove from this trust	&#39; and add themm as a former beneficial owner'
+}) }}
+
+        {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+
+        {% set bodateHtml %}
+        {{ govukDateInput({
+          id: "bo-date",
+          namePrefix: "bo-date",
+          fieldset: {
+            legend: {
+              text: "What date did they become involved in the trust?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          hint: {
+            text: "For example, 27 3 2007"
+          }
+        }) }}
+        {% endset -%}
+
+     
+
+  {{ govukSummaryList({
+  card: {
+    title: {
+      text: "Former beneficial owner"
+    },
+    actions: {
+      items: [
+        {
+          href: "#",
+          text: "",
+          visuallyHiddenText: "of Ashcroft Limited - Islands Trust"
+        }
+        
+      ]
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Is the former beneficial owner an individual or a legal entity?
+"
+      },
+      value: {
+        html: "Individual"
+      }
+    },
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        html: "Jane Wright"
+      }
+    },
+    {
+      key: {
+        text: "When did they become a beneficial owner?"
+      },
+      value: {
+        html: "4 October 2015"
+      }
+    },
+    {
+      key: {
+        text: "When did they cease to be a beneficial owner?"
+      },
+      value: {
+        html: "10 August 2021"
+      }
+    }
+  ]
+}) }}
+
+
+        <p class="govuk-body govuk-!-margin-bottom-7"><a href="../beneficial-owner/involved-types-test" class="govuk-link govuk-link--no-visited-state">Add a former beneficial owner</a></p>
+
+
+
+{{ govukSummaryList({
+  card: {
+    title: {
+      text: "Individual"
+    },
+    actions: {
+      items: [
+        {
+          href: "#",
+          text: "Change",
+          visuallyHiddenText: "of Ashcroft Limited - Islands Trust"
+        },
+                {
+          href: "#",
+          text: "Remove from this trust",
+          visuallyHiddenText: "of Ashcroft Limited - Islands Trust"
+        }
+        
+      ]
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        html: "Fred Lock"
+      }
+    },
+    {
+      key: {
+        text: "Date of birth:"
+      },
+      value: {
+        html: "27 June 1983"
+      }
+    },
+    {
+      key: {
+        text: "What is their role within the trust?"
+      },
+      value: {
+        html: '<ul class="govuk-list govuk-list--bullet">
+      <li> Settlor</li>'
+      }
+    },
+    {
+      key: {
+        text: "Date of birth:"
+      },
+      value: {
+        html: "27 June 1983"
+      }
+    },
+    {
+      key: {
+        text: "What is their nationality?"
+      },
+      value: {
+        html: "Not provided at registration"
+      }
+    },
+    {
+      key: {
+        text: "What is their home address?"
+      },
+      value: {
+        html: "Not provided at registration"
+      }
+    },
+    {
+      key: {
+        text: "Is their correspondence address the same as their home address?"
+      },
+      value: {
+        html: "Not provided at registration"
+      }
+    }
+  ]
+}) }}
+
+
+
+{{ govukSummaryList({
+  card: {
+    title: {
+      text: "Individual"
+    },
+    actions: {
+      items: [
+        {
+          href: "#",
+          text: "Change",
+          visuallyHiddenText: "of Ashcroft Limited - Islands Trust"
+        },
+                {
+          href: "#",
+          text: "Remove from this trust",
+          visuallyHiddenText: "of Ashcroft Limited - Islands Trust"
+        }
+        
+      ]
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        html: "Fred Lock"
+      }
+    },
+    {
+      key: {
+        text: "Date of birth:"
+      },
+      value: {
+        html: "27 June 1983"
+      }
+    },
+    {
+      key: {
+        text: "What is their role within the trust?"
+      },
+      value: {
+        html: '<ul class="govuk-list govuk-list--bullet">
+      <li> Grantor</li>'
+      }
+    },
+    {
+      key: {
+        text: "Date of birth:"
+      },
+      value: {
+        html: "27 June 1983"
+      }
+    },
+    {
+      key: {
+        text: "What is their nationality?"
+      },
+      value: {
+        html: "Not provided at registration"
+      }
+    },
+    {
+      key: {
+        text: "What is their home address?"
+      },
+      value: {
+        html: "Not provided at registration"
+      }
+    },
+    {
+      key: {
+        text: "Is their correspondence address the same as their home address?"
+      },
+      value: {
+        html: "Not provided at registration"
+      }
+    }
+  ]
+}) }}
+
+
+        <p class="govuk-body govuk-!-margin-bottom-7"><a href="../beneficial-owner/involved-types-test" class="govuk-link govuk-link--no-visited-state">Add an individual</a></p>
+
+
+
+{{ govukSummaryList({
+  card: {
+    title: {
+      text: "Legal entity"
+    },
+    actions: {
+      items: [
+        {
+          href: "#",
+          text: "Change",
+          visuallyHiddenText: "of Ashcroft Limited - Islands Trust"
+        },
+                {
+          href: "#",
+          text: "Remove from this trust",
+          visuallyHiddenText: "of Ashcroft Limited - Islands Trust"
+        }
+        
+      ]
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        html: "Salcombe Ltd"
+      }
+    },
+
+    {
+      key: {
+        text: "What is their role within the trust?"
+      },
+      value: {
+        html: '<ul class="govuk-list govuk-list--bullet">
+      <li> Grantor</li>'
+      }
+    },
+    {
+      key: {
+        text: "Date of birth:"
+      },
+      value: {
+        html: "27 June 1983"
+      }
+    },
+
+    {
+      key: {
+        text: "What is its principal or registered office address?"
+      },
+      value: {
+        html: 'Business unit 3<br>
+        27 Main street<br>
+        Tortola<br>
+        British Virgin Islands'
+      }
+    },
+    {
+      key: {
+        text: "Is their correspondence address the same as their home address?"
+      },
+      value: {
+        html: "Yes"
+      }
+    },
+    {
+      key: {
+        text: "What is its legal form?"
+      },
+      value: {
+        html: "Limited company"
+      }
+    },
+    {
+      key: {
+        text: "What is the governing law?"
+      },
+      value: {
+        html: "British Virgin Islands"
+      }
+    },
+    {
+      key: {
+        text: "Is it already on a public register in the country it was formed in?"
+      },
+      value: {
+        html: "Yes"
+      }
+    },
+    {
+      key: {
+        text: "Name of register"
+      },
+      value: {
+        html: "Registry of Corporate Affairs – BVI"
+      }
+    },
+    {
+      key: {
+        text: "Jurisdiction"
+      },
+      value: {
+        html: "British Virgin Islands"
+      }
+    },
+    {
+      key: {
+        text: "Entity’s registration number"
+      },
+      value: {
+        html: "23456781"
+      }
+    }
+  ]
+}) }}
+
+        <p class="govuk-body govuk-!-margin-bottom-7"><a href="../beneficial-owner/involved-types-test" class="govuk-link govuk-link--no-visited-state">Add a legal entity</a></p>
+
+
+
+
+     
+
+        {{ govukInsetText({
+          html: '
+            <h2 class="govuk-heading-m">What information we&#39;ll show on the public register</h2>
+            <p>We will not show any of the information you provide in this section on the public Register of Overseas Entities. 
+              However, we may share it with HMRC.</p>
+                      '
+        }) }}
+
+
+
+
+
+
+        <div class="govuk-button-group">
+          
+            {{ govukButton({
+              formaction: "trust-details",
+              text: "Save and continue"
+            }) }}
+        
+
+            {{ govukButton({
+              text: "Delete trust",
+              href: "delete-trust-warning",
+              classes: "govuk-button--warning"
+            }) }}
+
+        </div>
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
