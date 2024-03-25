@@ -1,0 +1,92 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Have any beneficial owners become or ceased in the update period? – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    
+    {% include "includes/rp-tag.html" %}
+
+  <form class="form" action="36-check-your-answers-before-submitting" method="post">
+
+  <span class="govuk-caption-l">{{ data['overseas-name'] }} - OE001485</span>
+
+    <h1 class="govuk-heading-xl">
+      Did the overseas entity own land in the relevant period?
+      </h1>
+
+    <div class="govuk-inset-text">
+      The relevant period is from 28 February 2022 until <b>7 August 2022</b>
+    </div>
+
+
+{{ govukRadios({
+  classes: "govuk-radios",
+  idPrefix: "ownedLand",
+  name: "owned-land",
+  fieldset: {
+    legend: {
+      text: "Did the overseas entity own land in the relevant period?",
+      isPageHeading: true,
+      classes: "govuk-visually-hidden"
+    }  
+  },
+  hint: {
+    text: ""
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes",
+      hint: {
+        text: ""
+      }
+    },
+    {
+      value: "no",
+      text: "No",
+hint: {
+        text: ""
+      }
+    }
+  ]
+}) }}
+
+        {{ govukInsetText({
+          html: '<h2 class="govuk-heading-m">What information we’ll show on the public register</h2>
+                <p>We will show the information you provide in this section on the public Register of Overseas Entities.</p>'
+        }) }}
+
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+      </form>
+
+
+<details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Why am I being asked this question?
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    We require information on X, Y, Z
+  </div>
+</details>
+
+
+
+    </div>
+  </div>
+
+{% endblock %}
