@@ -20,11 +20,16 @@
       <form class="form" action="../02a-bo-identified" method="get">
 
   <span class="govuk-caption-l">{{ data['overseas-name'] }} - {{ data['overseas-id'] }}</span>
-<h1 class="govuk-heading-xl">Beneficial owners and managing officers involved during the relevant period</h1>
+<h1 class="govuk-heading-xl">Beneficial owners involved in the overseas entity during the relevant period</h1>
 
+  <p class="govuk-body">
+     You must tell us about anyone that was a beneficial owner <strong>at any time during the relevant period</strong>, that the overseas entity has not already told us about.</p>
 
   </div>
 
+    <div class="govuk-inset-text">
+      The relevant period is between 28 February 2022 and <b>7 August 2022</b>
+    </div>
 
     <div class="govuk-grid-column-two-thirds">
 
@@ -33,7 +38,7 @@
         name: "boType",
         fieldset: {
           legend: {
-            text: "Which type of beneficial owner or managing officer do you want to add?",
+            text: "Which type of beneficial owner do you want to add?",
             isPageHeading: false,
             classes: "govuk-fieldset__legend--m"
           }
@@ -55,18 +60,15 @@
             value: "beneficialTypesGov",
             text: "Government or public authority beneficial owner"
           },
-          {
-            value: "moTypesIndividual",
-            text: "Individual managing officer"
-          },
-          {
-            value: "moTypesCorporate",
-            text: "Corporate managing officer"
-          }
+    {
+      divider: "or"
+    },
+    {
+      value: "none",
+      text: "I do not need to add any additional beneficial owners"
+    }
         ]
         }) }}
-
-
 
 
 
