@@ -66,8 +66,65 @@
 
 
 
-<!-- ******* What an overseas entity update statement is *******  -->
+
+<!-- ******* Relevant period *******  -->
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-margin-top-0">
+      <h3 id="oe-update" class="govuk-heading-m">{% include "includes/rp-tag.html" %}
+        New information for the relevant period</h3>
+
+      <div class="govuk-inset-text">
+        The relevant period is from 28 February 2022 until you registered or until 31 January 2023 
+      </div>
+        
+      <p class="govuk-body">It requires you to check and confirm that all the information about the overseas entity on the register is still correct, and update anything that has changed. You must file an update statement even if nothing has changed. </p>
+
+
+
+{{ govukTable({
+  caption: "New information required",
+  captionClasses: "govuk-table__caption--m",
+  firstCellIsHeader: true,
+  head: [
+    {
+      text: "Statement"
+    },
+    {
+      text: "Supporting information"
+    }
+  ],
+  rows: [
+    [
+      {
+        text: "Beneficial owners involved during the relevant period"
+      },
+      {
+        html: 'Beneficial owner information outlined in <a href="https://www.gov.uk/guidance/register-an-overseas-entity#what-information-you-need-to-submit">the beneficial owner section</a> of the registration guidance.'
+      }
+    ],
+    [
+      {
+        text: "Trusts involved during the relevant period"
+      },
+      {
+        html: "Name of trustee<br>test"
+      }
+    ],
+    [
+      {
+        text: "Beneficiaries of a trust involved during the relevant period"
+      },
+      {
+        text: "£4,282.20"
+      }
+    ]
+  ]
+}) }}
+
+
+
+
+<!-- ******* What an overseas entity update statement is *******  -->
+      {# <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-margin-top-0"> #}
       <h3 id="oe-update" class="govuk-heading-m">What an overseas entity update statement is</h3>
       <p class="govuk-body">An update statement must be filed every year by all overseas entities on the Register of Overseas Entities. 
       <p class="govuk-body">It requires you to check and confirm that all the information about the overseas entity on the register is still correct, and update anything that has changed. You must file an update statement even if nothing has changed. </p>
