@@ -49,15 +49,18 @@
   
   {% include "includes/rp-tag.html" %} 
       <h1 class="govuk-heading-l">
-       Answers for the relevant period 
+       Information about the relevant period 
       </h1>
 
+    <div class="govuk-inset-text">
+      The relevant period is between <strong>28 February 2022</strong> and <strong>7 August 2022</strong>
+    </div>
 
       {{ govukSummaryList({
         rows: [
           {
             key: {
-              text: " Did the overseas entity own land in the relevant period?"
+              text: "Was the overseas entity a registered proprietor of UK property or land during the relevant period?"
             },
             value: {
               text: "Yes"
@@ -108,7 +111,7 @@
 
 
 <h1 class="govuk-heading-m">
-        Beneficial owners involved during the relevant period
+        Beneficial owners in the relevant period
       </h1>
 
       {{ govukSummaryList({
@@ -334,14 +337,14 @@
 
 <!-- ********** TRUSTS  - RELEVANT PERIOD  ********** -->
 <h1 class="govuk-heading-m">
-        Trusts involved during the relevant period
+        Trusts in the relevant period
       </h1>
               {{ govukSummaryList({
                 classes: 'govuk-!-margin-bottom-9',
                 rows: [
                   {
                     key: {
-                      text: "Were there any additional trusts during the relevant period, that you haven't told us about?
+                      text: "Were there any additional trusts involved in the overseas entity during the relevant period?
 "
                     },
                     value: {
@@ -363,13 +366,13 @@
 
 <!-- ********** BENFICIARIES - RELEVANT PERIOD  ********** -->
 <h1 class="govuk-heading-m">
-        Beneficiaries involved during the relevant period
+        Beneficiaries in the relevant period
       </h1>
               {{ govukSummaryList({
                 rows: [
                   {
                     key: {
-                      text: "Were there any additional beneficiaries during the relevant period, that you haven't told us about?"
+                      text: "Did anyone become or cease to be a beneficiary of a trust involved in the overseas entity during the relevant period?"
                     },
                     value: {
                       text: 'No'
