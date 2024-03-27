@@ -13,6 +13,8 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
+           {% include "includes/rp-tag.html" %}
+
       <form class="form" action="../02a-bo-identified" method="get">
 
   <span class="govuk-caption-l">{{ data['overseas-name'] }} - {{ data['overseas-id'] }}</span>
@@ -127,7 +129,7 @@
         {{ govukButton({
               html: 'No more <span class="govuk-visually-hidden">beneficial owners or managing officers</span> to add',
            classes: "govuk-button--secondary",
-           href: "15-has-the-overseas-entity-identified-any-registrable-beneficial-owners"
+           href: "statement-additional-trusts"
         }) }}
 
 

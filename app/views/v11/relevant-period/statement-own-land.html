@@ -16,7 +16,7 @@ Have any beneficial owners become or ceased in the update period? – {{ service
     
     {% include "includes/rp-tag.html" %}
 
-  <form class="form" action="36-check-your-answers-before-submitting" method="post">
+  <form class="form" method="post">
 
   <span class="govuk-caption-l">{{ data['overseas-name'] }} - OE001485</span>
 
@@ -68,7 +68,8 @@ hint: {
 
 
       {{ govukButton({
-        text: "Save and continue"
+        text: "Save and continue",
+        href: "statement-bo-cease"
       }) }}
       </form>
 
