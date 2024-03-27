@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-Have any beneficial owners become or ceased in the update period? – {{ serviceName }} – GOV.UK
+Were there any additional trusts during the relevant period, that you haven't told us about? – {{ serviceName }} – GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -21,7 +21,7 @@ Have any beneficial owners become or ceased in the update period? – {{ service
   <span class="govuk-caption-l">{{ data['overseas-name'] }} - OE001485</span>
 
     <h1 class="govuk-heading-xl">
-      additional trusts
+      Were there any additional trusts during the relevant period, that you haven't told us about?
       </h1>
 
     <div class="govuk-inset-text">
@@ -63,6 +63,7 @@ hint: {
   ]
 }) }}
 
+<!-- NOTES FOR CONTENT - STATEMENTS SHOWN ON REGISTER -->
         {{ govukInsetText({
           html: '<h2 class="govuk-heading-m">What information we’ll show on the public register</h2>
                 <p>We will show the information you provide in this section on the public Register of Overseas Entities.</p>'
