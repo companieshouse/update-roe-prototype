@@ -23,7 +23,7 @@
     </h1>
 
     {{ govukButton({
-      text: "Start now",
+      text: "Start update journey",
       href: "00-file-an-overseas-entity-update-statement"
     }) }}
 
@@ -121,7 +121,16 @@
 
 
 <h2 class="govuk-heading-m" id="relevantPeriod">Relevant period</h2>
-      <ul class="govuk-list govuk-list--bullet">  
+      
+    {{ govukButton({
+      text: "Start relevant period journey",
+      href: "relevant-period/0-start-page"
+    }) }}
+
+      <ul class="govuk-list govuk-list--bullet">
+              <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="relevant-period/0-start-page">Start page - relevant period</a>
+      </li>     
       <li>
         <a class="govuk-link govuk-link--no-visited-state" href="relevant-period/task-list">Task list</a>
       </li>    
