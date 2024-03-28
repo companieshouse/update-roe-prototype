@@ -4,6 +4,10 @@
   Task list template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
 {% block content %}
 
 {% from "task-list-component/macro.njk" import govukTaskList %}
@@ -51,7 +55,7 @@
 </ul>
 
       {{ govukButton({
-        text: "Submit and pay",
+        text: "Continue",
         href: "36-check-your-answers-before-submitting"
       }) }}
     </div>
