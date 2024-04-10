@@ -1,0 +1,140 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Beneficial owners or managing officers involved in the overseas entity – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+           {% include "includes/rp-tag.html" %}
+
+      <form class="form" action="../02a-bo-identified" method="get">
+
+  <span class="govuk-caption-l">{{ data['overseas-name'] }} - {{ data['overseas-id'] }}</span>
+<h1 class="govuk-heading-xl">Beneficial owners involved in the overseas entity during the relevant period</h1>
+
+  <p class="govuk-body">
+     You must tell us about anyone that was a beneficial owner <strong>at any time during the relevant period</strong>, that the overseas entity has not already told us about.
+  </p>
+
+    <div class="govuk-inset-text">
+      The relevant period is between <strong>28 February 2022</strong> and <strong>7 August 2022</strong>
+    </div>
+    
+  </div>
+  
+<div class="govuk-grid-column-full govuk-!-margin-top-6">
+
+
+         {{ govukTable({
+          caption: 'What <span class="govuk-visually-hidden">beneficial owners or managing officers</span> you have added in this update' | safe,
+          captionClasses: "govuk-table__caption--m",
+          classes: "govuk-!-margin-bottom-8",
+          firstCellIsHeader: true,
+          head: [
+          {
+            text: "Name",
+            classes: "govuk-visually-hidden"
+          },
+          {
+            text: "Type",
+            classes: "govuk-visually-hidden"
+          },
+          {
+            text: "Status",
+            classes: "govuk-visually-hidden"
+          },
+            {
+              text: "Change or remove",
+              classes: "govuk-visually-hidden"
+            }
+          ],
+          rows: [
+            [
+              {
+                text: "Joe Bloggs"
+              },
+              {
+                text: "Individual beneficial owner"
+              },
+              {
+                text: "Ceased"
+              },
+            {
+              html: '<a href="25-review-the-individual-beneficial-owner">Change</a>',
+              visuallyHiddenText: "Individual beneficial owner - David Bloggs"
+            }
+
+
+              ]
+          ]
+        }) }} 
+
+</div>
+    <div class="govuk-grid-column-two-thirds">
+
+        {{ govukRadios({
+        idPrefix: "boType",
+        name: "boType",
+        fieldset: {
+          legend: {
+            text: "Which type of beneficial owner do you want to add?",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: "You can add more later."
+        },
+        items: [
+          {
+            value: "beneficialTypesIndividual",
+            text: "Individual beneficial owner"
+          },
+          {
+            value: "beneficialTypesOther",
+            text: "Other legal entity beneficial owner"
+
+          },
+          {
+            value: "beneficialTypesGov",
+            text: "Government or public authority beneficial owner"
+          }
+        ]
+        }) }}
+
+
+
+        <div class="govuk-button-group">
+
+        {{ govukButton({
+          text: "Add",
+          href: "#"
+        }) }}
+
+
+        {{ govukButton({
+              html: 'No more <span class="govuk-visually-hidden">beneficial owners or managing officers</span> to add',
+           classes: "govuk-button--secondary",
+           href: "statement-additional-trusts"
+        }) }}
+
+
+      </div>
+
+</form>
+
+
+</div>
+  </div>
+
+{% endblock %}
+
+

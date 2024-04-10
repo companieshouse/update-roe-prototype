@@ -1,0 +1,81 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Beneficial owners or managing officers involved in the overseas entity – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+          {% include "includes/rp-tag.html" %}
+
+      <form class="form" action="../02a-bo-identified" method="get">
+
+  <span class="govuk-caption-l">{{ data['overseas-name'] }} - {{ data['overseas-id'] }}</span>
+<h1 class="govuk-heading-xl">Beneficial owners involved in the overseas entity during the relevant period</h1>
+
+  <p class="govuk-body">
+     You must tell us about anyone that was a beneficial owner <strong>at any time during the relevant period</strong>, that the overseas entity has not already told us about.</p>
+
+  </div>
+
+    <div class="govuk-inset-text">
+      The relevant period is between <strong>28 February 2022</strong> and <strong>7 August 2022</strong>
+    </div>
+
+    <div class="govuk-grid-column-two-thirds">
+
+        {{ govukRadios({
+        idPrefix: "boType",
+        name: "boType",
+        fieldset: {
+          legend: {
+            text: "Which type of beneficial owner do you want to add?",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: "You can add more later."
+        },
+        items: [
+          {
+            value: "beneficialTypesIndividual",
+            text: "Individual beneficial owner"
+          },
+          {
+            value: "beneficialTypesOther",
+            text: "Other legal entity beneficial owner"
+
+          },
+          {
+            value: "beneficialTypesGov",
+            text: "Government or public authority beneficial owner"
+          }
+        ]
+        }) }}
+
+
+
+        {{ govukButton({
+          text: "Add",
+          href: "31-tell-us-about-the-individual-person"
+        }) }}
+
+</form>
+
+
+</div>
+  </div>
+
+{% endblock %}
+
+

@@ -1,0 +1,110 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      {% include "includes/rp-tag.html" %}
+
+      <h1 class="govuk-heading-xl">
+        Check your answers for the relevant period
+      </h1>
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: " Did the overseas entity own land in the relevant period?"
+            },
+            value: {
+              text: "Yes"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Question 1"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Did anyone become or cease to be a registrable beneficial owner during the relevant period?"
+            },
+            value: {
+              text: "Yes – the entity has reasonable cause to believe that at least one person become or ceased to be a registrable beneficial owner during the relevant period."
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Question 2"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Were there any additional trusts involved in the overseas entity during the relevant period?"
+            },
+            value: {
+              text: "Answer 3"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Question 3"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <h2 class="govuk-heading-m">
+        Submit the relevant period section
+      </h2>
+
+      <p>
+        You can then continue to file an overseas entity update statement.
+      </p>
+
+      <form action="/confirmation" method="post" novalidate>
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+        {{ govukButton({
+          text: "Save for later",
+          classes: "govuk-button--secondary"
+        }) }}
+      </div>
+        
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}
