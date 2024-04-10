@@ -10,28 +10,30 @@
 
 {% block content %}
 
+{% include "includes/rp-tag.html" %}
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <div class="interrupt-card">
-        <h1 class="govuk-heading-l">Before you start</h3>
-
-          <h2 class="govuk-heading-m">Authentication code</h2>
-
-  <p class="govuk-body">
-     You will need the overseas entity's authentication code to file this update statement.</p>
-  <p class="govuk-body"> If you need to request one, search for the overseas entity on the <a href="https://find-and-update.company-information.service.gov.uk/">Companies House register</a>,  then select 'Request an authentication code'. We'll send the code to the email address that we have on record for the overseas entity.</p>
 
 
-          <h2 class="govuk-heading-m">Verification checks</h2>
+        <h1 class="govuk-heading-l">New information needed from 2024</h3>
 
   <p class="govuk-body">
-     If there have been any changes to the overseas entity, its beneficial owners or managing officers, these changes must be verified by a UK-regulated agent. This must be done no more than 3 months before the date of this update statement. </p>
-  <p class="govuk-body">
-     The UK-regulated agent will need to provide their <a href="https://www.gov.uk/guidance/agent-assurance-codes" class="govuk-link">agent assurance code</a> to confirm they have authorisation to carry out verification checks.</p>
-  <p class="govuk-body">
-     If you are not changing any information, you will not need to complete any verification checks. </p>
+     You've told us that this overseas entity was the registered proprietor of UK property or land during the relevant period.</p>
 
+    <p class="govuk-body">
+     You need to provide information about any additional beneficial owners, trusts and beneficiaries during the relevant period that the overseas entity has not already told us about.</p>
 
+    {# <p class="govuk-body">
+     The relevant period for this overseas entity is between <strong>28 February 2022</strong> and <strong>when the overseas entity registered</strong></p> #}
+
+      <p class="govuk-body">This is the period of time between 28 February 2022 and either: 
+
+        <ul class="govuk-list govuk-list--bullet">
+        <li>the end of the transition period (31 January 2023)</li>
+        <li>the entity's registration date, if it registered before the end of the transition period</li>
+        </ul>
 
 
   {{ govukButton({
