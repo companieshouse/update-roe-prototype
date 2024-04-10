@@ -30,11 +30,11 @@
     
   </div>
   
-<div class="govuk-grid-column-full govuk-!-margin-top-6">
+<div class="govuk-grid-column-two-thirds govuk-!-margin-top-6">
 
 
          {{ govukTable({
-          caption: 'What <span class="govuk-visually-hidden">beneficial owners or managing officers</span> you have added in this update' | safe,
+          caption: 'What <span class="govuk-visually-hidden">registrable beneficial owners</span> you have added to the relevant period' | safe,
           captionClasses: "govuk-table__caption--m",
           classes: "govuk-!-margin-bottom-8",
           firstCellIsHeader: true,
@@ -45,10 +45,6 @@
           },
           {
             text: "Type",
-            classes: "govuk-visually-hidden"
-          },
-          {
-            text: "Status",
             classes: "govuk-visually-hidden"
           },
             {
@@ -63,9 +59,6 @@
               },
               {
                 text: "Individual beneficial owner"
-              },
-              {
-                text: "Ceased"
               },
             {
               html: '<a href="25-review-the-individual-beneficial-owner">Change</a>',
