@@ -1899,12 +1899,32 @@
    }) }}
 
 
+{{ govukRadios({
+  name: "haveYouCompletedThisSection",
+  fieldset: {
+    legend: {
+      text: "Have you completed this section?",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes, I’ve completed this section"
+    },
+    {
+      value: "no",
+      text: "No, I’ll come back to it later"
+    }
+  ]
+}) }}
 
       <form method="post">
 
         {{ govukButton({
-          text: "Continue to payment",
-          href: "xx-payment"
+          text: "Continue",
+          href: "task-list-test"
         }) }}
         &nbsp; &nbsp;
 
