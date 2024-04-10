@@ -23,9 +23,11 @@
     }
   ]
 }) }}
+
 {% endblock %}
 
 {% block content %}
+
 
   <div class="govuk-grid-row">
 
@@ -33,6 +35,8 @@
     {% include "includes/govuk-content-header-relevant-period.html" %} 
 
     <div class="govuk-grid-column-one-third">
+
+      
 
       <aside class="app-related-items" role="complementary">
         <h2 class="govuk-heading-m" id="subsection-title">
@@ -132,8 +136,10 @@
 
 <!-- ******* New relevant period section *******  -->
 
-      <h4 class="govuk-heading-m">Providing information about the relevant period </h4>
-      {% include "includes/rp-tag.html" %}
+<div class="rp-start govuk-!-margin-bottom-5">
+  {% include "includes/rp-tag.html" %}
+      <h3 id="relevant-period" class="govuk-heading-m">Providing information about the relevant period </h3>
+
       <p class="govuk-body">As part of your next update statement, you may need to provide additional information about the overseas entity that relates to the relevant period. 
         
       <p class="govuk-body">This is the period of time between 28 February 2022 and either: 
@@ -145,7 +151,7 @@
 
 <p class="govuk-body"><a href="#">Find out more about what relevant period information you'll need to provide</a></p>
 
-
+</div>
 
 
 <!-- ******* When you need to file *******  -->
