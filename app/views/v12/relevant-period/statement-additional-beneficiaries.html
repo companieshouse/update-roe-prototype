@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-Were there any additional beneficiaries during the relevant period, that you haven't told us about? – {{ serviceName }} – GOV.UK
+Did anyone become or cease to be a beneficiary of a trust involved in the overseas entity during the pre-registration period? – {{ serviceName }} – GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -21,11 +21,11 @@ Were there any additional beneficiaries during the relevant period, that you hav
   <span class="govuk-caption-l">{{ data['overseas-name'] }} - OE001485</span>
 
     <h1 class="govuk-heading-xl">
-      Did anyone become or cease to be a beneficiary of a trust involved in the overseas entity during the relevant period?
+      Did anyone become or cease to be a beneficiary of a trust involved in the overseas entity during the pre-registration period?
       </h1>
 
     <div class="govuk-inset-text">
-      The relevant period is between <strong>28 February 2022</strong> and <strong>18 September 2022</strong>
+      This overseas entity's pre-registration period is between <strong>28 February 2022</strong> and <strong>18 September 2022</strong>
     </div>
 
 
@@ -47,7 +47,7 @@ Were there any additional beneficiaries during the relevant period, that you hav
     {
       value: "no",
       html: "No – the entity has <strong>no reasonable cause</strong> to believe that <strong>anyone</strong> has become or ceased to be 
-      a beneficiary of a trust involved in the overseas entity during the update period.",
+      a beneficiary of a trust involved in the overseas entity during the pre-registration period.",
       hint: {
         text: ""
       }
@@ -55,7 +55,7 @@ Were there any additional beneficiaries during the relevant period, that you hav
     {
       value: "yes",
       html: "Yes – the entity <strong>has reasonable cause</strong> to believe that <strong>at least one person</strong> become or ceased to be 
-      a beneficiary of a trust involved in the overseas entity during the update period.",
+      a beneficiary of a trust involved in the overseas entity during the pre-registration period.",
 hint: {
         text: ""
       }

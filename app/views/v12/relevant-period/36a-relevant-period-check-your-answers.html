@@ -14,19 +14,19 @@
 
   {% include "includes/rp-tag.html" %} 
   <span class="govuk-caption-l">{{ data['overseas-name'] }} - OE001485</span>
-      <h1 class="govuk-heading-xl">Check your answers for the relevant period</h1>
+      <h1 class="govuk-heading-xl">Check your answers for the pre-registration period</h1>
 
 
 
     <div class="govuk-inset-text">
-      The relevant period is between <strong>28 February 2022</strong> and <strong>18 September 2022</strong>
+      Thsi overseas entity's pre-registration period is between <strong>28 February 2022</strong> and <strong>18 September 2022</strong>
     </div>
 
       {{ govukSummaryList({
         rows: [
           {
             key: {
-              text: "Was the overseas entity a registered proprietor of UK property or land during the relevant period?"
+              text: "Was the overseas entity a registered proprietor of UK property or land during the pre-registration period?"
             },
             value: {
               text: "Yes"
@@ -77,14 +77,14 @@
 
 
 <h1 class="govuk-heading-m">
-        Beneficial owners in the relevant period
+        Beneficial owners in the pre-registration period
       </h1>
 
       {{ govukSummaryList({
         rows: [
           {
             key: {
-              text: " Did anyone become or cease to be a beneficial owner in the relevant period?"
+              text: " Did anyone become or cease to be a beneficial owner in the pre-registration period?"
             },
             value: {
               text: "Yes"
@@ -233,18 +233,18 @@
           Nature of control
         </dt>
         <dd class="govuk-summary-list__value">
-          The beneficial owner is a member of a firm that is not a legal person under its governing law, and:
+          The beneficial owner was a member of a firm that is not a legal person under its governing law, and:
 
           <ul class="govuk-list govuk-list--bullet">
-            <li>the members of that firm (in their capacity as such) hold, directly or indirectly, more than 25% of the shares in the entity</li>
+            <li>the members of that firm (in their capacity as such) held, directly or indirectly, more than 25% of the shares in the entity</li>
           </ul>
-          The beneficial owner is a trustee of a trust and:
+          The beneficial owner was a trustee of a trust and:
           <ul class="govuk-list govuk-list--bullet">
-            <li>the trustees of that trust (in their capacity as such) hold, directly or indirectly, more than 25% of the shares in the entity</li>
+            <li>the trustees of that trust (in their capacity as such) held, directly or indirectly, more than 25% of the shares in the entity</li>
           </ul>
-          The beneficial owner is a member of a firm that is not a legal person under its governing law, and:
+          The beneficial owner was a member of a firm that is not a legal person under its governing law, and:
           <ul class="govuk-list govuk-list--bullet">
-            <li>the members of that firm (in their capacity as such) hold, directly or indirectly, more than 25% of the shares in the entity</li>
+            <li>the members of that firm (in their capacity as such) held, directly or indirectly, more than 25% of the shares in the entity</li>
           </ul>
         </dd>
         <dd class="govuk-summary-list__actions">
@@ -256,16 +256,16 @@
       </div> 
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Are they on the UK sanctions list?
+          Were they on the UK sanctions list?
 
         </dt>
         <dd class="govuk-summary-list__value">
-          <p>No, they are not on the sanctions list</p>
+          <p>No, they were not on the sanctions list</p>
         </dd>
         <dd class="govuk-summary-list__actions">
           <a href="/register/beneficial-owner-individual">
             Change
-            <span class="govuk-visually-hidden"> Individual beneficial owner Dr Lisa Davies Are they on the sanctions list?</span>
+            <span class="govuk-visually-hidden"> Individual beneficial owner Dr Lisa Davies Were they on the sanctions list?</span>
           </a>
         </dd>
       </div>
@@ -293,7 +293,7 @@
         <dd class="govuk-summary-list__actions">
           <a href="/register/beneficial-owner-individual">
             Change
-            <span class="govuk-visually-hidden"> Individual beneficial owner Dr Lisa Davies Are they on the sanctions list?</span>
+            <span class="govuk-visually-hidden"> Individual beneficial owner Dr Lisa Davies Were they on the sanctions list?</span>
           </a>
         </dd>
       </div>
@@ -303,14 +303,14 @@
 
 <!-- ********** TRUSTS  - RELEVANT PERIOD  ********** -->
 <h1 class="govuk-heading-m">
-        Trusts in the relevant period
+        Trusts in the pre-registration period
       </h1>
               {{ govukSummaryList({
                 classes: 'govuk-!-margin-bottom-9',
                 rows: [
                   {
                     key: {
-                      text: "Were there any additional trusts involved in the overseas entity during the relevant period?
+                      text: "Were there any additional trusts involved in the overseas entity during the pre-registration period?
 "
                     },
                     value: {
@@ -332,13 +332,13 @@
 
 <!-- ********** BENFICIARIES - RELEVANT PERIOD  ********** -->
 <h1 class="govuk-heading-m">
-        Beneficiaries in the relevant period
+        Beneficiaries in the pre-registration period
       </h1>
               {{ govukSummaryList({
                 rows: [
                   {
                     key: {
-                      text: "Did anyone become or cease to be a beneficiary of a trust involved in the overseas entity during the relevant period?"
+                      text: "Did anyone become or cease to be a beneficiary of a trust involved in the overseas entity during the pre-registration period?"
                     },
                     value: {
                       text: 'No'

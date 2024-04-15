@@ -18,14 +18,14 @@
       {% include "includes/rp-tag.html" %}
 
       <h1 class="govuk-heading-xl">
-        Check your answers for the relevant period
+        Check your answers for the pre-registration period
       </h1>
 
       {{ govukSummaryList({
         rows: [
           {
             key: {
-              text: " Did the overseas entity own land in the relevant period?"
+              text: " Was the overseas entity a registered owner of UK property or land during the pre-registration period?"
             },
             value: {
               text: "Yes"
@@ -43,10 +43,10 @@
           ,
           {
             key: {
-              text: "Did anyone become or cease to be a registrable beneficial owner during the relevant period?"
+              text: "Did anyone become or cease to be a registrable beneficial owner during the pre-registration period?"
             },
             value: {
-              text: "Yes – the entity has reasonable cause to believe that at least one person become or ceased to be a registrable beneficial owner during the relevant period."
+              text: "Yes – the entity has reasonable cause to believe that at least one person become or ceased to be a registrable beneficial owner during the pre-registration period."
             },
             actions: {
               items: [
@@ -61,7 +61,7 @@
           ,
           {
             key: {
-              text: "Were there any additional trusts involved in the overseas entity during the relevant period?"
+              text: "Were there any additional trusts involved in the overseas entity during the pre-registration period?"
             },
             value: {
               text: "Answer 3"

@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-Were there any additional trusts during the relevant period, that you haven't told us about? – {{ serviceName }} – GOV.UK
+Were there any trusts involved in the overseas entity during the pre-registration period that it has not already told us about? – {{ serviceName }} – GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -21,11 +21,11 @@ Were there any additional trusts during the relevant period, that you haven't to
   <span class="govuk-caption-l">{{ data['overseas-name'] }} - OE001485</span>
 
     <h1 class="govuk-heading-xl">
-      Were there any trusts involved in the overseas entity during the relevant period that it has not already told us about?
+      Were there any trusts involved in the overseas entity during the pre-registration period that it has not already told us about?
       </h1>
 
     <div class="govuk-inset-text">
-      The relevant period is between <strong>28 February 2022</strong> and <strong>18 September 2022</strong>
+      This overseas entity's pre-registration period is between <strong>28 February 2022</strong> and <strong>18 September 2022</strong>
     </div>
 
 
@@ -46,14 +46,14 @@ Were there any additional trusts during the relevant period, that you haven't to
   items: [
     {
       value: "no",
-      html: "No – the entity has <strong>no reasonable cause</strong> to believe that there were <strong>any trusts</strong> involved in the overseas entity during the relevant period that it has not already provided information about.",
+      html: "No – the entity has <strong>no reasonable cause</strong> to believe that there were <strong>any trusts</strong> involved in the overseas entity during the pre-registration period that it has not already provided information about.",
       hint: {
         text: ""
       }
     },
     {
       value: "yes",
-      html: "Yes – the entity <strong>has reasonable cause</strong> to believe that there was <strong>at least one trust</strong> involved in the overseas entity during the relevant period that it has not already provided information about.",
+      html: "Yes – the entity <strong>has reasonable cause</strong> to believe that there was <strong>at least one trust</strong> involved in the overseas entity during the pre-registration period that it has not already provided information about.",
 hint: {
         text: ""
       }
