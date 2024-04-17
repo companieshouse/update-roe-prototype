@@ -586,7 +586,7 @@
 
 
 
-
+<!-- start date -->
         {{ govukDateInput({
           id: "owner-startdate",
           namePrefix: "owner-startdate",
@@ -619,6 +619,28 @@
   ]
         }) }}
 
+
+
+<!-- bo ceased -->
+{{ govukDateInput({
+  id: "bo-ceased",
+  namePrefix: "bo-ceased",
+  fieldset: {
+    legend: {
+      text: "When did they cease to be a registrable beneficial owner?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: "For example, 27 3 2007"
+  }
+}) }}
+
+
+
+
+{# 
 {% set boCeasedHtml %}
 {{ govukDateInput({
   id: "bo-ceased",
@@ -660,7 +682,7 @@
       
     }
   ]
-}) }}
+}) }} #}
 
 {# 
           ******* To be added back in after trust web screens. ******* 
