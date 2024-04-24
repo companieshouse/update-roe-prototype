@@ -27,15 +27,28 @@ Have any beneficial owners become or ceased in the update period? – {{ service
     </div> #}
 
 
+    <h2 class="govuk-heading-m">
+      Were there any changes to beneficial owners, trusts or beneficiaries in this period?
+    </h2>
+
+    <p class="govuk-body">
+      Answer yes if during this period:
+    <ul class="govuk-list govuk-list--bullet">
+        <li>Anyone ceased to be a registrable beneficial owner</li>
+        <li>A trust was involved you have not told us about</li>
+        <li>A beneficiary of a trust was involved you have not told us about</li>
+        </ul>
+    </p>
+
 {{ govukRadios({
   classes: "govuk-radios",
   idPrefix: "ownedLand",
   name: "owned-land",
   fieldset: {
     legend: {
-      text: "Was the overseas entity a registered owner of UK property or land during the pre-registration period?",
+      text: "Were there any changes to beneficial owners, trusts or beneficiaries in this period?",
       isPageHeading: false,
-      classes: "govuk-fieldset__legend--m"
+      classes: "govuk-visually-hidden"
     }  
   },
   hint: {
@@ -51,7 +64,7 @@ Have any beneficial owners become or ceased in the update period? – {{ service
     },
     {
       value: "no",
-      text: "No",
+      text: "No - the information I gave at registration was exactly the same throughout the pre-registration period",
 hint: {
         text: ""
       }
