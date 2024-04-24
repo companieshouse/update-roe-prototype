@@ -15,7 +15,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-          {% include "includes/rp-tag.html" %}
+          {% include "includes/rp-banner.html" %}
 
       <form class="form" action="../02a-bo-identified" method="get">
 
@@ -26,9 +26,6 @@
     You only need to tell us about anyone that was a registrable beneficial owner at any time during the pre-registration period, <strong>that the overseas entity has not already told us about</strong>.
   </p>
 
-    <div class="govuk-inset-text">
-      This overseas entity's pre-registration period is between <strong>28 February 2022</strong> and <strong>18 September 2022</strong>
-    </div>
 
   </div>
 
@@ -61,12 +58,14 @@
             value: "beneficialTypesGov",
             text: "Government or public authority beneficial owner"
           },
-    {
-      divider: "or"
-    },
-    {
-      value: "none",
-      text: "None – I do not need to add any beneficial owners"
+                    {
+            value: "beneficialTypesOther",
+            text: "Individual managing officer"
+
+          },
+          {
+            value: "beneficialTypesGov",
+            text: "Corporate managing officer"
     }
       ]
     }) }}
