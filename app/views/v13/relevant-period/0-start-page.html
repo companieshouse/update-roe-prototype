@@ -69,20 +69,6 @@
 
 
 
-
-<!-- New Pre-registration period banner-->
-  <div class="rp-start">
-
-  <h2 class="govuk-heading-m">New for your next update statement</h2> 
-      <p class="govuk-body">
-        As part of your next update statement, you may need to provide <a href="#prereg-period">information about the pre-registration period</a>.
-      </p>
-
-  </div> 
-
-
-
-
 <!-- ******* What an overseas entity update statement is *******  -->
       {# <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-margin-top-0"> #}
       <h3 id="oe-update" class="govuk-heading-m">What an overseas entity update statement is</h3>
@@ -281,11 +267,25 @@
     If you have applications in progress, you can choose to start a new application or return to a saved one.   
     </div>
 
+    <!-- New Pre-registration period banner-->
+  <div class="rp-start">
+
+  <h2 class="govuk-heading-m">New for your next update statement</h2> 
+      <p class="govuk-body">
+        As part of your next update statement, you may need to provide <a href="#prereg-period">information about the pre-registration period</a>.
+      </p>
+
+  </div> 
+
+
       {{ govukButton({
         text: "Start now",
         href: "01-sign-in-to-companies-house",
         isStartButton: true
       }) }}
+
+      {# <p class="govuk-body">As part of your next update statement, you may need to provide information about the pre-registration period. <a class="govuk-link" href="#">Cancel</a> #}
+
 
 {# 
       <h3 id="what-happens-after-an-overseas-entity-is-registered" class="govuk-heading-m">What happens after an overseas entity is registered</h3>
