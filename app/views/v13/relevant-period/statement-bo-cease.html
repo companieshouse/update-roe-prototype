@@ -14,19 +14,20 @@ Did anyone become or cease to be a registrable beneficial owner during the pre-r
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     
-    {% include "includes/rp-tag.html" %}
+    {% include "includes/rp-banner.html" %}
 
   <form class="form" action="30-beneficial-owners-and-managing-officers-involved-in-the-relevant-period" method="post">
 
   <span class="govuk-caption-l">{{ data['overseas-name'] }} - OE001485</span>
 
     <h1 class="govuk-heading-xl">
-      Did anyone become or cease to be a registrable beneficial owner during the pre-registration period?
-      </h1>
+        Additional beneficial owners from the pre-registration period
+    </h1>
 
-    <div class="govuk-inset-text">
-      This overseas entity's pre-registration period is between <strong>28 February 2022</strong> and <strong>18 September 2022</strong>
-    </div>
+
+      <p class="govuk-body">
+        You need to tell us if there were any additional registrable beneficial owners during the pre-registration period, <b>that the overseas entity has not already told us about</b>.
+      </p> 
 
 
 {{ govukRadios({
@@ -35,9 +36,9 @@ Did anyone become or cease to be a registrable beneficial owner during the pre-r
   name: "owned-land",
   fieldset: {
     legend: {
-      text: "Did the overseas entity own land in the relevant period?",
-      isPageHeading: true,
-      classes: "govuk-visually-hidden"
+      text: "Did anyone become or cease to be a registrable beneficial owner during this period, that the entity has not already told us about?",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--m"
     }  
   },
   hint: {
@@ -46,16 +47,14 @@ Did anyone become or cease to be a registrable beneficial owner during the pre-r
   items: [
     {
       value: "no",
-      html: "No – the entity has <strong>no reasonable cause</strong> to believe that <strong>anyone</strong> has become or ceased to be 
-      a registrable beneficial owner during the pre-registration period.",
+      html: "No - the entity has <b>no reasonable cause</b> to believe anyone become or ceased to be a registrable beneficial owner during the pre-registration period, that it has not already provided information about.",
       hint: {
         text: ""
       }
     },
     {
       value: "yes",
-      html: "Yes – the entity <strong>has reasonable cause</strong> to believe that <strong>at least one person</strong> has become or ceased to be 
-      a registrable beneficial owner during the pre-registration period.",
+      html: "Yes - the entity has <b>reasonable cause</b> to believe at least one person become or ceased to be a registrable beneficial owner during the pre-registration period, that it has not already provided information about. ",
 hint: {
         text: ""
       }
