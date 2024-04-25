@@ -19,24 +19,15 @@ Have any beneficial owners become or ceased in the update period? – {{ service
   <form class="form" method="post">
 
     <h1 class="govuk-heading-xl">
-      Report historical information for the pre-registration period
+      Information about the overseas entity during the pre-registration period
     </h1>
 
-    {# <div class="govuk-inset-text">
-      This overseas entity's pre-registration period is between <strong>28 February 2022</strong> and <strong>18 September 2022</strong>
-    </div> #}
-
-
-    <h2 class="govuk-heading-m">
-      Were there any changes to beneficial owners, trusts or beneficiaries in this period?
-    </h2>
-
     <p class="govuk-body">
-      Answer yes if during this period:
+      For the pre-registration period, we need to know if there were any:
     <ul class="govuk-list govuk-list--bullet">
-        <li>Anyone ceased to be a registrable beneficial owner</li>
-        <li>A trust was involved you have not told us about</li>
-        <li>A beneficiary of a trust was involved you have not told us about</li>
+        <li><b>registrable beneficial owners</b> that the entity has not already told us about</li>
+        <li><b>trusts</b> involved in the entity that it has not already told us about</li>
+        <li><b>beneficiaries of trusts</b> that the entity has not already told us about</li>
         </ul>
     </p>
 
@@ -46,9 +37,9 @@ Have any beneficial owners become or ceased in the update period? – {{ service
   name: "owned-land",
   fieldset: {
     legend: {
-      text: "Were there any changes to beneficial owners, trusts or beneficiaries in this period?",
+      text: "Has the overseas entity told us about all registrable beneficial owners, trusts and beneficiaries from this period?",
       isPageHeading: false,
-      classes: "govuk-visually-hidden"
+      classes: "govuk-fieldset__legend--m"
     }  
   },
   hint: {
@@ -64,7 +55,7 @@ Have any beneficial owners become or ceased in the update period? – {{ service
     },
     {
       value: "no",
-      text: "No - the information I gave at registration was exactly the same throughout the pre-registration period",
+      text: "No - there are some registrable beneficial owners, trusts or beneficiaries that the overseas entity has not provided information about",
 hint: {
         text: ""
       }
@@ -81,7 +72,7 @@ hint: {
 -->
 
       {{ govukButton({
-        text: "Continue",
+        text: "Save and continue",
         href: "08-before-you-start"
       }) }}
       </form>

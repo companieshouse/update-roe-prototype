@@ -18,13 +18,7 @@ Have any beneficial owners become or ceased in the update period? – {{ service
 
   <form class="form" method="post">
 
-    <h1 class="govuk-heading-xl">
-      Report historical information for the pre-registration period
-    </h1>
 
-    {# <div class="govuk-inset-text">
-      This overseas entity's pre-registration period is between <strong>28 February 2022</strong> and <strong>18 September 2022</strong>
-    </div> #}
 
 
 {{ govukRadios({
@@ -34,8 +28,8 @@ Have any beneficial owners become or ceased in the update period? – {{ service
   fieldset: {
     legend: {
       text: "Was the overseas entity a registered owner of UK property or land during the pre-registration period?",
-      isPageHeading: false,
-      classes: "govuk-fieldset__legend--m"
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--xl"
     }  
   },
   hint: {
@@ -69,7 +63,7 @@ hint: {
 
       {{ govukButton({
         text: "Continue",
-        href: "08-before-you-start"
+        href: "07b-land-changed"
       }) }}
       </form>
 
