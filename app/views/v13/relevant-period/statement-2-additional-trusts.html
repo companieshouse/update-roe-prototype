@@ -11,22 +11,31 @@ Were there any trusts involved in the overseas entity during the pre-registratio
 {% block content %}
 
 
+
+
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     
-    {% include "includes/rp-tag.html" %}
+    
+    {% include "includes/rp-banner.html" %}
 
-  <form class="form" action="statement-additional-beneficiaries" method="post">
+  <form class="form" method="post">
 
   <span class="govuk-caption-l">{{ data['overseas-name'] }} - OE001485</span>
 
     <h1 class="govuk-heading-xl">
+      Additional trusts from the pre-registration period
+    </h1>
+
+    <p class="govuk-body">
+      You need to tell us if there were any additional trusts during the pre-registration period, <b>that the overseas entity has not already told us about</b>.
+    </p>
+    
+    <h1 class="govuk-heading-m">
       Were there any trusts involved in the overseas entity during the pre-registration period that it has not already told us about?
       </h1>
 
-    <div class="govuk-inset-text">
-      This overseas entity's pre-registration period is between <strong>28 February 2022</strong> and <strong>18 September 2022</strong>
-    </div>
 
 
 {{ govukRadios({
