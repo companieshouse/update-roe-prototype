@@ -10,27 +10,72 @@
 {% endblock %}
 {% block content %}
 
+
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-           {% include "includes/rp-tag.html" %}
+          {% include "includes/rp-banner.html" %}
 
       <form class="form" action="../02a-bo-identified" method="get">
 
   <span class="govuk-caption-l">{{ data['overseas-name'] }} - OE001485</span>
   <h1 class="govuk-heading-xl">Beneficial owners involved in the overseas entity during the pre-registration period</h1>
 
-  <p class="govuk-body">
+  {# <p class="govuk-body">
     You only need to tell us about anyone that was a registrable beneficial owner at any time during the pre-registration period, <strong>that the overseas entity has not already told us about</strong>.
-  </p>
+  </p> #}
+
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">What you have reviewed</h2>
+  </div>
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Daniel Ashcroft
+        </dt>
+        <dd class="govuk-summary-list__value">
+          	Individual beneficial owner
+        </dd>
+        <dd class="govuk-summary-list__value summary-status" aria-label="Status - ceased">
+          Active
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="25-review-the-individual-beneficial-owner">
+            Change<span class="govuk-visually-hidden"> Daniel Ashcroft - Individual beneficial owner</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          ACME Trustees Limited
+        </dt>
+        <dd class="govuk-summary-list__value">
+          	Other legal entity beneficial owner
+        </dd>
+        <dd class="govuk-summary-list__value summary-status" aria-label="Status - active">
+          Ceased
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="28-review-the-other-legal-entity-beneficial-owner">
+            Change<span class="govuk-visually-hidden">Name Corp - </span>
+          </a>
+        </dd>
+      </div>
+  </div>
+  </div>
+
+    <div>
+    <h2 class="govuk-heading-m">Which type of beneficial owner or managing officers do you want to add?</h2>
 
     <div class="govuk-inset-text">
-      This overseas entity's pre-registration period is between <strong>28 February 2022</strong> and <strong>18 September 2022</strong>
+      You need to add beneficial owners for <b>both the pre-registration period and the update statement period</b>.
     </div>
-    
-  </div>
-  
-<div class="govuk-grid-column-two-thirds govuk-!-margin-top-6">
+
+
 
 
          {{ govukTable({
@@ -73,14 +118,14 @@
 </div>
     <div class="govuk-grid-column-two-thirds">
 
-        {{ govukRadios({
+       {{ govukRadios({
         idPrefix: "boType",
         name: "boType",
         fieldset: {
           legend: {
-            text: "Which type of beneficial owner do you want to add?",
+            text: "Which type of beneficial owner or managing officers do you want to add?",
             isPageHeading: false,
-            classes: "govuk-fieldset__legend--m"
+            classes: "govuk-visually-hidden"
           }
         },
         hint: {
@@ -99,10 +144,18 @@
           {
             value: "beneficialTypesGov",
             text: "Government or public authority beneficial owner"
-          }
+          },
+                    {
+            value: "beneficialTypesOther",
+            text: "Individual managing officer"
+
+          },
+          {
+            value: "beneficialTypesGov",
+            text: "Corporate managing officer"
+    }
       ]
     }) }}
-
 
 
         <div class="govuk-button-group">
