@@ -14,15 +14,23 @@ Did anyone become or cease to be a beneficiary of a trust involved in the overse
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     
-    {% include "includes/rp-tag.html" %}
+  
+    {% include "includes/rp-banner.html" %}
 
-  <form class="form" action="36a-relevant-period-check-your-answers" method="post">
+  <form class="form" method="post">
 
   <span class="govuk-caption-l">{{ data['overseas-name'] }} - OE001485</span>
 
     <h1 class="govuk-heading-xl">
-      Did anyone become or cease to be a beneficiary of a trust involved in the overseas entity during the pre-registration period?
-      </h1>
+      Additional beneficiaries from the pre-registration period
+    </h1>
+
+        <p class="govuk-body">
+      You need to tell us if there were any additional trust beneficiaries during the pre-registration period, <b>that the overseas entity has not already told us about</b>.
+    </p>
+
+    <h1 class="govuk-heading-m">
+Did anyone become or cease to be a trust beneficiary during this time, that the overseas entity has not already told us about?      </h1>
 
     <div class="govuk-inset-text">
       This overseas entity's pre-registration period is between <strong>28 February 2022</strong> and <strong>18 September 2022</strong>
@@ -70,7 +78,8 @@ hint: {
 
 
       {{ govukButton({
-        text: "Save and continue"
+        text: "Save and continue",
+        href: "36-check-your-answers-before-submitting"
       }) }}
       </form>
 
