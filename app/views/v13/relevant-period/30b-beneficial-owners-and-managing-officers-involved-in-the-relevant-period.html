@@ -68,15 +68,6 @@
   </div>
   </div>
 
-    <div>
-    <h2 class="govuk-heading-m">Which type of beneficial owner or managing officers do you want to add?</h2>
-
-    <div class="govuk-inset-text">
-      You need to add beneficial owners for <b>both the pre-registration period and the update statement period</b>.
-    </div>
-
-
-
 
          {{ govukTable({
           caption: 'What <span class="govuk-visually-hidden">registrable beneficial owners</span> you have added to the pre-registration period' | safe,
@@ -118,6 +109,13 @@
 </div>
     <div class="govuk-grid-column-two-thirds">
 
+    <div>
+    <h2 class="govuk-heading-m">Which type of beneficial owner or managing officer do you want to add?</h2>
+
+    <div class="govuk-inset-text">
+      You need to add beneficial owners for <b>both the pre-registration period and the update statement period</b>.
+    </div>
+
        {{ govukRadios({
         idPrefix: "boType",
         name: "boType",
@@ -127,9 +125,6 @@
             isPageHeading: false,
             classes: "govuk-visually-hidden"
           }
-        },
-        hint: {
-          text: "You can add more later."
         },
         items: [
           {

@@ -21,14 +21,15 @@ Did anyone become or cease to be a registrable beneficial owner during the pre-r
   <span class="govuk-caption-l">{{ data['overseas-name'] }} - OE001485</span>
 
     <h1 class="govuk-heading-xl">
-        Additional beneficial owners from the pre-registration period
+        Were there any additional registrable beneficial owners during the pre-registration period?
     </h1>
+  <div class="govuk-hint">Select 'no' if the entity has already told us about all its registrable beneficial owners from this period.</div>
 
-
+<!--
       <p class="govuk-body">
         You need to tell us if there were any additional registrable beneficial owners during the pre-registration period, <b>that the overseas entity has not already told us about</b>.
       </p> 
-
+-->
 
 {{ govukRadios({
   classes: "govuk-radios",
@@ -36,7 +37,7 @@ Did anyone become or cease to be a registrable beneficial owner during the pre-r
   name: "owned-land",
   fieldset: {
     legend: {
-      text: "Did anyone become or cease to be a registrable beneficial owner during this period, that the entity has not already told us about?",
+      text: "",
       isPageHeading: false,
       classes: "govuk-fieldset__legend--m"
     }  
