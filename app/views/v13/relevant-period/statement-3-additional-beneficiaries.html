@@ -22,16 +22,10 @@ Did anyone become or cease to be a beneficiary of a trust involved in the overse
   <span class="govuk-caption-l">{{ data['overseas-name'] }} - OE001485</span>
 
     <h1 class="govuk-heading-xl">
-      Additional beneficiaries from the pre-registration period
+      Were there any additional trust beneficiaries during the pre-registration period?
     </h1>
 
-        <p class="govuk-body">
-      You need to tell us if there were any additional trust beneficiaries during the pre-registration period, <b>that the overseas entity has not already told us about</b>.
-    </p>
-
-    <h1 class="govuk-heading-m">
-Did anyone become or cease to be a trust beneficiary during this time, that the overseas entity has not already told us about?      </h1>
-
+  <div class="govuk-hint">Select 'no' if the entity has already told us about all beneficiaries of trusts involved in the overseas entity during this period.</div>
 
 
 {{ govukRadios({
@@ -51,16 +45,16 @@ Did anyone become or cease to be a trust beneficiary during this time, that the 
   items: [
     {
       value: "no",
-      html: "No – the entity has <strong>no reasonable cause</strong> to believe that <strong>anyone</strong> has become or ceased to be 
-      a beneficiary of a trust involved in the overseas entity during the pre-registration period.",
+      html: "No – the entity has <strong>no reasonable cause</strong> to believe that anyone has become or ceased to be 
+      a beneficiary of a trust involved in the overseas entity during the pre-registration period, that it has not already provided information about.",
       hint: {
         text: ""
       }
     },
     {
       value: "yes",
-      html: "Yes – the entity <strong>has reasonable cause</strong> to believe that <strong>at least one person</strong> become or ceased to be 
-      a beneficiary of a trust involved in the overseas entity during the pre-registration period.",
+      html: "Yes – the entity <strong>has reasonable cause</strong> to believe that at least one person become or ceased to be 
+      a beneficiary of a trust involved in the overseas entity during the pre-registration period, that it has not already provided information about.",
 hint: {
         text: ""
       }
