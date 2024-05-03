@@ -1,0 +1,67 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+
+Company authentication
+ – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+
+    <form action="07-filter-own-land" method="post" novalidate>
+
+<h1 class="govuk-heading-xl">Company authentication</h1>
+
+<p class"govuk-body">To file company information you will need an authentication code.</p>
+
+
+<p class"govuk-body">Authenticating for</p>
+  <p class="govuk-!-font-size-27 govuk-!-padding-bottom-5"><strong>ASHCROFT LIMITED (OE001485)</strong></p>
+
+
+{{ govukInput({
+  classes: "govuk-input--width-10 govuk-input--extra-letter-spacing",
+  hint: {
+    html: '<p class"govuk-body><strong>Authentication code</strong></p>'
+  },
+  id: "auth-code",
+  name: "auth-code",
+  value: data["auth-code"] 
+}) }}
+
+
+
+  {{ govukButton({
+    text: "Authenticate"
+  }) }}
+          
+
+<p class="govuk-body"><a href="auth/request-an-authentication-code" target="_blank" class="govuk-link">Request an authentication code (opens in a new tab)</a></p>
+
+    
+<!--
+ {{ govukDetails({
+  summaryText: "What is the authentication code and how do I get it?",
+  html: '<p class"govuk-body">
+    The authentication code is a 6-digit alphanumeric code that we issue to each overseas entity. We ask for it every time someone files online for the overseas entity – it confirms to us that they are authorised to do so.</p>
+  <p>
+    If you need to request an authentication code, you will need to search for the overseas entity on the Companies House register, and then select Request an authentication code.</p>
+  <p>
+    [Need confirmation that this is the process]</p>'
+}) }}-->
+
+    
+    </form>
+
+    </div>
+  </div>
+
+{% endblock %}
