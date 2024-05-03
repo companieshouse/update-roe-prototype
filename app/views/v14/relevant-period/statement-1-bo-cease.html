@@ -31,6 +31,14 @@ Did anyone become or cease to be a registrable beneficial owner during the pre-r
       </p> 
 -->
 
+
+{% set preRegBOHtml %}
+<p class="govuk-body-m">
+  <b>Later in the service we will ask you to provide the additional<a href="https://www.gov.uk/guidance/register-an-overseas-entity#what-information-you-need-to-submit">
+ beneficial owners</a> (link opens in new window)</p></b>
+{% endset -%}
+
+
 {{ govukRadios({
   classes: "govuk-radios",
   idPrefix: "ownedLand",
@@ -56,8 +64,8 @@ Did anyone become or cease to be a registrable beneficial owner during the pre-r
     {
       value: "yes",
       html: "Yes - the entity has <b>reasonable cause</b> to believe at least one person become or ceased to be a registrable beneficial owner during the pre-registration period, that it has not already provided information about. ",
-hint: {
-        text: ""
+      conditional: {
+        html: preRegBOHtml
       }
     }
   ]

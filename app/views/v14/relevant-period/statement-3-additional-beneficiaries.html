@@ -28,6 +28,13 @@ Did anyone become or cease to be a beneficiary of a trust involved in the overse
   <div class="govuk-hint">Select 'no' if the entity has already told us about all beneficiaries of trusts involved in the overseas entity during this period.</div>
 
 
+{% set preRegBeneficiariesHtml %}
+<p class="govuk-body-m">
+  <b>Later in the service we will ask you to provide the additional<a href="https://www.gov.uk/guidance/register-an-overseas-entity#information-trusts">
+ beneficiaries</a> (link opens in new window)</p></b>
+{% endset -%}
+
+
 {{ govukRadios({
   classes: "govuk-radios",
   idPrefix: "ownedLand",
@@ -55,8 +62,8 @@ Did anyone become or cease to be a beneficiary of a trust involved in the overse
       value: "yes",
       html: "Yes – the entity <strong>has reasonable cause</strong> to believe that at least one person become or ceased to be 
       a beneficiary of a trust involved in the overseas entity during the pre-registration period, that it has not already provided information about.",
-hint: {
-        text: ""
+        conditional: {
+        html: preRegBeneficiariesHtml
       }
     }
   ]

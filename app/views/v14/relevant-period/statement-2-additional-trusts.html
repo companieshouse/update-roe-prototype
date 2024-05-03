@@ -32,6 +32,14 @@ Were there any trusts involved in the overseas entity during the pre-registratio
 
 
 
+
+{% set preRegTrustHtml %}
+<p class="govuk-body-m">
+  <b>Later in the service we will ask you to provide the additional<a href="https://www.gov.uk/guidance/register-an-overseas-entity#information-trusts">
+ trusts</a> (link opens in new window)</p></b>
+{% endset -%}
+
+
 {{ govukRadios({
   classes: "govuk-radios",
   idPrefix: "ownedLand",
@@ -41,10 +49,7 @@ Were there any trusts involved in the overseas entity during the pre-registratio
       text: "Did the overseas entity own land in the relevant period?",
       isPageHeading: true,
       classes: "govuk-visually-hidden"
-    }  
-  },
-  hint: {
-    text: ""
+    }
   },
   items: [
     {
@@ -57,9 +62,9 @@ Were there any trusts involved in the overseas entity during the pre-registratio
     {
       value: "yes",
       html: "Yes – the entity <strong>has reasonable cause</strong> to believe that there was <strong>at least one trust</strong> involved in the overseas entity during the pre-registration period, that it has not already provided information about.",
-hint: {
-        text: ""
-      }
+        conditional: {
+        html: preRegTrustHtml
+      } 
     }
   ]
 }) }}
