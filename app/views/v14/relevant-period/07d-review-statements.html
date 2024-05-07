@@ -19,62 +19,69 @@ Have any beneficial owners become or ceased in the update period? – {{ service
   <form class="form" method="post">
 
     <h1 class="govuk-heading-xl">
-      Information about the overseas entity during the pre-registration period
+      Review pre-registration statements
     </h1>
 
+<!-- Statement 1 -->
+    <h2 class="govuk-heading-m">
+      Statement 1: Beneficial owners
+    </h2>
+
     <p class="govuk-body">
-      For the pre-registration period, we need to know if the overseas entity has told us about all of its:
-    <ul class="govuk-list govuk-list--bullet">
-        <li>registrable beneficial owners</li>
-        <li>trusts</li>
-        <li>beneficiaries of trusts</li>
-        </ul>
+      The entity <b>has reasonable cause</b> to believe at least one person become or ceased to be a <b>registrable beneficial owner</b> during the pre-registration period, that it has not already provided information about.
+     </p>
+
+    {{ govukInsetText({
+      text: "We will ask you to supply this information later in the journey"
+    }) }}
+
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+
+
+<!-- Statement 2 -->
+    <h2 class="govuk-heading-m">
+      Statement 2: Trusts
+    </h2>
+
+    <p class="govuk-body">
+      The entity has <b>no reasonable cause</b> to believe that there were any <b>trusts involved</b> in the overseas entity during the pre-registration period, that it has not already provided information about.
+     </p>
+
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+
+<!-- Statement 3 -->
+    <h2 class="govuk-heading-m">
+      Statement 3: Beneficiaries
+    </h2>
+
+    <p class="govuk-body">
+      The entity has <b>no reasonable cause</b> to believe that anyone has become or ceased to be a <b>beneficiary of a trust</b> involved in the overseas entity during the pre-registration period, that it has not already provided information about.
     </p>
 
-{{ govukRadios({
-  classes: "govuk-radios",
-  idPrefix: "ownedLand",
-  name: "owned-land",
-  fieldset: {
-    legend: {
-      text: "Has the overseas entity told us about all registrable beneficial owners, trusts and beneficiaries from this period?",
-      isPageHeading: false,
-      classes: "govuk-fieldset__legend--m"
-    }  
-  },
-  hint: {
-    text: ""
-  },
-  items: [
-    {
-      value: "yes",
-      text: "Yes",
-      hint: {
-        text: ""
-      }
-    },
-    {
-      value: "no",
-      text: "No",
-hint: {
-        text: ""
-      }
-    }
-  ]
-}) }}
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
-<!--
+
+
 
         {{ govukInsetText({
           html: '<h2 class="govuk-heading-m">What information we’ll show on the public register</h2>
                 <p>We will show the information you provide in this section on the public Register of Overseas Entities.</p>'
         }) }}
--->
 
-      {{ govukButton({
-        text: "Save and continue",
-        href: "14-do-you-need-to-make-any-changes-to-this-overseas-entity"
-      }) }}
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Agree and submit"
+        }) }}
+
+        <a class="govuk-link" href="07c-all-statements">Change the statements</a>
+      </div>
+
+
       </form>
 
 <!--
