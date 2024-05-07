@@ -1,0 +1,97 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Have any beneficial owners become or ceased in the update period? – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    
+    {% include "includes/rp-banner-v14.html" %}
+
+  <form class="form" method="post">
+
+    <h1 class="govuk-heading-xl">
+      Information about the overseas entity during the pre-registration period
+    </h1>
+
+    <p class="govuk-body">
+      For the pre-registration period, we need to know if the overseas entity has told us about all of its:
+    <ul class="govuk-list govuk-list--bullet">
+        <li>registrable beneficial owners</li>
+        <li>trusts</li>
+        <li>beneficiaries of trusts</li>
+        </ul>
+    </p>
+
+{{ govukRadios({
+  classes: "govuk-radios",
+  idPrefix: "ownedLand",
+  name: "owned-land",
+  fieldset: {
+    legend: {
+      text: "Has the overseas entity told us about all registrable beneficial owners, trusts and beneficiaries from this period?",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--m"
+    }  
+  },
+  hint: {
+    text: ""
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes",
+      hint: {
+        text: ""
+      }
+    },
+    {
+      value: "no",
+      text: "No",
+hint: {
+        text: ""
+      }
+    }
+  ]
+}) }}
+
+<!--
+
+        {{ govukInsetText({
+          html: '<h2 class="govuk-heading-m">What information we’ll show on the public register</h2>
+                <p>We will show the information you provide in this section on the public Register of Overseas Entities.</p>'
+        }) }}
+-->
+
+      {{ govukButton({
+        text: "Save and continue",
+        href: "14-do-you-need-to-make-any-changes-to-this-overseas-entity"
+      }) }}
+      </form>
+
+<!--
+<details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Why am I being asked this question?
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    We require information on X, Y, Z
+  </div>
+</details>
+-->
+
+
+    </div>
+  </div>
+
+{% endblock %}
