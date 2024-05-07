@@ -19,45 +19,59 @@ Have any beneficial owners become or ceased in the update period? – {{ service
   <form class="form" method="post">
 
     <h1 class="govuk-heading-xl">
-      Tell us about changes to the overseas entity during the pre-registration period
+      Provide statements for the pre-registration period
     </h1>
 
 
-{{ govukCheckboxes({
-  name: "pre-reg-statements",
-  fieldset: {
-    legend: {
-      text: "The overseas entity has reasonable cause to believe that during the pre-registration period:",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--m"
-    }
-  },
-  hint: {
-    text: "Select all that apply"
-  },
-  items: [
-    {
-      value: "bo",
-      html: "At least one person become or ceased to be a <b>registrable beneficial owner</b>, that it has not already provided information about"
-    },
-    {
-      value: "trust",
-      html: "There was at least one <b>trust involved</b> in the overseas entity, that it has not already provided information about"
-    },
-    {
-      value: "beneficiary",
-      html: "At least one person become or ceased to be a <b>beneficiary of a trust</b> involved in the overseas entity, that it has not already provided information about"
-    },
-    {
-      divider: "or"
-    },
-    {
-      value: "none",
-      html: "<b>None of these</b> - the information provided at registration was the same throughout the pre-registration period",
-      behaviour: "exclusive"
-    }
-  ]
-}) }}
+
+
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="countries-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      <h1 class="govuk-fieldset__heading">
+       The overseas entity has reasonable cause to believe that during the pre-registration period:
+      </h1>
+    </legend>
+    <div id="countries-hint" class="govuk-hint">
+      Select all that apply
+    </div>
+    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="countries" name="countries" type="checkbox" value="france">
+        <label class="govuk-label govuk-checkboxes__label" for="countries">
+          At least one person become or ceased to be a <b>registrable beneficial owner</b>, that it has not already provided information about
+        </label>
+      </div>
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="countries-2" name="countries" type="checkbox" value="portugal">
+        <label class="govuk-label govuk-checkboxes__label" for="countries-2">
+          At least one person become or ceased to be a <b>registrable beneficial owner</b>, that it has not already provided information about
+        </label>
+      </div>
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="countries-3" name="countries" type="checkbox" value="spain">
+        <label class="govuk-label govuk-checkboxes__label" for="countries-3">
+          At least one person become or ceased to be a <b>beneficiary of a trust</b> involved in the overseas entity, that it has not already provided information about
+        </label>
+      </div>
+            <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <div class="govuk-checkboxes__divider">or</div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="countries-5" name="countries" type="checkbox" value="none" data-behaviour="exclusive">
+        <label class="govuk-label govuk-checkboxes__label" for="countries-5">
+         <b>None of these</b> - the information provided at registration was the same throughout the pre-registration period
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+
+
 <!--
 
         {{ govukInsetText({
