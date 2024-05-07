@@ -153,28 +153,85 @@
                 }
               ]
             }
-          },
-                    {
-            key: {
-              text: "Has the overseas entity told us about all registrable beneficial owners, trusts and beneficiaries from this period?"
-            },
-            value: {
-              text: "No"
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "Question 1"
-                }
-              ]
-            }
           }
         ]
       }) }}
 
 
+<h3 class="govuk-heading-m">Beneficial owner statement</h3>
+          {{ govukSummaryList({
+            classes: 'govuk-!-margin-bottom-9',
+            rows: [
+            {
+              key: {
+                text: " Statement"
+              },
+              value: {
+                text: "
+                The entity has reasonable cause to believe at least one person become or ceased to be a registrable beneficial owner during the pre-registration period, that it has not already provided information about."
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "Have any beneficial owners become or ceased in the update period?"
+                  }
+                ]
+              }
+            }
+            ]
+          }) }}
+
+          <h3 class="govuk-heading-m">Trusts statement</h3>
+          {{ govukSummaryList({
+            classes: 'govuk-!-margin-bottom-9',
+            rows: [
+            {
+              key: {
+                text: " Statement"
+              },
+              value: {
+                text: "
+                The entity has no reasonable cause to believe that there were any trusts involved in the overseas entity during the pre-registration period, that it has not already provided information about."
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "Have any beneficial owners become or ceased in the update period?"
+                  }
+                ]
+              }
+            }
+            ]
+          }) }}
+
+          <h3 class="govuk-heading-m">Beneficiaries statement</h3>
+          {{ govukSummaryList({
+            classes: 'govuk-!-margin-bottom-9',
+            rows: [
+            {
+              key: {
+                text: " Statement"
+              },
+              value: {
+                text: "
+                The entity has no reasonable cause to believe that anyone has become or ceased to be a beneficiary of a trust involved in the overseas entity during the pre-registration period, that it has not already provided information about."
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "Have any beneficial owners become or ceased in the update period?"
+                  }
+                ]
+              }
+            }
+            ]
+          }) }}
 
 
 
