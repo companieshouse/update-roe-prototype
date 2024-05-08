@@ -1,0 +1,11 @@
+{% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+
+{% set html %}
+    <p class="govuk-body-m">
+        The pre-registration period for <b>ASHCROFT LIMITED</b> is between <b>28 February 2022</b> and <b>18 September 2022</b>.
+    </p>
+{% endset %}
+
+{{ govukNotificationBanner({
+  html: html
+}) }}
