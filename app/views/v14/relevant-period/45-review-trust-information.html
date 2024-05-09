@@ -13,11 +13,11 @@ You're about to review trusts information – {{ serviceName }} – GOV.UK
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-
+{# 
      <div class="govuk-!-margin-bottom-3">
       {% include "includes/rp-tag-update.html" %}
       {% include "includes/rp-tag.html" %}
-    </div>
+    </div> #}
 
 <h1 class="govuk-heading-xl">You're about to review trust information</h1>
 
@@ -34,7 +34,7 @@ You're about to review trusts information – {{ serviceName }} – GOV.UK
       </ul>
 
 
- {% include "includes/rp-banner-statement.html" %}
+ {# {% include "includes/rp-banner-statement.html" %} #}
 
 
       {{ govukButton({

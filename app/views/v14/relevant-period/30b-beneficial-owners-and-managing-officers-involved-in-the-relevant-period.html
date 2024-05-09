@@ -15,12 +15,6 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-    <div class="govuk-!-margin-bottom-3">
-      {% include "includes/rp-tag-update.html" %}
-      {% include "includes/rp-tag.html" %}
-    </div>
-
-
       <form class="form" action="../02a-bo-identified" method="get">
 
   <span class="govuk-caption-l">{{ data['overseas-name'] }} - OE001485</span>
@@ -89,6 +83,10 @@
             text: "Type",
             classes: "govuk-visually-hidden"
           },
+          {
+            text: "Type",
+            classes: "govuk-visually-hidden"
+          },
             {
               text: "Change or remove",
               classes: "govuk-visually-hidden"
@@ -101,6 +99,9 @@
               },
               {
                 text: "Individual beneficial owner"
+              },
+              {
+                text: "Ceased"
               },
             {
               html: '<a href="25-review-the-individual-beneficial-owner">Change</a>',
