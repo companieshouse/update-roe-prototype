@@ -1,0 +1,94 @@
+
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Will you be making any changes to the overseas entity? – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="19-who-is-completing-this-update" method="post"> 
+        
+    <div class="govuk-!-margin-bottom-3">
+      {% include "includes/rp-tag.html" %}
+    </div>
+    
+  <span class="govuk-caption-l">{{ data['overseas-name'] }} - OE001485</span>
+        <h1 class="govuk-heading-xl">Which type of beneficiary do you need to add?</h1>
+
+      {# <p class="govuk-!-margin-bottom-5 govuk-!-margin-top-5">This includes any changes to information about the overseas entity, its beneficial owners or managing officers.</p> #}
+
+<div class="govuk-inset-text">
+  <p class="govuk-body"><b>Beneficiaries from the pre-registration period</b>
+    
+  <p class="govuk-body">Based on the pre-registration statement you provided earlier in this service, you also need to tell us about any additional beneficiaries of a trust from this period, that the entity has not already told us about.</b>
+
+  <p class="govuk-body">The pre-registration period for <b>ASHCROFT LIMITED</b> is between <b>28 February 2022</b> and <b>18 September 2022</b>.
+  </p>
+</div>
+
+        {{ govukRadios({
+          idPrefix: "pre-reg-beneficiary",
+          name: "pre-reg-beneficiary",
+          fieldset: {
+            legend: {
+              text: "Have you made any changes to the overseas entity?",
+              isPageHeading: false,
+              classes: "govuk-visually-hidden"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Individual"
+            },
+            {
+              value: "no",
+              text: "Legal entity"
+            },
+            {
+              divider: "or"
+            },
+            {
+              value: "abroad",
+              text: "None - I just added them to the new trust"
+            }
+          ]
+        }) }}
+
+
+
+          {{ govukButton({
+            text: "Save and continue"
+          }) }}
+
+
+        {#
+          <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+              What verification checks are needed?
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+            Verification checks are needed on any changes made to information about the overseas entity, its beneficial owners or managing officers. 
+            </div>
+            <div class="govuk-details__text">
+            Verification checks can only be carried out by a UK-regulated agent, and must have been completed no more than 3 months before the date of this update statement.   </div>
+              </div>
+          </details>
+          #}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

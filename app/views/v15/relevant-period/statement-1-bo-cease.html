@@ -1,0 +1,102 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Did anyone become or cease to be a registrable beneficial owner during the pre-registration period? – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    
+    {% include "includes/rp-banner.html" %}
+
+  <form class="form" action="statement-2-additional-trusts" method="post">
+
+  <span class="govuk-caption-l">{{ data['overseas-name'] }} - OE001485</span>
+
+    <h1 class="govuk-heading-xl">
+        Were there any additional registrable beneficial owners during the pre-registration period?
+    </h1>
+  <div class="govuk-hint">Select 'no' if the entity has already told us about all its registrable beneficial owners from this period.</div>
+
+<!--
+      <p class="govuk-body">
+        You need to tell us if there were any additional registrable beneficial owners during the pre-registration period, <b>that the overseas entity has not already told us about</b>.
+      </p> 
+-->
+
+
+{% set preRegBOHtml %}
+<p class="govuk-body-m">
+  <b>Later in the service we will ask you to provide the additional<a href="https://www.gov.uk/guidance/register-an-overseas-entity#what-information-you-need-to-submit">
+ beneficial owners</a> (link opens in new window)</p></b>
+{% endset -%}
+
+
+{{ govukRadios({
+  classes: "govuk-radios",
+  idPrefix: "ownedLand",
+  name: "owned-land",
+  fieldset: {
+    legend: {
+      text: "",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--m"
+    }  
+  },
+  hint: {
+    text: ""
+  },
+  items: [
+    {
+      value: "no",
+      html: "No - the entity has <b>no reasonable cause</b> to believe anyone become or ceased to be a registrable beneficial owner during the pre-registration period, that it has not already provided information about.",
+      hint: {
+        text: ""
+      }
+    },
+    {
+      value: "yes",
+      html: "Yes - the entity has <b>reasonable cause</b> to believe at least one person become or ceased to be a registrable beneficial owner during the pre-registration period, that it has not already provided information about. ",
+      conditional: {
+        html: preRegBOHtml
+      }
+    }
+  ]
+}) }}
+
+        {{ govukInsetText({
+          html: '<h2 class="govuk-heading-m">What information we’ll show on the public register</h2>
+                <p>We will show this statement on the public Register of Overseas Entities.</p>'
+        }) }}
+
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+      </form>
+
+<!--
+<details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Why am I being asked this question?
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    We require information on X, Y, Z
+  </div>
+</details>
+-->
+
+
+    </div>
+  </div>
+
+{% endblock %}

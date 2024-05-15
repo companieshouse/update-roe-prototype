@@ -1,0 +1,145 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+
+Trusts associated with the overseas entity
+ – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <div class="govuk-!-margin-bottom-3">
+      {% include "includes/rp-tag-update.html" %}
+      {% include "includes/rp-tag.html" %}
+    </div>
+
+   
+   <form action="36-check-your-answers-before-submitting" method="get">
+
+  <span class="govuk-caption-l">{{ data['overseas-name'] }} - OE001485</span>
+<h1 class="govuk-heading-xl">Trusts associated with the overseas entity</h1>
+
+{{ govukTable({
+            caption: "What you have reviewed",
+            captionClasses: "govuk-table__caption--m",
+            firstCellIsHeader: true,
+            head: [
+            {
+              text: "Trust",
+              classes: "govuk-visually-hidden"
+            },
+              {
+                text: "Change",
+                classes: "govuk-visually-hidden"
+              },
+              {
+                text: "Change",
+                classes: "govuk-visually-hidden"
+              }
+            ],
+            rows: [
+              [
+            
+              {
+                text: "Islands Trust"
+              },
+              {
+                text: "Removed"
+              },
+              {
+                html: '<a href="/register/trusts/trust-details-edit">Change</a>',
+              visuallyHiddenText: "Trust - Islands Trust"
+              }
+             ],
+             [
+
+              {
+                text: "Cayman Trust"
+              },
+              {
+                text: "Active"
+              },
+              {
+                html: '<a href="/register/trusts/trust-details-edit">Change</a>',
+              visuallyHiddenText: "Trust - Islands Trust"
+              }
+             ]
+            ]
+          }) }}
+
+
+
+    <h2 class="govuk-heading-m">Do you need to add another trust?</h2>
+
+    {# <div class="govuk-inset-text">
+      You need to add beneficial owners for <b>both the pre-registration period and the update statement period</b>.
+    </div> #}
+
+
+
+
+<div class="govuk-form-group">
+  <h2 class="govuk-heading-s">For the current filing period</h3>
+  <fieldset class="govuk-fieldset">
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
+        <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+          Yes
+
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="scotland">
+        <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
+         No
+        </label>
+      </div>
+    
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+  <h2 class="govuk-heading-s govuk-!-margin-top-3">For the pre-registration period</h3>
+
+<div class="govuk-inset-text">    
+  <p class="govuk-body">Based on the pre-registration statement you provided earlier in this service, you also need to tell us about any trusts from this period, that the entity has not already told us about. 
+
+  <p class="govuk-body">The pre-registration period for ASHCROFT LIMITED is between <b>28 February 2022</b> and <b>18 September 2022</b>.
+  </p>
+</div>
+
+ <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
+        <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+          Yes
+
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+
+
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+      </form>
+
+
+
+
+    </div>
+  </div>
+
+{% endblock %}

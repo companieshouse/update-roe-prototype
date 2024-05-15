@@ -1,0 +1,109 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Have any beneficial owners become or ceased in the update period? – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    
+    {% include "includes/rp-banner.html" %}
+
+  <form class="form" method="post">
+
+    <h1 class="govuk-heading-xl">
+      Review statements for the pre-registration period
+    </h1>
+
+    <p class="govuk-body">
+      These statements are based on the options you selected on the previous screen.
+     </p>
+
+<!-- Statement 1 -->
+    <h2 class="govuk-heading-m">
+      Beneficial owner statement
+    </h2>
+
+    <p class="govuk-body">
+      The entity <b>has reasonable cause</b> to believe that <b>at least one person became or ceased to be a registrable beneficial owner</b> during the pre-registration period, that it has not already provided information about.
+     </p>
+
+    {{ govukInsetText({
+      text: "We’ll ask you to provide information about any additional registrable beneficial owners later in the service."
+    }) }}
+
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+
+
+<!-- Statement 2 -->
+    <h2 class="govuk-heading-m">
+      Trusts statement
+    </h2>
+
+    <p class="govuk-body">
+      The entity has <b>no reasonable cause</b> to believe that there were <b>any trusts involved</b> in the overseas entity during the pre-registration period, that it has not already provided information about.
+     </p>
+
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+
+<!-- Statement 3 -->
+    <h2 class="govuk-heading-m">
+      Beneficiaries statement
+    </h2>
+
+    <p class="govuk-body">
+      The entity has <b>no reasonable cause</b> to believe that <b>anyone became or ceased to be a beneficiary of a trust</b> involved in the overseas entity during the pre-registration period, that it has not already provided information about.
+    </p>
+
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+
+
+        {{ govukInsetText({
+          html: '<h2 class="govuk-heading-m">What information we’ll show on the public register</h2>
+                <p>We will show the information you provide in this section on the public Register of Overseas Entities.</p>'
+        }) }}
+
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Agree and continue",
+          href: "12-date-of-the-update-statement"
+        }) }}
+
+        <a class="govuk-link" href="07c-all-statements">I need to change the statements</a>
+      </div>
+
+
+      </form>
+
+<!--
+<details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Why am I being asked this question?
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    We require information on X, Y, Z
+  </div>
+</details>
+-->
+
+
+    </div>
+  </div>
+
+{% endblock %}
