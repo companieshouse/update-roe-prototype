@@ -54,6 +54,58 @@
           name: "corp-name"
         }) }}
 
+
+
+
+<!-- New pre-reg question-->
+        {% set trustAddHtml %}
+        {{ govukInput({
+          label: {
+            text: "What is the name of the trust?",
+            classes: "govuk-label--s",
+            isPageHeading: false
+          },
+          hint: {
+          text: "Write it exactly as it was given previously. If the trust does not have a name, give a description that it can be identified by."
+        },
+          id: "trust-removed-name",
+          name: "trust-removed-name"
+        }) }}
+        {% endset -%}
+
+{{ govukRadios({
+  name: "pre-reg-trust-individual",
+  fieldset: {
+    legend: {
+      text: "What trust were they involved in?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "cayman",
+      text: "Cayman Trust"
+    },
+    {
+      value: "abc",
+      text: "ABC Trust"
+    },
+    {
+      divider: "or"
+    },
+    {
+      value: "abroad",
+      text: "The trust has been removed from the overseas entity",
+      conditional: {
+      html: trustAddHtml
+      }
+    }
+  ]
+}) }}
+
+
+
         {{ govukRadios({
           idPrefix: "trust-entity-role",
           name: "trust-entity-role",
