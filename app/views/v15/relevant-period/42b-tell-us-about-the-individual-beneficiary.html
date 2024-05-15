@@ -98,12 +98,12 @@
         {% set trustAddHtml %}
         {{ govukInput({
           label: {
-            text: "What is the name of the trust?",
+            text: "What was the name of the trust?",
             classes: "govuk-label--s",
             isPageHeading: false
           },
           hint: {
-          text: "Write it exactly as it was given previously. If the trust does not have a name, give a description that it can be identified by."
+          text: "Enter the name exactly as it was given previously. If a name was not given, enter the description that it can be identified by."
         },
           id: "trust-removed-name",
           name: "trust-removed-name"
@@ -115,7 +115,7 @@
   name: "pre-reg-trust-individual",
   fieldset: {
     legend: {
-      text: "What trust were they involved in?",
+      text: "Which trust were they involved in?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m"
     }
@@ -134,7 +134,7 @@
     },
     {
       value: "abroad",
-      text: "The trust has been removed from the overseas entity",
+      text: "A trust that has been removed from this overseas entity",
       conditional: {
       html: trustAddHtml
       }
