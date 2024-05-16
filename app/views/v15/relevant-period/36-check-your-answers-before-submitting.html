@@ -49,84 +49,7 @@
 
 
 
-<!-- ********** DATE OF THE UPDATE  ********** -->
-<h1 class="govuk-heading-l govuk-!-margin-top-7">
-        Date of the update statement
-      </h1>
-
-              {{ govukSummaryList({
-                classes: 'govuk-!-margin-bottom-9',
-                rows: [
-                   {
-                    key: {
-                      text: "Date of the update statement"
-                    },
-                    value: {
-                      text: '1 May 2024'
-                    },
-                    actions: {
-                      items: [
-                        {
-                          href: "#",
-                          text: "Change",
-                          visuallyHiddenText: "Does the update include people that have protection or that have applied for protection?"
-                        }
-                      ]
-                    }
-                  }
-                ]
-              }) }}
-
-
-
-<!-- ********** CONTACT DETAILS  ********** -->
-
-      <h2 class="govuk-heading-l">Contact details</h2>
-
-      <h3 class="govuk-heading-m">Who can we contact about this update statement?</h3>
-        {{ govukSummaryList({
-          classes: 'govuk-!-margin-bottom-9',
-          rows: [
-            {
-              key: {
-                text: "Full name"
-              },
-              value: {
-                text: "Claire Contact"
-                },
-              actions: {
-                items: [
-                  {
-                    href: "#",
-                    text: "Change",
-                    visuallyHiddenText: "Full name - who can we contact about this application"
-                  }
-                ]
-              }
-            },
-            {
-              key: {
-                text: "Email address"
-              },
-              value: {
-                text: "hello@testcompany.co.uk"
-              },
-              actions: {
-                items: [
-                  {
-                    href: "#",
-                    text: "Change",
-                    visuallyHiddenText: "Email address - who can we contact about this application"
-                  }
-                ]
-              }
-            }
-          ]
-        }) }}
-
-{# data['contact-email'] #}
-
-
+<!-- ********** PRE-REGISTRATION  ********** -->
       <h1 class="govuk-heading-l">
       Information for the pre-registration period
       </h1>
@@ -233,6 +156,85 @@
             ]
           }) }}
 
+
+
+
+<!-- ********** DATE OF THE UPDATE  ********** -->
+<h1 class="govuk-heading-l govuk-!-margin-top-7">
+        Date of the update statement
+      </h1>
+
+              {{ govukSummaryList({
+                classes: 'govuk-!-margin-bottom-9',
+                rows: [
+                   {
+                    key: {
+                      text: "Date of the update statement"
+                    },
+                    value: {
+                      text: '1 May 2024'
+                    },
+                    actions: {
+                      items: [
+                        {
+                          href: "#",
+                          text: "Change",
+                          visuallyHiddenText: "Does the update include people that have protection or that have applied for protection?"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }) }}
+
+
+
+<!-- ********** CONTACT DETAILS  ********** -->
+
+      <h2 class="govuk-heading-l">Contact details</h2>
+
+      <h3 class="govuk-heading-m">Who can we contact about this update statement?</h3>
+        {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-9',
+          rows: [
+            {
+              key: {
+                text: "Full name"
+              },
+              value: {
+                text: "Claire Contact"
+                },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "Full name - who can we contact about this application"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Email address"
+              },
+              value: {
+                text: "hello@testcompany.co.uk"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "Email address - who can we contact about this application"
+                  }
+                ]
+              }
+            }
+          ]
+        }) }}
+
+{# data['contact-email'] #}
 
 
 
@@ -994,34 +996,11 @@
 
 
 
+<!-- ********** PRE-REG-BOS  ********** -->
 
 <h1 class="govuk-heading-l">
         Beneficial owners in the pre-registration period
       </h1>
-
-      {{ govukSummaryList({
-        rows: [
-          {
-            key: {
-              text: "Were there any additional registrable beneficial owners during the pre-registration period?"
-            },
-            value: {
-              text: "Yes - the entity has reasonable cause to believe at least one person become or ceased to be a registrable beneficial owner during the pre-registration period, that it has not already provided information about."
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "Question 1"
-                }
-              ]
-            }
-          }
-        
-        ]
-      }) }}
-
 
 
 <!-- ********** RP - INDIVIDUAL BENEFICIAL OWNER  ********** -->
@@ -1236,134 +1215,7 @@
       </div>
 
       </dl>
-
-
-
-
-
-<!-- ********** TRUSTS  - pre-registration period  ********** -->
-
- <h2 class="govuk-heading-l">Trusts in the pre-registration period</h2>
-
-              {{ govukSummaryList({
-
-                rows: [
-                  {
-                    key: {
-                      text: "Were any additional trusts involved in the overseas entity during the pre-registration period?"
-                    },
-                    value: {
-                      text: 'No'
-                    },
-                    actions: {
-                      items: [
-                        {
-                          href: "#",
-                          text: "Change",
-                          visuallyHiddenText: "Does the update include people that have protection or that have applied for protection?"
-                        }
-                      ]
-                    }
-                  }
-                ]
-              }) }}
-
-
-<!-- ********** BENFICIARIES - pre-registration period  ********** -->
-<h3 class="govuk-heading-m">
-        Beneficiaries in the pre-registration period
-      </h3>
-              {{ govukSummaryList({
-                classes: 'govuk-!-margin-bottom-9',
-                rows: [
-                  {
-                    key: {
-                      text: "Were there any additional trust beneficiaries during the pre-registration period?"
-                    },
-                    value: {
-                      text: 'No'
-                    },
-                    actions: {
-                      items: [
-                        {
-                          href: "#",
-                          text: "Change",
-                          visuallyHiddenText: "Does the update include people that have protection or that have applied for protection?"
-                        }
-                      ]
-                    }
-                  }
-                ]
-              }) }}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-<!-- ********** STATEMENTS  ********** -->
-
- <h2 class="govuk-heading-l">Statement details</h2>
-
-        <h3 class="govuk-heading-m">Has the overseas entity identified any registrable beneficial owners?</h3>
-          {{ govukSummaryList({
-            classes: 'govuk-!-margin-bottom-9',
-            rows: [
-            {
-              key: {
-                text: " Statement"
-              },
-              value: {
-                text: "All beneficial owners have been identified and all required information has been provided."
-              },
-              actions: {
-                items: [
-                  {
-                    href: "#",
-                    text: "Change",
-                    visuallyHiddenText: "Has the overseas entity identified any registrable beneficial owners?"
-                  }
-                ]
-              }
-            }
-            ]
-          }) }}
-
-        <h3 class="govuk-heading-m">Have any beneficial owners become or ceased in the update period?</h3>
-          {{ govukSummaryList({
-            classes: 'govuk-!-margin-bottom-9',
-            rows: [
-            {
-              key: {
-                text: " Statement"
-              },
-              value: {
-                text: "
-                The entity has reasonable cause to believe that at least one person has become or ceased to be a registrable beneficial owner during the update period."
-              },
-              actions: {
-                items: [
-                  {
-                    href: "#",
-                    text: "Change",
-                    visuallyHiddenText: "Have any beneficial owners become or ceased in the update period?"
-                  }
-                ]
-              }
-            }
-            ]
-          }) }}
+       
 
 
 
@@ -1845,7 +1697,12 @@
       <!-- ********** TRUSTS  ********** -->
 
 {# 
-      <h2 class="govuk-heading-l">Trusts</h2>
+      <h2 class="govuk-heading-l">Trusts</h2> #}
+
+
+<!-- ********** TRUSTS  - pre-registration period  ********** -->
+
+ <h2 class="govuk-heading-l">Trusts in the pre-registration period</h2>
 
 
       <h3 class="govuk-heading-m">Trust details</h3>
@@ -1880,10 +1737,24 @@
           </dt>
           <dd class="govuk-summary-list__value">
             <ul class="govuk-list govuk-list--bullet">
-              {% for feature in data['bo-checklist'] %}
-              <li>{{ feature }}</li>
-              {% endfor %}
+              <li>Joe Bloggs</li>
             </ul>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/trusts/trust-details">
+              Change
+              <span class="govuk-visually-hidden">trust name</span>
+            </a>
+          </dd>
+        </div>
+
+
+              <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Does the entity have all the required information about the trust?
+          </dt>
+          <dd class="govuk-summary-list__value">
+                Yes
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="/trusts/trust-details">
@@ -2310,9 +2181,65 @@
             </a>
           </dd>
         </div>    
-      </dl> #}
+      </dl> 
 
-   
+
+
+
+
+
+<!-- ********** STATEMENTS  ********** -->
+
+ <h2 class="govuk-heading-l">Statement details</h2>
+
+        <h3 class="govuk-heading-m">Has the overseas entity identified any registrable beneficial owners?</h3>
+          {{ govukSummaryList({
+            classes: 'govuk-!-margin-bottom-9',
+            rows: [
+            {
+              key: {
+                text: " Statement"
+              },
+              value: {
+                text: "All beneficial owners have been identified and all required information has been provided."
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "Has the overseas entity identified any registrable beneficial owners?"
+                  }
+                ]
+              }
+            }
+            ]
+          }) }}
+
+        <h3 class="govuk-heading-m">Have any beneficial owners become or ceased in the update period?</h3>
+          {{ govukSummaryList({
+            classes: 'govuk-!-margin-bottom-9',
+            rows: [
+            {
+              key: {
+                text: " Statement"
+              },
+              value: {
+                text: "
+                The entity has reasonable cause to believe that at least one person has become or ceased to be a registrable beneficial owner during the update period."
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "Have any beneficial owners become or ceased in the update period?"
+                  }
+                ]
+              }
+            }
+            ]
+          }) }}
 
 
       <form method="post">
