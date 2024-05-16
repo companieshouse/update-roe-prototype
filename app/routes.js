@@ -22,6 +22,8 @@ router.use('/', require('./routes/remove-v3.js'))
 router.use('/', require('./routes/remove-v4.js'))
 router.use('/', require('./routes/remove-v5.js'))
 router.use('/', require('./routes/remove-v6.js'))
+router.use('/', require('./routes/v15-routes.js'))
+
 
 
 // Clear all data in session
@@ -65,3 +67,14 @@ module.exports = router
 //   });
 
 // module.exports = router
+
+// Show session data and URLs in the terminal  
+router.use((req, res, next) => {  
+  const log = {  
+    method: req.method,  
+    url: req.originalUrl,  
+    data: req.session.data  
+  }  
+  console.log(JSON.stringify(log, null, 2))  
+  next()  
+}) 
