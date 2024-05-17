@@ -266,14 +266,15 @@
     <p class="govuk-body">You'll also need to provide an <a href="#" class="govuk-link">agent assurance code</a> if you're the UK-regulated agent who carried out the verification checks.</p>
 
 
-    <p class="govuk-body">This service could take a while to complete. You'll be able to save your answers and come back later. </p>
+ 
 
 
     <div class="govuk-inset-text">
-    If you have applications in progress, you can choose to start a new application or return to a saved one.   
+         <p class="govuk-body">This service could take a while to complete. You'll be able to save your answers and come back later. </p>
+      <p class="govuk-body">If you have applications in progress, you can choose to start a new application or return to a saved one.   </p>
     </div>
 
-    <!-- New Pre-registration period banner-->
+    <!-- New Pre-registration period banner
   <div class="rp-start">
 
   <h2 class="govuk-heading-m">New for your next update statement</h2> 
@@ -281,8 +282,14 @@
         As part of your next update statement, you may need to provide <a href="#prereg-period">information about the pre-registration period</a>.
       </p>
 
-  </div> 
-
+  </div> -->
+<div class="govuk-warning-text rp-start">
+  <span class="govuk-warning-text__icon" aria-hidden="true" style="margin-left:20px;">!</span> <!-- if this tests well, this inline style should be added to application.scss-->
+   <strong class="govuk-warning-text__text">
+   <p class="govuk-!-font-weight-bold">New for your next update statement:</p>
+    As part of your next update statement, you may need to provide <a href="#prereg-period">information about the pre-registration period</a>.
+  </strong>
+</div>
 
       {{ govukButton({
         text: "Start now",
