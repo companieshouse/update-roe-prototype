@@ -6,23 +6,28 @@
 const govukPrototypeKit = require('govuk-prototype-kit')
 const router = govukPrototypeKit.requests.setupRouter()
 
+
+
 // Add your routes here - need to add from 
 
-router.use('/', require('./routes/v1-routes.js'))
-router.use('/', require('./routes/v2-routes.js'))
-router.use('/', require('./routes/v3-routes.js'))
-router.use('/', require('./routes/v4-routes.js'))
-router.use('/', require('./routes/v5-routes.js'))
-router.use('/', require('./routes/v6-routes.js'))
-router.use('/', require('./routes/v7-routes.js'))
-router.use('/', require('./routes/v8-routes.js'))
-router.use('/', require('./routes/remove-v1.js'))
-router.use('/', require('./routes/remove-v2.js'))
-router.use('/', require('./routes/remove-v3.js'))
-router.use('/', require('./routes/remove-v4.js'))
-router.use('/', require('./routes/remove-v5.js'))
-router.use('/', require('./routes/remove-v6.js'))
+// router.use('/', require('./routes/v1-routes.js'))
+// router.use('/', require('./routes/v2-routes.js'))
+// router.use('/', require('./routes/v3-routes.js'))
+// router.use('/', require('./routes/v4-routes.js'))
+// router.use('/', require('./routes/v5-routes.js'))
+// router.use('/', require('./routes/v6-routes.js'))
+// router.use('/', require('./routes/v7-routes.js'))
+// router.use('/', require('./routes/v8-routes.js'))
+// router.use('/', require('./routes/remove-v1.js'))
+// router.use('/', require('./routes/remove-v2.js'))
+// router.use('/', require('./routes/remove-v3.js'))
+// router.use('/', require('./routes/remove-v4.js'))
+// router.use('/', require('./routes/remove-v5.js'))
+// router.use('/', require('./routes/remove-v6.js'))
 router.use('/', require('./routes/v15-routes.js'))
+
+
+
 
 
 
