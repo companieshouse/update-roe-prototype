@@ -14,7 +14,7 @@ Will you be making any changes to the overseas entity? – {{ serviceName }} –
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="19-who-is-completing-this-update" method="post"> 
+      <form class="form" action="/XX-which-type-of-beneficiary-do-you-need-to-add" method="post"> 
         
     <div class="govuk-!-margin-bottom-3">
       {% include "includes/rp-tag.html" %}
@@ -46,18 +46,18 @@ Will you be making any changes to the overseas entity? – {{ serviceName }} –
           },
           items: [
             {
-              value: "yes",
+              value: "Individual",
               text: "Individual"
             },
             {
-              value: "no",
+              value: "Legal entity",
               text: "Legal entity"
             },
             {
               divider: "or"
             },
             {
-              value: "abroad",
+              value: "None - I just added them to the new trust",
               text: "None - I just added them to the new trust"
             }
           ]

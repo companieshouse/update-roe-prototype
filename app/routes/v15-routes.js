@@ -236,8 +236,19 @@ router.post('/40-individuals-or-entities-involved-in-the-trust', function(reques
   }
 })
 
+// XX-which-type-of-beneficiary-do-you-need-to-add
 
+router.post('/XX-which-type-of-beneficiary-do-you-need-to-add', function(request, response) {
 
+  var preRegBeneficiary = request.session.data['pre-reg-beneficiary']
+  if (preRegBeneficiary == "Individual"){
+      response.redirect("/v15/relevant-period/42b-tell-us-about-the-individual-beneficiary")
+  } if (preRegBeneficiary == "Legal entity"){
+    response.redirect("/v15/relevant-period/43b-tell-us-about-the-legal-entity-beneficiary")
+  } else {
+  response.redirect("/v15/relevant-period/36-check-your-answers-before-submitting")
+  }
+})
 
 
 // ****** VALIDATION *****
