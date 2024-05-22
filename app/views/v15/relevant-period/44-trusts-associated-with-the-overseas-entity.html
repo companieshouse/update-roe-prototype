@@ -14,7 +14,7 @@ Trusts associated with the overseas entity
 <div class="govuk-grid-row">
 
   <div class="govuk-grid-column-two-thirds">
-    <form action="36-check-your-answers-before-submitting" method="get">
+    <form action="/v15/relevant-period/39-tell-us-about-the-trust " method="get">
     <span class="govuk-caption-l">{{ data['overseas-name'] }} - OE001485</span>
     <h1 class="govuk-heading-xl">Trusts associated with the overseas entity</h1>
   </div>
@@ -29,7 +29,7 @@ Trusts associated with the overseas entity
                 <dl class="govuk-summary-list">
                   <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
-                      Islands Trust
+                      ACME Trust
                     </dt>
 
                     <dd class="govuk-summary-list__value summary-status" aria-label="Status - ceased">
@@ -77,21 +77,20 @@ Trusts associated with the overseas entity
     <div class="govuk-form-group">
       {# <h2 class="govuk-heading-s">For the current filing period</h3> #}
       <fieldset class="govuk-fieldset">
-        <div class="govuk-radios" data-module="govuk-radios">
+    <div class="govuk-radios" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
-            <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
-              Yes – for the current filing period
+            <input class="govuk-radios__input" id="whereDoYouLive1" name="whereDoYouLive" type="radio" value="yesCFP">
+            <label class="govuk-label govuk-radios__label" for="whereDoYouLive1">
+              Yes – for the current filing period    </label>
           </div>
   
 
         {# <h2 class="govuk-heading-s govuk-!-margin-top-3">For the pre-registration period</h3> #}
 
 
-      <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="yes">
-              <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+              <input class="govuk-radios__input" id="whereDoYouLive2" name="whereDoYouLive" type="radio" value="yesPRP">
+              <label class="govuk-label govuk-radios__label" for="whereDoYouLive2">
                 Yes – for the pre-registration period
               </label>
             </div>
@@ -99,8 +98,8 @@ Trusts associated with the overseas entity
 {# <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible"> #}
             
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="no">
-              <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+              <input class="govuk-radios__input" id="whereDoYouLive3" name="whereDoYouLive" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="whereDoYouLive3">
                 No
 
               </label>

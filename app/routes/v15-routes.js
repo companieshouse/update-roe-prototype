@@ -221,7 +221,20 @@ router.get( '/44-tell-us-about-the-former-beneficial-owner', function ( req, res
 }
 
 
+//40-individuals-or-entities-involved-in-the-trust
 
+
+router.post('/40-individuals-or-entities-involved-in-the-trust', function(request, response) {
+
+  var trustTypes = request.session.data['trustTypes']
+  if (trustTypes == "historical"){
+      response.redirect("/v15/41-tell-us-about-the-former-beneficial-owner")
+  } if (trustTypes == "individual-trusts"){
+    response.redirect("/v15/42-tell-us-about-the-individual")
+  } else {
+  response.redirect("/v15//43-tell-us-about-the-legal-entity")
+  }
+})
 
 
 
