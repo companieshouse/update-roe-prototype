@@ -1,0 +1,160 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+
+Trusts associated with the overseas entity
+ – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+    <form action="/v15/relevant-period/39-tell-us-about-the-trust " method="get">
+    <span class="govuk-caption-l">{{ data['overseas-name'] }} - OE001485</span>
+    <h1 class="govuk-heading-xl">Trusts associated with the overseas entity</h1>
+  </div>
+
+  <div class="govuk-grid-column-full">
+
+            <div class="govuk-summary-card">
+              <div class="govuk-summary-card__title-wrapper">
+                <h2 class="govuk-summary-card__title">What you have reviewed</h2>
+              </div>
+              <div class="govuk-summary-card__content">
+                <dl class="govuk-summary-list">
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      ACME Trust
+                    </dt>
+
+                    <dd class="govuk-summary-list__value summary-status" aria-label="Status - ceased">
+                      Removed
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="/register/trusts/trust-details-edit">
+                        Change<span class="govuk-visually-hidden"> Islands Trust - Removed</span>
+                      </a>
+                    </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Cayman Trust
+                    </dt>
+                    <dd class="govuk-summary-list__value summary-status" aria-label="Status - active">
+                    Active
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="/register/trusts/trust-details-edit">
+                        Change<span class="govuk-visually-hidden"> Cayman Trust -  Active </span>
+                      </a>
+                    </dd>
+                  </div>
+              </div>
+              </div>
+
+
+
+         {{ govukTable({
+          caption: 'What <span class="govuk-visually-hidden">registrable beneficial owners</span> you have added to the pre-registration period' | safe,
+          captionClasses: "govuk-table__caption--m",
+          classes: "govuk-!-margin-bottom-8",
+          firstCellIsHeader: true,
+          head: [
+          {
+            text: "Name",
+            classes: "govuk-visually-hidden"
+          },
+          {
+            text: "Type",
+            classes: "govuk-visually-hidden"
+          },
+
+            {
+              text: "Change or remove",
+              classes: "govuk-visually-hidden"
+            }
+          ],
+          rows: [
+            [
+              {
+                text: "Florida Trust"
+              },
+              {
+                text: "Active"
+              },
+            {
+              html: '<a href="25-review-the-individual-beneficial-owner">Change</a>',
+              visuallyHiddenText: "Individual beneficial owner - David Bloggs"
+            }
+
+
+              ]
+          ]
+        }) }} 
+
+   </div>
+
+    <div class="govuk-grid-column-two-thirds">
+
+        <h2 class="govuk-heading-m">Do you need to add another trust?</h2>
+
+        {# <div class="govuk-inset-text">
+          You need to add beneficial owners for <b>both the pre-registration period and the update statement period</b>.
+        </div> #}
+
+      <div class="govuk-inset-text">    
+        <p class="govuk-body">Based on the pre-registration statement you provided earlier in this service, you also need to tell us about any trusts from this period, that the entity has not already told us about. 
+
+        <p class="govuk-body">The pre-registration period for ASHCROFT LIMITED is between <b>28 February 2022</b> and <b>18 September 2022</b>.
+        </p>
+      </div>
+
+    <div class="govuk-form-group">
+      {# <h2 class="govuk-heading-s">For the current filing period</h3> #}
+      <fieldset class="govuk-fieldset">
+    <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="whereDoYouLive1" name="whereDoYouLive" type="radio" value="yesCFP">
+            <label class="govuk-label govuk-radios__label" for="whereDoYouLive1">
+              Yes – for the current filing period    </label>
+          </div>
+  
+
+        {# <h2 class="govuk-heading-s govuk-!-margin-top-3">For the pre-registration period</h3> #}
+
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="whereDoYouLive2" name="whereDoYouLive" type="radio" value="yesPRP">
+              <label class="govuk-label govuk-radios__label" for="whereDoYouLive2">
+                Yes – for the pre-registration period
+              </label>
+            </div>
+
+{# <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible"> #}
+            
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="whereDoYouLive3" name="whereDoYouLive" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="whereDoYouLive3">
+                No
+
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+      </form>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}

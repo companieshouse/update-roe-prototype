@@ -228,11 +228,11 @@ router.post('/40-individuals-or-entities-involved-in-the-trust', function(reques
 
   var trustTypes = request.session.data['trustTypes']
   if (trustTypes == "historical"){
-      response.redirect("/v15/41-tell-us-about-the-former-beneficial-owner")
+      response.redirect("/v15/relevant-period/41-tell-us-about-the-former-beneficial-owner")
   } if (trustTypes == "individual-trusts"){
-    response.redirect("/v15/42-tell-us-about-the-individual")
+    response.redirect("/v15/relevant-period/42-tell-us-about-the-individual")
   } else {
-  response.redirect("/v15//43-tell-us-about-the-legal-entity")
+  response.redirect("/v15/relevant-period/43-tell-us-about-the-legal-entity")
   }
 })
 
