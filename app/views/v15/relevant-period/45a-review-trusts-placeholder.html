@@ -1,0 +1,47 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+
+You're about to review trusts information – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+{# 
+     <div class="govuk-!-margin-bottom-3">
+      {% include "includes/rp-tag-update.html" %}
+      {% include "includes/rp-tag.html" %}
+    </div> #}
+
+<h1 class="govuk-heading-xl">What user would see here</h1>
+
+
+      <p class="govuk-body">User would see the <a href="/v15/index#manage-trusts">Manage trust screens</a> from the 'regular' Update journey, for <strong>each</strong> 'existing' trust:</p>
+  
+  <ul class="govuk-body">
+        <li><a href="/v15/46-review-trust">Review headline trust info</a></li>
+        <li>And then all the beneficial owner or managing officers of each trust, for example, <a href="/v15/47-former-beneficial-owners">Review former beneficial owners</a></li>
+      </ul>
+
+
+ <p class="govuk-body">Then user is taken to the 'Trusts associated with the overseas entity' screen... </p>
+  
+ {# {% include "includes/rp-banner-statement.html" %} #}
+
+
+      {{ govukButton({
+        text: "Continue",
+        href: '/v15/relevant-period/44-trusts-associated-with-the-overseas-entity'
+      }) }}
+
+
+    </div>
+  </div>
+
+{% endblock %}

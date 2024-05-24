@@ -1,0 +1,125 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+ TITLE TO BE ADDED  – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="v15/relevant-period/36-check-your-answers-before-submitting" method="get">
+
+  <span class="govuk-caption-l">{{ data['overseas-name'] }} - OE001485</span>
+        <h1 class="govuk-heading-xl">TITLE TO BE ADDED - beneficiaries you have added?</h1>
+
+<div class="govuk-inset-text">
+  <p class="govuk-body"><b>Beneficiaries from the pre-registration period</b>
+    
+  <p class="govuk-body">Based on the pre-registration statement you provided earlier in this service, you also need to tell us about any additional beneficiaries of a trust from this period, that the entity has not already told us about.</b>
+
+  <p class="govuk-body">The pre-registration period for <b>ASHCROFT LIMITED</b> is between <b>28 February 2022</b> and <b>18 September 2022</b>.
+  </p>
+</div>
+
+
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">TITLE TO BE ADDED - beneficiaries you have added?</h2>
+  </div>
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Connor McLeod
+        </dt>
+        <dd class="govuk-summary-list__value">
+          	Individual beneficiary
+        </dd>
+        <dd class="govuk-summary-list__value summary-status" aria-label="Status - ceased">
+          NEW TRUST 1
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="25-review-the-individual-beneficial-owner">
+            Change<span class="govuk-visually-hidden"> Daniel Ashcroft - Individual beneficiary</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          ENCOM LIMITED
+        </dt>
+        <dd class="govuk-summary-list__value">
+          	Legal entity beneficiary
+        </dd>
+        <dd class="govuk-summary-list__value summary-status" aria-label="Status - active">
+          NEW TRUST 2
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="28-review-the-other-legal-entity-beneficial-owner">
+            Change<span class="govuk-visually-hidden">Name Corp - </span>
+          </a>
+        </dd>
+      </div>
+  </div>
+  </div>
+
+  {{ govukRadios({
+          idPrefix: "pre-reg-beneficiary",
+          name: "pre-reg-beneficiary",
+          fieldset: {
+            legend: {
+              text: "Which type of beneficiary do you need to add?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "Individual",
+              text: "Individual"
+            },
+            {
+              value: "Legal entity",
+              text: "Legal entity"
+            }
+          ]
+        }) }}
+     
+
+        <div class="govuk-button-group">
+
+        {{ govukButton({
+          text: "Add",
+          href: "#"
+        }) }}
+
+
+        {{ govukButton({
+              html: 'No more <span class="govuk-visually-hidden">beneficial owners or managing officers</span> to add',
+           classes: "govuk-button--secondary",
+           href: "36-check-your-answers-before-submitting"
+        }) }}
+
+
+      </div>
+
+</form>
+
+
+</div>
+  </div>
+
+{% endblock %}
+
+
