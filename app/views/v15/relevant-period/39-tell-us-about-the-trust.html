@@ -17,7 +17,12 @@
       {% include "includes/rp-banner.html" %}
 
       <h1 class="govuk-heading-xl">Tell us about the trust involved in the pre-registration period</h1>
-          <p class="govuk-!-margin-bottom-5 govuk-!-margin-top-5">You can add more trusts later.</p>
+
+<!-- Inset text-->
+        <div class="govuk-inset-text">
+        <p class="govuk-body">
+        You need to enter information that is correct as at the date the trust stopped being associated with the overseas entity.
+        </div>
 
 
         {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
@@ -39,11 +44,6 @@
           }
         }) }}
         {% endset -%}
-
-
-
-
-
 
 
 
@@ -81,6 +81,20 @@
         }) }}
 
 
+    {{ govukDateInput({
+      id: "trust-end",
+      namePrefix: "trust-end",
+      fieldset: {
+        legend: {
+          text: "When did this trust stop being associated with the overseas entity?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      hint: {
+        text: "For example, 27 3 2007."
+      }
+    }) }}
 
 
 <div class="govuk-form-group govuk-!-margin-bottom-4">
@@ -91,7 +105,7 @@
       </h2>
     </legend>
     <div id="involved-hint" class="govuk-hint">
-      Select all that apply. You can add more later.
+      Select all that apply. 
     </div>
     <div class="govuk-checkboxes" data-module="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
