@@ -246,7 +246,7 @@ router.post('/XX-which-type-of-beneficiary-do-you-need-to-add', function(request
   } if (preRegBeneficiary == "Legal entity"){
     response.redirect("/v15/relevant-period/43b-tell-us-about-the-legal-entity-beneficiary")
   } else {
-  response.redirect("/v15/relevant-period/36-check-your-answers-before-submitting")
+  response.redirect("/v15/relevant-period/which-type-of-trustee-do-you-need-to-add")
   }
 })
 
