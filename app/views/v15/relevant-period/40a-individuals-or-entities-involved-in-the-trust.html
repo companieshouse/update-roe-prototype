@@ -13,10 +13,6 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-          {% include "includes/rp-banner.html" %}
-
-
-
 <span class="govuk-caption-l">{{ data['trust-name'] }}</span>
 <h1 class="govuk-heading-xl">Individuals or entities involved in the trust</h1>
 
@@ -133,14 +129,14 @@
                 value: "individual-trusts",
                 text: "Individual",
                 hint: {
-                    text: "This is an individual who was a beneficiary, settlor, grantor or interested person for this trust."
+                    text: "This is an individual that is currently a beneficiary, settlor, grantor or interested person for this trust."
                   }
               },
               {
                 value: "ole-trusts",
                 text: "Legal entity",
                 hint: {
-                  text: "This is a legal entity that was a beneficiary, settlor, grantor or interested person for this trust. You do not need to tell us about government or public authorities."
+                  text: "This is a legal entity that is currently a beneficiary, settlor, grantor or interested person for this trust. You do not need to tell us about government or public authorities."
                   }
               }
                 ]
@@ -152,9 +148,9 @@
   <h2 class="govuk-heading-s govuk-!-margin-top-3">For the pre-registration period</h3>
 
 <div class="govuk-inset-text">    
-  <p class="govuk-body">Based on the pre-registration statement you provided earlier in this service, you also need to tell us about any registrable beneficial owners from this period, that the entity has not already told us about. 
+  <p class="govuk-body">Based on the pre-registration statement you provided earlier in this service, you also need to tell us about any beneficiaries from this period, that the entity has not already told us about. 
 
-  <p class="govuk-body">Content TBA</b>.
+  <p class="govuk-body">The pre-registration period for ASHCROFT LIMITED is between <strong>28 February 2022</strong> and <strong>18 September 2022</strong>.
   </p>
 </div>
 
@@ -170,24 +166,17 @@
             },
             items: [
               {
-                value: "historical-prereg",
-                text: "Former beneficial owner",
-                hint: {
-                    text: "This is any individual or legal entity that was previously a registrable beneficial owner of the overseas entity, due to being a trustee of this trust."
-                  }
-              },
-              {
                 value: "individual-trusts-prereg",
-                text: "Individual",
+                text: "Individual beneficiary",
                 hint: {
-                    text: "This is an individual who was a beneficiary, settlor, grantor or interested person for this trust."
+                    text: "This is an individual who was a beneficiary of this trust during the pre-registration period."
                   }
               },
               {
                 value: "ole-trusts-prereg",
-                text: "Legal entity",
+                text: "Legal entity beneficiary",
                 hint: {
-                  text: "This is a legal entity that was a beneficiary, settlor, grantor or interested person for this trust. You do not need to tell us about government or public authorities."
+                  text: "This is a legal entity that was a beneficiary of this trust during the pre-registration period. You do not need to tell us about government or public authority beneficiaries."
                   }
               }
                 ]
