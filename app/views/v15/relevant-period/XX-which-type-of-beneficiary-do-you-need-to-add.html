@@ -34,53 +34,61 @@ Which type of beneficiary do you need to add? – {{ serviceName }} – GOV.UK
 </div>
 
 
-<div class="govuk-form-group">
-  <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
-    <div class="govuk-radios" data-module="govuk-radios">
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
-        <label class="govuk-label govuk-radios__label" for="contact">
-          Yes
-        </label>
-      </div>
-
-      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
-      <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-      <h1 class="govuk-fieldset__heading">
-        What type of beneficiary do you need to add?
-      </h1>
-    </legend>
-
-<div class="govuk-radios" data-module="govuk-radios">
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
-        <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
-          Individual
-        </label>
-      </div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="scotland">
-        <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
-          Legal entity
-        </label>
-      </div>
 
 
 
-        </div>
-      </div>
-      
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone" data-aria-controls="conditional-contact-2">
-        <label class="govuk-label govuk-radios__label" for="contact-2">
-          No, I have already done this
-        </label>
-      </div>
-      </div>
-    </div>
-  </fieldset>
-</div>
-</div>
+
+{% set yesHtml %}
+{{ govukRadios({
+  name: "whereDoYouLive",
+  fieldset: {
+    legend: {
+      text: "What type of beneficiary do you need to add?",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "Individual",
+      text: "Individual"
+    },
+    {
+      value: "Legal Entity",
+      text: "Legal Entity"
+    }
+  ]
+}) }}
+{% endset -%}
+
+
+{{ govukRadios({
+  name: "contact",
+  fieldset: {
+    legend: {
+      text: "Do you need to add any beneficiaries for the pre-registration period?",
+      isPageHeading: true,
+      classes: "govuk-visually-hidden"
+    }
+  },
+
+  items: [
+    {
+      value: "yes-individual",
+      text: "Yes, an individual"
+    },    {
+      value: "yes-legal-entity",
+      text: "Yes, a legal entity"
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+  ]
+}) }}
+
+
+
 
 
 <!--
