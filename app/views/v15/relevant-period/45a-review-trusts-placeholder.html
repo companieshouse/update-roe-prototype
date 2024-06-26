@@ -1,8 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-
-You're about to review trusts information – {{ serviceName }} – GOV.UK
+  Review the trust – {{ serviceName }} – GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -11,35 +10,147 @@ You're about to review trusts information – {{ serviceName }} – GOV.UK
 
 
 {% block content %}
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-{# 
-     <div class="govuk-!-margin-bottom-3">
-      {% include "includes/rp-tag-update.html" %}
-      {% include "includes/rp-tag.html" %}
-    </div> #}
 
-<h1 class="govuk-heading-xl">What user would see here</h1>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">{{ data['trust-name'] }}</span>
+      <h1 class="govuk-heading-xl">Review the trust</h1>
+      <p class="govuk-!-margin-bottom-5 govuk-!-margin-top-5">If you need to update this information, you can change the answers here.</p>
 
 
-      <p class="govuk-body">User would see the <a href="/v15/index#manage-trusts">Manage trust screens</a> from the 'regular' Update journey, for <strong>each</strong> 'existing' trust:</p>
-  
-  <ul class="govuk-body">
-        <li><a href="/v15/46-review-trust">Review headline trust info</a></li>
-        <li>And then all the beneficial owner or managing officers of each trust, for example, <a href="/v15/47-former-beneficial-owners">Review former beneficial owners</a></li>
-      </ul>
 
 
- <p class="govuk-body">Then user is taken to the 'Trusts associated with the overseas entity' screen... </p>
-  
- {# {% include "includes/rp-banner-statement.html" %} #}
+
+        {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+
+        {% set bodateHtml %}
+        {{ govukDateInput({
+          id: "bo-date",
+          namePrefix: "bo-date",
+          fieldset: {
+            legend: {
+              text: "What date did they become involved in the trust?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          hint: {
+            text: "For example, 27 3 2007"
+          }
+        }) }}
+        {% endset -%}
 
 
-      {{ govukButton({
-        text: "Continue",
-        href: '/v15/relevant-period/44-trusts-associated-with-the-overseas-entity'
-      }) }}
 
+
+
+
+
+
+
+        {{ govukInput({
+
+
+          label: {
+            text: "What is the name of the trust?",
+            classes: "govuk-label--m",
+            isPageHeading: false
+          },
+          id: "trust-name",
+          name: "trust-name",
+          value: "Island Trust",
+          hint: {
+            text: "If the trust does not have a name, give a description that it can be identified by."
+          }
+        }) }}
+
+
+
+        <p class="govuk-body-l govuk-!-font-weight-bold govuk-!-margin-top-7 govuk-!-margin-bottom-1">Date the trust was created:</p>
+      <p class="govuk-!-font-size-20 govuk-!-margin-bottom-7">10 July 2020</p>
+
+
+
+
+<div class="govuk-form-group govuk-!-margin-bottom-4">
+  <fieldset class="govuk-fieldset" aria-describedby="involved">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      <h2 class="govuk-fieldset__heading">
+        Which of the overseas entity’s beneficial owners are trustees of this trust?
+      </h2>
+    </legend>
+    <div id="involved-hint" class="govuk-hint">
+      Select all that apply. You can add more later.
+    </div>
+    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="involved" name="involved" type="checkbox" value="joebloggs">
+        <label class="govuk-label govuk-checkboxes__label" for="involved">
+          Joe Bloggs
+        </label>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="involved-2" name="involved" type="checkbox" value="acmelimited">
+        <label class="govuk-label govuk-checkboxes__label" for="involved-2">
+          Acme Limited
+        </label>
+
+    </div>
+  </fieldset>
+</div>
+
+
+
+      {# <p class="govuk-body govuk-!-margin-bottom-7"><a href="/register/beneficial-owner-type-one-added" class="govuk-link govuk-link--no-visited-state">Change a beneficial owner's trust nature of control</a></p>
+ #}
+
+
+
+        {{ govukRadios({
+  name: "entity-required-info",
+  fieldset: {
+    legend: {
+      text: "To the best of their knowledge, does the entity have all the required information about the trust?",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes"
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+  ]
+}) }}
+
+
+
+
+        <form class="form" action="47-former-beneficial-owners" method="post">
+
+
+
+
+          {{ govukInsetText({
+            html: '
+                      <h2 class="govuk-heading-m">What information we&#39;ll show on the public register</h2>
+                      <p>We will not show any of the information you provide on this screen on the public Register of Overseas Entities. However, we may share it with HMRC.</p>
+                        '
+          }) }}
+        {{ govukButton({
+          text: "Save and continue",
+          href: '40a-individuals-or-entities-involved-in-the-trust'
+
+        }) }}
+
+
+
+      </form>
 
     </div>
   </div>
