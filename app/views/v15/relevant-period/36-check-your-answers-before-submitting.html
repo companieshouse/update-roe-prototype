@@ -42,24 +42,8 @@
                         }
                       ]
                     }
-                  }
-                ]
-              }) }}
-
-
-
-
-<!-- ********** PRE-REGISTRATION  ********** -->
-      <h1 class="govuk-heading-l">
-      Information for the pre-registration period
-      </h1>
-
-    <div class="govuk-inset-text">
-      This overseas entity's pre-registration period is between <strong>28 February 2022</strong> and <strong>18 September 2022</strong>
-    </div>
-
-      {{ govukSummaryList({
-        rows: [
+                  },
+     
           {
             key: {
               text: "Was the overseas entity a registered owner of UK property or land during the pre-registration period?"
@@ -81,6 +65,17 @@
       }) }}
 
 
+
+<!-- ********** PRE-REGISTRATION  ********** -->
+      <h1 class="govuk-heading-l">
+      Statements for the pre-registration period
+      </h1>
+
+    <div class="govuk-inset-text">
+      This overseas entity's pre-registration period is between <strong>28 February 2022</strong> and <strong>18 September 2022</strong>
+    </div>
+
+
 <h3 class="govuk-heading-m">Beneficial owner statement</h3>
           {{ govukSummaryList({
             classes: 'govuk-!-margin-bottom-9',
@@ -98,7 +93,7 @@
                   {
                     href: "#",
                     text: "Change",
-                    visuallyHiddenText: "Have any beneficial owners become or ceased in the update period?"
+                    visuallyHiddenText: "The entity has reasonable cause to believe at least one person become or ceased to be a registrable beneficial owner during the pre-registration period, that it has not already provided information about."
                   }
                 ]
               }
@@ -123,7 +118,7 @@
                   {
                     href: "#",
                     text: "Change",
-                    visuallyHiddenText: "Have any beneficial owners become or ceased in the update period?"
+                    visuallyHiddenText: "The entity has no reasonable cause to believe that there were any trusts involved in the overseas entity during the pre-registration period, that it has not already provided information about."
                   }
                 ]
               }
@@ -148,7 +143,7 @@
                   {
                     href: "#",
                     text: "Change",
-                    visuallyHiddenText: "Have any beneficial owners become or ceased in the update period?"
+                    visuallyHiddenText: "The entity has no reasonable cause to believe that anyone has become or ceased to be a beneficiary of a trust involved in the overseas entity during the pre-registration period, that it has not already provided information about."
                   }
                 ]
               }
@@ -179,7 +174,7 @@
                         {
                           href: "#",
                           text: "Change",
-                          visuallyHiddenText: "Does the update include people that have protection or that have applied for protection?"
+                          visuallyHiddenText: "Date of the update statement"
                         }
                       ]
                     }
@@ -307,7 +302,7 @@
                   {
                     href: "#",
                     text: "Change",
-                    visuallyHiddenText: "Who is making the filing?"
+                    visuallyHiddenText: "Date the verification checks were completed"
                   }
                 ]
               }
@@ -411,7 +406,7 @@
                     {
                       href: "#",
                       text: "Change",
-                      visuallyHiddenText: "Agent’s authentication code"
+                      visuallyHiddenText: "Agent's authentication code"
                     }
                   ]
                 }
@@ -467,7 +462,7 @@
           <dd class="govuk-summary-list__actions">
             <a href="/register/entity">
               Change
-              <span class="govuk-visually-hidden">    Country overseas entity was formed in</span>
+              <span class="govuk-visually-hidden">Country overseas entity was formed in</span>
             </a>
           </dd>
         </div>
@@ -577,7 +572,7 @@
           <dd class="govuk-summary-list__actions">
             <a href="/register/entity">
               Change
-              <span class="govuk-visually-hidden"> overseas entity public register</span>
+              <span class="govuk-visually-hidden"> overseas entity Overseas public registerr</span>
             </a>
           </dd>
         </div>
@@ -594,7 +589,7 @@
           <dd class="govuk-summary-list__actions">
             <a href="/register/entity">
               Change
-              <span class="govuk-visually-hidden"> overseas entity public register</span>
+              <span class="govuk-visually-hidden"> overseas entity Jurisdiction</span>
             </a>
           </dd>
         </div>
@@ -611,7 +606,7 @@
           <dd class="govuk-summary-list__actions">
             <a href="/register/entity">
               Change
-              <span class="govuk-visually-hidden"> overseas entity public register</span>
+              <span class="govuk-visually-hidden"> overseas entity  Registration number</span>
             </a>
           </dd>
         </div>      
@@ -771,7 +766,7 @@
         <dd class="govuk-summary-list__actions">
           <a href="/register/beneficial-owner-individual">
             Change
-            <span class="govuk-visually-hidden"> Individual beneficial owner Dr Lisa Daviesnature of control</span>
+            <span class="govuk-visually-hidden"> Individual beneficial owner Dr Lisa Davies nature of control</span>
           </a>
         </dd>
       </div> 
@@ -814,7 +809,7 @@
         <dd class="govuk-summary-list__actions">
           <a href="/register/beneficial-owner-individual">
             Change
-            <span class="govuk-visually-hidden"> Individual beneficial owner Dr Lisa Davies Are they on the sanctions list?</span>
+            <span class="govuk-visually-hidden"> Individual beneficial owner Dr Lisa Davies Are they still a beneficial owner?</span>
           </a>
         </dd>
       </div>
@@ -840,7 +835,7 @@
           <dd class="govuk-summary-list__actions">
             <a href="/register/beneficial-owner-other">
               Change
-              <span class="govuk-visually-hidden"> Corporate beneficial owner Sugar Holdings name</span>
+              <span class="govuk-visually-hidden"> Other legal entity beneficial owner ACME Trustees Limited name</span>
             </a>
           </dd>
         </div>
@@ -860,7 +855,7 @@
           <dd class="govuk-summary-list__actions">
             <a href="/register/beneficial-owner-other">
               Change
-              <span class="govuk-visually-hidden"> Corporate beneficial owner Sugar Holdings principal or registered office address</span>
+              <span class="govuk-visually-hidden"> Other legal entity beneficial owner ACME Trustees Limited registered office address</span>
             </a>
           </dd>
         </div>
@@ -874,7 +869,7 @@
           <dd class="govuk-summary-list__actions">
             <a href="/register/beneficial-owner-other">
               Change
-              <span class="govuk-visually-hidden">Corporate beneficial owner Sugar Holdings correspondence address</span>
+              <span class="govuk-visually-hidden">Other legal entity beneficial owner ACME Trustees Limited correspondence address</span>
             </a>
           </dd>
         </div>
@@ -888,7 +883,7 @@
           <dd class="govuk-summary-list__actions">
             <a href="/register/beneficial-owner-other">
               Change
-              <span class="govuk-visually-hidden">Corporate beneficial owner Sugar Holdings   Legal form</span>
+              <span class="govuk-visually-hidden">Other legal entity beneficial owner ACME Trustees Limited  Legal form</span>
             </a>
           </dd>
         </div>
@@ -902,7 +897,7 @@
           <dd class="govuk-summary-list__actions">
             <a href="/register/beneficial-owner-other">
               Change
-              <span class="govuk-visually-hidden"> Corporate beneficial owner Sugar Holdings governing law</span>
+              <span class="govuk-visually-hidden"> Other legal entity beneficial owner ACME Trustees Limited governing law</span>
             </a>
           </dd>
         </div>
@@ -916,7 +911,7 @@
           <dd class="govuk-summary-list__actions">
             <a href="/register/beneficial-owner-other">
               Change
-              <span class="govuk-visually-hidden">Corporate beneficial owner Sugar Holdings public register</span>
+              <span class="govuk-visually-hidden">Other legal entity beneficial owner ACME Trustees Limited on public register</span>
             </a>
           </dd>
         </div>
@@ -941,7 +936,7 @@
           <dd class="govuk-summary-list__actions">
             <a href="/register/beneficial-owner-other">
               Change
-              <span class="govuk-visually-hidden"> Corporate beneficial owner Sugar Holdingsnature of control</span>
+              <span class="govuk-visually-hidden"> Other legal entity beneficial owner ACME Trustees Limited nature of control</span>
             </a>
           </dd>
         </div>
@@ -956,7 +951,7 @@
           <dd class="govuk-summary-list__actions">
             <a href="/register/beneficial-owner-other">
               Change
-              <span class="govuk-visually-hidden">Corporate beneficial owner Sugar Holdings- is it on the sanctions list</span>
+              <span class="govuk-visually-hidden">Other legal entity beneficial owner ACME Trustees Limited is it on the sanctions list</span>
             </a>
           </dd>
         </div>
@@ -971,7 +966,7 @@
           <dd class="govuk-summary-list__actions">
             {# <a href="/register/beneficial-owner-other">
               Change
-              <span class="govuk-visually-hidden"> Corporate beneficial owner Sugar Holdings date it became a beneficial owner</span>
+              <span class="govuk-visually-hidden"> Other legal entity beneficial owner ACME Trustees Limited date it became a beneficial owner</span>
             </a> #}
           </dd>
         </div>
@@ -985,7 +980,7 @@
         <dd class="govuk-summary-list__actions">
           <a href="/register/beneficial-owner-individual">
             Change
-            <span class="govuk-visually-hidden"> Individual beneficial owner ACME Trustees Limited Is it still a beneficial owner?</span>
+            <span class="govuk-visually-hidden"> Other legal entity beneficial owner ACME Trustees Limited Is it still a beneficial owner?</span>
           </a>
         </dd>
       </div>
@@ -1019,7 +1014,7 @@
           <dd class="govuk-summary-list__actions">
             <a href="/register/beneficial-owner-individual">
               Change
-              <span class="govuk-visually-hidden"> Individual beneficial owner First name </span>
+              <span class="govuk-visually-hidden"> Individual beneficial owner Joe Bloggs First name </span>
             </a>
           </dd>
         </div>
@@ -1033,7 +1028,7 @@
           <dd class="govuk-summary-list__actions">
             <a href="/register/beneficial-owner-individual">
               Change
-              <span class="govuk-visually-hidden">  Individual beneficial owner Dr Lisa Davies Davies</span>
+              <span class="govuk-visually-hidden">  Individual beneficial owner Joe Bloggs last name</span>
             </a>
           </dd>
         </div>
@@ -1047,7 +1042,7 @@
           <dd class="govuk-summary-list__actions">
             {# <a href="/register/beneficial-owner-individual">
               Change
-              <span class="govuk-visually-hidden">Individual beneficial owner Dr Lisa Davies date of birth</span>
+              <span class="govuk-visually-hidden">Individual beneficial owner Joe Bloggs date of birth</span>
             </a> #}
           </dd>
         </div>
@@ -1061,7 +1056,7 @@
           <dd class="govuk-summary-list__actions">
             <a href="/register/beneficial-owner-individual">
               Change
-              <span class="govuk-visually-hidden"> Individual beneficial owner Dr Lisa Davies nationality</span>
+              <span class="govuk-visually-hidden"> Individual beneficial owner Joe Bloggs nationality</span>
             </a>
           </dd>
         </div>
@@ -1076,7 +1071,7 @@
           <dd class="govuk-summary-list__actions">
             <a href="/register/beneficial-owner-individual">
               Change
-              <span class="govuk-visually-hidden"> Individual beneficial owner Dr Lisa Davies second nationality</span>
+              <span class="govuk-visually-hidden">Individual beneficial owner Joe Bloggs second nationality</span>
             </a>
           </dd>
         </div> -->
@@ -1093,7 +1088,7 @@
           <dd class="govuk-summary-list__actions">
             <a href="/register/beneficial-owner-individual">
               Change
-              <span class="govuk-visually-hidden">Individual beneficial owner Dr Lisa Davies home address</span>
+              <span class="govuk-visually-hidden">Individual beneficial owner Joe Bloggs home address</span>
             </a>
           </dd>
         </div>
@@ -1107,7 +1102,7 @@
           <dd class="govuk-summary-list__actions">
             <a href="/register/beneficial-owner-individual">
               Change
-              <span class="govuk-visually-hidden"> Individual beneficial owner Dr Lisa Davies correspondence address</span>
+              <span class="govuk-visually-hidden"> Individual beneficial owner Joe Bloggs correspondence address</span>
             </a>
           </dd>
         </div>
@@ -1125,7 +1120,7 @@
         <dd class="govuk-summary-list__actions">
           <a href="/register/beneficial-owner-individual">
             Change
-            <span class="govuk-visually-hidden"> Individual beneficial owner Dr Lisa Daviesnature of control</span>
+            <span class="govuk-visually-hidden"> Individual beneficial owner Joe Bloggs nature of control</span>
           </a>
         </dd>
       </div> #}
@@ -1151,7 +1146,7 @@
         <dd class="govuk-summary-list__actions">
           <a href="/register/beneficial-owner-individual">
             Change
-            <span class="govuk-visually-hidden"> Individual beneficial owner Dr Lisa Daviesnature of control</span>
+            <span class="govuk-visually-hidden"> Individual beneficial owner Joe Bloggs nature of control</span>
           </a>
         </dd>
       </div> 
@@ -1166,7 +1161,7 @@
         <dd class="govuk-summary-list__actions">
           <a href="/register/beneficial-owner-individual">
             Change
-            <span class="govuk-visually-hidden"> Individual beneficial owner Dr Lisa Davies Are they on the sanctions list?</span>
+            <span class="govuk-visually-hidden"> Individual beneficial owner Joe Bloggs Are they on the sanctions list?</span>
           </a>
         </dd>
       </div>
@@ -1180,7 +1175,7 @@
         <dd class="govuk-summary-list__actions">
           {# <a href="/register/beneficial-owner-individual">
             Change
-            <span class="govuk-visually-hidden"> Individual beneficial owner Dr Lisa Daviesdate they became a beneficial owner</span>
+            <span class="govuk-visually-hidden">  Individual beneficial owner Joe Bloggs date they became a beneficial owner</span>
           </a> #}
         </dd>
       </div>
@@ -1194,7 +1189,7 @@
         <dd class="govuk-summary-list__actions">
           <a href="/register/beneficial-owner-individual">
             Change
-            <span class="govuk-visually-hidden"> Individual beneficial owner Dr Lisa Davies Are they on the sanctions list?</span>
+            <span class="govuk-visually-hidden">Individual beneficial owner Joe Bloggs Are they still a beneficial owner?</span>
           </a>
         </dd>
       </div>
@@ -1209,7 +1204,7 @@
         <dd class="govuk-summary-list__actions">
           <a href="/register/beneficial-owner-individual">
             Change
-            <span class="govuk-visually-hidden"> Individual beneficial owner Dr Lisa Davies Are they on the sanctions list?</span>
+            <span class="govuk-visually-hidden">Individual beneficial owner Joe Bloggs Date they ceased to be a registrable beneficial owner</span>
           </a>
         </dd>
       </div>
@@ -1743,7 +1738,7 @@
           <dd class="govuk-summary-list__actions">
             <a href="/trusts/trust-details">
               Change
-              <span class="govuk-visually-hidden">trust name</span>
+              <span class="govuk-visually-hidden">Beneficial owners involved in the trust ({{ data['trust-name'] }})</span>
             </a>
           </dd>
         </div>
@@ -1759,7 +1754,7 @@
           <dd class="govuk-summary-list__actions">
             <a href="/trusts/trust-details">
               Change
-              <span class="govuk-visually-hidden">trust name</span>
+              <span class="govuk-visually-hidden">Does the entity have all the required information about the trust  ({{ data['trust-name'] }})?</span>
             </a>
           </dd>
         </div>
@@ -1777,7 +1772,7 @@
           <dd class="govuk-summary-list__actions">
             <a href="/trusts/former-bo">
               Change
-              <span class="govuk-visually-hidden">former-bo</span>
+              <span class="govuk-visually-hidden">Former beneficial owner for Islands Trust, Jane Wright, Former beneficial owner's name</span>
             </a>
           </dd>
         </div>
@@ -1792,7 +1787,7 @@
           <dd class="govuk-summary-list__actions">
             <a href="/trusts/former-bo">
               Change
-              <span class="govuk-visually-hidden">former-bo</span>
+              <span class="govuk-visually-hidden">Former beneficial owner for Islands Trust, Jane Wright, Date they become a beneficial owner</span>
             </a>
           </dd>
         </div>
@@ -1807,7 +1802,7 @@
           <dd class="govuk-summary-list__actions">
             <a href="/trusts/former-bo">
               Change
-              <span class="govuk-visually-hidden">former-bo</span>
+              <span class="govuk-visually-hidden">Former beneficial owner for Islands Trust, Jane Wright, Date they stopped being a beneficial owner</span>
             </a>
           </dd>
         </div>
@@ -1825,7 +1820,7 @@
           <dd class="govuk-summary-list__actions">
             <a href="/trusts/individual">
               Change
-              <span class="govuk-visually-hidden">individual</span>
+              <span class="govuk-visually-hidden">Individual for Islands Trust, Fred Lock, First name</span>
             </a>
           </dd>
         </div>
@@ -1840,7 +1835,7 @@
           <dd class="govuk-summary-list__actions">
             <a href="/trusts/individual">
               Change
-              <span class="govuk-visually-hidden">individual</span>
+              <span class="govuk-visually-hidden">Individual for Islands Trust, Fred Lock, last name</span>
             </a>
           </dd>
         </div>
@@ -1855,7 +1850,7 @@
           <dd class="govuk-summary-list__actions">
             <a href="/trusts/individual">
               Change
-              <span class="govuk-visually-hidden">Date of birth</span>
+              <span class="govuk-visually-hidden">Individual for Islands Trust, Fred Lock, Date of birth</span>
             </a>
           </dd>
         </div>
@@ -1870,7 +1865,7 @@
           <dd class="govuk-summary-list__actions">
             <a href="/trusts/individual">
               Change
-              <span class="govuk-visually-hidden">Role within the trust</span>
+              <span class="govuk-visually-hidden">Individual for Islands Trust, Fred Lock, Role within the trust</span>
             </a>
           </dd>
         </div>
@@ -1885,7 +1880,7 @@
           <dd class="govuk-summary-list__actions">
             <a href="/trusts/individual">
               Change
-              <span class="govuk-visually-hidden">Nationality</span>
+              <span class="govuk-visually-hidden">Individual for Islands Trust, Fred Lock, Nationality</span>
             </a>
           </dd>
         </div>
@@ -1904,7 +1899,7 @@
           <dd class="govuk-summary-list__actions">
             <a href="/trusts/individual">
               Change
-              <span class="govuk-visually-hidden">Home address</span>
+              <span class="govuk-visually-hidden">Individual for Islands Trust, Fred Lock, Home address</span>
             </a>
           </dd>
         </div>
@@ -1919,7 +1914,7 @@
           <dd class="govuk-summary-list__actions">
             <a href="/trusts/individual">
               Change
-              <span class="govuk-visually-hidden">Correspondence address</span>
+              <span class="govuk-visually-hidden">Individual for Islands Trust, Fred Lock, Correspondence address</span>
             </a>
           </dd>
         </div>
@@ -1938,7 +1933,7 @@
           <dd class="govuk-summary-list__actions">
             <a href="/trusts/individual-2">
               Change
-              <span class="govuk-visually-hidden">individual</span>
+              <span class="govuk-visually-hidden">Individual for Islands Trust, Mary Robinson, first name </span>
             </a>
           </dd>
         </div>
@@ -1953,7 +1948,7 @@
           <dd class="govuk-summary-list__actions">
             <a href="/trusts/individual-2">
               Change
-              <span class="govuk-visually-hidden">individual</span>
+              <span class="govuk-visually-hidden">Individual for Islands Trust, Mary Robinson, last name</span>
             </a>
           </dd>
         </div>
@@ -1968,7 +1963,7 @@
           <dd class="govuk-summary-list__actions">
             <a href="/trusts/individual-2">
               Change
-              <span class="govuk-visually-hidden">Date of birth</span>
+              <span class="govuk-visually-hidden">Individual for Islands Trust, Mary Robinson, Date of birth</span>
             </a>
           </dd>
         </div>
@@ -1983,7 +1978,7 @@
           <dd class="govuk-summary-list__actions">
             <a href="/trusts/individual-2">
               Change
-              <span class="govuk-visually-hidden">Role within the trust</span>
+              <span class="govuk-visually-hidden">Individual for Islands Trust, Mary Robinson, Role within the trust</span>
             </a>
           </dd>
         </div>
@@ -2017,7 +2012,7 @@
           <dd class="govuk-summary-list__actions">
             <a href="/trusts/individual-2">
               Change
-              <span class="govuk-visually-hidden">Home address</span>
+              <span class="govuk-visually-hidden">Individual for Islands Trust, Mary Robinson, Home address</span>
             </a>
           </dd>
         </div>
@@ -2032,7 +2027,7 @@
           <dd class="govuk-summary-list__actions">
             <a href="/trusts/individual-2">
               Change
-              <span class="govuk-visually-hidden">Correspondence address</span>
+              <span class="govuk-visually-hidden">Individual for Islands Trust, Mary Robinson, Correspondence address</span>
             </a>
           </dd>
         </div>
@@ -2050,7 +2045,7 @@
           <dd class="govuk-summary-list__actions">
             <a href="/trusts/legal-entity">
               Change
-              <span class="govuk-visually-hidden">Name</span>
+              <span class="govuk-visually-hidden">Legal Entity for Islands Trust, Salcombe Ltd, name</span>
             </a>
           </dd>
         </div>
@@ -2065,7 +2060,7 @@
           <dd class="govuk-summary-list__actions">
             <a href="/trusts/legal-entity">
               Change
-              <span class="govuk-visually-hidden">Role within the trust</span>
+              <span class="govuk-visually-hidden">Legal Entity for Islands Trust, Salcombe Ltd, Role within the trust</span>
             </a>
           </dd>
         </div>
@@ -2083,7 +2078,7 @@
           <dd class="govuk-summary-list__actions">
             <a href="/trusts/legal-entity">
               Change
-              <span class="govuk-visually-hidden">Principal or registered office address</span>
+              <span class="govuk-visually-hidden">Legal Entity for Islands Trust, Salcombe Ltd, Principal or registered office address</span>
             </a>
           </dd>
         </div>
@@ -2098,7 +2093,7 @@
           <dd class="govuk-summary-list__actions">
             <a href="/trusts/legal-entity">
               Change
-              <span class="govuk-visually-hidden">Correspondence address</span>
+              <span class="govuk-visually-hidden">Legal Entity for Islands Trust, Salcombe Ltd, Correspondence address</span>
             </a>
           </dd>
         </div>
@@ -2113,7 +2108,7 @@
           <dd class="govuk-summary-list__actions">
             <a href="/trusts/legal-entity">
               Change
-              <span class="govuk-visually-hidden"> overseas entity legal form</span>
+              <span class="govuk-visually-hidden">Legal Entity for Islands Trust, Salcombe Ltd, legal form</span>
             </a>
           </dd>
         </div>
@@ -2127,7 +2122,7 @@
           <dd class="govuk-summary-list__actions">
             <a href="/trusts/legal-entity">
               Change
-              <span class="govuk-visually-hidden"> overseas entity governing law</span>
+              <span class="govuk-visually-hidden">Legal Entity for Islands Trust, Salcombe Ltd, governing law</span>
             </a>
           </dd>
         </div>
@@ -2143,7 +2138,7 @@
           <dd class="govuk-summary-list__actions">
             <a href="/trusts/legal-entity">
               Change
-              <span class="govuk-visually-hidden"> overseas entity public register</span>
+              <span class="govuk-visually-hidden"> Legal Entity for Islands Trust, Salcombe Ltd, overseas public register</span>
             </a>
           </dd>
         </div>
@@ -2160,7 +2155,7 @@
           <dd class="govuk-summary-list__actions">
             <a href="/trusts/legal-entity">
               Change
-              <span class="govuk-visually-hidden"> overseas entity public register</span>
+              <span class="govuk-visually-hidden">Legal Entity for Islands Trust, Salcombe Ltd, jurisdiction</span>
             </a>
           </dd>
         </div>
@@ -2177,7 +2172,7 @@
           <dd class="govuk-summary-list__actions">
             <a href="/trusts/legal-entity">
               Change
-              <span class="govuk-visually-hidden"> overseas entity public register</span>
+              <span class="govuk-visually-hidden"> Legal Entity for Islands Trust, Salcombe Ltd, Registration number</span>
             </a>
           </dd>
         </div>    
