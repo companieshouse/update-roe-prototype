@@ -1,0 +1,111 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  The statement you've chosen does not match the information provided in this update – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="ur-bo-identified" method="post">
+        
+  <span class="govuk-caption-l">{{ data['overseas-name'] }} - OE001485</span>
+        <h1 class="govuk-heading-xl">The pre-registration statements you selected do not match the information you've provided</h1>
+
+  <div> 
+    {% set html %}
+    <p class="govuk-notification-banner__heading">
+      You have not provided information about any pre-registration beneficial owners.
+    </p>
+    
+    <p class="govuk-notification-banner__heading">
+      You have not provided information about anyone that was a pre-registration beneficial owner due to being a trustee of a trust.
+    </p>
+    
+    <p class="govuk-notification-banner__heading">
+      You have not provided information about any pre-registration beneficiaries of a trust.
+    </p>
+  {% endset %}
+  
+  {{ govukNotificationBanner({
+    html: html
+  }) }}
+
+
+  <div> 
+    <p>The pre-registration statements you selected are:</p>
+  </div>
+  <div class="bo-statement govuk-!-margin-bottom-6">
+<p class"govuk-body">The entity <b>has reasonable cause</b> to believe that <b>at least one person became or ceased to be a registrable beneficial owner</b> during the pre-registration period, that it has not already provided information about..</p>
+
+</div>
+
+
+  {# <div> 
+    <p>However, you have selected:</p>
+  </div> #}
+
+  <div class="bo-statement govuk-!-margin-bottom-6">
+<p class"govuk-body">The entity <b>has reasonable cause</b> to believe that <b>at least one person was a registrable beneficial owner due to being a trustee of a trust</b> during the pre-registration period, that it has not already provided information about.</p>
+
+</div>
+
+
+  <div class="bo-statement govuk-!-margin-bottom-6">
+<p class"govuk-body">The entity <b>has reasonable cause</b> to believe that <b>at least one person became or ceased to be a beneficiary of a trust</b> involved in the overseas entity during the pre-registration period, that it has not already provided information about.</p>
+
+</div>
+
+
+
+        {{ govukRadios({
+          idPrefix: "statementConceptBoUr",
+          name: "statementConceptBoUr",
+          fieldset: {
+            legend: {
+              text: "What do you want to do?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+                            value: "change-statement",
+              text: "I need to change my  pre-registration statements"
+            },
+            {
+ value: "change-info",
+              text: "I need to change the information I have provided about the pre-registration period"
+
+    }
+          ]
+        }) }}
+
+
+
+          {{ govukButton({
+            text: "Continue"
+          }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
+
+          {# hint: {
+           text: "Select this option to tell us the correct statements."
+             
+         }
+
+
+          hint: {
+           text: "Select this option to tell us the correct details about those involved in the overseas entity."
+         } #}
