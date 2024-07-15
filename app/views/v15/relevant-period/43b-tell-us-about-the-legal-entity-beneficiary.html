@@ -692,6 +692,53 @@
 {% endif %}
 
 
+<!-- Still involved -->
+        <!-- html for following radio -->
+        {% set trusteeCeasedHtml %}
+        {{ govukDateInput({
+          id: "trustee-ceased",
+          namePrefix: "trustee-ceased",
+          fieldset: {
+            legend: {
+              text: "Date it ceased to be involved in the trust",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          hint: {
+            text: "For example, 27 1 2023"
+          }
+        }) }}
+        {% endset -%}
+
+
+        <!-- still involved radio -->
+      
+          {{ govukRadios({
+            name: "bo-ceased",
+            fieldset: {
+              legend: {
+                text: "Is it still involved in the trust?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            items: [
+              {
+                value: "yes",
+                text: "Yes"
+              },
+              {
+                value: "no",
+                text: "No",
+                      conditional: {
+                  html: trusteeCeasedHtml
+                }
+                
+              }
+            ]
+          }) }}
+
 
 
           {{ govukInsetText({
