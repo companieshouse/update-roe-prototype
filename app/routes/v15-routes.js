@@ -151,13 +151,13 @@ router.post('/remove-v6/18-review-the-information-in-this-update-statement', fun
 
 
 
-router.post('/v15/19-who-is-completing-this-update', function(request, response) {
+router.post('/v15/14-do-you-need-to-make-any-changes-to-this-overseas-entity', function(request, response) {
 
-    var whoIsFiling = request.session.data['who-is-filing']
-    if (whoIsFiling == "agent"){
-        response.redirect("/v15/20-complete-this-statement-to-confirm-that-verification-checks-have-been-completed")
+    var makeChanges = request.session.data['make-changes']
+    if (makeChanges == "no"){
+        response.redirect("/v15/18-review-the-information-in-this-update-statement")
     } else {
-        response.redirect("/v15/21-tell-us-about-the-uk-regulated-agent-that-carried-out-verification-checks")
+        response.redirect("/v15/19-who-is-completing-this-update")
     }
 })
 
