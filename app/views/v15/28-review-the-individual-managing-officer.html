@@ -29,10 +29,10 @@
       <p class"govuk-body">If you need to update this managing officer's information, you can change the answers here.</p>
 
   
-  
+{#   
         <div class="govuk-inset-text">
           You'll need to <strong>enter their home address</strong>, and tell us if they're still a managing officer.
-        </div>
+        </div> #}
 
 {{ govukDetails({
   summaryText: "How to complete this section if they are no longer a managing officer",
@@ -222,6 +222,7 @@
          },
           id: "managing-officer-usual-residential-address-property-name-number",
           name: "managing-officer-usual-residential-address-property-name-number",
+          value: "234",
           errorMessage: {
                     text: "Enter the property name or number"
                   }
@@ -235,7 +236,8 @@
            text: "For example, 'Saron House', '116' or 'Apartment 37a'"
          },
           id: "managing-officer-usual-residential-address-property-name-number",
-          name: "managing-officer-usual-residential-address-property-name-number"
+          name: "managing-officer-usual-residential-address-property-name-number",
+           value: "234"
         }) }}
 {% endif %}
 
@@ -249,6 +251,7 @@
           id: "managing-officer-usual-residential-address-line-1",
           name: "managing-officer-usual-residential-address-line-1",
           autocomplete: "address-line1",
+           value: "Queen Street",
           errorMessage: {
                     text: "Enter address line 1"
                   }
@@ -261,7 +264,8 @@
           classes: "govuk-!-width-two-thirds",
           id: "managing-officer-usual-residential-address-line-1",
           name: "managing-officer-usual-residential-address-line-1",
-          autocomplete: "address-line1"
+          autocomplete: "address-line1",
+           value: "Queen Street"
         }) }}
 {% endif %}
 
@@ -287,6 +291,7 @@
           classes: "govuk-!-width-two-thirds",
           id: "managing-officer-usual-residential-address-city-town",
           name: "managing-officer-usual-residential-address-city-town",
+           value: "Bristol",
           errorMessage: {
                     text: "Enter the city or town"
                   }
@@ -298,7 +303,8 @@
           },
           classes: "govuk-!-width-two-thirds",
           id: "managing-officer-usual-residential-address-city-town",
-          name: "managing-officer-usual-residential-address-city-town"
+          name: "managing-officer-usual-residential-address-city-town",
+           value: "Bristol"
         }) }}
 {% endif %}
 
@@ -326,6 +332,7 @@
           classes: "govuk-!-width-two-thirds",
           id: "country",
           name: "country",
+           value: "United Kingdom",
           errorMessage: {
                     text: "Enter the country"
                   }
@@ -340,7 +347,8 @@
          },
           classes: "govuk-!-width-two-thirds",
           id: "country",
-          name: "country"
+          name: "country",
+           value: "United Kingdom"
         }) }}
 {% endif %}
 
@@ -352,7 +360,8 @@
           classes: "govuk-input--width-10",
           id: "managing-officer-usual-residential-address-postcode",
           name: "managing-officer-usual-residential-address-postcode",
-          autocomplete: "postal-code"
+          autocomplete: "postal-code",
+           value: "BR98 7AB"
         }) }}
 
 

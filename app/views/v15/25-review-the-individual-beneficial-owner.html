@@ -33,9 +33,9 @@
 
         <p class="govuk-body">If you need to update this beneficial owner's information, you can change the answers here. </p>
   
-        <div class="govuk-inset-text">
+        {# <div class="govuk-inset-text">
           You'll need to <strong>enter their home address</strong>, and tell us if they're still a registrable beneficial owner.
-        </div>
+        </div> #}
 
 {{ govukDetails({
   summaryText: "How to complete this section for a ceased beneficial owner",
@@ -137,6 +137,7 @@
           },
             id: "usual-residential-address-property-name-number",
             name: "usual-residential-address-property-name-number",
+               value: "23",
           errorMessage: {
                     text: "Enter the property name or number"
                   }
@@ -150,7 +151,8 @@
             text: "For example, 'Saron House', '116' or 'Apartment 37a'"
           },
             id: "usual-residential-address-property-name-number",
-            name: "usual-residential-address-property-name-number"
+            name: "usual-residential-address-property-name-number",
+            value: "23"
           }) }}
  {% endif %}
 
@@ -166,6 +168,7 @@
           name: "usual-residential-address-line-1",
           value: homeAddressLine1,
           autocomplete: "address-line1",
+             value: "Apple Street",
           errorMessage: {
                     text: "Enter address line 1"
                   }
@@ -179,7 +182,8 @@
             id: "usual-residential-address-line-1",
             name: "usual-residential-address-line-1",
             autocomplete: "address-line1",
-            value: homeAddressLine1
+            value: "Apple Street"
+
           }) }}
 {% endif %}
 
@@ -204,7 +208,7 @@
             classes: "govuk-!-width-two-thirds",
             id: "usual-residential-address-city-town",
             name: "usual-residential-address-city-town",
-            value: homeCity,
+            value: "London",
           errorMessage: {
                     text: "Enter the city or town"
                   }
@@ -217,7 +221,7 @@
             classes: "govuk-!-width-two-thirds",
             id: "usual-residential-address-city-town",
             name: "usual-residential-address-city-town",
-            value: homeCity
+            value: "London"
           }) }}
 {% endif %}
 
@@ -245,7 +249,7 @@
             classes: "govuk-!-width-two-thirds",
             id: "country",
             name: "country",
-            value: country,
+            value: "United Kingdom",
           errorMessage: {
                     text: "Enter the country"
                   }
@@ -261,7 +265,7 @@
             classes: "govuk-!-width-two-thirds",
             id: "country",
             name: "country",
-            value: country
+            value: "United Kingdom"
           }) }}
 {% endif %}
 
@@ -273,7 +277,8 @@
             classes: "govuk-input--width-10",
             id: "usual-residential-address-postcode",
             name: "usual-residential-address-postcode",
-            autocomplete: "postal-code"
+            autocomplete: "postal-code",
+            value: "AB12 3CD"
           }) }}
 
         <!-- end of address fieldset -->  
