@@ -17,7 +17,7 @@
       <h1 class="govuk-heading-xl govuk-!-margin-0">Tell us about the legal entity</h1>
       <p class="govuk-!-margin-bottom-5 govuk-!-margin-top-5">You can add more later.</p>
 
-      <form class="form" method="post">
+      <form class="form" action="49-legal-entities" method="post">
 
         {% set entityDateHtml %}
         <br>
@@ -633,8 +633,7 @@
 
 
         {{ govukButton({
-          text: "Save and continue",
-          href: "47-trusts-associated-with-the-overseas-entity"
+          text: "Save and continue"
         }) }}
 
       </form>
