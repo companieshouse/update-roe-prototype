@@ -677,7 +677,6 @@
           }) }}
 
 
-{# 
           {{ govukCheckboxes({
               idPrefix: "bo-noc-trust",
               name: "bo-noc-trust",
@@ -711,7 +710,12 @@
                   checked: checked("bo-noc-trust", "noc-trusts-influence")
                 }
               ]
-            }) }} #}
+            }) }} 
+
+
+
+
+
               <!--   <div id="conditional">
 
 
@@ -740,11 +744,43 @@
 
 
             {{ govukCheckboxes({
+                idPrefix: "bo-noc-trust-control",
+                name: "bo-noc-trust-control",
+                fieldset: {
+                  legend: {
+                    text: "The beneficial owner has the right to exercise, or actually exercises, significant control or influence over the activities of a trust, and:",
+                    isPageHeading: false,
+                    classes: "govuk-fieldset__legend--s"
+                  }
+                },
+
+                items: [
+                  {
+                    value: "noc-trust-control-shares",
+                    text: "the trustees of that trust (in their capacity as such) hold, directly or indirectly, more than 25% of the shares in the entity"
+                  },
+                  {
+                    value: "noc-trust-control-voting",
+                    text: "the trustees of that trust (in their capacity as such) hold, directly or indirectly, more than 25% of the voting rights in the entity"
+                  },
+                  {
+                    value: "noc-trust-control-board",
+                    text: "the trustees of that trust (in their capacity as such) hold the right, directly or indirectly, to appoint or remove a majority of the board of directors of the company"
+                  },
+                  {
+                    value: "noc-trust-control-influence",
+                    text: "the trustees of that trust (in their capacity as such) have the right to exercise, or actually exercise, significant influence or control over the company"
+                  }
+                ]
+              }) }}
+
+
+            {{ govukCheckboxes({
                 idPrefix: "bo-noc-firms",
                 name: "bo-noc-firms",
                 fieldset: {
                   legend: {
-                    text: "The beneficial owner is a member of a firm that is not a legal person under its governing law, and:",
+                    text: "The beneficial owner has the right to exercise, or actually exercises, significant control or influence over the activities of a firm that is not a legal person under its governing law, and:",
                     isPageHeading: false,
                     classes: "govuk-fieldset__legend--s"
                   }
@@ -766,6 +802,62 @@
                   {
                     value: "noc-firm-influence",
                     text: "the members of that firm (in their capacity as such) have the right to exercise, or actually exercise, significant influence or control over the company"
+                  }
+                ]
+              }) }}
+
+
+            {{ govukCheckboxes({
+                idPrefix: "bo-noc-oeland",
+                name: "bo-noc-oeland",
+                fieldset: {
+                  legend: {
+                    text: "The overseas entity is the registered owner of property or land in the following UK jurisdictions, as a nominee for this person:",
+                    isPageHeading: false,
+                    classes: "govuk-fieldset__legend--s"
+                  }
+                },
+
+                items: [
+                  {
+                    value: "noc-oeland-ew",
+                    text: "England and Wales"
+                  },
+                  {
+                    value: "noc-oeland-scot",
+                    text: "Scotland"
+                  },
+                  {
+                    value: "noc-oeland-ni",
+                    text: "Northern Ireland"
+                  }
+                ]
+              }) }}
+
+
+            {{ govukCheckboxes({
+                idPrefix: "bo-noc-oeland",
+                name: "bo-noc-oeland",
+                fieldset: {
+                  legend: {
+                    text: "The overseas entity is the registered owner of property or land in the following UK jurisdictions, as a nominee for another entity of which this person is a registered beneficial owner:",
+                    isPageHeading: false,
+                    classes: "govuk-fieldset__legend--s"
+                  }
+                },
+
+                items: [
+                  {
+                    value: "noc-oeland-ew",
+                    text: "England and Wales"
+                  },
+                  {
+                    value: "noc-oeland-scot",
+                    text: "Scotland"
+                  },
+                  {
+                    value: "noc-oeland-ni",
+                    text: "Northern Ireland"
                   }
                 ]
               }) }}
