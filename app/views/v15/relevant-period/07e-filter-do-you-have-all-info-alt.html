@@ -1,0 +1,129 @@
+
+
+
+{% extends "layouts/main.html" %}
+{% block pageTitle %}
+Have any beneficial owners become or ceased in the update period? – {{ serviceName }} – GOV.UK
+{% endblock %}
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    
+    {% include "includes/rp-banner.html" %}
+  <form class="form" method="post">
+  <span class="govuk-caption-l">{{ data['overseas-name'] }} - OE001485</span>
+  <h1 class="govuk-heading-xl">You'll need to tell us about the pre-registration period</h1>
+  <p class="govuk-body">
+    You've told us that <b>ASHCROFT LIMITED</b> was the registered owner of UK property or land during the pre-registration period. 
+    <p class="govuk-body">
+     In this update statement, you'll need to tell us if the entity had any of the following during the pre-registration period, that it has not already told us about: 
+     
+     <ul class="govuk-list govuk-list--bullet">
+     <li>registrable beneficial owners</li>
+     <li>trusts involved in the entity</li>
+     <li>beneficiaries of a trust involved in the entity</li>
+     </ul>
+     <p class="govuk-body">If it did, you'll need to provide information about them. You do not need to tell us about managing officers.</p>
+
+     <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          What information will I need to provide?
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <p class="govuk-body">Read the guidance on registering an overseas entity to find out <a href="https://www.gov.uk/guidance/register-an-overseas-entity#what-information-you-need-to-submit">what information you need to provide when adding beneficial owners, trusts and trust beneficiaries</a>.</p>
+    
+      </div>
+    
+    
+    </details>
+     
+
+
+<br>
+{{ govukRadios({
+  classes: "govuk-radios",
+  idPrefix: "ownedLand",
+  name: "owned-land",
+  fieldset: {
+    legend: {
+      text: "Can you provide all the required information about the pre-registration period?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }  
+  },
+  hint: {
+    text: ""
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes",
+      hint: {
+        text: ""
+      }
+    },
+    {
+      value: "no",
+      text: "No",
+hint: {
+        text: ""
+      }
+    }
+  ]
+}) }}
+<!--
+<details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      What information is required about the pre-registration period?
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <p class="govuk-body">You'll need to tell us if the overseas entity had any of the following during the pre-registration period, that it has not already told us about:
+        <ul class="govuk-list govuk-list--bullet">
+        <li>registrable beneficial owners</li>
+        <li>trusts involved in the entity</li>
+        <li>beneficiaries of a trust involved in the entity</li>
+        </ul>
+    <p class="govuk-body">If it did, you'll need to provide information about them.
+    <p class="govuk-body">Read the guidance on registering an overseas entity to find out <a href="https://www.gov.uk/guidance/register-an-overseas-entity#what-information-you-need-to-submit">what information you need to provide when adding beneficial owners, trusts and trust beneficiaries</a>.</p>
+
+  </div>
+
+
+</details>
+-->
+
+<!--
+        {{ govukInsetText({
+          html: '<h2 class="govuk-heading-m">What information we’ll show on the public register</h2>
+                <p>We will show the information you provide in this section on the public Register of Overseas Entities.</p>'
+        }) }}
+-->
+      {{ govukButton({
+        text: "Continue",
+        href: "08-before-you-start"
+      }) }}
+      </form>
+<!--
+<details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Why am I being asked this question?
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    We require information on X, Y, Z
+  </div>
+</details>
+-->
+
+    </div>
+  </div>
+{% endblock %}
