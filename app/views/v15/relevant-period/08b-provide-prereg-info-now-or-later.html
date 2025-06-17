@@ -1,0 +1,91 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Have any beneficial owners become or ceased in the update period? – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    
+    {% include "includes/rp-banner.html" %}
+
+  <form class="form" method="post">
+
+  <span class="govuk-caption-l">{{ data['overseas-name'] }} - OE001485</span>
+
+
+
+{{ govukRadios({
+  classes: "govuk-radios",
+  idPrefix: "ownedLand",
+  name: "owned-land",
+  fieldset: {
+    legend: {
+      text: "Do you want to provide the pre-registration information in this update statement or the next one?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--xl"
+    }  
+  },
+  hint: {
+    text: ""
+  },
+  items: [
+    {
+      value: "yes",
+      text: "This update statement",
+      hint: {
+        text: "You'll be able to continue in this service"
+      }
+    },
+    {
+      value: "no",
+      text: "The next update statement",
+hint: {
+        text: "You'll need to file this year's update statement on paper"
+      }
+    }
+  ]
+}) }}
+
+
+
+
+<!--
+
+        {{ govukInsetText({
+          html: '<h2 class="govuk-heading-m">What information we’ll show on the public register</h2>
+                <p>We will show the information you provide in this section on the public Register of Overseas Entities.</p>'
+        }) }}
+-->
+
+      {{ govukButton({
+        text: "Continue",
+        href: "08-before-you-start"
+      }) }}
+      </form>
+
+<!--
+<details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Why am I being asked this question?
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    We require information on X, Y, Z
+  </div>
+</details>
+-->
+
+
+    </div>
+  </div>
+
+{% endblock %}
