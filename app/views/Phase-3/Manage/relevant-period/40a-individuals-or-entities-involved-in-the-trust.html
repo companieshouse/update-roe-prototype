@@ -1,0 +1,214 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  What types of individuals and organisations are involved in the trust? – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+<span class="govuk-caption-l">{{ data['trust-name'] }}</span>
+<h1 class="govuk-heading-xl">Individuals or entities involved in the trust</h1>
+
+      <form class="form" action="/40-individuals-or-entities-involved-in-the-trust" method="post">
+
+
+
+        {{ govukTable({
+          caption: 'What <span class="govuk-visually-hidden">individuals or entities</span> you have added so far for this trust' | safe,
+          captionClasses: "govuk-table__caption--m",
+          firstCellIsHeader: true,
+          classes: "govuk-!-margin-bottom-9",
+          head: [
+          {
+            text: "Name",
+            classes: "govuk-visually-hidden"
+          },
+          {
+            text: "Type",
+            classes: "govuk-visually-hidden"
+          },
+            {
+              text: "Change",
+              classes: "govuk-visually-hidden"
+            }
+          ],
+          rows: [
+            [
+            {
+              text: "Beneficial owner"
+            },
+            {
+              html: "Joe Bloggs"
+            },
+            {
+              html: '<a href="/register/trusts/trust-details-edit#involved"> </a>',              
+              visuallyHiddenText: "Beneficial owner - Joe Bloggs"
+            }
+           ],
+           [
+             {
+              text: "Beneficial owner"
+            },
+            {
+              html: "Acme Limited"
+            },
+            {
+              html: '<a href="/register/trusts/trust-details-edit#involved"> </a>',
+              visuallyHiddenText: "Beneficial owner - Acme Limited"
+            }
+          ],
+          [
+            {
+              text: "Former beneficial owner"
+            },
+            {
+              html: "Jane Wright"
+            },
+            {
+              html: '<a href="/register/trusts/trust-historical-beneficial-owner-edit">Change</a>',
+              visuallyHiddenText: "Former beneficial owner - Jane Wright"
+            }
+           ],
+           [
+            {
+              text: "Individual"
+            },
+            {
+              html: "Fred Lock"
+            },
+            {
+              html: '<a href="44-tell-us-about-the-former-beneficial-owner">Change</a>',
+              visuallyHiddenText: "Individual - Fred Lock"
+            }
+           ],
+           [
+            {
+              text: "Legal entity"
+            },
+            {
+              html: "Salcombe Ltd"
+            },
+            {
+              html: '<a href="/register/trusts/trust-historical-beneficial-owner-edit">Change</a>',
+              visuallyHiddenText: "Legal entity - Salcombe Ltd"
+            }
+           ]
+          ]
+        }) }}
+
+
+        {{ govukRadios({
+            idPrefix: "trustTypes",
+            name: "trustTypes",
+            fieldset: {
+              legend: {
+                text: "Which type of individual or entity do you want to add to this trust?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            hint: {
+              text: "You can add more later."
+            },
+            items: [
+              {
+                value: "historical",
+                text: "Former beneficial owner",
+                hint: {
+                    text: "This is any individual or legal entity that was previously a registrable beneficial owner of the overseas entity, due to being a trustee of this trust."
+                  }
+              },
+              {
+                value: "individual-trusts",
+                text: "Individual",
+                hint: {
+                    text: "This is an individual that is currently a beneficiary, settlor, grantor or interested person for this trust."
+                  }
+              },
+              {
+                value: "ole-trusts",
+                text: "Legal entity",
+                hint: {
+                  text: "This is a legal entity that is currently a beneficiary, settlor, grantor or interested person for this trust. You do not need to tell us about government or public authorities."
+                  }
+              }
+                ]
+          }) }}
+
+
+
+
+  <h2 class="govuk-heading-s govuk-!-margin-top-3">For the pre-registration period</h3>
+
+<div class="govuk-inset-text">    
+  <p class="govuk-body">Based on the pre-registration statement you provided earlier in this service, you also need to tell us about any beneficiaries from this period, that the entity has not already told us about. 
+
+  <p class="govuk-body">The pre-registration period for ASHCROFT LIMITED is between <strong>28 February 2022</strong> and <strong>18 September 2022</strong>.
+  </p>
+</div>
+
+     {{ govukRadios({
+            idPrefix: "trustTypes",
+            name: "trustTypes",
+            fieldset: {
+              legend: {
+                text: "Which type of individual or entity do you want to add to this trust for the pre-registration period?",
+                isPageHeading: true,
+                classes: "govuk-visually-hidden"
+              }
+            },
+            items: [
+              {
+                value: "individual-trusts-prereg",
+                text: "Individual beneficiary",
+                hint: {
+                    text: "This is an individual who was a beneficiary of this trust during the pre-registration period."
+                  }
+              },
+              {
+                value: "ole-trusts-prereg",
+                text: "Legal entity beneficiary",
+                hint: {
+                  text: "This is a legal entity that was a beneficiary of this trust during the pre-registration period. You do not need to tell us about government or public authority beneficiaries."
+                  }
+              }
+                ]
+          }) }}
+
+          <div class="govuk-button-group">
+            {{ govukButton({
+              text: "Add",
+              href: '42b-tell-us-about-the-individual-beneficiary'
+
+            }) }}
+
+            
+
+  </form>
+            {{ govukButton({
+              html: 'No more <span class="govuk-visually-hidden">individuals or entities</span> to add',
+              classes: "govuk-button--secondary",
+              href: '44a-trusts-associated-with-the-overseas-entity'
+            }) }}
+          </div>
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+
+{% endblock %}

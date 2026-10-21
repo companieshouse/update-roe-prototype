@@ -26,8 +26,7 @@ const router = govukPrototypeKit.requests.setupRouter()
 // router.use('/', require('./routes/remove-v6.js'))
 router.use('/', require('./routes/v15-routes.js'))
 
-
-
+router.use('/', require('./routes/remove-phase3-v1.js'))
 
 
 
@@ -83,3 +82,22 @@ router.use((req, res, next) => {
   console.log(JSON.stringify(log, null, 2))  
   next()  
 }) 
+
+
+router.post('/select-prototype', function (req, res) {
+
+  const prototype = req.body.PrototypeChoice
+
+  if (prototype === 'original') {
+    res.redirect('/index-2')
+  }
+
+  else if (prototype === 'Phase3') {
+    res.redirect('/phase-3-index')
+  }
+
+  else {
+    res.redirect('/')
+  }
+
+})

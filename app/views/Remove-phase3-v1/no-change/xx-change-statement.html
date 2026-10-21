@@ -1,0 +1,78 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  The statement you've chosen does not match the information provided in this update – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="bo-identified" method="post">
+        
+  <span class="govuk-caption-l">{{ data['overseas-name'] }} - {{ data['overseas-id'] }}</span>
+        <h1 class="govuk-heading-xl">The statement you've chosen does not match the information provided in this update</h1>
+
+  <div> 
+    {% set html %}
+    <p class="govuk-notification-banner__heading">
+      You need to change information to match the beneficial owner statement.<br><br>
+      The overseas entity has at least one active registrable beneficial owner.
+    </p>
+  {% endset %}
+  
+  {{ govukNotificationBanner({
+    html: html
+  }) }}
+
+
+
+
+
+        {{ govukRadios({
+          idPrefix: "statementConceptBo",
+          name: "statementConceptBo",
+          fieldset: {
+            legend: {
+              text: "How would you like to proceed?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+                            value: "change-statement",
+              text: "I need to change my statement",
+          hint: {
+           text: "Select this option to tell us the correct statement."
+             
+         }
+            },
+            {
+ value: "change-info",
+              text: "I need to change the information I have provided in this update",
+          hint: {
+           text: "Select this option to tell us the correct details about those involved in the overseas entity."
+         }
+
+    }
+          ]
+        }) }}
+
+
+
+          {{ govukButton({
+            text: "Continue"
+          }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

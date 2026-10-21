@@ -1,0 +1,27 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+{% if errorList.length > 0 %}
+  Error:
+{% endif %}
+You'll need to file an update statement using the paper form – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">You'll need to file an update statement using the paper form</h1>
+       <p class="govuk-body">You've told us that at least one beneficial owner or managing officer has their personal information protected from being shown on the Companies House public register.</p>
+          <p class="govuk-body">You must file the overseas entity update statement on paper to keep this information protected. </p>
+             <p class="govuk-body">Contact us at <a href="javascript:void(0)" class="govuk-link">enquiries@companieshouse.gov.uk</a> if you need us to send you a paper form. </p>
+
+    </div>
+  </div>
+
+
+{% endblock %}

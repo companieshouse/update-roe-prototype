@@ -1,0 +1,74 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Declaration for changes – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="" method="post">
+        
+  <span class="govuk-caption-l">{{ data['overseas-name'] }} - {{ data['overseas-id'] }}</span>
+        <h1 class="govuk-heading-xl">Declaration for changes</h1>
+
+
+<p>For changes to the overseas entity for this update, you told us:</p>
+
+  <div class="bo-statement govuk-!-margin-bottom-6">
+<p class"govuk-body">No, I have not made any changes.</p>
+</div>
+
+<p><a href="#">I want to change this declaration</a></p>
+
+
+        {{ govukCheckboxes({
+  name: "waste",
+  fieldset: {
+    legend: {
+      text: "Declaration for changes",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "change-declaration",
+      text: "I understand that this filing may be rejected and have to pay the £X filing fee again if I provide information that contradicts the above statement."
+    }
+  ]
+}) }}
+
+
+
+
+{# ,
+          errorMessage: {
+                  text: "Select if any beneficial owners have been identified"
+                }
+                 #}
+
+
+
+
+          {{ govukButton({
+            text: "Save and continue",
+            href: "bo-new-ceased"
+          }) }}
+
+
+
+
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

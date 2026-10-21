@@ -1,0 +1,145 @@
+
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Which type of beneficiary do you need to add? – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/XX-which-type-of-beneficiary-do-you-need-to-add" method="post"> 
+        
+
+    
+  <span class="govuk-caption-l">{{ data['overseas-name'] }} - OE001485</span>
+        <h1 class="govuk-heading-xl">Do you need to add any beneficiaries for the pre-registration period?</h1>
+
+      {# <p class="govuk-!-margin-bottom-5 govuk-!-margin-top-5">This includes any changes to information about the overseas entity, its beneficial owners or managing officers.</p> #}
+
+
+
+<div class="govuk-inset-text">
+  <!--  
+  <p class="govuk-body">Based on the pre-registration statement you provided earlier in this service, you need to tell us about any additional beneficiaries from this period, that the entity has not already told us about.</b>
+  -->
+  <p class="govuk-body">The pre-registration period for <b>ASHCROFT LIMITED</b> is between <b>28 February 2022</b> and <b>18 September 2022</b>.
+  </p>
+</div>
+
+
+
+
+
+
+{% set yesHtml %}
+{{ govukRadios({
+  name: "whereDoYouLive",
+  fieldset: {
+    legend: {
+      text: "What type of beneficiary do you need to add?",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "Individual",
+      text: "Individual"
+    },
+    {
+      value: "Legal Entity",
+      text: "Legal Entity"
+    }
+  ]
+}) }}
+{% endset -%}
+
+
+{{ govukRadios({
+  name: "contact",
+  fieldset: {
+    legend: {
+      text: "Do you need to add any beneficiaries for the pre-registration period?",
+      isPageHeading: true,
+      classes: "govuk-visually-hidden"
+    }
+  },
+
+  items: [
+    {
+      value: "yes-individual",
+      text: "Yes, an individual"
+    },    {
+      value: "yes-legal-entity",
+      text: "Yes, a legal entity"
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+  ]
+}) }}
+
+
+
+
+
+<!--
+        {{ govukRadios({
+          idPrefix: "pre-reg-beneficiary",
+          name: "pre-reg-beneficiary",
+          fieldset: {
+            legend: {
+              text: "Which type of beneficiary do you need to add?",
+              isPageHeading: false,
+              classes: "govuk-visually-hidden"
+            }
+          },
+          items: [
+            {
+              value: "Yes",
+              text: "Yes"
+            },
+            {
+              value: "No",
+              text: "No, I have already done this"
+            }
+          ]
+        }) }}
+-->
+
+
+          {{ govukButton({
+            text: "Save and continue"
+          }) }}
+
+
+        {#
+          <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+              What verification checks are needed?
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+            Verification checks are needed on any changes made to information about the overseas entity, its beneficial owners or managing officers. 
+            </div>
+            <div class="govuk-details__text">
+            Verification checks can only be carried out by a UK-regulated agent, and must have been completed no more than 3 months before the date of this update statement.   </div>
+              </div>
+          </details>
+          #}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,71 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Home – Remove an overseas entity – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+{% endblock %}
+
+
+
+
+{% block content %}
+  <div class="govuk-width-container">
+  <div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {# <h1 class="govuk-heading-l">
+     File an overseas entity update statement prototype<br><br>
+     Remove an overseas entity prototype
+    </h1> #}
+
+{# {{ govukWarningText({
+      text: "This prototype is being actively worked on - things might break or change very quickly",
+      iconFallbackText: "Warning"
+    }) }} #}
+
+
+<form action="index" method="post">
+
+{{ govukRadios({
+  name: "roe-prototype-scenario",
+  fieldset: {
+    legend: {
+      html: "Choose a scenario <br>(for internal use only)",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      value: "update",
+      text: "File an overseas entity update statement prototype"
+    },
+    {
+      value: "remove",
+      text: "Remove an overseas entity prototype"
+    }
+  ]
+}) }}
+
+
+          {{ govukButton({
+            text: "Go to Index"
+          }) }}
+  </form>
+
+
+
+    <a href="/manage-prototype" class="govuk-link govuk-body">Manage the prototype</a>
+
+
+  </div>
+</div>
+
+
+
+
+
+{% endblock %}

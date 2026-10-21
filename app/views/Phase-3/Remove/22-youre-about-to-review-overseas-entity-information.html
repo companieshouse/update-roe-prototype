@@ -1,0 +1,48 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+{% if data['roe-prototype-scenario'] == 'update' %}
+    File an overseas entity update statement
+  {% else %}
+    Apply to remove an overseas entity from the register
+  {% endif %}
+  {% endset%}
+  
+{% block pageTitle %}
+  You're about to review overseas entity information – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+<span class="govuk-caption-l">{{ data['overseas-name'] }} - OE001485</span>
+      <h1 class="govuk-heading-xl">
+        You're about to review overseas entity information
+      </h1>
+
+
+    <p class="govuk-body">
+      We'll show you the information we hold about the overseas entity.
+    </p>
+
+    <p class="govuk-body">
+      You'll need to check the information is correct, and update it if needed.
+    </p>
+
+
+{{ govukButton({
+  text: "Save and continue",
+  classes: "govuk-!-margin-top-4",
+  href: "23-review-overseas-entity-information"
+}) }}
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,110 @@
+{% extends "layouts/main.html" %}
+{% set serviceName %}
+{% if data['roe-prototype-scenario'] == 'update' %}
+    File an overseas entity update statement
+  {% else %}
+    Apply to remove an overseas entity from the register
+  {% endif %}
+  {% endset%}
+{% block pageTitle %}
+
+Confirm this is the correct overseas entity
+ – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">Confirm this is the correct overseas entity</h1>
+    
+  
+<form>
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+          {
+            key: {
+              text: "Name"
+            },
+            value: {
+              text: "ASHCROFT LIMITED"
+            },
+            actions: {
+              items: [
+                {
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Overseas Entity ID"
+            },
+            value: {
+              text: "OE001485"
+            },
+            actions: {
+              items: [
+                {
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Formed in"
+            },
+            value: {
+              text: "VIRGIN ISLANDS, BRITISH"
+            },
+            actions: {
+              items: [
+                {
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Date registered on the Register of Overseas Entities"
+            },
+            value: {
+              html: "11 August 2022"
+            },
+            actions: {
+              items: [
+                {
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+    </form>
+    </div>
+  </div>
+
+  
+
+  {{ govukButton({
+    text: "Confirm and continue",
+    href: "11-company-authentication"
+  }) }}
+          
+  <p><a class="govuk-link" href="09-what-is-the-overseas-entity-id">
+    Choose a different overseas entity
+  </a></p>
+
+
+          
+    </form>
+    </div>
+  </div>
+
+
+{% endblock %}

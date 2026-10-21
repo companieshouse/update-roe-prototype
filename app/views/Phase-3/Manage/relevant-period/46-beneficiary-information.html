@@ -1,0 +1,44 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+
+You're about to review trusts information – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+{# 
+     <div class="govuk-!-margin-bottom-3">
+      {% include "includes/rp-tag-update.html" %}
+      {% include "includes/rp-tag.html" %}
+    </div> #}
+
+<h1 class="govuk-heading-xl">CONTENT TO BE ADDED</h1>
+
+
+      <p class="govuk-body">If needed...</p>
+
+            <p class="govuk-body">A page to tell users that they <strong>might</strong> need to give us beneficiary information around the pre-reg statement, "At least one person became or ceased to be a beneficiary of a trust involved in the overseas entity, that it has not already provided information about"... if they did not include it when telling us about pre-reg Trust info earlier? </p>
+
+
+
+
+ {# {% include "includes/rp-banner-statement.html" %} #}
+
+
+      {{ govukButton({
+        text: "Continue",
+        href: 'XX-which-type-of-beneficiary-do-you-need-to-add'
+      }) }}
+
+
+    </div>
+  </div>
+
+{% endblock %}

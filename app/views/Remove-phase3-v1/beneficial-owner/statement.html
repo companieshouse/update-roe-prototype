@@ -1,0 +1,68 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+
+Review the following statement
+ – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+ 
+  <form action="../submit-pay/check-your-answers" method="post">
+
+
+<h1 class="govuk-heading-xl">Review the beneficial owner statement</h1>
+
+<p class"govuk-body">Based on the information you've provided in this update, we'll show this statement on the public Register of Overseas Entities: </p>
+
+      <div class="bo-statement govuk-!-margin-bottom-6">
+<p class"govuk-body">All beneficial owners have been identified and all required information can be provided.</p>
+
+</div>
+<h1 class="govuk-heading-l">Is this statement correct?</h1>
+
+    {{ govukRadios({
+      classes: "govuk-radios",
+      idPrefix: "boStatement",
+      name: "boStatement",
+      fieldset: {
+        legend: {
+          text: "Is this statement correct?",
+          isPageHeading: true,
+          classes: "govuk-visually-hidden"
+        }
+      },
+      items: [
+        {
+          value: "yes",
+          text: "Yes"
+
+    },
+        {
+          value: "no",
+          text: "No, I need to change the information I've provided"
+        }
+      ]
+    }) }}
+  
+
+  
+          {{ govukButton({
+            text: "Save and continue"
+          }) }}
+  </form>
+
+
+
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -94,3 +94,21 @@ var redirectMarkdown = function (requestedPage, res) {
     res.redirect(requestedPage.slice(0, -9))
   }
 }
+
+router.post('/select-prototype', function (req, res) {
+
+  const prototype = req.body.prototype
+
+  if (prototype === 'original') {
+    res.redirect('/prototype-v1/start')
+  }
+
+  else if (prototype === 'phase3') {
+    res.redirect('/prototype-v3/start')
+  }
+
+  else {
+    res.redirect('/index')
+  }
+
+})

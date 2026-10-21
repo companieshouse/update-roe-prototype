@@ -1,0 +1,117 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Tell us about the trust – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% if errorList %}
+      {{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: errorList
+      }) }}
+      {% endif %}
+      <form class="form" action="{{currentUrl}}" method="post">
+
+
+      <span class="govuk-caption-l">{{ data['trust-name'] }}</span>
+       <h1 class="govuk-heading-xl">What is Name Corp's role within the trust?</h1>
+        
+        {# <p class="govuk-!-margin-bottom-5 govuk-!-margin-top-5">If you need to update this information, you can change the answers here.</p> #}
+
+        {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+        {% from "govuk/components/input/macro.njk" import govukInput %} 
+
+
+        {% set indintDateHtml %}
+        <br>
+        {{ govukDateInput({
+          id: "individual-interested-date",
+          namePrefix: "individual-interested-date",
+          fieldset: {
+            legend: {
+              text: "What date did they become an interested person?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          hint: {
+            text: "For example, 27 3 2007"
+          }
+        }) }}
+        {% endset -%}
+
+
+
+
+        {{ govukCheckboxes ({
+          idPrefix: "trust-role3",
+          name: "trust-role3",
+          fieldset: {
+            legend: {
+              text: "What is Daniel Ashcroft's role within the trust?",
+              isPageHeading: true,
+              classes: "govuk-visually-hidden"
+            }
+          },
+          hint: {
+          text: "Select all that apply."
+        },
+          items: [
+            {
+              value: "beneficiary",
+              text: "Beneficiary"
+            },
+            {
+              value: "settlor",
+              text: "Settlor"
+            },
+            {
+              value: "grantor",
+              text: "Grantor"
+            },
+            {
+              value: "interested",
+              text: "Interested person",
+              conditional: {
+              html: indintDateHtml
+            }
+            }
+          ]
+        }) }}
+
+
+        <p class="govuk-body govuk-!-margin-bottom-7"><a href="../beneficial-owner/involved-types-test" class="govuk-link govuk-link--no-visited-state">Change Name Corp's nature of control</a></p>
+
+
+
+
+        {{ govukInsetText({
+          html: '
+            <h2 class="govuk-heading-m">What information we&#39;ll show on the public register</h2>
+            <p>We will not show any of the information you provide in this section on the public Register of Overseas Entities. 
+              However, we may share it with HMRC.</p>
+                      '
+        }) }}
+
+        <div class="govuk-button-group">
+          
+            {{ govukButton({
+              formaction: "trust-details",
+              text: "Save and continue"
+            }) }}
+
+        </div>
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

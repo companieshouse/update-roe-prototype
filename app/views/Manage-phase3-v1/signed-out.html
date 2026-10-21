@@ -1,0 +1,23 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+
+You have signed out of the service
+ – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+<h1 class="govuk-heading-l">You have signed out</h1>
+
+<p class="govuk-body">Your update statement will be saved in Your filings.</p>
+<p class="govuk-body"><a href="/v3/sign-in" class="govuk-link">Sign back in to the service</a> to continue with your filing or start a new one. </p>
+
+    </div>
+  </div>
+
+{% endblock %}
