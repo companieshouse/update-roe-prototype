@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Review former beneficial owners – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">{{ data['trust-name'] }}</span>
+      <h1 class="govuk-heading-xl">Review former beneficial owners</h1>
+
+      <table class="govuk-table">
+        <caption class="govuk-table__caption govuk-table__caption--m">Former beneficial owners associated with this trust</caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Name</th>
+            <th scope="col" class="govuk-table__header">Start date</th>
+            <th scope="col" class="govuk-table__header">Cease date</th>
+            <th scope="col" class="govuk-table__header">Change</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Lisa Samith</th>
+            <td class="govuk-table__cell">4 October 2015</td>
+            <td class="govuk-table__cell">10 August 2021</td>
+            <td class="govuk-table__cell"><a href="#">Change</a></td>
+          </tr>
+        </tbody>
+      </table>
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Add a former beneficial owner",
+          href: "41-tell-us-about-the-former-beneficial-owner"
+        }) }}
+      
+        {{ govukButton({
+          text: "No more to add",
+          classes: "govuk-button--secondary",
+          href: "48-individuals"
+        }) }}
+      </div>
+
+    </div>
+  </div>
+
+{% endblock %}

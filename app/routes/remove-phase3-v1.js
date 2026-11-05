@@ -66,7 +66,7 @@ router.post('/remove-phase3-v1/04-do-any-beneficial-owners-or-managing-officers-
   if (secureRegister == "yes"){
       response.redirect("/remove-phase3-v1/05-youll-need-to-file-an-update-statement-using-the-paper-form")
   } else {
-      response.redirect("/remove-phase3-v1/06-are-there-any-trusts-involved-in-this-overseas-entity")
+      response.redirect("/remove-phase3-v1/08b-before-you-start")
   }
 })
 
@@ -156,7 +156,13 @@ router.get('/v8/21-tell-us-about-the-uk-regulated-agent-that-carried-out-verific
   }
 })
 
-
+router.get('/remove-phase3-v1/19-who-is-completing-this-update', function(req, res) {
+  if (req.session.data['who-is-filing'] === 'agent') {
+    res.render('remove-phase3-v1/20-complete-this-statement-to-confirm-that-verification-checks-have-been-completed')
+  } else {
+    res.render('remove-phase3-v1/21-tell-us-about-the-uk-regulated-agent-that-carried-out-verification-checks')
+  }
+})
 
 
 // ceased filter - NEEDS UPDATING

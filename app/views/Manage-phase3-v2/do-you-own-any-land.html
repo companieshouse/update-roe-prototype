@@ -1,0 +1,81 @@
+
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Will you be making any changes to the overseas entity? – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="location-of-land">
+  <span class="govuk-caption-l">{{ data['overseas-name'] }} - OE001485</span>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-5">Is the overseas entity the registered owner of any UK based property or land?</h1>
+
+      <p class="govuk-!-margin-bottom-5 govuk-!-margin-top-1">The overseas entity must be named as the owner of the property or land on the England & Wales, Northern Ireland or Scotland registry.</p>
+
+
+        {{ govukRadios({
+          idPrefix: "make-changes",
+          name: "make-changes",
+          fieldset: {
+            legend: {
+              text: "Have you made any changes to the overseas entity?",
+              isPageHeading: false,
+              classes: "govuk-visually-hidden"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes, the overseas entity is the registered owner of land or property in the UK",
+      hint: {
+        text: ""
+      }
+            },
+            {
+              value: "no",
+              text: "No, the overseas entity is not the registered owner of land or property in the UK",
+      hint: {
+        text: ""
+      }
+            }
+
+          ]
+        }) }}
+
+
+
+          {{ govukButton({
+            text: "Save and continue"
+          }) }}
+
+
+        {#
+          <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+              What verification checks are needed?
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+            Verification checks are needed on any changes made to information about the overseas entity, its beneficial owners or managing officers. 
+            </div>
+            <div class="govuk-details__text">
+            Verification checks can only be carried out by a UK-regulated agent, and must have been completed no more than 3 months before the date of this update statement.   </div>
+              </div>
+          </details>
+          #}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

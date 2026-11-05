@@ -18,33 +18,56 @@ Company authentication
 
     <form action="12-date-of-the-update-statement" method="post" novalidate>
 
-<h1 class="govuk-heading-xl">Company authentication</h1>
-
-<p class"govuk-body">To file company information you will need an authentication code.</p>
-
-
-<p class"govuk-body">Authenticating for</p>
-  <p class="govuk-!-font-size-27 govuk-!-padding-bottom-5"><strong>ASHCROFT LIMITED (OE001485)</strong></p>
-
-
-{{ govukInput({
-  hint: {
-    html: '<p class"govuk-body><strong>Authentication code</strong></p>'
-  },
-  id: "auth-code",
-  name: "auth-code",
-  value: data["auth-code"] 
-}) }}
+<div class="govuk-form-group">
+  <span class="govuk-caption-xl govuk-body govuk-!-margin-bottom-3">Ashcroft Limited (OE001485)</span>
+  <h1 class="govuk-label-wrapper">
+    <label class="govuk-label govuk-label--xl" for="event-name">
+      Enter the company authentication code
+    </label>
+  </h1>
+  <div id="event-name-hint" class="govuk-hint">
+    This is a 6 character code issued by us to each company.
+  </div>
+    <input class="govuk-input govuk-input--width-10" id="width-10" name="width20" type="text">
+</div>
 
 
+<details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      I do not have an authentication code
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+  You'll need to <a href="..">request an authentication code</a>. It is sent by post.</div>
+</details>
 
+
+
+<div class="govuk-checkboxes__item">
+  <input class="govuk-checkboxes__input"
+         id="waste"
+         name="waste"
+         type="checkbox"
+         value="carcasses">
+
+  <label class="govuk-label govuk-checkboxes__label" for="waste">
+    Save the company details
+  </label>
+
+  <div class="govuk-hint govuk-checkboxes__hint">
+   If you save the details, we'll add the company to your account. You will not need to re-enter the authentication code for most online filings. You'll also be able to digitally authorise other people to file online for this company.
+  </div>
+</div>
+
+<br><br>
 
   {{ govukButton({
-    text: "Authenticate"
+    text: "Continue",
+    href: "13-who-can-we-contact-about-this-update-statement"
   }) }}
           
 
-<p class="govuk-body"><a href="auth/request-an-authentication-code" target="_blank" class="govuk-link">Request an authentication code (opens in a new tab)</a></p>
 
     
 <!--
@@ -63,5 +86,6 @@ Company authentication
 
     </div>
   </div>
+
 
 {% endblock %}

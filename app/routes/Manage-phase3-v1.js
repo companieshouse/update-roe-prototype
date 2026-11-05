@@ -101,16 +101,6 @@ if (trustInvolved === "yes"){
 
 // 14 ******* MAKE ANY CHANGES? FILTER *******
 
-router.post('/remove-phase3-v1/14-do-you-need-to-make-any-changes-to-this-overseas-entity', function(request, response) {
-
-  var makeChanges = request.session.data['make-changes']
-  if (makeChanges == "yes"){
-      response.redirect("/remove-phase3-v1/19-who-is-completing-this-update")
-  } else {
-      response.redirect("/remove-phase3-v1/15-has-the-overseas-entity-identified-any-registrable-beneficial-owners")
-  }
-})
-
 
 
 // router.get('/remove-phase3-v1/19-who-is-completing-this-update', function(req, res) {
@@ -157,7 +147,7 @@ router.post('/manage-phase3-v1/14-do-you-need-to-make-any-changes-to-this-overse
     if (makeChanges == "no"){
         response.redirect("/manage-phase3-v1/18-review-the-information-in-this-update-statement")
     } else {
-        response.redirect("/manage-phase3-v1/19-who-is-completing-this-update")
+        response.redirect("/manage-phase3-v1/19-who-is-completing-this-update-1")
     }
 })
 

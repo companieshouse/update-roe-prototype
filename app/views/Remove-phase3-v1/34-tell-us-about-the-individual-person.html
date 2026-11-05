@@ -116,49 +116,68 @@
           }
         }) }}
 
-        {# <div class="govuk-form-group">
-           <label for="autocomplete-default" class="govuk-label--m">What is their nationality?</label>
-          <p class="govuk-hint">Start typing a nationality, then choose from the list</p>
-          <div id="nationality" class="autocomplete-wrapper"></div>
-        </div> #}
 
+{{ govukSelect({
+  id: "nationality-1",
+  name: "nationality-1",
+  label: {
+    text: "What is their nationality?",
+    classes: "govuk-label--m"
+  },
+  items: [
+    {
+      value: "",
+      text: "Select a nationality",
+      selected: true
+    },
+    {
+      value: "british",
+      text: "British"
+    },
+    {
+      value: "irish",
+      text: "Irish"
+    }
+  ]
+}) }}
 
-              {{ govukInput({
-                label: {
-                  text: "What is their nationality?",
-                  classes: "govuk-label--m",
-                  isPageHeading: false
-                },
-          hint: {
-            text: "Start typing a nationality, then choose from the list"
-          },
-                classes: "govuk-!-width-three-quarters",
-                id: "mo-nationality",
-                name: "mo-nationality",
-                value: moNationality
-              }) }}
+<p class="govuk-body govuk-!-margin-bottom-2">
+  Second nationality (optional)
+</p>
 
+<div class="govuk-hint govuk-!-margin-bottom-3">
+  Dual citizenship (also known as nationality) is allowed in some countries. This means they can be a citizen of their own country and another country.
+</div>
 
-        <p class="govuk-body">
-          <a href="javascript:void(0)" id="second-nationality-link" class="govuk-link govuk-link--no-visited-state ">Add a second nationality</a>
-        </p>
+{{ govukSelect({
+  id: "nationality-2",
+  name: "nationality-2",
+  items: [
+    {
+      value: "",
+      text: "Select a nationality",
+      selected: true
+    },
+    {
+      value: "british",
+      text: "British"
+    },
+    {
+      value: "irish",
+      text: "Irish"
+    }
+  ]
+}) }}
 
+        
+  
+
+     
         <div id="second-nationality" class="second-nationality" style="display: none">
           <div class="govuk-form-group">
             <label for="autocomplete-default" class="govuk-label">Second nationality (optional)</label>
             <p class="govuk-hint">Dual citizenship (also known as dual nationality) is allowed in some countries. This means they can be a citizen of their own country and another country.</p>
-            <div id="nationalityTwo" class="autocomplete-wrapper">
-              
-               {{ govukInput({
-                label: {
-                },
-                classes: "govuk-!-width-three-quarters",
-                id: "mo-second-nationality",
-                name: "mo-second-nationality"
-
-              }) }}
-              
-              </div>
+            <div id="nationalityTwo" class="autocomplete-wrapper"></div>
           </div>
           <p class="govuk-body">
             <a href="javascript:void(0)" id="third-nationality-link" class="govuk-link govuk-link--no-visited-state">Add a third nationality</a>
@@ -168,21 +187,21 @@
           <div class="govuk-form-group">
             <label for="autocomplete-default" class="govuk-label">Third nationality (optional)</label>
             <p class="govuk-hint">Multiple citizenship (also known as multiple nationality) is allowed in some countries. This means they can be a citizen of their own country and other countries.</p>
-            <div id="nationalityThree" class="autocomplete-wrapper">
-
-
-               {{ govukInput({
-                label: {
-                },
-                classes: "govuk-!-width-three-quarters",
-                id: "mo-third-nationality",
-                name: "mo-third-nationality"
-              }) }}
-
-            </div>
+            <div id="nationalityThree" class="autocomplete-wrapper"></div>
           </div>
         </div>
 
+
+        {# <div class="govuk-form-group">
+           <label for="autocomplete-default" class="govuk-label--m">What is their nationality?</label>
+          <p class="govuk-hint">Start typing a nationality, then choose from the list</p>
+          <div id="nationality" class="autocomplete-wrapper"></div>
+        </div> #}
+
+
+
+ 
+        
         {% call govukFieldset({
           legend: {
             html: 'What is their home address?<br><p class="govuk-hint govuk-!-padding-top-1"> If they have more than one home address, use the address where they live most of the time</p>',
@@ -438,7 +457,7 @@
 
         {# <div class="govuk-!-padding-bottom-6">
           <h1 class="govuk-label-wrapper"><label for="autocomplete-default" class="govuk-label govuk-label--m">What is their occupation? (If applicable)</label></h1>
-          <p class="govuk-hint">Start typing an occupation, then choose from the list. If their occupation is not shown, you can enter it directly into the box. <br> If they do not have an occupation, enter 'None'.</p>
+          <p class="govuk-hint">For example, consultant.</p>
           <div id="occupation" name="occupation" class="autocomplete-wrapper"></div>
         </div> #}
 
@@ -449,7 +468,7 @@
             isPageHeading: false
           },
           hint: {
-          html: 'Start typing an occupation, then choose from the list. If their occupation is not shown, you can enter it directly into the box. <br> If they do not have an occupation, enter 	&#39;None&#39;.'
+          html: 'For example, consultant.'
         },
           id: "mo-individual-first-name",
           name: "mo-individual-first-name",
@@ -598,7 +617,7 @@
           html: '
                     <h2 class="govuk-heading-m">What information we&#39;ll show on the public register</h2>
                     <p>We will not show the managing officer’s home address unless it is the same as their correspondence address. We’ll only show the month and year of their date of birth.</p>
-                    <p>We will show all other information you provide in this section on the public Register of Overseas Entities.</p>
+                    <p>We will show all other information you provide on this screen on the public Register of Overseas Entities.</p>
                 '
         }) }}
 

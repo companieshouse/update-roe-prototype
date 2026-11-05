@@ -23,69 +23,52 @@ Confirm this is the correct overseas entity
     <h1 class="govuk-heading-xl">Confirm this is the correct overseas entity</h1>
     
   
-<form>
-      {{ govukSummaryList({
-        classes: 'govuk-!-margin-bottom-9',
-        rows: [
-          {
-            key: {
-              text: "Name"
-            },
-            value: {
-              text: "Ashcroft Limited"
-            },
-            actions: {
-              items: [
-                {
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "Overseas Entity ID"
-            },
-            value: {
-              text: "OE001485"
-            },
-            actions: {
-              items: [
-                {
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "Formed in"
-            },
-            value: {
-              text: "Virgin Islands, British"
-            },
-            actions: {
-              items: [
-                {
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "Date registered on the Register of Overseas Entities"
-            },
-            value: {
-              html: "11 August 2022"
-            },
-            actions: {
-              items: [
-                {
-                }
-              ]
-            }
-          }
-        ]
-      }) }}
-    </form>
+<style>
+  .ch-summary-list .govuk-summary-list__value {
+    text-align: right;
+    font-weight: normal;
+  }
+</style>
+
+<dl class="govuk-summary-list ch-summary-list govuk-!-margin-bottom-9">
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Name
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Ashcroft Limited
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Overseas Entity ID
+    </dt>
+    <dd class="govuk-summary-list__value">
+      OE001485
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Formed in
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Virgin Islands, British
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+   <dt class="govuk-summary-list__key" style="white-space: nowrap;">
+  Date registered on the Register of Overseas Entities
+</dt>
+    <dd class="govuk-summary-list__value">
+      11 August 2022
+    </dd>
+  </div>
+
+</dl>
     </div>
   </div>
 

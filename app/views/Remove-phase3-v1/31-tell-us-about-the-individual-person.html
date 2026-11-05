@@ -242,16 +242,64 @@
         }) }}
         {% endif %}
 
-        <div class="govuk-form-group">
-           <label for="autocomplete-default" class="govuk-label--m">What is their nationality?</label>
-          <p class="govuk-hint">Start typing a nationality, then choose from the list</p>
-          <div id="nationality" class="autocomplete-wrapper"></div>
-        </div>
 
 
-        <p class="govuk-body">
-          <a href="javascript:void(0)" id="second-nationality-link" class="govuk-link govuk-link--no-visited-state ">Add a second nationality</a>
-        </p>
+{{ govukSelect({
+  id: "nationality-1",
+  name: "nationality-1",
+  label: {
+    text: "What is their nationality?",
+    classes: "govuk-label--m"
+  },
+  items: [
+    {
+      value: "",
+      text: "Select a nationality",
+      selected: true
+    },
+    {
+      value: "british",
+      text: "British"
+    },
+    {
+      value: "irish",
+      text: "Irish"
+    }
+  ]
+}) }}
+
+<p class="govuk-body govuk-!-margin-bottom-2">
+  Second nationality (optional)
+</p>
+
+<div class="govuk-hint govuk-!-margin-bottom-3">
+  Dual citizenship (also known as nationality) is allowed in some countries. This means they can be a citizen of their own country and another country.
+</div>
+
+{{ govukSelect({
+  id: "nationality-2",
+  name: "nationality-2",
+  items: [
+    {
+      value: "",
+      text: "Select a nationality",
+      selected: true
+    },
+    {
+      value: "british",
+      text: "British"
+    },
+    {
+      value: "irish",
+      text: "Irish"
+    }
+  ]
+}) }}
+
+        
+  
+
+     
         <div id="second-nationality" class="second-nationality" style="display: none">
           <div class="govuk-form-group">
             <label for="autocomplete-default" class="govuk-label">Second nationality (optional)</label>
@@ -362,11 +410,41 @@
           name: "service-address-state"
         }) }}
 
-        <div class="govuk-form-group">
-           <label for="autocomplete-default" class="govuk-label">Country</label>
-          <p class="govuk-hint">Start typing a country, then choose from the list</p>
-          <div id="country" class="autocomplete-wrapper"></div>
-        </div>
+        <p class="govuk-body govuk-!-margin-bottom-2">
+  Country
+</p>
+
+{{ govukSelect({
+  id: "country",
+  name: "country",
+  items: [
+    {
+      value: "united-kingdom",
+      text: "United Kingdom",
+      selected: true
+    },
+    {
+      value: "ireland",
+      text: "Ireland"
+    },
+    {
+      value: "france",
+      text: "France"
+    },
+    {
+      value: "germany",
+      text: "Germany"
+    },
+    {
+      value: "spain",
+      text: "Spain"
+    },
+    {
+      value: "united-states",
+      text: "United States"
+    }
+  ]
+}) }}
 
         {{ govukInput({
           label: {
@@ -924,18 +1002,31 @@
 {% endif %}
 
 
+<details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+     How to check if a beneficial owner is on the UK Sanctions List
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+ Search the <a href="..">UK Sanctions List (opens in a new tab)</a> to check if a beneficial owner is subject to sanctions under the Sanctions and Anti-Money Laundering Act 2018.</div>
+</details>
 
 
 
+<div class="govuk-inset-text">
+  <h2 class="govuk-heading-m">
+    What information we'll show on the public register
+  </h2>
 
-{{ govukInsetText({
-  html: '
-            <h2 class="govuk-heading-m">What information we&#39;ll show on the public register</h2>
-            <p>We will not show the beneficial owner&#39;s home address unless it is the same as their correspondence address. Only the month and year of their date of birth will be shown.</p>
-            <p>We will show all the other information you provide in this section on the public Register of Overseas Entities.</p>
-        '
-}) }}
+  <p class="govuk-body">
+    We will not show the beneficial owner's home address unless it is the same as their correspondence address. We'll only show the month and year of their date of birth.
+  </p>
 
+  <p class="govuk-body">
+    We will show all the other information you provide in this section on the public Register of Overseas Entities.
+  </p>
+</div>
 
 
         {{ govukButton({
