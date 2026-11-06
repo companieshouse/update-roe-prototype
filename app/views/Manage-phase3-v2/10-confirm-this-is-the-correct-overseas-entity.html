@@ -11,75 +11,60 @@ Confirm this is the correct overseas entity
 {% endblock %}
 
 {% block content %}
-<div class="govuk-grid-row">
+
+
+  <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
     <h1 class="govuk-heading-xl">Confirm this is the correct overseas entity</h1>
     
   
-<form>
-      {{ govukSummaryList({
-        classes: 'govuk-!-margin-bottom-9',
-        rows: [
-          {
-            key: {
-              text: "Name"
-            },
-            value: {
-              text: "ASHCROFT LIMITED"
-            },
-            actions: {
-              items: [
-                {
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "Overseas Entity ID"
-            },
-            value: {
-              text: "OE001485"
-            },
-            actions: {
-              items: [
-                {
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "Formed in"
-            },
-            value: {
-              text: "VIRGIN ISLANDS, BRITISH"
-            },
-            actions: {
-              items: [
-                {
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "Date registered on the Register of Overseas Entities"
-            },
-            value: {
-              html: "11 August 2022"
-            },
-            actions: {
-              items: [
-                {
-                }
-              ]
-            }
-          }
-        ]
-      }) }}
-    </form>
+<style>
+  .ch-summary-list .govuk-summary-list__value {
+    text-align: right;
+    font-weight: normal;
+  }
+</style>
+
+<dl class="govuk-summary-list ch-summary-list govuk-!-margin-bottom-9">
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Name
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Ashcroft Limited
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Overseas Entity ID
+    </dt>
+    <dd class="govuk-summary-list__value">
+      OE001485
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Formed in
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Virgin Islands, British
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+   <dt class="govuk-summary-list__key" style="white-space: nowrap;">
+  Date registered on the Register of Overseas Entities
+</dt>
+    <dd class="govuk-summary-list__value">
+      11 August 2022
+    </dd>
+  </div>
+
+</dl>
     </div>
   </div>
 
@@ -94,13 +79,6 @@ Confirm this is the correct overseas entity
     Choose a different overseas entity
   </a></p>
 
-
-
-  {# <div class= "govuk-!-margin-top-9">
-  <p><a class="govuk-link govuk-body-s" href="07-youll-need-to-file-an-update-statement-using-the-paper-form">
-    Trust NOC
-  </a></p>
-  </div> #}
 
           
     </form>
