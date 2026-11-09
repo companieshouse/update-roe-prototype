@@ -53,9 +53,9 @@ router.post('/clear-data', function (req, res) {
   console.log('TEST ROUTE WORKING')
 
   if (req.session.data['make-changes'] === 'yes') {
-    res.redirect('/Manage-phase3-v2/19-who-is-completing-this-update-1')
+    res.redirect('/manage-phase3-v2/19-who-is-completing-this-update-1')
   } else {
-    res.redirect('/Manage-phase3-v2/15-has-the-overseas-entity-identified-any-registrable-beneficial-owners')
+    res.redirect('/manage-phase3-v2/15-has-the-overseas-entity-identified-any-registrable-beneficial-owners')
   }
 
 })
@@ -67,9 +67,9 @@ router.post('/manage-phase3-v2/19-who-is-completing-this-update-1', function(req
   var whoIsFiling = req.session.data['who-is-filing']
 
   if (whoIsFiling === 'agent') {
-    res.redirect('/Manage-phase3-v2/20-complete-this-statement-to-confirm-that-verification-checks-have-been-completed')
+    res.redirect('/manage-phase3-v2/20-complete-this-statement-to-confirm-that-verification-checks-have-been-completed')
   } else {
-    res.redirect('/Manage-phase3-v2/21-tell-us-about-the-uk-regulated-agent-that-carried-out-verification-checks')
+    res.redirect('/manage-phase3-v2/21-tell-us-about-the-uk-regulated-agent-that-carried-out-verification-checks')
   }
 
 })
@@ -79,9 +79,9 @@ router.post('/manage-phase3-v2/do-you-own-any-land', function(req, res) {
   var makeChanges = req.session.data['make-changes']
 
   if (makeChanges === 'yes') {
-    res.redirect('/Manage-phase3-v2/location-of-land')
+    res.redirect('/manage-phase3-v2/location-of-land')
   } else {
-    res.redirect('/Manage-phase3-v2/36-check-your-answers-before-submitting')
+    res.redirect('/manage-phase3-v2/36-check-your-answers-before-submitting')
   }
 
 })
