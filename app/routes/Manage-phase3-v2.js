@@ -129,7 +129,7 @@ router.post('/manage-phase3-v2/14-do-you-need-to-make-any-changes-to-this-overse
   var makeChanges = request.session.data['make-changes']
 
   if (makeChanges == "yes"){
-      response.redirect("/manage-phase3-v2/19-who-is-completing")
+      response.redirect("/manage-phase3-v2/19-who-is-completing-this-update-1")
   } else {
       response.redirect("/manage-phase3-v2/15-has-the-overseas-entity-identified-any-registrable-beneficial-owners")
   }

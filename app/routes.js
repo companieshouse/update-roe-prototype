@@ -31,14 +31,14 @@ router.use('/', require('./routes/remove-phase3-v1.js'))
 
 
 // Clear all data in session
-router.post('/Manage-phase3-v2/04-do-any-beneficial-owners-or-managing-officers-have-their-personal-information-protected-at-companies-house', function(req, res) {
+router.post('/manage-phase3-v2/04-do-any-beneficial-owners-or-managing-officers-have-their-personal-information-protected-at-companies-house', function(req, res) {
 
   var secureRegister = req.session.data['secure-register']
 
   if (secureRegister === 'yes') {
-    res.redirect('/Manage-phase3-v2/05-youll-need-to-file-an-update-statement-using-the-paper-form')
+    res.redirect('/manage-phase3-v2/05-youll-need-to-file-an-update-statement-using-the-paper-form')
   } else {
-    res.redirect('/Manage-phase3-v2/08-before-you-start')
+    res.redirect('/manage-phase3-v2/08-before-you-start')
   }
 
 })
@@ -48,7 +48,7 @@ router.post('/clear-data', function (req, res) {
     res.render('prototype-admin/clear-data-success')
   })
 
-  router.post('/Manage-phase3-v2/14-do-you-need-to-make-any-changes-to-this-overseas-entity', function(req, res) {
+  router.post('/manage-phase3-v2/14-do-you-need-to-make-any-changes-to-this-overseas-entity', function(req, res) {
 
   console.log('TEST ROUTE WORKING')
 
@@ -62,7 +62,7 @@ router.post('/clear-data', function (req, res) {
 
 
 
-router.post('/Manage-phase3-v2/19-who-is-completing-this-update-1', function(req, res) {
+router.post('/manage-phase3-v2/19-who-is-completing-this-update-1', function(req, res) {
 
   var whoIsFiling = req.session.data['who-is-filing']
 
@@ -74,7 +74,7 @@ router.post('/Manage-phase3-v2/19-who-is-completing-this-update-1', function(req
 
 })
 
-router.post('/Manage-phase3-v2/do-you-own-any-land', function(req, res) {
+router.post('/manage-phase3-v2/do-you-own-any-land', function(req, res) {
 
   var makeChanges = req.session.data['make-changes']
 
