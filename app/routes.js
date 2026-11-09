@@ -31,12 +31,64 @@ router.use('/', require('./routes/remove-phase3-v1.js'))
 
 
 // Clear all data in session
+router.post('/Manage-phase3-v2/04-do-any-beneficial-owners-or-managing-officers-have-their-personal-information-protected-at-companies-house', function(req, res) {
+
+  var secureRegister = req.session.data['secure-register']
+
+  if (secureRegister === 'yes') {
+    res.redirect('/Manage-phase3-v2/05-youll-need-to-file-an-update-statement-using-the-paper-form')
+  } else {
+    res.redirect('/Manage-phase3-v2/08-before-you-start')
+  }
+
+})
+
 router.post('/clear-data', function (req, res) {
     req.session.data = {}
     res.render('prototype-admin/clear-data-success')
   })
 
+  router.post('/Manage-phase3-v2/14-do-you-need-to-make-any-changes-to-this-overseas-entity', function(req, res) {
+
+  console.log('TEST ROUTE WORKING')
+
+  if (req.session.data['make-changes'] === 'yes') {
+    res.redirect('/Manage-phase3-v2/19-who-is-completing-this-update-1')
+  } else {
+    res.redirect('/Manage-phase3-v2/15-has-the-overseas-entity-identified-any-registrable-beneficial-owners')
+  }
+
+})
+
+
+
+router.post('/Manage-phase3-v2/19-who-is-completing-this-update-1', function(req, res) {
+
+  var whoIsFiling = req.session.data['who-is-filing']
+
+  if (whoIsFiling === 'agent') {
+    res.redirect('/Manage-phase3-v2/20-complete-this-statement-to-confirm-that-verification-checks-have-been-completed')
+  } else {
+    res.redirect('/Manage-phase3-v2/21-tell-us-about-the-uk-regulated-agent-that-carried-out-verification-checks')
+  }
+
+})
+
+router.post('/Manage-phase3-v2/do-you-own-any-land', function(req, res) {
+
+  var makeChanges = req.session.data['make-changes']
+
+  if (makeChanges === 'yes') {
+    res.redirect('/Manage-phase3-v2/location-of-land')
+  } else {
+    res.redirect('/Manage-phase3-v2/36-check-your-answers-before-submitting')
+  }
+
+})
+
 module.exports = router
+
+
 
 // const express = require('express')
 // const router = express.Router()

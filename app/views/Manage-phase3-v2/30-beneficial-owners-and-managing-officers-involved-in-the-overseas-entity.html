@@ -50,13 +50,13 @@
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          ACME Trustees Limited
+          ACME Limited
         </dt>
         <dd class="govuk-summary-list__value">
           	Other legal entity beneficial owner
         </dd>
         <dd class="govuk-summary-list__value summary-status" aria-label="Status - active">
-          Ceased
+          Active
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="28-review-the-other-legal-entity-beneficial-owner">
@@ -64,40 +64,7 @@
           </a>
         </dd>
       </div>
-      {# <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          AMK Department
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Government or public authority beneficial owner
-        </dd>
-       <dd class="govuk-summary-list__value summary-status" aria-label="Status - active">
-          Active
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
-            Change<span class="govuk-visually-hidden"> AMK Department - Government or public authority beneficial owner</span>
-          </a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Helios Limited
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Corporate managing officer
-        </dd>
-       <dd class="govuk-summary-list__value summary-status" aria-label="Status - active">
-          Active
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
-            Change<span class="govuk-visually-hidden"> Helios Limited - Corporate managing officer</span>
-          </a>
-        </dd>
-      </div>
-    </dl>
-  </div> #}
+   
 </div>
 
 </div> 
@@ -110,62 +77,7 @@
 <div class="govuk-grid-column-full govuk-!-margin-top-6">
 
 
-         {{ govukTable({
-          caption: 'What <span class="govuk-visually-hidden">beneficial owners or managing officers</span> you have added in this update' | safe,
-          captionClasses: "govuk-table__caption--m",
-          classes: "govuk-!-margin-bottom-8",
-          firstCellIsHeader: true,
-          head: [
-          {
-            text: "Name",
-            classes: "govuk-visually-hidden"
-          },
-          {
-            text: "Type",
-            classes: "govuk-visually-hidden"
-          },
-          {
-            text: "Status",
-            classes: "govuk-visually-hidden"
-          },
-            {
-              text: "Change or remove",
-              classes: "govuk-visually-hidden"
-            }
-          ],
-          rows: [
-            [
-              {
-                text: "David Bloggs"
-              },
-              {
-                text: "Individual beneficial owner"
-              },
-              {
-                text: "Active"
-              },
-            {
-              html: '<a href="25-review-the-individual-beneficial-owner">Change</a>',
-              visuallyHiddenText: "Individual beneficial owner - David Bloggs"
-            }
-             ],
-             [
-               {
-                 text: "Jane Doe"
-               },
-               {
-               text: "Individual managing officer"
-              },
-               {
-                text: "Ceased"
-               },
-            {
-              html: '<a href="28-review-the-individual-managing-officer">Change</a>',
-              visuallyHiddenText: "Individual managing officer - Jane Doe"
-            }
-              ]
-          ]
-        }) }} 
+     
 
 </div>
     <div class="govuk-grid-column-two-thirds">

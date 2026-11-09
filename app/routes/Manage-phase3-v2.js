@@ -103,11 +103,11 @@ if (trustInvolved === "yes"){
 
 
 
-// router.get('/remove-phase3-v1/19-who-is-completing-this-update', function(req, res) {
+// router.get('/remove-phase3-v1/19-who-is-completing', function(req, res) {
 //   if (req.session.data['make-changes'] === 'no') {
 //     res.render('remove-phase3-v1/15b-has-the-overseas-entity-identified-any-registrable-beneficial-owners')
 //   } else {
-//     res.render('remove-phase3-v1/19-who-is-completing-this-update')
+//     res.render('remove-phase3-v1/19-who-is-completing')
 //   }
 // })
 
@@ -115,11 +115,23 @@ if (trustInvolved === "yes"){
 
 // 18 ******* NO CHANGE: REVIEW THE INFORMATION FILTER *******
 
-router.get('/v8/14-do-you-need-to-make-any-changes-to-this-overseas-entity', function(req, res) {
-  if (req.session.data['need-to-change'] === 'yes') {
-    res.render('v8/xx-payment') 
+
+
+// 14 ******* MAKE ANY CHANGES? FILTER *******
+
+
+
+router.post('/manage-phase3-v2/14-do-you-need-to-make-any-changes-to-this-overseas-entity', function(request, response) {
+
+  console.log("PAGE 14 HIT")
+  console.log("Value:", request.session.data['make-changes'])
+
+  var makeChanges = request.session.data['make-changes']
+
+  if (makeChanges == "yes"){
+      response.redirect("/manage-phase3-v2/19-who-is-completing")
   } else {
-    res.render('v8/14-do-you-need-to-make-any-changes-to-this-overseas-entity')
+      response.redirect("/manage-phase3-v2/15-has-the-overseas-entity-identified-any-registrable-beneficial-owners")
   }
 })
 
@@ -141,15 +153,6 @@ router.post('/remove-phase3-v1/18-review-the-information-in-this-update-statemen
 
 
 
-router.post('/manage-phase3-v1/14-do-you-need-to-make-any-changes-to-this-overseas-entity', function(request, response) {
-
-    var makeChanges = request.session.data['make-changes']
-    if (makeChanges == "no"){
-        response.redirect("/manage-phase3-v1/18-review-the-information-in-this-update-statement")
-    } else {
-        response.redirect("/manage-phase3-v1/19-who-is-completing-this-update-1")
-    }
-})
 
 
 
@@ -218,11 +221,11 @@ router.post('/40-individuals-or-entities-involved-in-the-trust', function(reques
 
   var trustTypes = request.session.data['trustTypes']
   if (trustTypes == "historical"){
-      response.redirect("/manage-phase3-v1/relevant-period/41-tell-us-about-the-former-beneficial-owner")
+      response.redirect("/manage-phase3-v2/relevant-period/41-tell-us-about-the-former-beneficial-owner")
   } if (trustTypes == "individual-trusts"){
-    response.redirect("/manage-phase3-v1/relevant-period/42-tell-us-about-the-individual")
+    response.redirect("/manage-phase3-v2/relevant-period/42-tell-us-about-the-individual")
   } else {
-  response.redirect("/manage-phase3-v1/relevant-period/43-tell-us-about-the-legal-entity")
+  response.redirect("/manage-phase3-v2/relevant-period/43-tell-us-about-the-legal-entity")
   }
 })
 
@@ -232,11 +235,11 @@ router.post('/XX-which-type-of-beneficiary-do-you-need-to-add', function(request
 
   var preRegBeneficiary = request.session.data['pre-reg-beneficiary']
   if (preRegBeneficiary == "Individual"){
-      response.redirect("/manage-phase3-v1/relevant-period/42b-tell-us-about-the-individual-beneficiary")
+      response.redirect("/manage-phase3-v2/relevant-period/42b-tell-us-about-the-individual-beneficiary")
   } if (preRegBeneficiary == "Legal entity"){
-    response.redirect("/manage-phase3-v1/relevant-period/43b-tell-us-about-the-legal-entity-beneficiary")
+    response.redirect("/manage-phase3-v2/relevant-period/43b-tell-us-about-the-legal-entity-beneficiary")
   } else {
-  response.redirect("/manage-phase3-v1/relevant-period/which-type-of-trustee-do-you-need-to-add")
+  response.redirect("/manage-phase3-v2/relevant-period/which-type-of-trustee-do-you-need-to-add")
   }
 })
 
@@ -639,6 +642,7 @@ router.post('/v8/trusts/former-bo', function (req, res) {
   }
 
 })
+
 
 
 
