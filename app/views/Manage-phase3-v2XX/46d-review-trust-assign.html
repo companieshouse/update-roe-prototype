@@ -1,0 +1,286 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Review the trust - {{ serviceName }} | GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+
+{% block content %}
+
+        <form class="form" action="47-former-beneficial-owners" method="post">
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+
+      <span class="govuk-caption-l">{{ data['trust-name'] }}</span>
+      <h1 class="govuk-heading-xl">Review the trust</h1>
+
+
+{# <!-- NEW TRUST INFO -->
+<div class="govuk-inset-text">
+    <p>This trust is no longer associated with a beneficial owner and will be removed. The information must still be updated up until the ceased date.</p>
+    <p>If it still needs to be involved, connect it to a
+    <a class="govuk-notification-banner__link" href="30-beneficial-owners-and-managing-officers-involved-in-the-overseas-entity">beneficial owner</a>.</p>
+
+</div> #}
+
+      <p class="govuk-!-margin-bottom-5 govuk-!-margin-top-5">If you need to update this information, you can change the answers here.</p>
+
+
+
+
+        {{ govukInput({
+          label: {
+            text: "What is the name of the trust?",
+            classes: "govuk-label--m",
+            isPageHeading: false
+          },
+          id: "trust-name",
+          name: "trust-name",
+          value: "Island Trust",
+          hint: {
+            text: "If the trust does not have a name, give a description that it can be identified by."
+          }
+        }) }}
+
+
+
+        <p class="govuk-body-l govuk-!-font-weight-bold govuk-!-margin-top-7 govuk-!-margin-bottom-1">Date the trust was created:</p>
+      <p class="govuk-!-font-size-20 govuk-!-margin-bottom-7">10 July 2020</p>
+
+
+
+<!-- Which of the overseas entity's beneficial owners are trustees of this trust? -->
+{% set roleHtml %}
+{{ govukCheckboxes({
+  name: "role",
+  fieldset: {
+    legend: {
+      text: "What is their role within the trust?",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  hint: {
+    text: "Select all that apply."
+  },
+  items: [
+      {
+      value: "beneficiary",
+      text: "Beneficiary"
+    },
+    {
+      value: "settlor",
+      text: "Settlor"
+    },
+    {
+      value: "grantor",
+      text: "Grantor"
+    },
+    {
+      value: "interested",
+      text: "Interested person"
+    }
+  ]
+}) }}
+{% endset -%}
+
+{% set removeTrustHtml %}
+    {{ govukDateInput({
+      id: "trust-end",
+      namePrefix: "trust-end",
+      fieldset: {
+        legend: {
+          text: "When did this trust stop being associated with the overseas entity?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      hint: {
+        text: "For example, 27 3 2007. This trust's information must be correct to this date."
+      }
+    }) }}
+{% endset -%}
+
+
+
+{{ govukCheckboxes({
+  name: "trust-end",
+  id: "trust-end",
+  fieldset: {
+    legend: {
+      text: "Which of the overseas entity's beneficial owners are trustees of this trust?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: "Select all that apply. You can add more later."
+  },
+  items: [
+    {
+      value: "joe",
+      text: "Joe Bloggs",
+      conditional: {
+        html: roleHtml
+      }
+    },
+    {
+      value: "portugal",
+      text: "Acme Limited",
+      conditional: {
+        html: roleHtml
+      }
+    },
+    {
+      divider: "or"
+    },
+    {
+      value: "none",
+      text: "No beneficial owners – I want to remove this trust",
+      behaviour: "exclusive",
+      conditional: {
+        html: removeTrustHtml
+      }
+    }
+  ]
+}) }}
+
+
+
+
+
+
+
+<!-- trust remove checkboxes -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- NEW TRUST QUESTION -->
+    {# {{ govukDateInput({
+      id: "trust-end",
+      namePrefix: "trust-end",
+      fieldset: {
+        legend: {
+          text: "When did this trust stop being associated with the overseas entity?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      hint: {
+        text: "For example, 27 3 2007. This trust's information must be correct to this date."
+      }
+    }) }} #}
+
+
+{#  FOR CONTENT - ANOTHER LAYOUT OPTION
+<!-- NEW TRUST QUESTION - OPTION 2 -->
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" role="group" aria-describedby="trust-bo-end-date">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      <h1 class="govuk-fieldset__heading">
+        When was your passport issued?
+      </h1>
+          <div class="govuk-inset-text">
+    The information must still be updated up until the ceased date.
+    </div>
+
+    </legend>
+    <div id="trust-bo-end-date-hint" class="govuk-hint">
+      For example, 27 3 2007
+    </div>
+    <div class="govuk-date-input" id="trust-bo-end-date">
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="trust-bo-end-date-day">
+            Day
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="trust-bo-end-date" name="trust-bo-end-date" type="text" inputmode="numeric">
+        </div>
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="trust-bo-end-dated-month">
+            Month
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="trust-bo-end-date-month" name="trust-bo-end-date-month" type="text" inputmode="numeric">
+        </div>
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="trust-bo-end-date-year">
+            Year
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="trust-bo-end-date-year" name="trust-bo-end-date-year" type="text" inputmode="numeric">
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</div> #}
+
+
+        {{ govukRadios({
+  name: "entity-required-info",
+  fieldset: {
+    legend: {
+      text: "To the best of their knowledge, does the entity have all the required information about the trust?",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes"
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+  ]
+}) }}
+
+
+
+
+
+          {{ govukInsetText({
+            html: '
+                      <h2 class="govuk-heading-m">What information we&#39;ll show on the public register</h2>
+                      <p>We will not show any of the information you provide on this screen on the public Register of Overseas Entities. However, we may share it with HMRC.</p>
+                        '
+          }) }}
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

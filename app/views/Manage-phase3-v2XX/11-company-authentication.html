@@ -1,0 +1,91 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+
+Company authentication
+ – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+
+    <form action="12-date-of-the-update-statement" method="post" novalidate>
+
+<div class="govuk-form-group">
+  <span class="govuk-caption-xl govuk-body govuk-!-margin-bottom-3">Ashcroft Limited (OE001485)</span>
+  <h1 class="govuk-label-wrapper">
+    <label class="govuk-label govuk-label--xl" for="event-name">
+      Enter the company authentication code
+    </label>
+  </h1>
+  <div id="event-name-hint" class="govuk-hint">
+    This is a 6 character code issued by us to each company.
+  </div>
+    <input class="govuk-input govuk-input--width-10" id="width-10" name="width20" type="text">
+</div>
+
+
+<details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      I do not have an authentication code
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+  You'll need to <a href="..">request an authentication code</a>. It is sent by post.</div>
+</details>
+
+
+
+<div class="govuk-checkboxes__item">
+  <input class="govuk-checkboxes__input"
+         id="waste"
+         name="waste"
+         type="checkbox"
+         value="carcasses">
+
+  <label class="govuk-label govuk-checkboxes__label" for="waste">
+    Save the company details
+  </label>
+
+  <div class="govuk-hint govuk-checkboxes__hint">
+   If you save the details, we'll add the company to your account. You will not need to re-enter the authentication code for most online filings. You'll also be able to digitally authorise other people to file online for this company.
+  </div>
+</div>
+
+<br><br>
+
+  {{ govukButton({
+    text: "Continue",
+    href: "13-who-can-we-contact-about-this-update-statement"
+  }) }}
+          
+
+
+    
+<!--
+ {{ govukDetails({
+  summaryText: "What is the authentication code and how do I get it?",
+  html: '<p class"govuk-body">
+    The authentication code is a 6-digit alphanumeric code that we issue to each overseas entity. We ask for it every time someone files online for the overseas entity – it confirms to us that they are authorised to do so.</p>
+  <p>
+    If you need to request an authentication code, you will need to search for the overseas entity on the Companies House register, and then select Request an authentication code.</p>
+  <p>
+    [Need confirmation that this is the process]</p>'
+}) }}-->
+
+    
+    </form>
+
+    </div>
+  </div>
+
+
+{% endblock %}

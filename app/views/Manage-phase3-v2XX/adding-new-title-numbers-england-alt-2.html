@@ -1,0 +1,99 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+
+Do you want to add another trust?
+ – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+
+   
+   <form action="adding-new-title-numbers-england-alt-3.html" method="get">
+
+<h1 class="govuk-heading-xl govuk-!-margin-bottom-5">Provide the title numbers for all the UK property or land the overseas entity owns in England and Wales.</h1>
+
+<p class="govuk-body-l govuk-!-margin-bottom-6">Once you have finished entering all the title numbers the overseas entity owns select Save and continue.</p>
+
+<ul class="govuk-list">
+  <li>
+    TE112233K
+    <a class="govuk-link govuk-!-margin-left-2" href="#">
+      Remove<span class="govuk-visually-hidden"> title number</span>
+    </a>
+  </li>
+
+</ul>
+
+<div class="govuk-inset-text">
+
+  <div class="govuk-form-group">
+    <h2 class="govuk-label-wrapper">
+      <label class="govuk-label govuk-label--m" for="event-name">
+        Enter title number
+      </label>
+    </h2>
+
+    <div id="event-name-hint" class="govuk-hint">
+      Once you have finished typing in the title number select Add title number
+    </div>
+
+    
+
+    <input class="govuk-input govuk-!-width-one-quarter"
+      id="event-name"
+      name="eventName"
+      type="text"
+      aria-describedby="event-name-hint">
+  </div>
+
+  <button type="submit"
+    class="govuk-button govuk-button--secondary"
+    data-module="govuk-button">
+    Add title number
+  </button>
+
+  
+</div>
+
+<details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Where do I find title and folio numbers?
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+   <p class="govuk-body-m">You can find a title number by downloading the title register or title plan from the UK land registry where the property or land is registered:</p>
+<p class="govuk-body-m"><a href="">HM Land Registry</a> (England and Wales)</p>
+<p class="govuk-body-m"><a href="">Registers of Scotland</a></p>
+<p class="govuk-body-m"><a href="">Land Registry of Northern Ireland</a></p>
+<p class="govuk-body-m">You'll need to pay a fee for each title register or title plan you download. The fee varies depending on the land registry.</p>
+
+
+  </div>
+</details>
+ 
+<br>
+
+
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+      </form>
+
+
+
+
+    </div>
+  </div>
+
+{% endblock %}

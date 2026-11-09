@@ -1,0 +1,947 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+{% if errorList.length > 0 %}
+  Error:
+{% endif %}
+  Individual beneficial owner – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    {% include "includes/rp-banner.html" %}
+
+
+<span class="govuk-caption-xl">Beneficial owner</span>
+      <h1 class="govuk-heading-xl govuk-!-margin-0">Tell us about the individual person from the pre-regstration period</h1>
+
+      <form class="form" method="post">
+
+<!-- Inset text-->
+        <div class="govuk-inset-text">
+        <p class="govuk-body">You need to enter information that is correct as at the date they ceased to be a registrable beneficial owner.
+        </div>
+
+
+<!-- First name -->
+{% if errorIndividualFirstName == true %}
+        {{ govukInput({
+          label: {
+            text: "What was their first name?",
+            classes: "govuk-label--m",
+            isPageHeading: false
+          },
+          hint: {
+          text: "This is also known as their given name. Include any professional or honorary titles, if relevant."
+        },
+          id: "bo-individual-first-name",
+          name: "bo-individual-first-name",
+          value: individualFirstName,
+          errorMessage: {
+                  text: "Enter the individual person's first name"
+                }
+        }) }}
+        {% else %}
+        {{ govukInput({
+          label: {
+            text: "What was their first name?",
+            classes: "govuk-label--m",
+            isPageHeading: false
+          },
+          hint: {
+          text: "This is also known as their given name. Include any professional or honorary titles, if relevant."
+        },
+          id: "bo-individual-first-name",
+          name: "bo-individual-first-name",
+          value: individualFirstName
+        }) }}
+        {% endif %}
+
+{% if errorIndividualLastName == true %}
+        {{ govukInput({
+          label: {
+            text: "What was their last name?",
+            classes: "govuk-label--m",
+            isPageHeading: false
+          },
+          hint: {
+          text: "This is also known as their family name"
+        },
+          classes: "govuk-!-width-three-quarters",
+          id: "bo-individual-last-name",
+          name: "bo-individual-last-name",
+          value: individualLastName,
+          errorMessage: {
+                  text: "Enter the individual person's last name"
+                }
+        }) }}
+        {% else %}
+        {{ govukInput({
+          label: {
+            text: "What was their last name?",
+            classes: "govuk-label--m",
+            isPageHeading: false
+          },
+          hint: {
+          text: "This is also known as their family name"
+        },
+          classes: "govuk-!-width-three-quarters",
+          id: "bo-individual-last-name",
+          name: "bo-individual-last-name",
+          value: individualLastName
+        }) }}
+        {% endif %}
+
+{% if errorBirthDay == true %}
+        {{ govukDateInput({
+          id: "owner-dob",
+          namePrefix: "owner-dob",
+          fieldset: {
+            legend: {
+              text: "What is their date of birth?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "For example, 27 3 2007"
+          },
+          items: [
+    {
+      classes: "govuk-input--width-2  govuk-input--error",
+      name: "day",
+      value: birthDay,
+      errorMessage: {
+                text: "Enter the individual person's date of birth"
+              }
+    },
+    {
+      classes: "govuk-input--width-2",
+      name: "month",
+      value: birthMonth
+    },
+    {
+      classes: "govuk-input--width-4",
+      name: "year",
+      value: birthYear
+    }
+  ]
+        }) }}
+        {% elseif errorBirthMonth == true %}
+                {{ govukDateInput({
+                  id: "owner-dob",
+                  namePrefix: "owner-dob",
+                  fieldset: {
+                    legend: {
+                      text: "What is their date of birth?",
+                      isPageHeading: false,
+                      classes: "govuk-fieldset__legend--m"
+                    }
+                  },
+                  hint: {
+                    text: "For example, 27 3 2007"
+                  },
+                  errorMessage: {
+                            text: "Enter the individual person's month of birth"
+                          },
+                  items: [
+            {
+              classes: "govuk-input--width-2",
+              name: "day",
+              value: birthDay
+            },
+            {
+              classes: "govuk-input--width-2 govuk-input--error",
+              name: "month",
+              value: birthMonth
+            },
+            {
+              classes: "govuk-input--width-4",
+              name: "year",
+              value: birthYear
+            }
+          ]
+                }) }}
+                {% elif errorBirthYear == true %}
+                        {{ govukDateInput({
+                          id: "owner-dob",
+                          namePrefix: "owner-dob",
+                          fieldset: {
+                            legend: {
+                              text: "What is their date of birth?",
+                              isPageHeading: false,
+                              classes: "govuk-fieldset__legend--m"
+                            }
+                          },
+                          hint: {
+                            text: "For example, 27 3 2007"
+                          },
+                          errorMessage: {
+                                    text: "Enter the individual person's year of birth"
+                                  },
+                          items: [
+                    {
+                      classes: "govuk-input--width-2",
+                      name: "day",
+                      value: birthDay
+                    },
+                    {
+                      classes: "govuk-input--width-2",
+                      name: "month",
+                      value: birthMonth
+                    },
+                    {
+                      classes: "govuk-input--width-4 govuk-input--error",
+                      name: "year",
+                      value: birthYear
+                    }
+                  ]
+                        }) }}
+        {% else %}
+        {{ govukDateInput({
+          id: "owner-dob",
+          namePrefix: "owner-dob",
+          fieldset: {
+            legend: {
+              text: "What is their date of birth?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "For example, 27 3 2007"
+          },
+          items: [
+    {
+      classes: "govuk-input--width-2",
+      name: "day",
+      value: birthDay
+    },
+    {
+      classes: "govuk-input--width-2",
+      name: "month",
+      value: birthMonth
+    },
+    {
+      classes: "govuk-input--width-4",
+      name: "year",
+      value: birthYear
+    }
+    ]
+        }) }}
+        {% endif %}
+
+        {# <div class="govuk-form-group">
+           <label class="govuk-label--m">What is their nationality?</label>
+          <p class="govuk-hint">Start typing a nationality, then choose from the list</p>
+          <div id="nationality" class="autocomplete-wrapper"></div>
+        </div> #}
+
+        {{ govukInput({
+          label: {
+            text: "What was their nationality?",
+            classes: "govuk-label--m",
+            isPageHeading: false
+          },
+          hint: {
+          text: "Start typing a nationality, then choose from the list"
+        },
+          classes: "govuk-!-width-three-quarters",
+          id: "bo-individual-last-name",
+          name: "bo-individual-last-name",
+          value: individualLastName
+        }) }}
+
+
+        <p class="govuk-body">
+          <a href="javascript:void(0)" id="second-nationality-link" class="govuk-link govuk-link--no-visited-state ">Add a second nationality</a>
+        </p>
+        <div id="second-nationality" class="second-nationality" style="display: none">
+          <div class="govuk-form-group">
+            <label for="autocomplete-default" class="govuk-label">Second nationality (optional)</label>
+            <p class="govuk-hint">Dual citizenship (also known as dual nationality) is allowed in some countries. This means they can be a citizen of their own country and another country.</p>
+            <div id="nationalityTwo" class="autocomplete-wrapper"></div>
+          </div>
+          <p class="govuk-body">
+            <a href="javascript:void(0)" id="third-nationality-link" class="govuk-link govuk-link--no-visited-state">Add a third nationality</a>
+          </p>
+        </div>
+        <div id="third-nationality" class="third-nationality" style="display: none">
+          <div class="govuk-form-group">
+            <label for="autocomplete-default" class="govuk-label">Third nationality (optional)</label>
+            <p class="govuk-hint">Multiple citizenship (also known as multiple nationality) is allowed in some countries. This means they can be a citizen of their own country and other countries.</p>
+            <div id="nationalityThree" class="autocomplete-wrapper"></div>
+          </div>
+        </div>
+
+        {% call govukFieldset({
+          legend: {
+            html: 'What ws their home address?<br><p class="govuk-hint govuk-!-padding-top-1"> If they had more than one home address, use the address where they lived most of the time</p>',
+            classes: "govuk-fieldset__legend--m govuk-!-padding-top-3",
+            isPageHeading: false
+          }
+
+
+        }) %}
+
+        {{ govukInput({
+          label: {
+            html: 'Property name or number'
+          },
+          hint: {
+           text: "For example, 'Saron House', '116' or 'Apartment 37a'"
+         },
+          id: "usual-residential-address-property-name-number",
+          name: "usual-residential-address-property-name-number"
+        }) }}
+
+{% if errorHomeAddressLine1 == true %}
+        {{ govukInput({
+          label: {
+            text: "Address line 1"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "usual-residential-address-line-1",
+          name: "usual-residential-address-line-1",
+          value: homeAddressLine1,
+          autocomplete: "address-line1",
+          errorMessage: {
+                    text: "Enter an address"
+                  }
+        }) }}
+        {% else %}
+        {{ govukInput({
+          label: {
+            text: "Address line 1"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "usual-residential-address-line-1",
+          name: "usual-residential-address-line-1",
+          autocomplete: "address-line1",
+          value: homeAddressLine1
+        }) }}
+        {% endif %}
+
+        {{ govukInput({
+          label: {
+            text: "Address line 2 (optional)"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "usual-residential-address-line-2",
+          name: "usual-residential-address-line-2",
+          autocomplete: "address-line2"
+        }) }}
+
+{% if errorHomeCity == true %}
+        {{ govukInput({
+          label: {
+            text: "City or town"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "usual-residential-address-city-town",
+          name: "usual-residential-address-city-town",
+          value: homeCity,
+          errorMessage: {
+                    text: "Enter a city or town"
+                  }
+        }) }}
+        {% else %}
+        {{ govukInput({
+          label: {
+            text: "City or town"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "usual-residential-address-city-town",
+          name: "usual-residential-address-city-town",
+          value: homeCity
+        }) }}
+        {% endif %}
+
+        {{ govukInput({
+          label: {
+            text: "County, state, province or region (optional)"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "service-address-state",
+          name: "service-address-state"
+        }) }}
+
+        {# <div class="govuk-form-group">
+           <label for="autocomplete-default" class="govuk-label">Country</label>
+          <p class="govuk-hint">Start typing a country, then choose from the list</p>
+          <div id="country" class="autocomplete-wrapper"></div>
+        </div> #}
+
+                        {{ govukInput({
+          label: {
+            text: "Country",
+            classes: "govuk-body-m",
+            isPageHeading: false
+          },
+          hint: {
+          text: "Start typing a country, then choose from the list"
+        },
+          classes: "govuk-!-width-three-quarters",
+          id: "bo-individual-last-name",
+          name: "bo-individual-last-name",
+          value: individualLastName
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Postcode or ZIP code (if applicable)"
+          },
+          classes: "govuk-input--width-10",
+          id: "usual-residential-address-postcode",
+          name: "usual-residential-address-postcode",
+          autocomplete: "postal-code"
+        }) }}
+        {% endcall %}
+
+        {% set serviceAddressHtml %}
+        <br>
+        {% call govukFieldset({
+          legend: {
+            text: "What was their correspondence address?",
+            classes: "govuk-fieldset__legend--m",
+            isPageHeading: false
+          }
+        }) %}
+        {{ govukInput({
+          label: {
+            html: 'Property name or number'
+          },
+          hint: {
+           text: "For example, 'Saron House', '116' or 'Apartment 37a'"
+         },
+          id: "service-address-property-name-number",
+          name: "service-address-property-name-number"
+        }) }}
+
+{% if errorServiceAddressLine1 == true %}
+        {{ govukInput({
+          label: {
+            text: "Address line 1"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "service-address-line-1",
+          name: "service-address-line-1",
+          autocomplete: "address-line1",
+          errorMessage: {
+                    text: "Enter the first line of the individual person's correspondence address"
+                  }
+        }) }}
+        {% else %}
+        {{ govukInput({
+          label: {
+            text: "Address line 1"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "service-address-line-1",
+          name: "service-address-line-1",
+          autocomplete: "address-line1"
+        }) }}
+        {% endif %}
+
+        {{ govukInput({
+          label: {
+            text: "Address line 2 (optional)"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "service-address-line-2",
+          name: "service-address-line-2",
+          autocomplete: "address-line2"
+        }) }}
+
+{% if errorServiceAddressCity == true %}
+        {{ govukInput({
+          label: {
+            text: "City or town"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "service-address-city-town",
+          name: "service-address-city-town",
+          errorMessage: {
+                    text: "Enter a city or town"
+                  }
+        }) }}
+        {% else %}
+        {{ govukInput({
+          label: {
+            text: "City or town"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "service-address-city-town",
+          name: "service-address-city-town"
+        }) }}
+        {% endif %}
+
+        {{ govukInput({
+          label: {
+            text: "County, state, province or region (optional)"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "service-address-state",
+          name: "service-address-state"
+        }) }}
+
+        <div class="govuk-form-group">
+           <label for="autocomplete-default" class="govuk-label">Country</label>
+          <p class="govuk-hint">Start typing a country, then choose from the list</p>
+          <div id="country-2" class="autocomplete-wrapper"></div>
+        </div>
+
+
+
+        {{ govukInput({
+          label: {
+            text: "Postcode or ZIP code (if applicable)"
+          },
+          classes: "govuk-input--width-10",
+          id: "service-address-postcode",
+          name: "service-address-postcode",
+          autocomplete: "postal-code"
+        }) }}
+
+        {% endcall %}
+        {% endset -%}
+
+{% if errorSameAddress == true %}
+        {{ govukRadios({
+          classes: "govuk-radios",
+          idPrefix: "same-address",
+          name: "same-address",
+          fieldset: {
+            legend: {
+              text: "Was their correspondence address the same as their home address?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes",
+              hint: {
+                text: "The beneficial owner’s home address will be shown on the public register as the correspondence address."
+              },
+              checked: checked("same-address", "yes")
+            },
+            
+            {
+              value: "no",
+              text: "No",
+              checked: checked("same-address", "no"),
+              conditional: {
+        html: serviceAddressHtml
+        }
+            }
+          ]
+        }) }}
+        {% else %}
+        {{ govukRadios({
+          classes: "govuk-radios",
+          idPrefix: "same-address",
+          name: "same-address",
+          fieldset: {
+            legend: {
+              text: "Was their correspondence address the same as their home address?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+           hint: {
+    text: "This is also known as a service address."
+  },
+          items: [
+            {
+              value: "yes",
+              text: "Yes",
+              hint: {
+                text: "The beneficial owner’s home address would be shown on the public register as the correspondence address."
+              },
+              checked: checked("same-address", "yes")
+            },
+            {
+              value: "no",
+              text: "No",
+              checked: checked("same-address", "no"),
+              conditional: {
+        html: serviceAddressHtml
+        }
+            }
+          ]
+        }) }}
+        {% endif %}
+
+
+
+
+
+<!-- start date -->
+        {{ govukDateInput({
+          id: "owner-startdate",
+          namePrefix: "owner-startdate",
+          fieldset: {
+            legend: {
+              text: "When did they become a beneficial owner for the overseas entity?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "For example, 27 3 2007"
+          },
+          items: [
+    {
+      classes: "govuk-input--width-2",
+      name: "day",
+      value: startDay
+    },
+    {
+      classes: "govuk-input--width-2",
+      name: "month",
+      value: startMonth
+    },
+    {
+      classes: "govuk-input--width-4",
+      name: "year",
+      value: startYear
+    }
+  ]
+        }) }}
+
+
+{# 
+<!-- bo ceased -->
+{{ govukDateInput({
+  id: "bo-ceased",
+  namePrefix: "bo-ceased",
+  fieldset: {
+    legend: {
+      text: "When did they cease to be a registrable beneficial owner?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: "For example, 27 3 2007"
+  }
+}) }} #}
+
+
+
+
+
+        <!-- html for following radio -->
+        {% set boCeasedHtml %}
+        {{ govukDateInput({
+          id: "bo-ceased",
+          namePrefix: "bo-ceased",
+          fieldset: {
+            legend: {
+              text: "Date they ceased to be a registrable beneficial owner",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          hint: {
+            text: "For example, 27 1 2023"
+          }
+        }) }}
+        {% endset -%}
+
+
+        <!-- still a bo radio -->
+        {% if errorBoCeased %}
+          {{ govukRadios({
+            name: "bo-ceased",
+            fieldset: {
+              legend: {
+                text: "Are they still a registrable beneficial owner for the overseas entity?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            items: [
+              {
+                value: "yes",
+                text: "Yes"
+              },
+              {
+                value: "no",
+                text: "No",
+                      conditional: {
+                  html: boCeasedHtml
+                }
+                
+              }
+            ],
+            errorMessage: {
+              text: "Select yes if they are still a registrable beneficial owner"
+            }
+          }) }}
+        {% else %}
+          {{ govukRadios({
+            name: "bo-ceased",
+            fieldset: {
+              legend: {
+                text: "Are they still a registrable beneficial owner for the overseas entity?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            items: [
+              {
+                value: "yes",
+                text: "Yes"
+              },
+              {
+                value: "no",
+                text: "No",
+                      conditional: {
+                  html: boCeasedHtml
+                }
+                
+              }
+            ]
+          }) }}
+        {% endif %}
+
+{# 
+          ******* To be added back in after trust web screens. ******* 
+          If the beneficial owner is a trustee of a trust, you can review and update trust information later in the service. #}
+
+        {% call govukFieldset({
+          legend: {
+            html: 'What was their nature of control?<br><p class="govuk-hint govuk-!-padding-top-1"> Select all that apply.</p>',
+            classes: "govuk-fieldset__legend--m",
+            isPageHeading: false
+          }
+        }) %}
+
+        {{ govukCheckboxes({
+            idPrefix: "bo-noc-individual",
+            name: "bo-noc-individual",
+            fieldset: {
+              legend: {
+                text: "The beneficial owner:",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--s"
+              }
+            },
+
+            items: [
+              {
+                value: "noc-individual-shares",
+                text: "held, directly or indirectly, more than 25% of the shares in the entity"
+              },
+              {
+                value: "noc-individual-voting",
+                text: "held, directly or indirectly, more than 25% of the voting rights in the entity"
+              },
+              {
+                value: "noc-individual-board",
+                text: "held the right, directly or indirectly, to appoint or remove a majority of the board of directors of the entity"
+              },
+              {
+                value: "noc-individual-influence",
+                text: "had the right to exercise, or actually exercised, significant influence or control over the entity"
+              }
+            ]
+          }) }}
+
+
+
+          {{ govukCheckboxes({
+              idPrefix: "bo-noc-trust",
+              name: "bo-noc-trust",
+              fieldset: {
+                legend: {
+                  text: "The beneficial owner was a trustee of a trust and:",
+                  isPageHeading: false,
+                  classes: "govuk-fieldset__legend--s"
+                }
+                  },
+
+                  items: [
+                {
+                  value: "noc-trusts-shares",
+                  text: "the trustees of that trust (in their capacity as such) held, directly or indirectly, more than 25% of the shares in the entity",
+                  checked: checked("bo-noc-trust", "noc-trusts-shares")
+                },
+                {
+                  value: "noc-trusts-voting",
+                  text: "the trustees of that trust (in their capacity as such) held, directly or indirectly, more than 25% of the voting rights in the entity",
+                  checked: checked("bo-noc-trust", "noc-trusts-voting")
+                },
+                {
+                  value: "noc-trusts-board",
+                  text: "the trustees of that trust (in their capacity as such) held the right, directly or indirectly, to appoint or remove a majority of the board of directors of the company",
+                  checked: checked("bo-noc-trust", "noc-trusts-board")
+                },
+                {
+                  value: "noc-trusts-influence",
+                  text: "the trustees of that trust (in their capacity as such) had the right to exercise, or actually exercised, significant influence or control over the company",
+                  checked: checked("bo-noc-trust", "noc-trusts-influence")
+                }
+              ]
+            }) }}
+              <!--   <div id="conditional">
+
+
+
+                   <h2 class="govuk-heading-m">Enter trust information from the Excel document</h2>
+                        {{ govukTextarea({
+                        name: "more-detail",
+                        id: "more-detail",
+                        label: {
+                          text: "Follow the instructions in the Excel document to paste the data into the box:",
+                          classes: "govuk-body",
+                          isPageHeading: false
+                        }
+                      }) }}
+                      <details class="govuk-details" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    I have not completed the trust Excel document yet
+                  </span>
+                </summary>
+                <div class="govuk-details__text" id="more-detail" value="data.['more-detail']">
+                  <p class="govuk-body">Enter the trust information into the <a href="/public/pdf/TrustDataCapture.xlsm" class="govuk-link">Trust Excel document (52KB)</a>. Be aware that this service will time out after 60 minutes of inactivity and your answers will not be saved.</p>
+                </div>
+              </details>
+              </div>-->
+
+
+            {{ govukCheckboxes({
+                idPrefix: "bo-noc-firms",
+                name: "bo-noc-firms",
+                fieldset: {
+                  legend: {
+                    text: "The beneficial owner was a member of a firm that is not a legal person under its governing law, and:",
+                    isPageHeading: false,
+                    classes: "govuk-fieldset__legend--s"
+                  }
+                },
+
+                items: [
+                  {
+                    value: "noc-firm-shares",
+                    text: "the members of that firm (in their capacity as such) held, directly or indirectly, more than 25% of the shares in the entity"
+                  },
+                  {
+                    value: "noc-firm-voting",
+                    text: "the members of that firm (in their capacity as such) held, directly or indirectly, more than 25% of the voting rights in the entity"
+                  },
+                  {
+                    value: "noc-firm-board",
+                    text: "the members of that firm (in their capacity as such) held the right, directly or indirectly, to appoint or remove a majority of the board of directors of the company"
+                  },
+                  {
+                    value: "noc-firm-influence",
+                    text: "the members of that firm (in their capacity as such) had the right to exercise, or actually exercised, significant influence or control over the company"
+                  }
+                ]
+              }) }}
+
+
+              {% endcall %}
+
+
+{% if errorSanctions == true %}
+{{ govukRadios({
+  classes: "govuk-radios",
+  idPrefix: "owner-sanctions",
+  name: "owner-sanctions",
+  fieldset: {
+    legend: {
+      text: "Were they on the UK sanctions list?",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: "This means that they were subject to sanctions under the Sanctions and Anti-Money Laundering Act 2018."
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes",
+      checked: checked ("owner-sanctions", "yes")
+    },
+    {
+      value: "no",
+      text: "No",
+      checked: checked("owner-sanctions", "no")
+    }
+  ],
+  errorMessage: {
+            text: "Select yes if the individual person was on the sanctions list"
+          }
+}) }}
+{% else %}
+{{ govukRadios({
+  classes: "govuk-radios",
+  idPrefix: "owner-sanctions",
+  name: "owner-sanctions",
+  fieldset: {
+    legend: {
+      text: "Were they on the UK sanctions list?",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: "This means that they were subject to sanctions under the Sanctions and Anti-Money Laundering Act 2018."
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes, they were on the sanctions list",
+      checked: checked ("owner-sanctions", "yes")
+    },
+    {
+      value: "no",
+      text: "No, they were not on the sanctions list",
+      checked: checked("owner-sanctions", "no")
+    }
+  ]
+}) }}
+{% endif %}
+
+
+
+
+
+
+{{ govukInsetText({
+  html: '
+            <h2 class="govuk-heading-m">What information we&#39;ll show on the public register</h2>
+            <p>We will not show the beneficial owner&#39;s home address unless it was the same as their correspondence address. Only the month and year of their date of birth will be shown.</p>
+            <p>We will show all the other information you provide in this section on the public Register of Overseas Entities.</p>
+        '
+}) }}
+
+
+
+        {{ govukButton({
+          text: "Save and continue",
+          href: "30b-beneficial-owners-and-managing-officers-involved-in-the-relevant-period"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
