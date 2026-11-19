@@ -86,6 +86,18 @@ router.post('/Manage-phase3-v2/do-you-own-any-land', function(req, res) {
 
 })
 
+router.post('/Manage-phase3-v2/do-you-own-any-land-2', function(req, res) {
+
+  var makeChanges = req.session.data['make-changes']
+
+  if (makeChanges === 'yes') {
+    res.redirect('/Manage-phase3-v2/location-of-land-2')
+  } else {
+    res.redirect('/Manage-phase3-v2/36-check-your-answers-before-submitting')
+  }
+
+})
+
 module.exports = router
 
 
