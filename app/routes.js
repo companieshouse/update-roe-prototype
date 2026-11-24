@@ -28,6 +28,8 @@ router.use('/', require('./routes/v15-routes.js'))
 
 router.use('/', require('./routes/remove-phase3-v1.js'))
 
+router.use('/', require('./routes/manage-phase3-v2.js'))
+
 
 
 // Clear all data in session
@@ -43,22 +45,7 @@ router.post('/Manage-phase3-v2/04-do-any-beneficial-owners-or-managing-officers-
 
 })
 
-router.post('/clear-data', function (req, res) {
-    req.session.data = {}
-    res.render('prototype-admin/clear-data-success')
-  })
 
-  router.post('/Manage-phase3-v2/14-do-you-need-to-make-any-changes-to-this-overseas-entity', function(req, res) {
-
-  console.log('TEST ROUTE WORKING')
-
-  if (req.session.data['make-changes'] === 'yes') {
-    res.redirect('/Manage-phase3-v2/19-who-is-completing-this-update-1')
-  } else {
-    res.redirect('/Manage-phase3-v2/15-has-the-overseas-entity-identified-any-registrable-beneficial-owners')
-  }
-
-})
 
 
 

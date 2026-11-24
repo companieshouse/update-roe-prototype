@@ -17,6 +17,58 @@ router.post('/index', function(request, response) {
   }
 })
 
+router.post('/Manage-phase3-v2/04-do-any-beneficial-owners-or-managing-officers-have-their-personal-information-protected-at-companies-house', function(req, res) {
+
+  var secureRegister = req.session.data['secure-register']
+
+  if (secureRegister === 'yes') {
+    res.redirect('/Manage-phase3-v2/05-youll-need-to-file-an-update-statement-using-the-paper-form')
+  } else {
+    res.redirect('/Manage-phase3-v2/08-before-you-start')
+  }
+
+})
+
+
+
+
+
+router.post('/Manage-phase3-v2/19-who-is-completing-this-update-1', function(req, res) {
+
+  var whoIsFiling = req.session.data['who-is-filing']
+
+  if (whoIsFiling === 'agent') {
+    res.redirect('/Manage-phase3-v2/20-complete-this-statement-to-confirm-that-verification-checks-have-been-completed')
+  } else {
+    res.redirect('/Manage-phase3-v2/21-tell-us-about-the-uk-regulated-agent-that-carried-out-verification-checks')
+  }
+
+})
+
+router.post('/Manage-phase3-v2/do-you-own-any-land', function(req, res) {
+
+  var makeChanges = req.session.data['make-changes']
+
+  if (makeChanges === 'yes') {
+    res.redirect('/Manage-phase3-v2/location-of-land')
+  } else {
+    res.redirect('/Manage-phase3-v2/36-check-your-answers-before-submitting')
+  }
+
+})
+
+router.post('/Manage-phase3-v2/do-you-own-any-land-2', function(req, res) {
+
+  var makeChanges = req.session.data['make-changes']
+
+  if (makeChanges === 'yes') {
+    res.redirect('/Manage-phase3-v2/location-of-land-2')
+  } else {
+    res.redirect('/Manage-phase3-v2/36-check-your-answers-before-submitting')
+  }
+
+})
+
 
 
 // 02 ******* SAVED FILING FILTER *******
