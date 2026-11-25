@@ -79,42 +79,35 @@
 
 
         <!-- nationality input -->
-        {{ govukInput({
-          label: {
-            text: "What is their nationality?",
-            classes: "govuk-label--m",
-            isPageHeading: false
-          },
-            hint: {
-             text: "Start typing a nationality, then choose from the list"
-           },
-          id: "nationality",
-          name: "nationality",
-          value: nationality,
-          value: "British Virgin Islander"
-        }) }}
+   
+<h3 class="govuk-heading-m">What is their nationality?</h3>
 
-        <!-- 2nd nationality input -->
-        <p class="govuk-body">
-          <a href="javascript:void(0)" id="second-nationality-link" class="govuk-link govuk-link--no-visited-state ">Add a second nationality</a>
-        </p>
-        <div id="second-nationality" class="second-nationality" style="display: none">
-          <div class="govuk-form-group">
-            <label for="autocomplete-default" class="govuk-label">Second nationality (optional)</label>
-            <p class="govuk-hint">Dual citizenship (also known as dual nationality) is allowed in some countries. This means they can be a citizen of their own country and another country.</p>
-            <div id="nationalityTwo" class="autocomplete-wrapper"></div>
-          </div>
-          <p class="govuk-body">
-            <a href="javascript:void(0)" id="third-nationality-link" class="govuk-link govuk-link--no-visited-state">Add a third nationality</a>
-          </p>
-        </div>
-        <div id="third-nationality" class="third-nationality" style="display: none">
-          <div class="govuk-form-group">
-            <label for="autocomplete-default" class="govuk-label">Third nationality (optional)</label>
-            <p class="govuk-hint">Multiple citizenship (also known as multiple nationality) is allowed in some countries. This means they can be a citizen of their own country and other countries.</p>
-            <div id="nationalityThree" class="autocomplete-wrapper"></div>
-          </div>
-        </div>
+        <div class="govuk-form-group">
+
+  <select class="govuk-select govuk-!-width-one-half" id="sort" name="sort">
+    <option value="published">British</option>
+    <option value="updated" selected>British Virgin Islander</option>
+    <option value="views">Spanish</option>
+    <option value="comments">French</option>
+  </select>
+</div>
+
+<p class="govuk-body">Second nationality (optional)</p>
+
+ <div id="event-name-hint" class="govuk-hint">
+    Dual citizenship (also known as dual nationality) is allowed in some countries. This means they can be a citizen of their own country and another country.
+  </div>
+
+  <div class="govuk-form-group">
+
+  <select class="govuk-select govuk-!-width-one-half" id="sort" name="sort">
+    <option value="published">British</option>
+    <option value="updated" selected>Select a nationality</option>
+    <option value="views">Spanish</option>
+    <option value="comments">French</option>
+  </select>
+</div>
+
 
 
         <!-- address fieldset -->
@@ -238,36 +231,15 @@
 
           <!-- country input -->
 
-{% if errorCountry %}
-          {{ govukInput({
-            label: {
-              text: "Country"
-            },
-            hint: {
-            text: "Start typing a country, then choose from the list"
-          },
-            classes: "govuk-!-width-two-thirds",
-            id: "country",
-            name: "country",
-            value: "United Kingdom",
-          errorMessage: {
-                    text: "Enter the country"
-                  }
-          }) }}
-{% else %}
-          {{ govukInput({
-            label: {
-              text: "Country"
-            },
-            hint: {
-            text: "Start typing a country, then choose from the list"
-          },
-            classes: "govuk-!-width-two-thirds",
-            id: "country",
-            name: "country",
-            value: "United Kingdom"
-          }) }}
-{% endif %}
+<div class="govuk-form-group">
+
+  <select class="govuk-select govuk-!-width-two-thirds" id="sort" name="sort">
+    <option value="published">Spain</option>
+    <option value="updated" selected>British Virgin Islands</option>
+    <option value="views">France</option>
+    <option value="comments">Germany</option>
+  </select>
+</div>
 
           <!-- postcode input -->
           {{ govukInput({
@@ -531,7 +503,9 @@
 
         {% call govukFieldset({
           legend: {
-            html: 'What is their nature of control?<br><p class="govuk-hint govuk-!-padding-top-1"> Select all that apply. </p>',
+            html: 'What is their nature of control?<br>
+            
+             ',
         
             classes: "govuk-fieldset__legend--m",
             isPageHeading: false
@@ -765,7 +739,7 @@
         {{ govukInsetText({
           html: '
             <h2 class="govuk-heading-m">What information we&#39;ll show on the public register</h2>
-            <p>We will not show the beneficial owner&#39;s home address, unless it is the same as their correspondence address.</p>
+            <p>We will not show the beneficial owner&#39;s home address, unless it is the same as their correspondence address. We will only show the month and year of their date of birth.</p>
             <p>We will show all the other information you provide in this section on the public Register of Overseas Entities.</p>
         '
         }) }}

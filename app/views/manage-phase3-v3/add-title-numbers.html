@@ -1,0 +1,195 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Beneficial owners or managing officers involved in the overseas entity – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="../02a-bo-identified" method="get">
+
+  <span class="govuk-caption-l">{{ data['overseas-name'] }} - {{ data['overseas-id'] }}</span>
+<h1 class="govuk-heading-xl">Add all registered land or property owned by the Overseas Entity. </h1>
+
+
+  </div>
+
+ <div class="govuk-grid-column-two-thirds">
+
+  <div class="govuk-grid-column-full">
+<p class="govuk-body">All land or property owned by the Overseas Entity must be filed alongside title or folio numbers from the same jurisdiction.</p>
+
+
+
+</div> 
+
+
+    
+</div>div>
+
+ <div class="govuk-grid-column-two-thirds">
+<div class="govuk-grid-column-full govuk-!-margin-top-6">
+
+
+     
+
+
+    
+        {{ govukRadios({
+        idPrefix: "boType",
+        name: "boType",
+        fieldset: {
+          legend: {
+            text: "Select a jurisdiction to view and amend land or property owned",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+       
+        items: [
+          {
+            value: "beneficialTypesIndividual",
+            text: "England and Wales"
+          },
+          {
+            value: "beneficialTypesOther",
+            text: "Northern Ireland"
+
+          },
+         
+        
+          {
+            value: "moTypesCorporate",
+            text: "Scotland"
+          }
+        ]
+        }) }}
+
+
+
+        <div class="govuk-button-group">
+
+        {{ govukButton({
+          text: "Add",
+          href: "31-tell-us-about-the-individual-person"
+        }) }}
+
+
+        {{ govukButton({
+              html: 'No more <span class="govuk-visually-hidden">beneficial owners or managing officers</span> to add',
+           classes: "govuk-button--secondary",
+           href: "15-has-the-overseas-entity-identified-any-registrable-beneficial-owners"
+        }) }}
+
+
+      </div>
+
+</form>
+</div>
+
+</div>
+  </div>
+
+{% endblock %}
+
+
+
+{# <div class="govuk-grid-column-full existing-bo-mo">
+
+      Can be deleted if 
+
+        {{ govukTable({
+          caption: 'Beneficial owners or managing officers previously added' | safe,
+          captionClasses: "govuk-table__caption--m",
+          classes: "govuk-!-margin-bottom-4",
+          firstCellIsHeader: true,
+          head: [
+          {
+            text: "Name",
+            classes: "govuk-visually-hidden"
+          },
+          {
+            text: "Type",
+            classes: "govuk-visually-hidden"
+          },
+          {
+            text: "Status",
+            classes: "govuk-visually-hidden"
+          },
+            {
+              text: "Change or remove",
+              classes: "govuk-visually-hidden"
+            }
+          ],
+          rows: [
+            [
+              {
+                text: "Daniel Ashcroft"
+              },
+              {
+                text: "Individual beneficial owner"
+              },
+              {
+                text: "Active"
+              },
+              {
+                html: '<a href="./bo-individual">Change<span class="govuk-visually-hidden">Daniel Ashcroft</span></a>'
+              }
+             ],
+             [
+               {
+                 text: "ACME Trustees Limited"
+               },
+               {
+                text: "Other legal entity beneficial owner"
+              },
+               {
+                 text: "Ceased"
+               },
+               {
+                 html: '<a href="./">Change<span class="govuk-visually-hidden">ACME Trustees Limited</span></a>'
+               }
+              ],
+             [
+               {
+                 text: "AMK Department"
+               },
+               {
+                text: "Government or public authority beneficial owner"
+              },
+               {
+                text: "Active"
+               },
+               {
+                 html: '<a href="./">Change<span class="govuk-visually-hidden">AMK Department</span></a>'
+               }
+              ],
+             [
+               {
+                 text: "Helios Limited"
+               },
+               {
+                text: "Corporate managing officer"
+              },
+               {
+                text: "Active"
+               },
+               {
+                 html: '<a href="./">Change<span class="govuk-visually-hidden">Helios Limited</span></a>'
+               }
+              ]
+          ]
+        }) }}
+
+
+
+
+
+</div> #}

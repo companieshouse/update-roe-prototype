@@ -16,90 +16,61 @@
 {% endblock %}
 
 {% block content %}
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-one-half-from-desktop">
-      {% if errorEmail == true or errorPassword == true %}
-        {{ govukErrorSummary({
-            titleText: "There is a problem",
-            errorList: errorList
-          }) }}
-      {% endif %}
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds ">
 
-      <h1 class="govuk-heading-l">
-        Sign in to Companies House
-      </h1>
-      
-      {{ govukInsetText({
-        text: "You must sign in to or create a Companies House account. Your WebFiling details will not work with this service."
-      }) }}
+  <form action="choose-sign-in" method="post" novalidate="">
 
-      <form class="form" method="post">
-        {% if errorEmail == true %}
-          {{ govukInput({
-            label: {
-              text: "Email address"
-            },
-            id: "email",
-            type: "email",
-            name: "email",
-            autocomplete: "email",
-            errorMessage: {
-              text: "Enter your email address"
-            }
-          }) }}
-        {% else %}
-          {{ govukInput({
-            label: {
-              text: "Email address"
-            },
-            type: "email",
-            autocomplete: "email",
-            id: "email",
-            name: "email"
-          }) }}
-        {% endif %}
-        {% if errorPassword == true %}
-          {{ govukInput({
-            label: {
-              text: "Password"
-            },
-            id: "password",
-            name: "password",
-            type: "password",
-            errorMessage: {
-              text: "Enter your password"
-            }
-          }) }}
-        {% else %}
-          {{ govukInput({
-            label: {
-              text: "Password"
-            },
-            id: "password",
-            name: "password",
-            type: "password"
-          }) }}
-        {% endif %}
 
-        
-        {{ govukButton({
-        text: "Sign in",
-        href: "02-do-you-want-to-continue-with-a-saved-filing"
-        }) }}
-        <p>
-          <a href="#" class="govuk-link govuk-link--no-visited-state">Create an account</a>
-        </p>
-        <p>
-          <a href="#" class="govuk-link govuk-link--no-visited-state">I've forgotten my password</a>
-        </p>
-      </form>
-    </div>
-  </div>
 
-  <div class="govuk-!-margin-top-9">
 
-{# <p class="govuk-body govuk-!-font-size-14"><a href="./auth/request-an-authentication-code">Auth code request testing</a></p> #}
+    
+    {% set html %}
+    
+  {% endset %}
 
+
+
+  <h1 class="govuk-heading-l">Sign in to Companies House</h1>
+
+  <h2 class="govuk-heading-m">Sign in with GOV.UK One Login</h2> 
+
+
+  <p class="govuk-body">This is the new way to sign in to Companies House. You'll be able to create a GOV.UK One Login if you do not already have one.</p>
+
+
+
+
+
+    {{ govukButton({
+      text: "Go to GOV.UK One Login",
+      href:"02-do-you-want-to-continue-with-a-saved-filing"
+    }) }}
+  
+
+  <details class="govuk-details">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        Benefits of GOV.UK One Login
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+    <p>A GOV.UK One Login allows you to access many government services using the same email address and password. It also makes your Companies House account more secure. </p> 
+  <p class="govuk-body">If you use the same email address for your GOV.UK One Login as your existing Companies House account, we'll save any information stored, such as: </p>
+   <ul class="govuk-list govuk-list--bullet">
+     <li>your filing history</li>
+     <li>companies you follow</li>
+    
+   </ul></div>
+  </details>
+  
+  <h2 class="govuk-heading-m">Other ways to sign in</h2> 
+
+  <p class="govuk-body">If you still access your Companies House account without signing in to GOV.UK One Login, you can <a href="chs-sign-in-email.html" class="govuk-link">sign in with existing Companies House account details</a> instead.</p> 
+
+
+
+  </form>
 
 
 {% endblock %}
