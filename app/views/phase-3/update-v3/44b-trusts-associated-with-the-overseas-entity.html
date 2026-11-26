@@ -1,0 +1,178 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+
+Do you want to add another trust?
+ – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+
+   
+   <form action="36-check-your-answers-before-submitting" method="get">
+
+<h1 class="govuk-heading-xl">Trusts associated with the overseas entity</h1>
+
+{{ govukTable({
+            caption: "What you have reviewed",
+            captionClasses: "govuk-table__caption--m",
+            firstCellIsHeader: true,
+            head: [
+            {
+              text: "Trust",
+              classes: "govuk-visually-hidden"
+            },
+              {
+                text: "Change",
+                classes: "govuk-visually-hidden"
+              },
+              {
+                text: "Change",
+                classes: "govuk-visually-hidden"
+              }
+            ],
+            rows: [
+              [
+            
+              {
+                text: "Islands Trust"
+              },
+              {
+                text: "Removed"
+              },
+              {
+                html: '<a href="/register/trusts/trust-details-edit">Change</a>',
+              visuallyHiddenText: "Trust - Islands Trust"
+              }
+             ],
+             [
+
+              {
+                text: "Cayman Trust"
+              },
+              {
+                text: "Active"
+              },
+              {
+                html: '<a href="/register/trusts/trust-details-edit">Change</a>',
+              visuallyHiddenText: "Trust - Islands Trust"
+              }
+             ]
+            ]
+          }) }}
+
+{{ govukTable({
+            caption: "What you have added in this update",
+            captionClasses: "govuk-table__caption--m",
+            firstCellIsHeader: true,
+            head: [
+            {
+              text: "Trust",
+              classes: "govuk-visually-hidden"
+            },
+              {
+                text: "Change",
+                classes: "govuk-visually-hidden"
+              },
+              {
+                text: "Change",
+                classes: "govuk-visually-hidden"
+              },
+              {
+                text: "Remove",
+                classes: "govuk-visually-hidden"
+              },
+              {
+                text: "Remove",
+                classes: "govuk-visually-hidden"
+              }
+            ],
+            rows: [
+              [
+            
+              {
+                text: "A New Trust"
+              },
+              {
+                text: "Active"
+              },
+              {
+                html: '<a href="/register/trusts/trust-details-edit">Change</a>',
+              visuallyHiddenText: "Trust - A New Trust"
+              },
+              {
+                html: '<a href="/register/trusts/trust-details-edit">Remove</a>',
+              visuallyHiddenText: "Trust - A New Trust"
+              }
+             ],
+             [
+
+              {
+                text: "And Another One"
+              },
+              {
+                text: "Active"
+              },
+              {
+                html: '<a href="/register/trusts/trust-details-edit">Change</a>',
+              visuallyHiddenText: "Trust - And Another One"
+              },
+              {
+                html: '<a href="/register/trusts/trust-details-edit">Remove</a>',
+              visuallyHiddenText: "Trust - A New Trust"
+              }
+             ]
+            ]
+          }) }}         
+
+
+{{ govukRadios({
+  classes: "govuk-radios",
+  idPrefix: "addTrust",
+  name: "addTrust",
+  fieldset: {
+    legend: {
+      text: "Do you need to add another trust?
+",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+  text: " "
+},
+  items: [
+    {
+      value: "yes",
+      text: "Yes"
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+  ]
+}) }}
+
+
+
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+      </form>
+
+
+
+
+    </div>
+  </div>
+
+{% endblock %}

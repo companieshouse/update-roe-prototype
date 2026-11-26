@@ -1,0 +1,411 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Check your answers – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+  {% include "includes/rp-tag.html" %} 
+  <span class="govuk-caption-l">{{ data['overseas-name'] }} - OE001485</span>
+      <h1 class="govuk-heading-xl">Check your answers for the pre-registration period</h1>
+
+
+
+    <div class="govuk-inset-text">
+      Thsi overseas entity's pre-registration period is between <strong>28 February 2022</strong> and <strong>18 September 2022</strong>
+    </div>
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Was the overseas entity a registered proprietor of UK property or land during the pre-registration period?"
+            },
+            value: {
+              text: "Yes"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Question 1"
+                }
+              ]
+            }
+
+          }
+        ]
+      }) }}
+
+
+{# 
+<h1 class="govuk-heading-m">
+        Statement
+      </h1>
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: " Did the overseas entity own land in the relevant period?"
+            },
+            value: {
+              text: "Yes"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Question 1"
+                }
+              ]
+            }
+          }
+        
+        ]
+      }) }} #}
+
+
+
+<h1 class="govuk-heading-m">
+        Beneficial owners in the pre-registration period
+      </h1>
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: " Did anyone become or cease to be a beneficial owner in the pre-registration period?"
+            },
+            value: {
+              text: "Yes"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Question 1"
+                }
+              ]
+            }
+          }
+        
+        ]
+      }) }}
+
+<!-- ********** RP - INDIVIDUAL BENEFICIAL OWNER  ********** -->
+
+      <h3 class="govuk-heading-m">Individual beneficial owner</h3>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            First name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>Joe</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/register/beneficial-owner-individual">
+              Change
+              <span class="govuk-visually-hidden"> Individual beneficial owner First name </span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Last name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>Bloggs</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/register/beneficial-owner-individual">
+              Change
+              <span class="govuk-visually-hidden">  Individual beneficial owner Dr Lisa Davies Davies</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Born
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>August 1972</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            {# <a href="/register/beneficial-owner-individual">
+              Change
+              <span class="govuk-visually-hidden">Individual beneficial owner Dr Lisa Davies date of birth</span>
+            </a> #}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Nationality
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>British Virgin Islander</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/register/beneficial-owner-individual">
+              Change
+              <span class="govuk-visually-hidden"> Individual beneficial owner Dr Lisa Davies nationality</span>
+            </a>
+          </dd>
+        </div>
+
+        <!-- <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Second nationality
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>French</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/register/beneficial-owner-individual">
+              Change
+              <span class="govuk-visually-hidden"> Individual beneficial owner Dr Lisa Davies second nationality</span>
+            </a>
+          </dd>
+        </div> -->
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Home address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            72 Guild Street
+            <br>London
+            <br>SE23 6FH
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/register/beneficial-owner-individual">
+              Change
+              <span class="govuk-visually-hidden">Individual beneficial owner Dr Lisa Davies home address</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Correspondence address
+          </dt>
+          <dd class="govuk-summary-list__value">
+          The correspondence address is the same as the home address
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/register/beneficial-owner-individual">
+              Change
+              <span class="govuk-visually-hidden"> Individual beneficial owner Dr Lisa Davies correspondence address</span>
+            </a>
+          </dd>
+        </div>
+      {# <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Nature of control
+        </dt>
+        <dd class="govuk-summary-list__value">
+          The beneficial owner is a trustee of a trust and:
+
+          <ul class="govuk-list govuk-list--bullet">
+            <li>the trustees of that trust (in their capacity as such) hold the right, directly or indirectly, to appoint or remove a majority of the board of directors of the company</li>
+          </ul>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="/register/beneficial-owner-individual">
+            Change
+            <span class="govuk-visually-hidden"> Individual beneficial owner Dr Lisa Daviesnature of control</span>
+          </a>
+        </dd>
+      </div> #}
+        <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Nature of control
+        </dt>
+        <dd class="govuk-summary-list__value">
+          The beneficial owner was a member of a firm that is not a legal person under its governing law, and:
+
+          <ul class="govuk-list govuk-list--bullet">
+            <li>the members of that firm (in their capacity as such) held, directly or indirectly, more than 25% of the shares in the entity</li>
+          </ul>
+          The beneficial owner was a trustee of a trust and:
+          <ul class="govuk-list govuk-list--bullet">
+            <li>the trustees of that trust (in their capacity as such) held, directly or indirectly, more than 25% of the shares in the entity</li>
+          </ul>
+          The beneficial owner was a member of a firm that is not a legal person under its governing law, and:
+          <ul class="govuk-list govuk-list--bullet">
+            <li>the members of that firm (in their capacity as such) held, directly or indirectly, more than 25% of the shares in the entity</li>
+          </ul>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="/register/beneficial-owner-individual">
+            Change
+            <span class="govuk-visually-hidden"> Individual beneficial owner Dr Lisa Daviesnature of control</span>
+          </a>
+        </dd>
+      </div> 
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Were they on the UK sanctions list?
+
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p>No, they were not on the sanctions list</p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="/register/beneficial-owner-individual">
+            Change
+            <span class="govuk-visually-hidden"> Individual beneficial owner Dr Lisa Davies Were they on the sanctions list?</span>
+          </a>
+        </dd>
+      </div>
+ <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date they became a beneficial owner
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p>10 July 2004</p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          {# <a href="/register/beneficial-owner-individual">
+            Change
+            <span class="govuk-visually-hidden"> Individual beneficial owner Dr Lisa Daviesdate they became a beneficial owner</span>
+          </a> #}
+        </dd>
+      </div>
+    <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Are they still a beneficial owner?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p>Yes</p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="/register/beneficial-owner-individual">
+            Change
+            <span class="govuk-visually-hidden"> Individual beneficial owner Dr Lisa Davies Were they on the sanctions list?</span>
+          </a>
+        </dd>
+      </div>
+
+      </dl>
+
+
+<!-- ********** TRUSTS  - RELEVANT PERIOD  ********** -->
+<h1 class="govuk-heading-m">
+        Trusts in the pre-registration period
+      </h1>
+              {{ govukSummaryList({
+                classes: 'govuk-!-margin-bottom-9',
+                rows: [
+                  {
+                    key: {
+                      text: "Were there any additional trusts involved in the overseas entity during the pre-registration period?
+"
+                    },
+                    value: {
+                      text: 'No'
+                    },
+                    actions: {
+                      items: [
+                        {
+                          href: "#",
+                          text: "Change",
+                          visuallyHiddenText: "Does the update include people that have protection or that have applied for protection?"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }) }}
+
+
+<!-- ********** BENFICIARIES - RELEVANT PERIOD  ********** -->
+<h1 class="govuk-heading-m">
+        Beneficiaries in the pre-registration period
+      </h1>
+              {{ govukSummaryList({
+                rows: [
+                  {
+                    key: {
+                      text: "Did anyone become or cease to be a beneficiary of a trust involved in the overseas entity during the pre-registration period?"
+                    },
+                    value: {
+                      text: 'No'
+                    },
+                    actions: {
+                      items: [
+                        {
+                          href: "#",
+                          text: "Change",
+                          visuallyHiddenText: "Does the update include people that have protection or that have applied for protection?"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }) }}
+
+
+      <form method="post">
+
+
+      {{ govukRadios({
+        name: "haveYouCompletedThisSection",
+        fieldset: {
+          legend: {
+            text: "Have you completed this section?",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes, I've completed this section"
+          },
+          {
+            value: "no",
+            text: "No, I'll come back to it later"
+          }
+        ]
+      }) }}
+
+
+        {{ govukButton({
+          text: "Continue",
+          href: "task-list-test"
+        }) }}
+        &nbsp; &nbsp;
+
+                {{ govukButton({
+          text: "Print this page",
+          classes: "govuk-button--secondary",
+          href: "javascript: window.print()"
+        }) }} <!--  to developers, this is a JS-reliant button just for prototyping-->
+        <!-- the production site would need a non-JS solution OR the you could use JS to hide the button, as in people without JS would not see a button, rather than see a broken button -->
+      </div>
+
+    <!-- *** Note to developers, this must show when JS is disabled ***
+      <p class="govuk-body govuk-!-font-size-20">To print this page, select File then Print in your browser.</p>
+    -->
+
+      </form>
+
+{#
+      <p class="govuk-body govuk-!-font-size-14 govuk-link--no-visited-state"><a href="/register/confirmation">UR shortcut: Jump to confirmation screen</a></p>
+#}
+
+    </div>
+  </div>
+{% endblock %}

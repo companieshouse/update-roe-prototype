@@ -1,0 +1,50 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+
+You now need to submit trust information – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/before-content.html" %}
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+     {# <div class="govuk-!-margin-bottom-3">
+      {% include "includes/rp-tag-update.html" %}
+      {% include "includes/rp-tag.html" %}
+    </div> #}
+    
+<h1 class="govuk-heading-xl">You now need to submit trust information</h1>
+
+
+      <p class="govuk-body">At least one individual or entity you’ve told us about is a beneficial owner of the overseas entity, due to being a trustee of a trust.</p>
+      <p class="govuk-body">In the next section, you’ll need to tell us about the trust. This includes details about people or entities that are: </p>
+      <ul class="govuk-body">
+        <li>beneficiaries</li>
+        <li>settlors</li>
+        <li>grantors</li>
+        <li>interested persons</li>
+      </ul>
+      <p class="govuk-body">It also includes each person who has ever been a beneficial owner in relation to the overseas entity, by being a trustee of the trust.</p>
+      <p>You can add information about multiple trusts if needed. </p>
+
+
+
+ {# {% include "includes/rp-banner-statement.html" %} #}
+
+
+      {{ govukButton({
+        text: "Save and continue",
+        href: '39-tell-us-about-the-trust'
+      }) }}
+
+
+    </div>
+  </div>
+
+{% endblock %}
